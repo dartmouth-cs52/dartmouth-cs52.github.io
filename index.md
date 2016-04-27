@@ -36,7 +36,7 @@ Class:
 Office Hours:
 
   - Instructor:
-    - Tim Tregubov (@tim on Slack)
+    - [Tim Tregubov](mailto:tim@cs.dartmouth.edu) (@tim on Slack)
     - Mon 12-1pm, 4-5pm; or by appointment in Sudikoff 219/143
   - TAs:
     - TBD

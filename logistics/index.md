@@ -11,10 +11,6 @@ title: Logistics
 
 A collection of online resources will be used, but no textbook will be required.  Current blog posts and videos about the state of various technologies and best practices will be included in some assignments.  Peruse them to learn something.
 
-## Schedule: ##
-
-Classes will meet Tuesday and Thursday - half of each class will be hands-on demonstrations, code and project discussions, and exercises.  See more [here](/schedule).
-
 ## Slack ##
 
 We will use [Slack](http://slack.com), an online collaborative tool for most class messaging and help. Details in class. We will also write slack integrations!
@@ -23,13 +19,13 @@ We will use [Slack](http://slack.com), an online collaborative tool for most cla
 
 Grading of some collaborative team based work will be done based on GitHub pull requests.  Proper git flow will be introduced early on in the term.
 
-- 3 short assignments: 15% (5% each)
-- 2 bi-weekly labs:  20% (5% per weekly milestone)
-- Short in-class quizzes:  10%
-- 1 group presentation and workshop: 10%
-- 1 final project:  30%
-- participation:  10%
-
+  - 3 short assignments: 10%
+  - 2 bi-weekly labs:  25%
+  - Short in-class quizzes:  15%
+  - 1 group presentation and workshop: 10%
+  - 1 final project:  30%
+  - Participation:  5%
+  - Peer mentoring: 5%
 
 ## Software ##
 
