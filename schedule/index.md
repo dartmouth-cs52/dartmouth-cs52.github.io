@@ -3,7 +3,9 @@ layout: page
 title: Schedule
 ---
 
-# Term Overview — In flux!
+## <span style="color: #F27D00">WARNING! Preliminary syllabus subject to change without notice. Stay tuned!</span> ##
+
+# Term Overview
 
 ### Week 1: ###
 Introducing the web with protocols and data structures.  

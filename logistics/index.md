@@ -4,7 +4,7 @@ title: Logistics
 ---
 
 
-## <span style="color: #F27D00">Warning -- preliminary syllabus and subject to change without notice</span> ##
+## <span style="color: #F27D00">WARNING! Preliminary syllabus subject to change without notice. Stay tuned!</span> ##
 
 
 ## Textbook: ##
