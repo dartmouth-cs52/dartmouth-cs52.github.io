@@ -21,7 +21,22 @@ Will be challenging and rewarding.  See [assignments](/assignments).
 
 ## Schedule:
 
-Classes will meet Tuesday and Thursday.  Half of each class will be hands-on demonstrations, code and project discussions, and exercises.  See [schedule](/schedule).
+Class:
+
+  - 2A Classes will meet Tuesday and Thursday on the new schedule (2:25-4:15pm).<br>
+  - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours for lab assignments.<br>
+  - Location: TBD
+
+Office Hours:
+
+  - Instructor:
+    - Tim Tregubov (@tim on Slack)
+    - Mon 12-1pm, 4-5pm; or by appointment in Sudikoff 219/143
+  - TAs:
+    - TBD
+
+
+Half of each class will be hands-on demonstrations, code and project discussions, and exercises.  See [schedule](/schedule).
 
 ## Lectures:
 
