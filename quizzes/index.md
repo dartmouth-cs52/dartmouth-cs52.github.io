@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Quizzes
-permalink: /quizes/
+permalink: /quizzes/
 ---
 
 
