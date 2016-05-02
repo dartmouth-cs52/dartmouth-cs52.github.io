@@ -22,7 +22,7 @@ title: Assignments
 *<br>A team based final project starting with pitching an idea and culminating in a web app with both a designed UI and a server-side api for data.  Assessment will be based on git pull requests and specific technical components that will be required for the projects.*
 
 - Participation:  5%
-*<br>In class collaborative demonstrations, exercises, and discussions.*
+*<br>In class collaborative demonstrations, exercises, and discussions. *
 
 - Peer mentoring: 5%
 *<br>Each student will be required to choose a lab for which they will prepare ahead of time and mentor in a lab hours section. Optional additional times available for students seeking extra credit.*
