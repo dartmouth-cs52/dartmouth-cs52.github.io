@@ -91,7 +91,23 @@ Linters are code parsers that check your code for syntax errors, common style mi
               }
           };
 
-7. Pre-commit Hooks
+7. Connecting Eslint and TravisCI
+
+    By default all Node.js configurations of Travis run `npm test` automatically after the build completes.
+
+    `npm test` can be configured to run a script of your choice, we will be running `eslint`
+
+    Below is a sample `package.json` file that runs eslint on all javascript files
+
+        {
+          "name": "flux",
+          "private": true,
+          "scripts": {
+            "test": "./node_modules/.bin/eslint **.js"
+          }
+        }
+
+8. Pre-commit Hooks
 
     In addition to running server side testing through Travis CI, you can also set up pre-commit hooks locally in your git repository.
 
