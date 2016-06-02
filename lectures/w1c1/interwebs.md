@@ -9,7 +9,7 @@ published: true
 
 "A series of tubes" — [Senator Ted Stevens (R-Alaska)](https://en.wikipedia.org/wiki/Series_of_tubes)
 
-Okay... but tubes?
+:question: Okay... but tubes?
 
 Well technically perhaps you can think of electrical and optical lines as tubes, but regardless before we can code for the web we should understand what all is involved.
 
@@ -27,6 +27,8 @@ Here is map of the submarine optical cables that provide internet connectivity g
 The FB map is more of a social graph but does show internet connected Facebook users. Notice anything interesting missing?
 
 So how does data traverse this really complicated graph of interconnected of wires?
+
+*We'll cover some basics of networking here but for more in-depth on the subject, take CS60*
 
 
 ## Protocols ##
@@ -82,26 +84,30 @@ As data is passed down the layers it is encapsulated with additional layer speci
 
 ### Internet Data Flow
 
-Say we have two computers (referred to as hosts) that need to communicate. For instance your laptop is Host A and Google is Host B. The router is the network hardware that directs (routes) internet traffic, similar to an airline controller. More on routing in a bit, suffice to say for now that routers end traffic along to the next router toward the destination.
+Say we have two computers (referred to as hosts) that need to communicate. For instance your laptop is Host A and Google is Host B. The router is the network hardware that directs (routes) internet traffic, similar to an airline controller. More on routing in a bit, suffice to say for now that routers pass traffic along to the next router toward the destination.
 
 ![](layers.jpg)
 
 
 ## Addresses ##
 
-But what about addresses?  To travel anywhere you need an address!
+:question: But what about addresses?  To travel anywhere you need an address!
 
-The IP protocol deals with addresses. Most of the internet runs on [IPv4](https://en.wikipedia.org/wiki/IPv4) addresses which are 32 bit numbers that look like  **nnn.nnn.nnn.nnn**.  IPv4 is running out of addresses as the whole space is only 4,294,967,296 (2^32) addresses.  However because of private networks (your laptop right now most likely has a private IP) IPv4 keeps living on.
+The IP protocol deals with addresses. Most of the internet runs on [IPv4](https://en.wikipedia.org/wiki/IPv4) addresses which are 32 bit numbers (4 bytes).  Typically these are written in *dotted decimal notation* and look like  **nnn.nnn.nnn.nnn** where each byte is represented by an integer between 0 and 255.  IPv4 is running out of addresses as the whole space is only 4,294,967,296 (2^32) addresses.  However because of private networks (your laptop right now most likely has a private IP) IPv4 keeps living on.
 
-Some things you should know about IP address.  The IP address space is subdivided into blocks.
+Some things you should know about IP address.
 
-### Private Addresses
+### Private Addresses, Special Addresses
 
 `10.*.*.*` and `192.168.*.*` addresses are reserved for private networks.  Dartmouth Secure is a `10.` network.
+_we can also denote these networks by using significant bits notation:  `10.0.0.0/24` is equivalent to `10.*.*.*` and `192.168.*.*` is `192.168.0.0/16`_
 
 `127.0.0.1` is reserved for your loopback address.  This is an address you can use when running your local dev environment!  `localhost`, `127.0.0.1`, `0.0.0.0` will all work to access the machine you are physically on.
 
-These addresses are not publicly routable, meaning that routers across the internet will not know how to direct traffic to them.
+`255.255.255.255` is a broadcast address,  which means it will attempt to connect to every machine on your subnet.  Try this:
+`sudo ping -t1 255.255.255.255` in your terminal.  You may get lots of responses, although on Dartmouth Secure you most likely are on a private subnet
+
+These addresses are not publicly routable, meaning that routers across the internet will not know how to direct traffic to them. More about this soon.
 
 ![](noplacelikehome.jpg)
 
@@ -110,15 +116,46 @@ Publicly routable addresses are IPs that you can get to from anywhere.  All you 
 ![](3327.jpg)
 
 
+## DNS ##
+
+:question: Ok, but question. I'm seeing all these numbers, but what about domain names? All I want is myname.com!
+
+That is where DNS (Domain Name Service) comes in.  DNS is a protocol for mapping names to IP numbers -- sort of like the yellow pages (😮does anybody even know what that is anymore?) for the internet.  Since IP doesn't understand names another layer comes in to help with this.
+
+What layer in the stack do you think DNS fits into?
+
+![dns heirarchy](dns_heirarchy.png)
+
+Correct! DNS is an Application Layer protocol. DNS servers are organized as a distributed hierarchical database.  Your laptop get assigned a couple of DNS servers whenever it connects to the network (via another application layer protocol DHCP).  These are your local ISPs (internet service provider) DNS servers.
+
+💻  `dig dartmouth.edu`
+or
+💻  `host dartmouth.edu`
+
+This will do a DNS lookup of that address.
+
+These local servers can't know every name however, so whenever they don't know something they know who to ask next.
+1. local name server will ask a ROOT server to find out which TLD (top level domain) server to ask.  TLDs are the various .com, .org, .ly, .website, domains.
+2. then local name server will ask the TLD what it knows about that domain name. The TLD will return the authoritative name servers that are set up when you register a domain name.  (we'll do that next class!)
+3. then finally the local name server will query the authoritative name server.  Large organizations may run their own DNS servers (CS runs its own as does Dartmouth), but registrars like godaddy(bad) and [namecheap](http://namecheap.com)(good) do as well.
+
+![iterative dns query](iterative_dns_query.png)
+
+We'll learn more about DNS when we cover deployment and scaleability later.
+
 ## Routing ##
 
-Wait ok but how does a packet find its way around all those tubes!?
+:question: Wait ok but back up, how does a packet find its way around all those tubes!?
 
-As a packet travels from one host to another it crosses through a series routers.  Each of these forwards the packet on based on a set of rules.   Routers will have typically have routing tables
+As a packet travels from one host to another it crosses through a series routers.  Each of these forwards the packet on based on a set of rules.   Routers will have typically have routing tables that tell it where to send packets.
 
+You can think of this as a bit similar to DNS,  packets are forwarded along to routers that should know more about where to send them. Routing algorithms and tables are fairly complicated, for our purposes we'll explore just the basics.
 
+When a router gets a datagram (what we've been calling a packet) it does some logic similar to the following:
 
 ```
+Given a destination IP address, D, and network prefix, N:
+
 if ( N matches a directly connected network address )
 
     Deliver datagram to D over that network link;
@@ -137,15 +174,61 @@ else
 ```
 (from [wikipedia](https://en.wikipedia.org/wiki/IP_forwarding))
 
+Lets try this out:
+
+`traceroute stanford.edu`
+
+```
+traceroute to stanford.edu (171.67.215.200), 30 hops max, 60 byte packets
+ 1  s009-cisco-212-3-sw.cs.dartmouth.edu (129.170.212.3)  10.278 ms
+ 2  129.170.1.121 (129.170.1.121)  0.583 ms
+ 3  berry-remsen.berry1-crt.dartmouth.edu (129.170.1.73)  0.556 ms
+ 4  berry1-crt.border1-rt.dartmouth.edu (129.170.1.42)  1.271 ms
+ 5  akamai.border1-rt.dartmouth.edu (129.170.9.241)  15.729 ms
+ 6  et-10-0-0.107.rtr.chic.net.internet2.edu (198.71.45.8)  25.604 ms
+ 7  et-10-0-0.106.rtr.kans.net.internet2.edu (198.71.45.15)  36.883 ms
+ 8  et-1-0-0.109.rtr.hous.net.internet2.edu (198.71.45.16)  51.454 ms
+ 9  et-5-0-0.111.rtr.losa.net.internet2.edu (198.71.45.21)  83.843 ms
+10  137.164.26.200 (137.164.26.200)  84.073 ms
+11  hpr-svl-hpr3--lax-hpr3-100ge.cenic.net (137.164.25.74)  90.975 ms
+12  hpr-stan-ge--svl-hpr2.cenic.net (137.164.27.162)  91.096 ms
+13  west-rtr-vlan8.SUNet (171.64.255.193)  91.846 ms
+14  *
+15  web.stanford.edu (171.67.215.200)  91.974 ms
+```
+
+This is a pretty direct route, it can take many more *hops* typically!
+
+❓But how do routers know who to send stuff to?
+
+Because routers that know stuff, shout about it to their neighbors. :loudspeaker:
+
+![routing announcements](routing_announcements.png)
+
+Routers use a protocol called BGP to exchange routing information with each other.  
+
+In a dramatically oversimplified scenario, let's say Dartmouth's Border Router 🛂shouts: *Hey I know stuff about 129.170.0.0/16 (Dartmouth)*  then nearby routers will each record that they are 0 hops away from that particular internet prefix block and will tell others about it.  Their neighbors will also record their distance and so on and so forth.  Each router stores a routing table with entries about which of their neighbors knows about which routes and also the distance (simplest metric is just hop count).
+
+This is what enables the internet to be robust, if a link goes down, then there are usually alternate/longer routes available.
+
+Want to see your local routing table on your laptop?
+
+`netstat -nr` on osx
+`route -n` on linux
+`route print` on windows
 
 
+### Private Addresses Part II.
+:question: Wait so how do private addresses help the problem again?
+
+![](nat.png)
 
 
 ## Loading a page: the play ##
 
 Lets play out a scenario.
 
-If you don't read Hacker News, you should. So lets pull up a hacker news page.
+If you don't read Hacker News, you should. So lets pull up a hacker news page. For simplicity let's leave out routing.
 
 ![](internet.jpg)
 
@@ -237,3 +320,12 @@ _Browser:_
 *Browser:*
 
  > Oh wow thanks. Ok I'll draw that on the screen! I think I know what all html should look like.
+
+
+
+
+## Things Not Covered
+
+Subnets
+BGP routing in depth
+Lots of other internet protocols
