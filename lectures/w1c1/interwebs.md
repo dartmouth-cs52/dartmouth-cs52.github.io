@@ -15,13 +15,13 @@ Well technically perhaps you can think of electrical and optical lines as tubes,
 
 Here is map of the submarine optical cables that provide internet connectivity globally. Note: most internet runs over physical cables, satellite is used only for remote areas and has a very high latency.
 
-![](submarine_cables.jpg)
+![](img/submarine_cables.jpg)
 (from [submarinecablemap.com](http://www.submarinecablemap.com/))
 
-![](connectivity2012.jpg)
+![](img/connectivity2012.jpg)
 (from [Chris Harrison](http://chrisharrison.net/index.php/Visualizations/InternetMap))
 
-![](facebook_map.jpg)
+![](img/facebook_map.jpg)
 (from [Paul Butler](https://gigaom.com/2010/12/14/facebook-draws-a-map-of-the-connected-world/))
 
 The FB map is more of a social graph but does show internet connected Facebook users. Notice anything interesting missing?
@@ -35,7 +35,7 @@ So how does data traverse this really complicated graph of interconnected of wir
 
 Computers talk to each other just like humans.  When you have an interaction at a cafe with the barista you are following a social protocol. Protocols are simply the order and format of the conversation and both computer hardware and software employ protocols to communicate.
 
-![](social_protocol.jpg)
+![](img/social_protocol.jpg)
 (image from [Computer Networking: A Top Down Approach](https://wps.pearsoned.com/ecs_kurose_compnetw_6/))
 
 We'll only be focusing on a few protocols but there are many protocols from how to transmit email to how your wifi sends radio signals.
@@ -52,7 +52,7 @@ Let's use a better analogy.
 
 Say you are carrying some important data and you want to get from Boston to SF, most likely you'll want to fly.  There are many layered systems that are involved in getting you to your destination.
 
-![](airline_packets.png)
+![](img/airline_packets.png)
 (image from [Computer Networking: A Top Down Approach](https://wps.pearsoned.com/ecs_kurose_compnetw_6/) p. 48)
 
 Note how these are layered.  Any given system adds information and provides a service.  So the baggage layer provides the service of transferring baggage for you and gives you a baggage tracking code that you carry with you.
@@ -80,13 +80,13 @@ Note: this [Internet Protocol Stack](https://en.wikipedia.org/wiki/Internet_prot
 
 As data is passed down the layers it is encapsulated with additional layer specific headers. Here is a simplified view of the data packet as it passes down the stack.
 
-![](encapsulation.jpg)
+![](img/encapsulation.jpg)
 
 ### Internet Data Flow
 
 Say we have two computers (referred to as hosts) that need to communicate. For instance your laptop is Host A and Google is Host B. The router is the network hardware that directs (routes) internet traffic, similar to an airline controller. More on routing in a bit, suffice to say for now that routers pass traffic along to the next router toward the destination.
 
-![](layers.jpg)
+![](img/layers.jpg)
 
 
 ## Addresses ##
@@ -100,6 +100,7 @@ Some things you should know about IP address.
 ### Private Addresses, Special Addresses
 
 `10.*.*.*` and `192.168.*.*` addresses are reserved for private networks.  Dartmouth Secure is a `10.` network.
+
 _we can also denote these networks by using significant bits notation:  `10.0.0.0/24` is equivalent to `10.*.*.*` and `192.168.*.*` is `192.168.0.0/16`_
 
 `127.0.0.1` is reserved for your loopback address.  This is an address you can use when running your local dev environment!  `localhost`, `127.0.0.1`, `0.0.0.0` will all work to access the machine you are physically on.
@@ -109,11 +110,11 @@ _we can also denote these networks by using significant bits notation:  `10.0.0.
 
 These addresses are not publicly routable, meaning that routers across the internet will not know how to direct traffic to them. More about this soon.
 
-![](noplacelikehome.jpg)
+![](img/noplacelikehome.jpg)
 
 Publicly routable addresses are IPs that you can get to from anywhere.  All you really need to know here is that various registrars and countries are responsible for different blocks. Here's a map!
 
-![](3327.jpg)
+![](img/3327.jpg)
 
 
 ## DNS ##
@@ -124,7 +125,7 @@ That is where DNS (Domain Name Service) comes in.  DNS is a protocol for mapping
 
 What layer in the stack do you think DNS fits into?
 
-![dns heirarchy](dns_heirarchy.png)
+![dns heirarchy](img/dns_heirarchy.png)
 
 Correct! DNS is an Application Layer protocol. DNS servers are organized as a distributed hierarchical database.  Your laptop get assigned a couple of DNS servers whenever it connects to the network (via another application layer protocol DHCP).  These are your local ISPs (internet service provider) DNS servers.
 
@@ -139,7 +140,7 @@ These local servers can't know every name however, so whenever they don't know s
 2. then local name server will ask the TLD what it knows about that domain name. The TLD will return the authoritative name servers that are set up when you register a domain name.  (we'll do that next class!)
 3. then finally the local name server will query the authoritative name server.  Large organizations may run their own DNS servers (CS runs its own as does Dartmouth), but registrars like godaddy(bad) and [namecheap](http://namecheap.com)(good) do as well.
 
-![iterative dns query](iterative_dns_query.png)
+![iterative dns query](img/iterative_dns_query.png)
 
 We'll learn more about DNS when we cover deployment and scaleability later.
 
@@ -203,7 +204,7 @@ This is a pretty direct route, it can take many more *hops* typically!
 
 Because routers that know stuff, shout about it to their neighbors. :loudspeaker:
 
-![routing announcements](routing_announcements.png)
+![routing announcements](img/routing_announcements.png)
 
 Routers use a protocol called BGP to exchange routing information with each other.  
 
@@ -221,7 +222,37 @@ Want to see your local routing table on your laptop?
 ### Private Addresses Part II.
 :question: Wait so how do private addresses help the problem again?
 
-![](nat.png)
+![](img/nat.png)
+
+## HTTP! Finally!
+
+When your browser requests a page it does so via HTTP (HyperText Transfer Protocol).  Your browser happens to also support some other protocols which is why you'll see: http://webpagedomainnamestuff.tld
+
+HTTP is a request-response protocol client-server application layer protocol.   The client (your browser say) initiates a request and the server (a webserver machine somewhere) responds.  HTTP uses TCP as it's underlying Transfer Layer protocol.
+
+HTTP is *stateless* so by default there is no tracking between requests and the server has no idea whether it has talked to the client previously.  We'll learn about ways to work around this such as session tokens and cookies later.
+
+Although HTTP is designed for HyperText (HTML) it can also transfer arbitrary text.
+
+HTTP has various text commands to form the requests.
+
+:envelope: GET:  retrieves a particular resource. This is the default method when you first go to a webpage in your browser.
+:envelope: POST:  sends a dictionary of key,value pairs as data to the server. Typically used for submitting forms.
+:envelope: DELETE:  requests that the server delete the specified resource.
+
+We'll learn a bunch more about these when we cover REST APIs.
+
+![](img/http_get.png)
+
+💻 Want to try it?
+
+```
+telnet www.cs.dartmouth.edu 80
+
+GET /~testuser/ HTML/1.1
+
+```
+
 
 
 ## Loading a page: the play ##
@@ -230,7 +261,7 @@ Lets play out a scenario.
 
 If you don't read Hacker News, you should. So lets pull up a hacker news page. For simplicity let's leave out routing.
 
-![](internet.jpg)
+![](img/internet.jpg)
 
 _Human:_
 
@@ -323,9 +354,11 @@ _Browser:_
 
 
 
+<hr>
+
 
 ## Things Not Covered
 
-Subnets
-BGP routing in depth
-Lots of other internet protocols
+* Subnets
+* BGP routing in depth
+* Lots of other internet protocols
