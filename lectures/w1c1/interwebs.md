@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Week 1 Class 1 —
+title: Week 1 Class 1 — The Interwebs
 published: true
 ---
 
@@ -70,7 +70,7 @@ The internet is a complex system and uses a **layered service model** that consi
 * :triangular_flag_on_post: Network Layer
   This layer contains the IP protocol. IP sends and routes packets between hosts. All internet connected devices that have a Network Layer must implement the IP protocol. TCP passes the target destination in the form of the IP address down to this layer which then routes it along the many different hosts on the way to the target.
 * :link: Link Layer
-  This layer passes data between hosts and includes protocols such as Ethernet and WiFi. Each host along the route talks to another in a particular way and neither your application, nor TCP, nor the network need to know how your ethernet.
+  This layer passes data between hosts and includes protocols such as Ethernet and WiFi. Each host along the route talks to another in a particular way and neither your application, nor TCP, nor the network need to know how the specifics.
 * :telephone: Physical Layer
   This layer contains protocols for transferring bits along a wire or fiber optic cable. We'll largely ignore this layer.
 
@@ -228,7 +228,7 @@ Want to see your local routing table on your laptop?
 
 When your browser requests a page it does so via HTTP (HyperText Transfer Protocol).  Your browser happens to also support some other protocols which is why you'll see: http://webpagedomainnamestuff.tld
 
-HTTP is a request-response protocol client-server application layer protocol.   The client (your browser say) initiates a request and the server (a webserver machine somewhere) responds.  HTTP uses TCP as it's underlying Transfer Layer protocol.
+HTTP is a request-response protocol client-server application layer protocol.   The client (your browser for instance) initiates a request and the server (a webserver machine somewhere) responds.  HTTP uses TCP as it's underlying Transfer Layer protocol.
 
 HTTP is *stateless* so by default there is no tracking between requests and the server has no idea whether it has talked to the client previously.  We'll learn about ways to work around this such as session tokens and cookies later.
 
