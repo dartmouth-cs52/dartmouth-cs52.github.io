@@ -16,13 +16,8 @@ $spacing-unit:     30px;
 ;
 
 
-img.small {
-  max-width: 200px;
-}
-
-
-/* for codepen embeds paper card look */
-.cp_embed_iframe {
+/* for codepen embeds */
+.cp_embed_iframe, .codepanel {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
