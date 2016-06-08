@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Week 1 Class 1 — The Interwebs
+title: Week 1 — The Interwebs
 published: true
 ---
 

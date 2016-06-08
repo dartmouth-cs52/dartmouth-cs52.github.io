@@ -33,11 +33,27 @@ We will use open source development tools and frameworks.  Note: These will work
 
 ## Honor principle -- Not your standard warning! ##
 
-The web is an open place and there is a lot of code out there.  We want you to be able to show your work and to be proud of the code you have written.  To this end, all your work will be on GitHub (which you will learn about).  However, you do need to learn and as such all the code for the labs and for your portion of the final project will need to actually be written by you.
+The web is an open place and there is a lot of code out there.  We want you to be able to show your work and to be proud of the code you have written.  To this end, all your work will be on GitHub.  However, you do need to learn and as such all the code for the labs and for your portion of the final project will need to actually be written by you.
 
-For the short assignments and the labs you may verbally collaborate as much as you want. However, the code that you commit (turn in), should be created, typed, documented, and output generated, by you. You may consult freely with instructors and classmates but you should work individually when actually coding.  
+### The Internet
 
-During the debugging stage you may discuss your problems with others in the class, but you should not copy code to fix bugs. To do otherwise is a violation of the Academic Honor Principle. If you work with a classmate on any assignment, you should tell us who you worked with in a comment at the top of your code.  You may scour the internet / [stackoverflow](http://stackoverflow.com) for help with  also, but you must credit any solutions you find in comments in your code specifying where you found them and what you took from them.  If you copy/paste code without attribution you are violating the Academic Honor Principle. You will not be penalized for copied code as long as it is properly attributed and a significant portion of your project was still written by you. Obviously if you copy/paste the whole project — there will be bad consequences.  Similarly do not copy/paste from other students work. Discuss as much as you want, but do not copy.  
+The Internet will be a large source of information and help to you as you do your assignments in this class.  We want to encourage you to scour the internet / [stackoverflow](http://stackoverflow.com) for help, **but** you **must credit** any solutions you find in comments in your code specifying where you found them and what you took from them.  If you copy/paste code without attribution you are violating the Academic Honor Principle, and we hope you enjoy your 3 term vacation.  You will **not** be penalized for copied code as long as it is **properly attributed** and some significant portion of your project was still written by you. Obviously don't copy/paste the whole project.
+
+### Student Collaboration
+
+For the short assignments and the labs you may verbally collaborate as much as you want. However, the code that you commit (turn in), should be created, typed, documented, and output generated, by you. You may consult freely with instructors and classmates but you should work individually when actually coding. You should never copy code from other students. Your peers are not considered an authorized source. Discuss as much as you want, but do not copy. To do otherwise is a violation of the Academic Honor Principle. Any collaboration with another student should be documented in the comments.  Again no penalty for mentioning that you talked to somebody, but if you did talk to someone and your code is very similar to theirs this will raise questions, better to clarify upfront.
+
+## Citation Format
+
+Make your in-code citations look something like this:
+
+```
+// adapted from: http://stackoverflow.com/someurl
+// this method does x and y
+```
+
+(policy adapted from: https://integrity.mit.edu/handbook/writing-code)
+
 
 ## Special accommodations and Religious observances##
 
