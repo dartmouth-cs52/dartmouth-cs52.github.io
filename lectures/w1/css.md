@@ -30,10 +30,46 @@ Ok, enough fun.
 ## Selectors!
 
 
-
 CSS is a list of rules specifying how elements should be displayed. Each rule starts with a selector: a bit of text that selects some elements of the HTML.  When you gave your page structure you defined the elements that could be selected with CSS!
 
 ![anatomy of css rule](img/anatomy_of_css_rule.jpg)
+
+A selector can target elements in different ways:
+
+a tag name:
+
+```
+p {
+  color: blue;
+}
+```
+
+a class:
+
+```
+.classname {
+  color: pink;
+}
+```
+
+an id:
+
+```
+#elementid {
+  color: black;
+}
+```
+
+and any of the above plus special keywords such as `hover` which refers to the state something is when your mouse hovers over it:
+
+```
+p:hover {
+  color: orange;
+}
+```
+
+
+### Classes and Ids?
 
 What happens if you have multiple elements that you want styled differently!
 
@@ -45,11 +81,15 @@ You can use the `class` and `id` attributes.
 <p id="username">A unique username paragraph</p>
 ```
 
-By adding an `id` to an element you give it what should be a unique identifier on your page.  This is useful for elements that have a special role where there is really only just 1 of them on the page — *primary_navbar* or *username_field*, etc.
+By adding an `id` to an element you give it what should be a unique identifier on your page.  This is useful for elements that have a special role where there is really only just 1 of them on the page — *primary_navbar* or *username_field*, etc. The `id` is assigned a string identifier.
 
-By adding a `class` to an element you are saying it belongs to set of elements that should be styled a particular way. Where styled really means selected.
+By adding a `class` to an element you are saying it belongs to set of elements that should be styled a particular way. Where styled really means selected. The `class` property is assigned a space separated quoted string with potentially multiple classes. `class="aclass"` but also `class="aclass anotherclass"` this is convenient as you can have one element belong to multiple style classes, inheriting styles from each!  
 
-Additionally.  You can use the `<div></div>` and `<span></span>` elements in your HTML as elements that come with no default meaning in HTML. What is the difference?
+The result of all of this.  Define your style information once and use it in many places.
+
+### DIV and SPAN
+
+You can use the `<div></div>` and `<span></span>` elements in your HTML as elements that come with no default meaning in HTML. What is the difference?
 
 [`div` elements (divisions)](http://www.w3schools.com/tags/tag_div.asp) take up space by default because browsers give them the following CSS: `display: block;`
 
@@ -57,9 +97,7 @@ Additionally.  You can use the `<div></div>` and `<span></span>` elements in you
 
 <!-- TODO: move to HTML? -->
 
-The result of all of this.  Define your style information once and use it in many places.
-
-Lets play with some selectors and colors:
+### Simple Example With Selectors and Colors
 
 <p data-height="400" data-theme-id="24117" data-slug-hash="a54aae158ba02e5e4cfe33c089277603" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/a54aae158ba02e5e4cfe33c089277603/">a54aae158ba02e5e4cfe33c089277603</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
@@ -71,8 +109,7 @@ Note: I cheated in the above example and included some magic for that font.
 
 The [default fonts](http://www.w3schools.com/css/css_font.asp) that browsers support are a bajillion years old.  Please don't design your pages with Times New Roman.
 
-Best way to get prettier fonts is to use [Google Fonts](https://www.google.com/fonts)
-Simple choose a font you want and Google gives you a stylesheet to include in the head of your HTML.
+Best way to get prettier fonts is to use [Google Fonts](https://www.google.com/fonts). Simply choose a font you want and Google gives you a stylesheet to include in the head of your HTML.
 
 Here's Open Sans (a lovely simple font):
 
@@ -129,6 +166,27 @@ There are 3 ways to include CSS styles in your page.
 ```
 
 
+## Position, the old way
+
+<p data-height="400" data-theme-id="24117" data-slug-hash="cc696879a64585dc629b27fba80c183d" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/cc696879a64585dc629b27fba80c183d/">floats</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+The [`float` CSS property](http://www.w3schools.com/css/css_float.asp) specifies that an element should be taken from the normal flow and placed along the left or right side of its container. Text or other inline elements will wrap around it.
+
+Floating can get tricky.  There is also a [`clear` CSS property](http://www.w3schools.com/css/css_float.asp) to control which elements should *not* float.
+
+## Flexbox!
+
+Positioning used to be miserable. With CSS3 [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) make things much better.
+
+Flexboxes are worth learning. Here's a simple playable example.
+
+<p data-height="505" data-theme-id="24117" data-slug-hash="03b6b8b6dace6d8f7c666514ac66bead" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/03b6b8b6dace6d8f7c666514ac66bead/">simple flexbox</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+Want to learn more?
+**go play this now** [FLEXBOX TOWER DEFENCE GAME](http://www.flexboxdefense.com/)
+
+[This](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) has good examples also.
+
 
 ## Precedence and Cascading
 
@@ -149,6 +207,11 @@ Imagine the situation where there's a nice set of CSS styles that you'd like to 
 
 
 
+## Further Learning: Use the Source, Luke ([UTSL](https://en.wikipedia.org/wiki/UTSL))
+
+One way to both see how things are done and also to test out changes is to the use the Inspector!
+
+TODO:  add inspector tutorial here
 
 
 
