@@ -11,13 +11,14 @@ The Web is a powerful delivery tool for complex real-time applications. This is 
 
 By the end of term, you will:
 
-  - understand the fundamental concepts of web application development
-  - know the state of the art tools and frameworks used to build web technologies
+  - use your knowledge of the fundamental concepts and best practices of web application development to design web systems from the ground up
+  - utilize state of the art tools and frameworks used to build web technologies
   - build your own web applications with front-end UIs and server-side APIs
 
 Topics include: static pages, Internet protocols, layout, markup, event-driven asynchronous programming, deployment, security, scalability, and user experience.
 
 Prerequisites: CS10 or permission of [instructor](mailto:tim@cs.dartmouth.edu)
+
 
 ## Coursework:
 
@@ -27,26 +28,67 @@ See [assignments](/assignments).
 
 ## Schedule:
 
-Class:
+### Class:
 
   - 2A Classes will meet Tuesday and Thursday on the new schedule (2:25-4:15pm).<br>
   - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours for lab assignments.<br>
-  - Location: TBD
+  - Location: Carson 61  (limited space to <40)
 
-Office Hours:
+### Office Hours and Contact:
 
-  - Instructor:
-    - [Tim Tregubov](mailto:tim@cs.dartmouth.edu) (@tim on Slack)
-    - Mon 12-1pm, 4-5pm; or by appointment in Sudikoff 219/143
-  - TAs:
-    - TBD
+  - We'll be using Slack for most communication. Find us there!
+
+  - Instructor:<br>
+    Mon 12-1pm, 4-5pm; or by appointment in Sudikoff 219/143
+
+<table>
+  <tr>
+    <td>
+      <img class="profile" src="imgs/tt_profile.jpg" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="mailto:tim@cs.dartmouth.edu">Tim Tregubov</a><br>
+      <a href="https://cs52-dartmouth.slack.com/messages/@tim/">@tim</a>
+    </td>
+  </tr>
+</table>
+
+
+  - TAs:<br>
+    Wed 4:35-5:25pm during X-hour or by appointment in Sudikoff.
+
+<table >
+  <tr>
+    <td><img class="profile" src="imgs/sb_profile.jpg" /></td>
+    <td><img class="profile" src="imgs/xm_profile.jpg" /></td>
+    <td><img class="profile" src="imgs/yt_profile.jpg" /></td>
+  </tr>
+  <tr>
+    <td><a href="mailto:Suman.K.Bera.GR@dartmouth.edu">Suman Bera</a><br>
+    <a href="https://cs52-dartmouth.slack.com/messages/@sumanbera/">@sumanbera</a>
+    </td>
+    <td><a href="mailto:Xing.Meng.GR@dartmouth.edu">Xing Meng</a><br>
+    <a href="https://cs52-dartmouth.slack.com/messages/@xing/">@xing</a>
+    </td>
+    <td><a href="mailto:Yuan.Tian.GR@dartmouth.edu">Yuan Tian</a><br>
+    <a href="https://cs52-dartmouth.slack.com/messages/@yvonne/">@yvonne</a>
+    </td>
+  </tr>
+</table>
+
 
 
 Half of each class will be hands-on demonstrations, code and project discussions, and exercises.  See [schedule](/schedule).
 
 ## Lectures:
 
-Will be interactive.  See [lectures](/lectures).
+Will be hands-on and interactive.  See [lectures](/lectures).
+
+Unfortunately due to the nature of the class and our classroom size, auditing the class will not be permitted. All class material will be posted here online though!
+
+<!-- Additionally [DALI Lab Open Lab Nights](http://dali.dartmouth.edu/news-posts/dali-open-lab-hours) are a good time to get help with webdev from myself and DALI mentors. -->
 
 ## Logistics:
 

@@ -4,4 +4,6 @@ title: Resources
 permalink: /resources/
 ---
 
-[Travis CI Guide](travis)
+coming soon
+
+<!-- [Travis CI Guide](travis) -->
