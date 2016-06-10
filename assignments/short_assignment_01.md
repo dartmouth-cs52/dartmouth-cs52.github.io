@@ -76,7 +76,7 @@ and lets register you a domain!
 
 ![](imgs/sa01/check.png){: .fancy }
 
-🚀I'm going to grab one for cs25 now too!
+🚀I'm going to grab one for cs52 now too!
 
 ![](imgs/sa01/buy.png){: .fancy .small }
 
