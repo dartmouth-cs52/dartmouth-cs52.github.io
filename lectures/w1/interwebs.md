@@ -15,13 +15,13 @@ Well technically perhaps you can think of electrical and optical lines as tubes,
 
 Here is map of the submarine optical cables that provide internet connectivity globally. Note: most internet runs over physical cables, satellite is used only for remote areas and has a very high latency.
 
-![](img/submarine_cables.jpg)
+![](img/submarine_cables.jpg){: .fancy }
 (from [submarinecablemap.com](http://www.submarinecablemap.com/))
 
-![](img/connectivity2012.jpg)
+![](img/connectivity2012.jpg){: .fancy }
 (from [Chris Harrison](http://chrisharrison.net/index.php/Visualizations/InternetMap))
 
-![](img/facebook_map.jpg)
+![](img/facebook_map.jpg){: .fancy }
 (from [Paul Butler](https://gigaom.com/2010/12/14/facebook-draws-a-map-of-the-connected-world/))
 
 The FB map is more of a social graph but does show internet connected Facebook users. Notice anything interesting missing?
@@ -80,7 +80,7 @@ Note: this [Internet Protocol Stack](https://en.wikipedia.org/wiki/Internet_prot
 
 As data is passed down the layers it is encapsulated with additional layer specific headers. Here is a simplified view of the data packet as it passes down the stack.
 
-![](img/encapsulation.jpg)
+![](img/encapsulation.jpg){: .small }
 
 ### Internet Data Flow
 
@@ -242,7 +242,7 @@ HTTP has various text commands to form the requests.
 
 We'll learn a bunch more about these when we cover REST APIs.
 
-![](img/http_get.png)
+![](img/http_get.png){: .fancy  }
 
 💻 Want to try it?
 
