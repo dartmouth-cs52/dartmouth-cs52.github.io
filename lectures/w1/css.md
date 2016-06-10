@@ -18,11 +18,11 @@ The next step is to explore how to do style!
 
 ## Enter CSS
 
-![](http://i.giphy.com/5pxnxdzdZfXFK.gif)
+![](http://i.giphy.com/5pxnxdzdZfXFK.gif){: .fancy .small }
 
 CSS will be friend and foe this term.  Certain things will be easy, certain things will feel impossible.  Try to vertically align something. We will conquer this though.
 
-![](img/css_mess.jpg)
+![](img/css_mess.jpg){: .fancy }
 
 Ok, enough fun.
 

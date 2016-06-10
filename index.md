@@ -44,7 +44,7 @@ See [assignments](/assignments).
 <table>
   <tr>
     <td>
-      <img class="profile" src="imgs/tt_profile.jpg" />
+      <img class="profile fancy" src="imgs/tt_profile.jpg" />
     </td>
   </tr>
   <tr>
@@ -61,9 +61,9 @@ See [assignments](/assignments).
 
 <table >
   <tr>
-    <td><img class="profile" src="imgs/sb_profile.jpg" /></td>
-    <td><img class="profile" src="imgs/xm_profile.jpg" /></td>
-    <td><img class="profile" src="imgs/yt_profile.jpg" /></td>
+    <td><img class="profile fancy" src="imgs/sb_profile.jpg" /></td>
+    <td><img class="profile fancy" src="imgs/xm_profile.jpg" /></td>
+    <td><img class="profile fancy" src="imgs/yt_profile.jpg" /></td>
   </tr>
   <tr>
     <td><a href="mailto:Suman.K.Bera.GR@dartmouth.edu">Suman Bera</a><br>

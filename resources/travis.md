@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Travis CI Guide
-published: false
+published: true
 ---
 
 ## Guide to setting up TravisCI, linters, and githooks for your Github Repo
