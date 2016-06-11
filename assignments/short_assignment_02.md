@@ -5,8 +5,5 @@ published: false
 ---
 
 
-Collaborative coding using proper git flow and static webpage deployment (hosting and dns).  Git tree structure and code diff’ing will help students navigate version control systems.
-
-
-
-![](imgs/square.png) indicates a step to do.
+Start Here:
+[16X-git-map](https://github.com/dartmouth-cs52/16X-git-map)

@@ -26,19 +26,23 @@ CSS will be friend and foe this term.  Certain things will be easy, certain thin
 
 Ok, enough fun.
 
-
-## Selectors!
-
+## CSS Rules
 
 CSS is a list of rules specifying how elements should be displayed. Each rule starts with a selector: a bit of text that selects some elements of the HTML.  When you gave your page structure you defined the elements that could be selected with CSS!
 
+
 ![anatomy of css rule](img/anatomy_of_css_rule.jpg)
+
+
+### Selectors!
+
+
 
 A selector can target elements in different ways:
 
 a tag name:
 
-```
+```css
 p {
   color: blue;
 }
@@ -46,7 +50,7 @@ p {
 
 a class:
 
-```
+```css
 .classname {
   color: pink;
 }
@@ -54,56 +58,51 @@ a class:
 
 an id:
 
-```
+```css
 #elementid {
   color: black;
 }
 ```
 
+combinations:
+
+```css
+p.classname {...} /* element with class */
+p.classname a {...} /* element that is inside of element.class */
+p, a, .classname {...} /* multiple selectors */
+```
+
+### Pseudo Selectors
+
 and any of the above plus special keywords such as `hover` which refers to the state something is when your mouse hovers over it:
 
-```
+```css
 p:hover {
   color: orange;
 }
+a:link { color: blue;}
+a:visited { color: purple;}
 ```
-
-
-### Classes and Ids?
-
-What happens if you have multiple elements that you want styled differently!
-
-You can use the `class` and `id` attributes.
-
-```
-<p class="fancy">Some fancy paragraph formatting</p>
-
-<p id="username">A unique username paragraph</p>
-```
-
-By adding an `id` to an element you give it what should be a unique identifier on your page.  This is useful for elements that have a special role where there is really only just 1 of them on the page — *primary_navbar* or *username_field*, etc. The `id` is assigned a string identifier.
-
-By adding a `class` to an element you are saying it belongs to set of elements that should be styled a particular way. Where styled really means selected. The `class` property is assigned a space separated quoted string with potentially multiple classes. `class="aclass"` but also `class="aclass anotherclass"` this is convenient as you can have one element belong to multiple style classes, inheriting styles from each!  
-
-The result of all of this.  Define your style information once and use it in many places.
-
-### DIV and SPAN
-
-You can use the `<div></div>` and `<span></span>` elements in your HTML as elements that come with no default meaning in HTML. What is the difference?
-
-[`div` elements (divisions)](http://www.w3schools.com/tags/tag_div.asp) take up space by default because browsers give them the following CSS: `display: block;`
-
-[`span` elements](http://www.w3schools.com/tags/tag_span.asp) have no default style and can be used inline with other tags.  For instance to separate a word from a sentence.
-
-<!-- TODO: move to HTML? -->
 
 ### Simple Example With Selectors and Colors
 
 <p data-height="400" data-theme-id="24117" data-slug-hash="a54aae158ba02e5e4cfe33c089277603" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/a54aae158ba02e5e4cfe33c089277603/">a54aae158ba02e5e4cfe33c089277603</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-Actually if you want a real CSS Selector Game play:  [CSS Diner](http://flukeout.github.io/)
-
 Note: I cheated in the above example and included some magic for that font.
+
+Computers display color using red, green, and blue color light.  Each color intensity is defined by a byte — thus an unsigned integer value of 0-255 (2^8 -1).
+When you specify a color on the web there are several ways to do so:
+
+* Predefined names: red, blue, green, white, etc.
+* 8-bit hexadecimal numbers for red, green, blue: <span style="color:#cc0000">#cc0000</span>
+* 0-255 decimal intensities: <span style="color:rgb(150,0,150)">rgb(150,0,150)</span>
+* Percentage intensities: <span style="color:rgb(20%,80%,20%)">rgb(50%,50%,100%)</span>
+
+And a special case with transparency:  <span style="color:rgba(0,0,255,.5)">rgba(0,0,255,.5)</span>
+
+## CSS Game Time
+
+CSS Selector Game — Play this to become a pro!  [CSS Diner](http://flukeout.github.io/)
 
 ## Fonts
 
@@ -116,7 +115,7 @@ Here's Open Sans (a lovely simple font):
 `<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>`
 
 and use:
-```
+```css
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -134,7 +133,7 @@ There are 3 ways to include CSS styles in your page.
 * CSS Preprocessor Magics:  is actually best, we'll look into this more later. See: [SASS](http://sass-lang.com/)
 
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -165,8 +164,45 @@ There are 3 ways to include CSS styles in your page.
 </html>
 ```
 
+## Position
 
-## Position, the old way
+### z-index: -1
+
+![](img/position/z-index.gif)
+
+Similar to layers and allows elements to be ordered. Parameter: signed integer
+
+### position: static
+
+![](img/position/static.gif)
+
+Default position.  Elements take up space next to each other within the document flow. No position properties like `top`, `right`, `bottom`, `left` take effect.
+
+### position: relative
+
+![](img/position/relative.gif)
+
+Position is relative to default (ie. parent within document flow) via `top`, `right`, `bottom`, `left` properties.
+
+### position: absolute
+
+![](img/position/absolute.gif)
+
+Position is relative to the nearest absolute parent element via `top`, `right`, `bottom`, `left` properties. Element is removed from document so other elements ignore it.
+
+### position: fixed
+
+![](img/position/fixed.gif)
+
+Position is relative to the screen via `top`, `right`, `bottom`, `left` properties. Otherwise similar to absolute.
+
+Position 0,0 is the top left corner.  
+
+(animated gifs from [FROONT](http://blog.froont.com/positioning-in-web-design/))
+
+For more detailed examples: [css-tricks](https://css-tricks.com/almanac/properties/p/position/)
+
+## Alignment Between Elements, the old way
 
 <p data-height="400" data-theme-id="24117" data-slug-hash="cc696879a64585dc629b27fba80c183d" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/cc696879a64585dc629b27fba80c183d/">floats</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
@@ -174,16 +210,17 @@ The [`float` CSS property](http://www.w3schools.com/css/css_float.asp) specifies
 
 Floating can get tricky.  There is also a [`clear` CSS property](http://www.w3schools.com/css/css_float.asp) to control which elements should *not* float.
 
-## Flexbox!
 
-Positioning used to be miserable. With CSS3 [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) make things much better.
+## Flexbox, the new way
+
+Alignment used to be miserable. With CSS3 [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) make things much better.
 
 Flexboxes are worth learning. Here's a simple playable example.
 
 <p data-height="505" data-theme-id="24117" data-slug-hash="03b6b8b6dace6d8f7c666514ac66bead" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/03b6b8b6dace6d8f7c666514ac66bead/">simple flexbox</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 Want to learn more?
-**go play this now** [FLEXBOX TOWER DEFENCE GAME](http://www.flexboxdefense.com/)
+**go play this now** [FLEXBOX TOWER DEFENSE GAME](http://www.flexboxdefense.com/)
 
 [This](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) has good examples also.
 
@@ -206,13 +243,57 @@ Imagine the situation where there's a nice set of CSS styles that you'd like to 
 (from: [Zacky Pickholz](https://www.linkedin.com/pulse/most-important-css-rule-you-might-have-missed-zacky-pickholz))
 
 
+## CSS Box Model
+
+Every element on the page is a box.  Each box has several properties that define various spacing parameters:
+
+* margin: defines the spacing **around** the element
+* border: defines thickness of a border line
+* padding: defines the spacing *inside* of the element between the border and the contents (can be text of children elements)
+* width/height:  define the size of the element contents — important to understand that this size does not include the totals
+
+![box model](img/box_model.png)
+
+
+## Size Units
+
+* em	Relative to the font-size of the element (2em means 2 times the size of the current font)
+* ex	Relative to the x-height of the current font (rarely used)
+* ch	Relative to width of the "0" (zero)
+* rem	Relative to font-size of the root element
+* vw	Relative to 1% of the width of the viewport
+* vh	Relative to 1% of the height of the viewport
+* vmin	Relative to 1% of viewport's* smaller dimension
+* vmax	Relative to 1% of viewport's* larger dimension
+
+(from [css_units](http://www.w3schools.com/cssref/css_units.asp))
+
+<p data-height="396" data-theme-id="24117" data-slug-hash="GqoPMW" data-default-tab="html,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/GqoPMW/">Testing of Length units</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+## Element Visibility
+
+There are multiple ways to show and hide elements:
+
+* `display: none;` element is not displayed and takes no space in layout
+* `display: inline;` element is inlined (like spans)
+* `display: block;` element is a block (like divs)
+
+* `visibility: hidden;` element is not displayed but space still allocated
+* `visibility: visible;` element is displayed
+
+* `opacity: 0.5;` element is displayed with transparency and takes up space
+
+
 
 ## Further Learning: Use the Source, Luke ([UTSL](https://en.wikipedia.org/wiki/UTSL))
 
-One way to both see how things are done and also to test out changes is to the use the Inspector!
 
-TODO:  add inspector tutorial here
+One way to both see how things are done and also to test out changes is to the use the [Inspector](https://developer.chrome.com/devtools)!
 
+<!--TODO: link Inspector -->
+
+[This](http://learn.shayhowe.com/html-css/) is also a good resource.
 
 
 [Stanford:CS142]: http://web.stanford.edu/class/cs142/  "Stanford CS142 Class"

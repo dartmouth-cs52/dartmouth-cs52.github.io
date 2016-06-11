@@ -52,7 +52,7 @@ Yes a tree!  Pretty much everything in this course is going to be a tree! :decid
 This is important and we'll dive deeper into this next week.
 
 
-## HTML Syntax In a NutShell
+## HTML Syntax In a NutShell 🌰
 
 * Must be a hierarchical collection of elements, starting with `<html>`
 * Elements have a start tag, contents, and end tag.
@@ -140,7 +140,7 @@ Note: if you wanted `http://www.domainname.com/asssets/image.jpg` in the above c
 
 So far everything we've looked at has been snippets.  The full HTML document has just a few more default tags.
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -158,8 +158,68 @@ So far everything we've looked at has been snippets.  The full HTML document has
 
 So far we've only talked about **STRUCTURE** but it all looks so boring. How do I make it pretty with colors?!
 
-[CSS!](css)
-
-There was a time before CSS however, when everything about a webpage was defined inline.
+Hold on, there was a time before CSS however, when everything about a webpage was defined inline.
 
 Lets take a trip through time!
+
+
+![](img/original-amazon.jpg){: .fancy }<br>
+original amazon (1995)
+
+![](img/google-backrub.png){: .fancy }<br>
+google backrub (1996)
+
+![](img/google-after-backrub.png){: .fancy }<br>
+google after backrub (1997)
+
+![](img/original-apple.jpg){: .fancy }<br>
+apple 1997
+
+![](img/original-ebay.gif){: .fancy }<br>
+ebay 1996
+
+![](img/youtube2005.png){: .fancy }<br>
+youtube 2005
+
+![](img/facebook2004.png){: .fancy }<br>
+facebook 2004
+
+![](img/origina-twitter.png){: .fancy }<br>
+twitter!
+
+Here's a review through time!
+<iframe src="http://fabianburghardt.de/webolution/" width="100%" height="650px"></iframe>
+
+
+### Classes and IDs
+
+While we are discussing structure over style.  What happens if you want to label something semantically when a tag for that thing doesn't exist? What if you want a *fancy* paragraph,  or a profile link that is different from a normal paragraph or link.
+
+Easy peasy lemon squeezy. 🍋 You can use the `class` and `id` attributes.
+
+```html
+<p class="fancy">Some fancy paragraph formatting</p>
+
+<a id="username" hre="...">A unique username link</a>
+```
+
+By adding an `id` to an element you give it what should be a unique identifier on your page.  This is useful for elements that have a special role where there is really only just 1 of them on the page — *primary_navbar* or *username_field*, etc. The `id` is assigned a string identifier.
+
+By adding a `class` to an element you are saying it belongs to set of elements that should be styled a particular way. Where styled really means selected. The `class` property is assigned a space separated quoted string with potentially multiple classes. `class="aclass"` but also `class="aclass anotherclass"` this is convenient as you can have one element belong to multiple style classes, inheriting styles from each!  
+
+The result of all of this.  Define your style information once and use it in many places.
+
+### DIV and SPAN
+
+But too many elements come with some sort of default styling, are there generic elements?
+
+You can use the `<div></div>` and `<span></span>` elements in your HTML as elements that come with no default meaning in HTML. What is the difference?
+
+[`div` elements (divisions)](http://www.w3schools.com/tags/tag_div.asp) take up space by default because browsers give them the following CSS: `display: block;`
+
+[`span` elements](http://www.w3schools.com/tags/tag_span.asp) have no default style and can be used inline with other tags.  For instance to separate a word from a sentence.
+
+
+## Next Time
+
+Everything you wanted to know about making things look pretty.

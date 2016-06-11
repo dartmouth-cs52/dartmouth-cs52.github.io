@@ -8,6 +8,3 @@ published: false
 some javascript
 
 http://eloquentjavascript.net
-
-
-![](imgs/square.png) indicates a step to do.
