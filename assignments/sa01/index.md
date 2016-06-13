@@ -74,18 +74,18 @@ We'll use NameCheap as our registrar.  Namecheap is a good [net citizen](https:/
 🚀go to: https://nc.me/
 and lets register you a domain!
 
-![](imgs/sa01/check.png){: .fancy }
+![](img/check.png){: .fancy }
 
 🚀I'm going to grab one for cs52 now too!
 
-![](imgs/sa01/buy.png){: .fancy .small }
+![](img//buy.png){: .fancy .small }
 
 🚀When prompted choose Github Pages Setup
-![](imgs/sa01/choose_github_pages.png){: .fancy .small }
+![](img//choose_github_pages.png){: .fancy .small }
 
 🚀Great, now we'll do the rest of the setup manually so when prompted to setup github — instead to do advance setup.
 
-![](imgs/sa01/justclickhere.png){: .fancy .small }
+![](img//justclickhere.png){: .fancy .small }
 
 ## Create a GitHub Repo
 
@@ -93,7 +93,7 @@ and lets register you a domain!
 
 🚀 create a new repo for your domain, probably best to name it with your domain name.
 
-![](imgs/sa01/create_repo.png){: .fancy .small }
+![](img//create_repo.png){: .fancy .small }
 
 Grab the URL for the repository (either SSH or HTML depending on how you have git setup.  If SSH gives you trouble just try HTML.)
 
@@ -118,7 +118,7 @@ Checking connectivity... done.
 ```
 🚀basically just start Atom and create a file called `index.html` in your cloned workspace.
 
-![](imgs/sa01/index_html.png){: .fancy .small }
+![](img//index_html.png){: .fancy .small }
 
 
 ### Test Locally
@@ -133,7 +133,7 @@ Serving HTTP on 0.0.0.0 port 9000 ...
 
 Lets check out what we have made: http://localhost:9000
 
-![](imgs/sa01/localhost.png){: .fancy .small }
+![](img//localhost.png){: .fancy .small }
 
 Note: to quit the python server type: ctrl+c
 (this is a default for many commandline processes).
@@ -202,9 +202,9 @@ By default GitHub Pages, when it sees a branch named `gh-pages`, will publish it
 
 You can make sure of this by going to Settings for your repository.
 
-![settings](imgs/sa01/settings.png){: .fancy .small }
+![settings](img//settings.png){: .fancy .small }
 
-![default hosting](imgs/sa01/default_hosting.png){: .fancy .small }
+![default hosting](img//default_hosting.png){: .fancy .small }
 
 
 ### CNAME hosting
@@ -213,7 +213,7 @@ But we want our domain!
 
 Ok. Add another file to your local workspace named `CNAME`.  Inside this file put in just one line with your domain name.
 
-![cname](imgs/sa01/cname.png){: .fancy .small }
+![cname](img//cname.png){: .fancy .small }
 
 🚀 Now you have to `git add` and `git commit` and `git push` this new file.  See [Git Add](#git-add) section (skip branching as thats a one time thing).
 
@@ -221,7 +221,7 @@ Ok. Add another file to your local workspace named `CNAME`.  Inside this file pu
 
 As soon as you `git push` your site should become available at your URL!
 
-![](imgs/sa01/done.png){: .fancy .small }
+![](img//done.png){: .fancy .small }
 
 
 ### What About DNS?!?!
@@ -230,7 +230,7 @@ You didn't actually have to do any DNS setup,  what happened?
 
 NameCheap set up all the right Domain Name Service Records automatically for you. In NameCheap you can inspect what it did:
 
-![](imgs/sa01/github_dns_already_setup.png){: .fancy .small }
+![](img//github_dns_already_setup.png){: .fancy .small }
 
 Take a look at your settings in your Namecheap Dashboard.
 

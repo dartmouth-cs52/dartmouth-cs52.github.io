@@ -289,11 +289,14 @@ There are multiple ways to show and hide elements:
 ## Further Learning: Use the Source, Luke ([UTSL](https://en.wikipedia.org/wiki/UTSL))
 
 
-One way to both see how things are done and also to test out changes is to the use the [Inspector](https://developer.chrome.com/devtools)!
+One way to both see how things are done and also to test out changes is to the use the [Inspector](https://developers.google.com/web/tools/chrome-devtools)!
 
 <!--TODO: link Inspector -->
 
-[This](http://learn.shayhowe.com/html-css/) is also a good resource.
+### More Resources
 
-
-[Stanford:CS142]: http://web.stanford.edu/class/cs142/  "Stanford CS142 Class"
+* [learn.shayhowe.com](http://learn.shayhowe.com/html-css/) is also a good resource.
+* [advanced-css-selectors-you-never-knew-about](https://medium.com/the-web-crunch-publication/advanced-css-selectors-you-never-knew-about-972d8275d079)
+* [css-tricks](https://css-tricks.com/)
+* [bootstrap](http://getbootstrap.com/)
+* [semantic-ui (an alternative to bootstrap that looks cool)](http://semantic-ui.com/)
