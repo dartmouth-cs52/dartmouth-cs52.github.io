@@ -4,9 +4,6 @@ title: unlinked development index
 ---
 
 
-workshops:
-
-* [collaborative git](https://github.com/dartmouth-cs52/16X-git-map)
 
 assignments:
 
@@ -17,9 +14,10 @@ assignments:
 * [hw1](assignments/hw01)
 * [hw2](assignments/hw02)
 * [hw3](assignments/hw03)
+* [hw4](assignments/hw04)
 
 
-lectures:
+lecture notes:
 
 * [01 interwebs](lectures/01_interwebs)
 * [02 html](lectures/02_html)
@@ -27,6 +25,18 @@ lectures:
 * [04 inspector](lectures/04_inspector)
 * [05 js](lectures/05_javascript)
 * [06 dom](lectures/06_dom)
+
+
+workshops:
+
+* [w01](workshops/w01)
+* [w02](workshops/w02)
+* [w03](workshops/w03)
+* [w04](workshops/w04)
+* [w05](workshops/w05)
+* [w06](workshops/w06)
+* [w07](workshops/w07)
+
 
 resources:
 
