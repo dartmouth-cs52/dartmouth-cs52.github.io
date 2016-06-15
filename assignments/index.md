@@ -9,7 +9,7 @@ title: Assignments
 - 4 short assignments: 10%
 *<br>These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
-- 4 weekly labs:  20%
+- 4 week-long labs:  20%
 *<br>Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
 - 4 short in-class quizzes:  16%

@@ -34,6 +34,8 @@ See [assignments](/assignments).
   - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours for lab assignments.<br>
   - Location: Carson 61  (limited space to <40)
 
+![](imgs/carson61.jpg){: .fancy }
+
 ### Office Hours and Contact:
 
   - We'll be using Slack for most communication. Find us there!

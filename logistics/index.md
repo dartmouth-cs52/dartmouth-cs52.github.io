@@ -7,9 +7,13 @@ title: Logistics
 ## <span style="color: #F27D00">WARNING! Preliminary syllabus subject to change without notice. Stay tuned!</span> ##
 
 
-## Textbook: ##
+## Textbook ##
 
 A collection of online resources will be used, but no textbook will be required.  Current blog posts and videos about the state of various technologies and best practices will be included in some assignments.  Peruse them to learn something.
+
+## Auditing ##
+
+Unfortunately due to the nature of the class and our classroom size, auditing the class will not be permitted. All class material will be posted here online though!
 
 ## Slack ##
 
@@ -19,17 +23,17 @@ We will use [Slack](http://slack.com), an online collaborative tool for most cla
 
 Grading of some collaborative team based work will be done based on GitHub pull requests.  Proper git flow will be introduced early on in the term.
 
-  - 3 short assignments: 10%
-  - 2 bi-weekly labs:  25%
-  - Short in-class quizzes:  15%
+  - 4 short assignments: 10%
+  - 4 week-long labs:  20%
+  - 4 short in-class quizzes:  16%
   - 1 group presentation and workshop: 10%
   - 1 final project:  30%
-  - Participation:  5%
+  - Participation:  9%
   - Peer mentoring: 5%
 
 ## Software ##
 
-We will use open source development tools and frameworks.  Note: These will work on OS X and Linux. For Windows they can also be done on a cloud based IDE (details in short assignment 1).
+We will use open source development tools and frameworks.  Note: These will work out of the box in macOS and Linux, and should work ok with a bit of coercion in Windows (tested in Win10).  (details in short assignment 1)
 
 ## Honor principle -- Not your standard warning! ##
 
