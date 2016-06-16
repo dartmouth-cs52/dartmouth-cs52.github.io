@@ -6,6 +6,10 @@ title: unlinked development index
 
 # Dev Links
 
+final project:
+
+* [milestones](assignments/project_milestones)
+
 assignments:
 
 * [sa1](assignments/sa01)
@@ -23,20 +27,20 @@ lecture notes:
 * [01 interwebs](lectures/01_interwebs)
 * [02 html](lectures/02_html)
 * [03 css](lectures/03_css)
-* [04 inspector](lectures/04_inspector)
+* [04 debugging and hosting](lectures/04_debugging_and_hosting)
 * [05 js](lectures/05_javascript)
 * [06 dom](lectures/06_dom)
 
 
 workshops:
 
-* [w01](workshops/w01)
-* [w02](workshops/w02)
-* [w03](workshops/w03)
-* [w04](workshops/w04)
-* [w05](workshops/w05)
-* [w06](workshops/w06)
-* [w07](workshops/w07)
+* [w1](workshops/w1)
+* [w2](workshops/w2)
+* [w3](workshops/w3)
+* [w4](workshops/w4)
+* [w5](workshops/w5)
+* [w6](workshops/w6)
+* [w7](workshops/w7)
 
 
 resources:

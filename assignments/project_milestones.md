@@ -10,14 +10,21 @@ published: true
 The last 3 weeks of class will be dedicated to a group project.  This will be a project of your own devising, built from the ground up (but as always libraries/apis are allowed).  There are required components that you have to build as well a bunch of milestones. Best practices, group dynamics, agile, etc will all be on the menu.
 
 
-## Milestone Summary
+## Milestones At a Glance
 
-* Pitch Proposals (due 7/21/2016):  This will be your chance to submit an idea that you would like to pitch.  As the person submitting the idea you'll need to think a little bit about scope and feasibility.  Deliverables: proposal form.
-* Pitch Presentation (8/2/2016):  A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class. Deliverables: pitch deck.
-* Feature Spec
-Scaffolding + Mockups
-Dev Site Up (client+server)
+* Pitch Proposals (due 7/21/2016):  This will be your chance to submit an idea that you would like to pitch.  As the person submitting the idea you'll need to think a little bit about scope and feasibility.  Deliverables: proposal form.<br>
+  ![](http://i.giphy.com/IH3ZwYeR9AlP2.gif){: .fancy .tiny}
+* Pitch Presentation (7/28/2016):  A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class. Deliverables: pitch deck.<br>
+  ![](http://i.giphy.com/nldqZAXfXH6I8.gif){: .fancy .tiny}
+* Feature Spec (8/2/2016):  A walk-though of your project from the users perspective listing out every feature that it should have.<br>
+  ![](http://i.giphy.com/13NR9a0aYuYMy4.gif){: .fancy .tiny}
+* Scaffolding + Mockups (8/9/2016):  Mockups/Sketches of your project and initial code scaffolding started with a component plan and tools and frameworks chosen.<br>
+  ![](http://i.giphy.com/GWbMbUysgsIda.gif){: .fancy .tiny}
+* Dev Site Up (client+server) (8/11/2016):  Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).<br>
+  ![](http://i.giphy.com/IU9JNuUSmxZTy.gif){: .fancy .tiny}
+* Progress Presentations (8/16/2016):  Presentations in class on progress, soliciting feedback.<br>
+  ![](http://i.giphy.com/gPLD7lIdSo3Pq.gif){: .fancy .tiny}
+* Final Project Demo (8/23/2016):  Final presentation of project. Open to public. Motivate the idea, show it in action, discuss challenges and any user testing.<br>
+  ![](http://i.giphy.com/p9O75RBS946He.gif){: .fancy .tiny}
 
-Progress Presentations
-
-Project Presentations
+### <span style="color: #F27D00">Dates approximate and may be adjusted</span> ##

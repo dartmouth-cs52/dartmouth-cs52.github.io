@@ -184,7 +184,7 @@ youtube 2005
 ![](img/facebook2004.png){: .fancy }<br>
 facebook 2004
 
-![](img/origina-twitter.png){: .fancy }<br>
+![](img/original-twitter.png){: .fancy }<br>
 twitter!
 
 Here's a review through time!
