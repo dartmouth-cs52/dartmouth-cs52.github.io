@@ -261,7 +261,7 @@ Lets play out a scenario.
 
 If you don't read Hacker News, you should. So lets pull up a hacker news page. For simplicity let's leave out routing.
 
-![](img/internet.jpg)
+![](img/internet.png)
 
 _Human:_
 

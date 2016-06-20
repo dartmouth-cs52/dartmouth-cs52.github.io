@@ -16,6 +16,7 @@ assignments:
 * [sa2](assignments/sa02)
 * [sa3](assignments/sa03)
 
+* [hw0](assignments/hw00)
 * [hw1](assignments/hw01)
 * [hw2](assignments/hw02)
 * [hw3](assignments/hw03)
