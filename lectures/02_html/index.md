@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Week 1 — HTML/CSS
+title: HTML
 published: true
 ---
 

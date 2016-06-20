@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Week 1 — HTML/CSS
+title: CSS
 published: true
 ---
 
@@ -231,7 +231,7 @@ CSS is named the way it is because is each style sheet applies in a cascading ma
 
 ![css cascade](img/simple_precedence.png)
 
-Imagine the situation where there's a nice set of CSS styles that you'd like to use in your site. For instance [Bootstrap](http://getbootstrap.com) is a well know CSS framework but you need to customize and override some things.  You'd add in your own stylesheet to load later and the styles would apply on top of the previous ones. The precendence order is a bit more complicated:
+Imagine the situation where there's a nice set of CSS styles that you'd like to use in your site. For instance [Bootstrap](http://getbootstrap.com) is a well know CSS framework but you need to customize and override some things.  You'd add in your own stylesheet to load later and the styles would apply on top of the previous ones. The precedence order is a bit more complicated:
 
 * The more specific our selector is the higher its weight (e.g. a selector having three classes will win a selector with two classes)
 * A more specific selector takes over a less specific one, regardless of the order in which they appear
@@ -285,13 +285,91 @@ There are multiple ways to show and hide elements:
 * `opacity: 0.5;` element is displayed with transparency and takes up space
 
 
+## Transitions
+
+CSS3 can do a lot of stuff.  Transitions, animations, and even 3D transforms.
+
+Here's a super fancy solar system simulation in CSS
+
+<p data-height="374" data-theme-id="24117" data-slug-hash="idhuG" data-default-tab="css,result" data-user="juliangarnier" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/juliangarnier/pen/idhuG/">CSS 3D Solar System</a> by Julian Garnier (<a href="http://codepen.io/juliangarnier">@juliangarnier</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+We won't do anything that fancy,  plus this isn't a real simulation, all the motions are hardcoded, no physics.
+
+### Transition Properties
+
+```css
+div {
+  transition-property: [property]
+  transition-duration: [duration];
+  transition-timing-function: [timing-function];
+  transition-delay: [delay];
+}
+/* or shorthand */
+div {
+  transition: [property] [duration] [timing-function] [delay];
+}
+
+```
+
+* property:  (required) the property of the element you want the transition to apply to. can be specific property like background-color, a list, or `all`.
+* duration:  (required) timespan in milliseconds or seconds units that the effect lasts.
+* timing-function: (optional) animation interpolation type: `linear`, `ease` (default), `ease-in`, `ease-out`, and `ease-in-out`.
+* delay: (optional) delay before the start of the animation in milliseconds or seconds units.
+
+
+<p data-height="400" data-theme-id="24117" data-slug-hash="598dcc037bd45c9e8c431646bd77a004" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/598dcc037bd45c9e8c431646bd77a004/">basic css transitions</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+## CSS 2D and 3D Transforms
+
+### Translate
+
+```
+transform: translate(x, y);
+transform: perspective(distance_from_view) translate3d(x, y, z);
+```
+
+A 2D translate in Y:
+
+<p data-height="254" data-theme-id="24117" data-slug-hash="6cf9da2f0cc4da333ea92ec37259d676" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/6cf9da2f0cc4da333ea92ec37259d676/">css pushbutton</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+### Rotate
+
+
+```css
+rotate(angle)	/* 2D rotation */
+rotate3d(x,y,z,angle)	/* 3D rotation with axis (with transform-origin )and rotation*/
+rotateX(angle) /* shorthand 3D along the X-axis */
+rotateY(angle) /* shorthand 3D along the X-axis */
+rotateZ(angle) /* shorthand 3D along the X-axis */
+```
+
+Here's a visualization of how the rotation works.  Note transform-origin is the default center of the object here, but it can be shifted. What happens when you do that?  Also note
+
+<p data-height="426" data-theme-id="24117" data-slug-hash="ed827936ca972890a167a2eacc8b8f28" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/ed827936ca972890a167a2eacc8b8f28/">3d rotation with angles</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+Here's an effect that may be a little over the top for daily use.
+
+<p data-height="353" data-theme-id="24117" data-slug-hash="c0bacc59c1a4f7bade4a52e10d87373c" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/c0bacc59c1a4f7bade4a52e10d87373c/">css card flip</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+Ok, that might be enough of 3D for one day! More demos can be found here:
+
+<iframe src="http://desandro.github.io/3dtransforms/examples/cube-02-show-sides.html" height="400" width="100%"></iframe>
+
+
+
 
 ## Further Learning: Use the Source, Luke ([UTSL](https://en.wikipedia.org/wiki/UTSL))
 
 
-One way to both see how things are done and also to test out changes is to the use the [Inspector](https://developers.google.com/web/tools/chrome-devtools)!
+CSS is huge.  There are just too many things to cover!
 
-<!--TODO: link Inspector -->
+One way to both see how things are done and also to test out changes is to the use the [Inspector](https://developers.google.com/web/tools/chrome-devtools)! and see how people are achieving certain effects.
+
+
 
 ### More Resources
 
@@ -300,3 +378,5 @@ One way to both see how things are done and also to test out changes is to the u
 * [css-tricks](https://css-tricks.com/)
 * [bootstrap](http://getbootstrap.com/)
 * [semantic-ui (an alternative to bootstrap that looks cool)](http://semantic-ui.com/)
+* [transitions and transforms](https://robots.thoughtbot.com/transitions-and-transforms)
+* [3d transforms](http://desandro.github.io/3dtransforms)

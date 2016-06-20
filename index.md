@@ -41,7 +41,7 @@ See [assignments](/assignments).
   - We'll be using Slack for most communication. Find us there!
 
   - Instructor:<br>
-    Mon 12-1pm, 4-5pm; or by appointment in Sudikoff 219/143
+    Mon 12-2pm, 4-5pm; Fri 11-1pm; or by appointment in Sudikoff 219/143
 
 <table>
   <tr>

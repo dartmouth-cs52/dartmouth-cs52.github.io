@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Week 1 — The Interwebs
+title: The Interwebs
 published: true
 ---
 
