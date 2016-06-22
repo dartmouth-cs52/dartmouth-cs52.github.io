@@ -200,8 +200,17 @@ You should host this on github pages as you have in the past with the `gh-pages`
   * be responsive with 1 narrow phone friendly version per the screenshots / demo
   * look reasonable :-)
 
-# Extra Credit
+## Extra Credit
 
 * Fancy CSS transition
 * CSS Checkbox Hack for the mobile version Menu
 * Link Headers utilizing the CSS Checkbox hack to expand!
+
+
+
+## Resources:
+
+* https://css-tricks.com
+* http://www.w3schools.com
+* https://philipwalton.github.io/solved-by-flexbox/
+* 

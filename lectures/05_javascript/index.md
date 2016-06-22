@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Week 2 — Javascript
+title: Javascript
 published: true
 ---
 
