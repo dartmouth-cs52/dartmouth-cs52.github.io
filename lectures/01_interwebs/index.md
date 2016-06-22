@@ -117,6 +117,21 @@ Publicly routable addresses are IPs that you can get to from anywhere.  All you 
 ![](img/3327.jpg)
 
 
+## Wait but PORTS!
+
+**URL=protocol+IP+port**<br>
+http://127.0.0.1:8000
+
+* 16bit number: 1-65535
+* services associate with a port number
+  * http: 80
+  * https: 443
+  * smtp: 25
+* part of TCP/UDP transport layer
+
+Ports allow a single machine to support many services. Each service opens a socket on a particular port.
+
+
 ## DNS ##
 
 :question: Ok, but question. I'm seeing all these numbers, but what about domain names? All I want is myname.com!
@@ -224,11 +239,14 @@ Want to see your local routing table on your laptop?
 
 ![](img/nat.png)
 
+Your router maps traffic going through it and rewrites them to different ports, keeping track of which machines internally correspond to which ports. When packets come back in it knows by the port number which private IP is responsible and rewrites the packets appropriately.
+
+
 ## HTTP! Finally!
 
-When your browser requests a page it does so via HTTP (HyperText Transfer Protocol).  Your browser happens to also support some other protocols which is why you'll see: http://webpagedomainnamestuff.tld
+When your browser requests a page it does so via HTTP (HyperText Transfer Protocol). Hence the `http://`.
 
-HTTP is a request-response protocol client-server application layer protocol.   The client (your browser for instance) initiates a request and the server (a webserver machine somewhere) responds.  HTTP uses TCP as it's underlying Transfer Layer protocol.
+HTTP is a request-response client-server application layer protocol.   The client (your browser for instance) initiates a request and the server (a webserver machine somewhere) responds.  HTTP uses TCP as it's underlying Transfer Layer protocol.
 
 HTTP is *stateless* so by default there is no tracking between requests and the server has no idea whether it has talked to the client previously.  We'll learn about ways to work around this such as session tokens and cookies later.
 

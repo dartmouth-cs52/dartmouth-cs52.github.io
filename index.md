@@ -38,7 +38,7 @@ See [assignments](/assignments).
 
 ### Office Hours and Contact:
 
-  - We'll be using Slack for most communication. Find us there!
+  - We'll be using [Slack](https://cs52-dartmouth.slack.com) for most communication. Find us there!
 
   - Instructor:<br>
     Mon 12-2pm, 4-5pm; Fri 11-1pm; or by appointment in Sudikoff 219/143
