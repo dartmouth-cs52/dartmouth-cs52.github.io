@@ -71,7 +71,7 @@ Lets start off the term right, with a domain of your own that you'll use through
 
 We'll use NameCheap as our registrar.  Namecheap is a good [net citizen](https://www.netneutrality.com/) and have free domains for students.
 
-🚀go to: https://nc.me/
+🚀go to: [https://nc.me/](https://nc.me/)
 and lets register you a domain!
 
 ![](img/check.png){: .fancy }
