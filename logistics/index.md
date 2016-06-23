@@ -4,9 +4,6 @@ title: Logistics
 ---
 
 
-## <span style="color: #F27D00">WARNING! Preliminary syllabus subject to change without notice. Stay tuned!</span> ##
-
-
 ## Textbook ##
 
 A collection of online resources will be used, but no textbook will be required.  Current blog posts and videos about the state of various technologies and best practices will be included in some assignments.  Peruse them to learn something.

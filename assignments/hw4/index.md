@@ -4,6 +4,9 @@ title: HW 3
 published: true
 ---
 
+## <span style="color: #F27D00">WARNING! Not finalized, stay tuned!</span> ##
+
+
 # Blog
 
 We'll build a React+Redux Blog Platform.

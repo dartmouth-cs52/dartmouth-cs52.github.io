@@ -3,8 +3,6 @@ layout: default
 title: Dartmouth CS52
 ---
 
-## <span style="color: #F27D00">WARNING! Preliminary syllabus subject to change without notice. Stay tuned!</span> ##
-
 ## Course Overview
 
 The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art (early 2016) of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.

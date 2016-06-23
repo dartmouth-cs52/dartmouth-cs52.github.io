@@ -12,15 +12,16 @@ final project:
 
 assignments:
 
-* [sa1](assignments/sa01)
-* [sa2](assignments/sa02)
-* [sa3](assignments/sa03)
+* [sa1](assignments/sa1)
+* [sa2](assignments/sa2)
+* [sa3](assignments/sa3)
 
-* [hw0](assignments/hw00)
-* [hw1](assignments/hw01)
-* [hw2](assignments/hw02)
-* [hw3](assignments/hw03)
-* [hw4](assignments/hw04)
+* [hw1](assignments/hw1)
+* [hw2](assignments/hw2)
+* [hw3](assignments/hw3)
+* [hw4](assignments/hw4)
+* [hw4](assignments/hw5)
+
 
 
 lecture notes:

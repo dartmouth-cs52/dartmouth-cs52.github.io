@@ -3,7 +3,7 @@ layout: page
 title: Schedule
 ---
 
-## <span style="color: #F27D00">WARNING! Preliminary syllabus subject to change without notice. Stay tuned!</span> ##
+## <span style="color: #F27D00">Schedule is approximate and adaptive!</span> ##
 
 # Term Overview
 

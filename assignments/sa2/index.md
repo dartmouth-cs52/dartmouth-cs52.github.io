@@ -4,6 +4,7 @@ title: Short Assignment 2
 published: true
 ---
 
+## <span style="color: #F27D00">WARNING! Not finalized, stay tuned!</span> ##
 
 Start here:
 [16X-git-map](https://github.com/dartmouth-cs52/16X-git-map)
