@@ -304,9 +304,9 @@ _Browser:_
 
 *ISP DNS Server:*
 
- > No idea, better ask someone more knowledge like the *ROOT DNS Servers*.
+> No idea, lemme ask someone who knows better, the *ROOT DNS Servers*.
 
-*Computer:*
+*ISP DNS Server:*
 
  > Hey *ROOT DNS Servers* whois responsible for ycombinator.com?
  `whois ycombinator.com`
@@ -315,7 +315,7 @@ _Browser:_
 
  > Better ask the *.COM DNS Servers*, they should know more.
 
-*Computer:*
+*ISP DNS Server:*
 
  > Hey *.COM DNS Servers*, what's the address for news.ycombinator.com?
 
@@ -323,7 +323,7 @@ _Browser:_
 
  > Oh, that was registered to Nicholas Sivo in 2005 and here's a list of *Hosts DNS Servers* that will know all about it.
 
-*Computer:*
+*ISP DNS Server:*
 
  > Ok now we're getting somewhere.
  > Hey *Hosts DNS Servers* what is the IP address for news.ycombinator.com.
@@ -332,7 +332,9 @@ _Browser:_
 
  > Sure thing boss, here it is: *198.41.191.47*
 
-*Computer hands address to Browser. Browser nods and gets back to work.*
+*ISP DNS Server hands address to Computer.*
+
+*Computer hands address to Browser, Browser nods and gets back to work.*
 
 *Browser:*
 

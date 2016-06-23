@@ -32,6 +32,28 @@ lecture notes:
 * [05 js](lectures/05_javascript)
 * [06 dom](lectures/06_dom)
 
+lecture slides:
+
+* [w1c1](/slides/w1c1)
+* [w2c1](/slides/w2c1)
+* [w2c2](/slides/w2c2)
+* [w3c1](/slides/w3c1)
+* [w3c2](/slides/w3c2)
+* [w4c1](/slides/w4c1)
+* [w4c2](/slides/w4c2)
+* [w5c1](/slides/w5c1)
+* [w5c2](/slides/w5c2)
+* [w6c1](/slides/w6c1)
+* [w6c2](/slides/w6c2)
+* [w7c1](/slides/w7c1)
+* [w7c2](/slides/w7c2)
+* [w8c1](/slides/w8c1)
+* [w8c2](/slides/w8c2)
+* [w9c1](/slides/w9c1)
+* [w9c2](/slides/w9c2)
+
+
+
 
 workshops:
 

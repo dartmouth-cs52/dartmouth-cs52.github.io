@@ -19,7 +19,7 @@ Unfortunately due to the nature of the class and our classroom size, auditing th
 
 We will use [Slack](http://slack.com), an online collaborative tool for most class messaging and help. Details in class. We will also write slack integrations!
 
-## Note about Grading ##
+## Grading ##
 
 Grading of some collaborative team based work will be done based on GitHub pull requests.  Proper git flow will be introduced early on in the term.
 
@@ -30,6 +30,11 @@ Grading of some collaborative team based work will be done based on GitHub pull 
   - 1 final project:  30%
   - Participation:  9%
   - Peer mentoring: 5%
+
+  * late penalty:
+    * -1% of assignment per hour
+    * 2 allowed re-submits (capped at 80%)
+
 
 ## Software ##
 

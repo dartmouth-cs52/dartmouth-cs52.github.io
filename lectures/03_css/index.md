@@ -376,6 +376,7 @@ One way to both see how things are done and also to test out changes is to the u
 * [learn.shayhowe.com](http://learn.shayhowe.com/html-css/) is also a good resource.
 * [advanced-css-selectors-you-never-knew-about](https://medium.com/the-web-crunch-publication/advanced-css-selectors-you-never-knew-about-972d8275d079)
 * [css-tricks](https://css-tricks.com/)
+* [flexbox patterns](http://www.flexboxpatterns.com/home)
 * [bootstrap](http://getbootstrap.com/)
 * [semantic-ui (an alternative to bootstrap that looks cool)](http://semantic-ui.com/)
 * [transitions and transforms](https://robots.thoughtbot.com/transitions-and-transforms)
