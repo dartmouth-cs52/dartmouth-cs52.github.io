@@ -37,6 +37,8 @@ See [assignments](/assignments).
 ### Office Hours and Contact:
 
   - We'll be using [Slack](https://cs52-dartmouth.slack.com) for most communication. Find us there!
+    Open Help Hours: Wed 4:35-5:25pm during X-hour.
+
 
   - Instructor:<br>
     Mon 12-2pm, 4-5pm; Fri 11-1pm; or by appointment in Sudikoff 219/143
@@ -57,7 +59,6 @@ See [assignments](/assignments).
 
 
   - TAs:<br>
-    Wed 4:35-5:25pm during X-hour or by appointment in Sudikoff.
 
 <table >
   <tr>
@@ -67,13 +68,16 @@ See [assignments](/assignments).
   </tr>
   <tr>
     <td><a href="mailto:Suman.K.Bera.GR@dartmouth.edu">Suman Bera</a><br>
-    <a href="https://cs52-dartmouth.slack.com/messages/@sumanbera/">@sumanbera</a>
+    <a href="https://cs52-dartmouth.slack.com/messages/@sumanbera/">@sumanbera</a><br>
+    Fri 3-5pm<br>Sudikoff 114
     </td>
     <td><a href="mailto:Xing.Meng.GR@dartmouth.edu">Xing Meng</a><br>
-    <a href="https://cs52-dartmouth.slack.com/messages/@xing/">@xing</a>
+    <a href="https://cs52-dartmouth.slack.com/messages/@xing/">@xing</a><br>
+    Sat 1-3pm<br>Sudikoff 114
     </td>
     <td><a href="mailto:Yuan.Tian.GR@dartmouth.edu">Yuan Tian</a><br>
-    <a href="https://cs52-dartmouth.slack.com/messages/@yvonne/">@yvonne</a>
+    <a href="https://cs52-dartmouth.slack.com/messages/@yvonne/">@yvonne</a><br>
+    Wed 10am-12<br>Sudikoff 142
     </td>
   </tr>
 </table>

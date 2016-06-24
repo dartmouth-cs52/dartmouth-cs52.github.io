@@ -128,6 +128,7 @@ Checking connectivity... done.
 Serving HTTP on 0.0.0.0 port 9000 ...
 127.0.0.1 - - [09/Jun/2016 18:25:18] "GET / HTTP/1.1" 200 -
 ```
+*If you are running python3 try: `python -m http.server 9000` instead.*
 
 ❓does anybody remember what `127.0.0.1` is the address for?
 
