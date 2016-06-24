@@ -16,7 +16,7 @@ First things first.  You need a local development environment.
 ![](https://github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/logo@2x-a922b71bfaf4cdc1dcf7a5ea29b92a91.png)
 
 🚀Install [atom](http://atom.io).  Atom is a code editor.  Atom is an open source, made by Github
-web technology written in html+css+javascript using a platform called [Electron](http://electron.atom.io/). Using Electron to create a desktop app is an option for the final project.  We'll be using Atom for coding and utilizing a lot of its plugins.
+web technology written in html+css+javascript using a platform called [Electron](http://electron.atom.io/). Using Electron to create a desktop app is an option for the final project.  We'll be using Atom for coding and utilizing a lot of its plugins. After installing and starting up Atom, run: *Atom -> Install Shell Commands* to be able to run `atom` from the commandline.
 
 🚀If you don't have it, install [Google Chrome](https://www.google.com/chrome/browser/desktop/).  Why?
 Because we'll be using [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) for debugging — more on that later.
@@ -89,7 +89,7 @@ and lets register you a domain!
 
 ## Create a GitHub Repo
 
-🚀 go to http://github.com  if you don't have an account, set one up!
+🚀 go to http://github.com  if you don't have an account, set one up! Use your .edu account and get the [GitHub Student Developer Pack](https://education.github.com/pack)
 
 🚀 create a new repo for your domain, probably best to name it with your domain name.
 
@@ -220,7 +220,7 @@ Ok. Add another file to your local workspace named `CNAME`.  Inside this file pu
 
 ### DONE!
 
-As soon as you `git push` your site should become available at your URL!
+As soon as you `git push` your site should become available at your URL!  *Note: actually it might take up to 5 minutes for it to start working with your domain name as github pushes your content to various servers.*
 
 ![](img//done.png){: .fancy .small }
 
