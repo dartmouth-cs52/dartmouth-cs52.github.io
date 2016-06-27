@@ -9,7 +9,7 @@ title: Assignments
 ### 4 short assignments: 10%
 *These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
-* [Short Assignment 1](sa1/) — DUE 6/28.
+* [Short Assignment 1](sa1/) — DUE 11:59pm 6/27.
 
 ### 4 week-long labs:  20%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
