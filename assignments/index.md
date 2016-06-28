@@ -20,6 +20,9 @@ title: Assignments
 ### 1 group presentation and workshop: 10%
 *Once during the term (in teams of 3-4) will present a web technology of choice to the class with a short workshop.*
 
+* More info and assignment [here](../workshops)
+
+
 ### 1 final project:  30%
 *A team based final project starting with pitching an idea and culminating in a web app with both a designed UI and a server-side api for data.  Assessment will be based on individual git pull requests and specific technical components that will be required for the projects.*
 
