@@ -65,6 +65,7 @@ See [assignments](/assignments).
     <td><img class="profile fancy" src="imgs/sb_profile.jpg" /></td>
     <td><img class="profile fancy" src="imgs/xm_profile.jpg" /></td>
     <td><img class="profile fancy" src="imgs/yt_profile.jpg" /></td>
+    <td><img class="profile fancy" src="imgs/vm_profile.jpg" /></td>
   </tr>
   <tr>
     <td><a href="mailto:Suman.K.Bera.GR@dartmouth.edu">Suman Bera</a><br>
@@ -79,9 +80,12 @@ See [assignments](/assignments).
     <a href="https://cs52-dartmouth.slack.com/messages/@yvonne/">@yvonne</a><br>
     Wed 10am-12<br>Sudikoff 142
     </td>
+    <td><a href="mailto:Varun.Mishra.GR@Dartmouth.edu">Varun Mishra</a><br>
+    <a href="https://cs52-dartmouth.slack.com/messages/@mishravarun/">@mishravarun</a><br>
+    Mon 3-5pm<br>Sudikoff 114
+    </td>
   </tr>
 </table>
-
 
 
 Half of each class will be hands-on demonstrations, code and project discussions, and exercises.  See [schedule](/schedule).
