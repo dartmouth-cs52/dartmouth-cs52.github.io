@@ -10,9 +10,12 @@ title: Assignments
 *These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
 * [Short Assignment 1](sa1/) — DUE 11:59pm 6/27.
+* [Short Assignment 2](sa2/) — DUE 2pm 6/30.
 
 ### 4 week-long labs:  20%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
+
+* [HW 1: Build a Landing Page](hw1/) — DUE 2pm 7/5.
 
 ### 4 short in-class quizzes:  16%
 *Concepts and methods from lectures and labs.*

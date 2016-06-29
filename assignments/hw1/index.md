@@ -188,14 +188,16 @@ You should host this on github pages as you have in the past with the `gh-pages`
 
 ## To Turn In:
 
-* github url to your repo (must be readable by staff, can be public).
+* github url to your repo (must be readable by staff, can be public)
+* url to your hosted page (gh-pages is fine)
 * your page should:
   * display as many elements from the original site / above screenshots as possible
   * use only pure CSS/HTML
   * have clean CSS/HTML written by hand by you (your html file should only be around ~150 lines or so).
-  * use flexboxes for layout
-  * be responsive with 1 narrow phone friendly version per the screenshots / demo
+  * use mostly flexboxes for layout
+  * be responsive with 1 narrow phone friendly version per the screenshots / original
   * include some details such as hover effects and border-radius
+  * have clear document structure with proper semantic naming
   * look reasonable :-)
 * your repo should include a README.md file with:
   * a couple sentence description of what you did and what worked / didn't work.
