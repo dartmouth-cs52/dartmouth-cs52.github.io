@@ -9,6 +9,11 @@ permalink: /lectures/
   * [slides](../slides/w1c1)
   * [notes](01_interwebs/)
 
+* 6/28 HTML + Git:
+  * [slides](../slides/w2c1)
+  * [notes](02_html/)
+
+
 
 <br>
 <span style="color: #F27D00">*posted after class*</span>

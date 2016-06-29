@@ -13,4 +13,4 @@ The Workshop Assignment can be found here [here](https://github.com/dartmouth-cs
 
 Workshops will be published here as they happen.
 
-  <!-- * [git map workshop](https://github.com/dartmouth-cs52/16X-git-map) -->
+  * [git map workshop](git)
