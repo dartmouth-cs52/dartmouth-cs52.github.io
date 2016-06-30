@@ -13,6 +13,11 @@ permalink: /lectures/
   * [slides](../slides/w2c1)
   * [notes](02_html/)
 
+* 6/30 CSS:
+  * [slides](../slides/w2c2)
+  * [notes](03_css/)
+
+
 
 
 <br>
