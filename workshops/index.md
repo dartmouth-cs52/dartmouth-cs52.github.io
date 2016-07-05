@@ -15,3 +15,4 @@ Workshops will be published here as they happen.
 
   * [git map workshop](git)
   * [bootstrap](https://github.com/dado3212/cs52-workshop-1/tree/gh-pages)
+  * [webpack+babel+eslint](../assignments/sa3)

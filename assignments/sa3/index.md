@@ -5,8 +5,6 @@ published: true
 ---
 
 
-## <span style="color: #F27D00">WARNING! Not finalized, stay tuned!</span> ##
-
 ## Overview
 
 Today we'll be learning about a set of tools for making your code compact and pretty.  So far you've been using html and css in separate files and the sites have been fairly compact — but as your sites grow more complex and include more and more libraries there has to be a way to manage it all.  We'll introduce a set of tools to help you build complex sites with many module dependencies easily.
@@ -116,7 +114,7 @@ Note: when you pass `--save-dev` it will add those modules to your `package.json
 
 Lets set up a simple webapp so we can see start using webpack.
 
-🚀 Create an `index.html` file in your `app` folder:
+🚀 Create an `index.html` in the project root folder (not in app):
 
 ```html
 <!DOCTYPE html>
@@ -132,7 +130,7 @@ Lets set up a simple webapp so we can see start using webpack.
 </html>
 ```
 
-Note: `bundle.js`,  that is the file we are going to have webpack build for us.
+Note: `build/bundle.js`,  that is the file we are going to have webpack build for us.
 
 🚀 Lets add in [JQuery](http://jquery.com/) really quick. We won't really be using jquery this term, but for a quick example it will suffice.
 
@@ -154,7 +152,7 @@ All this will do is find the element with the `id` of `main` and change the cont
 
 ### Configure webpack
 
-🚀 Lets give webpack a very basic configuration:
+🚀 Lets give webpack a very basic configuration. Create a file called `webpack.config.js` with these contents:
 
 ```javascript
 module.exports = {
@@ -328,6 +326,9 @@ The recommended linter plugin for javascript is [Eslint](eslint.org).
 npm install --save-dev eslint babel-eslint
 npm install --save-dev eslint-config-airbnb eslint-plugin-import
 ```
+
+*Note: if you get errors about version, you may need to first install an older version manually: `npm install --save-dev eslint@2.9.0`.
+
 
 `eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **stronglly** suggesting / requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).  
 
