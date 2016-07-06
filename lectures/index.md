@@ -17,6 +17,10 @@ permalink: /lectures/
   * [slides](../slides/w2c2)
   * [notes](03_css/)
 
+* 7/5 JS P1:
+  * [slides](../slides/w3c1)
+
+
 
 
 

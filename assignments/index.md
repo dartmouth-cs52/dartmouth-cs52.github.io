@@ -17,6 +17,7 @@ title: Assignments
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
 * [HW 1: Build a Landing Page](hw1/) — DUE 2pm 7/5.
+* [HW 2: Build a Bot](hw2/) — DUE 2pm 7/12.
 
 ### 4 short in-class quizzes:  16%
 *Concepts and methods from lectures and labs.*
