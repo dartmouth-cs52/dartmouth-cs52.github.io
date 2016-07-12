@@ -24,6 +24,9 @@ permalink: /lectures/
 * 7/7 JS P2:
   * [slides](../slides/w3c2)
 
+* 7/12 React and Review:
+  * [slides](../slides/w4c1)
+
 
 
 
