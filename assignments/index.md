@@ -12,6 +12,7 @@ title: Assignments
 * [Short Assignment 1](sa1/) — DUE 11:59pm 6/27.
 * [Short Assignment 2](sa2/) — DUE 2pm 6/30.
 * [Short Assignment 3](sa3/) — DUE 2pm 7/7.
+* [Short Assignment 4](sa4/) — DUE 2pm 7/14.
 
 ### 4 week-long labs:  20%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
