@@ -20,11 +20,13 @@ permalink: /lectures/
 * 7/5 JS P1:
   * [slides](../slides/w3c1)
 
-
 * 7/7 JS P2:
   * [slides](../slides/w3c2)
 
 * 7/12 React and Review:
+  * [slides](../slides/w4c1)
+
+* 7/14 More React:
   * [slides](../slides/w4c1)
 
 
