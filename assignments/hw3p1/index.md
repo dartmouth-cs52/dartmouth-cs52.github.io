@@ -6,7 +6,7 @@ published: true
 
 
 
-## More Deeper React
+## All The React
 
 
 Where we dive deeper into React and construct a realtime collaborative post-it note app with React!
@@ -77,7 +77,7 @@ Here's a good article on [Thinking in React](https://facebook.github.io/react/do
 
 ## App Component
 
-The skeleton for this is already in the starter.  Does it need to be a smart component?   It depends on how you organize your components, but you could do something similar to SA4 where the *App* component held most of the state.
+The skeleton for this is already in the starter.  Does it need to be a smart component?   It depends on how you organize your components, but you could do something similar to SA4 where the *App* component holds most of the state.
 
 Here is a test note that I used to start with with the minimal set of fields:
 
