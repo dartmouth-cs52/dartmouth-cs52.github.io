@@ -175,7 +175,7 @@ We'll be using the Map type, which gives us a hashmap as you would expect, excep
 
 **Deletions**:
 
-Immutable.js provides a delete method that takes an ID and spits back a new Map. Here's an example of using it for setting a new notes state on deletion of a note.
+Immutable.js provides a [`delete`](https://facebook.github.io/immutable-js/docs/#/Map/delete) method that takes an ID and spits back a new Map. Here's an example of using it for setting a new notes state on deletion of a note.
 
 ```javascript
 this.setState({
@@ -188,7 +188,7 @@ If we were to do this with a plain array we might do `find` or a loop, or best c
 
 **Additions**:
 
-Immutable.js provides a nice `set` method that returns a new Map with the new key inserted / set (can override existing keys).
+Immutable.js provides a nice [`set`](https://facebook.github.io/immutable-js/docs/#/Map/set) method that returns a new Map with the new key inserted / set (can override existing keys).
 
 ```javascript
 this.setState({
@@ -211,7 +211,7 @@ Great, now that you know how to clone an object we'll do that for updating a not
 
 **Updates**:
 
-Immutable.js provides a nice update method, but there is a slight trick to it.  It expects a function that will update the passed in value.  Now that we know how to take an object and merrge properties on it we can use that as our update function:
+Immutable.js provides an [`update`](https://facebook.github.io/immutable-js/docs/#/Map/update) method, but there is a slight trick to it.  It expects a function that will update the passed in value.  Now that we know how to take an object and merrge properties on it we can use that as our update function:
 
 ```javascript
 this.setState({
@@ -223,7 +223,7 @@ this.setState({
 
 If you are iterating through your Map (yup it is iterable), you might find that you need to extract both the key (the id) and the value (the note).  
 
-Immutable.js has a nice `entrySeq()` method that allows you to do just that.
+Immutable.js has a nice [`entrySeq()`](https://facebook.github.io/immutable-js/docs/#/Map/entrySeq) method that allows you to do just that.
 
 ```javascript
 notes.entrySeq().map(([id, note]) => {
@@ -277,11 +277,28 @@ Here is an example:
   </Draggable>
 ```
 
-The way to use this component is to wrap whatever JSX you want in your *Note* render method in <Draggable>.
+The way to use this component is to wrap whatever JSX you want in your *Note* render method in `<Draggable>`.
 
 Note the 3 callbacks.  `onStart`, `onDrag`, `onStop`.   You would use these to drive the position of the note.  You'll want the position to be part of the note object as eventually we will synchronize using a cloud component.  
 
-In particular, Draggable will call onDrag with two arguments, lets call them `(e, ui)`.  Just to save you some digging, `ui` will have x and y components so you can extract them and use them for your `note.position` state.
+In particular, Draggable will call onDrag with two arguments, let's call them `(e, ui)`.  Just to save you some digging, `ui` will have x and y components so you can extract them and use them for your `note.position` state.
+
+Here's a potential component hierarchy you could end up with:
+
+```html
+<Note>
+  <Draggable>
+    <div><!--note display stuff--></div>
+  </Draggable>
+<Note>
+  <Draggable>
+    <div><!--note display stuff--></div>
+  </Draggable>
+</Note>
+```
+
+Note:  this is not how any of your render methods would be, this is just an illustration of how the output might appear to help conceptualize where *Draggable* fits into the picture.
+
 
 ## Delete
 
@@ -360,12 +377,9 @@ Once you have this working you can test with some markdown syntax!
 ```
 
 
-
 ### Editable Textarea
 
 If you want your text area expandable here's a nice module:  [react-textarea-autosize](https://github.com/andreypopp/react-textarea-autosize).  Quite easy — so you don't have to expand the textarea as you type.
-
-
 
 
 
