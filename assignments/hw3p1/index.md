@@ -166,16 +166,16 @@ In Part 2 we will be getting something like this from Firebase:
 But for now let's worry about our own state — We'll do Firebase later.
 
 
-## Immutable JS HINTS
+## Immutable JS & You
 
 Here's some tips about dealing with a few different cases and how Immutable.js is going to help us.
 
-We'll be using the Map type,  which gives us a hashmap as you would expect, except that all the functions on it return a new cloned Map with the changes rather than mutating the original. The docs for this are [here](https://facebook.github.io/immutable-js/docs/#/Map)
+We'll be using the Map type, which gives us a hashmap as you would expect, except that all the functions on it return a new cloned Map with the changes rather than mutating the original. The docs for this are [here](https://facebook.github.io/immutable-js/docs/#/Map)
 
 
 **Deletions**:
 
-Immutable.js provides a delete method that takes an ID and spits back a new Map.
+Immutable.js provides a delete method that takes an ID and spits back a new Map. Here's an example of using it for setting a new notes state on deletion of a note.
 
 ```javascript
 this.setState({
@@ -211,7 +211,7 @@ Great, now that you know how to clone an object we'll do that for updating a not
 
 **Updates**:
 
-Immutable.js provides a nice update method. Slight trick to it.  It expects a function that will update the passed in value.  Now that we know how to take an object and merrge properties on it we can use that as our update function:
+Immutable.js provides a nice update method, but there is a slight trick to it.  It expects a function that will update the passed in value.  Now that we know how to take an object and merrge properties on it we can use that as our update function:
 
 ```javascript
 this.setState({
@@ -396,4 +396,5 @@ If you want your text area expandable here's a nice module:  [react-textarea-aut
   * can you pop your note to the front when it is dragged
   * reorder zIndex in other ways
 * Resizable notes
+* Syntax highlighting markdown in edit mode
 * Other!
