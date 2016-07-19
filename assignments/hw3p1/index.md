@@ -153,7 +153,8 @@ Our main state object (note you may have additional components that have local s
     x: 0,
     y: 0,
     zIndex:0,
-  }
+  },
+  id2: { ... },
 }
 ```
 
@@ -352,7 +353,7 @@ There's a tiny trick for this in React, so I'll just show it here:
 ```javascript
 // don't forget to import marked from 'marked'
 
-<div className="noteBody" dangerouslySetInnerHTML={{ __html: marked(this.props.note.text || '') }} />
+<div className="noteBody" dangerouslySetInnerHTML={% raw %}{{ __html: marked(this.props.note.text || '') }}{% endraw %} />
 ```
 
 The idea being that React typically wants to protect you from just setting arbitrary html to the output of some function, but there is an override. Remember even though `div` it is a standard html element in React it is also a component.  The component has a prop `dangerouslySetInnerHTML`  which will set the contents to whatever you pass into it.

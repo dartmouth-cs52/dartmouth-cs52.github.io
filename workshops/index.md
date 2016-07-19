@@ -13,7 +13,7 @@ The Workshop Assignment can be found here [here](https://github.com/dartmouth-cs
 
 Workshops will be published here as they happen.
 
-  * [git map workshop](git)
-  * [bootstrap](https://github.com/dado3212/cs52-workshop-1/tree/gh-pages)
-  * [webpack+babel+eslint](../assignments/sa3)
-  * [react](../assignments/sa4)
+  * 6/28 [git map workshop](git)
+  * 6/30 [bootstrap](https://github.com/dado3212/cs52-workshop-1/tree/gh-pages)
+  * 7/7 [jekyll & sass](https://github.com/VLuisa/cs52-workshop-2)
+  * 7/14 [d3, p5, paper.js](https://github.com/virginiacook/workshop3-js-viz)

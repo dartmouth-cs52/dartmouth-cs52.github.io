@@ -27,7 +27,10 @@ permalink: /lectures/
   * [slides](../slides/w4c1)
 
 * 7/14 More React:
-  * [slides](../slides/w4c1)
+  * [slides](../slides/w4c2)
+
+* 7/19 Immutability, etc:
+  * [slides](../slides/w5c1)
 
 
 
