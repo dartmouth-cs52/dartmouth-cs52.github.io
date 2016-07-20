@@ -198,3 +198,4 @@ Test it out!  Open multiple browsers and see how adding and moving notes in one 
 * Support multiple note boards. This could be implemented by adding route handling to your App where http://localhost:8080/boards/:id would load the particular board references by the id in the url.
 * Add in authentication with Firebase Users. We haven't covered authentication but Firebase provides a [nice auth api](https://firebase.google.com/docs/auth/).
 * Allow users to sign-up and then create and manage multiple boards!  Can show list of boards as dropdown or as a meta-board of clickable notes!
+* Live editing -- showing which user is editing which note!
