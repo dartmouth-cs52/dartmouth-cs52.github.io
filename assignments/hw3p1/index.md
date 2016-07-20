@@ -413,5 +413,4 @@ If you want your text area expandable here's a nice module:  [react-textarea-aut
   * can you pop your note to the front when it is dragged
   * reorder zIndex in other ways
 * Resizable notes
-* Syntax highlighting markdown in edit mode
 * Other!
