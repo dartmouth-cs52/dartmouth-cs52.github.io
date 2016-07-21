@@ -267,7 +267,7 @@ Here is an example:
   <Draggable
     handle=".note-mover"
     grid={[25, 25]}
-    defaultPosition={ x: 20, y: 20 }
+    defaultPosition={ {x: 20, y: 20} }
     position={position}
     onStart={this.onStartDrag}
     onDrag={this.onDrag}
