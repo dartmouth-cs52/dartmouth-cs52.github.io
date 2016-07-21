@@ -32,6 +32,9 @@ permalink: /lectures/
 * 7/19 Immutability, etc:
   * [slides](../slides/w5c1)
 
+* 7/21 Routing Frontend:
+  * [slides](../slides/w5c2)
+
 
 
 
