@@ -19,7 +19,8 @@ title: Assignments
 
 * [HW 1: Build a Landing Page](hw1/) — DUE 2pm 7/5.
 * [HW 2: Build a Bot](hw2/) — DUE 2pm 7/12.
-* [HW 3 Part 1: React Notes](hw3p1/) — DUE 11:59pm 7/21.
+* [HW 3 Part 1: React Notes](hw3p1/) — DUE 11:59pm 7/23.
+* [HW 3 Part 2: React Notes + Firebase](hw3p2/) — DUE 2pm 7/26.
 
 
 ### 4 short in-class quizzes:  16%
