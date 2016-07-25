@@ -88,7 +88,7 @@ const database = firebase.database();
 
 Now the question is where shall we put all the various firebase related stuff?  How about a module of its own!
 
-🚀 Create a file,  `firebase.js` in your `src/` directory. And since we're using npm to fetch the firebase SDK for us, just do `import Firebase from 'firebase';` and you're all set to go!
+🚀 Create a file,  `firebasedb.js` in your `src/` directory. And since we're using npm to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
 
 My recommendation is to put all your firebase functions in this file and export them.  We briefly talked about ES6 modules.  Easiest way to make this module is to simply export every public function:
 
@@ -100,6 +100,10 @@ Hey, what's this `fetchNotes` function?!  Just something that might help!
 
 You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal, however!  Our app is a frontend only app, we may be starting `webpack-dev-server` with `npm start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!   However, note that they key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data.
 
+```javascript
+import * as firebasedb from './firebasedb'
+// to get firebasedb.fetchNotes etc...
+```
 
 
 ## Data Structure
