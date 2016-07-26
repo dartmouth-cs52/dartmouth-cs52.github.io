@@ -35,6 +35,9 @@ permalink: /lectures/
 * 7/21 Routing Frontend:
   * [slides](../slides/w5c2)
 
+* 7/26 Redux:
+  * [slides](../slides/w6c1)
+
 
 
 

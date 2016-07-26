@@ -10,8 +10,8 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 
 ## Milestones At a Glance
 
-* **Pitch Proposals** (7/21/2016):<br>
-  This will be your chance to submit an idea that you would like to pitch. As the person submitting the idea you'll need to think a little bit about scope and feasibility.
+* **Pitch Signups** (7/21/2016):<br>
+  This will be your chance to signup to pitch your idea!
 
 * **Pitch Presentation** (7/28/2016):<br>
   A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class.
