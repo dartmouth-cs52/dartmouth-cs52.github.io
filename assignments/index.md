@@ -21,6 +21,7 @@ title: Assignments
 * [HW 2: Build a Bot](hw2/) — DUE 2pm 7/12.
 * [HW 3 Part 1: React Notes](hw3p1/) — DUE 11:59pm 7/23.
 * [HW 3 Part 2: React Notes + Firebase](hw3p2/) — DUE 2pm 7/26.
+* [HW 4 Part 1: Redux Blog](hw4p1/) — DUE 2pm 8/2.
 
 
 ### 4 short in-class quizzes:  16%
