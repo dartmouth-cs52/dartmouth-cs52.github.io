@@ -80,7 +80,7 @@ curl -X GET "https://cs52-blog.herokuapp.com/api/posts?key=YOURKEY"
 # create new post
 curl -X POST -H "Content-Type: application/json" -d '{
     "title": "first post",
-    "categories": "words",
+    "tags": "words",
     "content":  "this is a test post"
 }' "https://cs52-blog.herokuapp.com/api/posts/?key=YOURKEY"
 
