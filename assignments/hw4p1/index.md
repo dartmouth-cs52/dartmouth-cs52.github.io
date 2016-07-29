@@ -281,16 +281,14 @@ You now have a basic blog platform.
 
 1. GitHub repository URL (should be public so we can see it)
 1. your working domain name URL on surge.sh
-1. App should:
-  * have individual routes for:
-    * new
-    * list view
-    * full show view
-  * make CRUD api calls
-    * create
-    * update
-    * deleted
-  * have connected redux components
+1. App should have individual routes for:
+  * new
+  * list view
+  * full show view
+1. App should make CRUD api calls
+  * create
+  * update
+  * deleted
 
 
 
