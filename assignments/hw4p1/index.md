@@ -85,8 +85,10 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' "https://cs52-blog.herokuapp.com/api/posts/?key=YOURKEY"
 
 # update by POSTID
-curl -X PUT -d '{
+curl -X PUT -H "Content-Type: application/json" -d '{
     "title": "new title",
+    "tags": "new words",
+    "content":  "old content"
 }' "https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY"
 
 # fetch 1 by POSTID
