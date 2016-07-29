@@ -288,7 +288,8 @@ You now have a basic blog platform.
 1. App should make CRUD api calls
   * create
   * update
-  * deleted
+  * delete
+  * fetch
 
 
 
