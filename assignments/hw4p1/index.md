@@ -118,7 +118,7 @@ We're going to use some routes to set up our app with different "pages".
 </Route>
 ```
 
-This is just the basics, feel free to expand on this.
+This is just the basics, feel free to expand on this. For reference it might help to look back on the [routes workshop](../workshops/routing).
 
 
 ### App
@@ -175,6 +175,7 @@ posts: {
   post: null,
 }
 ```
+
 
 ## Actions
 
@@ -247,12 +248,13 @@ import thunk from 'redux-thunk';
 applyMiddleware(thunk),
 ```
 
-We'll dig into what middleware is later, but for now what you need to know is that middleware are basically functions that run between other stuff.  They can be very powerful. In our case `redux-thunk` allows our ActionCreators to return thunks rather than just actions.  These thunks are functions that are created on the fly to run something later.  Whaaaaaa?
+We'll dig more into what middleware is later, but for now what you need to know is that middleware are basically functions that run between other stuff. They can be very powerful.  
+
+Redux middleware wraps the dispatch function, allowing our `redux-thunk` middleware to process not just actions but also functions.  ActionCreators can now return thunks rather than just actions.  These thunks are functions that are created on the fly to run something later.  Whaaaat?
 
 Remember how ActionCreators just return an Action?  Well, what if you want the ActionCreator to first do something, perhaps fetch something from the internet?  Thunks allow this functionality.  Instead of immediately returning an Action object and flowing into the Reducer, we return a function that gets executed and can go off and do some stuff before dispatching the Action.
 
-
-A redux thunk allows your ActionCreators to have access to dispatch actions.  Quite literally giving them access to a `dispatch` method.
+A redux thunk allows your ActionCreators to return functions that can then dispatch actions.  Quite literally giving them access to a `dispatch` method.
 
 ```javascript
 export function anAction() {
@@ -265,7 +267,15 @@ export function anAction() {
 }
 ```
 
-What we want to do is go and fetch some data from a rest api.  Being able to dispatch things in the middle of an action helps us do this. You'll want to do the `axios` call inside of your returned function.  You would dispatch the action if the promise was resolved and you potentially dispatch and error action in the catch.  You are combining the `redux-thunk` style ActionCreator with the `axios` api call.
+Dispatch is a function available in redux that handles distributing actions to reducers. In a connected component when you `mapDispatchToProps` you are wiring certain ActionCreators to automatically be called by `dispatch` like so:
+
+![](img/dispatch.png){: .fancy .small}
+
+With the redux-thunk middleware we are changing how dispatch works slightly.  We enable dispatch to accept not just action objects but also functions. These functions when executed can run asynchronous methods and upon return can manually `dispatch` further actions.  These further actions can be either action objects (what we will be doing) or for more complicated logic can be further thunk functions.
+
+![](img/dipatch+thunk.png){: .fancy .small}
+
+What we want to do is go and fetch some data from a rest api.  Being able to dispatch things in the middle of an action helps us do this. You'll want to do the `axios` call inside of your returned function.  You would dispatch the action if the promise was resolved and you potentially dispatch an error action in the catch.  You are combining the `redux-thunk` style ActionCreator with the `axios` api call.
 
 
 
@@ -274,10 +284,28 @@ What we want to do is go and fetch some data from a rest api.  Being able to dis
 To start with we'll only need 1 reducer.   This should be pretty straightforward, receive action for new posts, return `all: newPosts`.  Receive action for new single fetched post, return that.  Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html).  You are also welcome to implement it with multiple reducers if that is easier to reason about.
 
 
-## And you're done!
+## And you are on your way!
 
-You now have a basic blog platform.
+That should be all you need to build a simple blog platform (we'll add more features later!).
 
+If you don't know where to start, remember the steps in creating an React application (modified here to include redux considerations):
+
+1. Start with a mock
+1. Break the UI into a component hierarchy
+1. Build the Presentational Components for a static version without any state
+1. Identify what the local vs redux "global" state should be
+1. Implement local UI state in Presentational components
+1. Identify Redux Actions (things that change global state)
+1. Create ActionCreators for each action
+1. Write Reducers for each Action
+1. Connect necessary components to Redux
+1. Style it
+1. Ship it
+
+
+It might help for the ActionCreator -> Dispatch -> Reducer -> State flow, to try getting one working first.  For instance maybe get the *Show* component working first, the others will come more easily once you have the full path tested with one of them.
+
+Don't forget to use the [hw4 slack channel](https://cs52-dartmouth.slack.com/messages/hw4/).
 
 ## To Turn In
 
@@ -298,6 +326,7 @@ You now have a basic blog platform.
 ## Extra Credit
 
 * look snazzy
+* handle axios errors in a graceful way, showing users a nice message rather than just console logging.
 * add a filter posts functionality, filter by tags initially.
   * for now our api is limited so additional search will come in part 2
 * more EC available in part 2!
