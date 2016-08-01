@@ -207,7 +207,8 @@ First thing we'll need is to install the `redux-thunk` library. Not another libr
 
 ```javascript
 
-npm install --save axios redux-thunk
+npm install --save redux-thunk
+npm install --save axios
 
 ```
 
@@ -289,7 +290,7 @@ Here are the methods that you should have in your `actions/index.js` file:
 ```javascript
 export function fetchPosts() {/* axios get */}
 
-export function createPost(props) {/* axios post */}
+export function createPost(post) {/* axios post */}
 
 export function updatePost(post) {/* axios put */}
 
