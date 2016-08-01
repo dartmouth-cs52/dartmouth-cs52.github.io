@@ -57,14 +57,14 @@ We'll be using an API server running at http://cs52-blog.herokuapp.com/api
 The API has the following endpoints:
 
 * GET  `/api/posts/`
-  returns only title and tags for all posts
+  returns **only** title, tags, and id for all posts
   `[[{"id":"",title":"","tags":""},...]`
 * POST `/api/posts/` with post parameters `{'title', 'tags', 'content'}`
   creates a new post
 * PUT `/api/posts/:postID` with parameters `{'title', 'tags', 'content'}`
   will update an entry
 * GET `/api/posts/:postID`
-  returns the post found at `postID`
+  returns the full post data found at `postID`, including `content`
 * DELETE `/api/posts/:postID`
   deletes the post found at `postID`
 
@@ -100,6 +100,7 @@ curl -X DELETE -H "Content-Type: application/json" "https://cs52-blog.herokuapp.
 ```
 
 Try these out.  Run the create new post one a couple of times to populate your database!
+
 
 
 
@@ -146,9 +147,11 @@ Min specs at a glance:
 * show title and tags (for now)
 * use post id to link to full view
 
+Hint: As this is a connected component that relies on the list of posts, you'll want to run your `fetchPosts()` ActionCreator from `componentWillMount`.
+
 ### New
 
-Component to create a new blog post (you can reuse this component for editing posts if you like).
+Component to create a new blog post (you can reuse this component for editing posts if you like). Should be a connected component that can trigger actions (ActionCreators).
 
 ### Show + edit
 
@@ -165,6 +168,8 @@ Min specs at a glance:
 * allow editing of post fields
   * either in separate form or as individual editable fields
 
+This is a connected component that can both trigger actions and is connected to the global redux state.
+
 ## Redux
 
 We will be using [redux](http://redux.js.org/) for our application state.  We're going to just have 1 reducer to start with: `postsReducer`.   This reducer will be associated with the key `posts` and will return an object to look something like this initially:
@@ -179,15 +184,15 @@ posts: {
 
 ## Actions
 
-Here are the minimum actions you should consider implementing.  
+Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer in this implementation. However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place.
 
 ```javascript
 export const ActionTypes = {
   FETCH_POSTS: 'FETCH_POSTS',
   FETCH_POST:  'FETCH_POST',
-  CREATE_POST: 'CREATE_POST',
-  UPDATE_POST: 'UPDATE_POST',
-  DELETE_POST: 'DELETE_POST',
+  // CREATE_POST: 'CREATE_POST',
+  // UPDATE_POST: 'UPDATE_POST',
+  // DELETE_POST: 'DELETE_POST',
 };
 ```
 
@@ -277,11 +282,52 @@ With the redux-thunk middleware we are changing how dispatch works slightly.  We
 
 What we want to do is go and fetch some data from a rest api.  Being able to dispatch things in the middle of an action helps us do this. You'll want to do the `axios` call inside of your returned function.  You would dispatch the action if the promise was resolved and you potentially dispatch an error action in the catch.  You are combining the `redux-thunk` style ActionCreator with the `axios` api call.
 
+You should have ActionCreator methods to deal with every axios call.
 
+Here are the methods that you should have in your `actions/index.js` file:
+
+```javascript
+export function fetchPosts() {/* axios get */}
+
+export function createPost(props) {/* axios post */}
+
+export function updatePost(post) {/* axios put */}
+
+export function fetchPost(id) {/* axios get */}
+
+export function deletePost(id) {/* axios delete */}
+```
+
+Each of these methods will return a function that takes dispatch as its argument, runs some axios call, and then dispatches some action. In the above that ActionType actions are named the same as the functions, however it might help to think of them as FETCH_POSTS_SUCCEEDED for instance.  It is the action that is dispatched to the reducers with the payload results of the asynchronous call.
+
+In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Show* page you would want to be taken back to the Index page.  Simple add `browserHistory.push('/')` to navigate to another page from within your ActionCreator function (you'll need to `import { browserHistory } from 'react-router'` also).  
 
 ## Reducers
 
-To start with we'll only need 1 reducer.   This should be pretty straightforward, receive action for new posts, return `all: newPosts`.  Receive action for new single fetched post, return that.  Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html).  You are also welcome to implement it with multiple reducers if that is easier to reason about.
+To start with we'll only need 1 reducer in `reducers/index.js`.  Something like this:
+
+```javascript
+const rootReducer = combineReducers({
+  posts: PostsReducer,
+});
+```
+
+The `postReducer` that you will define will currently only need to respond to 2 ActionTypes:  FETCH_POST, and FETCH_POSTS.
+
+Earlier, we defined are state as looking something like:
+
+```javascript
+posts: {
+  all: [],
+  post: null,
+}
+```
+
+Where `all` would contain an array of all posts, and `post` would be the current individually displaying post (for *Show*).
+
+For FETCH_POSTS you would return the state object with the `all` property set to the new posts.  For FETCH_POST return that single post.  
+
+Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html).  You are also welcome to implement it with multiple reducers if that is easier to reason about.
 
 
 ## And you are on your way!
