@@ -428,7 +428,7 @@ Note, unlike the blog api we've been using, nothing in the above relies on the q
 Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!
 
 
-### <span style="color: #F27D00">Part 2 will be posted soon!/span> ##
+### <span style="color: #F27D00">Part 2 will be posted soon!</span>
 
 
 ## To Turn In
