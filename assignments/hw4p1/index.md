@@ -380,6 +380,7 @@ Don't forget to use the [hw4 slack channel](https://cs52-dartmouth.slack.com/mes
 
 * look snazzy
 * handle axios errors in a graceful way, showing users a nice message rather than just console logging. (hint: new action and error state)
+* input validation — check that all fields have required values when creating new form for instance.
 * add a filter posts functionality, filter by tags initially.
   * for now our api is limited so additional search will come in part 2
 * more EC available in part 2!
