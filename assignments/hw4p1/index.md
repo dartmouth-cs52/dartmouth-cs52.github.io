@@ -12,7 +12,7 @@ published: true
 We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be a blog,  could be photo's or really anything you want. As long as there are individual post items that have some content that need to be saved to a database!
 
 
-<iframe width="640" height="480" src="https://www.youtube.com/embed/vvtbz2WL7M4?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/jWPw31kUTmw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 
 ### Part 1
