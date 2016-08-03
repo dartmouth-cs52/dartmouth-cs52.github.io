@@ -356,7 +356,7 @@ Don't forget to use the [hw4 slack channel](https://cs52-dartmouth.slack.com/mes
 
 ## To Turn In
 
-1. GitHub repository URL (should be public so we can see it)
+1. GitHub repository URL
 1. your working domain name URL on surge.sh
 1. App should have individual routes for:
   * new
@@ -366,7 +366,13 @@ Don't forget to use the [hw4 slack channel](https://cs52-dartmouth.slack.com/mes
   * create
   * update
   * delete
-  * fetch
+  * fetch post by id
+  * fetch all posts
+1. your repo should include a README.md file with:
+  * a couple sentence description about what you did
+  * and what worked / didn’t work
+  * any extra credit attempted
+
 
 
 
