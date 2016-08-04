@@ -38,6 +38,10 @@ permalink: /lectures/
 * 7/26 Redux:
   * [slides](../slides/w6c1)
 
+* 8/4 Sessions and Auth:
+  * [slides](../slides/w7c2)
+
+
 
 
 
