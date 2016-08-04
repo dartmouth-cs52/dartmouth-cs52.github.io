@@ -1,6 +1,6 @@
 ---
 layout: page
-title: HW 4 p1
+title: HW 4
 published: true
 ---
 
@@ -15,11 +15,11 @@ We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be
 <iframe width="640" height="480" src="https://www.youtube.com/embed/jWPw31kUTmw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 
-### Part 1
+### Part 1 HW4
 
 We'll build out a Create+Update+Delete (CRUD) style blogging app using React and Redux and React-Router.  We will use an API server hosted at: `cs52-blog.herokuapp.com`
 
-### Part 2
+### Part 2 HW5
 
 We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo based API server.  Finally FULL-STACK!
 

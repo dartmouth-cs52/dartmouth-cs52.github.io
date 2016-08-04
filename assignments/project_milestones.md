@@ -17,7 +17,7 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
   A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class. Everybody will rank their top choices and groups will be formed that way.
 
 * **Feature Spec** (8/6/2016):<br>
-  A walk-though of your project from the users perspective listing out every feature that it should have.
+  A walk-though of your project from the users perspective listing out every feature that it should have with a few user stories attached.
 
 * **Scaffolding + Mockups** (8/9/2016):<br>
   Mockups/Sketches of your project and initial code scaffolding started with a component plan and tools and frameworks chosen.
