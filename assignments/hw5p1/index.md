@@ -103,7 +103,7 @@ Mongo is the database that we are going to use.  We will run a local mongo daemo
 🚀 On OSX to install:
 
 ```bash
-brew install mongod
+brew install mongodb
 ```
 
 Then follow further [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
