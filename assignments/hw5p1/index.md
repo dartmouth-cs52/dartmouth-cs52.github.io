@@ -441,6 +441,7 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 ## To Turn In
 
 1. github url to your repo
+1. url to your new heroku app instance for testing
 1. working url for HW4 on surge that points to your new API server:
   * for HW4 create a new branch and a new surge site so we can test both version.
   * you can modify this new HW4 branch to add in new functionality for EC for this assignment.
