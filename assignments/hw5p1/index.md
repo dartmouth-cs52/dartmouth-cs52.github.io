@@ -20,7 +20,6 @@ For this assignment we are going to build an [express](https://expressjs.com/) a
   * Basic CRUD API: Building from the intro, we'll implement the full create, update, delete api for our blog.
 * Part 2:
   * Authentication: We'll extend both our frontend and our backend to support authentication and users!
-  * We'll add more data types and extend our database functionality with search
 
 
 ## Some Setup
@@ -423,21 +422,34 @@ And finally, you'll need to get the router id that is passed in when we hit `/po
 Note, unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in each document and then query on it.
 
 
+## Hosting
+
+We will need to host this new server component so your blog can use it instead of the `cs52-blog.herokuapp.com` one.  
+
+Create a new Heroku app similarly to how to you did for the slack assignment:
+
+1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
+1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database.
+1. Follow the steps under "Deploy Using Heroku Git".
+
+
 ## P1 Complete
 
-Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!
-
-
-### <span style="color: #F27D00">Part 2 will be posted soon!</span>
+Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!  IE. Change your HW4 `ROOT_URL` to point to your Heroku hosted server instance.  
 
 
 ## To Turn In
 
-1. will be turned in together with part 2
+1. github url to your repo
+1. working url for HW4 on surge that points to your new API server:
+  * for HW4 create a new branch and a new surge site so we can test both version.
+  * you can modify this new HW4 branch to add in new functionality for EC for this assignment.
 
 
 ## Extra Credit
 
 * change your tags store to be an array rather than a string, can just split by whitespace
 * add commenting to posts (either an array or another model) / change both api and frontend to support this.
-* more EC available in part 2!
+* really at this point you can start modifying your blog to be whatever you want. Add in photo storage with S3 (tricky). Add in new fields to your posts.
+* add in search support. Here's an [article](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/) that might help you get started.
+* in part 2 we'll introduce User and Authentication so don't implement those here though.
