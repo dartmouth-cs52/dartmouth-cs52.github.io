@@ -108,9 +108,9 @@ brew install mongodb
 
 Then follow further [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
 
-You will need to run the `mongod` process, which your node app will connect to.  
+You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process.
 
-In terminal try: `mongo`
+There is a commmandline client you can use to connect to the database: `mongo`. You can also play around with a more graphical client [robomongo](https://robomongo.org/).
 
 ```javascript
 // mongoshell is a commandline interface to your local mongo db

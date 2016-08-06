@@ -38,7 +38,7 @@ title: Assignments
 ### 1 final project:  30%
 *A team based final project starting with pitching an idea and culminating in a web app with both a designed UI and a server-side api for data.  Assessment will be based on individual git pull requests and specific technical components that will be required for the projects.*
 
-* Final Project [Milestones](project_milestones)
+* Final Project [Milestones](project)
 
 ### Participation:  9%
 *In class collaborative demonstrations, exercises, and discussions. .5pt per class workshop*

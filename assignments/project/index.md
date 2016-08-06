@@ -16,16 +16,16 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **Pitch Presentation** (7/28/2016):<br>
   A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class. Everybody will rank their top choices and groups will be formed that way.
 
-* **Feature Spec** (8/6/2016):<br>
+* **[Feature Spec](feature-spec)** (8/9/2016):<br>
   A walk-though of your project from the users perspective listing out every feature that it should have with a few user stories attached.
 
-* **Scaffolding + Mockups** (8/9/2016):<br>
+* **[Scaffolding + Mockups](mockups)** (8/11/2016):<br>
   Mockups/Sketches of your project and initial code scaffolding started with a component plan and tools and frameworks chosen.
 
-* **Dev Site Up (client+server)** (8/11/2016):<br>
+* **Dev Site Up (client+server)** (8/16/2016):<br>
   Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
 
-* **Progress Presentations** (8/16/2016):<br>
+* **Progress Presentations** (8/18/2016):<br>
   Presentations in class on progress, soliciting feedback.
 
 * **Final Project Demos** (8/23/2016):<br>
