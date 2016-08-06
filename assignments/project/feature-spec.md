@@ -19,7 +19,7 @@ User stories are short scenarios about how your product is used.  User personas 
 
 ## To Turn In:
 
-Overall this document does not need to be super extensive, you should spend a little bit of time on make it good, but you don't need to overthink it.  
+Overall this document does not need to be super extensive, it should cover the features and be compelling story about your product, but it doesn't need to be a million pages.
 
 * Feature Spec Doc (google doc share link):
   * Short short summary intro to the project.
