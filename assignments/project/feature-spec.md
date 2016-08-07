@@ -5,8 +5,6 @@ published: true
 ---
 
 
-## What is?
-
 
 ![](http://i.giphy.com/13NR9a0aYuYMy4.gif){: .fancy .small}
 

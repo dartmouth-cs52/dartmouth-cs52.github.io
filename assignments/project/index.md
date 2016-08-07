@@ -1,11 +1,12 @@
 ---
 layout: page
-title: Final Project Milestones
+title: Final Project
 published: true
 ---
 
 
 The last 3 weeks of class will be dedicated to a group project.  This will be a project of your own devising, built from the ground up (but as always libraries/apis are allowed).  There are required components that you have to build as well a bunch of milestones. Best practices, group dynamics, agile, etc will all be on the menu.
+
 
 
 ## Milestones At a Glance
@@ -22,13 +23,13 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Scaffolding + Mockups](mockups)** (8/11/2016):<br>
   Mockups/Sketches of your project and initial code scaffolding started with a component plan and tools and frameworks chosen.
 
-* **Dev Site Up (client+server)** (8/16/2016):<br>
+* **[Dev Site Up (client+server)](dev-site)** (8/16/2016):<br>
   Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
 
-* **Progress Presentations** (8/18/2016):<br>
+* **[Progress Presentations](progress)** (8/18/2016):<br>
   Presentations in class on progress, soliciting feedback.
 
-* **Final Project Demos** (8/23/2016):<br>
+* **[Final Project Demos](final)** (8/23/2016):<br>
   Final presentation of project. Open to public. Motivate the idea, show it in action, discuss challenges and any user testing.
 
 
