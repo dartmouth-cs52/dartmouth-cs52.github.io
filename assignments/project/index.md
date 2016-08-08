@@ -32,6 +32,9 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Final Project Demos](final)** (8/23/2016):<br>
   Final presentation of project. Open to public. Motivate the idea, show it in action, discuss challenges and any user testing.
 
+* **[Final Project Code Submission](final-submission)** (8/24/2016):<br>
+  Final code submission with up to date documentation.
+
 
 ### <span style="color: #F27D00">Dates approximate and may be adjusted</span> ##
 
