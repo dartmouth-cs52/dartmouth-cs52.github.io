@@ -41,6 +41,10 @@ permalink: /lectures/
 * 8/4 Sessions and Auth:
   * [slides](../slides/w7c2)
 
+* 8/9 Catch Up:
+  * [slides](../slides/w8c1)
+
+
 
 
 

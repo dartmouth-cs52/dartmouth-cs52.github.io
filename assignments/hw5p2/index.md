@@ -467,7 +467,7 @@ Most important difference in the above `signupUser` and `signinUser` ActionCreat
 We'll need to add an Authorization Header to some of the existing axios API calls. For each of `deletePost`, `createPost`, `updatePost` you'll need to modify the axios call to pass in headers.  Here's what the `createPost` one will look like:
 
 ```javascript
-axios.post(`${ROOT_URL}/posts`, { headers: { authorization: localStorage.getItem('token') }, data: post })
+axios.post(`${ROOT_URL}/posts`, post, { headers: { authorization: localStorage.getItem('token') } })
 ```
 
 Note how we had to put the post in a `data` parameter.
