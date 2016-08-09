@@ -23,7 +23,7 @@ title: Assignments
 * [HW 3 Part 2: React Notes + Firebase](hw3p2/) — DUE 2pm 7/26.
 * [HW 4: Redux Blog](hw4/) — DUE 11:59pm 8/4.
 * [HW 5 Part 1: Blog API](hw5p1/) — DUE 5pm 8/9.
-
+* [HW 5 Part 2: Auth for Blog](hw5p2/) — DUE 5pm 8/13.
 
 
 ### 4 short in-class quizzes:  16%
