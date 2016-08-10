@@ -475,7 +475,7 @@ Note how we had to put the post in a `data` parameter.
 
 ### On First Load
 
-🚀 In your `app/index.js` file you should add a check for token if you want it loaded on first start or reload:
+🚀 In your main `index.js` file you should add a check for token if you want it loaded on first start or reload:
 
 ```javascript
 const token = localStorage.getItem('token');
