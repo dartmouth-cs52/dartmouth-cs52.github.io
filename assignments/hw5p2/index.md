@@ -568,7 +568,7 @@ Done! Now in your `routes.js` you can import `RequireAuth` and for instance prot
 
 ## Lastly
 
-Extend the User Model to store the user's name, and add in support for that everywhere.  Display the Author Name along with every post. You are welcome to either duplicate the name and store it directly as a field in the Post model, or look it up by reference.
+Extend the User Model to store the username in addition to email, and add in support for that everywhere.  Display the Author Name along with every post. You are welcome to either duplicate the name and store it directly as a field in the Post model, or look it up by reference.  Note: `name` is a reserved word in JS and can cause problems if you reassign object.name, so call your field something other than name.
 
 The best time/place to have access to the User object is actually right when you create the post on the api side.  Since that route is an authenticated route, passport adds the user object to the request.  So in your create post method in your post controller you would have access to: `req.user`.   If the user object has a name field that should be available there.
 
