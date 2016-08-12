@@ -31,12 +31,14 @@ We'll be working on both the api server and frontend app.
 
 For signing our JWT's we'll need a secret key.  Might as well set that up now.
 
-🚀 Create an `app/config.js` file:
+🚀 Create `API_SECRET` environment variable with some long random string (any characters).
 
-```javascript
-export default {
-  secret: 'somelongrandomstringwithnumbers',
-};
+Use the [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code. IE. Save `API_SECRET="somerweklhjhdf9879av8v928cjka asdflkaj889"` into a .env file that you do not add to git (add .env to your .gitignore file).
+
+```
+import dotenv from 'dotenv';
+dotenv.config({ silent: true });
+api_secret: process.env.API_SECRET,
 ```
 
 ## API Server Auth support
@@ -567,6 +569,10 @@ Done! Now in your `routes.js` you can import `RequireAuth` and for instance prot
 ## Lastly
 
 Extend the User Model to store the user's name, and add in support for that everywhere.  Display the Author Name along with every post. You are welcome to either duplicate the name and store it directly as a field in the Post model, or look it up by reference.
+
+The best time/place to have access to the User object is actually right when you create the post on the api side.  Since that route is an authenticated route, passport adds the user object to the request.  So in your create post method in your post controller you would have access to: `req.user`.   If the user object has a name field that should be available there.
+
+There are 2 ways to associate the user with the post.  You can save a `ref` to the whole user object (which you started to set up when you added author as an ObjectID type field). If you do that, then later when you retrieve the user you need to use [`populate`](http://mongoosejs.com/docs/populate.html) to fill in the object. Or you could add a `username` field to post and assign that.  Using a reference and populating on retrieval is the better way,  you can even select which field specifically to populate so you aren't sending the whole user object if you don't want to. s
 
 
 ## P2 Complete
