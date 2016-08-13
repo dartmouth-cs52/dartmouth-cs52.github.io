@@ -31,15 +31,21 @@ We'll be working on both the api server and frontend app.
 
 For signing our JWT's we'll need a secret key.  Might as well set that up now.
 
-🚀 Create `API_SECRET` environment variable with some long random string (any characters).
+We'll need to create an `API_SECRET` environment variable with some long random string (any characters). This is just like what we did for the slackbot assignment.
 
-Use the [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code. IE. Save `API_SECRET="somerweklhjhdf9879av8v928cjka asdflkaj889"` into a .env file that you do not add to git (add .env to your .gitignore file).
+Use the [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code. IE. Save `API_SECRET="somerweklhjhdf9879av8v928cjka asdflkaj889"` into a `.env` file that you do not add to git (add .env to your .gitignore file).
 
-```
+Then in your code wherever you need the secret you can use:
+
+```javascript
 import dotenv from 'dotenv';
 dotenv.config({ silent: true });
-api_secret: process.env.API_SECRET,
+
+// and then the secret is usable this way:
+process.env.API_SECRET
 ```
+
+Note: during deployment for Heroku you'll need to add API_SECRET to your config variables in Settings.
 
 ## API Server Auth support
 
