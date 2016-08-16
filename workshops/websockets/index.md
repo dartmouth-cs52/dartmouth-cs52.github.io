@@ -137,6 +137,9 @@ Websockets are statefull connections.  Each client gets their own socket. Let's 
 At the bottom of `server.js` add:
 
 ```javascript
+// at top
+import * as Notes from './controllers/note_controller';
+
 
 io.on('connection', (socket) => {
 
