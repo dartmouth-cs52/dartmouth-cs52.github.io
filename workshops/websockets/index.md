@@ -90,7 +90,7 @@ export const deleteNote = (id) => {
   // remember to return the mongoose function you use rather than just delete
 }
 
-export const updateNote = (id, fields, done) => {
+export const updateNote = (id, fields) => {
   // update the note and return the top level mongoose function you used, such as return Note.findById...
 }
 
