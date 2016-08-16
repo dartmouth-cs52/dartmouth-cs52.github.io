@@ -13,7 +13,7 @@ We're going to build a [websocket](https://en.wikipedia.org/wiki/WebSocket) base
 
 ## Let's Start
 
-🚀 Clone your **HW3p2**. You should know the drill by now, create a new branch of `git checkbout -b ws` or create a new repository. Your choice, but I do strongly recommend getting all your repos organized and named correctly. 😎  We'll need to refactor this very slightly to not use firebase but use our new backend instead.
+🚀 Clone your **HW3p2**. You should know the drill by now, create a new branch of `git checkout -b ws` or create a new repository. Your choice, but I do strongly recommend getting all your repos organized and named correctly. 😎  We'll need to refactor this very slightly to not use firebase but use our new backend instead.
 
 
 🚀 Clone [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) for our new server component.  When you clone remember you can rename the directory: so `git clone https://github.com/dartmouth-cs52/express-babel-starter.git notes-websocket-server`  would checkout the starter into a differently named directory.  
@@ -137,16 +137,6 @@ Websockets are statefull connections.  Each client gets their own socket. Let's 
 At the bottom of `server.js` add:
 
 ```javascript
-
-// pushes notes to everybody
-const pushNotes = () => {
-  Notes.getNotes().then(result => {
-    // broadcasts to all sockets including ourselves
-    io.sockets.emit('notes', result);
-  });
-};
-
-
 
 io.on('connection', (socket) => {
 
