@@ -29,10 +29,10 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Progress Presentations](progress)** (8/18/2016):<br>
   Presentations in class on progress, soliciting feedback.
 
-* **[Final Project Demos](final)** (8/23/2016):<br>
-  Final presentation of project. Open to public. Motivate the idea, show it in action, discuss challenges and any user testing.
+* **[Final Project Demos](final)** (8/24/2016):<br>
+  Final presentation of project during x-hour. Open to public. Science fair style: Motivate the idea, show it in action, discuss challenges and any user testing.
 
-* **[Final Project Code Submission](final-submission)** (8/24/2016):<br>
+* **[Final Project Code Submission](final-submission)** (8/29/2016):<br>
   Final code submission with up to date documentation.
 
 
