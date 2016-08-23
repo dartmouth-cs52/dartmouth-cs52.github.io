@@ -44,6 +44,9 @@ permalink: /lectures/
 * 8/9 Catch Up:
   * [slides](../slides/w8c1)
 
+* 8/23 Catch Up:
+  * [slides](../slides/w10c1)
+
 
 
 
