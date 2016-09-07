@@ -47,9 +47,18 @@ The Internet will be a large source of information and help to you as you do you
 
 ### Student Collaboration
 
-For the short assignments and the labs you may verbally collaborate as much as you want. However, the code that you commit (turn in), should be created, typed, documented, and output generated, by you. You may consult freely with instructors and classmates but you should work individually when actually coding. You should never copy code from other students. Your peers are not considered an authorized source. Discuss as much as you want, but do not copy. To do otherwise is a violation of the Academic Honor Principle. Any collaboration with another student should be documented in the comments.  Again no penalty for mentioning that you talked to somebody, but if you did talk to someone and your code is very similar to theirs this will raise questions, better to clarify upfront.
+For the short assignments and the labs you may verbally collaborate as much as you want. However, the code that you commit (turn in), should be created, typed, documented, and output generated, by you. You may consult freely with instructors and classmates but you should work individually when actually coding. You should never copy code from other students. Your peers are not considered an authorized source. Even looking at another student's code for "inspiration" or "debugging" is not allowed. Discuss as much as you want, but do not copy. To do otherwise is a violation of the Academic Honor Principle. Any collaboration with another student should be documented in the comments.  Again no penalty for mentioning that you talked to somebody, but if you did talk to someone and your code is very similar to theirs this will raise questions, better to clarify upfront.
 
-## Citation Format
+### Honor Code Violation Examples
+
+These are designed to serve to help illustrate the various situations that might arise and whether they are or are not violations of the Academic Honor Code.  Violations will be reported to the Committee on Standards. Regardless of the outcome of the COS hearing, we reserve the right to assign a failing grade on an assignment were we suspect an honor code violation occurred.
+
+1. You find a block of code online that you don't quite understand but it seems to work either when you make your code look similar or you copy/paste it in. Either because you are embarrassed or careless you do not cite where you got the code from.  This is a violation of the Honor Code.  CITE IT and you will be fine.
+1. It is midnight and the assignment is due and your friend sends you a block of code to help debug.  You try to not look at it, but you end up turning in something very similar to what your friend sent. This is an Honor Code Violation for both you and your friend! Your friend and you will both have to face a COS hearing.  This is an attribution error. CITE IT LIKE YOUR LIFE DEPENDS ON IT.  If you had turned it in with an attribution: "I whole-heartedly copied this from my friend N",  we would deduct points from your assignment, but that is it!
+1. You and a couple of friends are working together on an individual (not team) assignment. You are talking about it and planning it out on the whiteboard.  If you are using natural spoken language you are ok.  If you are writing code on the board, or telling each other what to type in, that is a violation of the Honor Code.  You will all end up with the same code and will face a COS hearing to disentangle what happened.  These hearings are brutal with back-stabbings, tears, and ruined friendships. Why risk it?  When talking about your assignments together, just do it as if you were helping each other learn: ask questions, give hints. That is why we are all here after all.
+
+
+### Citation Format
 
 Make your in-code citations look something like this:
 
@@ -60,6 +69,12 @@ Make your in-code citations look something like this:
 
 (policy adapted from: https://integrity.mit.edu/handbook/writing-code)
 
+
+### But officer I panicked!
+
+If you are stuck: ask for an extension, come to office hours, email or slack your Professor and your TAs, learn some humility and accept that you might need help. Asking for help is one of the greatest skills, and if you get anything from this class is that it is OK to ask for help.  
+
+Please do not create a horrible situation for all of us by just copying off of someone else.  Our job is to help you learn.  You will not be penalized for asking.
 
 ## Special accommodations and Religious observances##
 
