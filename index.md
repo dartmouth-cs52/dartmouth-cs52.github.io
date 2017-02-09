@@ -5,7 +5,7 @@ title: Dartmouth CS52
 
 ## Course Overview
 
-The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art (early 2016) of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
+The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art (late 2016) of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
 
 By the end of term, you will:
 
@@ -30,7 +30,7 @@ See [assignments](/assignments).
 
   - 2A Classes will meet Tuesday and Thursday on the new schedule (2:25-4:15pm).<br>
   - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours for lab assignments.<br>
-  - Location: Carson 61  (limited space to <40)
+  - Location: Carson 61  (limited space to ~40)
 
 ![](imgs/carson61.jpg){: .fancy }
 
@@ -58,9 +58,9 @@ See [assignments](/assignments).
 </table>
 
 
-  - TAs:<br>
+  - TAs:<br> TBD
 
-<table >
+<!-- <table >
   <tr>
     <td><img class="profile fancy" src="imgs/sb_profile.jpg" /></td>
     <td><img class="profile fancy" src="imgs/xm_profile.jpg" /></td>
@@ -85,7 +85,7 @@ See [assignments](/assignments).
     Mon 3-5pm<br>Sudikoff 114
     </td>
   </tr>
-</table>
+</table> -->
 
 
 Half of each class will be hands-on demonstrations, code and project discussions, and exercises.  See [schedule](/schedule).
