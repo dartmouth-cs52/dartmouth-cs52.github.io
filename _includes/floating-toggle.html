@@ -1,0 +1,157 @@
+
+
+<div id="container-floating">
+  <!-- from http://codepen.io/anon/pen/vgvWBj -->
+
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+    <i id="slides-on" class="fa fa-coffee first-glyph" aria-hidden="true"></i>
+    <i id="slides-off" class="fa fa-paper-plane second-glyph" aria-hidden="true"></i>
+  </div>
+</div>
+
+<style>
+#floating-button{
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #db4437;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px #666;
+}
+
+.first-glyph {
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  line-height: 55px;
+  font-size: 30px;
+  animation: first-glyph-out 0.3s;
+  transition: all 0.3s;
+}
+.second-glyph {
+  color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  text-align: center;
+  padding: 0;
+  opacity: 0;
+  margin: 0;
+  line-height: 55px;
+  font-size: 30px;
+  transform: rotateZ(-70deg);
+  transition: all 0.3s;
+  animation: second-glyph-out 0.3s;
+}
+
+
+#container-floating {
+  z-index: 9999;
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  bottom: 30px;
+  right: 30px;
+  z-index: 50px;
+}
+
+#container-floating:hover{
+  height: 400px;
+  width: 90px;
+  padding: 30px;
+}
+
+#container-floating:hover .first-glyph{
+  animation: first-glyph-in 0.15s linear;
+  animation-fill-mode: forwards;
+}
+
+#container-floating:hover .second-glyph{
+  animation: second-glyph-in 0.2s;
+   animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes second-glyph-in{
+    from {opacity: 0; transform: rotateZ(-70deg);}
+    to {opacity: 1; transform: rotateZ(0deg);}
+}
+
+@keyframes second-glyph-out{
+    from {opacity: 1; transform: rotateZ(0deg);}
+    to {opacity: 0; transform: rotateZ(-70deg);}
+}
+
+@keyframes first-glyph-in{
+    from {opacity: 1; transform: rotateZ(0deg);}
+    to {opacity: 0; transform: rotateZ(180deg);}
+}
+
+@keyframes first-glyph-out{
+    from {opacity: 0; transform: rotateZ(180deg);}
+    to {opacity: 1; transform: rotateZ(0deg);}
+}
+
+
+</style>
+
+<script>
+  function tearDownRemark() {
+    $("div[class^='remark-'],div[class*=' remark-']").remove();
+    $('body').removeClass('remark-container');
+    $('body').removeClass('remark-presenter-mode');
+    $('html').removeClass('remark-container');
+    removeEvents();
+  };
+  function fixToggle() {
+    var $mainContent = $('.main-content');
+    var $toggleSlide = $('#floating-button');
+    var $firstGlyph = $toggleSlide.find('.first-glyph');
+    if ($mainContent.is(":visible")) {
+      $firstGlyph.removeClass('fa-book').addClass('fa-coffee');
+    } else {
+      $firstGlyph.removeClass('fa-coffee').addClass('fa-book');
+    }
+
+  }
+  function setSlideToggle() {
+    var $toggleSlide = $('#floating-button');
+    var $mainContent = $('.main-content');
+    var $pageHeader = $('.page-header');
+    $toggleSlide.off();
+    $toggleSlide.on('click', function(event) {
+      event.preventDefault();
+      if ($mainContent.is(":visible")) {
+        console.log('turning on slide mode');
+        $pageHeader.hide();
+        $mainContent.hide();
+        remark.create({
+          source: $('.source').text()
+        });
+        fixToggle();
+        // looks like needs to be reattached
+        setSlideToggle();
+      } else {
+        console.log('turning off slide mode');
+        $pageHeader.show();
+        $mainContent.show();
+        fixToggle();
+        tearDownRemark();
+      }
+    });
+  }
+  $('document').ready(setSlideToggle);
+</script>

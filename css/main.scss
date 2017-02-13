@@ -98,3 +98,25 @@ img.tiny {
 .example .highlight {
   background: rgba(255,238,238, .33) !important;
 }
+
+
+#slidebutton {
+  color: rgba(5, 5, 5, 0.7);
+  background-color: rgba(5, 5, 5, 0.08);
+  border-color: rgba(5, 5, 5, 0.2);
+  margin-top: 2rem;
+  margin-left: 4rem;
+  display: inline;
+}
+
+.remark-slide-number {
+    top: 12px;
+    bottom: 0;
+}
+
+.src {
+
+  &.hidden {
+    display: none;
+  }
+}
