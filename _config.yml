@@ -23,5 +23,10 @@ github_username:  timofei7
 # Build settings
 markdown: kramdown
 
+exclude: ["src",
+          "test",
+          "node_modules",
+          "package.json"]
+
 gems:
   - jemoji

@@ -114,9 +114,10 @@ img.tiny {
     bottom: 0;
 }
 
-.src {
+.slide {
+  display: none;
 
-  &.hidden {
-    display: none;
+  &.shown {
+    display: block;
   }
 }

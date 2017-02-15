@@ -121,9 +121,9 @@
     var $toggleSlide = $('#floating-button');
     var $firstGlyph = $toggleSlide.find('.first-glyph');
     if ($mainContent.is(":visible")) {
-      $firstGlyph.removeClass('fa-book').addClass('fa-coffee');
+      $firstGlyph.removeClass('fa-times').addClass('fa-coffee');
     } else {
-      $firstGlyph.removeClass('fa-coffee').addClass('fa-book');
+      $firstGlyph.removeClass('fa-coffee').addClass('fa-times');
     }
 
   }
@@ -139,7 +139,7 @@
         $pageHeader.hide();
         $mainContent.hide();
         remark.create({
-          source: $('.source').text()
+          source: $('.slide').text()
         });
         fixToggle();
         // looks like needs to be reattached
@@ -153,5 +153,19 @@
       }
     });
   }
-  $('document').ready(setSlideToggle);
+
+  // setup toggle and convert any slide markdown left over
+  // this is to workaround having markdown content specficially for slides
+  // but wanting the slides to render regularly on the page also
+  $('document').ready(function() {
+    var md = window.markdownit();
+    // var kramdown = window.kramdownAttrs;
+    // md.use(kramdown);
+
+
+    $('.slide:not(.hidden)').each(function(i, src) {
+      $(src).after(md.render($(src).text()));
+    });
+    setSlideToggle();
+  });
 </script>

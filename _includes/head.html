@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | prepend: site.baseurl }}">
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.2.2/markdown-it.min.js"></script>
+
 
   <script>
   // this is a hack to capture all globally added events into a list and remove them at will
@@ -25,12 +27,10 @@
     var windowAddEventListener = window.addEventListener;
 
     document.body.addEventListener = function() {
-        console.log(arguments);
         eventList.push([document.body, ...arguments])
         bodyAddEventListener.apply(this, arguments);
     };
     window.addEventListener = function() {
-        console.log(arguments);
         eventList.push([window, ...arguments])
         windowAddEventListener.apply(this, arguments);
     };

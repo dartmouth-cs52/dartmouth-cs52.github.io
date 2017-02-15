@@ -4,29 +4,12 @@ title: The Interwebs
 published: true
 ---
 
-<div class="src" markdown="1">
-
-# Title
-
----
-
-# Agenda
-
-1. Introduction
-2. Deep-dive
-3. ...
-
----
-
-# Introduction
-
-</div>
 
 
 "A series of tubes" — [Senator Ted Stevens (R-Alaska)](https://en.wikipedia.org/wiki/Series_of_tubes)
 
-
 :question: Okay... but tubes?
+
 
 Well technically perhaps you can think of electrical and optical lines as tubes, but regardless before we can code for the web we should understand what all is involved.
 
@@ -46,7 +29,6 @@ The FB map is more of a social graph but does show internet connected Facebook u
 So how does data traverse this really complicated graph of interconnected of wires?
 
 *We'll cover some basics of networking here but for more in-depth on the subject, take CS60*
-
 
 ## Protocols ##
 
