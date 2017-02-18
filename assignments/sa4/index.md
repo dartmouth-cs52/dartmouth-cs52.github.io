@@ -867,7 +867,7 @@ Turns out response iframe embeds are actually pretty difficult to achieve.  We'r
 
 ## Debugging
 
-You may want to install: [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/)
+You may want to install: [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
 This adds a tab to your Chrome Dev Tools which allows you to inspect state in your React app and more!
 
