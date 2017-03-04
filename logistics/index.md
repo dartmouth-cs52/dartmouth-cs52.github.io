@@ -20,13 +20,12 @@ We will use [Slack](http://slack.com), an online collaborative tool for most cla
 
 Grading of some collaborative team based work will be done based on GitHub pull requests.  Proper git flow will be introduced early on in the term.
 
-  - 4 short assignments: 10%
-  - 4 week-long labs:  20%
-  - 4 short in-class quizzes:  16%
-  - 1 group presentation and workshop: 10%
+  - In-class short assignments: 10%
+  - 5 week-long labs:  25%
+  - Short In-class quizzes:  10%
+  - 1 group presentation and workshop: 15%
   - 1 final project:  30%
-  - Participation:  9%
-  - Peer mentoring: 5%
+  - Participation:  10%
 
   * late penalty:
     * -1% of assignment per hour

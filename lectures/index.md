@@ -5,47 +5,27 @@ permalink: /lectures/
 ---
 
 
-* 6/23 Welcome + Structure of the Internet:
-  * [slides](../slides/w1c1)
-  * [notes](01_interwebs/)
+* [3/28 Welcome + Structure of the Internet](01_interwebs/)
+* [3/30 HTML](02_html/)
+* [3/30 Git](02_git/)
+* [4/4 CSS](03_css/)
+* [4/6 JS P1](04_js1)
+* [4/11 JS P2](05_js2)
+* [4/13 React and Review](06_react1)
+* [4/18 More React](07_react  2)
+* [4/20 Immutability, etc](08_immutable)
+* [4/25 Routing Frontend](09_routing)
+* [4/27 Redux](10_redux)
+* [5/2 Sessions and Auth](11_sessions)
+<!-- * [5/4 Catch Up](12_catchup1) -->
+<!-- * [5/9 Catch Up](13_catchup2) -->
+<!-- * [5/11 Projects]() -->
+<!-- * [5/16 TBD]() -->
+<!-- * [5/18 TBD]() -->
+<!-- * [5/23 TBD]() -->
+<!-- * [5/25 TBD]() -->
+<!-- * [5/30 TBD]()  -->
 
-* 6/28 HTML + Git:
-  * [slides](../slides/w2c1)
-  * [notes](02_html/)
-
-* 6/30 CSS:
-  * [slides](../slides/w2c2)
-  * [notes](03_css/)
-
-* 7/5 JS P1:
-  * [slides](../slides/w3c1)
-
-* 7/7 JS P2:
-  * [slides](../slides/w3c2)
-
-* 7/12 React and Review:
-  * [slides](../slides/w4c1)
-
-* 7/14 More React:
-  * [slides](../slides/w4c2)
-
-* 7/19 Immutability, etc:
-  * [slides](../slides/w5c1)
-
-* 7/21 Routing Frontend:
-  * [slides](../slides/w5c2)
-
-* 7/26 Redux:
-  * [slides](../slides/w6c1)
-
-* 8/4 Sessions and Auth:
-  * [slides](../slides/w7c2)
-
-* 8/9 Catch Up:
-  * [slides](../slides/w8c1)
-
-* 8/23 Catch Up:
-  * [slides](../slides/w10c1)
 
 
 

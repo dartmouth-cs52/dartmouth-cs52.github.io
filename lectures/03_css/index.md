@@ -289,11 +289,10 @@ There are multiple ways to show and hide elements:
 
 CSS3 can do a lot of stuff.  Transitions, animations, and even 3D transforms.
 
-Here's a super fancy solar system simulation in CSS
+Here's some fancy stuff.
 
-<p data-height="374" data-theme-id="24117" data-slug-hash="idhuG" data-default-tab="css,result" data-user="juliangarnier" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/juliangarnier/pen/idhuG/">CSS 3D Solar System</a> by Julian Garnier (<a href="http://codepen.io/juliangarnier">@juliangarnier</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="400" data-theme-id="24119" data-slug-hash="EWyyNJ" data-default-tab="result" data-user="timofei" data-embed-version="2" data-pen-title="Day Night simulation" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/EWyyNJ/">Day Night simulation</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-We won't do anything that fancy,  plus this isn't a real simulation, all the motions are hardcoded, no physics.
 
 ### Transition Properties
 

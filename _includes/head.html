@@ -11,38 +11,16 @@
 
   <link rel="stylesheet" href="{{ "/css/normalize.css" | prepend: site.baseurl }}">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{ "/css/normalize.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="stylesheet" href="{{ "/css/font-awesome.min.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/tomorrow_night.css" | prepend: site.baseurl }}">
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/8.2.2/markdown-it.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js"></script>
 
-  <script>
-  // this is a hack to capture all globally added events into a list and remove them at will
-  $(document).ready(function() {
-    var eventList = [];
-    var bodyAddEventListener = document.body.addEventListener;
-    var windowAddEventListener = window.addEventListener;
-
-    document.body.addEventListener = function() {
-        eventList.push([document.body, ...arguments])
-        bodyAddEventListener.apply(this, arguments);
-    };
-    window.addEventListener = function() {
-        eventList.push([window, ...arguments])
-        windowAddEventListener.apply(this, arguments);
-    };
-    window.listEvents = function() {
-      console.log(eventList);
-    }
-    window.removeEvents = function() {
-      eventList.forEach(function(e) {
-        e[0].removeEventListener(e[1],e[2]);
-      })
-    }
-  });
-
-  </script>
+  <script src="{{ "/main.js" | prepend: site.baseurl }}"></script>
 </head>
