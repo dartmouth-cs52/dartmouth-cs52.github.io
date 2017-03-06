@@ -17,3 +17,19 @@ class: center, middle
 name: base
 
 .title[{{name}}]
+
+---
+name: Pitches etc
+
+---
+
+
+
+
+---
+name: Today
+
+* Pitches
+* Workshop
+
+???

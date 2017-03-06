@@ -1,5 +1,5 @@
 
-var codepenScript='//production-assets.codepen.io/assets/embed/ei.js';
+var codepenScript='//production.codepen.io/assets/embed/ei.js';
 
 function tearDownRemark() {
   $("div[class^='remark-'],div[class*=' remark-']").remove();
@@ -106,7 +106,7 @@ $('document').ready(function() {
   // pull in slides from separate file
   $.get('index_slides.md').done(function(result){
     $('.slide').text(result);
-    reloadScript('//assets.codepen.io/assets/embed/ei.js');
+    reloadScript(codepenScript);
   }).fail(function(error) {
     console.log(error);
   });

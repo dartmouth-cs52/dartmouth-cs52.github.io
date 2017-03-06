@@ -16,15 +16,15 @@ permalink: /lectures/
 * [4/20 Immutability, etc](08_immutable)
 * [4/25 Routing Frontend](09_routing)
 * [4/27 Redux](10_redux)
-* [5/2 Sessions and Auth](11_sessions)
-<!-- * [5/4 Catch Up](12_catchup1) -->
-<!-- * [5/9 Catch Up](13_catchup2) -->
-<!-- * [5/11 Projects]() -->
-<!-- * [5/16 TBD]() -->
-<!-- * [5/18 TBD]() -->
-<!-- * [5/23 TBD]() -->
-<!-- * [5/25 TBD]() -->
-<!-- * [5/30 TBD]()  -->
+* [5/2 Pitches](11_pitches)
+* [5/4 Databases](12_intro_to_databases)
+* [5/9 Sessions & Auth](13_sessions_auth)
+* [5/11 Catchup](14_catchup)
+* [5/16 Websockets](15_websockets)
+* [5/18 TBD]()
+* [5/23 TBD]()
+* [5/25 TBD]()
+* [5/30 Wrapup](16_wrapup)
 
 
 

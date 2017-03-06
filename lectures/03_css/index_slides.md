@@ -663,6 +663,7 @@ Similar to layers and allows elements to be ordered. Parameter: signed integer
 
 
 ---
+name: more css tricks
 
 (animated gifs from [FROONT](http://blog.froont.com/positioning-in-web-design/))
 
@@ -1164,7 +1165,9 @@ Ok, that might be enough of 3D for one day! More demos can be found here:
 
 
 ---
-name: Further Learning: Use the Source, Luke ([UTSL](https://en.wikipedia.org/wiki/UTSL))
+name: Further Learning: Use the Source, Luke
+
+## [UTSL](https://en.wikipedia.org/wiki/UTSL)
 
 
 CSS is huge.  There are just too many things to cover!
