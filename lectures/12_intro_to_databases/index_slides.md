@@ -21,9 +21,6 @@ name: base
 ---
 name: Databases, Mongo, REST
 
----
-
-
 
 
 ---
@@ -143,6 +140,8 @@ name: Standard
 
 
 ---
+name:
+
 
 <iframe src="//giphy.com/embed/3oEduRCITWQ5BruE8g" width="780" height="499" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -454,6 +453,8 @@ SELECT * FROM Users WHERE id = 2
 
 
 ---
+name:
+
 
 <iframe src="//giphy.com/embed/BfqcuxcIAUGVa" width="480" height="695" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -651,6 +652,8 @@ name: Index and More
 
 
 ---
+name:
+
 
 ![](img/28cjsp.jpg){: .small}
 

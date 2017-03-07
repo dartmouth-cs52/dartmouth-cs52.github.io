@@ -32,6 +32,8 @@ name: What is?
 
 
 ---
+name:
+
 .tiny.fancy[![](https://media.giphy.com/media/anjRJ4nv9WJzO/giphy.gif)]
 
 * Netscape released in 1995 as a way to add programs to web pages in their browser
@@ -86,6 +88,8 @@ name: fullstack aside
 
 
 ---
+name:
+
 * Pros:
   * can be easy
   * first-class functions

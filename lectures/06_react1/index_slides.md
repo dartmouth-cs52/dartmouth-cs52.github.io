@@ -194,6 +194,7 @@ name: Review
 
 
 ---
+name:
 
 ![](img/static-sites.png){:  .white-background }
 
@@ -206,6 +207,7 @@ name: Review
 
 
 ---
+name:
 
 ![](img/server-side-rendering.png){: .white-background }
 
@@ -219,6 +221,7 @@ name: Review
 
 
 ---
+name:
 
 ![](img/single-page-app.png){:  .white-background }
 
@@ -236,6 +239,7 @@ name: Review
 
 
 ---
+name:
 
 ![](img/isomorphic-app.png){:  .white-background }
 
@@ -250,6 +254,7 @@ name: Review
 
 
 ---
+name:
 
 ![](img/ajax.png){: .white-background .small}
 
@@ -267,6 +272,7 @@ name: Review
 
 
 ---
+name:
 
 ![](img/JWMB2.png){: .white-background .medium}
 
@@ -319,6 +325,7 @@ name: webpack
 
 
 ---
+name:
 
 ![](img/what-is-webpack.jpg){: .medium}
 
@@ -338,6 +345,7 @@ sass app/sass:dist/css
 
 
 ---
+name:
 
 ![](img/webpack-how-it-works.png){: .medium .white-background}
 
@@ -349,6 +357,7 @@ sass app/sass:dist/css
 
 
 ---
+name:
 
 ![](img/webpack-dependencies.png){: .medium}
 
@@ -423,6 +432,7 @@ name: node
 
 
 ---
+name:
 
 ![](img/node-loop.png){: .medium}
 
@@ -481,6 +491,7 @@ name: event handling
 
 
 ---
+name:
 
 DOM level 0 events:
 
@@ -528,7 +539,7 @@ $('#myButton').off('click', () = { alert('hello!'); });
 
 
 ---
-
+name:
 
 * event object
 * event object properties:
@@ -545,6 +556,7 @@ $('#myButton').off('click', () = { alert('hello!'); });
 
 
 ---
+name:
 
 ```html
 <body>
@@ -580,6 +592,7 @@ $('button').on('click', (event) = {
 
 
 ---
+name:
 
 ![](img/eventflow.png){: .medium_small .white-background}
 
@@ -594,6 +607,7 @@ $('button').on('click', (event) = {
 
 
 ---
+name:
 
 ```javascript
 $('submit').on('click', (event) = {
@@ -728,6 +742,7 @@ name: MVC
 
 
 ---
+name:
 
 ![](img/templating.png){: .white-background .medium}
 
@@ -765,6 +780,8 @@ name: mvc popular but
 
 
 ---
+name:
+
 ![](img/history-of-web-frameworks-timeline.png)
 
 
@@ -775,6 +792,7 @@ name: mvc popular but
 
 
 ---
+name:
 
 ![](img/react-logo.png){: .small}
 
@@ -1017,6 +1035,7 @@ name: tiny todo
 
 
 ---
+name:
 
 ![](https://cdn.meme.am/instances/59617068.jpg)
 

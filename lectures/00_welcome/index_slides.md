@@ -208,5 +208,3 @@ experimental
 do not copy from other students, they are not authoritative sources
 at end of assignments feel free to publish on the lines
 want you to be able to show your work
-
----

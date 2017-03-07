@@ -159,6 +159,7 @@ an id:
 
 
 ---
+name:
 
 and combinations:
 
@@ -459,6 +460,7 @@ name: reasonable practice
 
 
 ---
+name:
 
 <p data-height="500" data-theme-id="24117" data-slug-hash="6769175f096ccc51484b73c056c6bdb9" data-default-tab="result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/6769175f096ccc51484b73c056c6bdb9/">Em AND Rem</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
@@ -622,6 +624,8 @@ Position is relative to default (ie. parent within document flow) via `top`, `ri
 
 
 ---
+name:
+
 ```css
 div { position: absolute; }
 ```

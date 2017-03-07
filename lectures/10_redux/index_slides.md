@@ -21,15 +21,10 @@ name: base
 ---
 name: Redux
 
----
-
-
-
-
 
 
 ---
-## Today
+name: Today
 
 * Quiztime...
 * React Debrief
@@ -42,7 +37,7 @@ name: Redux
 
 
 ---
-## Quiz
+name: Quiz
 
 <iframe src="//giphy.com/embed/BnlSxZ1nJy9C8" width="880" height="602" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -52,7 +47,7 @@ name: Redux
 
 
 ---
-##  Pitches
+name:  Pitches
 
 * 4 signups...
 * Thursday:
@@ -73,7 +68,7 @@ name: Redux
 
 
 ---
-##  Questions about HW3?
+name:  Questions about HW3?
 
 ???
 * firebase wrapper and purpose behind it
@@ -84,7 +79,7 @@ name: Redux
 
 
 ---
-## What do we know about React so far?
+name: What do we know about React so far?
 
 * components - smart and dumb
 * unidirectional data flow
@@ -101,7 +96,7 @@ name: Redux
 
 
 ---
-## Problems
+name: Problems
 
 ![](img/props-problems.png){: .medium_small}
 
@@ -113,7 +108,7 @@ name: Redux
 
 
 ---
-## Smart and Dumb components
+name: Smart and Dumb components
 
 * smart components have state + props
 * dumb components only props (function)
@@ -126,7 +121,7 @@ name: Redux
 
 
 ---
-## Presentational and Container Components
+name: Presentational and Container Components
 
 * ***presentational***
   * concerned with how things look
@@ -149,7 +144,7 @@ name: Redux
 
 
 ---
-## Flux
+name: Flux
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/nYkdrAPrdcw?controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
@@ -163,7 +158,7 @@ name: Redux
 
 
 ---
-## The beginning
+name: The beginning
 
 ![](img/facebook-problem1.png){: .medium}
 
@@ -177,7 +172,7 @@ name: Redux
 
 
 ---
-## questionable design
+name: questionable design
 
 ![](img/facebook-problem2.png){: .medium}
 
@@ -192,7 +187,7 @@ name: Redux
 
 
 ---
-## Chat
+name: Chat
 
 ![](img/chat1.png){: .medium}
 
@@ -203,7 +198,7 @@ name: Redux
 
 
 ---
-## Chat
+name: Chat
 
 ![](img/external-control.png){: .medium}
 
@@ -215,7 +210,7 @@ name: Redux
 
 
 ---
-## MVC
+name: MVC
 
 ![](img/mvc-1.png){: .medium}
 
@@ -226,7 +221,7 @@ name: Redux
 
 
 ---
-## MVC Problems
+name: MVC Problems
 
 ![](img/mvc-problems.png){: .medium}
 
@@ -240,7 +235,7 @@ name: Redux
 
 
 ---
-## Enter Flux
+name: Enter Flux
 
 ![](img/flux-simple-f8-diagram-with-client-action-1300w.png){: }
 
@@ -254,7 +249,7 @@ name: Redux
 
 
 ---
-## unidirectional data flow
+name: unidirectional data flow
 
 ![](img/unidirection-control.png){: }
 
@@ -265,7 +260,7 @@ name: Redux
 
 
 ---
-## Flow Based Programming
+name: Flow Based Programming
 
 ![](img/full-system.png){: }
 
@@ -277,7 +272,7 @@ name: Redux
 
 
 ---
-## MVC -> Flux
+name: MVC -> Flux
 
 * loosely:
   * Views -> Views (React Components)
@@ -294,6 +289,7 @@ name: Redux
 
 
 ---
+name:
 
 ![](img/wtf.png){: .hfill}
 
@@ -306,6 +302,8 @@ name: Redux
 
 
 ---
+name:
+
 
 
 ![Redux](img/redux-logo.png){: .white-background}
@@ -324,7 +322,7 @@ name: Redux
 
 
 ---
-## Application Level State
+name: Application Level State
 
 * react is great
 * but could use better data management
@@ -342,7 +340,7 @@ name: Redux
 
 
 ---
-## React Component Props
+name: React Component Props
 
 
 ![Redux](img/redux-article-3-01.svg){: .white-background}
@@ -354,7 +352,7 @@ name: Redux
 
 
 ---
-## Add a dash of Redux
+name: Add a dash of Redux
 
 
 ![Redux](img/redux-article-3-02.svg){: .white-background}
@@ -365,7 +363,7 @@ name: Redux
 
 
 ---
-## Together at Last
+name: Together at Last
 
 
 ![Redux](img/redux-article-3-03.svg){: .white-background}
@@ -376,7 +374,7 @@ name: Redux
 
 
 ---
-## State & Actions
+name: State & Actions
 
 
 ![Redux](img/redux-article-3-04.svg){: .white-background}
@@ -387,7 +385,7 @@ name: Redux
 
 
 ---
-## Multiple Reducers
+name: Multiple Reducers
 
 
 ![Redux](img/redux-article-3-05.svg){: .white-background}
@@ -402,7 +400,7 @@ name: Redux
 
 
 ---
-## example
+name: example
 
 ![](img/youtube-react.png){: .white-background .hfit}
 
@@ -417,6 +415,8 @@ name: Redux
 
 
 ---
+name:
+
 
 ![](img/youtube-redux.png){: .white-background .hfill}
 
@@ -431,7 +431,7 @@ name: Redux
 
 
 ---
-## An Action
+name: An Action
 
 ```javascript
 {
@@ -454,7 +454,7 @@ name: Redux
 
 
 ---
-## Action Creator
+name: Action Creator
 
 ```javascript
 export function selectVideo(video) {
@@ -477,7 +477,7 @@ export function selectVideo(video) {
 
 
 ---
-##  Reducer
+name:  Reducer
 
 
 ```javascript
@@ -506,7 +506,7 @@ export default function (state = [], action) {
 
 
 ---
-## Reducers
+name: Reducers
 
 * must be a pure function!
 * receive:
@@ -532,7 +532,7 @@ export default function (state = [], action) {
 
 
 ---
-##  Reducers
+name:  Reducers
 
 * all reducers get called hence `switch` on action
 * return state for particular key
@@ -548,7 +548,7 @@ export default function (state = [], action) {
 
 
 ---
-## All fine and dandy
+name: All fine and dandy
 
 But how do our components know about any of this?
 
@@ -561,7 +561,7 @@ But how do our components know about any of this?
 
 
 ---
-##  react-redux
+name:  react-redux
 
 
 <iframe src="//giphy.com/embed/O5XX68H6WfAlO" width="580" height="299" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -575,7 +575,7 @@ But how do our components know about any of this?
 
 
 ---
-##  who needs upgrades?
+name:  who needs upgrades?
 
 * not everyone
   * components that control data
@@ -597,7 +597,7 @@ But how do our components know about any of this?
 
 
 ---
-## react-redux connect
+name: react-redux connect
 
 ```javascript
 import { connect } from 'react-redux';
@@ -620,7 +620,7 @@ export default connect(mapStateToProps,
 
 
 ---
-mapStateToProps
+name: mapStateToProps
 
 ```javascript
   /* ... */
@@ -651,7 +651,7 @@ const mapStateToProps = (state) => (
 
 
 ---
-mapDispatchToProps
+name: mapDispatchToProps
 
 ```javascript
 import * as actions from './actions';
@@ -679,7 +679,7 @@ export default connect(mapStateToProps, actions)(MyComponent);
 
 
 ---
-## Provider
+name: Provider
 
 ```html
 ReactDOM.render(
@@ -701,6 +701,8 @@ ReactDOM.render(
 
 
 ---
+name:
+
 
 <iframe src="//giphy.com/embed/JjKYrKa8UVTNe" width="480" height="466" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -718,7 +720,7 @@ ReactDOM.render(
 
 
 ---
-## devtools
+name: devtools
 
 ![](img/react-devtools.gif){: .medium }
 
@@ -732,7 +734,7 @@ ReactDOM.render(
 
 
 ---
-## devtools
+name: devtools
 
 ![](img/redux-devtools.png){: .medium }
 
@@ -747,7 +749,7 @@ ReactDOM.render(
 
 
 ---
-## Question Time
+name: Question Time
 
 
 <iframe src="//giphy.com/embed/jTZVegIrdLCCY" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -758,10 +760,8 @@ ReactDOM.render(
 
 
 ---
-## Lets try it!
+name: Lets try it!
 
 [http://cs52.me/workshops/redux](http://cs52.me/workshops/redux)
 
 ???
-
-

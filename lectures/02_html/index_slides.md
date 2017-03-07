@@ -231,6 +231,7 @@ name: HTML5 2014
 
 
 ---
+name:
 
 ```html
 
@@ -259,6 +260,8 @@ Later on you'll learn about [linting](http://stackoverflow.com/questions/8503559
 
 
 ---
+name: pretty
+
 ALWAYS indent your code. Seriously. [Spaces or tabs](https://www.youtube.com/watch?v=SsoOG6ZeyUI), doesn't matter, just be consistent and indent!
 
 ```html
@@ -869,6 +872,7 @@ name: twitter 2006
 
 
 ---
+name:
 
 <iframe src="http://fabianburghardt.de/webolution/" width="100%" height="500px" style="background:white;"></iframe>
 

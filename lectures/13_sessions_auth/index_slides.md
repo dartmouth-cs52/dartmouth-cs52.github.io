@@ -22,10 +22,6 @@ name: base
 ---
 name: Sessions and Auth
 
----
-
-
-
 
 ---
 name: Today
@@ -127,6 +123,8 @@ name: Cookies
 
 
 ---
+name:
+
 
 <iframe src="//giphy.com/embed/5LiNKV5YurvKo" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -584,6 +582,8 @@ name: Tokens -> Access
 
 
 ---
+name:
+
 
 * http://cs52.me/assignments/hw5p1
 * next week:

@@ -3,7 +3,7 @@ layout: default
 title: Dartmouth CS52
 ---
 
-## Course Overview
+# Course Overview
 
 The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art (late 2016) of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
 
@@ -32,7 +32,7 @@ See [assignments](/assignments).
   - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours for lab assignments.<br>
   - Location: Carson 61  (limited space to ~40)
 
-![](imgs/carson61.jpg){: .fancy }
+![](assets/imgs/carson61.jpg){: .fancy }
 
 ### Office Hours and Contact:
 
@@ -46,7 +46,7 @@ See [assignments](/assignments).
 <table>
   <tr>
     <td>
-      <img class="profile fancy" src="imgs/tt_profile.jpg" />
+      <img class="profile fancy" src="assets/imgs/tt_profile.jpg" />
     </td>
   </tr>
   <tr>

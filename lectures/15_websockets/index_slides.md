@@ -21,9 +21,6 @@ name: base
 ---
 name: Websockets
 
----
-
-
 
 
 ---
@@ -151,6 +148,8 @@ name: Why Not Sockes for EVERYTHING?
 
 
 ---
+name:
+
 
 ![](img/socket-io.png){: .medium .white-background}
 

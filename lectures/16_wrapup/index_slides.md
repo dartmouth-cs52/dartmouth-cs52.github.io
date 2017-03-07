@@ -21,8 +21,6 @@ name: base
 ---
 name: Wrap Up
 
----
-
 
 
 ---
@@ -68,6 +66,8 @@ name: Hard Problem
 
 
 ---
+name:
+
 
 <iframe src="//giphy.com/embed/C1nEwzSrlVW80" width="680" height="448" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -479,6 +479,8 @@ name: Considerations
 
 
 ---
+name:
+
 
 ![](img/google211.jpg){:  .white-background}
 
@@ -491,6 +493,8 @@ name: Considerations
 
 
 ---
+name:
+
 
 ![](img/screen-shot-2015-06-24-at-11-54-41-am.png){:  .white-background}
 
@@ -502,6 +506,8 @@ name: Considerations
 
 
 ---
+name:
+
 
 ![](img/stormtrooper.jpg){:  .white-background}
 
@@ -513,6 +519,8 @@ name: Considerations
 
 
 ---
+name:
+
 
 ![](img/google-datacenter-tech-05.jpg){:  .white-background}
 
@@ -524,6 +532,8 @@ name: Considerations
 
 
 ---
+name:
+
 
 ![](img/Google-Datacenter-3.jpg){:  .white-background}
 
@@ -534,6 +544,8 @@ name: Considerations
 
 
 ---
+name:
+
 
 ![](img/inteldoesmat.jpg){:  .white-background}
 

@@ -59,6 +59,7 @@ name: git machine!
 
 
 ---
+name:
 
 .fancy.medium[![](img/box-model.png)]
 
@@ -81,7 +82,6 @@ name: content-box
 
 
 ---
-
 name: border-box
 .fancy.medium[![](img/border-box.png)]
 
@@ -92,6 +92,8 @@ name: border-box
 
 
 ---
+name:
+
 <iframe id="cp_embed_970f26f621cfa3ae3eec7e2a6b0e8c97" src="//codepen.io/css-tricks/embed/970f26f621cfa3ae3eec7e2a6b0e8c97?height=675&amp;theme-id=1&amp;slug-hash=970f26f621cfa3ae3eec7e2a6b0e8c97&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="675" allowtransparency="true" allowfullscreen="true" name="CodePen Embed" title="CodePen Embed" class="cp_embed_iframe " style="width: 100%; overflow: hidden;"></iframe>
 
 ???
@@ -120,6 +122,7 @@ html {
 
 
 ---
+name:
 
 <p data-height="400" data-theme-id="24117" data-slug-hash="d518f39c65614da11ced8784d025c8e8" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/d518f39c65614da11ced8784d025c8e8/">quiz1</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
@@ -206,6 +209,7 @@ name: document
 
 
 ---
+name:
 
 .fancy.medium[![](img/simple-dom.png)]
 
@@ -215,6 +219,7 @@ name: document
 
 
 ---
+name:
 
 .fancy.medium_small[![](img/dom-links.png)]
 
@@ -231,6 +236,7 @@ element = document.body.firstChild.nextSibling.firstChild;
 
 
 ---
+name:
 
 ```html
 <div id="better">before</div>
@@ -272,6 +278,7 @@ name: jquery
 
 
 ---
+name:
 
 ```javascript
 
@@ -298,6 +305,7 @@ $('nav li .selected')
 
 
 ---
+name:
 
 ```javascript
 let vanillaEl = document.getElementById('thing');
@@ -504,6 +512,7 @@ name: flatten, etc
 
 
 ---
+name:
 
 .fancy.medium_small[![](img/purefunction.jpg)]
 
@@ -562,6 +571,7 @@ name: non-blocking
 
 
 ---
+name:
 
 .fancy.medium[![](img/event-gui.png)]
 
@@ -578,6 +588,7 @@ name: non-blocking
 
 
 ---
+name:
 
 .fancy.medium[![](img/event-loop.png)]s
 
@@ -600,7 +611,7 @@ name: ajax
 
 
 ---
-
+name:
 ```javascript
 var data;       
 $.ajax({
@@ -624,6 +635,7 @@ console.log( data );
 
 
 ---
+name:
 
 ```javascript
 var xhttp = new XMLHttpRequest();
@@ -645,6 +657,7 @@ xhttp.send();
 
 
 ---
+name:
 
 .fancy.medium[![](img/callback-hell.png)]
 
@@ -654,6 +667,7 @@ xhttp.send();
 
 
 ---
+name:
 
 * goal: keep code shallow
 * some solutions for nested callbacks:
@@ -693,6 +707,7 @@ let donePromise = doSomething(args);
 
 
 ---
+name:
 
 ```javascript
 fetch('http://api.something.com/all-datas"').then(function(response) {
@@ -716,6 +731,7 @@ fetch('http://api.something.com/all-datas"').then(function(response) {
 
 
 ---
+name:
 
 ```javascript
 var cherishAndHonor = new Promise(function(resolve, reject) {
@@ -741,6 +757,7 @@ var cherishAndHonor = new Promise(function(resolve, reject) {
 
 
 ---
+name:
 
 .left[
 ```javascript
@@ -792,6 +809,7 @@ name: modules
 
 
 ---
+name:
 
 ```javascript
 // create in new file myModule.js
@@ -820,6 +838,7 @@ cool.someCoolFunction();
 
 
 ---
+name:
 
 ```javascript
 // what if we want to export an object in a file myModule?

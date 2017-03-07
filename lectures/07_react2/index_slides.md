@@ -1,20 +1,19 @@
+name: pic
 layout: true
 class: center, middle
-name: pic
 background-size: contain
 
 ---
-
+name: fragment
 layout: true
 class: center, top
-name: fragment
 
 .title[{{name}}]
 
 ---
+name: base
 layout: true
 class: center, middle
-name: base
 
 .title[{{name}}]
 
@@ -62,6 +61,7 @@ name: More React
 
 
 ---
+name:
 
 ![](img/app-design.png){: .medium}
 
@@ -78,6 +78,7 @@ name: More React
 
 
 ---
+name:
 
 ![](img/videos-components.png){: .medium .white-background}
 
@@ -146,6 +147,7 @@ name: Props
 
 
 ---
+name:
 
 ```javascript
 const SmallComponent = (props) => {
@@ -250,6 +252,8 @@ name: expanded component lifecycle
 
 
 ---
+name:
+
 ![](img/jquery-style-vs-react-style.png){: .hfit}
 
 ???
@@ -282,7 +286,7 @@ name: Data Binding
 
 
 ---
-
+name:
 
 ![](img/two-way.png){: .hfit .white-background}
 
@@ -297,7 +301,7 @@ name: Data Binding
 
 
 ---
-
+name:
 
 ![](img/oneway.png){: .hfit .white-background}
 
@@ -308,7 +312,7 @@ name: Data Binding
 
 
 ---
-
+name:
 
 ![](img/databindings.png){: .hfit .white-background}
 
@@ -325,7 +329,7 @@ name: Data Binding
 
 
 ---
-
+name:
 
 ![](img/1koolaid.png){: .hfit }
 
@@ -339,6 +343,7 @@ name: Data Binding
 
 
 ---
+name:
 
 ![](img/2koolaid.png){: .hfit }
 
@@ -349,6 +354,7 @@ name: Data Binding
 
 
 ---
+name:
 
 ![](img/3kookaid.png){: .hfit }
 
@@ -359,6 +365,7 @@ name: Data Binding
 
 
 ---
+name:
 
 ![](img/4koolaid.png){: .hfit }
 
@@ -369,6 +376,7 @@ name: Data Binding
 
 
 ---
+name:
 
 ![](img/5koolaid.png){: .hfit }
 
@@ -406,6 +414,7 @@ name: Some React Postulates
 
 
 ---
+name:
 
 ![](img/1setstate.png){: .hfit }
 
@@ -416,6 +425,7 @@ name: Some React Postulates
 
 
 ---
+name:
 
 ![](img/2setstate.png){: .hfit }
 

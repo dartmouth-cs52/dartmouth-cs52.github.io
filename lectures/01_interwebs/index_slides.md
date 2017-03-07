@@ -19,7 +19,6 @@ name: base
 .title[{{name}}]
 
 ---
-
 name: WWW, tubes, networks
 
 
@@ -566,6 +565,8 @@ This is what enables the internet to be robust, if a link goes down, then there 
 
 
 ---
+name:
+
 Want to see your local routing table on your laptop?
 
 ```bash
@@ -575,6 +576,8 @@ route print  #on windows
 ```
 
 ---
+name:
+
 Want to see your local routing table on your laptop?
 
 ```bash
@@ -659,6 +662,8 @@ name: HTTP Methods
 
 
 ---
+name:
+
 💻 Want to try it?
 
 ```bash
@@ -670,6 +675,7 @@ GET /~testuser/ HTML/1.1
 
 
 ---
+name:
 
 .fancy.medium[![](img/http_get.png)]
 
@@ -689,7 +695,6 @@ hand out roles and explain process
 
 
 ---
-
 name: The Interwebs
 
 .fancy.medium[![](img/internet.png)]

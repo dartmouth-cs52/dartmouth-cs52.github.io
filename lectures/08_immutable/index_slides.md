@@ -21,12 +21,6 @@ name: base
 ---
 name: Immutability, BAAS, Promises
 
----
-
-
-
-
-
 
 ---
 name: On The Menu
@@ -396,6 +390,7 @@ arr == [2];
 
 
 ---
+name:
 
 ![](img/immutable-logo.png){: .medium}
 
@@ -517,6 +512,7 @@ name: Cool
 
 
 ---
+name:
 
 ![](img/firebase-logo.png){: .medium}
 

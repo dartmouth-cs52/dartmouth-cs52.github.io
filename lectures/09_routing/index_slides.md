@@ -21,14 +21,10 @@ name: base
 ---
 name: Routing
 
----
-
-
-
 
 
 ---
-## Announcements
+name: Announcements
 
 * HW3 Extension
   * p1 SAT
@@ -48,7 +44,7 @@ name: Routing
 
 
 ---
-## Routing Frontend
+name: Routing Frontend
 
 http://yummyserver.com/food/id/#/section?id=23j32j3j
 
@@ -62,6 +58,8 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 
 
 ---
+name:
+
 
 ![](img/single-page-app.png){: .medium .white-background}
 
@@ -76,6 +74,8 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 
 
 ---
+name:
+
 
 
 ![](img/single-page-web-applications.png){: .medium .white-background}
@@ -93,7 +93,7 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 
 
 ---
-## urls
+name: urls
 
 ![](img/complex_url.png){: .medium .white-background .bordered}
 
@@ -105,7 +105,7 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 
 
 ---
-## enter routes
+name: enter routes
 
 * `/posts/super_interesting_post`
 * app needs to know about this
@@ -120,7 +120,7 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 
 
 ---
-## Basic Browser
+name: Basic Browser
 
 * maintains a history of URLs visited
   * back
@@ -139,7 +139,7 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 
 
 ---
-## reloads on
+name: reloads on
 
 * location bar typing
 * forward/back buttons
@@ -155,7 +155,7 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 
 
 ---
-## Attempt 1: Hash History
+name: Attempt 1: Hash History
 
 * http://example.com
 * http://example.com#fragment
@@ -173,7 +173,7 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 
 
 ---
-## Navigation Away
+name: Navigation Away
 
 ```javascript
 
@@ -190,7 +190,7 @@ window.onbeforeunload = function(e) {
 
 
 ---
-## desired behavior
+name: desired behavior
 
 * do the right thing:
   * browser page history
@@ -207,7 +207,7 @@ window.onbeforeunload = function(e) {
 
 
 ---
-## that would be perfect, thanks
+name: that would be perfect, thanks
 
 <iframe src="//giphy.com/embed/p5yJjfLjyNjy0" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -218,7 +218,7 @@ window.onbeforeunload = function(e) {
 
 
 ---
-## Deep Linking
+name: Deep Linking
 
 * state in urls:
   * how much state/ui context to encode?
@@ -233,7 +233,7 @@ window.onbeforeunload = function(e) {
 
 
 ---
-## App Init from URL
+name: App Init from URL
 
 * old ugly way: http://www.example.org/?show=posts?id=s987s9d&type=today&user=320s9s8
 * new clean urls: http://www.example.org/posts/07-22-16
@@ -246,7 +246,7 @@ window.onbeforeunload = function(e) {
 
 
 ---
-## HTML5 History API
+name: HTML5 History API
 
 ```javascript
 
@@ -273,6 +273,8 @@ http://html5demos.com/history
 
 
 ---
+name:
+
 
 ![](http://i.imgur.com/UDXsrxj.gif){: .hfill}
 
@@ -286,6 +288,9 @@ http://html5demos.com/history
 
 
 ---
+name:
+
+
 ![](img/react-router.png){: .medium .white-background}
 
 [https://github.com/reactjs/react-router](https://github.com/reactjs/react-router)
@@ -299,6 +304,8 @@ http://html5demos.com/history
 
 
 ---
+name:
+
 
 "React Router keeps your UI in sync with the URL."
 
@@ -318,6 +325,8 @@ http://html5demos.com/history
 
 
 ---
+name:
+
 
 ![](img/brad-westfall-1.svg){: .medium .white-background}
 
@@ -328,6 +337,9 @@ http://html5demos.com/history
 
 
 ---
+name:
+
+
 http://somedomain.com/users
 
 ![](img/brad-westfall-2.svg){: .medium .white-background}
@@ -339,6 +351,9 @@ http://somedomain.com/users
 
 
 ---
+name:
+
+
 http://somedomain.com/widgets
 
 ![](img/brad-westfall-3.svg){: .medium .white-background}
@@ -351,6 +366,9 @@ http://somedomain.com/widgets
 
 
 ---
+name:
+
+
 http://somedomain.com/other
 
 ![](img/brad-westfall-4.svg){: .medium .white-background}
@@ -362,7 +380,7 @@ http://somedomain.com/other
 
 
 ---
-## Manual Labor
+name: Manual Labor
 
 ```javascript
 renderInner() {
@@ -390,7 +408,7 @@ render() {
 
 
 ---
-## React Router
+name: React Router
 
 ```html
 <Router>
@@ -418,7 +436,7 @@ render() {
 
 
 ---
-## Defining
+name: Defining
 
 
 
@@ -439,7 +457,7 @@ render() {
 
 
 ---
-## Nesting
+name: Nesting
 
 
 ```javascript
@@ -463,7 +481,7 @@ render() {
 
 
 ---
-## Nesting
+name: Nesting
 
 * wait but like, where does it go?
 
@@ -477,7 +495,7 @@ render() {
 
 
 ---
-## PROPS
+name: PROPS
 
 * when you nest a component it goes into props!
 
@@ -501,7 +519,7 @@ render() {
 
 
 ---
-## Not just for Router
+name: Not just for Router
 
 ```javascript
 // App
@@ -535,7 +553,7 @@ render() {
 
 
 ---
-## IndexRoute
+name: IndexRoute
 
 ```html
 <Route path="/" component={MainLayout}>
@@ -562,7 +580,7 @@ render() {
 
 
 ---
-## Linking and Pushing
+name: Linking and Pushing
 
 ```html
 <ul>
@@ -588,7 +606,7 @@ handleClick() {
 
 
 ---
-## BrowserHistory vs HashHistory
+name: BrowserHistory vs HashHistory
 
 
 ```javascript
@@ -612,7 +630,7 @@ ReactDOM.render(
 
 
 ---
-## Route matching
+name: Route matching
 
 ```html
 <Route path="users/:userId" component={UserProfile} />
@@ -639,7 +657,7 @@ fetch(url, { method: 'get'})
 
 
 ---
-## 404!
+name: 404!
 
 * no requests being made to the server except first app load
 * BUT if first load is to specific resource...
@@ -655,7 +673,7 @@ fetch(url, { method: 'get'})
 
 
 ---
-## Deprecated methods
+name: Deprecated methods
 
 * React Router under heavy development
 * stackoverlow has lots of outdated info
@@ -669,6 +687,8 @@ fetch(url, { method: 'get'})
 
 
 ---
+name:
+
 
 <p data-height="300" data-theme-id="24117" data-slug-hash="GqxdAw" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/GqxdAw/">React-Router Demo</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
@@ -682,7 +702,7 @@ fetch(url, { method: 'get'})
 
 
 ---
-## Question Time
+name: Question Time
 
 
 <iframe src="//giphy.com/embed/jTZVegIrdLCCY" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -693,10 +713,8 @@ fetch(url, { method: 'get'})
 
 
 ---
-## Lets try it!
+name: Lets try it!
 
 [http://cs52.me/workshops/routing](http://cs52.me/workshops/routing)
 
 ???
-
-
