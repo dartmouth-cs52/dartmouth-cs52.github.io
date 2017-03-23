@@ -11,51 +11,29 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 
 ## Milestones At a Glance
 
-* **Pitch Signups** (7/21/2016):<br>
+* **Pitch Signups** (5/1/2017):<br><!--7/21/2016-->
   Signup to pitch your idea! (with a partner)
 
-* **Pitch Presentation** (7/28/2016):<br>
+* **Pitch Presentation** (5/2/2017):<br><!--7/28/2016-->
   A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class. Everybody will rank their top choices and groups will be formed that way.
 
-* **[Feature Spec](feature-spec)** (8/9/2016):<br>
+* **[Feature Spec](feature-spec)** (5/9/2017):<br><!--8/9/2016-->
   A walk-though of your project from the users perspective listing out every feature that it should have with a few user stories attached.
 
-* **[Scaffolding + Mockups](mockups)** (8/11/2016):<br>
+* **[Scaffolding + Mockups](mockups)** (5/16/2017):<br><!--8/11/2016-->
   Mockups/Sketches of your project and initial code scaffolding started with a component plan and tools and frameworks chosen.
 
-* **[Dev Site Up (client+server)](dev-site)** (8/16/2016):<br>
+* **[Dev Site Up (client+server)](dev-site)** (5/23/2016):<br><!--8/16/2016-->
   Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
 
-* **[Progress Presentations](progress)** (8/18/2016):<br>
+* **[Progress Presentations](progress)** (5/25/17):<br><!--8/18/2016-->
   Presentations in class on progress, soliciting feedback.
 
-* **[Final Project Demos](final)** (8/24/2016):<br>
-  Final presentation of project during x-hour. Open to public. Science fair style: Motivate the idea, show it in action, discuss challenges and any user testing.
+* **[Final Project Demos](final)** (5/31/2017):<br><!--8/24/2016-->
+  Final Demos! Catered open to public event combined with other CS projects, CS98 and DALI Demos! Science fair style: Motivate the idea, show it in action, discuss challenges and any user testing.
 
-* **[Final Project Code Submission](final-submission)** (8/29/2016):<br>
+* **[Final Project Code Submission](final-submission)** (6/3/2017):<br>
   Final code submission with up to date documentation.
 
 
 ### <span style="color: #F27D00">Dates approximate and may be adjusted</span> ##
-
-
-<!-- * Pitch Proposals (due 7/21/2016):  This will be your chance to submit an idea that you would like to pitch.  As the person submitting the idea you'll need to think a little bit about scope and feasibility.  Deliverables: proposal form.<br>
-  ![](http://i.giphy.com/IH3ZwYeR9AlP2.gif){: .fancy .tiny}
-
-* Pitch Presentation (7/28/2016):  A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class. Deliverables: pitch deck.<br>
-  ![](http://i.giphy.com/nldqZAXfXH6I8.gif){: .fancy .tiny}
-
-* Feature Spec (8/2/2016):  A walk-though of your project from the users perspective listing out every feature that it should have.<br>
-  ![](http://i.giphy.com/13NR9a0aYuYMy4.gif){: .fancy .tiny}
-
-* Scaffolding + Mockups (8/9/2016):  Mockups/Sketches of your project and initial code scaffolding started with a component plan and tools and frameworks chosen.<br>
-  ![](http://i.giphy.com/GWbMbUysgsIda.gif){: .fancy .tiny}
-
-* Dev Site Up (client+server) (8/11/2016):  Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).<br>
-  ![](http://i.giphy.com/IU9JNuUSmxZTy.gif){: .fancy .tiny}
-
-* Progress Presentations (8/16/2016):  Presentations in class on progress, soliciting feedback.<br>
-  ![](http://i.giphy.com/gPLD7lIdSo3Pq.gif){: .fancy .tiny}
-
-* Final Project Demo (8/23/2016):  Final presentation of project. Open to public. Motivate the idea, show it in action, discuss challenges and any user testing.<br>
-  ![](http://i.giphy.com/p9O75RBS946He.gif){: .fancy .tiny} -->

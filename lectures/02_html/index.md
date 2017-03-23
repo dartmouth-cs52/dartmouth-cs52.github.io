@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page_with_slides
 title: HTML
 published: true
 ---

@@ -6,19 +6,19 @@ title: Logistics
 
 ## Textbook ##
 
-A collection of online resources will be used, but no textbook will be required.  Current blog posts and videos about the state of various technologies and best practices will be included in some assignments.  Peruse them to learn something.
+A collection of online resources will be used, but no textbook will be required.  Current blog posts and videos about the state of various technologies and best practices will be included in some assignments.  Peruse them to learn something. If you have good resources that you find along the way - [contribute](https://github.com/dartmouth-cs52/dartmouth-cs52.github.io/issues)!
 
 ## Auditing ##
 
-Unfortunately due to the nature of the class and our classroom size, auditing the class will not be permitted. All class material will be posted here online though!
+Unfortunately due to the nature of the class and our classroom size, auditing the class will not be permitted. All class material will be posted here online though! If are following along and need help you are welcome to come to [DALI Open Lab Hours](http://dali.dartmouth.edu/dali-open-lab-nights/).
 
 ## Slack ##
 
-We will use [Slack](http://slack.com), an online collaborative tool for most class messaging and help. Details in class. We will also write slack integrations!
+We will use [Slack](https://cs52-dartmouth.slack.com), an online collaborative tool for most class messaging and help. Details in class. We will also write slack integrations!
 
 ## Grading ##
 
-Grading of some collaborative team based work will be done based on GitHub pull requests.  Proper git flow will be introduced early on in the term.
+Grading of some collaborative team based work will be done based on GitHub pull requests.  Proper git flow will be introduced early on in the term. Using version control will become second nature to you.
 
   - In-class short assignments: 10%
   - 5 week-long labs:  25%
@@ -46,7 +46,7 @@ The Internet will be a large source of information and help to you as you do you
 
 ### Student Collaboration
 
-For the short assignments and the labs you may verbally collaborate as much as you want. However, the code that you commit (turn in), should be created, typed, documented, and output generated, by you. You may consult freely with instructors and classmates but you should work individually when actually coding. You should never copy code from other students. Your peers are not considered an authorized source. Even looking at another student's code for "inspiration" or "debugging" is not allowed. Discuss as much as you want, but do not copy. To do otherwise is a violation of the Academic Honor Principle. Any collaboration with another student should be documented in the comments.  Again no penalty for mentioning that you talked to somebody, but if you did talk to someone and your code is very similar to theirs this will raise questions, better to clarify upfront.
+For the short assignments and the labs you may verbally collaborate as much as you want. However, the code that you commit (turn in), should be created, typed, documented, and output generated, by you. You may consult freely with instructors and classmates but you should work individually when actually coding. You should never copy code from other students or from previous students of the class. Your peers are not considered an authorized source. Even looking at another student's code for "inspiration" or "debugging" is not allowed.  Discuss as much as you want, but do not copy. To do otherwise is a violation of the Academic Honor Principle. Any collaboration with another student should be documented in the comments.  Again no penalty for mentioning that you talked to somebody, but if you did talk to someone and your code is very similar to theirs this will raise questions, better to clarify upfront. If you do end up looking at another student's code, CITE IT.
 
 ### Honor Code Violation Examples
 
@@ -64,6 +64,11 @@ Make your in-code citations look something like this:
 ```
 // adapted from: http://stackoverflow.com/someurl
 // this method does x and y
+
+or
+
+// copied off of Cameron Howe's code for this
+// this method does x and y
 ```
 
 (policy adapted from: https://integrity.mit.edu/handbook/writing-code)
@@ -71,7 +76,7 @@ Make your in-code citations look something like this:
 
 ### But officer I panicked!
 
-If you are stuck: ask for an extension, come to office hours, email or slack your Professor and your TAs, learn some humility and accept that you might need help. Asking for help is one of the greatest skills, and if you get anything from this class is that it is OK to ask for help.  
+If you are stuck: ask for an extension, come to office hours, email or slack your Professor and your TAs, learn some humility and accept that you might need help. Asking for help is one of the greatest skills that one can possess, and if you get anything from this class is that it is OK to ask for help.  
 
 Please do not create a horrible situation for all of us by just copying off of someone else.  Our job is to help you learn.  You will not be penalized for asking.
 

@@ -1,25 +1,27 @@
 ---
 layout: page
-title: HW 5 p1
+title: HW 4
 published: true
 ---
 
 
+## Redux Blog: Client
 
-## Blog: Server
+![](img/redux.png)
 
-![](img/enm.jpg){: .small}
+We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be a blog,  could be photo's or really anything you want. As long as there are individual post items that have some content that need to be saved to a database!
 
 
-For this assignment we are going to build an [express](https://expressjs.com/) and [mongodb](https://www.mongodb.com/) CRUD api server for our react+redux blog frontend. This will finally bring our stack all the way down to the database.
+<iframe width="640" height="480" src="https://www.youtube.com/embed/jWPw31kUTmw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-## Assignment At a Glance
 
-* Part 1:
-  * Intro to Express and Mongo: You'll get a bit more handholding here. We'll add in the `post` schema, get going with express routes, and get set up for adding in the other stuff.
-  * Basic CRUD API: Building from the intro, we'll implement the full create, update, delete api for our blog.
-* Part 2:
-  * Authentication: We'll extend both our frontend and our backend to support authentication and users!
+### Part 1 HW4
+
+We'll build out a Create+Update+Delete (CRUD) style blogging app using React and Redux and React-Router.  We will use an API server hosted at: `cs52-blog.herokuapp.com`
+
+### Part 2 HW5
+
+We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo based API server.  Finally FULL-STACK!
 
 
 ## Some Setup
@@ -27,430 +29,358 @@ For this assignment we are going to build an [express](https://expressjs.com/) a
 
 First we should do some basic setup steps.  
 
-🚀 Easiest is to start from a tiny [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel. Do the usual: create your own repo and change the remote.
+🚀 You should start from your react+redux+starter from the [redux workshop](../workshops/redux) or you can grab the **with_redux** branch from the [js-react-starter](https://github.com/dartmouth-cs52/js-react-starter).  Do the usual: create your own repo and change the remote.
 
-```bash
-npm install
-npm run dev
-```
+🚀 Webpack. When a route reloads to an error webpack-dev-server needs to know that it should always serve up our app from index.html even when we end up asking it for another route.
 
-This will start our new node+express app on http://localhost:9090 in dev reloading mode.
-
-Ok, now that we got that out of the way. Let's dig in!  
-
-
-
-### React App Debugging
-
-The whole point here is to get your blog app working with this new server, so we will point your blog frontend to this new server.
-
-🚀 Change your server api url:
 
 ```javascript
-const ROOT_URL = 'http://localhost:9090/api';
-// const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+//add to webpack.config.js
+devServer: {
+  port: 8080,
+  historyApiFallback: {
+    index: 'index.html',
+  },
+},
 ```
 
-And start up your react+redux blog app.  It'll be broken for now (should display no blog entries), but hopefully soon we'll have it all working!
+🚀 We should also make sure some of our paths in `index.html` are correct. Make sure each of the build paths starts with / like `/build/bundle.css` and `/build/bundle.js`.
 
 
-## Intro Express
+Ok, now that we got that out of the way. Let's dig in!
 
-[Express](https://expressjs.com/) is a web framework for Node.js.  What it does for us is provide a way to listen for and respond to incoming web requests.
 
-Each of the http API requests we were making in Part 1 will need to be provided in this assignment.
+## CRUD API
 
-To recap the API has the following endpoints:
+We'll be using an API server running at http://cs52-blog.herokuapp.com/api
+
+The API has the following endpoints:
 
 * GET  `/api/posts/`
-  returns only title and tags for all posts
+  returns **only** title, tags, and id for all posts
   `[[{"id":"",title":"","tags":""},...]`
 * POST `/api/posts/` with post parameters `{'title', 'tags', 'content'}`
   creates a new post
 * PUT `/api/posts/:postID` with parameters `{'title', 'tags', 'content'}`
   will update an entry
 * GET `/api/posts/:postID`
-  returns the post found at `postID`
+  returns the full post data found at `postID`, including `content`
 * DELETE `/api/posts/:postID`
   deletes the post found at `postID`
 
-Let's implement these and more!
 
-Take a look through the current `app/server.js` file. This is the entry point for the app. Just like `index.js` has been in our frontend app (the names of these are arbitrary). Note how we are setting the route:
+For each of these you need to append an api key.  This key can just be your `firstinitial_lastname`.   You can test the api using postman or curl.
 
-```javascript
-// default index route
-app.get('/', (req, res) => {
-  res.send('hi');
-});
-```
-
-This routing concept is identical to the routing we used in our react app.  It maps URL paths to functions.  These functions take 2 arguments:  request and response.  
-
-Request is an express object that contains, among other things, any data that was part of the request. For instance, the JSON parameters we would POST or PUT in our asynchronous `axios` calls would be available as `req.body.title`, etc.  
-
-Response is another special express object that contains, among other things, a method named `send` that allows us a send back a response to the client.  When your api call gets back JSON data this is how it is returned.  Consider `res.send()` the equivalent of a network based `return` statement.
-
-We'll add more routing in shortly, but first let's set up our database!
-
-
-## Mongo Database Server
-
-Mongo is the database that we are going to use.  We will run a local mongo daemon to connect to for testing.
-
-
-🚀 On OSX to install:
-
-```bash
-brew install mongodb
-```
-
-Then follow further [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
-
-You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process.
-
-There is a commmandline client you can use to connect to the database: `mongo`. You can also play around with a more graphical client [robomongo](https://robomongo.org/).
-
-```javascript
-// mongoshell is a commandline interface to your local mongo db
-
-show dbs
-// will show your current databases
-
-use mytest
-// will make mytest the current database
-
-db.buildings.insert(
-   {
-      "address" : {
-         "street" : "9 Maynard",
-         "zipcode" : "03755",
-         "building" : "Sudikoff",
-         "coord" : [ -72.2870536, 43.7068466 ]
-      },
-      "dept" : "CS",
-   }
-)
-// will insert an object into the database
-// into a collection called buildings
-
-db.buildings.find()
-// returns everything in this collection
-
-db.buildings.insert(
-   {
-      "address" : {
-         "street" : "2 E Wheelock St",
-         "zipcode" : "03755",
-         "building" : "Hopkins Center For the Arts",
-         "coord" : [ -72.2901329, 43.7020189 ]
-      },
-      "dept" : "Hop",
-   }
-)
-// add in another entry
-
-db.buildings.find({"address.building": "Sudikoff"})
-// finds a entry in database by nested key:value
-```
-
-Ok, so now you've played a little bit with mongo directly, let's build something on top of it.
-
-## Mongoose
-
-![](img/mongoose.jpg){: .small .fancy }
-
-To connect to mongo we will use a module called `mongoose`. [Mongoose](http://mongoosejs.com/) is a an object model for mongo. This allows us to treat data that we are storing in mongo as objects that have a nice API for querying, saving, validating, etc.  Mongo is in general considered a schema-less store.  We store JSON documents in a large object tree similarly to firebase. However, with Mongoose we are able to specify a schema for our objects.  This is purely in code and allows use to validate and assert our data before inserting it into the database.
-
-🚀 Install mongoose:  `npm install --save mongoose`
-
-🚀 And just a little bit of code to get mongoose initialized with our database in `server.js`
-
-
-```javascript
-import mongoose from 'mongoose';
-
-
-// DB Setup
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/blog';
-mongoose.connect(mongoURI);
-// set mongoose promises to es6 default
-mongoose.Promise = global.Promise;
-
-```
-
-
-## Model
-
-We're going to create a data model to work with. A data model in mongoose is initialized from a schema, which is a description of the structure of the object. This is much more like what you might be familiar with statically typed classes in Java.
-
-🚀 Create a directory `app/models` and a file inside this directory named `post_model.js`.
-
-
-```javascript
-import mongoose, { Schema } from 'mongoose';
-
-// create a schema for posts with a field
-const PostSchema = new Schema({
-  title: String,
-});
-
-// create model class
-const PostModel = mongoose.model('Post', PostSchema);
-
-export default PostModel;
-```
-
-This will do for now, let's see about how to use this.
-
-## Controller
-
-Notice anything a little familiar in our terminology?   Yup, we're basically creating a standard MVC for our API server!   Well, except without much in the way of views, these will just be JSON.
-
-🚀 Create a directory `app/controllers` and a file inside this named `post_controller.js`.
-
-What might the controller do?
-
-Well it should have methods that perform all the main functionality of our API.  In short those methods would be:
-
-```javascript
-import Post from '../models/post_model';
-
-export const createPost = (req, res) => {
-  res.send('post should be created here');
-};
-export const getPosts = (req, res) => {
-  res.send('posts should be returned');
-};
-export const getPost = (req, res) => {
-  res.send('single post looked up');
-};
-export const deletePost = (req, res) => {
-  res.send('delete a post here');
-};
-export const updatePost = (req, res) => {
-  res.send('update a post here');
-};
-```
-
-Let's fill them in now with filler and then deal with the details later.
-
-
-### Routing
-
-Now we are ready to wire it all together with routes!  The way we are doing it earlier is not very extensible. We should create a separate file for routes, like we did with React.
-
-🚀 Create:  `app/router.js`.
-
-Here's some boilerplate to get us going:
-
-```javascript
-import { Router } from 'express';
-import * as Posts from './controllers/post_controller';
-
-
-const router = Router();
-
-router.get('/', (req, res) => {
-  res.json({ message: 'welcome to our blog api!' });
-});
-
-///your routes will go here
-
-export default router;
-```
-
-Express provides a nice [route interface](https://expressjs.com/en/4x/api.html#router) that we will use to define all of our routes.
-
-The chaining method simplifies how our routes look. For instance here is how we could define our `posts/:id` routes.
-
-```javascript
-// example!
-// on routes that end in /posts
-// ----------------------------------------------------
-router.route('/someroute/:someID')
-  .post(/*someMethod*/)
-  .get(/*someMethod*/);
-  .delete(/*someMethod*/);
-```
-{: .example}
-
-Note `/*someMethod*/` is just a comment, you would call a method there in a module that we will call the controller — more on that shortly!
-
-
-Ok, remember how we defined all our API endpoints?   Let's map them in our router.
-
-🚀 Use the syntax above to make routes to map the following:
-
-* POST `/posts`:  Posts.createPost
-* GET `/posts`:  Posts.getPosts
-
-and also for:
-
-* GET `/posts/:id`: Posts.getPost
-* PUT `/posts/:id`: Posts.updatePost
-* DELETE `/posts/:id`: Posts.deletePost
-
-You will have 2 `router.route()` definitions with separate chains of HTTP verb methods, one for `/posts` and one for `/posts/:id`.
-
-
-### Import New Routes
-
-🚀 Now in your `app/server.js` file import our new routes and assign them to handle all `/api/*` routes!
-
-```javascript
-//at top of server.js
-import apiRouter from './router';
-
-// REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
-app.use('/api', apiRouter);
-```
-
-Neat!
-
-### First Pass Test
-
-Let's test what we have done so far! Test out each of the routes using these curl commands (just modified version with localhost from hw4):
+There is a command that you can run in Terminal called `curl` that can fetch remote data.  Here's how you would use it for testing the api server.  This will also come in handy when you have to create the api server next week!
 
 ```bash
 # all posts get:
-curl -X GET "http://localhost:9090/api/posts"
+curl -X GET "https://cs52-blog.herokuapp.com/api/posts?key=YOURKEY"
 
 # create new post
 curl -X POST -H "Content-Type: application/json" -d '{
     "title": "first post",
     "tags": "words",
     "content":  "this is a test post"
-}' "http://localhost:9090/api/posts"
+}' "https://cs52-blog.herokuapp.com/api/posts/?key=YOURKEY"
 
 # update by POSTID
 curl -X PUT -H "Content-Type: application/json" -d '{
     "title": "new title",
     "tags": "new words",
     "content":  "old content"
-}' "http://localhost:9090/api/posts/POSTID"
+}' "https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY"
 
 # fetch 1 by POSTID
-curl -X GET "http://localhost:9090/api/posts/POSTID"
+curl -X GET "https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY"
 
 # delete by POSTID
-curl -X DELETE -H "Content-Type: application/json" "http://localhost:9090/api/posts/POSTID"
+curl -X DELETE -H "Content-Type: application/json" "https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY"
 
 ```
 
+Try these out.  Run the create new post one a couple of times to populate your database!
 
-## Controller Continued
 
-Ok but our controller `controllers/post_controller.js` is fairly useless.  We have everything wired, but we need to actually store stuff.
 
-Let's walk through making one of those endpoints not useless!
 
-The most important might be the `createPost` endpoint.  If you recall from HW4 this gets called with the fields of our new post `{title: '', tags: '', contents: ''}`.  These end up in our `req` (request) object, specifically in `req.body`.
+## Routes
 
-Let's fill out the contents of the `createPost` method:
+We're going to use some routes to set up our app with different "pages".  
 
-🚀 create a new Post object:
+🚀 Your routes could look something like this.  Basically you're going to have a route for creating new posts (this will be a form) and a page for showing a post by ID. The default route will show a list of all posts.
+
+
+```html
+<Route path="/" component={App}>
+  <IndexRoute component={Index} />
+  <Route path="posts/new" component={New} />
+  <Route path="posts/:id" component={Show} />
+</Route>
+```
+
+This is just the basics, feel free to expand on this. For reference it might help to look back on the [routes workshop](../workshops/routing).
+
+
+### App
+
+Is a simple component that simply renders a *NavBar* component and the `{props.children}` passed in by the router. You can think of this as your main layout — you can rename it to that if you prefer!
+
+
+### NavBar
+
+A simple component that renders a nav with two `<Link>` react-router components such as the following:
+
+* `<Link to="/">your site name</Link>`
+* `<Link to="posts/new">new post</Link>`
+
+
+### Index
+
+This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`.
+
+Try the curl commands above,  you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `Link` elements to `posts/postid` when you render the posts. Each post should be clickable to open it full page using the router.
+
+Min specs at a glance:
+
+* default page listing all posts
+* show title and tags (for now)
+* use post id to link to full view
+
+Hint: As this is a connected component that relies on the list of posts, you'll want to run your `fetchPosts()` ActionCreator from `componentWillMount`.
+
+### New
+
+Component to create a new blog post (you can reuse this component for editing posts if you like). Should be a connected component that can trigger actions (ActionCreators).
+
+### Show + edit
+
+This is the component that gets loaded when you want to see the full rendered contents of a single post.  *Show* should display the full content of the post (selected by the ID that is passed in through `this.props.params.id`.  This post id parameter will come from the react-router when you navigate to:  `/posts/:postID`.  Where does postID come from in general?  It is automatically assigned to your post by the API when you create the post.
+
+Your *Show* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:id/edit` for instance.  Personal preference here.
+
+Note for now the API server only supports title, tags, content as fields.  In part 2 you will implement your own server and can add or change fields then.
+
+Min specs at a glance:
+
+* render full content of post at route `/posts/:id`
+* render markdown
+* allow editing of post fields
+  * either in separate form or as individual editable fields
+
+This is a connected component that can both trigger actions and is connected to the global redux state.
+
+## Redux
+
+We will be using [redux](http://redux.js.org/) for our application state.  We're going to just have 1 reducer to start with: `postsReducer`.   This reducer will be associated with the key `posts` and will return an object to look something like this initially:
 
 ```javascript
-const post = new Post();
+posts: {
+  all: [],
+  post: null,
+}
 ```
 
-All our fields are available in `req.body`, so let's set them on the new Post object.
+
+## Actions
+
+Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer in this implementation. However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place.
 
 ```javascript
-post.title = req.body.title;
-```
-
-Now we just have to save the object (so far we've been working with a new instance purely in memory).  Most save and query methods in Mongoose can return promises — so let's stretch our promise muscles a little.
-
-```javascript
-post.save()
-.then(result => {
-  res.json({ message: 'Post created!' });
-})
-.catch(error => {
-  res.json({ error });
-});
-```
-
-It is common practice to return the modified object in a API call as confirmation, but often API's will just return various success codes also to indicate success or failure. We're going to return JSON though for now.
-
-
-🚀 Let's test that this worked:
-
-```bash
-curl -X POST -H "Content-Type: application/json" -d '{
-    "title": "first post"
-}' "http://localhost:9090/api/posts"
-```
-
-And then in mongo shell:  
-
-```javascript
-use blog
-db.posts.find()
-```
-
-## Get All Endpoints Working
-
-
-Your mission is to now implement the rest of the endpoints!  You have the wiring ready, all you need is to use the [mongoose docs](http://mongoosejs.com/docs/queries.html) to implement `getPost`, `getPosts`, `updatePost`, and `deletePost`.  You may find mongoose methods such as: `.find()`, `.findById()`, `.remove()` helpful.  You might want to look into sorting the results for `getPosts` by `created_at`.
-
-Note!  In the above we only saved `title`, none of the other fields were defined in our Post Schema!  You should now go back and add the other fields we need to the model as well as to the all the controller methods.
-
-One more caveat! Mongo happens to use `_id` instead of `id` as we have been so you could use a method like the following to format the list of posts to be cleaner.
-
-```javascript
-// this cleans the posts because we use id instead of dangling _id
-// and we purposefully don't return content here either
-const cleanPosts = (posts) => {
-  return posts.map(post => {
-    return { id: post._id, title: post.title, tags: post.tags };
-  });
+export const ActionTypes = {
+  FETCH_POSTS: 'FETCH_POSTS',
+  FETCH_POST:  'FETCH_POST',
+  // CREATE_POST: 'CREATE_POST',
+  // UPDATE_POST: 'UPDATE_POST',
+  // DELETE_POST: 'DELETE_POST',
 };
 ```
 
-This would be before you `res.json()` them back to the client.
+Now you might ask,  how the heck do we fetch from an API using actions!?
 
-And finally, you'll need to get the router id that is passed in when we hit `/posts/:id`.  This is accessible as `req.params.id` inside each of our controller functions that had this `:id` path variable.
+Don't worry, this part I'll walk you through.
 
+###  Connecting to API
 
-
-## What about APIKEY
-
-Note, unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in each document and then query on it.
+First thing we'll need is to install the `redux-thunk` library. Not another library!  Actually, we'll need two libraries for this functionality. `axios` will give us an nice promise based ajax library.
 
 
-## Hosting
+```javascript
 
-We will need to host this new server component so your blog can use it instead of the `cs52-blog.herokuapp.com` one.  
+npm install --save redux-thunk
+npm install --save axios
 
-Create a new Heroku app similarly to how to you did for the slack assignment:
+```
 
-1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
-1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database.
-1. Follow the steps under "Deploy Using Heroku Git".
+#### [Axios](https://github.com/mzabriskie/axios)
+
+Axios gives us a promise based interface to make API requests.   Here is an example of a get:
+
+```javascript
+const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+const API_KEY = '?key=yourfirstname_yourlastname';
+
+axios.get(`${ROOT_URL}/posts${API_KEY}`).then(response => {
+  // do something with response.data  (some json)
+}).catch(error => {
+  // hit an error do something else!
+});
+```
 
 
-## P1 Complete
+Axios supports *GET*, *POST*, *PUT*, *DELETE*, and other *HTTP* verbs.
 
-Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!  IE. Change your HW4 `ROOT_URL` to point to your Heroku hosted server instance.  
+With *POST* and *PUT* you need to supply an object with key,value data.  Something like the following would work:
 
+```javascript
+const fields = {title: '', contents:'', tags: ''}
+axios.post(`${ROOT_URL}/posts${API_KEY}`, fields)
+```
+
+
+#### [Thunks](https://github.com/gaearon/redux-thunk)
+
+The big question on your mind is how you would put this into an action I bet.  Right?  No?
+
+We have to set up `redux-thunk` first.
+
+🚀 In your root `index.js` file:
+
+```javascript
+// at the top
+import thunk from 'redux-thunk';
+
+// change the applyMiddleware line:
+applyMiddleware(thunk),
+```
+
+We'll dig more into what middleware is later, but for now what you need to know is that middleware are basically functions that run between other stuff. They can be very powerful.  
+
+Redux middleware wraps the dispatch function, allowing our `redux-thunk` middleware to process not just actions but also functions.  ActionCreators can now return thunks rather than just actions.  These thunks are functions that are created on the fly to run something later.  Whaaaat?
+
+Remember how ActionCreators just return an Action?  Well, what if you want the ActionCreator to first do something, perhaps fetch something from the internet?  Thunks allow this functionality.  Instead of immediately returning an Action object and flowing into the Reducer, we return a function that gets executed and can go off and do some stuff before dispatching the Action.
+
+A redux thunk allows your ActionCreators to return functions that can then dispatch actions.  Quite literally giving them access to a `dispatch` method.
+
+```javascript
+export function anAction() {
+  // ActionCreator returns a function
+  // that gets called with dispatch
+  return (dispatch) => {
+      // can now dispatch stuff
+      dispatch({ type: 'SOME_ACTION', payload: {stuff: ''} });
+  };
+}
+```
+
+Dispatch is a function available in redux that handles distributing actions to reducers. In a connected component when you `mapDispatchToProps` you are wiring certain ActionCreators to automatically be called by `dispatch` like so:
+
+![](img/dispatch.png){: .fancy .small}
+
+With the redux-thunk middleware we are changing how dispatch works slightly.  We enable dispatch to accept not just action objects but also functions. These functions when executed can run asynchronous methods and upon return can manually `dispatch` further actions.  These further actions can be either action objects (what we will be doing) or for more complicated logic can be further thunk functions.
+
+![](img/dipatch+thunk.png){: .fancy .small}
+
+What we want to do is go and fetch some data from a rest api.  Being able to dispatch things in the middle of an action helps us do this. You'll want to do the `axios` call inside of your returned function.  You would dispatch the action if the promise was resolved and you potentially dispatch an error action in the catch.  You are combining the `redux-thunk` style ActionCreator with the `axios` api call.
+
+You should have ActionCreator methods to deal with every axios call.
+
+Here are the methods that you should have in your `actions/index.js` file:
+
+```javascript
+export function fetchPosts() {/* axios get */}
+
+export function createPost(post) {/* axios post */}
+
+export function updatePost(post) {/* axios put */}
+
+export function fetchPost(id) {/* axios get */}
+
+export function deletePost(id) {/* axios delete */}
+```
+
+Each of these methods will return a function that takes dispatch as its argument, runs some axios call, and then dispatches some action. In the above that ActionType actions are named the same as the functions, however it might help to think of them as FETCH_POSTS_SUCCEEDED for instance.  It is the action that is dispatched to the reducers with the payload results of the asynchronous call.
+
+In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Show* page you would want to be taken back to the Index page.  Simple add `browserHistory.push('/')` to navigate to another page from within your ActionCreator function (you'll need to `import { browserHistory } from 'react-router'` also).  
+
+## Reducers
+
+To start with we'll only need 1 reducer in `reducers/index.js`.  Something like this:
+
+```javascript
+const rootReducer = combineReducers({
+  posts: PostsReducer,
+});
+```
+
+The `postReducer` that you will define will currently only need to respond to 2 ActionTypes:  FETCH_POST, and FETCH_POSTS.
+
+Earlier, we defined are state as looking something like:
+
+```javascript
+posts: {
+  all: [],
+  post: null,
+}
+```
+
+Where `all` would contain an array of all posts, and `post` would be the current individually displaying post (for *Show*).
+
+For FETCH_POSTS you would return the state object with the `all` property set to the new posts.  For FETCH_POST return that single post.  
+
+Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html).  You are also welcome to implement it with multiple reducers if that is easier to reason about.
+
+
+## And you are on your way!
+
+That should be all you need to build a simple blog platform (we'll add more features later!).
+
+If you don't know where to start, remember the steps in creating an React application (modified here to include redux considerations):
+
+1. Start with a mock
+1. Break the UI into a component hierarchy
+1. Build the Presentational Components for a static version without any state
+1. Identify what the local vs redux "global" state should be
+1. Implement local UI state in Presentational components
+1. Identify Redux Actions (things that change global state)
+1. Create ActionCreators for each action
+1. Write Reducers for each Action
+1. Connect necessary components to Redux
+1. Style it
+1. Ship it
+
+
+It might help for the ActionCreator -> Dispatch -> Reducer -> State flow, to try getting one working first.  For instance maybe get the *Show* component working first, the others will come more easily once you have the full path tested with one of them.
+
+Don't forget to use the [hw4 slack channel](https://cs52-dartmouth.slack.com/messages/hw4/).
 
 ## To Turn In
 
-1. github url to your repo
-1. url to your new heroku app instance for testing
-1. working url for HW4 on surge that points to your new API server:
-  * for HW4 create a new branch and a new surge site so we can test both version.
-  * you can modify this new HW4 branch to add in new functionality for EC for this assignment.
+1. GitHub repository URL
+1. your working domain name URL on surge.sh
+1. App should have individual routes for:
+  * new
+  * list view
+  * full show view
+1. App should make CRUD api calls
+  * create
+  * update
+  * delete
+  * fetch post by id
+  * fetch all posts
+1. your repo should include a README.md file with:
+  * a couple sentence description about what you did
+  * and what worked / didn’t work
+  * any extra credit attempted
+
+
 
 
 ## Extra Credit
 
-* change your tags store to be an array rather than a string, can just split by whitespace
-* add commenting to posts (either an array or another model) / change both api and frontend to support this.
-* really at this point you can start modifying your blog to be whatever you want. Add in photo storage with S3 (tricky). Add in new fields to your posts.
-* add in search support. Here's an [article](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/) that might help you get started.
-* in part 2 we'll introduce User and Authentication so don't implement those here though.
+* look snazzy
+* handle axios errors in a graceful way, showing users a nice message rather than just console logging. (hint: new action and error state)
+* input validation — check that all fields have required values when creating new form for instance.
+* add a filter posts functionality, filter by tags initially.
+  * for now our api is limited so additional search will come in part 2
+* more EC available in part 2!

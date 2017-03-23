@@ -15,9 +15,9 @@ Built with: [Jekyll](https://jekyllrb.com/), [GitHub Pages](https://pages.github
 
 ### Slide Integration
 
-uses [remarkjs](https://github.com/gnab/remark) for building up slides from inside of jekyll markdown
+uses [remarkjs](https://github.com/gnab/remark) for building slides - if you use the
 
-Use the following notation to create a slide
+
 
 ```
 <div class="slide" markdown="0">
