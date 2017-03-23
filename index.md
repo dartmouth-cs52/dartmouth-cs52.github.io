@@ -69,7 +69,7 @@ See [assignments](/assignments).
   <div style="order:5;" class="rtable-cell"><a href="mailto:robin.e.jayaswal.18@dartmouth.edu">Robin Jayaswal</a><br><a href="https://cs52-dartmouth.slack.com/messages/@robin-jayaswal/">@robin-jayaswal</a><br>TBD<br>Sudikoff 003</div>
 
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/irene.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:irene.l.feng.17@dartmouth.edu">Irene Feng</a><br><a href="https://cs52-dartmouth.slack.com/messages/@irenelfeng/">@irenelfeng</a><br>TBD<br>Sudikoff 003</div>
   <div style="order:3;" class="rtable-cell"><br></div>
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
