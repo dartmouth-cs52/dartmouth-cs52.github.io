@@ -67,7 +67,7 @@ Make your in-code citations look something like this:
 
 or
 
-// copied off of Cameron Howe's code for this
+// copied off of Cameron Howe's code for this assignment
 // this method does x and y
 ```
 

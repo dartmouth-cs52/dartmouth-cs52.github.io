@@ -32,7 +32,7 @@ See [assignments](/assignments).
   - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours.<br>
   - Location: LSC 200
 
-![](assets/imgs/carson61.jpg){: .fancy }
+![](assets/imgs/lsc200.jpg){: .fancy }
 
 ### Office Hours and Contact:
 
