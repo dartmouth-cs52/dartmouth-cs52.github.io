@@ -2,6 +2,7 @@ layout: true
 class: center, middle
 name: pic
 background-size: contain
+background-position: center
 
 ---
 
@@ -22,13 +23,15 @@ name: base
 name: WWW, tubes, networks
 
 
-<audio controls>
+<audio  controls="true" preload="auto">
   <source src="img/series_of_tubes.mp3" type="audio/mp3">
+  <source src="img/series_of_tubes.ogg" type="audio/ogg">
 Your browser does not support the audio element.
 </audio>
 
 <audio controls>
-  <source src="img/got_it_yesterday.ogg" type="audio/mp3">
+  <source src="img/got_it_yesterday.mp3" type="audio/mp3">
+  <source src="img/got_it_yesterday.ogg" type="audio/ogg">
 Your browser does not support the audio element.
 </audio>
 
@@ -96,7 +99,7 @@ What is a protocol?
 --
 name: Protocols
 template: fragment
-.fancy.medium[![](http://i.giphy.com/VPkvMFbbAS1eE.gif)]
+.fancy.medium[![](//i.giphy.com/VPkvMFbbAS1eE.gif)]
 
 
 ???
@@ -124,7 +127,7 @@ name: Social Protocols
 template: fragment
 name: Layers
 
-.fancy.medium_small[![](http://i.giphy.com/G5Ve0WFUUr5sY.gif)]
+.fancy.medium_small[![](//i.giphy.com/G5Ve0WFUUr5sY.gif)]
 
 --
 template: fragment
@@ -148,7 +151,7 @@ template: base
 name: Airline Routing
 
 
-.fancy.medium[![](http://i.giphy.com/BOiEudNmzWE00.gif)]
+.fancy.medium[![](//i.giphy.com/BOiEudNmzWE00.gif)]
 
 
 ???
@@ -688,7 +691,7 @@ name:
 ---
 name: somato-sensory based modeling of Internet protocols
 
-<iframe width="853" height="480" src="https://www.youtube.com/embed/fd_9qwpzVBQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="753" height="380" src="https://www.youtube.com/embed/fd_9qwpzVBQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ???
 hand out roles and explain process
@@ -799,4 +802,5 @@ background-repeat: no-repeat
 background-size: cover
 name: 16X Let's go!
 
-* short assignment 1 out: due Tue 28th 🕛
+
+.white-foreground[short assignment 1 out: due Tue 28th 🕛]
