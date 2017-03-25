@@ -10,7 +10,7 @@ title: dev links
   * [Short Assignment 3](assignments/sa3/) — TBD
   * [Short Assignment 4](assignments/sa4/) — TBD
   * [Short Assignment 5](assignments/sa5/) — TBD
-
+  * [Short Assignment 6](assignments/sa6/) — TBD
 
 ### 5-ish week-long labs:  25%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
