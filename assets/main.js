@@ -1,5 +1,5 @@
 
-var codepenScript='//production.codepen.io/assets/embed/ei.js';
+var codepenScript='//codepen.io/assets/embed/ei.js';
 
 function tearDownRemark() {
   $("div[class^='remark-'],div[class*=' remark-']").remove();

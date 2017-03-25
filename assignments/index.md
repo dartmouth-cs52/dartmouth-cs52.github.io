@@ -19,13 +19,14 @@ title: Assignments
 ### 5-ish week-long labs:  25%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
-* HW 1: Build a Landing Page
-* HW 2: Build a Buzzfeed Quiz
-* HW 3: Server Side Rendering Petition Site
-* HW 4 Part 1: React Notes
-* HW 4 Part 2: React Notes + Server
-* HW 5 Part 1: Redux Blog
-* HW 5 Part 2: Blog API with Auth
+* Lab 1: Build a Landing Page
+* Lab 2: Build a Buzzfeed Quiz
+* Lab 3 Part 1: React Notes
+* Lab 3 Part 2: React Notes + Server
+* Lab 4 Part 1: Redux Blog
+* Lab 4 Part 2: Redux Blog + API
+* Lab 4 Part 3: Redux Blog + Auth
+
 
 
 ### 5-ish Short in-class quizzes:  10%

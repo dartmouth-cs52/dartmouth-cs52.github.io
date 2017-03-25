@@ -32,7 +32,7 @@ See [assignments](/assignments).
   - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours.<br>
   - Location: LSC 200
 
-![](assets/imgs/carson61.jpg){: .fancy }
+![](assets/imgs/lsc200.jpg){: .fancy }
 
 ### Office Hours and Contact:
 
@@ -62,17 +62,17 @@ See [assignments](/assignments).
 
 <div class="rtable rtable--5cols">
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="https://www.linkedin.com/mpr/mpr/AAEAAQAAAAAAAAZWAAAAJGE3NTYzZDY1LTRlMjktNDNiYi05YTE1LWRhYjJjZWM0Njc4Ng.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:ahsan.azim.18@dartmouth.edu">Ahsan Azim</a><br><a href="https://cs52-dartmouth.slack.com/messages/@ahsan_azim/">@ahsan_azim</a><br>TBD<br>Sudikoff 003</div>
   <div style="order:3;" class="rtable-cell"><br></div>
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
   <div style="order:5;" class="rtable-cell"><a href="mailto:robin.e.jayaswal.18@dartmouth.edu">Robin Jayaswal</a><br><a href="https://cs52-dartmouth.slack.com/messages/@robin-jayaswal/">@robin-jayaswal</a><br>TBD<br>Sudikoff 003</div>
 
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/irene.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:irene.l.feng.17@dartmouth.edu">Irene Feng</a><br><a href="https://cs52-dartmouth.slack.com/messages/@irenelfeng/">@irenelfeng</a><br>TBD<br>Sudikoff 003</div>
   <div style="order:3;" class="rtable-cell"><br></div>
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/emma.jpg"/></div>
   <div style="order:5;" class="rtable-cell"><a href="mailto:emma.c.oberstein.18@dartmouth.edu">Emma Oberstein</a><br><a href="https://cs52-dartmouth.slack.com/messages/@emmaoberstein/">@emmaoberstein</a><br>TBD<br>Sudikoff 003</div>
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>

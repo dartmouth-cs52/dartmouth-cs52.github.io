@@ -178,10 +178,21 @@ img.tiny, .tiny img {
   width: 100%;
 }
 
+.remark-slide .remark-slide-content {
+  background-repeat: no-repeat;
+  background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;
+}
+
 
 .white-background {
 	background: white;
 }
+
+.white-foreground {
+	color: white;
+}
+
 
 .mostly-white{
 	background: rgba(255,255,255,.5);
@@ -227,7 +238,7 @@ img.tiny, .tiny img {
 }
 
 .remark-slide-content {
-  background: none;
+  /*background: none;*/
 }
 
 .remark-slide .title {
