@@ -4,25 +4,28 @@ title: dev links
 ---
 
 
-## Assignments in Progress
-  * [Short Assignment 1](assignments/sa1/) — TBD
-  * [Short Assignment 2](assignments/sa2/) — TBD
-  * [Short Assignment 3](assignments/sa3/) — TBD
-  * [Short Assignment 4](assignments/sa4/) — TBD
-  * [Short Assignment 5](assignments/sa5/) — TBD
+## Short Assignments (max 2hr tutorials)
+  * [Local Dev Environment and Hosting a Domain](assignments/sa/localdev)
+  * [17S-git-map](assignments/sa/git-map)
+  * [Webpack + Babel + eslint](assignments/sa/starterpack)
+  * [Frontend Routing](assignments/sa/routing)
+  * [Slack Bot](assignments/sa/slack-bot)
+  * [Server Side Rendering](assignments/sa/server-side)
+  * [React Videos](assignments/sa/react-videos/)
+  * [Redux](assignments/sa/redux)
+  * [Websockets](assignments/sa/websockets)
 
 
-### 5-ish week-long labs:  25%
+### Labs (week long)
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
-  * [HW 1: Build a Landing Page](assignments/hw1)
-  * [HW 2: Build a Buzzfeed Quiz](assignments/hw2)
-  * [HW 3: Server Side Rendering Petition Site](assignments/hw3)
-  * [HW 4 Part 1: React Notes](assignments/hw4p1)
-  * [HW 4 Part 2: React Notes + Server](assignments/hw4p2)
-  * [HW 5 Part 1: Redux Blog](assignments/hw5p1)
-  * [HW 5 Part 2: Blog API](assignments/hw5p2)
-  * [HW 5 Part 3: Blog API with Auth](assignments/hw5p3)
+  * [Lab 1: Build a Landing Page](assignments/lab/landing-page)
+  * [Lab 2: Build a Buzzfeed Quiz](assignments/lab/quizzical)
+  * [Lab 3 Part 1: React Notes](assignments/lab/react-notes)
+  * [Lab 3 Part 2: React Notes + Server](assignments/lab/react-notes+server)
+  * [Lab 4 Part 1: Redux Blog](assignments/lab/redux-blog)
+  * [Lab 4 Part 2: Redux Blog + API](assignments/lab/redux-blog+server)
+  * [Lab 4 Part 3: Redux Blog + Auth](assignments/lab/redux-blog+auth)
 
 
 ## Lectures In Progress
@@ -50,11 +53,27 @@ title: dev links
   * [5/30 Wrapup](lectures/16_wrapup)
 
 
-## old workshops
+Calendar:
+TODO: move everything up half a week or so, add in topics for WS and all SAs, loadbalance
 
-  * 6/28 [git map workshop](workshops/git)
-  * 6/30 [bootstrap](https://github.com/dado3212/cs52-workshop-1/tree/gh-pages)
-  * 7/7 [jekyll & sass](https://github.com/VLuisa/cs52-workshop-2)
-  * 7/14 [d3, p5, paper.js](https://github.com/virginiacook/workshop3-js-viz)
-  * 7/26 [redux](workshops/redux)
-  * 8/16 [websockets](workshops/websockets)
+```
+W1 3/28   Lecture: Welcome+Interwebs SA: localdev       WS: X     HW: X
+W1 3/30   Lecture: HTML + Git        SA: gitmap         WS: X     HW: X
+W2 4/4    Lecture: CSS               SA: ?              WS: X     HW: landing-page
+W2 4/6    Lecture: JS Part 1         SA: X              WS: CSS   HW: ''
+W3 4/11   Lecture: JS Part 2         SA: starterpack    WS: X     HW: quizzical
+W3 4/13   Lecture: Frontend+React    SA: X (routing)    WS: ???   HW: ''
+W4 4/18   Lecture: More React        SA: X              WS: X     HW: react-notes
+W4 4/20   Lecture: APIs + Libraries  SA: X              WS: X     HW: ''
+W5 4/25   Lecture: Routing Frontend  SA: X              WS: X     HW: react-notes+server
+W5 4/27   Lecture: Redux             SA: X              WS: X     HW: ''
+W6 5/2    Lecture: Pitches           SA: X              WS: X     HW: redux-blog
+W6 5/4    Lecture: Databases         SA: X              WS: X     HW: ''
+W7 5/9    Lecture: Sessions + Auth   SA: X              WS: X     HW: redux-blog+api
+W7 5/11   Lecture: Catchup?          SA: X              WS: X     HW: ''
+W8 5/16   Lecture: Websockets        SA: react-notes+ws WS: X     HW: redux-blog+auth
+W8 5/18   Lecture: catchup           SA: X              WS: X     HW: ''
+W9 5/23   Lecture: TBD               SA: X              WS: X     HW: projects
+W9 5/25   Lecture: TBD               SA: X              WS: X     HW: ''
+Final Demos 5/30
+```
