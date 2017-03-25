@@ -4,15 +4,6 @@ title: dev links
 ---
 
 
-<<<<<<< HEAD
-## Assignments in Progress
-  * [Short Assignment 1](assignments/sa1/) — TBD
-  * [Short Assignment 2](assignments/sa2/) — TBD
-  * [Short Assignment 3](assignments/sa3/) — TBD
-  * [Short Assignment 4](assignments/sa4/) — TBD
-  * [Short Assignment 5](assignments/sa5/) — TBD
-  * [Short Assignment 6](assignments/sa6/) — TBD
-=======
 ## Short Assignments (max 2hr tutorials)
   * [Local Dev Environment and Hosting a Domain](assignments/sa/localdev)
   * [17S-git-map](assignments/sa/git-map)
@@ -24,7 +15,6 @@ title: dev links
   * [Redux](assignments/sa/redux)
   * [Websockets](assignments/sa/websockets)
 
->>>>>>> 375055c434338f30663ab823e55e4d5ede215f18
 
 ### Labs (week long)
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*

@@ -3,7 +3,7 @@ layout: page
 title: SA 6 MongoDB with Templating
 published: true
 ---
-![](/img/enm.png){: .small }
+![](img/enm.jpg){: .small }
 
 ## Overview
 
