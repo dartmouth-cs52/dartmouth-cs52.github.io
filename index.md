@@ -29,7 +29,7 @@ See [assignments](/assignments).
 ### Class:
 
   - 2A Classes will meet Tuesday and Thursday (2:25-4:15pm).<br>
-  - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours.<br>
+  - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and Workshops.<br>
   - Location: LSC 200
 
 ![](assets/imgs/lsc200.jpg){: .fancy }

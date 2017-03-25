@@ -23,9 +23,10 @@ Grading of some collaborative team based work will be done based on GitHub pull 
   - In-class short assignments: 10%
   - 5 week-long labs:  25%
   - Short In-class quizzes:  10%
-  - 1 group presentation and workshop: 15%
+  - 1 group presentation and workshop: 10%
+  - group workshop participation:  10%
   - 1 final project:  30%
-  - Participation:  10%
+  - class participation:  5%
 
   * late penalty:
     * -1% of assignment per hour
