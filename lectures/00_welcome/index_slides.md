@@ -41,13 +41,13 @@ name: Magicians Of The Web
 
 client ⇔ server ⇔ database
 
-![](img/giphy_19.gif)
+.medium[![](img/giphy_19.gif)]
 
 ---
 name: CS52 Tech Stack
 
 * client-side:
-  * HTML5/CSS3/ES6:
+  * HTML5/CSS3(SASS)/ES6:
     * ui/ux, design, Document Object Model
   * React+Redux:
     * state, sessions
@@ -64,7 +64,7 @@ name: Sample Weekly Projects
 
 * get a domain and your face on a map
 * build a beautiful static landing page
-* create a clever chat bot
+* build a buzzfeed style quizz site
 * build a realtime collaborative note-taking app
 * classy blogging app
 * api backend and databases

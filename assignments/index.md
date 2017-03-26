@@ -32,16 +32,18 @@ title: Assignments
 ### 5-ish Short in-class quizzes:  10%
 *Concepts and methods from lectures and labs.*
 
-### 1 group presentation and workshop: 15%
+### 1 group presentation and workshop: 10%
 *Once during the term (in teams of 3-4) will present a web technology of choice to the class with a short workshop.*
 
 * More info and assignment [here](../workshops)
 
+### Group Workshop Participation: 10%
+*Individual participation in each of the group presentation workshops. Will require forking a repo and following along with a tutorial in class.*
 
 ### 1 final project:  30%
 *A team based final project starting with pitching an idea and culminating in a web app with both a designed UI and a server-side api for data.  Assessment will be based on individual git pull requests and specific technical components that will be required for the projects.*
 
 * Final Project [Milestones](project)
 
-### Participation:  10%
+### Participation:  5%
 *In class collaborative demonstrations, exercises, and discussions. .5pt per class workshop*
