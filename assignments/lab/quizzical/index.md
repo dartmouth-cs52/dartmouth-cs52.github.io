@@ -1,6 +1,6 @@
 ---
 layout: page
-title: HW 1
+title: Lab 2
 published: true
 ---
 
