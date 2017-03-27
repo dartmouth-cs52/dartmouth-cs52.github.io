@@ -10,6 +10,8 @@ All the kids are doing it these days. This is where we'll learn a little bit abo
 
 🚀 head over to buzzfeed and take [this quiz](https://www.buzzfeed.com/elainawahl/which-disney-animal-are-you). I'll wait.
 
+[![](img/buzzfeed.png){: .fancy .medium}](https://www.buzzfeed.com/elainawahl/which-disney-animal-are-you)
+
 Doesn't that make you want to make your own quiz? Ok, you could use buzzfeed to do this, but you want to make one that doesn't have ugly ads. And looks classier too!
 
 This assignment is going to *flex* your html and css skills some more as well as some javascript!  We'll use some JS to compute the results of the quiz as well as to check that the quiz was filled out correctly.
@@ -172,6 +174,9 @@ Now get it looking good!  If you need suggestions on how to improve your design 
 ## And You Are Done!
 
 You should host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically. Remember to have fun with this.  We'll share the quizzes in class!
+
+
+![](img/scar.png){: .fancy .medium}
 
 
 ## To Turn In:
