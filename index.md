@@ -65,7 +65,7 @@ See [assignments](/assignments).
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="https://www.linkedin.com/mpr/mpr/AAEAAQAAAAAAAAZWAAAAJGE3NTYzZDY1LTRlMjktNDNiYi05YTE1LWRhYjJjZWM0Njc4Ng.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:ahsan.azim.18@dartmouth.edu">Ahsan Azim</a><br><a href="https://cs52-dartmouth.slack.com/messages/@ahsan_azim/">@ahsan_azim</a><br>TBD<br>Sudikoff 003</div>
   <div style="order:3;" class="rtable-cell"><br></div>
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="https://avatars3.githubusercontent.com/u/8921279?v=3&u=633957fe03707df790ec23af6d884b820a6a0ecb&s=400"/></div>
   <div style="order:5;" class="rtable-cell"><a href="mailto:robin.e.jayaswal.18@dartmouth.edu">Robin Jayaswal</a><br><a href="https://cs52-dartmouth.slack.com/messages/@robin-jayaswal/">@robin-jayaswal</a><br>TBD<br>Sudikoff 003</div>
 
 
