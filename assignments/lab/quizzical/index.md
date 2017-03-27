@@ -4,218 +4,200 @@ title: HW 1
 published: true
 ---
 
-# Build a Landing Page!  :airplane:
+# Build a Buzzfeed® Quiz Site! :squirrel:
 
-Ok, so you have your own domain.  Lets put something up there worth looking at. (actually use a separate git repo for this)
+All the kids are doing it these days. This is where we'll learn a little bit about making interactive sites. We won't need to deal with any backend servers, just some nice clientside code (no server) to build up a fun quiz and show some calculated results.
 
-Your assignment, should you choose to accept it, (not sure you have much choice there...) is to create a landing page.  
+🚀 head over to buzzfeed and take [this quiz](https://www.buzzfeed.com/elainawahl/which-disney-animal-are-you). I'll wait.
 
-A landing page you say?  Yes, actually a specific landing page.
+Doesn't that make you want to make your own quiz? Ok, you could use buzzfeed to do this, but you want to make one that doesn't have ugly ads. And looks classier too!
 
-🚀In an incognito browser window, go to [Slack.com](http://www.slack.com). It shows up a little differently if you are signed in. Here's a screen shot for you. (if the background isn't the same you can reload it a few times).
+This assignment is going to *flex* your html and css skills some more as well as some javascript!  We'll use some JS to compute the results of the quiz as well as to check that the quiz was filled out correctly.
 
-![](img/slack.jpg){: .fancy .small}
 
-And if you narrow your browser you'll see some responsive design and it looks like so:
+**Note:** You are allowed to use HTML5/CSS3/JS/jQuery in this assignment but no other libraries or frameworks.
 
-![](img/slack_mobile.jpg){: .fancy .tiny}
+**Note:** You can and should use the inspector 🔍 to examine the structure pages you see. Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) you'll find that the way they do things is ugly anyway and I would recommend not imitating them at all. If your code blatantly includes [un-cited code](/logistics/#citation-format) copied from buzzfeed.com, that will be considered an honor code violation :warning: Ask me if you have questions about this.
 
-Using your fresh HTML and CSS skills you will make an **HTML and CSS only** version of this landing page (no JS allowed).  ❗None of the links or functionality needs to be there, it just need look good and be laid out properly.
 
-All anchor tags should look like this
+## Plan
 
-```html
-<a href="#">
-```
+You have a lot of flexibility in this assignment.  This is your content, so be creative. How much you abstract out the problem is up to you.  You can start by hard-coding every question and answers in HTML, that is 100% acceptable.  If you choose you could implement reading the questions from say a separate JSON file - this would be extra credit. More about this later.  How you score the quiz is completely up to you.  Just a counter is sufficient but you could try something more complicated with different weights associated with the various answers. And finally,  the look and feel is all up to you.  There are just a few minimum requirements.
 
-Links to nowhere.
 
-You can and should alter the text as you please — make it be a landing page for your imagination.
+### Minimal Functional Specs:
 
-**Note:** no JS, or any external libraries or CSS frameworks are allowed for this assignment. You can do all of it was just the HTML/CSS from scratch.  Don't worry it'll be fun!
+* Quiz Page:
+  * Questions:
+    * display several questions
+    * have a header image and some text
+    * have some number of potential answers
+  * Question Answers:
+    * be either text or an image (demonstrate some of both)
+    * have 4 potential display states:
+      * initial none selected state
+      * have a `:hover` effect
+      * have a clicked/selected state
+      * when one answer is chosen all other answers should change to a not-selected state (different from the initial no answer chosen state).
+    * have an associated value to be used to calculate the overall quiz output.
+  * Done Button:
+    * calculate the quiz output
+  * Output Display
+    * should have text and an image
+    * should not show unless the calculations are finished
+    * should display an error if not all questions were answered
 
-**Note:** You can and should use the inspector 🔍 to examine the structure of the slack.com page.  However, you'll find it is really messy and complicated!  Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) it won't really help you much to try to copy more.  If your code blatantly includes un-cited code copied from slack.com, that will be considered an honor code violation :warning:.  Ask me if you have questions about this.
+
+Here's some design specs thrown together in [Sketch](https://www.sketchapp.com/)
+
+1. Quiz page with a question and some image answers - nothing selected:
+
+    ![](img/main.png){: .medium}
+
+1. An example hover effect:
+
+    ![](img/hover.png){: .medium}
+
+1. An answer selected:
+
+    ![](img/checked.png){: .medium}
+
+1. Answer display:
+
+    ![](img/done.png){: .medium}
+
 
 ## Where to Start?!
 
-🚀Start in your git repo for the project.
+🚀 Start in your git repo for the project.
 
-🚀Open up Atom and create an index.html and a style.css file.  
+🚀 Open up Atom and create an index.html, a style.css, and a main.js file.  
 
-🚀Link your style.css file into the head of your html file.
+🚀 Link your style.css file into the head of your html file.
 
+🚀 Link in your js file. Best place for this is right before your closing `</body>` tag.  
 
-## Outline
+Extra credit:  why might it be better for this to be placed at the bottom rather than in `<head> ... </head>`?
 
-In HTML only,  outline the main elements you envision for the page.  Here's some hints:
-
-* `<nav>` for the navbar (even though it is transparent).
-* `<ul>` unordered lists are often used for nav components, if you do it'll help to get rid of the bullets using `list-style-type: none;`
-* `<footer>` is a good tag to use for... footer things.
-* `<div>`, `<span>`, `<a>`, `<h1>`, `<p>` will all be useful.
-* `<input>`, and `<button>` for any form like elements.
+```html
+<script src="main.js"></script>
+```
 
 
-Don't worry about styling 💇 at this point. Just lay things out in an order that makes sense to you.
+## HTML
 
-It should look approximately like this.
+Start with coding up a single question and answer - then use flexboxes to arrange them. At this point using flexboxes for this should be almost second nature. You don't need any of those fancy grid frameworks.
 
-![html layout](img/html_layout.png){: .fancy .small}
+One thing you may have noticed is that when you select an answer it is a exclusive selection.  There is an input type that already does that automatically.  Yup, [radio boxes](http://learn.shayhowe.com/html-css/building-forms/#radio-buttons)!
 
-🚀Take a screen cap at this point.
+But the default styling of radio boxes is so ugly!  Sure, but you can do something similar to the checkbox hack and hide the actual radio box but use it for some display logic.
 
-## Adding in Fonts
+Here is the basic syntax for a radio button with an image label.
 
-Right, in the above you may have noticed that yours was Times New Roman...
-
-🚀You should get some better fonts quick from [Google Fonts](http://fonts.google.com)! 🐎
-
-🚀And you might as well grab some nice icons while you are at it from [FontAwesome](http://fontawesome.io/). Easiest is to just download the whole fontawesome package and including that in your source.
-
-
-![with icons](img/icons.png){: .fancy .tiny}
-
-## Background
-
-🚀Go ahead and add a background in!
-
-I recommend getting rid of margin and padding on body:
-
+```html
+<label for="puppy_question"><img src="http://onlines/someimage.png" /></label>
+<input type="radio" id="puppy_question" value="puppy"/>
+```
 
 ```css
-body {
-  margin: 0;
-  padding: 0;
+#puppy_question {
+  display: none;
 }
 ```
 
-and then creating a top level div, lets call it main:
+You can actually nest the input inside of the label and then you don't have to do the `for="elementID"` part of the label, it will just automatically serve as the label for the input inside it.
+
+```html
+<label>
+  <img src="http://onlines/someimage.png" />
+  <input type="radio" value="puppy"/>
+</label>
+```
+
+And you can suppress all radio inputs like so:
 
 ```css
-.cover {
-  background-image: url(img/yourimageyname.jpg);
-  background-size: cover;
+input[type=radio] {
+  display: none;
 }
 ```
 
-## Flex Boxes
-
-🚀Pretty much all the layout you can do with flex boxes.  In fact you should absolutely do as much of the layout of this page using flexbox layout.
-
-There's a couple tricky elements, like the gradient which I recommend using `absolute` positioning to place.  You don't have to include the gradient at all though, thats fairly non-critical. (If you can't find it on the slack page just search in the inspector for gradient).
-
-Here is a good [guide to flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
-
-**Note:** for now only use pure CSS3 directives that are supported by the latest Chrome. Don't worry about the various [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) like `-webit` `-moz` or any of those prefixes.  Later on we'll learn about using [autoprefixers](https://css-tricks.com/autoprefixer/) to make our code work better cross platform, but for now use the latest the greatest that works in Chrome.  That is the browser we'll be testing your sites in and the only browser that matters for the time being. **Do not** use any other browser for your dev work. So please, points off for including vendor prefixes.
 
 
-Now things should look like they are coming together.
+## Javascript Logic
 
-![](img/flexboxes.jpg){: .fancy .small}
+Once you have the basic structure up you can dive into getting the logic working. At this point you should have some radio boxes on the screen that are checkable.  But how do you collect the input from them?
 
-Still things not lining up and much of styling is missing but most things are in their proper places. Using only flexboxes and some very basic positioning.  No bootstrap here!
+For this assignment you are allowed to use [jQuery](https://jquery.com/) if you wish. Just load it before your own javascript in your `index.html` file:
 
+```javascript
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+```
+
+jQuery is purely a personal choice. It helps simplify some things. If you have used it before, challenge yourself and use plain vanilla JS this time around.  Many sites on the internet use jQuery so it doesn't hurt to be familiar with it.
+
+Most likely you have a button that you would like to attach a javascript action to.  Here's a tiny bit of code to get you started:
+
+```javascript
+$('#idOfYourButton').on('click', function(e) {
+  // gather all checked radio-button values
+  var choices = $("input[type='radio']:checked").map(function(i, radio) {
+    return $(radio).val();
+  }).toArray();
+  // now you have an choices = ["valueofradiobox1", "valueofradiobox2", "valueofradiobox2"]
+  // you'll need to do some calculations with this
+  // a naive approach would be to just choose the most common option - seems reasonable
+});
+```
+
+Some jQuery/JS that will come in handy:
+
+* [show()/hide()](https://www.w3schools.com/jquery/jquery_hide_show.asp) // equivalent to `document.getElementById('someid').style.display = 'none';`
+* [text()/html()](https://www.w3schools.com/jquery/jquery_dom_set.asp) // equivalent to `document.getElementById('someid').textContent='newtext';`
+
+There's a lot you can do here, but the basics that you want are a button that calculates an answer and then shows it on the page!
+
+The answer could be displayed as a [simple modal](https://www.w3schools.com/howto/howto_css_modals.asp) or inline like how buzzfeed does it.
+
+🍸 Extra Credit:  Create a generalized framework for quizzes. This would involve something like reading in quiz questions and answers from a [JSON file](http://api.jquery.com/jquery.getjson/) and then looping through them and [appending](http://api.jquery.com/append/) to the html of the page with javascript.
 
 ## Styling
 
-Now get it looking good!
-
-🚀Don't forget the `:hover` CSS!  There's some nice little touches throughout.
-
-`border`, `box-shadow`, `border-radius`, `margin`, `rgba`,  all will come in handy!
-
-I recommend working on the full width version, and don't worry about how it resizes till you are moderately happy with it.
-
-It should start looking something like this at this point.
-
-![](img/full_width.jpg){: .fancy .small}
-
-## Media query
-
-Now for the tricky part!  Shrink the width of your browser window all the way down!  GASP! 💩
-
-Most likely it did not resize well. We'll deal with that similarly to how slack dealt with it.  A single media query.
-
-🚀Here's how to start:
-
-```css
-@media only screen and (max-width: 640px) {
-
-}
-```
-
-Anything in this media query will only apply if the screen is fairly narrow.  
-
-Techniques to try:
-
-```
-flex-direction: column;
-```
-
-🚀Take some of your row flex boxes and simply convert them to columns.  This works remarkably well for many cases.  The input box and button for instance.
-
-```
-display: none;
-```
-
-🚀Toggle the display property on completely different sections of the site.  You might have a completely different set of elements for the links section for instance.  Toggle one off and the other on.
-
-You should end up with something akin to:
-
-![](img/responsive.jpg){: .fancy .tiny}
-
-**Note:** I did not bother with making the bottom Link Heading sections expand. Extra credit if you do.
-
-
-## Speaking of CSS responding to clicks...
-
-Notice on the slack page when you're in the narrow responsive site if you click on the Menu button an overlay menu comes up.   This is done with javascript the world over. BUT it is possible to trick CSS into responding to clicks!
-
-This is called the [CSS Checkbox Hack](https://css-tricks.com/the-checkbox-hack/), very clever.  
-
-If you choose to, you may implement this functionality in pure CSS. This part is extra credit, but worth doing! You can also play with CSS transitions for this to make the menu appear to slide or fade in.  **Caveat:** CSS transitions don't work if the element has `display: none` on it, but there are other ways to hide an element, `opacity` + `height: 0px` come to mind.
-
-Here's what it could look like:
-
-![](img/css_checkbox_hack.gif){: .fancy .tiny}
+Now get it looking good!  If you need suggestions on how to improve your design come by any of our office hours.  This assignment will be partially graded on styling.  The minimum effort would be to do something like the primitive mockups or and equivalent attempt at improving the design of buzzfeed.
 
 
 ## And You Are Done!
 
-You should host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically.   Another cool static page hosting platform is [surge.sh](http://surge.sh).  Easy to set up, and you are welcome to do that instead if you prefer.
-
+You should host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically. Remember to have fun with this.  We'll share the quizzes in class!
 
 
 ## To Turn In:
 
-* github url to your repo (must be readable by staff, can be public)
+* github url to your repo
 * url to your hosted page (gh-pages is fine)
-* your page should:
-  * display as many elements from the original site / above screenshots as possible
-  * use only pure CSS/HTML
-  * have clean CSS/HTML written by hand by you (your html file should only be around ~150 lines or so).
-  * use mostly flexboxes for layout
-  * be responsive with 1 narrow phone friendly version per the screenshots / original
-  * include some details such as hover effects and border-radius
+* your page should have all the [MVP specs](#minimal-functional-specs) in addition to:
   * have clear document structure with proper semantic naming
-  * look reasonable :-)
+  * functional calculations and error checking to get quiz results
+  * look reasonable
 * your repo should include a README.md file with:
   * a couple sentence description of what you did and what worked / didn't work.
-  * screen caps of your layout stage
   * screen caps with anything special you want to point out
-
 
 
 ## Extra Credit
 
-* Fancy CSS transition
-* CSS Checkbox Hack for the mobile version Menu
-* Link Headers utilizing the CSS Checkbox hack to expand!
-
+* Fancy CSS transitions/animations
+* Generalized quiz framework reading in quiz from a [JSON file](http://api.jquery.com/jquery.getjson/)
+* More complex quiz scoring
+* Multiple quizzes / pages
 
 
 ## Resources:
 
-* https://css-tricks.com
-* http://www.w3schools.com
-* https://philipwalton.github.io/solved-by-flexbox/
+* [https://css-tricks.com](https://css-tricks.com)
+* [http://www.w3schools.com](http://www.w3schools.com)
+* [https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)
+* [http://learn.shayhowe.com/html-css/building-forms/#radio-buttons](http://learn.shayhowe.com/html-css/building-forms/#radio-buttons)
