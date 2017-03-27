@@ -75,7 +75,7 @@ See [assignments](/assignments).
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/emma.jpg"/></div>
   <div style="order:5;" class="rtable-cell"><a href="mailto:emma.c.oberstein.18@dartmouth.edu">Emma Oberstein</a><br><a href="https://cs52-dartmouth.slack.com/messages/@emmaoberstein/">@emmaoberstein</a><br>TBD<br>Sudikoff 003</div>
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jason.png"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jason.s.feng.17@dartmouth.edu">Jason Feng</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jason/">@jason</a><br>TBD<br>Sudikoff 003</div>
   <div style="order:3;" class="rtable-cell"><br></div>
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/alma.jpg"/></div>
@@ -90,7 +90,7 @@ See [assignments](/assignments).
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jon.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jonathan Gonzalez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jongonzalez/">@jongonzalez</a><br>TBD<br>Sudikoff 003</div>
   <div style="order:3;" class="rtable-cell"><br></div>
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/mauPR.jpg"/></div>
   <div style="order:5;" class="rtable-cell"><a href="mailto:mauricio.esquivel.rogel.18@dartmouth.edu">Mauricio Esquivel Rogel</a><br><a href="https://cs52-dartmouth.slack.com/messages/@mauesrog/">@mauesrog</a><br>TBD<br>Sudikoff 003</div>
 
 
