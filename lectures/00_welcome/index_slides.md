@@ -31,9 +31,7 @@ name: CS52
 name: full-stack
 
 
-.medium_small[![](img/stackCover.png)]
-
-
+.large[![](img/stackCover.png)]
 *(remixed from [brianfalls.com](http://brianfalls.com/))*
 
 ---
@@ -41,7 +39,7 @@ name: Magicians Of The Web
 
 client ⇔ server ⇔ database
 
-.medium[![](img/giphy_19.gif)]
+.large[![](img/sampleweb.gif)]
 
 ---
 name: CS52 Tech Stack
@@ -79,24 +77,41 @@ name: Online @
 ---
 name: People
 
-<table >
-  <tr>
-    <td><img class="profile fancy" src="img/tt_profile.jpg" /></td>
-    <td><img class="profile fancy" src="img/sb_profile.jpg" /></td>
-    <td><img class="profile fancy" src="img/xm_profile.jpg" /></td>
-    <td><img class="profile fancy" src="img/yt_profile.jpg" /></td>
-  </tr>
-  <tr>
-    <td>Tim<br>Tregubov<br>
-    </td>
-    <td>Suman<br>Bera<br>
-    </td>
-    <td>Xing<br>Meng<br>
-    </td>
-    <td>Yuan<br>Tian<br>
-    </td>
-  </tr>
-</table>
+<div class="rtable rtable--5cols">
+
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="https://www.linkedin.com/mpr/mpr/AAEAAQAAAAAAAAZWAAAAJGE3NTYzZDY1LTRlMjktNDNiYi05YTE1LWRhYjJjZWM0Njc4Ng.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:ahsan.azim.18@dartmouth.edu">Ahsan Azim</a></div>
+  <div style="order:3;" class="rtable-cell"><br></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:robin.e.jayaswal.18@dartmouth.edu">Robin Jayaswal</a></div>
+
+
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/irene.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:irene.l.feng.17@dartmouth.edu">Irene Feng</a></div>
+  <div style="order:3;" class="rtable-cell"><br></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/emma.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:emma.c.oberstein.18@dartmouth.edu">Emma Oberstein</a></div>
+
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:jason.s.feng.17@dartmouth.edu">Jason Feng</a></div>
+  <div style="order:3;" class="rtable-cell"><br></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:alma.wang.18@dartmouth.edu">Alma Wang</a></div>
+
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:luisa.n.vasquez.gutierrez.18@dartmouth.edu">Luisa Vasquez</a></div>
+  <div style="order:3;" class="rtable-cell"><br></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:sidney.g.wijngaarde.17@dartmouth.edu">Sidney Wijngaarde</a></div>
+
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/jon.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jonathan Gonzalez</a></div>
+  <div style="order:3;" class="rtable-cell"><br></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:mauricio.esquivel.rogel.18@dartmouth.edu">Mauricio Esquivel Rogel</a></div>
+
+
+</div>
 
 
 ---

@@ -176,7 +176,7 @@ Now get it looking good!  If you need suggestions on how to improve your design 
 You should host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically. Remember to have fun with this.  We'll share the quizzes in class!
 
 
-![](img/scar.png){: .fancy .medium}
+![what I got](img/scar.png){: .fancy .medium}
 
 
 ## To Turn In:
