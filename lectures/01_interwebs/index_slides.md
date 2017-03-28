@@ -51,7 +51,8 @@ name: Submarine Cables
 
 *(from [submarinecablemap.com](http://www.submarinecablemap.com/))*
 
-
+???
+* literally tubes under the ocean
 
 ---
 name: City To City
@@ -60,6 +61,9 @@ name: City To City
 .fancy[![](img/connectivity2012.jpg)]
 
 *(from [Chris Harrison](http://chrisharrison.net/index.php/Visualizations/InternetMap))*
+
+???
+* based on router configurations - which you'll learn about shortly!
 
 ---
 name: Facebook Map
@@ -86,8 +90,9 @@ URL=protocol+IP+port<br>
 http://127.0.0.1:8000
 
 ???
-* couldn't help it
-
+* how to get from one computer - your laptop - to somewhere else
+* or to this magical cloud thing
+* or the pentagon
 
 ---
 name: Protocols
@@ -103,7 +108,9 @@ template: fragment
 
 
 ???
-Anybody?
+* Anybody?
+* we have social protocols all time
+* secret handshakes!
 
 ---
 template: base
@@ -129,6 +136,10 @@ name: Layers
 
 .fancy.medium_small[![](//i.giphy.com/G5Ve0WFUUr5sY.gif)]
 
+
+???
+* not just tubes, also layers
+
 --
 template: fragment
 name: Layers
@@ -142,8 +153,19 @@ of protocols
 * but both of these things have to work to get the data to your destination.
 * So the internet is made of layers. Like parfait.
 
-Let's use a better analogy!
 
+---
+template: base
+name: Human Protocol Layers
+
+
+<iframe src="//giphy.com/embed/onZIkheksIuje?hideSocial=true" width="480" height="269.76" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+
+???
+* humans have layers of protocols, we have verbal protocols (how order food, or say hi) but also and body language protocols for instance.
+* I'm pacing around with my hands in my pockets, is it because I'm super comfortable up here or is it a defense?
+* better example
 
 
 ---
@@ -200,7 +222,8 @@ name: Internet Protocol Suite
 🔗 Link Layer (ex. ethernet/wifi)<br>
 🔌 Physical Layer (ex. fiber optic)<br>
 
-
+???
+* in this delicious parfait
 
 ---
 name: Application Layer
@@ -209,6 +232,10 @@ name: Application Layer
   * pass messages between specific applications
   * web browser and a program running on a web server
 
+
+???
+
+* we'll all be running this web server thing by thursday
 
 
 ---
@@ -225,19 +252,22 @@ name: Transport Layer
 * TCP only handles the transfer of application data
   * doesn't actually know how to get places
   * network layer does the routing
+  * makes sure all application data gets to the right application
 
 ---
 name: Network Layer
 
 <iframe src="//giphy.com/embed/WWfOzRDQS20ZG" width="480" height="270" frameBorder="0" class="giphy-embed"></iframe>
 
+* machine to machine addressing
 * contains the IP protocol
 * IP sends and routes packets between hosts
 * IP protocol required for any network connected device
 * TCP passes the target destination in the form of the IP address
 
 ???
-network layer doesn't know low level hardware details
+* network layer doesn't know low level hardware details
+* but it knows addresses - like street addresses
 
 ---
 name: Link Layer
@@ -247,12 +277,19 @@ name: Link Layer
 * protocols such as Ethernet and WiFi
 * passes data between individual hosts
 
+???
+* responsible for data transfer between 2 hosts
+* how do two machines with a link between them send each other data
+
 ---
 name: Physical Layer
 
 <iframe src="//giphy.com/embed/l41YvpiA9uMWw5AMU" width="480" height="270" frameBorder="0" class="giphy-embed" ></iframe>
 
 * transferring bits along a wire or fiber optic cable
+
+???
+* how the electrical signals are manipulated to transfer bits
 
 ---
 name: Internet Data Flow
@@ -274,6 +311,11 @@ name: Encapsulation and Packets
 ???
 * data is passed down the layers
 * it is encapsulated with additional layer specific headers.
+* browser has query data (application)
+* TCP - creates packets with source and destination ports (application identifiers) and packet sequence information (to reassemble if in the wrong order) and other stuff like  control bits (sending/receiving/etc)
+* IP adds source / destination IP address
+* link has specific hardware addresses to and from
+* physical is electical signals (handled by hardware)
 
 
 ---
@@ -289,7 +331,7 @@ name: IP Protocol Addresses
 
 
 * IPV4
-  * 32 bit numbers (4 bytes)
+  * 32 bit number (4 bytes)
   * 4,294,967,296 (2^32) addresses
   * *dotted decimal notation*: **nnn.nnn.nnn.nnn**
     * byte holds: 0-255 integer
@@ -316,7 +358,8 @@ name: Private Addresses
 ???
 * bit masks just mean those bits can be anything
 * ie /8 means the last 0-255 can be anything
-
+* private addresses are not publicly routable
+* routers across the internet will not know how to direct traffic to them
 
 
 ---
@@ -334,8 +377,6 @@ name: Localhost
 
 
 ???
-* These addresses are not publicly routable
-* routers across the internet will not know how to direct traffic to them
 
 special case of:
 `255.255.255.255` is a broadcast address
@@ -349,6 +390,7 @@ background-image: url(img/3327.jpg)
 
 
 ???
+* its filling up
 * Publicly routable: IPs that you can get to from anywhere.
 * various registrars and countries are responsible for different blocks
 
@@ -363,8 +405,9 @@ http://127.0.0.1:8000
 <iframe src="//giphy.com/embed/JAU6PUIdLso4U" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
-* ports.  each computer has 2^16-1  65535
-* identifies know as ports
+* what do ports identify again?
+* each computer has 2^16-1  65535
+* identifies know apps as ports
 * specific services can run on ports
 
 
@@ -415,11 +458,12 @@ All I want is myname.com!
 
 
 ???
-:question: Ok, but question. I'm seeing all these numbers, but what about domain names? All I want is myname.com!
+* Ok, but question. I'm seeing all these numbers, but what about domain names? All I want is myname.com!
 
-That is where DNS (Domain Name Service) comes in.  DNS is a protocol for mapping names to IP numbers -- sort of like the yellow pages (😮does anybody even know what that is anymore?) for the internet.  Since IP doesn't understand names another layer comes in to help with this.
+* That is where DNS (Domain Name Service) comes in.  DNS is a protocol for mapping names to IP numbers -- sort of like the yellow pages (😮does anybody even know what that is anymore?) for the internet
+* IP doesn't understand names another layer comes in to help with this.
 
-What layer in the stack do you think DNS fits into?
+* What layer in the stack do you think DNS fits into?  Application layer actually
 
 
 
@@ -440,7 +484,8 @@ host dartmouth.edu
 
 
 ???
-DHCP == Dynamic Host Configuration Protocol
+* DHCP == Dynamic Host Configuration Protocol
+* every time your computer needs to lookup a name to tell IP where to go it asks a number of servers
 
 
 ---
@@ -450,7 +495,9 @@ name: Lookup
 
 
 ???
-
+* bottom lines with server tell you which local server was used
+* not necessarily the authoritative ones
+* in this example happens to be a 10 year old PC running DNS in the basement of sudi
 
 
 
@@ -514,6 +561,10 @@ else
 
 *(from [wikipedia](https://en.wikipedia.org/wiki/IP_forwarding))*
 
+???
+* at the most basic level, more complicated algorithms exist
+* network prefix 129.170 is dartmouths prefix
+
 ---
 name: traceroute
 
@@ -544,6 +595,10 @@ template: fragment
 
 But how do routers know who to send stuff to?
 
+???
+
+* what is this routing table thing?
+
 --
 name: Neighbors
 template: fragment
@@ -560,11 +615,12 @@ template: base
 Routers use a protocol called BGP to exchange routing information with each other.  
 
 ???
-Dartmouth's Border Router 🛂shouts: *Hey I know stuff about 129.170.0.0/16 (Dartmouth)*  
-then nearby routers will each record that they are 0 hops away from that particular internet prefix block and will tell others about it.  Their neighbors will also record their distance and so on and so forth.  
-Each router stores a routing table with entries about which of their neighbors knows about which routes and also the distance (simplest metric is just hop count).
+* Dartmouth's Border Router 🛂shouts: *Hey I know stuff about 129.170.0.0/16 (Dartmouth)*  
+* nearby routers will each record that they are 0 hops away from that particular internet prefix block and will tell others about it
+*  Their neighbors will also record their distance and so on and so forth.  
+* Each router stores a routing table with entries about which of their neighbors knows about which routes and also the distance (simplest metric is just hop count).
 
-This is what enables the internet to be robust, if a link goes down, then there are usually alternate/longer routes available.
+* This is what enables the internet to be robust, if a link goes down, then there are usually alternate/longer routes available.
 
 
 ---
@@ -609,13 +665,14 @@ name: HTTP! Finally!
 * Browser requests a page via HTTP
 * HTTP:
   * HyperText Transfer Protocol
-  * request-response client-server _____ layer protocol
-  * uses tcp as underlying _____ layer protocol
+  * request-response client-server ❓ layer protocol
+  * uses tcp as underlying ❓ layer protocol
 
 ???
-http == application layer!
-tcp == transfer layer!
-The client (your browser for instance) initiates a request and the server (a webserver machine somewhere) responds.
+* http == application layer!
+* tcp == transfer layer!
+* The client (your browser for instance) initiates a request
+* and the server (a webserver machine somewhere) responds
 
 
 
@@ -631,7 +688,10 @@ name: More HTTP
 
 
 ???
-workaround:  session and cookies!
+* stateless - this is important
+* every time you click a button on a page it makeds a new request
+* the server has no idea who you are
+* workaround:  session and cookies!
 
 
 
@@ -654,12 +714,14 @@ name: HTTP Methods
 <p>📩 GET:  retrieves a particular resource</p>
 <p>📩 POST:  sends a dictionary of key, value pairs</p>
 <p>📩 DELETE:  requests server delete specified resource</p>
+<p>📩 PUT:  requests server update the specified resource</p>
 </div>
 
 ???
 * GET:  retrieves a particular resource. This is the default method when you first go to a webpage in your browser.
 * POST:  sends a dictionary of key,value pairs as data to the server. Typically used for submitting forms.
 * DELETE:  requests that the server delete the specified resource.
+* PUT:  requests that the server update the specified resource.
 
 
 
@@ -673,9 +735,11 @@ name:
 telnet www.cs.dartmouth.edu 80
 
 GET /~testuser/ HTML/1.1
+
+
 ```
 ???
-
+* hit enter twice
 
 ---
 name:
@@ -689,7 +753,7 @@ name:
 
 
 ---
-name: somato-sensory based modeling of Internet protocols
+name: somato-sensory Internet protocols
 
 <iframe width="753" height="380" src="https://www.youtube.com/embed/fd_9qwpzVBQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
@@ -803,4 +867,4 @@ background-size: cover
 name: 16X Let's go!
 
 
-.white-foreground[short assignment 1 out: due Tue 28th 🕛]
+.white-foreground[short assignment 1 out: due Thursday 30th 🕛]

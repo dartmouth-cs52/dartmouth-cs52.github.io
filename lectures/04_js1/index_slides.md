@@ -76,18 +76,6 @@ JavaScript has mixed reviews — love and hate though it is popular. But from th
 
 
 ---
-name: fullstack aside
-
-.medium_small.fancy[![](img/fullstack.png)]
-
-???
-
-
-
-
-
-
----
 name:
 
 * Pros:
