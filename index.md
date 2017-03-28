@@ -81,7 +81,7 @@ See [assignments](/assignments).
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/alma.jpg"/></div>
   <div style="order:5;" class="rtable-cell"><a href="mailto:alma.wang.18@dartmouth.edu">Alma Wang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@almawang/">@almawang</a><br>TBD<br>Sudikoff 003</div>
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/luisa.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:luisa.n.vasquez.gutierrez.18@dartmouth.edu">Luisa Vasquez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@luisa/">@luisa</a><br>TBD<br>Sudikoff 003</div>
   <div style="order:3;" class="rtable-cell"><br></div>
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
