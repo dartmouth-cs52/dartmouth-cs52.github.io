@@ -132,7 +132,7 @@ name: Staff
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/alma.jpg"/></div>
   <div style="order:5;" class="rtable-cell">Alma Wang</div>
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/luisa.jpg"/></div>
   <div style="order:2;" class="rtable-cell">Luisa Vasquez</div>
   <div style="order:3;" class="rtable-cell"><br></div>
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
