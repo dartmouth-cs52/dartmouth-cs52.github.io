@@ -766,6 +766,8 @@ name: The Interwebs
 
 .fancy.medium[![](img/internet.png)]
 
+[simulationroles.pdf](img/CS52networksimulationroles.pdf)
+
 ???
 _Human:_
 

@@ -9,7 +9,7 @@ title: Assignments
 ### 5-ish In-class short assignments: 10%
 *These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
-<!-- * [Short Assignment 1](sa1/) — TBD -->
+* [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/30
 <!-- * [Short Assignment 2](sa2/) — TBD -->
 <!-- * [Short Assignment 3](sa3/) — TBD -->
 <!-- * [Short Assignment 4](sa4/) — TBD -->
