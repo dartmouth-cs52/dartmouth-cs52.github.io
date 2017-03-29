@@ -1,12 +1,10 @@
 ---
 layout: page
-title: HW 1
+title: Lab 1
 published: true
 ---
 
 # Build a Landing Page!  :airplane:
-
-Ok, so you have your own domain.  Lets put something up there worth looking at. (actually use a separate git repo for this)
 
 Your assignment, should you choose to accept it, (not sure you have much choice there...) is to create a landing page.  
 
@@ -182,7 +180,7 @@ Here's what it could look like:
 
 ## And You Are Done!
 
-You should host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically.   Another cool static page hosting platform is [surge.sh](http://surge.sh).  Easy to set up, and you are welcome to do that instead if you prefer.
+You should host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically, or in `Settings` you can choose to use the `master` branch for ghpages (even easier).  Another cool static page hosting platform is [surge.sh](http://surge.sh).  Easy to set up, and you are welcome to do that instead if you prefer.
 
 
 
