@@ -14,11 +14,11 @@ A landing page you say?  Yes, actually a specific landing page.
 
 🚀In an incognito browser window, go to [Slack.com](http://www.slack.com). It shows up a little differently if you are signed in. Here's a screen shot for you. (if the background isn't the same you can reload it a few times).
 
-![](img/slack.jpg){: .fancy .small}
+![](img/slack-desktop.png){: .fancy .small}
 
 And if you narrow your browser you'll see some responsive design and it looks like so:
 
-![](img/slack_mobile.jpg){: .fancy .tiny}
+![](img/slack-mobile.png){: .fancy .tiny}
 
 Using your fresh HTML and CSS skills you will make an **HTML and CSS only** version of this landing page (no JS allowed).  ❗None of the links or functionality needs to be there, it just need look good and be laid out properly.
 
