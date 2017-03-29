@@ -84,8 +84,11 @@ See [assignments](/assignments).
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/luisa.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:luisa.n.vasquez.gutierrez.18@dartmouth.edu">Luisa Vasquez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@luisa/">@luisa</a><br>TBD<br>Sudikoff 003</div>
   <div style="order:3;" class="rtable-cell"><br></div>
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:sidney.g.wijngaarde.17@dartmouth.edu">Sidney Wijngaarde</a><br><a href="https://cs52-dartmouth.slack.com/messages/@luisa/">@luisa</a><br>TBD<br>Sudikoff 003</div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy"
+  src="assets/imgs/sidney.jpeg"/></div>
+  <div style="order:5;" class="rtable-cell"><a
+  href="mailto:sidney.g.wijngaarde.17@dartmouth.edu">Sidney Wijngaarde</a><br><a
+  href="https://cs52-dartmouth.slack.com/messages/@luisa/">@sidneyw</a><br>TBD<br>Sudikoff 003</div>
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jon.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jonathan Gonzalez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jongonzalez/">@jongonzalez</a><br>TBD<br>Sudikoff 003</div>
