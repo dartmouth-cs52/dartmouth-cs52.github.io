@@ -124,7 +124,37 @@ input[type=radio] {
 }
 ```
 
+It is important to note that the way that you group radio buttons together
+(i.e make it so clicking one unclicks others) is by their 'name' property.
+Giving two radio buttons the same name groups them together.
 
+For example, these two radio buttons could both be selected at the same time
+(you can have a favorite dog and a favorite cat):
+
+```html
+<label>
+  <img src="http://onlines/someimage.png" />
+  <input type="radio" name="favorite_dog" value="dalmation"/>
+</label>
+<label>
+  <img src="http://onlines/someimage.png" />
+  <input type="radio" name="favorite_cat" value="tiger"/>
+</label>
+```
+
+While these two radio buttons will automatically unselect one when the other is clicked
+(you cannot have two favorite dogs):
+
+```html
+<label>
+  <img src="http://onlines/someimage.png" />
+  <input type="radio" name="favorite_dog" value="dalmation"/>
+</label>
+<label>
+  <img src="http://onlines/someimage.png" />
+  <input type="radio" name="favorite_dog" value="retriever"/>
+</label>
+```
 
 ## Javascript Logic
 
