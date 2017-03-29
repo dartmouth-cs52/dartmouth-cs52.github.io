@@ -12,7 +12,7 @@ Your assignment, should you choose to accept it, (not sure you have much choice 
 
 A landing page you say?  Yes, actually a specific landing page.
 
-🚀In an incognito browser window, go to [Slack.com](http://www.slack.com). It shows up a little differently if you are signed in. Here's a screen shot for you. (if the background isn't the same you can reload it a few times).
+🚀In an incognito browser window, go to [Slack.com](http://www.slack.com). It shows up a little differently if you are signed in. Here's a screen shot for you.
 
 ![](img/slack.jpg){: .fancy .small}
 
@@ -30,7 +30,7 @@ All anchor tags should look like this
 
 Links to nowhere.
 
-You can and should alter the text as you please — make it be a landing page for your imagination.
+**You can and should alter the text and images** as you please — make it be a landing page for your imagination!
 
 **Note:** no JS, or any external libraries or CSS frameworks are allowed for this assignment. You can do all of it was just the HTML/CSS from scratch.  Don't worry it'll be fun!
 
@@ -38,7 +38,7 @@ You can and should alter the text as you please — make it be a landing page fo
 
 ## Where to Start?!
 
-🚀Start in your git repo for the project.
+🚀Start in your git repo for the project -- Please use the github classroom link provided in the Canvas assignment to create the repo automatically.
 
 🚀Open up Atom and create an index.html and a style.css file.  
 
@@ -173,7 +173,7 @@ Notice on the slack page when you're in the narrow responsive site if you click 
 
 This is called the [CSS Checkbox Hack](https://css-tricks.com/the-checkbox-hack/), very clever.  
 
-If you choose to, you may implement this functionality in pure CSS. This part is extra credit, but worth doing! You can also play with CSS transitions for this to make the menu appear to slide or fade in.  **Caveat:** CSS transitions don't work if the element has `display: none` on it, but there are other ways to hide an element, `opacity` + `height: 0px` come to mind.
+If you choose to, you may implement this functionality in pure CSS. This part is extra credit, but easy and worth doing! You can also play with CSS transitions for this to make the menu appear to slide or fade in.  **Caveat:** CSS transitions don't work if the element has `display: none` on it, but there are other ways to hide an element, `opacity` + `height: 0px` come to mind.
 
 Here's what it could look like:
 
@@ -188,13 +188,12 @@ You should host this on github pages as you have in the past with the `gh-pages`
 
 ## To Turn In:
 
-* github url to your repo (must be readable by staff, can be public)
 * url to your hosted page (gh-pages is fine)
 * your page should:
   * display as many elements from the original site / above screenshots as possible
   * use only pure CSS/HTML
   * have clean CSS/HTML written by hand by you (your html file should only be around ~150 lines or so).
-  * use mostly flexboxes for layout
+  * use lots of flexboxes for layout
   * be responsive with 1 narrow phone friendly version per the screenshots / original
   * include some details such as hover effects and border-radius
   * have clear document structure with proper semantic naming
