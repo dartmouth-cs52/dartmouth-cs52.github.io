@@ -205,7 +205,7 @@ You should host this on github pages as you have in the past with the `gh-pages`
 
 ## Extra Credit
 
-* Fancy CSS transition
+* Fancy CSS transitions
 * CSS Checkbox Hack for the mobile version Menu
 * Link Headers utilizing the CSS Checkbox hack to expand!
 

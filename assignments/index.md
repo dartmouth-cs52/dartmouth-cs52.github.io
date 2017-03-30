@@ -10,7 +10,7 @@ title: Assignments
 *These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/30
-<!-- * [Short Assignment 2](sa2/) — TBD -->
+* [Short Assignment 2: Git Map](sa/git-map) — DUE 4/01
 <!-- * [Short Assignment 3](sa3/) — TBD -->
 <!-- * [Short Assignment 4](sa4/) — TBD -->
 <!-- * [Short Assignment 5](sa5/) — TBD -->
@@ -19,7 +19,7 @@ title: Assignments
 ### 5-ish week-long labs:  25%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
-* Lab 1: Build a Landing Page
+* [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/10
 * Lab 2: Build a Buzzfeed Quiz
 * Lab 3 Part 1: React Notes
 * Lab 3 Part 2: React Notes + Server

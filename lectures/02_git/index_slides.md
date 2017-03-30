@@ -25,48 +25,17 @@ name: this is git
 
 ???
 
+* TREEEESSS
+* whaaaat?
+* code version control system
 
 ---
 name: social coding
 
-.fancy[<iframe src="//giphy.com/embed/3oD3YveOJWdwIAfZ5e" width="580" height="369" frameBorder="0" class="giphy-embed"></iframe>]
+<iframe src="//giphy.com/embed/3oD3YveOJWdwIAfZ5e" width="600" height="389" frameBorder="0" class="giphy-embed"></iframe>
 
 ???
 social coding
-
-
----
-name:
-
-
-.medium[![](img/capture_intro1_1_1.png)]
-
----
-name:
-
-
-.medium[![](img/capture_intro1_1_2.png)]
-
-
----
-name:
-
-
-.medium[![](img/capture_intro1_1_3.png)]
-
-
----
-name:
-
-
-.medium[![](img/capture_intro1_2_1.png)]
-
-
----
-name:
-
-
-.medium[![](img/capture_intro1_2_2.png)]
 
 
 

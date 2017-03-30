@@ -24,6 +24,15 @@ name:  CS52 HTML
 <iframe width="700" height="400" src="https://www.youtube.com/embed/h1E-FlguwGw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ---
+name: TA Hours
+
+* Mon 8-11pm
+* Wed 9-11am, Wed 8-11pm
+* Sunday 6-9pm
+
+in 003 Sudikoff
+
+---
 name:  Discovery Stats
 
 .fancy.medium[![](img/easypeasy.png)]
@@ -52,6 +61,7 @@ HTML != programming
 <iframe src="http://giphy.com/embed/cJ0X2Xudyecw0" width="480" height="288" frameBorder="0" class="giphy-embed"></iframe>
 
 ???
+* today HTML only - next weeek CSS - there's a difference
 * html not like python and Java - no logic
 * just like this cat is not really a panda
 * It is a descriptor language.
@@ -84,6 +94,7 @@ vs
 * HTML describes the structure of a document semantically
 * It has no operations or actions, so you can't compute with it, but you can define structure.  
 * When someone says they can program in HTML, look at them funny. 😑
+* WORD analogy - in word you typically just say, italize this, change the font here - thats not scalable
 
 
 
@@ -369,7 +380,7 @@ name: HTML Elements and Tags
 
 ???
 * everything in between a pair of start and end tags can be thought of as the child/children of that tag.
-* underneath it all, your HTML is parsed into a ___ .
+* underneath it all, your HTML is parsed into a particular datastructure - any gueses?
 
 
 
@@ -383,6 +394,7 @@ name: HTML Underneath it all
 ???
 * browser parses it into a tree.
 * pretty much everything in this course is going to be a tree! :deciduous_tree:
+* basically everything in world is a graph - if you've taken algos, you can be happy now
 * more next week
 
 
@@ -413,6 +425,7 @@ name: Attributes
 
 ???
 
+* and all elements can have classes
 
 
 
@@ -421,7 +434,7 @@ name: Attributes
 ---
 name: Tiny HTML Sample
 
-<p data-height="410" data-theme-id="24119" data-slug-hash="e6bad6db1a6fbebf4d365939d61926de" data-default-tab="html,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/e6bad6db1a6fbebf4d365939d61926de/">what is this html thing?</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="410" data-theme-id="24117" data-slug-hash="e6bad6db1a6fbebf4d365939d61926de" data-default-tab="html,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/e6bad6db1a6fbebf4d365939d61926de/">what is this html thing?</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 
 ???
@@ -452,7 +465,8 @@ name: paragraph
   * annoying but define structure
 
 ???
-parser needs to know what is paragraphs
+* html is generally white-space collapsing (multiple spaces and new lines are ignored)
+* parser needs to know what is paragraphs
 
 
 
@@ -468,7 +482,7 @@ name: lists
 
 
 ???
-
+* lists are often used by convention for things like nav bars - in places where you logically think, oh its a list of links etc.
 
 
 
@@ -489,7 +503,7 @@ which is set to the string URL of where the image is located. More on attributes
 
 
 ---
-name: bold
+name: strong
 
 * [`<strong></strong>`](http://www.w3schools.com/tags/tag_strong.asp)
   * for bolder or more emphatic coffee
@@ -497,6 +511,9 @@ name: bold
 
 ???
 
+* is this structure or style?  
+* the "bolding" is a stylistic thing
+* but defining some content as more important than its surroundings is structure
 
 
 
@@ -509,8 +526,8 @@ name: iframes
 
 
 ???
-
-
+* can be tricky to size automatically
+* code running inside iframe can't affect parent
 
 
 
@@ -528,7 +545,6 @@ Hypertext REFerence
 * HyperLinks are what hypertext is all about
 * Anchor tags need to have an `href` attribute which is a string URL to the target.
 * usually urls, but can also be javascript
-
 
 
 
@@ -649,7 +665,7 @@ So far everything we've looked at has been snippets.  The full HTML document has
 ---
 name: define my own semantics?
 
-What if I want a `fancy-paragraph` or a `profile-image`?
+What if I want a `slide` or a `profile-image`?
 
 * html5 spec has some support
   * requires javascript
@@ -672,7 +688,7 @@ What if I want a `fancy-paragraph` or a `profile-image`?
 name: class
 
 ```html
-<p class="fancy">Some fancy paragraph formatting</p>
+<div class="slide">the contents of this slide</div>
 <img class="profile" src="" />
 ```
 
@@ -683,7 +699,9 @@ name: class
 
 
 ???
-By adding a `class` to an element you are saying it belongs to set of elements that should be styled a particular way. Where styled really means selected. The `class` property is assigned a space separated quoted string with potentially multiple classes. `class="aclass"` but also `class="aclass anotherclass"` this is convenient as you can have one element belong to multiple style classes, inheriting styles from each!  
+* By adding a `class` to an element you are saying it belongs to set of elements that mean a certain thing and should be styled a particular way
+* Where styled really means selected.
+* The `class` property is assigned a space separated quoted string with potentially multiple classes. `class="aclass"` but also `class="aclass anotherclass"` this is convenient as you can have one element belong to multiple style classes, inheriting styles from each!  
 
 
 
@@ -696,14 +714,16 @@ name: IDs
 ```
 
 * elements with `id`:
-  * uniquely identified on the page
+  * most likely uniquely identified on the page
   * have special role
   * `primary_navbar` or `username_field`
-  * single string no spaces
+  * single string no spaces  - can only have 1 id
 
 
 ???
-Define your meaning and style information once and use it in many places.
+* Define your meaning and style information once and use it in many places.
+* properly classing and iding your html structure will be critical once we start styling it.
+* if everything is just a div how can you style it.
 
 
 
@@ -724,6 +744,7 @@ name: Inline Elements
 
 
 ???
+* certain elements are by default displayed a certain way
 
 
 
@@ -760,7 +781,8 @@ name: span
   * `<p>and then they said, <span class="quote">spans are for babies!</span>.</p>`
 
 ???
-have no default style and can be used inline with other tags.  For instance to separate a word from a sentence.
+* is a generic inline element
+* have no default style and can be used inline with other tags.  For instance to separate a word from a sentence.
 
 
 
@@ -809,14 +831,12 @@ So far we've only talked about **STRUCTURE** but it all looks so boring.
 
 How do I make it pretty with colors?!
 
+<iframe src="//giphy.com/embed/TjoOq3WY5vBiU?hideSocial=true" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 
 ???
-Hold on, there was a time before CSS however, when everything about a webpage was defined inline.
-
-Lets take a trip through time!
-
-
-
+* Hold on, there was a time before CSS however, when everything about a webpage was defined inline.
+* Lets take a trip through time!
 
 
 
@@ -827,7 +847,7 @@ name: amazon 1995
 
 ???
 
-
+* check it, no styyyle
 
 
 
@@ -962,7 +982,8 @@ name: svg
 
 ???
 
-
+* raster image has pixels
+* vector image has math
 
 ---
 name: gif
@@ -976,6 +997,7 @@ name: gif
 
 ???
 
+* love em, use em
 
 
 ---
@@ -990,8 +1012,7 @@ name: resolution
 
 ???
 
-
-
+* do not make your images 10megapixels - your site will be slllooow
 
 
 ---
