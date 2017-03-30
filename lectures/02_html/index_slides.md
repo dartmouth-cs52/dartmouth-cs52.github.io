@@ -26,19 +26,6 @@ name:  CS52 HTML
 ---
 name:  Discovery Stats
 
-* 38 respondents:
-  * 61% git PRs
-  * 55% CSS
-  * 42% JS
-  * 24% Bootstrap
-  * 5% ES6
-  * 5% PHP
-  * 0% Grunt
-  * 0% Angular
-
----
-name:  Discovery Stats
-
 .fancy.medium[![](img/easypeasy.png)]
 
 .fancy.medium[![](img/awesomestuff.png)]
@@ -46,6 +33,14 @@ name:  Discovery Stats
 ???
 
 * by end of class you will!
+* 61% used PRs - the rest we'll learn!
+* some requests for learning included:
+  * more frontend
+  * what is the DOM
+  * how to make pretty things on the web
+  * a few mentions of design (should we have a design workshop?)
+  * "designing / working with design for the web"
+  * best practices
 
 ---
 
@@ -57,9 +52,11 @@ HTML != programming
 <iframe src="http://giphy.com/embed/cJ0X2Xudyecw0" width="480" height="288" frameBorder="0" class="giphy-embed"></iframe>
 
 ???
-* html not like python and Java
+* html not like python and Java - no logic
 * just like this cat is not really a panda
 * It is a descriptor language.
+  * describes what things are
+  * not how they work or look
 
 
 
@@ -80,11 +77,13 @@ vs
 <greeting>Hello</greeting> <!--GOOD-->
 ```
 
+<iframe src="//giphy.com/embed/tPFHYDMAcWE1O?hideSocial=true" width="380" height="169.76" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 
 ???
 * HTML describes the structure of a document semantically
 * It has no operations or actions, so you can't compute with it, but you can define structure.  
-* When someone says they can code in HTML, look at them funny. 😑
+* When someone says they can program in HTML, look at them funny. 😑
 
 
 
@@ -111,7 +110,7 @@ draw_circle(135, 110, 20)
 * HTML layout would be declarative.
 * sequence of drawing instructions would be imperative.
 * granted some style somewhere would have to describe the display properties of the ball
-* thats for thursday
+* thats for next week - but with css its still descriptive
 
 
 ---
@@ -124,6 +123,12 @@ name: Markup Not Dressup
 * but html != styles
 
 
+???
+* markdown, LaTex
+* in the assignment going out today you'll see how we focus on structure
+* example: underlining and color of links
+* we'll often have to undo these bad design decisions
+
 
 
 ---
@@ -135,23 +140,22 @@ name: semantic structure
 * describe the content
 
 ???
-* markdown, LaTex
-* include some syntactically identifiable notation/descriptions in your document that can dictate presentation or describe content.
+* what you want to do is annotate your content
+* with syntactically identifiable notation/descriptions in your document that can dictate presentation or describe what it is.
 
 
 ---
 name: these slides
 
 * started out as [markdown](https://en.wikipedia.org/wiki/Markdown)
-* simple formatting language
+* simple structure annotation language
 * For instance **this** is bold because I wrote `**this**`.
+* and this is a list because I wrote ` * and this is a list because I wrote ...`
 
 ???
+* you'll be using some markdown this term for your README files!
+* cs52 website is all markdown run through a static site generator - we'll play with that later
 * But let's talk HTML.
-* cs52 website is jekyll
-* and these slides are too
-
-
 
 
 ---
@@ -159,12 +163,15 @@ name: Brief History
 
 1990
 
-"I just had to take the hypertext idea and connect it to the Transmission Control Protocol and domain name system ideas and—ta-da!—the World Wide Web" --Sir Tim Berners-Lee
+> "I just had to take the hypertext idea and connect it to the Transmission Control Protocol and domain name system ideas and—ta-da!—the World Wide Web" —Sir Tim Berners-Lee
+
+
+
 
 ???
+* so checkit, we know TCP and DNS. dudes lets connect em
 * hypertext was a concept of linking text documents together with hyperlinks (on disk).
-* html and http and first web browser
-
+* built html and http and first web browser
 
 
 ---
@@ -189,6 +196,17 @@ name: First Browser
 * marc andreesens mosaic and then netscape
 
 
+---
+name: HyperText
+
+1968 - Douglas Engelbart
+
+.fancy.medium_small[![](https://upload.wikimedia.org/wikipedia/commons/c/cc/SRI_Computer_Mouse.jpg)]
+
+???
+* hypertext was around in works of fiction as early as the 40s (theoretically linked microfilms and such)
+* 1968 Douglas Engelbart - Mother of all Demos (mouse / video conferencing / and hypertext)
+
 
 
 ---
@@ -197,7 +215,7 @@ name: Structural tags and links!
 Unchanged basic premise of **document**
 
 ???
-The basic idea of structural tags with links between documents has remained the same since then.
+* The basic idea of structural tags with links between documents has remained the same since then.
 
 
 
@@ -210,8 +228,10 @@ varying compatibilities
 .medium_small[![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Usage_share_of_web_browsers_%28Source_StatCounter%29.svg/480px-Usage_share_of_web_browsers_%28Source_StatCounter%29.svg.png)]
 
 ???
-
-Due to some original problems with various implementations of the HTML standard in browsers, such as allowing missing closing tags. XHTML standard developed (2000) to enforce stricter adherence to proper syntax.
+* now we have lots of browsers
+* Due to some original problems with various implementations of the HTML standard in browsers
+* allowing missing closing tags
+* XHTML standard developed (2000) to enforce stricter adherence to proper syntax.
 
 
 
@@ -222,10 +242,7 @@ name: Browser Wars
 .medium_small[![](img/bw.jpg)]
 
 ???
-
-* Due to some original problems with various implementations of the HTML standard in browsers, such as allowing missing closing tags
-* XHTML standard developed (2000) to enforce stricter adherence to proper syntax.
-
+* safari is clearly just out the jungle somewhere taking pretty pictures of animals instead
 
 
 ---
@@ -254,7 +271,8 @@ name:
 
 
 ???
-this used to be a thing
+* other elements got axed
+* this used to be a thing
 
 
 ---
@@ -264,8 +282,12 @@ name: Note About Syntax, Tabs, Spaces, Legibility, Structure, Comments
 
 
 ???
+* there's an art and a craft to coding
+* will rant frequently
 * Later on you'll learn about [linting](http://stackoverflow.com/questions/8503559/what-is-linting), but for now this is the first of many rants about best practices
 * clean correct syntax and code abstraction
+* case statements instead of giant elseifs
+* consistent indentation
 
 
 
@@ -304,7 +326,6 @@ VS
 
 
 
-
 ---
 name: Legibility
 
@@ -314,6 +335,9 @@ name: Legibility
 
 ???
 
+* super opinionated about legibility vs cleverness
+* all code at some point is read
+* in industry in class - we'll all spend more time reading code than writing it
 
 
 
@@ -321,7 +345,9 @@ name: Legibility
 ---
 name: Comment and Cite
 
-* comment when: when "borrowing code", code needs clarification, caveats or todos.
+* comment when:
+  * "borrowing code", code needs clarification, caveats, or todos
+  * basically when the code has poor legibility
 * no comment when: paraphrasing what your code does
 
 .medium[![](img/fb_comments.png)]
@@ -329,6 +355,7 @@ name: Comment and Cite
 
 ???
 
+* method header should make sense in its naming - you don't need to say readFromDisk // reads from disk
 
 
 

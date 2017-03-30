@@ -100,7 +100,7 @@ Some things you should know about IP address.
 
 `10.*.*.*` and `192.168.*.*` addresses are reserved for private networks.  Dartmouth Secure is a `10.` network.
 
-_we can also denote these networks by using significant bits notation:  `10.0.0.0/24` is equivalent to `10.*.*.*` and `192.168.*.*` is `192.168.0.0/16`_
+_we can also denote these networks by using significant bits notation:  `10.0.0.0/8` is equivalent to `10.*.*.*` and `192.168.*.*` is `192.168.0.0/16`_
 
 `127.0.0.1` is reserved for your loopback address.  This is an address you can use when running your local dev environment!  `localhost`, `127.0.0.1`, `0.0.0.0` will all work to access the machine you are physically on.
 

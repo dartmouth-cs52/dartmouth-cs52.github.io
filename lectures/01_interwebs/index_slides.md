@@ -350,7 +350,7 @@ name: Private Addresses
 * `10.*.*.*` and `192.168.*.*` addresses are reserved for private networks.
 * Dartmouth Secure is a `10.` network.
 * significant bits notation:
-  * `10.0.0.0/24` (3 bytes masked)
+  * `10.0.0.0/8` (1 byte masked)
   * `192.168.0.0/16` (2 bytes masked)
   * subnets use bitmasks
 
