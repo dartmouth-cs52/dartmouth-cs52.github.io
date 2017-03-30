@@ -35,6 +35,40 @@ name: social coding
 social coding
 
 
+---
+name:
+
+
+.medium[![](img/capture_intro1_1_1.png)]
+
+---
+name:
+
+
+.medium[![](img/capture_intro1_1_2.png)]
+
+
+---
+name:
+
+
+.medium[![](img/capture_intro1_1_3.png)]
+
+
+---
+name:
+
+
+.medium[![](img/capture_intro1_2_1.png)]
+
+
+---
+name:
+
+
+.medium[![](img/capture_intro1_2_2.png)]
+
+
 
 ---
 name: transports
@@ -66,11 +100,20 @@ name: git cheatsheet
 
 
 
+---
+name: Git Short Assignment!
+
+[http://cs52.me/assignments/sa/git-map](http://cs52.me/assignments/sa/git-map)
+
+???
+
 
 
 ---
-name: Git Workshop!
+name: Next Time
 
-[http://cs52.me/workshops/git](http://cs52.me/workshops/git)
+* CSS: Everything you wanted to know about making things look pretty.
+* SA2 Due Saturday
+* LAB1 Out Today (can get started but due)
 
 ???

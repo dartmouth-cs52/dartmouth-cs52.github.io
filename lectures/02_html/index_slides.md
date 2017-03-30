@@ -19,11 +19,42 @@ name: base
 .title[{{name}}]
 
 ---
+name:  CS52 HTML
+
+<iframe width="700" height="400" src="https://www.youtube.com/embed/h1E-FlguwGw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+---
+name:  Discovery Stats
+
+* 38 respondents:
+  * 61% git PRs
+  * 55% CSS
+  * 42% JS
+  * 24% Bootstrap
+  * 5% ES6
+  * 5% PHP
+  * 0% Grunt
+  * 0% Angular
+
+---
+name:  Discovery Stats
+
+.fancy.medium[![](img/easypeasy.png)]
+
+.fancy.medium[![](img/awesomestuff.png)]
+
+???
+
+* by end of class you will!
+
+---
+
+
 name: HyperText Markup Language
 
 HTML != programming
 
-<iframe src="//giphy.com/embed/cJ0X2Xudyecw0" width="480" height="288" frameBorder="0" class="giphy-embed"></iframe>
+<iframe src="http://giphy.com/embed/cJ0X2Xudyecw0" width="480" height="288" frameBorder="0" class="giphy-embed"></iframe>
 
 ???
 * html not like python and Java
@@ -83,13 +114,10 @@ draw_circle(135, 110, 20)
 * thats for thursday
 
 
-
-
-
 ---
 name: Markup Not Dressup
 
-<iframe src="//giphy.com/embed/IlTu9eI3cjxIc" width="300" height="300" frameBorder="0" class="giphy-embed"></iframe>
+<iframe src="http://giphy.com/embed/IlTu9eI3cjxIc" width="300" height="300" frameBorder="0" class="giphy-embed"></iframe>
 <br>
 
 * built-in browser styles exist
@@ -98,12 +126,10 @@ name: Markup Not Dressup
 
 
 
-
-
 ---
 name: semantic structure
 
-![](img/document-outline-example.jpg){: .medium_small}
+.fancy.medium_small[![](img/document-outline-example.jpg)]
 
 * syntactically identifiable annotations
 * describe the content
@@ -111,10 +137,6 @@ name: semantic structure
 ???
 * markdown, LaTex
 * include some syntactically identifiable notation/descriptions in your document that can dictate presentation or describe content.
-
-
-
-
 
 
 ---
@@ -128,9 +150,6 @@ name: these slides
 * But let's talk HTML.
 * cs52 website is jekyll
 * and these slides are too
-
-
-
 
 
 
@@ -151,7 +170,7 @@ name: Brief History
 ---
 name: Brief History
 
-![](img/tim-berners-lee.jpg){: .medium}
+.fancy.medium[![](img/tim-berners-lee.jpg)]
 
 ???
 * he was later surprised in a reddit ama that kittens took over the internet
@@ -159,18 +178,15 @@ name: Brief History
 
 
 
-
-
 ---
 name: First Browser
 
-![](https://upload.wikimedia.org/wikipedia/commons/7/76/WorldWideWeb_FSF_GNU.png){: .medium}
+.fancy.medium[![](https://upload.wikimedia.org/wikipedia/commons/7/76/WorldWideWeb_FSF_GNU.png)]
 
 
 ???
 * was called WorldWideWeb 1990ish
 * marc andreesens mosaic and then netscape
-
 
 
 
@@ -203,15 +219,12 @@ Due to some original problems with various implementations of the HTML standard 
 ---
 name: Browser Wars
 
-![](img/bw.jpg){: .medium_small}
+.medium_small[![](img/bw.jpg)]
 
 ???
 
 * Due to some original problems with various implementations of the HTML standard in browsers, such as allowing missing closing tags
 * XHTML standard developed (2000) to enforce stricter adherence to proper syntax.
-
-
-
 
 
 
@@ -239,11 +252,9 @@ name:
 
 ```
 
+
 ???
 this used to be a thing
-
-
-
 
 
 ---
@@ -253,7 +264,7 @@ name: Note About Syntax, Tabs, Spaces, Legibility, Structure, Comments
 
 
 ???
-Later on you'll learn about [linting](http://stackoverflow.com/questions/8503559/what-is-linting), but for now this is the first of many rants about best practices
+* Later on you'll learn about [linting](http://stackoverflow.com/questions/8503559/what-is-linting), but for now this is the first of many rants about best practices
 * clean correct syntax and code abstraction
 
 
@@ -299,7 +310,7 @@ name: Legibility
 
 * Someone somewhere will need to read your code. Be nice to them.
 
-<iframe src="//giphy.com/embed/fDdVNus5ztt7O" width="480" height="270" frameBorder="0" class="giphy-embed"></iframe>
+<iframe src="http://giphy.com/embed/fDdVNus5ztt7O" width="480" height="270" frameBorder="0" class="giphy-embed"></iframe>
 
 ???
 
@@ -313,7 +324,7 @@ name: Comment and Cite
 * comment when: when "borrowing code", code needs clarification, caveats or todos.
 * no comment when: paraphrasing what your code does
 
-![](img/fb_comments.png){: .medium}
+.medium[![](img/fb_comments.png)]
 
 
 ???
@@ -339,8 +350,8 @@ name: HTML Elements and Tags
 ---
 name: HTML Underneath it all
 
-![](img/dom-tree.png){: .medium_small}<br>
-*( from [watershedcreative](http://watershedcreative.com/naked/html-tree.html) )*{: .caption}
+.medium_small[![](img/dom-tree.png)]<br>
+*( from [watershedcreative](http://watershedcreative.com/naked/html-tree.html) )*
 
 ???
 * browser parses it into a tree.
@@ -929,7 +940,7 @@ name: svg
 ---
 name: gif
 
-<iframe src="//giphy.com/embed/3o7WTM5kCvIMkVmMN2" width="480" height="262" frameBorder="0" class="giphy-embed"></iframe>
+<iframe src="http://giphy.com/embed/3o7WTM5kCvIMkVmMN2" width="480" height="262" frameBorder="0" class="giphy-embed"></iframe>
 
 * gif:
   * not good compression (best with images with few colors)
@@ -937,8 +948,6 @@ name: gif
   * transparency
 
 ???
-
-
 
 
 
@@ -970,12 +979,16 @@ name: tools
 ???
 
 
+---
+name:
+
+<iframe width="650" height="480" src="https://www.youtube.com/embed/RLgqJdkT5z4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+I just like bollywood, ok.
+
 
 ---
-name: Next Time
+name: Git
 
-* Everything you wanted to know about making things look pretty.
-* SA2 Due Thursday
-* HW1 Out Today!
 
-???
+[on to git](../02_git)
