@@ -41,14 +41,24 @@ For the purposes of this assignment we want all of our assets to be within the f
 
 If you move the rectangle from outside the frame into the frame, Figma automatically puts it into the Frame grouping.
 
-
-
 ## Creating the Header
 ### Laying out page content
 
 I usually like to plan the layout first with gray boxes and then add the images in later with masks, similarly to what we did with the header.
 
 Using the rectangle tool create a layout that looks like this:
+
+![rectangle layout](imgs/layout.gif)
+
+Rename the rectangles to keep them organized:
+
+![rename_layers](imgs/rename_layers)
+
+*Pro-tips:*
+- **Hold down Ctrl** and click and drag a rectangle to duplicate it
+- **Hold down shift** and click multiple rectangles to select more than one
+- Select three rectangles and then hold ctrl and drag them down to duplicate a row of rectangles to create the grid of question options
+
 
 ### Adding a background image and masking
 
@@ -64,7 +74,7 @@ Your image will be large and out of place and we want it to be the background of
 
 ![bag background image](imgs/bad_bg_img.png)
 
-We want to create a **mask**.
+To fix this, we want to create a **mask**.
 
 First select your Header reactangle and holding down the Shift key, select your image. Now press the Mask button up at the top.
 
@@ -72,10 +82,48 @@ First select your Header reactangle and holding down the Shift key, select your 
 
 Now the Header frame has become a sort of window frame for the image and you can resize and move the image until the header looks like you want it to.
 
+Note: If you want to resize your image without messing up the proportions, hold down the Shift key as you change it's size.
+
 ![header with image](img/header_with_image.png)
 
-Note: If you want to resize your image without messing up the proportions, hold down the Shift key as you change it's size.
+To make the rest of editing easier, lock your header layer.
+
+![header_lock](imgs/header_lock.png)
+
+You can also move the masked images down to the bottom of the layers to move them out of your way:
+
+![layer_arrange](imgs/layer_arrange.png)
 
 ### Adding in content images
 
+Repeat the masking process to add images to the rest of your layout.
+
+![content images](imgs/content_images.png)
+
+Since this used different parts of one image I created a copy of the image and put it outside of the desktop frame for easy access to drag onto the gray rectangles. Another option would be to create one rectangle with the masked image and then copy it for each item of the grid.
+
 ### Adding details
+
+#### Add drop shadow
+
+Select the first question square, then in the Properties panel click the **+** next to **EFFECTS**. Make sure that Drop Shadow is selected and click the sun icon to edit the drop shadow as you want.
+
+![drop shadow](imgs/drop_shadow.png)
+
+If you want it to add a drop shadow all the way around set the X and Y values to 0 and increase the blur; I set blur to 25px.
+
+#### Create checkbox
+
+Create a small white rectangle in the bottom right corner of your first image. To create a perfect square from the start, hold the Shift key down as you drag out the rectangle.
+
+Click on fill and change the color to white.
+
+You'll have something that looks like this:
+
+![checkbox1](imgs/checkbox1.png)
+
+Now to create the check we're going to use the **pen tool**. The pen tool creates a vector network.
+
+Press P on your key board and then create a checkmark. I made mine with three points and then pressed enter to complete the path. Change the stroke color and stroke width to 5px.
+
+![checkmark](imgs/checkmark.png)
