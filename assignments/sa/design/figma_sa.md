@@ -44,24 +44,11 @@ If you move the rectangle from outside the frame into the frame, Figma automatic
 
 
 ## Creating the Header
-### Using Frames and Constraints
-Press "F" or select the Frame tool and drag out a frame that stretches across the top of the quiz page and is about 200px tall.
+### Laying out page content
 
-Rename the frame to keep everything organized:
+I usually like to plan the layout first with gray boxes and then add the images in later with masks, similarly to what we did with the header.
 
-![frame_name](imgs/frame_name.png)
-
-With your header selected, click on the white rectangle under BACKGROUND to open the color picker. Select a new color for the header.
-
-![change_bg_color](imgs/change_bg_color.png)
-
-Now go to CONSTRAINTS and change the settings to match these:
-
-![constraints](imgs/constraints.png)
-
-Select "Desktop HD" in the layers panel on the left and try resizing your first frame. With the constraint settings of "top" and "left and right" your navbar will adjust width but stay at the top of your frame as you resize the parent frame.
-
-* If you're interested in learning more about how to use Frames to create responsive designs take a look at [this video](https://www.youtube.com/watch?v=rRQAQ1d9q9w) on constraints in Figma.
+Using the rectangle tool create a layout that looks like this:
 
 ### Adding a background image and masking
 
@@ -70,3 +57,25 @@ Now to add a background image to the header.
 If you're looking for a high resolution do-whatever-you-want images https://unsplash.com/ and  https://www.pexels.com/ are good sites.
 
 Once you have your image, save it somewhere easy to find, such as your desktop.
+
+You can either drag your image into the Figma app from your file explorer or click **Cmd + Shift + K** to place the image and click "Place all".
+
+Your image will be large and out of place and we want it to be the background of our navbar.
+
+![bag background image](imgs/bad_bg_img.png)
+
+We want to create a **mask**.
+
+First select your Header reactangle and holding down the Shift key, select your image. Now press the Mask button up at the top.
+
+![mask](imgs/mask.png)
+
+Now the Header frame has become a sort of window frame for the image and you can resize and move the image until the header looks like you want it to.
+
+![header with image](img/header_with_image.png)
+
+Note: If you want to resize your image without messing up the proportions, hold down the Shift key as you change it's size.
+
+### Adding in content images
+
+### Adding details
