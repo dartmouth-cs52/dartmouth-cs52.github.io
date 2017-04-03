@@ -7,7 +7,8 @@ function tearDownRemark() {
   $('body').removeClass('remark-presenter-mode');
   $('html').removeClass('remark-container');
   removeEvents();
-};
+}
+
 function fixToggle() {
   var $mainContent = $('.main-content');
   var $toggleSlide = $('#floating-button, #slides-button');
@@ -17,54 +18,62 @@ function fixToggle() {
   } else {
     $firstGlyph.removeClass('fa-coffee').addClass('fa-times');
   }
-
 }
-function setSlideToggle() {
-  var $toggleSlide = $('#floating-button, #slides-button');
+
+function onSlideToggle(event) {
+  if (event) event.preventDefault();
+
   var $mainContent = $('.main-content');
   var $pageHeader = $('.page-header');
-  $toggleSlide.off();
-  $toggleSlide.on('click', function(event) {
-    event.preventDefault();
-    if ($mainContent.is(":visible")) {
-      // on r - reload codepen
-      $(document).on('keypress.codepen', function(event) {
-            if (event.charCode === 114) {
-              console.log('reloading codepen');
-              reloadScript(codepenScript);
-            }
-      });
+  if ($mainContent.is(":visible")) {
+    // on r - reload codepen
+    $(document).on('keypress.codepen', function(event) {
+          if (event.charCode === 114) {
+            console.log('reloading codepen');
+            reloadScript(codepenScript);
+          }
+    });
 
-      $pageHeader.hide();
-      $mainContent.hide();
-      remark.create({
-        source: $('.slide').text(),
-        highlightStyle: 'tomorrow'
-      });
-      fixToggle();
-      // looks like needs to be reattached
-      setSlideToggle();
-      // reload codepen so it picks up changes
-      // could do this more automatically perhaps with arrivejs
-      reloadScript(codepenScript);
-      var slideareas = document.getElementsByClassName('remark-slides-area');
-      if (slideareas.length > 0) {
-        renderMathInElement(slideareas[0], {delimiters: [
+    $pageHeader.hide();
+    $mainContent.hide();
+    remark.create({
+      source: $('.slide').text(),
+      highlightStyle: 'tomorrow'
+    });
+    fixToggle();
+    // looks like needs to be reattached
+    setSlideToggle();
+
+    // reload codepen so it picks up changes
+    // could do this more automatically perhaps with arrivejs
+    // reloadScript(codepenScript);
+    
+    // render the math
+    var slideAreas = $('.remark-slides-area');
+    if (slideAreas.length > 0) {
+      slideAreas.each(function(index, area) {
+        renderMathInElement(area, {delimiters: [
           {left: "$$", right: "$$", display: true},
           {left: "$", right: "$", display: false},
           {left: "\\[", right: "\\]", display: true},
           {left: "\\(", right: "\\)", display: false},
         ]});
-      }
-
-    } else {
-      $(document).off('keypress.codepen');
-      $pageHeader.show();
-      $mainContent.show();
-      fixToggle();
-      tearDownRemark();
+      })
     }
-  });
+
+  } else {
+    $(document).off('keypress.codepen');
+    $pageHeader.show();
+    $mainContent.show();
+    fixToggle();
+    tearDownRemark();
+  }
+}
+
+function setSlideToggle() {
+  var $toggleSlide = $('#floating-button, #slides-button');
+  $toggleSlide.off();
+  $toggleSlide.on('click', onSlideToggle);
 }
 
 function reloadScript(src) {
@@ -107,8 +116,26 @@ $('document').ready(function() {
   $.get('index_slides.md').done(function(result){
     $('.slide').text(result);
     reloadScript(codepenScript);
+
+    if (window.location.hash) {
+      console.log('slides mode detected');
+      onSlideToggle();
+    }
   }).fail(function(error) {
     console.log(error);
+  }).always(function(result) {
+    // render the math
+    var mathAreas = $('.math');
+    if (mathAreas.length > 0) {
+      mathAreas.each(function(index, area) {
+        renderMathInElement(area, {delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "\\(", right: "\\)", display: false},
+        ]});
+      })
+    }
   });
 
   // failed attempt at duplicate content
@@ -118,4 +145,5 @@ $('document').ready(function() {
   // });
 
   setSlideToggle();
+
 });

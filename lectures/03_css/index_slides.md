@@ -307,7 +307,7 @@ CSS Selector Game — Play this to become a pro!
 [http://flukeout.github.io/](http://flukeout.github.io/)
 
 ???
-
+* first to finish
 
 
 
@@ -397,7 +397,7 @@ name: absolute units
 ---
 name: pixel math!
 
-.fancy.small[![](img/pxangles.png)]
+.small[![](img/pxangles.png)]
 
 $px = 5376 \times \tan(\alpha)$
 
@@ -416,7 +416,7 @@ more at [http://tinyurl.com/cssmath](http://tinyurl.com/cssmath)
 ???
 * takeaway: 1css inch is what an inch would look like at 28inches away
 * pixels are actually an angular measurement
-* reference pixel be the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arm's length. For a nominal arm's length of 28 inches, the visual angle is therefore about 0.0213 degrees.
+* reference pixel be the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arms length. For a nominal arm's length of 28 inches, the visual angle is therefore about 0.0213 degrees.
 * tan(α) = opp./adj.
 * tan(α) = ((1/96) / 2) / 28
 * tan(α) = (1/192) / 28
@@ -426,12 +426,10 @@ more at [http://tinyurl.com/cssmath](http://tinyurl.com/cssmath)
 
 
 
-
-
 ---
 name: Relative Units
 
-* `em`:	*relative to the font-size of the current element*
+* `em`:	*relative to the font-size of the current parent element*
 * `rem`:	*relative to font-size of the root element*
 * `ex`:	*relative to the width of character 'x' in the current font*
 * `ch`: *relative to width of the character '0' in current font*
@@ -444,7 +442,7 @@ name: Relative Units
 
 ???
 
-
+* relative units are what you'll often be using.
 
 
 ---
@@ -454,17 +452,10 @@ name: reasonable practice
 
 ???
 * body set pixels (16px is default em)
-
-
-
-
-
----
-name:
-
-<p data-height="500" data-theme-id="24117" data-slug-hash="6769175f096ccc51484b73c056c6bdb9" data-default-tab="result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/6769175f096ccc51484b73c056c6bdb9/">Em AND Rem</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-???
+* main sections are in `rem`
+* contents of each section are in `em`
+* independent control of scaling for the main sections
+* (from [css-tricks](https://css-tricks.com/rems-ems/))
 
 
 
@@ -554,7 +545,7 @@ There are 3 ways to include CSS styles in your page.
 name: CSS limitations
 
 * Selectors are unable to ascend
-* No named rules
+* CSS rules can't be named, just a bit ol'mess.
 * Can't declare new scope independently of position (z-index)
 * [SASS](http://sass-lang.com/) for later:
   * variables: `$primary-color: #333`;

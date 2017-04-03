@@ -67,22 +67,70 @@ an id:
 combinations:
 
 ```css
-p.classname {...} /* element with class */
-p.classname a {...} /* element that is inside of element.class */
-p, a, .classname {...} /* multiple selectors */
+p.someclass {...} /* element with class */
+p.someclass a {...} /* element that is inside of element.class */
+p .classy {...} /* any descendent of p that is .classy */
+a, input, .classy {...} /* multiple selectors */
 ```
+
+```html
+<p class="someclass">
+  stuff stuff <a href="#"> lets go </a> stuff stuff
+  <span class="classy"> more stuff </span>
+</p>
+<input id="subscribe" ... />
+
+```
+
 
 ### Pseudo Selectors
 
-and any of the above plus special keywords such as `hover` which refers to the state something is when your mouse hovers over it:
+and any of the above plus special keywords such as `hover`, `link`, `visited`, `checked`, `empty`, `focus`, `not`, `nth-child` and lots more!
 
 ```css
-p:hover {
-  color: orange;
-}
+p:hover { color: orange; }
+
 a:link { color: blue;}
+
 a:visited { color: purple;}
+
+p:nth-child(2) {background: grey;}
+
+div:not(p) {background: white;}
+
+input[type=checkbox]:checked ~ #hiddenmenu {
+  opacity: 1;
+}
 ```
+
+### Children and Sibling Selectors
+
+You can also select children and various siblings in CSS. You can **not** unfortunately select a parent.  A few distinctions that are worth noting: a descendent would include any nested children at any level down the tree while the child selector would only include direct children. The adjacent sibling has to be directly adjacent whereas the general sibling matches as long as the parent is the same.
+
+
+```css
+ul li {  } /* descendent */
+ul > li {  } /* child */
+#title + ul {  } /* adjacent sibling */
+#title ~ ul {  }  /* general sibling */
+```
+
+```html
+<article>
+  <div id="title">Title</title>
+  <ul id="list 1">
+    <li>1</li>
+    <li>2</li>
+    <ol id="nested list">
+      <li>nested 1</li>
+    </ol>
+  </ul>
+  <ul id="list 2">
+    <li>3</li>
+  </ul>
+<article>
+```
+
 
 ### Simple Example With Selectors and Colors
 
@@ -122,6 +170,96 @@ body {
 ```
 To make it the default! 💗
 
+
+
+## Size Units
+
+Many CSS properties take size/length values: `font-size`, `width`, `height`, `margin`, `padding`.  Size can be specified in both absolute units as well as relative units.
+
+### Absolute Units
+
+Generally device pixels are what you want to use for absolute values. All the other absolute units are built on the pixel anyway and are generally frowned on.
+
+* `px`: *device pixels (1/96th of 1in at 28inches viewing distance)* ✅
+* `pt`: *points (1/72 of 1in)*
+* `pc`: *pica (12 pt)*
+* `in`: *inches (96px)*
+* `cm`: *centimeters (37.8px)*
+* `mm`: *pixel (3.78px)*
+(from [css_units](http://www.w3schools.com/cssref/css_units.asp))
+
+
+### Pixels
+
+Pixels are pretty interesting because they are [actually an angular measurement](http://tinyurl.com/cssmath).  The "reference" pixel is the visual angle of 1 pixel on a device with a pixel density of 96dpi (dots per inch) and a distance from the reader of an 1 arms length — where the nominal arm length is defined as 28 inches.  Thus, a pixel is about 0.0213 degrees of visual angle.
+
+The main takeaways here are that 1 CSS inch is what an inch would look like at 28inches away, and also that device pixels are not the physical pixel display electronics of the screen usually.
+
+![](img/pxangles.png){: .small}
+
+$px = 5376 \times \tan(\alpha)$
+{: .math}
+
+Now we can do fun math like this:
+
+```css
+#moon {
+  width: 24.3px
+  /* 5376  * (1079 miles radius of moon /
+      238900 miles distance from earth) */
+}
+/* 1 ref px = visual angle of 1px at a density of 96dpi at 28inches */
+```
+
+### Relative Units
+
+More often than not you'll find that relative units are really useful.  There are a bunch of these as well.
+
+* `em`:	*relative to the font-size of the current parent element*
+* `rem`:	*relative to font-size of the root element*
+* `ex`:	*relative to the width of character 'x' in the current font*
+* `ch`: *relative to width of the character '0' in current font*
+* `vw`:	*1% of the width of the viewport*
+* `vh`:	*1% of the height of the viewport*
+* `vmin`:	*1% of viewport's smaller dimension*
+* `vmax`:	*1% of viewport's larger dimension*
+(from [css_units](http://www.w3schools.com/cssref/css_units.asp))
+
+Often fonts are specified in `em`/`rem`.  1rem = 16px by default if unspecified.  
+
+
+Here is a generally reasonable practice. Body is set in absolute `px`, main sections are set in `rem`, and the contents of each section are in `em`.  This allows for zoom to work nicely and allows independent control the scaling of the main sections.
+
+![](img/layout.svg)
+(from [css-tricks](https://css-tricks.com/rems-ems/))
+
+
+
+Older browsers don't support `vh`/`vw` units, but they can be very useful if you don't mind losing some compatibility.
+
+
+<p data-height="396" data-theme-id="24117" data-slug-hash="GqoPMW" data-default-tab="html,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/GqoPMW/">Testing of Length units</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+### Custom Fonts
+
+Loading your own fonts is completely possible.  It can be resource intensive but at least you can have your own [handwriting as a font](http://www.myscriptfont.com/).  Using a [font provider](https://fonts.google.com/) though gives you the most optimizes / compatible fonts for the browser.
+
+```css
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('myfont.woff2') format('woff2'),
+       url('myfont.woff') format('woff'),
+       url('myfont.ttf') format('truetype');
+}
+
+p {
+    font-family: "MyWebFont";
+    font-style: normal; /* italic oblique */
+    font-size: 14px;
+    font-weight: bold; /* normal light */
+    font-variant: small-caps;
+}
+```
 
 ## CSS Inside
 
@@ -163,6 +301,21 @@ There are 3 ways to include CSS styles in your page.
   </body>
 </html>
 ```
+
+### CSS Limitations
+
+The current version of CSS supported by browsers, CSS3 still has a lot of limitations.
+
+* Selectors are unable to ascend, no way to select a parent of something.
+* z-index has a scope and looks for the nearest absolute or relative positioned parent. Can't declare new scope independently of position.
+* [SASS](http://sass-lang.com/) for later:
+  * variables: `$primary-color: #333`;
+  * nesting:  `nav { ul { color: $primary-color; } a { ... } }`
+  * mixins:  `@mixin border-radius($radius) { ... }`
+  * partials: `import 'navbar'`
+  * math:   `5px + 10px`
+
+
 
 ## Position
 
@@ -224,6 +377,28 @@ Want to learn more?
 
 [This](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) has good examples also.
 
+## Flexbox Model
+
+.fancy[![](img/flexbox-model.jpg)
+
+* *main axis* / *main dimension*:
+  * primary axis along which flex items are laid out
+  * extends in the *main dimension*.
+* *main-start* / *main-end*
+  * flex items are placed starting on the *main-start* side
+  * and going toward the *main-end* side.
+* *main size* / *main size property*
+  * flex items width or height, whichever is in the main dimension, is the item’s main size
+  * The flex item’s main size property is either the width or height property, whichever is in the main dimension.
+* *cross axis* / *cross dimension*
+  * The axis perpendicular to the main axis is called the cross axis
+  * extends in the cross dimension.
+* *cross-start* / *cross-end*
+  * Flex lines are filled with items and placed into the container starting on the cross-start side of the flex container and going toward the cross-end side.
+* *cross size* / *cross size property*
+  * The width or height of a flex item, whichever is in the cross dimension, is the item’s cross size. The cross size property is whichever of width or height that is in the cross dimension.
+
+
 
 ## Precedence and Cascading
 
@@ -253,22 +428,6 @@ Every element on the page is a box.  Each box has several properties that define
 * width/height:  define the size of the element contents — important to understand that this size does not include the totals
 
 ![box model](img/box_model.png)
-
-
-## Size Units
-
-* em	Relative to the font-size of the element (2em means 2 times the size of the current font)
-* ex	Relative to the x-height of the current font (rarely used)
-* ch	Relative to width of the "0" (zero)
-* rem	Relative to font-size of the root element
-* vw	Relative to 1% of the width of the viewport
-* vh	Relative to 1% of the height of the viewport
-* vmin	Relative to 1% of viewport's* smaller dimension
-* vmax	Relative to 1% of viewport's* larger dimension
-
-(from [css_units](http://www.w3schools.com/cssref/css_units.asp))
-
-<p data-height="396" data-theme-id="24117" data-slug-hash="GqoPMW" data-default-tab="html,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/GqoPMW/">Testing of Length units</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 
 ## Element Visibility
