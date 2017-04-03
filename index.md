@@ -76,7 +76,7 @@ See [assignments](/assignments).
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/emma.jpg"/></div>
   <div style="order:5;" class="rtable-cell"><a href="mailto:emma.c.oberstein.18@dartmouth.edu">Emma Oberstein</a><br><a href="https://cs52-dartmouth.slack.com/messages/@emmaoberstein/">@emmaoberstein</a></div>
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jason.png"/></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jason.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jason.s.feng.17@dartmouth.edu">Jason Feng</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jason/">@jason</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/alma.jpg"/></div>
