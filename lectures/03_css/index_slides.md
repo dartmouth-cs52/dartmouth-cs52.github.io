@@ -501,32 +501,21 @@ There are 3 ways to include CSS styles in your page.
 
 
 ```html
-<!DOCTYPE html>
 <html>
   <head>
     <title>CSS Loaded 3 Ways</title>
-
     <!-- Internal Style Sheet: MEDIOCRE -->
     <style type="text/css">
-      h1 {
-        color: purple;
-      }
-      body {
-        background-color: orange;
-      }
+      h1 { color: purple; }
+      body { background-color: orange; }
     </style>
-
     <!-- External Style Sheet: BEST -->
     <link rel="stylesheet" type="text/css" href="mystyle.css">
-
   </head>
   <body>
-
     <h1>Title</h1>
-
     <!-- Inline Style:  WORST -->
     <p style="color: white">Paragraph Stuff</p>
-
   </body>
 </html>
 ```
@@ -615,11 +604,8 @@ Position is relative to default (ie. parent within document flow) via `top`, `ri
 
 
 ---
-name:
+name: position: absolute;
 
-```css
-div { position: absolute; }
-```
 
 .fancy.tiny[![](img/position/absolute.gif)]
 
@@ -660,15 +646,10 @@ Similar to layers and allows elements to be ordered. Parameter: signed integer
 ---
 name: more css tricks
 
-(animated gifs from [FROONT](http://blog.froont.com/positioning-in-web-design/))
-
-For more detailed examples: [css-tricks](https://css-tricks.com/almanac/properties/p/position/)
+* [FROONT](http://blog.froont.com/positioning-in-web-design/)
+* For more detailed examples: [css-tricks](https://css-tricks.com/almanac/properties/p/position/)
 
 ???
-
-
-
-
 
 
 
