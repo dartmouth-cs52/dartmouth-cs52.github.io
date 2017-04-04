@@ -2,14 +2,14 @@
 
 ![Figma icon](imgs/figma_icon1.png)
 
-Figma is a browser-based interface design tool that allows for live team editing of files. This means that you can not only access your files from any computer by simply logging in, but anyone on your team can edit files and use shared components.
+Figma is a browser-based interface design tool. This allows us to wireframe our webpages: this will be useful for creating a design for our next assignment, a quiz page. Figma also allows for live team editing of files. This means that you can not only access your files from any computer by simply logging in, but anyone on your team can edit files and use shared components.
 
 Figma also has Desktop apps available for download if you prefer that!
 
 If you want to learn more about Figma there many online tutorials including the [Figma YouTube Channel](https://www.youtube.com/channel/UCQsVmhSa4X-G3lHlUtejzLA) that has a lot of short useful videos.
 
 ## Getting Set up
-Go to figma.com and Sign Up for a new account. This account that you create will be the one you use to log in whether you're in the browser or on the desktop app.
+Go to [figma.com](https://www.figma.com) and Sign Up for a new account. This account that you create will be the one you use to log in whether you're in the browser or on the desktop app.
 
 To download the desktop app click on the hamburger menu and then on "Get Desktop app":
 
@@ -27,7 +27,7 @@ Now **create an "Artboard"** or what Figma calls a "Frame" by clicking on the fr
 
 ![frame tool](imgs/frame_tool.png)
 
-Then click on "Desktop HD" on the panel that appears on the right hand side of the screen.
+Then click on "Desktop HD" on the panel that appears on the right hand side of the screen. There are other Frames for other types of media that have the exact pixel sizes for each device. 
 
 ![desktop frame](imgs/desktop_frame.png)
 
@@ -57,7 +57,7 @@ Using the rectangle tool create a layout that looks like this:
 Rename the rectangle layers to keep them organized.
 
 *Pro-tips:*
-- **Hold down Ctrl** and click and drag a rectangle to duplicate it
+- **Hold down Ctrl** (**Option** on Mac) and click and drag a rectangle to duplicate it
 - **Hold down shift** and click multiple rectangles to select more than one
 - Select three rectangles and then hold ctrl and drag them down to duplicate a row of rectangles to create the grid of question options
 
