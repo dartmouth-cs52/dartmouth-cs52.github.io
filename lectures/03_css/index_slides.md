@@ -21,21 +21,48 @@ name: base
 ---
 name: CS52
 
-CSS and workshops
+CSS
+
+.fancy.medium[![](img/tabledrawing1.jpg)]
+
+.fancy.tiny[![](img/tabledrawing2.jpg)]
+
+
 
 ???
 * today:
-  * guest
   * how did the git assignment go?
   * map map!
-  * lots to go through before main attraction
-    * first team workshop!
   * on the order of a million slides to get through
+
+
+---
+name: Table Questions
+
+* is git leveraging something your computer automatically does or does it do tracking/recording from scratch?
+* iframe is how prof had code next to generated page within a page?
+* any reason to use `<p>` over `<div>`?
+* why would you ever change branches / what is purpose?
 
 
 
 ---
+name: Where in the stack?!
+
+![](img/whereinthestack_html+css.png)
+
+
+---
 name: CSS — Cascading Style Sheets
+
+"It has been a constant source of delight for me over the past year to get to continually tell hordes (literally) of people who want to -- strap yourselves in, here it comes -- control what their documents look like in ways that would be trivial in TeX, Microsoft Word, and every other common text processing environment: '<strong>Sorry, you're screwed.</strong>'" — Mark Andreessen, 1994
+
+
+---
+name: CSS — Cascading Style Sheets
+
+.fancy.small[![](img/css1implementation-test.gif)]
+
 
 * CSS v1 1996
 * CSS v2 1998
@@ -44,7 +71,8 @@ name: CSS — Cascading Style Sheets
 * ...
 
 ???
-we're a new era now boys and girls
+* we're a new era now boys and girls
+* css is faster than js for animations
 
 
 
@@ -703,11 +731,22 @@ main idea: give the container the ability to alter its items' width/height (and 
 
 
 
+---
+name: Flexboxes are the only way!
+
+<p data-height="505" data-theme-id="24117" data-slug-hash="03b6b8b6dace6d8f7c666514ac66bead" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/03b6b8b6dace6d8f7c666514ac66bead/">simple flexbox</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+???
+
+
+
+
 
 ---
 name: Flexbox model
 
-.fancy[![](img/flexbox-model.jpg)
+.fancy[![](img/flexbox-model.jpg)]
 
 ???
 * *main axis* / *main dimension*:
@@ -730,22 +769,10 @@ name: Flexbox model
 
 
 
-
----
-name: Flexboxes are the only way!
-
-<p data-height="505" data-theme-id="24117" data-slug-hash="03b6b8b6dace6d8f7c666514ac66bead" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/03b6b8b6dace6d8f7c666514ac66bead/">simple flexbox</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-
-???
-
-
-
-
 ---
 name: Flex Parent Properties
 
-.fancy.medium[![](img/flex-direction1.svg)]
+.fancy.medium[![flex-direction](img/flex-direction1.svg)]
 
 ```css
 .container {
@@ -761,7 +788,7 @@ name: Flex Parent Properties
 ---
 name: Flex Parent Properties
 
-.fancy[![](img/flex-wrap.svg)]
+.fancy.medium_small[![flex-wrap](img/flex-wrap.svg)]
 
 ```css
 .container{
@@ -778,7 +805,7 @@ name: Flex Parent Properties
 ---
 name: Flex Parent Properties
 
-.fancy.small[![](img/justify-content.svg)]
+.fancy.small[![justify-content](img/justify-content.svg)]
 
 ```css
 .container {
@@ -794,7 +821,7 @@ name: Flex Parent Properties
 ---
 name: Flex Parent Properties
 
-![](img/align-items.svg){: .fancy .small .mostly-white}
+.fancy.small[![align-items](img/align-items.svg)]
 
 ```css
 .container {
@@ -811,7 +838,7 @@ name: Flex Parent Properties
 ---
 name: Flex Parent Properties
 
-.fancy.small[![](img/align-content.svg)]
+.fancy.small[![align-content](img/align-content.svg)]
 
 ```css
 .container {
@@ -827,7 +854,8 @@ name: Flex Parent Properties
 ---
 name: Flex Child Properties
 
-![](img/order-2.svg){: .fancy .medium_small .mostly-white}
+.fancy.medium_small[![order](img/order-2.svg)]
+
 
 ```css
 .item {
@@ -844,7 +872,7 @@ name: Flex Child Properties
 ---
 name: Flex Child Properties
 
-.fancy.medium_small[![](img/flex-grow.svg)]
+.fancy.medium_small[![flex-grow](img/flex-grow.svg)]
 
 ```css
 .item {
@@ -866,7 +894,8 @@ name: Flex Child Properties
 ---
 name: Flex Child Properties
 
-.fancy.medium_small[![](img/align-self.svg)
+
+.fancy.medium_small[![align-self](img/align-self.svg)]
 
 ```css
 .item {
@@ -885,9 +914,10 @@ name: Flexbox resources
 Want to learn more?
 
 **go play this now:**
+<br>[http://flexboxfroggy.com/](http://flexboxfroggy.com/)
 <br>[http://flexboxdefense.com](http://flexboxdefense.com/)
 
-* thanks to: [guide-to-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) for images
+* images from: [guide-to-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [flexboxin5.com/](http://flexboxin5.com/)
 * [a-visual-guide-to-css3-flexbox-properties](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties)
 
@@ -947,38 +977,61 @@ name: Precedence and Cascading
 
 
 ---
-name: CSS Box Model
+name: CSS Box Model `content-box`
 
 Every element on the page is a box.
 
-.fancy[![box model](img/box_model.png)]
+.medium_small[![box model](img/box_model_content-box.png)]
 
 totals =  content width/height + padding + borders + margins
 
 ???
+* default is content-box
 * `margin:` defines the spacing **around** the element
 * `border:` defines thickness of a border line
 * `padding:` defines the spacing *inside* of the element between the border and the contents (can be text of children elements)
 * `width/height:`  define the size of the element contents — important to understand that this size does not include the totals
-
+* is a little  confusing
 
 
 
 ---
-name: CSS Box Model
+name: CSS Box Model `border-box`
 
-* `margin:` defines the spacing **around** the element
-* `border:` defines thickness of a border line
-* `padding:` defines the spacing *inside* of the element between the border and the contents (can be text of children elements)
-* `width/height:`  define the size of the element contents — important to understand that this size does not include the totals
+Better newer CSS3 model
+
+.medium_small[![box model](img/box_model_content-box.png)]
 
 
 ???
+* The border and padding values were moved inside the element's box, cutting into the width/height of the box rather than expanding it.
+* width = actual visible/rendered width of an element's box
+* height = actual visible/rendered height of an element's box
+* much more straighforward
 
+???
 
+---
+name: Content-Box Best Practice
 
+```html
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+```
 
+???
+* sets it to border-box
+* and then forces everything to specfically inherit
+* allows you to override if you need
 
+---
+name: Content-Box vs Border-Box
+
+<p data-height="500" data-theme-id="24119" data-slug-hash="970f26f621cfa3ae3eec7e2a6b0e8c97" data-default-tab="result" data-user="css-tricks" data-embed-version="2" data-pen-title="Box Sizing Layout Demo" class="codepen">See the Pen: <a href="http://codepen.io/team/css-tricks/pen/970f26f621cfa3ae3eec7e2a6b0e8c97">content-box</a></p>
 
 
 ---
@@ -996,10 +1049,7 @@ name: Element Visibility
 
 
 ???
-
-
-
-
+* note,  you can fade in opacity but the others are binary
 
 
 ---
@@ -1021,7 +1071,7 @@ name: Transition Properties
 
 ```css
 div {
-  transition-property: [property]
+  transition-property: [property];
   transition-duration: [duration];
   transition-timing-function: [timing-function];
   transition-delay: [delay];
@@ -1068,7 +1118,7 @@ name: CSS 2D and 3D Transforms
 
 ### Translate
 
-```
+```css
 transform: translate(x, y);
 transform: perspective(distance_from_view) translate3d(x, y, z);
 ```
@@ -1169,3 +1219,10 @@ name: More Resources
 * [3d transforms](http://desandro.github.io/3dtransforms)
 
 ???
+
+
+---
+name: Intermission
+
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
