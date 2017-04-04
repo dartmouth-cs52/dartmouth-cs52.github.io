@@ -324,6 +324,7 @@ The current version of CSS supported by browsers, CSS3 still has a lot of limita
 ![](img/position/z-index.gif)
 
 Similar to layers and allows elements to be ordered. Parameter: signed integer
+Can be [tricky](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/).
 
 ### position: static
 

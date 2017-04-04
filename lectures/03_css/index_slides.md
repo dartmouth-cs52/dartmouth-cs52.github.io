@@ -18,10 +18,16 @@ name: base
 
 .title[{{name}}]
 
+
 ---
 name: CS52
 
-CSS
+<iframe width="640" height="360" src="https://www.youtube.com/embed/6cFefl69Q_A?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+
+---
+name: CS52
+
 
 .fancy.medium[![](img/tabledrawing1.jpg)]
 
@@ -32,12 +38,20 @@ CSS
 ???
 * today:
   * how did the git assignment go?
+    * json validation / linting
+    * pull requests
+    * 60 people might be too many for this but in the end it worked out, people helped and fixed others bugs
   * map map!
   * on the order of a million slides to get through
+  * and games,  don't worry if it all seems overwhelming - plenty of time to practice and don't need to memorize it all
+* tomorrow DESIGN workshop during x-hour, will help with extra credit - not mandatory but you'll learn some stuff
+* Thursday lab2 goes out, will overlap with lab1, but we gotta start cranking through these so don't procrastinate
 
 
 ---
 name: Table Questions
+
+<iframe src="//giphy.com/embed/q0FBs96PQmjDi?hideSocial=true" width="480" height="269.76" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 * is git leveraging something your computer automatically does or does it do tracking/recording from scratch?
 * iframe is how prof had code next to generated page within a page?
@@ -51,12 +65,19 @@ name: Where in the stack?!
 
 ![](img/whereinthestack_html+css.png)
 
+???
+* content delivery network
 
 ---
 name: CSS — Cascading Style Sheets
 
+<iframe width="600" height="320" src="https://www.youtube.com/embed/4bZrJwxVPS8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
 "It has been a constant source of delight for me over the past year to get to continually tell hordes (literally) of people who want to -- strap yourselves in, here it comes -- control what their documents look like in ways that would be trivial in TeX, Microsoft Word, and every other common text processing environment: '<strong>Sorry, you're screwed.</strong>'" — Mark Andreessen, 1994
 
+???
+* we'll dive deeper into the CSS render tree next class
+* this is a video of the layout reflow render passes the browser makes just to display google, later we'll talk tips on how to optimize this sort of thing
 
 ---
 name: CSS — Cascading Style Sheets
@@ -71,8 +92,10 @@ name: CSS — Cascading Style Sheets
 * ...
 
 ???
-* we're a new era now boys and girls
+* we're a new era now boys and girls, finally things are evolving
+* long period of time when people had all sorts of workarounds for things, like using tables for everything - please don't
 * css is faster than js for animations
+* netscape used javascript at first for css (super slow and still is)
 
 
 
@@ -88,12 +111,13 @@ name: Semantics vs. Style
 
 
 ???
-* defining structure but have not done anything with how they are displayed
+* in early days was all browser defined style
+* defining structure but display up to browser
 * relied on the default display styles provided by the browser
 * set the `h1` tag the font size increased
 * What we were defining was a section of content that was intended to be a header of level 1.
-* In Microsoft Word,  the default way to format the document is by setting typesetting directly.  You select something and change the font size, or make it bold.  The problem with this is that it unmaintainable in the long term.  Want to change all your headings?  Good luck — should have set up some styles.
-* The idea behind markup is to help separate the meaning (or semantics) from the style. You specify the intended use of the content,  whether it is a header or a paragraph etc,  and then you define the look and feel of these blocks separately.
+* In Word,  the default way to format the document is by setting typesetting directly.  You select something and change the font size, or make it bold.  The problem with this is that it unmaintainable in the long term.  Want to change all your headings?  Good luck — should have set up some styles.
+* specify the intended use of the content,  whether it is a header or a paragraph etc,  and then you define the look and feel of these blocks separately.
 
 
 
@@ -105,7 +129,10 @@ name: Enter CSS
 .fancy.medium[![](http://i.giphy.com/5pxnxdzdZfXFK.gif)]
 
 ???
-CSS will be friend and foe this term.  Certain things will be easy, certain things will feel impossible.  Try to vertically align something. We will conquer this though.
+* CSS will be friend and foe this term.
+* Certain things will be easy, certain things will feel impossible.
+* css inside joke: Try to vertically center something
+* We will conquer this though, quite easily, anybody know?
 
 
 
@@ -118,7 +145,7 @@ name: we will however
 
 
 ???
-Ok, enough fun.
+* just going to get all the css meme's out of the way.
 
 
 
@@ -145,7 +172,7 @@ name: CSS Rules
 .fancy.medium[![anatomy of css rule](img/anatomy_of_css_rule.jpg)]
 
 ???
-
+* ok and now you know css. ship it, send it.
 
 
 
@@ -211,7 +238,7 @@ a, input, .classy {...} /* multiple selectors */
 ```
 
 ???
-
+* what would happen if I clicked 'lets go'?
 
 
 
@@ -238,6 +265,7 @@ input[type=checkbox]:checked ~ #hiddenmenu {
 
 
 ???
+* gets even better, some selectors can select for a particular state of an element
 * these are super useful,  checkboxes can be used to record some state in CSS for instance
 * plus things like :first-child, or :not
 * ok that last one is cheating, more complicated even:
@@ -273,24 +301,13 @@ ul > li {  } /* child */
 <article>
 ```
 ???
+* remember that this is a tree
 * descendent would include any nested li's
 * child would only include direct children, so say a nested `ol`'s children would be left untouched
 * adjacent sibling, directly adjacent with no elemnts in between
 * general sibling any matching as long as parent is same
 
 
-
-
-
-
-
----
-name: Selectors and Colors
-
-<p data-height="400" data-theme-id="24117" data-slug-hash="a54aae158ba02e5e4cfe33c089277603" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/a54aae158ba02e5e4cfe33c089277603/">a54aae158ba02e5e4cfe33c089277603</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-???
-Note: I cheated in the above example and included some magic for that font.
 
 
 
@@ -307,12 +324,12 @@ name: Colors
 
 ???
 * (2^8 -1)
-* in the above, when i added color to text what inline element did I use?
 
 
 
 ---
 name: Colors
+
 
 * Predefined names: <span style="color:pink;">pink</span>, <span style="color:orange;">orange</span>, <span style="color:lightblue;">lightblue</span>, <span style="color:darkgrey;">darkgrey</span>, etc.
 * 8-bit hexadecimal: <span style="color:#cc0000">#cc0000</span>
@@ -320,8 +337,24 @@ name: Colors
 * Percentage intensities: <span style="color:rgb(20%,80%,20%)">rgb(50%,50%,100%)</span>
   * with transparency:  <span style="color:rgba(255,100,100,.5)">rgba(255,100,100,.5)</span>
 
+.fancy.left[![](img/colorpicker.gif)]<br>
+.fancy.right[![](img/pigments.gif)]<br>
+
+
 ???
 * which of these is most legible -- stick with one
+* don't use color names
+* atom color picker and pigments plugins
+
+
+---
+name: Selectors and Colors
+
+<p data-height="400" data-theme-id="24117" data-slug-hash="a54aae158ba02e5e4cfe33c089277603" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/a54aae158ba02e5e4cfe33c089277603/">a54aae158ba02e5e4cfe33c089277603</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+???
+* Note: I cheated in the above example and included some magic for that font.
+* when i added color to text what inline element did I use?
 
 
 
@@ -335,7 +368,7 @@ CSS Selector Game — Play this to become a pro!
 [http://flukeout.github.io/](http://flukeout.github.io/)
 
 ???
-* first to finish
+* so overwhelming time for a break
 
 
 
@@ -392,6 +425,8 @@ To make it the default! 💗
 ---
 name: Size Units Tangent
 
+<iframe src="//giphy.com/embed/3ornjZLITGcFQVRbxK?hideSocial=true" width="480" height="237.12" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 * many css properties take size/length values:
   * font-size, width, height, margin, padding
   * many units to choose from
@@ -399,13 +434,13 @@ name: Size Units Tangent
   * relative units
 
 ???
-
+* lots of overwhelming options for setting size
+* what are best practices
 
 
 
 ---
 name: absolute units
-
 
 * `px`: *device pixels (1/96th of 1in at 28inches viewing distance)* ✅
 * `pt`: *points (1/72 of 1in)*
@@ -414,6 +449,7 @@ name: absolute units
 * `cm`: *centimeters (37.8px)*
 * `mm`: *pixel (3.78px)*
 
+<iframe src="//giphy.com/embed/xT0Gqcy5YrVjXdkZgs?hideSocial=true" width="220" height="220" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 
 ???
@@ -432,8 +468,8 @@ $px = 5376 \times \tan(\alpha)$
 ```css
 #moon {
   width: 24.3px
-  /* 5376  * (1079 miles radius of moon /
-      238900 miles distance from earth) */
+  /* 5376  * (1079 miles radius of moon /  */
+  /*   238900 miles distance from earth)   */
 }
 ```
 
@@ -442,9 +478,10 @@ $px = 5376 \times \tan(\alpha)$
 more at [http://tinyurl.com/cssmath](http://tinyurl.com/cssmath)
 
 ???
-* takeaway: 1css inch is what an inch would look like at 28inches away
+* css pixels are not physical pixels
 * pixels are actually an angular measurement
 * reference pixel be the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arms length. For a nominal arm's length of 28 inches, the visual angle is therefore about 0.0213 degrees.
+* takeaway: 1css inch is what an inch would look like at 28inches away
 * tan(α) = opp./adj.
 * tan(α) = ((1/96) / 2) / 28
 * tan(α) = (1/192) / 28
@@ -466,11 +503,16 @@ name: Relative Units
 * `vmin`:	*1% of viewport's smaller dimension*
 * `vmax`:	*1% of viewport's larger dimension*
 
-1rem = 16px by default if unspecified
+.left[<iframe src="//giphy.com/embed/k46bzmbLhKJwc?hideSocial=true" width="320" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]<br>
+.right.small[![metal type](https://upload.wikimedia.org/wikipedia/commons/e/e9/Metal_type.svg)]
 
 ???
 
 * relative units are what you'll often be using.
+* 1 rem is 16px by default
+* also yesterday was jane goodall's birthday
+* em originally was C when metal type was a thing
+* older browsers don't support `vh`/`vw` units, but they can be very useful if you don't mind losing some compatibility.
 
 
 ---
@@ -507,6 +549,7 @@ p {
     font-variant: small-caps;
 }
 ```
+[i want my handwriting as a font](http://www.myscriptfont.com/)
 
 ???
 * loading your own fonts in is possible
@@ -640,7 +683,7 @@ name: position: absolute;
 Position is relative to the nearest absolute parent element via `top`, `right`, `bottom`, `left` properties. Element is removed from flow so other elements ignore it.
 
 ???
-
+* tricky to remember that the nearest absolute parent
 
 
 
@@ -667,22 +710,18 @@ Similar to layers and allows elements to be ordered. Parameter: signed integer
 ???
 * helps layer absolute and fixed elements
 * and 3d transformed layers
-
-
-
-
----
-name: more css tricks
-
-* [FROONT](http://blog.froont.com/positioning-in-web-design/)
-* For more detailed examples: [css-tricks](https://css-tricks.com/almanac/properties/p/position/)
-
-???
+* tricky beccause of [z-index context](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
+* stacking order:
+  * order of appearance in the doc
+  * positioned (non-static) elements go in front of non-positioned
+  * new context for each parent that is positioned or opacity less than 1
+  * [FROONT](http://blog.froont.com/positioning-in-web-design/)
+  * For more detailed examples: [css-tricks](https://css-tricks.com/almanac/properties/p/position/)
 
 
 
 ---
-name: More positioning and aligning, the old way
+name: positioning & aligning, the old way
 
 
 * [`float` CSS property](http://www.w3schools.com/css/css_float.asp)
@@ -693,11 +732,13 @@ name: More positioning and aligning, the old way
 
 * [`clear` CSS property](http://www.w3schools.com/css/css_float.asp)
   * `left`, `right`, `none`, `both`
-  * specifies which side of an element floats are **not** allowed
+  * specifies which side floating elements are **not** allowed on
   * if not allowed will move past them (clear past them)
 
 
 ???
+* allow element to float in a direction with other elements allowed to flow around on the other side.
+* keep it "clear" on which side
 * Floating can get tricky.
 
 
@@ -726,7 +767,7 @@ CSS3 [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) make thi
 <iframe src="//giphy.com/embed/fAKOQ4gRr5kME" width="480" height="200" frameBorder="0" class="giphy-embed" ></iframe>
 
 ???
-main idea: give the container the ability to alter its items' width/height (and order) to best fill the available space
+* main idea: give the container the ability to alter its items' width/height (and order) to best fill the available space based on some rules
 
 
 
@@ -749,6 +790,8 @@ name: Flexbox model
 .fancy[![](img/flexbox-model.jpg)]
 
 ???
+* justify is main
+* align is cross
 * *main axis* / *main dimension*:
   * primary axis along which flex items are laid out
   * extends in the *main dimension*.
@@ -847,6 +890,9 @@ name: Flex Parent Properties
 ```
 
 ???
+* modifies the behavior of the flex-wrap property
+* similar to align-items, but instead of aligning flex items, it aligns flex lines
+
 
 
 
@@ -884,7 +930,7 @@ name: Flex Child Properties
 ```
 
 ???
-* how that item grows in relation to other items
+* how that item grows in relation to other items as a weight
 * how it shrinks
 * basis: default size before remaining space is distributed
 
@@ -948,11 +994,14 @@ p {
 }
 
 #main-article p { ... }
-#main-article .except ul li p { ... }
+#main-article .excerpt ul li p { ... }
 ```
 
 ???
-
+* wait whats that whole cascading thing about?
+* can have multiple rules that match an element
+* and multiple stylesheets with overlapping rules
+* enter precedence
 
 
 
@@ -963,7 +1012,7 @@ name: Precedence and Cascading
 
 * more specific selector with more classes wins
   * more specific wins regardless of order
-* same specificity, then order matters, later wins
+* same specificity, then load order matters, later wins
 * !important gets the highest precedence **(use sparingly!)**
 * inline styles have second highest precedence **(bad: hard to override)**
 
@@ -1000,7 +1049,7 @@ name: CSS Box Model `border-box`
 
 Better newer CSS3 model
 
-.medium_small[![box model](img/box_model_content-box.png)]
+.medium_small[![box model](img/box_model_border-box.png)]
 
 
 ???
@@ -1014,7 +1063,7 @@ Better newer CSS3 model
 ---
 name: Content-Box Best Practice
 
-```html
+```css
 html {
   box-sizing: border-box;
 }
@@ -1049,15 +1098,19 @@ name: Element Visibility
 
 
 ???
+* showing and hiding content is real popular
+* so lots of ways to do this
 * note,  you can fade in opacity but the others are binary
+* opacity better than visibility
 
 
 ---
 name: Transitions
 
-<p data-height="400" data-theme-id="24119" data-slug-hash="EWyyNJ" data-default-tab="result" data-user="timofei" data-embed-version="2" data-pen-title="Day Night simulation" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/EWyyNJ/">Day Night simulation</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="400" data-theme-id="24117" data-slug-hash="EWyyNJ" data-default-tab="result" data-user="timofei" data-embed-version="2" data-pen-title="Day Night simulation" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/EWyyNJ/">Day Night simulation</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 ???
+* now we're getting to the good stuff
 * CSS3 can do a lot of stuff.  Transitions, animations, and even 3D transforms.
 * Here's a super fancy solar system simulation in CSS
 * We won't do anything that fancy,  plus this isn't a real simulation, all the motions are hardcoded, no physics.
@@ -1104,7 +1157,7 @@ name: Transition Properties
 ---
 name: Transition Properties
 
-<p data-height="400" data-theme-id="24117" data-slug-hash="598dcc037bd45c9e8c431646bd77a004" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/598dcc037bd45c9e8c431646bd77a004/">basic css transitions</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="400" data-theme-id="24119" data-slug-hash="598dcc037bd45c9e8c431646bd77a004" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/598dcc037bd45c9e8c431646bd77a004/">basic css transitions</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 
 ???
