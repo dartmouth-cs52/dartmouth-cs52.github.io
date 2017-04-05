@@ -51,9 +51,9 @@ Mongo is the database that we are going to use.  We've already installed `mongod
 
  🚀 You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process.
 
-There is a commmandline client you can use to connect to the database: `mongo`. You can also play around with a more graphical client [robomongo](https://robomongo.org/).
+There is a commmandline client we'll use to connect to the database: `mongo`. You can also play around with a more graphical client [robomongo](https://robomongo.org/).
 
-🚀  Below are some commands we can run to create some petitions.
+🚀  Below are some commands to run in the mongo client to create some petitions.
 ```bash
 # mongoshell is a commandline interface to your local mongo db
 
@@ -155,15 +155,17 @@ const SignerSchema = new Schema({
 //   virtuals: true,
 // });
 
-const SignerModel = mongoose.model('Signer', SigneeSchema);
+const SignerModel = mongoose.model('Signer', SignerSchema);
 export default SignerModel;
 
 ```
 
 ## Views
 We need to create views for how our petitions will look like on the page.
-🚀  Let us create the directory `app/views` to hold all our view templates. Let's also create the directory `partials` within this directory.   We will write some html with [ejs](https://www.npmjs.com/package/ejs), which allows us to embed javascript in html.   Therefore, when we re-render the index page, the index page will change depending on what objects we pass it.  
-🚀  We need a navigation bar, don't we? In the `app/views/partials` directory, create a `nav.ejs` file.
+
+🚀  Let us create the directory `app/views` to hold all our view templates. We will write some html with [ejs](https://www.npmjs.com/package/ejs), which allows us to embed javascript in html. This allows us to reuse html code and insert into other `.ejs` files. Let's create the directory `partials` within this directory for these reusable html components.  Another great thing we can do is pass javascript objects in html and perform simple functions to render them exactly the way we want it. 
+
+🚀  We need a navigation bar on every page, don't we? In the `app/views/partials` directory, create a `nav.ejs` file.
 
 ```html
 <div class="topBar">
@@ -219,7 +221,7 @@ We need to create views for how our petitions will look like on the page.
 </head>
 ```
 
-Here's some css to get a working modal and navigation bar.
+Here's some css to get a working modal and navigation bar (modal css taken from [here](https://www.w3schools.com/howto/howto_css_modals.asp).
 ```css
 .topBar{
   height: 25%;
@@ -255,7 +257,7 @@ Here's some css to get a working modal and navigation bar.
 Now, let's insert the nav bar and the modal into `index.ejs` file, which we create under the `app/views/` directory. This is really easy in ejs:
 ```html
 <html>
-  <& include partials/head %>
+  <% include partials/head %>
 <body>
   <% include partials/nav %>
   <% include partials/modal %>
@@ -263,7 +265,7 @@ Now, let's insert the nav bar and the modal into `index.ejs` file, which we crea
 </html>
 ```
 
-🚀  Now let's make the rest of the index page. We want to display all of the petitions, and information about them. We also need to include buttons for each petition to see more details and also to sign this petition.  Here is how we do it:
+🚀  Now let's make the rest of the index page. We want to display all of the petitions, and information about them. We also will include buttons for each petition: one to see more details and one to sign the petition.  Here is how we do it:
 ```html
 <div>
   <ul class="petitions">
@@ -310,7 +312,7 @@ Now, let's insert the nav bar and the modal into `index.ejs` file, which we crea
 </div>
 ```
 
-Here, ejs works its rendering magic. When we pass in an object to ejs, in this case, `petitions`, to render `index.ejs`, we follow this same template.   We don't have to write separate templates for every new petition added to `petitions`.       There are even more neat things ejs can help us with: we can use the control flow operator `%` for for loops and boolean logic, and we can display variable parameters with the `<%= %>` operator, such as `<%= petitions.title %>`.   In a nutshell, ejs makes our static html template dynamic.
+Here, ejs works its rendering magic. When we pass in an object to ejs, in this case, `petitions`, to render `index.ejs`, we follow this same template.   We don't have to write separate templates for every new petition added to `petitions`.       There are even more neat things ejs helps us with: we can use the control flow operator `%` for for loops and boolean logic, and we can display variable parameters with the `<%= %>` operator, such as `<%= petitions.title %>`.   Templating makes server-side rendering so easy! Keep this in mind when you are building simple apps that are not front-end heavy: you may not need a front-end at all. 
 
 🚀 Let's hook our file to our app. First, download ejs:
 
@@ -431,26 +433,21 @@ All these methods do not do anything meaningful right now. Let's leave these met
 
 Now we are ready to wire our app all together with routes. We can create a separate routes file, but our application is pretty small, so we can store all of our routes in our `app/server.js`:
 
-Express allows us to use a chaining method to simplify how our routes look. For instance here is how we could define our `petitions/:id` routes, for all petitions.
+Express allows us to use a chaining method with `/:route` to simplify how our routes look. For instance here is how we could define our `petitions/:id` routes, which will render one petition and all its details with a certain `id`.
 
 ```javascript
-// example!
-// on routes that end in /petitions
-// ----------------------------------------------------
 app.get('/someroute/:someID', (req, res) => {
   /*someMethod*/
 });
 ```
 {: .example}
 
-Note `/*someMethod*/` is just a comment, you would call a method there in a module that we will call the controller — more on that shortly!
+Note `/*someMethod*/` is just a comment, you would call one of the methods we made in the `controller` module. Remember how we defined all our API endpoints in our controller?   Let's map them with some routes.
 
-Ok, remember how we defined all our API endpoints in our controller?   Let's map them in our router.
-
-🚀 Use the syntax above to make routes to map the following:
+🚀 Use the syntax above to make routes to map to the following:
 
 * GET `/`: Call petitions.getPetitions and render `index` in the callback
-* GET `/petitions/:id`:  Call Petitions.getPetition and render `petition` page in the callback
+* GET `/petitions/:id`:  Call Petitions.getPetition and render the `petition` page in the callback
 * GET `/sign/:petitionID`:  Call Petitions.addSigner and render the petition `petition` page in the callback
 
 🚀  For example, we should change the code to render our `/` route to be:
@@ -464,9 +461,9 @@ app.get('/', (req, res) => {
 });
 ```
 
-We'll let you handle the next two routes. For both of these methods, you need to get the router id that is passed in when we hit `/petitions/:id`.  This is accessible as `req.params.id` inside each of our controller functions that had this `:id` path variable.
+🚀  We'll let you handle the next two routes. For both of these methods, you need to get the router id that is passed in when we hit `/petitions/:id`.  This is accessible as `req.params.id` inside each of our controller functions that had this `:id` path variable.
 
-For the `/sign/:petitionID`, you can likewise access `:petitionID` through `req.params.petitionID`. Also, because the `Petitions.addSigner()` method requires the role and the name of the signer, you can access these through `req.query.role` and `req.query.name`: inputs on a modal are stored as queries, which in urls are stored as `?name=value`. You also may want to use `res.redirect('petitions/req.params.petitionID')` instead of `res.render('petition', {petition})` so you don't have to pass in an entire petition object when you don't have to.
+For the `/sign/:petitionID`, you can likewise access `:petitionID` through `req.params.petitionID`. Also, because the `Petitions.addSigner()` method requires the role and the name of the signer, you can access these through `req.query.role` and `req.query.name`: inputs on a modal are stored as queries, which in urls are stored as `?name=value`. You also may want to use `res.redirect('petitions/req.params.petitionID')` instead of `res.render('petition', { petition })` so you don't have to pass in an entire petition object when you don't have to.
 
 
 ## Controller Continued
@@ -475,7 +472,7 @@ Ok but our controller `controllers/petition_controller.js` is fairly useless.  W
 
 We should first implement the `getPetitions` endpoint.
 
-🚀 We just use our `Petition` Mongoose model schema to get all the petitions in the Petitions collection:
+🚀 We just use our `Petition` Mongoose model schema to get all the petitions in the Petitions collection by calling the `.find()` method:
 
 ```javascript
 export const getPetitions = (done) => {
