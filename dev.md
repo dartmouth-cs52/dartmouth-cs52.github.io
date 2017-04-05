@@ -71,15 +71,15 @@ W3 4/13   Lecture: Frontend+React    SA: X                      WS: CSS         
 
 W4 4/18   Lecture: More React        SA:  react-videos          WS: static gen    HW: ''
 W4 4/19   XHOUR:  react-videos
-W4 4/20   Lecture: APIs + Libraries  SA: X                      WS: preprocs      HW: react-notes+server
+W4 4/20   Lecture: APIs + Libraries  SA: X                      WS: vis, canvas   HW: react-notes+server
 
 W5 4/25   Lecture: Routing Frontend  SA: routing                WS: preprocs      HW: ''
 W5 4/26   XHOUR: routing
-W5 4/27   Lecture: Redux             SA: X                      WS: build         HW: redux-blog
+W5 4/27   Lecture: Redux             SA: X                      WS: preprocs      HW: redux-blog
 
-W6 5/2    Lecture: Pitches           SA:  slack-bot             WS: frontends     HW: ''
+W6 5/2    Lecture: Pitches           SA:  slack-bot             WS: build         HW: ''
 W6 5/3    XHOUR:  slack-bot
-W6 5/4    Lecture: Databases         SA: X                      WS: social        HW: redux-blog+api
+W6 5/4    Lecture: Databases         SA: X                      WS: alt-stack     HW: redux-blog+api
 
 W7 5/9    Lecture: Sessions + Auth   SA: server-side-rendering  WS: deployment    HW: ''
 W7 5/10   XHOUR:  server-side-rendering
