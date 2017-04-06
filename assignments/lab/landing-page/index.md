@@ -18,7 +18,7 @@ And if you narrow your browser you'll see some responsive design and it looks li
 
 ![](img/slack-mobile.png){: .fancy .tiny}
 
-Using your fresh HTML and CSS skills you will make an **HTML and CSS only** version of this landing page (no JS allowed).  ❗None of the links or functionality needs to be there, it just need look good and be laid out properly.
+Using your fresh HTML and CSS skills you will make an **HTML and CSS only** version of this landing page (no JS allowed).  ❗None of the links or functionality needs to be there, it just needs to look good and be laid out properly.
 
 All anchor tags should look like this
 
