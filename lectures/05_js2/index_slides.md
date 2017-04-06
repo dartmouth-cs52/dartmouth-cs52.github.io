@@ -22,307 +22,372 @@ name: base
 ---
 name: On the Menu
 
+* more js
+* es6
 
-* DOM
-* Functional /Vector  programming
-* asynch
-* promises
-* modules
-* workshop SASS+Jekyll
+???
+
+
+
+---
+name: es6 template string
+
+```js
+
+const foo = 'bar'; // single quotes preferred but can use double
+
+let a = 'The ' + foo + ' is high.'; // es5 'foobar'
+//prefer es6:
+let a = `The ${foo} is high.`;
+```
 
 
 ???
+* use the es6 template string constructions!
+
 
 
 
 
 
 ---
-name: Quiz Time!
+name:  let
 
-ANOTHER QUIZ?
+* let variables are block-scoped (not whole function)
+* still hoisted
+* global let variables are not properties on `window`
+* `for (let x...)` create a fresh binding for x in each iteration
+* error to use a let variable before its declaration is reached
+* redeclaring a variable with let is a SyntaxError
+
+<!-- from https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/ -->
+???
+* all good things
+* use let instead of var, kids
+
+
+
+
+---
+name:  const
+
+* simple:
+  * variables declared with const are just like let
+  * except that you can only assign to them when you declare them
+  * ie. no reassignment
+
+<!-- from https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/ -->
+???
+
+
+
+---
+name: closure trickiness
+
+<p data-height="435" data-theme-id="24117" data-slug-hash="f2e5b9149a019b953859e6de0af83f54" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/f2e5b9149a019b953859e6de0af83f54/">talking cat var scoping problem</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 ???
+* reference retained to a variable that changes!
+* note: easy way to fix this in es6 to come
+* DON"T USE var:
+  * i is hoisted above for loop
+  * i is available after for loop
+
+
 
 
 
 
 
 ---
-name: git machine!
+name: OOP
 
-.fancy.medium[![](img/magical-git-machine.png)]
+* Object-oriented programming: methods
+  * property of an object can be a function
+  * instance variables
 
-???
-
-
-
-
----
-name:
-
-.fancy.medium[![](img/box-model.png)]
-
-???
-* box-sizing!  totally forgot!f
-* indeed does depend on this
-* default is this:
-
-
-
-
----
-name: content-box
-
-.fancy.medium[![](img/content-box.png)]
-
-???
-
-
-
-
----
-name: border-box
-.fancy.medium[![](img/border-box.png)]
-
-???
-
-
-
-
-
----
-name:
-
-<iframe id="cp_embed_970f26f621cfa3ae3eec7e2a6b0e8c97" src="//codepen.io/css-tricks/embed/970f26f621cfa3ae3eec7e2a6b0e8c97?height=675&amp;theme-id=1&amp;slug-hash=970f26f621cfa3ae3eec7e2a6b0e8c97&amp;default-tab=result&amp;user=css-tricks" scrolling="no" frameborder="0" height="675" allowtransparency="true" allowfullscreen="true" name="CodePen Embed" title="CodePen Embed" class="cp_embed_iframe " style="width: 100%; overflow: hidden;"></iframe>
-
-???
-
-
-
-
----
-name: best practices
-
-```css
-html {
-  box-sizing: border-box;
+```javascript
+var o = {
+  count: 0,
+  increment: function(amount) {
+    this.count += amount || 1;
+    return this.count;
+  }
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+
+console.log(o.increment());  // 1
+console.log(o.increment(2)); // 3
+console.log(o.increment(2)); // 5
+```
+
+
+???
+
+
+
+
+
+---
+name: this
+
+* `this` is special keyword for referring to the context
+  * when a function is executed not when defined
+* in methods (function properties of objects): `this` is bound to object
+* in other functions: `this` refers to global object
+
+```javascript
+function foo() {  console.log(this); }
+
+// normal function call
+foo(); // `this` will refer to `window` in es5 and undefined in es6
+
+// as object method
+var obj = {bar: foo};
+obj.bar(); // `this` will refer to `object`
+
+// as constructor function
+new foo(); // `this` will refer to
+           // an object that inherits from `foo.prototype`
+```
+
+???
+* some examples, confusing yes
+
+
+
+---
+name: this
+
+```javascript
+let LateBloomer = {
+  petalCount: Math.ceil(Math.random() * 12) + 1,
+  declare: function() {
+  	console.log('I am a beautiful flower with '
+                + this.petalCount + ' petals!');
+  },
+  bloom: function() {
+  	setTimeout(this.declare, 1000);
+  },
+
+}
+
+LateBloomer.bloom();   // undefined number of petals
+// after 1 second, triggers the 'declare' method
+```
+
+???
+* why do we care about `this`?
+* this won't run
+* setTimeout runs in the context of window
+* so when it calls declare that function has no access to this.petalCount
+* skip this quickly
+
+
+
+---
+name: this
+
+```javascript
+  bloom: function() {
+  	setTimeout(this.declare.bind(this), 1000);
+  },
 }
 ```
 
-*(from [css-tricks](https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/))*
+* bind returns a new function with current `this` tied to the function
+* on execute uses the bound `this` instead
 
 ???
-
+* setTimeout's "this" refers to window
+* needs `.bind(this)`
+* bind returns a new function with this bound to a value.
 
 
 
 
 ---
-name:
-
-<p data-height="400" data-theme-id="24117" data-slug-hash="d518f39c65614da11ced8784d025c8e8" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/d518f39c65614da11ced8784d025c8e8/">quiz1</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-???
-
-
-
-
-
----
-name: pull
-
-.fancy.medium[![](img/pull.png)]
-
-
-???
-
-
-
-
-
----
-name: with rebase
-
-.fancy.medium[![](img/pull-rebase.png)]
-
-???
-
-
-
-
-
----
-name: all the git
-
-[https://onlywei.github.io/explain-git-with-d3/](https://onlywei.github.io/explain-git-with-d3/)
-
-???
-
-
-
-
-
----
-name: reminder
-
-[cs52-dartmouth.slack.com](https://cs52-dartmouth.slack.com/)
-
-???
-* don't forget to use the channels to ask questions and help each other out
-
-
-
-
-
----
-name: DOM essentials
-
-.fancy.medium_small[![](img/dom-tree.png)]
-
-???
-* we'll be talking about the dom a lot
-  * but today there'll be examples that use more jquery
-
-
-
-
-
----
-name: document
-
-* Document Object Model
-* the HTML document exposed as a collection
-* JS can query or modify the HTML document
-* available in global variable `document`
-* in browsers `window` is top level global scope
-
-
-???
-* dom objects have lots of private methods, can be annoying!
-* dom is constrcuted from html
-
-
-
-
----
-name:
-
-.fancy.medium[![](img/simple-dom.png)]
-
-???
-
-
-
-
----
-name:
-
-.fancy.medium_small[![](img/dom-links.png)]
-
-```javascript
-element = document.body.firstChild.nextSibling.firstChild;
-```
-
-???
-* traversing dom nodes this way though... would be inconvenient right?
-* other ways are possible
-
-
-
-
-
----
-name:
-
-```html
-<div id="better">before</div>
-
-<script>
-element = document.getElementById("better");
-element.textContent = "after";
-
-// getElementsByClassName
-// getElementsByTagName
-</script>
-
-```
-
-
-???
-
-
-
-
-
----
-name: jquery
-
-.fancy.small[![](img/jquery.png)]
-
-* small library to make DOM traversal and manipulation standard and easy
-* 70% of websites use it ([w3techs](https://w3techs.com/technologies/details/js-jquery/all/all))
-* used to be more necessary but still convenient
-
-
-???
-* as browsers javascript implementations and javascript itself has gotten better not as necessary
-* still a nicer more consistent API though
-* i'll show both syntaxes for some stuff
-
-
-
-
-
----
-name:
+name: that = this, bind
 
 ```javascript
 
-document.getElementById('better');
-$('#better')
-
-document.getElementsByClassName('better');
-$('.better');
-
-document.getElementsByTagName('a');
-$('a');
-
-// like css selectors
-document.querySelectorAll('nav li .selected') // not live
-$('nav li .selected')
+var that = this;
+setTimeout( function() {
+  console.log(that);
+}, 1000);
 
 ```
 
+* assigning current `this` to a variable to freeze
+
 ???
-* note querySelectorAll might seem cool, but it returns copies of nodes that won't update
+* sometimes you will see people fix this with a closure
+* reassing the current this to another variable
+* BAD
+
+
+
+---
+name: that = this
+
+<p data-height="300" data-theme-id="24117" data-slug-hash="9b0e116d14ee8078c8b86066f0d2ab5f" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/9b0e116d14ee8078c8b86066f0d2ab5f/">9b0e116d14ee8078c8b86066f0d2ab5f</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+???
+* this is button -- but setTimeout scope is window
+
+
+
+
+---
+name: functions have properties
+
+```javascript
+function plus1(value) {
+  if (!plus1.invocations) {
+    plus1.invocations = 0;
+  }
+  plus1.invocations++;
+  return value + 1;
+ }
+
+ console.log(plus1(10));   // → 11
+ console.log(plus1(20));   // → 21
+
+ console.log(plus1.invocations); // → 2
+```
+???
+
+
+
+
+---
+name: classes (old way)
+
+* Functions are classes in JavaScript:
+  * Name the function after the class
+  * use the new keyword
+  * functions used this way are constructors
+
+```javascript
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+  this.area = function() { return this.width*this.height; }
+}
+var r = new Rectangle(26, 14);
+console.log(r)
+// Rectangle { width: 26, height: 14, area: [Function] }
+```
+
+???
+
+
+
+
+---
+name: inheritance
+
+* prototype based:
+  * a prototype object for each object instance
+  * can have other prototype objects forming a chain
+  * will search up the prototype chain until the property is found
+
+
+???
+* properties of an object are its own property in addition to all the properties up the prototype chain
 
 
 
 
 
 ---
-name:
+name: adding to prototype
 
 ```javascript
-let vanillaEl = document.getElementById('thing');
-let jqueryEl = $('#thing')
+function Rectangle(width, height) {
+  this.width = width;
+  this.height = height;
+}
 
-vanillaEl.textContent = "some text" //text in node
-jqueryEl.text()
+Rectangle.prototype.area = function() {
+   return this.width*this.height;
+}
 
-vanillaEl.innerHTML  // html string of children
-jqueryEl.html()
-
-vanillaEl.outerHTML  // includes element itself
-jqueryEl.parent.html()
-
-vanillaEl.style.display = "none"
-jqueryEl.hide()
+let r = new Rectangle(26, 14);  // {width: 26, height: 14}
+r.area();  // 364
+Object.keys(r) == [ 'width', 'height' ] // own properties
 ```
+
+
+???
+* changing prototype will cause all instances to change
+* this is similar to just adding a property to a function buuut
+* adding to prototype will change all instances
+
+
+
+
+---
+name: inheritance
+
+
+```javascript
+
+Rectangle.prototype = new Shape(...);
+
+Square.prototype = new Rectangle();
+
+//without separate constructor
+let Rectangle = Object.create(Shape);
+
+```
+
+* If desired property not in Rectangle.prototype
+* then look in Shape.prototype and so on
+
+
+???
+* can use Object.create() instead of constructor
+
+
+
+
+
+
+---
+name: getters and setters
+
+```javascript
+var pile = {
+  elements: ["eggshell", "orange peel", "book"],
+  get height () {
+    return this.elements.length;
+  },
+  set height(value) {
+    console.log("Ignoring attempt to set height to", value);
+  }
+};
+console.log(pile.height); // → 3
+pile.height = 100; // → Ignoring attempt to set height to 100
+```
+
+???
+* want to include properties that are not methods but are computed?
+* sure we got that
+
+
+
+
+
+---
+name: BUT WAIT!
+
+What about es6?
+
+* es6 has "real" classes
+* stop talking about prototypes
+* still really just an object / function
+
+
 ???
 
 
@@ -330,29 +395,70 @@ jqueryEl.hide()
 
 
 ---
-name: changing  structure
+name: es6 class syntax
 
 ```javascript
-document.createElement('p');
+class Bunny {
+  constructor(name, favoriteFood){
+    this.name = name;
+    this.favoriteFood = favoriteFood;
+  }
+  eatFavFood() {
+    console.log(`${this.favoriteFood}, yum!`);
+  };
+}
 
-parent.appendChild(element);
+let es6Bunny = new Bunny('Brigadier Fluffkins', 'Raspberry Leaves');
+es6Bunny.eatFavFood();
+// Raspberry Leaves, yum!
+```
 
-parent.insertBefore(element, sibling);
+<!-- from: https://medium.freecodecamp.com/learn-es6-the-dope-way-part-v-classes-browser-compatibility-transpiling-es6-code-47f62267661#.g5wa16op9 -->
 
-node.removeChild(oldNode)
+???
+* has constructor and methods
+* much nicer syntax
+* note: classes are *not* hoisted!
+
+
+
+
+
+---
+name: es6 inheritance
+
+```javascript
+class BelgianHare extends Bunny {
+  constructor(favDrink, favoriteFood, name) {
+    super(name, favoriteFood);
+    this.favDrink = favDrink;
+  }
+
+  drinkFavDrink() {
+    console.log(`glug glug ${this.favDrink}`)
+  }
+}
 ```
 ???
-* again most of these are easier with jquery although not shown
-* jquery docs are excellent
-* for simple sites, i think its a perfectly fine way to go for basic functionality
-* lots of libraries depend on jquery, like bootstrap for instance
+* as you would expect `extends`
+* super to invoke base class constructor *required*
 
 
 
 
 
 
---- Functional Programming
+
+
+
+
+
+
+
+
+
+---
+name: Functional Programming
 
 * everything is a function
 * no/minimal mutable objects
@@ -398,8 +504,6 @@ let results = anArray.map(function (value, i) {
   * functions take in arguments
   * spit out new results
   * no modification of things in place
-
-
 
 
 
@@ -862,23 +966,30 @@ import coolCode from 'myModule';
 
 
 
-
-
 ---
-name: Workshop
+name: webpack
 
-Jekyll + SASS
+.fancy.medium[![](img/what-is-webpack.png)]
 
 ???
 
 
 
 
+---
+name: babel
+
+.fancy.medium[![](img/babel.png)]
+
+
+???
+
+
+
 
 ---
-name: Next time!
+name: eslint with airbnb style guide
 
-* HW2 due tuesday
-* Next week REACT!
+.fancy.medium[![](img/airbnb.png)]
 
 ???

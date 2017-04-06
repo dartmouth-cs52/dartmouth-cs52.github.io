@@ -18,7 +18,63 @@ name: base
 .title[{{name}}]
 
 ---
-name: What is?
+name: cs52
+
+<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fnatgeo%2Fvideos%2F10154506688308951%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+
+
+
+
+---
+name: CS52
+
+* Today:
+  * basic javascript
+  * the DOM
+* Table Questions
+  * can you do flex boxes within flex boxes?
+  * why don't issues come up when a rebased branch is pushed and other try to pull - won't revision histories be different?
+  * is flex native to CSS? do you define it in the HTML file?
+
+.tiny[![](img/meow.png)]
+
+
+???
+* Today
+  * basic javascript
+  * the DOM
+
+
+---
+name: Where in the Stack?
+
+.medium[![](img/whereinthestk.png)]
+
+
+???
+* today in browser only!
+* later we'll do server side js with node
+
+
+---
+name: Where in the Browser?
+
+.medium[![](img/layers.png)]
+
+???
+* parts of the browser
+* The user interface:address bar, back/forward button, etc. except the window with page
+* The browser engine: sits between the UI and the rendering engine - passes commands
+* The rendering engine : displays requested content. parses HTML and CSS, and displays the parsed content on the screen
+* Networking: for network calls such as HTTP requests
+* UI backend: used for drawing basic widgets like combo boxes and windows
+* JavaScript interpreter. Used to parse and execute JavaScript code.
+* Data storage. Browser local storage like Cookies
+
+
+
+---
+name: What is JS?
 
 .medium_small[![](img/jabba_with_text.png)]
 
@@ -27,6 +83,8 @@ name: What is?
 * custom designed jabbascript for cs52 by a friend of mine
 * we'll be doing sooo much javascript
 * good parts and bad parts (books written)
+* a scripting language for coding inside of the browser - the browser has a JS interpreter and runtime.
+* only real way to do interactive stuff in browser is through js,  otherwise need plugins
 
 
 
@@ -34,7 +92,7 @@ name: What is?
 ---
 name:
 
-.tiny.fancy[![](https://media.giphy.com/media/anjRJ4nv9WJzO/giphy.gif)]
+<iframe src="//giphy.com/embed/anjRJ4nv9WJzO?hideSocial=true" width="180" height="180" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 * Netscape released in 1995 as a way to add programs to web pages in their browser
 * has been evolving, now new annual specs
@@ -42,6 +100,7 @@ name:
 .medium[![](img/ecmascript-history.png)]
 
 ???
+* called lots of different names, some inappropriate
 
 
 
@@ -51,27 +110,30 @@ name:
 name: ECMAScript
 
 * Javascript =>  ECMAScript:
-  * high-level, dynamic, untyped, interpreted scripting language
+  * high-level, dynamic, un/weirdly-typed, interpreted scripting language
   * prototype-based with first-class functions
   * multi-paradigm: object-oriented, imperative, and functional
   * closer to c than java
 
 ???
-first-class function: functions are objects
+* first-class function: functions are objects
+* * ECMA (standards organization) was originally **European Computer Manufacturers Association**, but then decided to just stop being an acronym for anything. Still in Geneva.
+* some things i like about js:  functional paradigm, first class functions, everything is a dictionary
 
 
 
 ---
 name: mixed reviews
 
-JavaScript has mixed reviews — love and hate though it is popular. But from the [2016 stackoverflow developer survey](http://stackoverflow.com/research/developer-survey-2016):
+[2017 stackoverflow developer survey](http://stackoverflow.com/research/developer-survey-2017):
 
 
-.fancy.medium_small[![](img/javascript_popularity.png)]
+.fancy.medium[![](img/stackoverflow/programming_languages.png)]
 
 ???
-
-
+* no relation to java (named that way by sun as a marketing move because java was popular)
+* love it, hate it
+* sure is popular though
 
 
 
@@ -92,7 +154,8 @@ name:
   * event loop
 
 ???
-
+* ha don't worry we'll dig into this
+* i tried to find some fun learn js game but not much out there, most of them seem overly complicated, if anybody knows of one though!
 
 
 
@@ -129,7 +192,7 @@ for (i = 0; i < 10; i++)  {
 ???
 * but there's some things here we shouldn't do...
 * c style for loop badness
-* these are all JS!
+* these are all JS! but BAD JS
 
 
 
@@ -141,7 +204,7 @@ for (i = 0; i < 10; i++)  {
 name: dynamic typing
 
 ```javascript
-let i;         // typeof i == undefined
+var i;         // typeof i == undefined
 
 i = 32;        // typeof i == typeof 32 == 'number'
 i = 'foobar1'; // typeof i == typeof 'foobar' == 'string'
@@ -149,11 +212,37 @@ i = true;      // typeof i == 'boolean'
 ```
 
 * have type of the last thing assigned
-* primitive types: undefined, number, string, boolean, function, object
+* primitive types: `undefined`, `number`, `string`, `boolean`, `function`, `object`
 
 
 ???
+* variables aren't assigned a type
+* but values do have a type
 
+
+
+---
+name: type coercion
+
+* will automatically convert types!
+
+```js
+console.log(5 * null)   // → 0
+
+console.log("5" - 1)    // → 4
+
+console.log("5" + 1)    // → 51
+
+console.log("five" * 2) // → NaN
+
+console.log(false == 0) // → true
+```
+
+???
+* will convert things for fun and profit
+* sometimes useful, generally though.. not so  much
+* anything funny with the string and number examples?
+* can this cause problems? yes
 
 
 
@@ -162,15 +251,19 @@ i = true;      // typeof i == 'boolean'
 ---
 name: number type
 
-* number type is a double
+* number type is a `double`
 * MAX_INT = $(2^{53} - 1) = 9007199254740991$
 * oddities:
-  * NaN, Infinity are numbers
-  * 1/0 == Infinity
-  * Math.sqrt(-1) == NaN
-
+  * `NaN`, `Infinity` are numbers
+  * `1/0 == Infinity`
+  * NaN
+    * `parseFloat('hi')` is `NaN`
+    * `console.log(NaN === NaN); // false`
+    * `0/0` is `NaN`
+    * `Math.sqrt(-1)` is `NaN`
+    * `isNaN()`
 ???
-
+* lots of crazy you probably won't run into but you might when things are NaN and you forget that checking for it is difficult
 
 
 
@@ -182,12 +275,10 @@ name: string type
 
 ```js
 
-const foo = 'bar'; // single quotes preferred but can use double
+var foo = 'bar'; // single quotes preferred but can use double
 foo.length // 3
 
-let a = 'The ' + foo + ' is high.'; // es5 'foobar'
-//prefer es6:
-let a = `The ${foo} is high.`;
+var a = 'The ' + foo + ' is high.'; // es5 'foobar'
 
 // lots of useful string methods:
 // match, search, replace, toUpperCase, toLowerCase, slice, substr
@@ -195,9 +286,7 @@ let a = `The ${foo} is high.`;
 
 
 ???
-* use the es6 template string constructions!
-
-
+* will introduce es6 next week for now  es5
 
 
 
@@ -219,7 +308,11 @@ true == Object == '.+' == (num > 0) == function() {}
 
 
 ???
-* == vs ===
+* pretty funny booleans because of type coercion
+* == vs ===, if tripple = will not type coerce
+* non empty string
+* can anyone think of a problem you might encounter here?
+  * what if you are checking if a variable is set to a number or not
 
 
 
@@ -381,27 +474,6 @@ date.toLocaleString() = '1/9/2016, 9:08:36 AM'
 
 
 
----
-name: type coercion
-
-* will automatically convert types!
-
-```js
-console.log(8 * null)   // → 0
-
-console.log("5" - 1)    // → 4
-
-console.log("5" + 1)    // → 51
-
-console.log("five" * 2) // → NaN
-
-console.log(false == 0) // → true
-```
-
-???
-
-
-
 
 ---
 name: Logical operators
@@ -451,6 +523,431 @@ console.log("Karl" || "user") // → Karl
 * say username if exists otherwise "username string"
 
 
+
+
+
+
+---
+name: DOM essentials
+
+.fancy.medium_small[![](img/dom-tree.png)]
+
+* Document Object Model
+
+
+???
+* we'll be talking about the dom a lot
+
+
+---
+name: Simple DOM
+
+```html
+<html>
+  <body>
+    <p>
+      Hello World
+    </p>
+    <div> <img src="example.png"/></div>
+  </body>
+</html>
+```
+
+.small[![](img/image015.png)]
+
+???
+* simple example
+
+
+---
+name: Rendering Engine first
+
+![](img/flow.png)
+
+.medium[![](img/webkitflow.png)]
+
+
+
+???
+* to be able to render the page the browser first needs to parse your HTML into a tree
+* parsing: parse HTML document and convert elements to DOM nodes in a tree called the "content tree"
+* also parses CSS into a tree called CSSOM  CSS object model
+* combines two trees together to form Render Tree!
+* render tree is almost there, all the rectangles with content in the right order to display
+* layout/reflow: computes the exact position and size of each object
+* painting: traverse the render tree and display pixels on screen
+* gradual process with lots of updates and repaints
+* https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#DOM
+
+---
+name: Render Tree Construction
+
+
+![](img/render-tree-construction.png)
+
+
+???
+* start at root of the DOM tree, traverse each visible node. (some aren't )
+* For each visible node, find the appropriate matching CSSOM rules and apply them.
+* outputs only  visible nodes with content and their computed styles.
+* so what happens if you change the visibility of an element?
+* https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction
+
+---
+name: Layout -> BOX MODEL
+
+
+.medium[![](img/layout-viewport.png)]
+
+.medium[![](img/layout-timeline.png)]
+
+
+???
+* remember the box model?
+* the layout phase precisely captures the exact position and size of each element within the viewport
+* all of the relative measurements are converted to absolute pixels on the screen and elements that jostle each around are taken into account
+* in Chrome DevTools if you look at the Timeline tab you inspect how long it all takes
+
+
+---
+name: `document`
+
+* DOM is available in global variable `document`
+* JS can query or modify the DOM and CSSOM
+* in browsers `window` is top level global scope javascript object
+
+
+???
+* dom objects have lots of private methods, can be annoying!
+
+
+---
+name:
+
+.medium[![](img/simple-dom.png)]
+
+???
+* tree is directed and acyclic graph with 1 parent
+
+
+
+---
+name:
+
+.fancy.medium_small[![](img/dom-links.png)]
+
+```javascript
+element = document.body.firstChild.nextSibling.firstChild;
+```
+
+???
+* js has DOM traversal methods
+* links to children and siblings and parent nodes
+* traversing dom nodes only through pointers... would be inconvenient right?
+* other ways are possible
+
+
+
+
+---
+name:
+
+```html
+<div id="better">before</div>
+
+<script>
+element = document.getElementById("better");
+element.textContent = "after";
+
+// getElementsByClassName
+// getElementsByTagName
+</script>
+
+```
+
+
+???
+
+
+
+
+
+---
+name: Standardization
+
+.small[![](img/jquery.png)]
+
+* small library to make DOM traversal and manipulation standard and easy
+* 70% of websites use it ([w3techs](https://w3techs.com/technologies/details/js-jquery/all/all))
+* used to be more necessary but still convenient
+* selector syntax identical to CSS
+
+
+???
+* as browsers javascript implementations and javascript itself has gotten better not as necessary
+* still a nicer more consistent API though but browsers are getting better
+* i'll show both syntaxes for some stuff
+* selector syntax identical to CSS
+
+
+
+
+---
+name: Finding Elements
+
+```javascript
+
+document.getElementById('better');
+$('#better')
+
+document.getElementsByClassName('better');
+$('.better');
+
+document.getElementsByTagName('a');
+$('a');
+
+// like css selectors
+document.querySelectorAll('nav li .selected') // not live
+$('nav li .selected')
+
+```
+
+???
+* note querySelectorAll might seem cool, but it returns copies of nodes that won't update
+* jquery selector returns a nice collection
+
+
+---
+name:
+
+```javascript
+var vanillaEl = document.getElementById('thing');
+var jqueryEl = $('#thing')
+
+vanillaEl.textContent = 'some text' //text in node
+jqueryEl.text('some text')
+
+vanillaEl.innerHTML  // html string of children
+jqueryEl.html()
+
+vanillaEl.outerHTML  // includes element itself
+jqueryEl.parent.html()
+
+vanillaEl.style.display = "none"
+jqueryEl.hide()
+```
+
+
+???
+* various other helpful things
+
+
+
+
+---
+name: changing  structure
+
+```javascript
+document.createElement('p');
+
+node.appendChild(element);
+
+node.insertBefore(element, sibling);
+
+node.removeChild(oldNode)
+```
+???
+* again most of these are easier with jquery although not shown
+* jquery docs are excellent
+* for simple sites, i think its a perfectly fine way to go for basic functionality
+* lots of libraries depend on jquery, like bootstrap for instance
+
+
+
+
+---
+name: What about my mouse clicks?
+
+<iframe src="//giphy.com/embed/l0HlL2I8DbNa6JCJa?hideSocial=true" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+???
+* ok great can do stuff, but what about mouse clicks
+* what about user interaction?
+
+
+
+---
+name: Events
+
+* DOM communicates [events](http://www.w3schools.com/jsref/dom_obj_event.asp) to JS
+* Event types:
+  * Mouse-related: `onclick`, `onmouseover`, `onmouseenter`, `onmouseleave`
+  * Keyboard-related: `onkeypress`
+  * Input Field: `onfocus`, `onblur`, `onchange`, `onsubmit`
+  * Other:
+    * `setTimeout`
+    * `ondrag`, `ondrop`
+    * `onload`
+
+
+???
+*
+
+
+
+
+---
+name: event handling
+
+* target element
+* event type
+* function to call
+
+
+???
+* to handle an event one needs
+
+
+
+
+
+---
+name:
+
+DOM level 0 events:
+```html
+<button onclick="alert('hello!');"> Say Hello! </button>
+```
+
+DOM Level 1 events:
+```javascript
+document.getElementById('myButton').onclick =  () => {
+    alert('Hello!');
+}
+```
+
+DOM Level 2 events:
+```javascript
+document.getElementById('myButton').addEventListener( 'click', () => {
+     alert('Hello!');
+}, false);
+```
+
+???
+* level 0: discouraged
+  * inflexible method of defining event behavior
+  * intermixes the structure and functionality
+  * no remove
+* level 1:
+  * better, but only 1 listener per element
+  * no remove
+* level 2:
+  * many events
+  * bubble or capture
+
+
+
+---
+name:
+
+
+jQuery Level 2:
+```javascript
+$('#myButton').on('click', () = { alert('hello!'); });
+$('#myButton').off('click', () = { alert('hello!'); });
+```
+
+
+
+
+---
+name:
+
+* event object
+* event object properties:
+  * `type`:  ('click', 'mouseDown', etc)
+  * `timestamp`
+  * `currentTarget`: element that listener was registered on
+  * `target`: element that dispatched the event
+
+???
+* wait why are there different targets?!
+
+
+
+
+---
+name:
+
+```html
+<body>
+  <article onClick=...>
+    <section>
+      <button onClick=...>
+        <img src="foo">
+      </button>
+
+  </article>
+</body>
+```
+
+```javascript
+
+$('button').on('click', (event) = {
+  event.stopPropagation();
+  alert(event.target.name); }
+);
+```
+
+
+???
+* what happens when someone clicks on the img?
+* ALL will fire unless the event is stopped.
+* currentTarget will be button
+* what will be target?  img
+* but this depends on which direction the event was set to trigger at at?
+* direction!?!?
+
+
+
+
+
+---
+name:
+
+.small[![](img/eventflow.png)]
+
+(from [w3c](https://www.w3.org/TR/DOM-Level-3-Events/#h3_event-flow))
+
+???
+* on events (onclick, onmouseover, etc) are typically *bubbling* phase by default
+* with addEventListener can set which direction bubbling or capture
+* have to be careful sometimes as stopPropagation say on a downward capture event might mean you are blocking all of that event from getting to their destination
+
+
+
+
+---
+name:
+
+```javascript
+$('submit').on('click', (event) = {
+  event.preventDefault();
+});
+```
+
+???
+* by default submit buttons reload page
+* or hover effects
+* make sure browser doesn't execute default action
+
+
+
+
+
+
+
+<!-- too hard  -->
 
 
 
@@ -614,409 +1111,6 @@ console.log(double(5));     // → 10
 
 
 
-
-
----
-name: closure trickiness
-
-<p data-height="435" data-theme-id="24117" data-slug-hash="f2e5b9149a019b953859e6de0af83f54" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/f2e5b9149a019b953859e6de0af83f54/">talking cat var scoping problem</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-???
-* reference retained to a variable that changes!
-* note: easy way to fix this in es6!
-* DON"T USE var:
-  * i is hoisted above for loop
-  * i is available after for loop
-
-
-
-
-
----
-name:  let
-
-* let variables are block-scoped (not whole function)
-* still hoisted
-* global let variables are not properties on `window`
-* `for (let x...)` create a fresh binding for x in each iteration
-* error to use a let variable before its declaration is reached
-* redeclaring a variable with let is a SyntaxError
-
-<!-- from https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/ -->
-???
-* all good things
-* use let instead of var, kids
-
-
-
-
----
-name:  const
-
-* simple:
-  * variables declared with const are just like let
-  * except that you can only assign to them when you declare them
-  * ie. no reassignment
-
-<!-- from https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/ -->
-???
-
-
-
-
-
----
-name: OOP
-
-* Object-oriented programming: methods
-  * property of an object can be a function
-  * instance variables
-
-```javascript
-var o = {
-  count: 0,
-  increment: function(amount) {
-    this.count += amount || 1;
-    return this.count;
-  }
-}
-
-console.log(o.increment());  // 1
-console.log(o.increment(2)); // 3
-console.log(o.increment(2)); // 5
-```
-
-
-???
-
-
-
-
-
----
-name: this
-
-* `this` is special keyword for referring to the context
-  * when a function is executed not when defined
-* in methods (function properties of objects): `this` is bound to object
-* in other functions: `this` refers to global object
-
-```javascript
-function foo() {  console.log(this); }
-
-// normal function call
-foo(); // `this` will refer to `window` in es5 and undefined in es6
-
-// as object method
-var obj = {bar: foo};
-obj.bar(); // `this` will refer to `object`
-
-// as constructor function
-new foo(); // `this` will refer to
-           // an object that inherits from `foo.prototype`
-```
-
-???
-* some examples, confusing yes
-
-
-
----
-name: this
-
-```javascript
-let LateBloomer = {
-  petalCount: Math.ceil(Math.random() * 12) + 1,
-  declare: function() {
-  	console.log('I am a beautiful flower with '
-                + this.petalCount + ' petals!');
-  },
-  bloom: function() {
-  	setTimeout(this.declare, 1000);
-  },
-
-}
-
-LateBloomer.bloom();   // undefined number of petals
-// after 1 second, triggers the 'declare' method
-```
-
-???
-* why do we care about `this`?
-* this won't run
-* setTimeout runs in the context of window
-* so when it calls declare that function has no access to this.petalCount
-* skip this quickly
-
-
-
----
-name: this
-
-```javascript
-  bloom: function() {
-  	setTimeout(this.declare.bind(this), 1000);
-  },
-}
-```
-
-* bind returns a new function with current `this` tied to the function
-* on execute uses the bound `this` instead
-
-???
-* setTimeout's "this" refers to window
-* neeeds `.bind(this)`
-* bind returns a new function with this bound to a value.
-
-
-
-
----
-name: that = this, bind
-
-```javascript
-
-var that = this;
-setTimeout( function() {
-  console.log(that);
-}, 1000);
-
-```
-
-* assigning current `this` to a variable to freeze
-
-???
-* sometimes you will see people fix this with a closure
-* reassing the current this to another variable
-* BAD
-
-
-
----
-name: that = this
-
-<p data-height="300" data-theme-id="24117" data-slug-hash="9b0e116d14ee8078c8b86066f0d2ab5f" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/9b0e116d14ee8078c8b86066f0d2ab5f/">9b0e116d14ee8078c8b86066f0d2ab5f</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-???
-* this is button -- but setTimeout scope is window
-
-
-
-
----
-name: functions have properties
-
-```javascript
-function plus1(value) {
-  if (!plus1.invocations) {
-    plus1.invocations = 0;
-  }
-  plus1.invocations++;
-  return value + 1;
- }
-
- console.log(plus1(10));   // → 11
- console.log(plus1(20));   // → 21
-
- console.log(plus1.invocations); // → 2
-```
-???
-
-
-
-
----
-name: classes (old way)
-
-* Functions are classes in JavaScript:
-  * Name the function after the class
-  * use the new keyword
-  * functions used this way are constructors
-
-```javascript
-function Rectangle(width, height) {
-  this.width = width;
-  this.height = height;
-  this.area = function() { return this.width*this.height; }
-}
-var r = new Rectangle(26, 14);
-console.log(r)
-// Rectangle { width: 26, height: 14, area: [Function] }
-```
-
-???
-
-
-
-
----
-name: inheritance
-
-* prototype based:
-  * a prototype object for each object instance
-  * can have other prototype objects forming a chain
-  * will search up the prototype chain until the property is found
-
-
-???
-* properties of an object are its own property in addition to all the properties up the prototype chain
-
-
-
-
-
----
-name: adding to prototype
-
-```javascript
-function Rectangle(width, height) {
-  this.width = width;
-  this.height = height;
-}
-
-Rectangle.prototype.area = function() {
-   return this.width*this.height;
-}
-
-let r = new Rectangle(26, 14);  // {width: 26, height: 14}
-r.area();  // 364
-Object.keys(r) == [ 'width', 'height' ] // own properties
-```
-
-
-???
-* changing prototype will cause all instances to change
-* this is similar to just adding a property to a function buuut
-* adding to prototype will change all instances
-
-
-
-
-
----
-name: inheritance
-
-
-```javascript
-
-Rectangle.prototype = new Shape(...);
-
-Square.prototype = new Rectangle();
-
-//without separate constructor
-let Rectangle = Object.create(Shape);
-
-```
-
-* If desired property not in Rectangle.prototype
-* then look in Shape.prototype and so on
-
-
-???
-* can use Object.create() instead of constructor
-
-
-
-
-
-
----
-name: getters and setters
-
-```javascript
-var pile = {
-  elements: ["eggshell", "orange peel", "book"],
-  get height () {
-    return this.elements.length;
-  },
-  set height(value) {
-    console.log("Ignoring attempt to set height to", value);
-  }
-};
-console.log(pile.height); // → 3
-pile.height = 100; // → Ignoring attempt to set height to 100
-```
-
-???
-* want to include properties that are not methods but are computed?
-* sure we got that
-
-
-
-
-
----
-name: BUT WAIT!
-
-What about es6?
-
-* es6 has "real" classes
-* stop talking about prototypes
-* still really just an object / function
-
-
-???
-
-
-
-
-
-
----
-name: es6 class syntax
-
-```javascript
-class Bunny {
-  constructor(name, favoriteFood){
-    this.name = name;
-    this.favoriteFood = favoriteFood;
-  }
-  eatFavFood() {
-    console.log(`${this.favoriteFood}, yum!`);
-  };
-}
-
-let es6Bunny = new Bunny('Brigadier Fluffkins', 'Raspberry Leaves');
-es6Bunny.eatFavFood();
-// Raspberry Leaves, yum!
-```
-
-<!-- from: https://medium.freecodecamp.com/learn-es6-the-dope-way-part-v-classes-browser-compatibility-transpiling-es6-code-47f62267661#.g5wa16op9 -->
-
-???
-* has constructor and methods
-* much nicer syntax
-* note: classes are *not* hoisted!
-
-
-
-
-
----
-name: es6 inheritance
-
-```javascript
-class BelgianHare extends Bunny {
-  constructor(favDrink, favoriteFood, name) {
-    super(name, favoriteFood);
-    this.favDrink = favDrink;
-  }
-
-  drinkFavDrink() {
-    console.log(`glug glug ${this.favDrink}`)
-  }
-}
-```
-???
-* as you would expect `extends`
-* super to invoke base class constructor *required*
-
-
-
-
-
-
-
 ---
 name: Regular Expressions
 
@@ -1150,71 +1244,6 @@ var backToPerson = JSON.parse(s)
 
 
 ---
-name: Workshop
+name:  intermission
 
-webpack + babel + eslint dev environment
-
-???
-
-
-
-
-
----
-name: webpack
-
-.fancy.medium[![](img/what-is-webpack.png)]
-
-???
-
-
-
-
----
-name: babel
-
-.fancy.medium[![](img/babel.png)]
-
-
-???
-
-
-
-
----
-name: eslint with airbnb style guide
-
-.fancy.medium[![](img/airbnb.png)]
-
-???
-
-
-
-
-
----
-name: Workshop Time!
-
-[http://cs52.me/assignments/sa3](http://cs52.me/assignments/sa3)
-
-
-???
-
-
-
-
----
-name: Next time!
-
-* Functional / Vector programming
-* event loop
-* async
-* promises
-* DOM
-
-ALSO
-
-* SA3 due Thursday
-* HW2 goes out today!
-
-???
+<iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>

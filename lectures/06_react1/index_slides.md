@@ -28,7 +28,6 @@ name: On the Menu
 
 * project timeline
 * some review
-* events
 * MVC and frontend frameworks
 * React
 
@@ -439,7 +438,7 @@ name:
 ???
 
 
-
+<!-- ripped out events here to put into 04_js -->
 
 
 ---
@@ -448,178 +447,6 @@ name: questions?
 <iframe src="//giphy.com/embed/7cfBCpzyvkVs4" width="480" height="323" frameBorder="0" class="giphy-embed"></iframe>
 
 ???
-
-
-
-
-
-
-
----
-name: Events
-
-* DOM communicates to JS in [events](http://www.w3schools.com/jsref/dom_obj_event.asp)
-* Event types:
-  * Mouse-related: onclick, onmouseover, onmouseenter, onmouseleave
-  * Keyboard-related: onkeypress
-  * Input Field: onfocus, onblur, onchange, onsubmit
-  * Other:
-    * setTimeout
-    * ondrag, ondrop
-    * onload
-
-
-???
-* remember the DOM? the parsed document object model version of your html that is available to JS?
-
-
-
-
----
-name: event handling
-
-* target element
-* event type
-* function to call
-
-
-???
-* to handle an event one needs
-
-
-
-
-
----
-name:
-
-DOM level 0 events:
-
-```html
-<button onclick="alert('hello!');"> Say Hello! </button>
-```
-
-DOM Level 1 events:
-
-```javascript
-document.getElementById('myButton').onclick =  () => {
-    alert('Hello!');
-}
-```
-
-DOM Level 2 events:
-
-```javascript
-document.getElementById('myButton').addEventListener( 'click', () => {
-     alert('Hello!');
-}, false);
-```
-
-jQuery Level 2:
-
-```javascript
-$('#myButton').on('click', () = { alert('hello!'); });
-$('#myButton').off('click', () = { alert('hello!'); });
-```
-
-???
-* level 0: discouraged
-  * inflexible method of defining event behavior
-  * intermixes the structure and functionality
-  * no remove
-* level 1:
-  * better, but only 1 listener per element
-  * no remove
-* level 2:
-  * many events
-  * bubble or capture
-
-
-
-
-
----
-name:
-
-* event object
-* event object properties:
-  * type:  ('click', 'mouseDown', etc)
-  * timestamp
-  * currentTarget: element that listener was registered on
-  * target: element that dispatched the event
-
-???
-* wait why are there different targets?!
-
-
-
-
-
----
-name:
-
-```html
-<body>
-  <article onClick=...>
-    <section>
-      <button onClick=...>
-        <img src="foo">
-      </button>
-
-  </article>
-</body>
-```
-
-```javascript
-
-$('button').on('click', (event) = {
-  event.stopPropagation();
-  alert(event.target.name); }
-);
-```
-
-
-???
-* what happens when someone clicks on the img?
-* ALL will fire unless the event is stopped.
-* currentTarget will be button
-* what will be target?  img
-* but this depends on which direction the event was set to trigger at at?
-* direction!?!?
-
-
-
-
-
----
-name:
-
-![](img/eventflow.png){: .medium_small .white-background}
-
-(from [w3c](https://www.w3.org/TR/DOM-Level-3-Events/#h3_event-flow))
-
-???
-* on events (onclick, onmouseover, etc) are typically *bubbling* phase by default
-* with addEventListener can set which direction bubbling or capture
-* have to be careful sometimes as stopPropagation say on a downward capture event might mean you are blocking all of that event from getting to their destination
-
-
-
-
----
-name:
-
-```javascript
-$('submit').on('click', (event) = {
-  event.preventDefault();
-});
-```
-
-???
-* by efault submit buttons reload page
-* or hover effects
-* make sure browser doesn't execute default action
-
 
 
 
@@ -821,7 +648,7 @@ name: React
 ---
 name: Virtual DOM?
 
-* isn't one DOM already enough?
+* isn't one DOM already enough?!?!
 * DOM is slow
 * Virtual DOM allows for faster DOM manipulation
 * Virtual DOM simpler and faster
