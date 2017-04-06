@@ -13,6 +13,7 @@ permalink: /lectures/
 * [3/30 Git](02_git/)
 * [4/4 CSS](03_css/)
 * [4/5 Some Design Things](03_design/)
+* [4/6 JS and DOM](04_js1)
 
 
 

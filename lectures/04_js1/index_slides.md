@@ -40,9 +40,9 @@ name: CS52
 
 
 ???
-* Today
-  * basic javascript
-  * the DOM
+* can do better on Questions
+* i know i'm an amazing lecturer, everything just makes sense whenever i speak
+* but lets do put down questions on the sheets
 
 
 ---
@@ -791,23 +791,23 @@ name: Events
 
 
 ???
-*
-
+* lots of events
 
 
 
 ---
 name: event handling
 
-* target element
-* event type
-* function to call
+<iframe src="//giphy.com/embed/DDyJmi8wFJuP6?hideSocial=true" width="380" height="164" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+* to handle an event one needs:
+  * target element
+  * event type
+  * function to call
 
 
 ???
-* to handle an event one needs
-
-
+* ok lets see how to set that up
 
 
 
@@ -821,20 +821,21 @@ DOM level 0 events:
 
 DOM Level 1 events:
 ```javascript
-document.getElementById('myButton').onclick =  () => {
+document.getElementById('myButton').onclick =  function(e) {
     alert('Hello!');
 }
 ```
 
 DOM Level 2 events:
 ```javascript
-document.getElementById('myButton').addEventListener( 'click', () => {
-     alert('Hello!');
-}, false);
+document.getElementById('myButton').addEventListener( 'click',
+  function(e) { alert('Hello!'); }
+, false);
 ```
 
 ???
-* level 0: discouraged
+* can anyone tell which of these is bad?
+* level 0: BAD
   * inflexible method of defining event behavior
   * intermixes the structure and functionality
   * no remove
@@ -843,20 +844,23 @@ document.getElementById('myButton').addEventListener( 'click', () => {
   * no remove
 * level 2:
   * many events
-  * bubble or capture
+  * bubble or capture ?!
 
 
 
 ---
-name:
+name: jQuery on Event
 
 
 jQuery Level 2:
 ```javascript
-$('#myButton').on('click', () = { alert('hello!'); });
-$('#myButton').off('click', () = { alert('hello!'); });
+$('#myButton').on('click', function(e) { alert('hello!'); });
+$('#myButton').off('click', function(e) { alert('hello!'); });
 ```
 
+???
+
+* what is this `e` argument we keep seeing?
 
 
 
@@ -872,12 +876,14 @@ name:
 
 ???
 * wait why are there different targets?!
-
+* currentTarget is element that you registered on - the one in code that you selected.
+* target is the thing that was clicked for instance.
+* how can they be different?!
 
 
 
 ---
-name:
+name: Event Propagation
 
 ```html
 <body>
@@ -893,7 +899,7 @@ name:
 
 ```javascript
 
-$('button').on('click', (event) = {
+$('button').on('click', function(event){
   event.stopPropagation();
   alert(event.target.name); }
 );
@@ -913,28 +919,29 @@ $('button').on('click', (event) = {
 
 
 ---
-name:
+name: Bubbling & Capturing
 
 .small[![](img/eventflow.png)]
 
 (from [w3c](https://www.w3.org/TR/DOM-Level-3-Events/#h3_event-flow))
 
 ???
-* on events (onclick, onmouseover, etc) are typically *bubbling* phase by default
-* with addEventListener can set which direction bubbling or capture
-* have to be careful sometimes as stopPropagation say on a downward capture event might mean you are blocking all of that event from getting to their destination
-
+* on events (onclick, onmouseover, etc) are typically *bubbling* phase event triggering by default
+* with `addEventListener` can set which direction bubbling or capture
+* have to be careful sometimes as `stopPropagation` on a capture event might mean you are blocking all of that event from getting to their destination
 
 
 
 ---
-name:
+name: preventDefault
 
 ```javascript
 $('submit').on('click', (event) = {
   event.preventDefault();
 });
 ```
+
+Don't submit the page plz
 
 ???
 * by default submit buttons reload page
@@ -943,17 +950,19 @@ $('submit').on('click', (event) = {
 
 
 
+---
+name: Tired?
 
+<iframe src="//giphy.com/embed/l3V0p1WFoSIrzPLW0?hideSocial=true" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
+<iframe src="//giphy.com/embed/26u7iYEO189wSu9lm?hideSocial=true" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
-
-<!-- too hard  -->
-
-
+???
+* questions
 
 
 ---
-name: Variable Scoping:  Lexical/static
+name: Lexical Variable Scoping
 
 Two scopes: Global and function local
 
@@ -981,6 +990,7 @@ console.log(x);  // → inside f2
 * if declared
 * in second example just refers to global
 * shadowing is bad (redeclaring locally on purpose)
+* lexical scope is that an identifier at a particular place in a program always refers to the same variable location — where “always” means “every time that the containing expression is executed”
 
 
 
@@ -989,7 +999,7 @@ console.log(x);  // → inside f2
 ---
 name: Variable Hoisting
 
-* var statements hoisted to top of scope:
+* `var` statements hoisted to top of scope:
 
 .right[
 ```js
@@ -1024,9 +1034,8 @@ function foo() {
 
 
 ???
-* variable declarations only get hoisted
+* variable declarations only get hoisted not assignment
 * would log 'undefined'
-
 
 
 
@@ -1053,38 +1062,14 @@ function showState1() {
 ???
 * all functions are hoisted to the top of their scope
 * not just declaration actual stuff
-* otherwise you have to define functions in order of use
-
+* remember js can be an imperative scripting language
+* generally otherwise you have to define functions in order of use unless you were in a class (later)
 
 
 
 
 ---
-name: Scope
-
-* global variable mucho bad
-* hoisting can cause confusion in local scopes
-* make things clear, declare at top
-
-
-```javascript
-
-function() {
-  for(var i = 0; i < 10; i++) {  }
-  ...
-  for(var i = 0; i < 25; i++) {  }
-  // Error: i already defined
-}
-```
-
-
-???
-* why are global vars bad? easy to get conflicts causing bugs
-
-
-
----
-name: closures
+name: Closures
 
 * ability to reference a specific instance of local variables in an enclosing function
 * closure retains references even when outside function has returned
@@ -1092,7 +1077,7 @@ name: closures
 ```javascript
 function multiplier(factor) {
   // factor is a local var inside multiplier
-  return (number) => {
+  return function(number) {
     return number * factor;
   };
 }
@@ -1108,7 +1093,9 @@ console.log(double(5));     // → 10
 * function “closes over” some local variables
 * A good mental model is to think of the function keyword as “freezing”
   * the code in its body and wrapping it into a package (the function value).
-
+* can be very cool, enables callbacks
+* functions passed into other functions to call when they are done
+* much more on this next time
 
 
 ---
@@ -1129,6 +1116,8 @@ console.log(/abc/.test("abxde")); // → false
 ```
 
 ???
+* special text string for describing a search pattern
+* wildcards on steroids
 * test returns bool is regex is found anywhere in string
 
 
@@ -1179,10 +1168,8 @@ str.replace(/'[^']*'/g, 'stuff');
 ```
 
 ???
-* if people are interested we could dive deeper into regex
-* at a later class?
-
-
+* mostly you'll just google when you need this stuff
+* just be aware of what they are
 
 
 
@@ -1237,9 +1224,8 @@ var backToPerson = JSON.parse(s)
 // returns object with same properties
 ```
 ???
-
-
-
+* json is what the map used, you'll be using a lot of JSON
+* is the preferred interchange format between many web services and apis
 
 
 

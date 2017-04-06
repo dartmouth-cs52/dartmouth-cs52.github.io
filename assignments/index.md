@@ -20,7 +20,7 @@ title: Assignments
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
 * [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/10
-* Lab 2: Build a Buzzfeed Quiz
+* [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/13
 * Lab 3 Part 1: React Notes
 * Lab 3 Part 2: React Notes + Server
 * Lab 4 Part 1: Redux Blog
