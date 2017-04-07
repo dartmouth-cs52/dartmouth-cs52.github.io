@@ -71,7 +71,7 @@ Here's some design specs thrown together in [Sketch](https://www.sketchapp.com/)
 
 ## Where to Start?!
 
-🚀 Start in your git repo for the project.
+🚀 Start in your git repo for the project -- Please use the github classroom link provided in the Canvas assignment to create the repo automatically.
 
 🚀 Open up Atom and create an index.html, a style.css, and a main.js file.  
 
@@ -211,7 +211,6 @@ You should host this on github pages as you have in the past with the `gh-pages`
 
 ## To Turn In:
 
-* github url to your repo
 * url to your hosted page (gh-pages is fine)
 * your page should have all the [MVP specs](#minimal-functional-specs) in addition to:
   * have clear document structure with proper semantic naming
