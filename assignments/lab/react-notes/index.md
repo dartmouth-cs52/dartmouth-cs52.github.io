@@ -1,9 +1,8 @@
 ---
 layout: page
-title: HW 3 p1
+title: Lab 3
 published: true
 ---
-
 
 
 ## All The React
