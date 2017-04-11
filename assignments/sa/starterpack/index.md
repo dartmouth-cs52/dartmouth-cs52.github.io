@@ -134,7 +134,7 @@ node_modules
 
 Let's set up a simple webapp so we can see start using webpack.
 
-🚀 Create an `index.html` in the project root folder (not in app):
+🚀 Create an `index.html` in the project root folder (not in src/):
 
 ```html
 <!DOCTYPE html>
@@ -176,6 +176,7 @@ All this will do is find the element with the `id` of `main` and change the cont
 🚀 Lets give webpack a very basic configuration. Create a file called `webpack.config.js` with these contents:
 
 ```javascript
+const path = require('path');
 module.exports = {
   entry: [ './src' ], // this is where our app lives
   devtool: 'source-map', // this enables debugging with source in chrome devtools
@@ -223,7 +224,7 @@ Great! It is building our index file in addition to one hidden module which isn'
 
 ### webpack-dev-server
 
-Shall we look at what we have done so far?  We could start up a python webserver but webpack comes with a dev server build it, lets use that instead.
+Shall we look at what we have done so far?  We could start up a python webserver but webpack comes with a dev server built in, lets use that instead.
 
 🚀 Edit your `package.json` again and change `"start": "NODE_ENV=development webpack-dev-server --inline"`
 
@@ -261,14 +262,7 @@ Ok, lets config that. This will make it so your page reloads every time you save
 
 Try changing your `index.js` file to change the text of `#main` to something else.  You should see those changes happen immediately!
 
-On the terminal you'll see anytime you change the js file that the webpack becomes invalidated and rebuilds automatically
-
-```
-webpack: bundle is now INVALID.
-[...]
-webpack: bundle is now VALID.
-```
-
+On the terminal you'll see anytime you change the js file that the webpack recompiles automatically.
 
 
 ## Babel
@@ -311,7 +305,7 @@ module: {
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: ['babel-loader', 'eslint-loader'],
+      use: ['babel-loader'],
     },
   ],
 },
@@ -352,11 +346,11 @@ The recommended linter plugin for javascript is [Eslint](eslint.org).
 🚀 Install `eslint`:
 
 ```bash
-npm install --save-dev eslint babel-eslint
+npm install --save-dev eslint babel-eslint eslint-loader
 npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 ```
 
-`eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **stronglly** suggesting / requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).  
+`eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **strongly** suggesting / requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).  
 
 🚀 After installing `eslint`, create an eslint configuration file `.eslintrc` with something like the following:
 
@@ -402,6 +396,8 @@ When you see errors such as below:
 
 You can click on the definition of the error to learn more.  Note: many of these show up as errors but are not compiler errors like you are used to in Eclipse.  The browser or node may still run the code fine — however it is recommended that you fix these errors or learn about what the errors mean and disable them only if you disagree with that particular rule stylistically. I left the above errors so you could fix them!
 
+🚀  Now let webpack include es-lint! In your `webpack.config.js` file, add `eslint-loader` to modules we will use (the line that says) `use: ['babel-loader']`. 
+
 From here on most assignments will come with a `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and es6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
 
@@ -423,7 +419,7 @@ Lets make webpack handle CSS for us also, and we'll even upgrade that to [SASS](
 🚀 The only loader that comes built-in to webpack is javascript so we need some more packages:
 
 ```bash
-npm install css-loader sass-loader node-sass style-loader extract-text-webpack-plugin --save-dev
+npm install css-loader sass-loader postcss-loader node-sass style-loader extract-text-webpack-plugin --save-dev
 ```
 
 🚀 Now you need to modify the `webpack.config.js` file to include the css/sass loaders. This part gets a bit complicated.  We are including both css and sass loaders, and doing a little bit of trickery with the `extract-text-webpack-plugin`.  The reason for this is that by default webpack is really all about the javascript. That means if it was going to be in charge of CSS it would load it into the page using javascript. Which could cause annoying flashing as styles get applied.  We want the CSS to be output separately as text into `style.css` rather than into `bundle.js` so that we can load it in `<head>`.
@@ -471,7 +467,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader', 'eslint-loader'],
       },
     ],
   },
@@ -525,7 +521,7 @@ in between your `css-loader` and your `sass-loader` objects.
 
 🚀 and add in `const autoprefixer = require('autoprefixer');` to the top of the file.
 
-🚀 Guess what you need to `npm install --save-dev` as well?  Yup, `autoprefixer`.
+🚀 Guess what you need to `npm install --save-dev` as well?  Yup, `autoprefixer`. 
 
 
 
