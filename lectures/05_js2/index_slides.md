@@ -20,12 +20,163 @@ name: base
 
 
 ---
-name: On the Menu
+name: CS52
 
-* more js
-* es6
+* Today:
+  * more javascript!
+  * newer javascript!
+  * tricky javascript!
+  * and then our first team workshop!
 
 ???
+
+---
+name: table questions
+
+* how is processing var / function declarations done / how is efficient?
+
+.medium[![](img/table1.jpeg)]
+
+
+???
+*  efficient hoisting - just means parsing through the code 1x more times. From algos we know that 2x is a constant, thus not really a factor worth worrying about. :-)
+
+---
+name: table questions
+
+* was js developed specifically for web browsers
+
+.medium[![](img/table2.jpeg)]
+
+
+???
+* js for web:  yes specifically by netscape to add functionality
+
+
+---
+name: table questions
+
+* when you use chrome inspector to change styles does it make a whole new render tree
+
+.medium[![](img/table3.jpeg)]
+
+???
+* yes, although it can be smart about it knowing that you can only down the tree so only that subtree needs to change
+
+
+---
+name: table questions
+
+
+![](img/inspector.jpg)
+
+* Ctrl+Shift+J or Cmd+Opt+J
+
+???
+* in [chrome devtools](https://developer.chrome.com/devtools)
+
+
+---
+name: table questions
+
+* can a buzzfeed quiz be made only in html/css
+
+.medium[![](img/table5.jpeg)]
+
+
+???
+* theoretically with real tricky css - long rules where everything is a sibling
+
+
+---
+name: table questions
+
+* can we use both js and jquery for the assignment?
+.tiny[![](img/table6.jpeg)]
+
+```js
+function html(value) {
+  if (value === undefined && elem.nodeType === 1) {
+      return elem.innerHTML;
+  }
+  // See if we can take a shortcut and just use innerHTML
+  try { elem.innerHTML = value; } catch(e) {}
+
+  //clean first then append new
+  if (elem) {
+      this.empty().append(value);
+  }
+}
+```
+
+???
+* did you notice we had a guest?!
+* jquery is largely just a wrapper for various plain js stuff
+
+---
+name: various administrative
+
+
+.left[
+* quizzes start Thursday (don't worry)
+* short assignment 3 out today! due Thursday
+* short assignment 4 out Thursday! due Tuesday
+]
+
+.right.small[![](img/table4.jpeg)]
+
+
+???
+* giving warning but from here on will be weekly after assignments are due
+* nothing to worry about, if you understood what you did in the assignment (ie read it and coded it) should be fine
+* 2 short assignments out at the same time, both should be doable in one sit down
+* js asynch game will hopefully be out thursday!
+
+
+---
+name: but also good news
+
+
+.left.small[![](img/table4.jpeg)]
+
+.right[* extension on lab2 till Sunday 6pm!]
+
+???
+
+
+
+---
+name: Where in the Stack?
+
+.medium[![](img/whereinthestk.png)]
+
+
+???
+* still in browser only
+
+
+---
+name: what is es6?!?!
+
+![](img/compat.jpg)
+
+
+???
+* a bunch of cool new stuff that makes javascript not crappy
+* apologies, but i love programming language coolness and currently js is one of my favorites
+* i also kindof love to read code to see what people are doing, i think its an important skill, so please if you have question about any of the codes, just yell at me, or write your question down and give it to a designated yeller at your table!
+
+---
+name: what is es6?!?!
+
+<iframe src="//giphy.com/embed/ZtufItCGJM3Vm?hideSocial=true" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+
+???
+* general confusion - don't worry
+* the idea is to immerse you in a bunch of stuff but then you go and try it and eventually by trying it it'll make sense
+* ask questions, learn good
+
 
 
 
@@ -44,10 +195,23 @@ let a = `The ${foo} is high.`;
 
 ???
 * use the es6 template string constructions!
+* why is string concatenation bad? (array concatenation - each plus allocates a new array and copies each element in)
 
 
 
 
+
+---
+name: closure and scope trickiness
+
+<p data-height="435" data-theme-id="24117" data-slug-hash="f2e5b9149a019b953859e6de0af83f54" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/f2e5b9149a019b953859e6de0af83f54/">talking cat var scoping problem</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+???
+* reference retained to a variable that changes!
+* note: easy way to fix this in es6
+* DON"T USE var:
+  * i is hoisted above for loop
+  * i is available after for loop
 
 
 ---
@@ -66,8 +230,6 @@ name:  let
 * use let instead of var, kids
 
 
-
-
 ---
 name:  const
 
@@ -82,25 +244,7 @@ name:  const
 
 
 ---
-name: closure trickiness
-
-<p data-height="435" data-theme-id="24117" data-slug-hash="f2e5b9149a019b953859e6de0af83f54" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/f2e5b9149a019b953859e6de0af83f54/">talking cat var scoping problem</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-???
-* reference retained to a variable that changes!
-* note: easy way to fix this in es6 to come
-* DON"T USE var:
-  * i is hoisted above for loop
-  * i is available after for loop
-
-
-
-
-
-
-
----
-name: OOP
+name: OOP try 1
 
 * Object-oriented programming: methods
   * property of an object can be a function
@@ -122,7 +266,32 @@ console.log(o.increment(2)); // 5
 
 
 ???
+* everything is already an object
+* everything is a dictionary, hence...
+* what is this? anybody?>
 
+
+
+---
+name: functions are objects
+
+```javascript
+function plus1(value) {
+  if (!plus1.invocations) {
+    plus1.invocations = 0;
+  }
+  plus1.invocations++;
+  return value + 1;
+ }
+
+ console.log(plus1(10));   // → 11
+ console.log(plus1(20));   // → 21
+
+ console.log(plus1.invocations); // → 2
+```
+???
+* tracks how many times it was called
+* does this make sense? How does this work?
 
 
 
@@ -130,57 +299,56 @@ console.log(o.increment(2)); // 5
 ---
 name: this
 
-* `this` is special keyword for referring to the context
+* `this` is special keyword for referring to the 'owner' of the function / context
   * when a function is executed not when defined
 * in methods (function properties of objects): `this` is bound to object
 * in other functions: `this` refers to global object
 
 ```javascript
-function foo() {  console.log(this); }
+function foo() { console.log(this); }
 
 // normal function call
 foo(); // `this` will refer to `window` in es5 and undefined in es6
 
 // as object method
-var obj = {bar: foo};
+var obj = {
+  const foo='hi',
+  bar: console.log(this.foo)
+};
 obj.bar(); // `this` will refer to `object`
+           // outputs "hi"
 
-// as constructor function
-new foo(); // `this` will refer to
-           // an object that inherits from `foo.prototype`
 ```
 
 ???
 * some examples, confusing yes
+* this will come back and haunt you sometimes
 
 
 
 ---
 name: this
 
-```javascript
-let LateBloomer = {
-  petalCount: Math.ceil(Math.random() * 12) + 1,
-  declare: function() {
-  	console.log('I am a beautiful flower with '
-                + this.petalCount + ' petals!');
-  },
-  bloom: function() {
-  	setTimeout(this.declare, 1000);
-  },
 
+```javascript
+let flower = {
+  petalCount: 0,
+  bloom: function() {
+  	console.log(`I have ${this.petalCount} petals!`);
+  }
 }
 
-LateBloomer.bloom();   // undefined number of petals
-// after 1 second, triggers the 'declare' method
+// after 1 second, trigger the 'bloom' method
+flower.petalCount=10;
+setTimeout(flower.bloom, 1000);
+// but WAIT! logs undefined number of petals!
 ```
 
 ???
 * why do we care about `this`?
 * this won't run
 * setTimeout runs in the context of window
-* so when it calls declare that function has no access to this.petalCount
-* skip this quickly
+* window does not have a petalCount!
 
 
 
@@ -188,10 +356,15 @@ LateBloomer.bloom();   // undefined number of petals
 name: this
 
 ```javascript
-  bloom: function() {
-  	setTimeout(this.declare.bind(this), 1000);
-  },
-}
+setTimeout( flower.bloom.bind(this), 1000 );
+
+// or
+let flower = flower.bind(this);
+setTimeout( flower.bloom, 1000 );
+
+//or
+setTimeout( ()=>{ flower.bloom() }, 1000 );
+
 ```
 
 * bind returns a new function with current `this` tied to the function
@@ -200,7 +373,8 @@ name: this
 ???
 * setTimeout's "this" refers to window
 * needs `.bind(this)`
-* bind returns a new function with this bound to a value.
+* bind returns a new function where the context includes the variables passed in.
+* arrow notation we'll talk about more
 
 
 
@@ -220,8 +394,9 @@ setTimeout( function() {
 * assigning current `this` to a variable to freeze
 
 ???
+* anybody want to take a stab at why this works? / what is the name for this?
 * sometimes you will see people fix this with a closure
-* reassing the current this to another variable
+* reassigning the current this to another variable
 * BAD
 
 
@@ -238,31 +413,9 @@ name: that = this
 
 
 ---
-name: functions have properties
-
-```javascript
-function plus1(value) {
-  if (!plus1.invocations) {
-    plus1.invocations = 0;
-  }
-  plus1.invocations++;
-  return value + 1;
- }
-
- console.log(plus1(10));   // → 11
- console.log(plus1(20));   // → 21
-
- console.log(plus1.invocations); // → 2
-```
-???
-
-
-
-
----
 name: classes (old way)
 
-* Functions are classes in JavaScript:
+* Functions as classes in JavaScript:
   * Name the function after the class
   * use the new keyword
   * functions used this way are constructors
@@ -279,7 +432,7 @@ console.log(r)
 ```
 
 ???
-
+* anybody remember constructors in java? what do they do?  (function that returns an instance of the class -> an object)
 
 
 
@@ -291,10 +444,16 @@ name: inheritance
   * can have other prototype objects forming a chain
   * will search up the prototype chain until the property is found
 
+.medium[![](img/proto-class.png)]
+
+
 
 ???
+* more questions for you!  how is inheritance done in java?
 * properties of an object are its own property in addition to all the properties up the prototype chain
-
+* more simply:  searches up the chain,  has the property no, ok lets check your prototype.
+* multiple can be done with mixins (copying over properties from one object to another...)
+* img from http://yycjs.com/the-weird-parts/#slide19
 
 
 
@@ -308,11 +467,12 @@ function Rectangle(width, height) {
   this.height = height;
 }
 
+let r = new Rectangle(26, 14);  // {width: 26, height: 14}
+
 Rectangle.prototype.area = function() {
    return this.width*this.height;
 }
 
-let r = new Rectangle(26, 14);  // {width: 26, height: 14}
 r.area();  // 364
 Object.keys(r) == [ 'width', 'height' ] // own properties
 ```
@@ -337,7 +497,7 @@ Rectangle.prototype = new Shape(...);
 Square.prototype = new Rectangle();
 
 //without separate constructor
-let Rectangle = Object.create(Shape);
+let Square = Object.create(Rectangle);
 
 ```
 
@@ -373,25 +533,24 @@ pile.height = 100; // → Ignoring attempt to set height to 100
 ???
 * want to include properties that are not methods but are computed?
 * sure we got that
-
-
+* anybody remember why properties are useful?
+  * properties are data (even computed properties)
+  * methods represent actions
+  * also potentially concurrency safety for access to altering data, but we won't need to worry about that so much
 
 
 
 ---
 name: BUT WAIT!
 
-What about es6?
-
 * es6 has "real" classes
 * stop talking about prototypes
 * still really just an object / function
 
+<iframe src="//giphy.com/embed/CKBuF2Sz3zuOQ?hideSocial=true" width="380" height="260" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
-
-
-
+* keep ranting about es6, doesn't it make this better?
 
 
 ---
@@ -418,7 +577,7 @@ es6Bunny.eatFavFood();
 ???
 * has constructor and methods
 * much nicer syntax
-* note: classes are *not* hoisted!
+* note: classes are *not* hoisted so need to declare class before using it
 
 
 
@@ -447,12 +606,15 @@ class BelgianHare extends Bunny {
 
 
 
+---
+name: navigating JS
 
+<iframe src="//giphy.com/embed/13XQ6JKr2jQWRO?hideSocial=true" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
-
-
-
-
+???
+* getting into deep waters now
+* but we will survive
+* on to my favorite topic
 
 
 
@@ -464,10 +626,17 @@ name: Functional Programming
 * no/minimal mutable objects
 * state is in stack vs heap
 
+.fancy.small[![](img/lovefunctional.jpg)]
+
 
 
 ???
-
+* why i love FP (i don't love math)
+  * easy to test a function
+  * parallelizable easily
+  * shorter but still readable code
+  * NO SIDE EFFECTS
+  * in fact it will make you happy rather than sad
 
 
 
@@ -478,7 +647,7 @@ name: imperative vs functional
 
 ```javascript
 let results = [];
-for (var i = 0; i < anArray.length; i++) {
+for (let i = 0; i < anArray.length; i++) {
   results[i] = anArray[i] * i;
 }
 
@@ -486,7 +655,7 @@ for (var i = 0; i < anArray.length; i++) {
 
 ```javascript
 
-let results = anArray.map(function (value, i) {
+let results = anArray.map( (value, i) => {
   return value * i;
 });
 
@@ -495,8 +664,10 @@ let results = anArray.map(function (value, i) {
 
 
 ???
+* no idea why we are multiplying each value by its index but there you have it
+
 * map example, map calls the function with value and index
-  * basically a for loops
+  * basically a for loop for populating / altering arrays
 * pass functions as arguments is key
   * is possible because functions are first-class
 * note the array does not have to be mutable
@@ -513,10 +684,12 @@ let results = anArray.map(function (value, i) {
 name: functions as arguments
 
 ```javascript
-function foo(arg1, arg2) { return arg1 * arg2; }
+function mult(arg1, arg2) { return arg1 * arg2; }
 
-let results = anArray.map(foo);  // args are unspecified no ()
+let results = anArray.map(mult);
 
+//CAUTION:
+let results = anArray.map(mult());
 
 let results = anArray.map(function (value, i) { //anon function
   return value * i;
@@ -528,10 +701,9 @@ let results = anArray.map((value, i) => {  //arrow
 ```
 
 ???
-* if you put in parens will execute immediately
+* coolest thing about js, passing functions as arguments
+* CAUTION: if you put in parens will execute immediately then what???
 * setInterval example
-
-
 
 
 
@@ -552,7 +724,7 @@ console.log(sum(range(1, 10)));
 ```
 
 ???
-
+* fp is elegant
 
 
 
@@ -565,7 +737,15 @@ name: higher order functions
   * can return functions
 
 ```javascript
-setInterval(() => {  }, 1000);
+function runLater(seconds) {
+  return (func) => {
+    setTimeout(func, seconds);
+  }
+}
+
+const inFive = runLater(5000);
+inFive( ()=> {console.log('hi'); } );
+
 ```
 
 ???
@@ -581,7 +761,10 @@ name: filter, map, reduce
 <p data-height="400" data-theme-id="24117" data-slug-hash="74f50559357975493892499683747702" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/74f50559357975493892499683747702/">higher order examples</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 ???
-*
+* things to try:
+  * change height (turns out we don't really know height that well)
+  * p.mass over 100
+
 
 
 
@@ -594,8 +777,8 @@ name: chaining
 
 
 ???
-
-
+* take away toTitleCase()
+* demonstrates chaining functions as well as prototype adding a method to string!
 
 
 
@@ -616,17 +799,14 @@ name: flatten, etc
 
 
 ---
-name:
+name: pure functions
 
 .fancy.medium_small[![](img/purefunction.jpg)]
+
 
 * pure functions:
   * do not rely on external state, only parameters
   * do not change external state, only return values
-* side effects:
-  * when a function changes some state (instance / global var)
-  * not always bad (console.log)
-  * can be hard to debug and test
 
 ???
 * why is good?
@@ -636,6 +816,19 @@ name:
 * more cool things --
   * can replace a pure function in memory
 
+
+---
+name: Side Effects
+
+.fancy.medium_small[![](img/sideeffects.jpg)]
+
+* side effects:
+  * when a function changes some state (instance / global var)
+  * not always bad (console.log)
+  * can be hard to debug and test
+
+???
+* how do you test something when a function relies on global state + inputs
 
 
 
@@ -656,8 +849,6 @@ name: asynchronous js
 
 
 
-
-
 ---
 name: non-blocking
 
@@ -668,54 +859,67 @@ name: non-blocking
 * javascript is non-blocking!
   * how it do?!
 
+.fancy.medium[![](img/shieldgate.jpg)]
+
 
 ???
+* javascript in your browser is basically single threaded - does one thing at a time
+* how can you make that work fast?
 
 
 
 
 ---
-name:
+name: Event Driven Programming
 
 .fancy.medium[![](img/event-gui.png)]
 
 
-* event-driven programming:
-  * application flow control driven by events/changes in state
-  * central mechanism that listens for events
-  * calls callback function once event is detected
+* application flow control driven by events/changes in state
+* central mechanism that listens for events
+* calls callback function once event is detected
 
 
 ???
-
+* events trigger changes in state
 
 
 
 ---
-name:
+name: Event Loop
 
-.fancy.medium[![](img/event-loop.png)]s
+.fancy.medium[![](img/event-loop.png)]
 
 ???
-
-
+*  we register an event listener
+* so that on a particular event a function gets executed
+* in a particular context (remember this)
 
 
 
 ---
 name: ajax
 
+.left[
 * asynchronous javascript and XML
-  * people no longer really fetch xml/html
-  * JSON data format
+* people no longer really fetch xml/html
+* JSON data format
+]
+
+.right[![](img/infinite-scroll-mobile.gif)]
 
 ???
-
+* load js and then fetch data asynchronously into the page
+* you click a button to "show more"
+* you scroll and more data is loaded
+* this is interactive content being loaded into the page
+* but also,  your page doesn't stop scrolling just because you are waiting to load content
 
 
 
 ---
-name:
+name: Why is this tricky?
+
 ```javascript
 var data;       
 $.ajax({
@@ -732,14 +936,15 @@ console.log( data );
 
 ???
 * this uses jquery ajax for readability
-* common occurence!
+* this is super common mistakes
+* what is happening here?  
 
 
 
 
 
 ---
-name:
+name: now in plain es5
 
 ```javascript
 var xhttp = new XMLHttpRequest();
@@ -753,25 +958,25 @@ xhttp.send();
 ```
 
 ???
+* oh you wanted to see what it would be like in plain es5 js?
 * now what if we needed to make further callbacks and requests based on the response?
 
 
 
 
-
-
 ---
-name:
+name: Callback Hell!
 
 .fancy.medium[![](img/callback-hell.png)]
 
 ???
-
+* callback hell is when you have lots of nested callbacks
+* functions that call other anonymous functions when they are done.
 
 
 
 ---
-name:
+name: How to Fix?
 
 * goal: keep code shallow
 * some solutions for nested callbacks:
@@ -799,12 +1004,11 @@ name: promises?
 ```javascript
 doSomething(args, doneCallback);
 //vs
-let donePromise = doSomething(args);
+doSomething(args).then(doneStuff);
 ```
 
 ???
-* not quite done yet
-* where is the callback functionality?
+* we'll have better illustrations of this in game format thursday!
 
 
 
@@ -814,11 +1018,11 @@ let donePromise = doSomething(args);
 name:
 
 ```javascript
-fetch('http://api.something.com/all-datas"').then(function(response) {
+fetch('http://api.something.com/all-datas"').then( response => {
 	// do something with response, check for fields etc
-}).then(function(returnedValue) {
+}).then( returnedValue => {
 	// ...
-}).catch(function(err) {
+}).catch( err => {
 	// Error :(
 });
 ```
@@ -835,11 +1039,11 @@ fetch('http://api.something.com/all-datas"').then(function(response) {
 
 
 ---
-name:
+name: Make a Promise
 
 ```javascript
-var cherishAndHonor = new Promise(function(resolve, reject) {
-  // do a thing, possibly async, then…
+var cherishAndHonor = new Promise( (resolve, reject) => {
+  // do a thing that takes a long time async, then…
   goDoSomethingAsynchronous( () => {
     if (/* everything turned out fine */) {
       resolve('Stuff worked!');
@@ -855,6 +1059,7 @@ var cherishAndHonor = new Promise(function(resolve, reject) {
 * construct a promise
 * return resolve if it worked
 * reject if not
+* don't worry we'll cover this in more detail again thursday
 
 
 
@@ -883,14 +1088,14 @@ asyncThing1().then(function() {
 ```
 ]
 .right[
-![](img/asych-chain.svg){: .fancy .white-background}
+![](img/asych-chain.svg)
 ]
 
 
 
 ???
 * more at http://www.html5rocks.com/en/tutorials/es6/promises/
-
+* go to nearest catch
 
 
 
@@ -904,10 +1109,9 @@ name: modules
   * import
   * export
   * have own scope
-  *
 
 ???
-
+*
 
 
 

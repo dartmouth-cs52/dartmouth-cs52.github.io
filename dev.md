@@ -67,8 +67,8 @@ W2 4/5    XHOUR:
 W2 4/6    Lecture: JS Part 1         SA: X                      WS: ??            HW: quizzical
 
 W3 4/11   Lecture: JS Part 2         SA: starterpack            WS: CSS           HW: ''
-W3 4/12   XHOUR:  react-videos
-W3 4/13   Lecture: Frontend+React    SA: ''                     WS: CSS           HW: X
+W3 4/12   XHOUR:  
+W3 4/13   Lecture: Frontend+React    SA: react-videos           WS: CSS           HW: X
 
 W4 4/18   Lecture: More React        SA:                        WS: static gen    HW: react-notes
 W4 4/19   XHOUR:  X

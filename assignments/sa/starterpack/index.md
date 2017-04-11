@@ -504,7 +504,7 @@ transition: all 4s ease;
 
 Due to varying browser support of features these are often associated with newer CSS. This should be something easy for a machine to solve rather than us humans manually remembering to make a mess of our CSS code, and indeed someone has.  Enter [autoprefixer](https://github.com/postcss/autoprefixer).
 
-This is a module that we can incorporate and have webpack automatically prefix our canonical css to work in all browsers.
+This is a module that we can incorporate and have webpack automatically prefix our canonical css to work in all browsers. It is actually a plugin for a [loader](https://webpack.js.org/concepts/loaders/), but regardless, you can see how it is configured here.
 
 🚀 Edit your `webpack.config.js` file once again and add in:
 
@@ -561,6 +561,9 @@ As always you should use Chrome Dev Tools with the console as the first line of 
 You can also use the statement `debugger;` in your code, but that is somewhat frowned upon as you might forget and leave one in a piece of code that doesn't get executed often causing mayhem.
 
 
+## Frontend Stater Pack is ready to go!
+
+You now have a nicely set up starter pack that you can do
 
 ### To Turn In
 
@@ -580,7 +583,7 @@ You can also use the statement `debugger;` in your code, but that is somewhat fr
 ## Resources:
 
 
-* [webpack-your-bags](https://blog.madewithlove.be/post/webpack-your-bags/)
-* [webpack docs](https://webpack.github.io/)
+* [getting started with webpack2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783)
+* [webpack docs](https://webpack.js.org/)
 * [babeljs](https://babeljs.io/)
 * [State of the Art Javascript 2016](https://medium.com/javascript-and-opinions/state-of-the-art-javascript-in-2016-ab67fc68eb0b#.26xksjxvt)
