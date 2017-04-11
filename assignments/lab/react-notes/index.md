@@ -17,9 +17,9 @@ Where we dive deeper into React and construct a realtime collaborative post-it n
 
 We will start with a version of the app that does not have a backend,  it'll use state for notes but if you refresh the page all your hard work will disappear.
 
-### Part 2 (later)
+### Part 2
 
-Then we will add in Firebase for persistent storage. Firebase is a backend as a service (BAAS). It provides a simple JSON data store ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. You can subscribe to change events on collections of objects,  this is perfect to use with React! We will talk about this in more detail when the time is right!
+Then we will add in Firebase for persistent storage. Firebase is a backend as a service (BAAS). It provides a simple JSON data store ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. You can subscribe to change events on collections of objects,  this is perfect to use with React!
 
 
 ## Let's Start

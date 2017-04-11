@@ -9,13 +9,21 @@ published: true
 
 ## Overview
 
-Today we'll be learning about [React](https://facebook.github.io/react/)!  So far you've been using html and css to build static sites.  Sites that do not have much going on in terms of content that changes. React is a javascript frontend framework for making dynamic sites.  In this workshop we will build a video chooser.  We will also work with the  webpack+babel+eslint starter code from SA3 and build up on that.
+Today we'll be learning about [React](https://facebook.github.io/react/)!  So far you've been using html and css to build static sites.  Sites that do not have much going on in terms of content that changes. React is a javascript frontend framework for making dynamic sites.  In this workshop we will build a video chooser.  We will also work with the  webpack+babel+eslint starter code that you worked on in the previous short assignment.
 
 💻 : run in Terminal<br>
 🚀 : a step to not forget
 
 
-🚀 To start you can either clone your js-starter-workshop repository from SA3 or fork the [js-starter-reference solution](https://github.com/dartmouth-cs52/js-starter-reference).  
+🚀 To start grab the github classroom link to start a new repository.  Then you'll pull in your webpack+babel+eslint starter code like so:
+
+```bash
+cd sa3-your-github-username
+git remote add starter git@github.com:your-github-username/your-webpack-starter.git
+git pull starter master
+```
+
+What just happened?  You merged in the git tree from another repo (the remote we named starter) into your own! Hopefully you'll build on your starter repo and use it for lots of projects.
 
 
 ## Setup
@@ -24,54 +32,59 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 We're going to need to add a few things to our project to get it ready for React.
 
 
+
 ### Babel
 
 🚀 Lets add in support for React and JSX in babel:
 
 ```bash
-cd js-starter-workshop # just make sure you're in the root of your project
+# just make sure you're in the root of your project
 
 npm install --save-dev babel-preset-react
 # installs a react babel preset
 ```
 
-
-Change your `.babelrc` file to:
+🚀 Add a `["react"]` preset to your existing `.babelrc` file to look something like this:
 
 ```json
 {
-  "presets": ["react", "es2015", "stage-1"]
+  "presets": [
+    ["react"],
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions"]
+      }
+    }]
+  ]
 }
 ```
 
 
+
 ### eslint
 
-🚀 Lets add in support for React and JSX in eslint:
-
-```bash
-npm install --save-dev eslint-plugin-jsx-a11y eslint-plugin-react
-# makes sure eslint has the right react and jsx plugins
-```
-
+Let's modify your `.eslintrc` to add in some React support.
 
 🚀 Change your `.eslintrc` file. Here we only show the things to ADD. Do not delete any existing lines just add the following in the right locations:
 
-```javascript
+```json
 {
-    rules: {
-        react/jsx-uses-react: 2,
-        react/jsx-uses-vars: 2,
-        react/react-in-jsx-scope: 2,
-        react/prop-types: 0,
-        react/jsx-first-prop-new-line: 0
+    "rules": {
+        "react/jsx-uses-react": 2,
+        "react/jsx-uses-vars": 2,
+        "react/react-in-jsx-scope": 2,
+        "react/prop-types": 0,
+        "react/jsx-first-prop-new-line": 0,
+        "react/jsx-filename-extension": 0,
+        "import/no-unresolved": [2, { "commonjs": true, "caseSensitive": false}],
+
     },
-    plugins: [
+    "plugins": [
         "react"
     ],
-    ecmaFeatures: {
-        jsx: true,
-        modules: true
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
     }
 }
 ```
@@ -878,17 +891,17 @@ This adds a tab to your Chrome Dev Tools which allows you to inspect state in yo
 
 ## To Turn In
 
-1. URL to your github repo for this
-1. URLs to your hosted page on surge.sh (or other hosting if you prefer)
 1. Your App should have the following working:
   * search, with new videos loading
   * clicking on a list item changes state and the main detail view
   * js is es6 and linted without errors
+  * styled to look nice
 1. A short answer response to:
   * describe what you think React is and how you can imagine using it?
   * any questions about what/why/how that you feel are unresolved?
 
 ## Extra Credit
 
-* style it!
 * add in other video / media sources such as vimeo, giphy, etc
+* pull in the weather or other data sources
+* make it responsive

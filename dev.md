@@ -66,12 +66,12 @@ W2 4/4    Lecture: CSS               SA: ??                     WS: X           
 W2 4/5    XHOUR:
 W2 4/6    Lecture: JS Part 1         SA: X                      WS: ??            HW: quizzical
 
-W3 4/11   Lecture: JS Part 2         SA: starterpack            WS: CSS           HW: ''
+W3 4/11   Lecture: JS Part 2         SA: X                      WS: CSS           HW: ''
 W3 4/12   XHOUR:  starterpack
-W3 4/13   Lecture: Frontend+React    SA: X                      WS: CSS           HW: react-notes
+W3 4/13   Lecture: Frontend+React    SA: react-videos           WS: CSS           HW: X
 
-W4 4/18   Lecture: More React        SA:  react-videos          WS: static gen    HW: ''
-W4 4/19   XHOUR:  react-videos
+W4 4/18   Lecture: More React        SA:  react-videos          WS: static gen    HW: react-notes
+W4 4/19   XHOUR:  X
 W4 4/20   Lecture: APIs + Libraries  SA: X                      WS: vis, canvas   HW: react-notes+server
 
 W5 4/25   Lecture: Routing Frontend  SA: routing                WS: preprocs      HW: ''
