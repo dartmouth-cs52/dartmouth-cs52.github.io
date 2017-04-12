@@ -319,6 +319,8 @@ module: {
 },
 ```
 
+🚀 `ctrl + c` out of your webpack-dev-server and run `npm start` again to pick up the changes to the config files.
+
 ###  use some es6
 
 🚀 Let's change our `index.js` to do something a tiny bit more interesting and we'll use ES6 syntax.
@@ -333,9 +335,9 @@ import $ from 'jquery';
 * you could use `setInterval` to call a function
 * if you have anonymous functions please use arrow notation `() => { }`
   * in fact you might run into scope problems if you don't use arrow notation as arrow notation does better things with scope than regular anonymous functions.
-* avoid using `var`
+* avoid using `var` (remember `let` and `const`)
 
-`ctrl + c` out of your webpack-dev-server and run `npm start` again to pick up the changes to the config files.  Hopefully now your page is keeping count of how long its been since you loaded / reloaded it.
+Excellent, now your page is keeping count of how long its been since you loaded / reloaded it. SUPER USEFUL!
 
 
 ## Linting
