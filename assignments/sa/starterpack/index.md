@@ -54,7 +54,7 @@ brew install node
 
 #### windows, other:
 
-install from [nodejs.org](https://nodejs.org/en/)
+install from [nodejs.org](https://nodejs.org/en/). *you may need to restart git shell afterwards*
 
 ### start a node project
 
@@ -406,7 +406,7 @@ You can click on the definition of the error to learn more.  Note: many of these
 
 🚀  Now let webpack include es-lint! In your `webpack.config.js` file, add `eslint-loader` to modules we will use (the line that says) `use: ['babel-loader']`.
 
-From here on most assignments will come with a `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and es6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
+From here on most assignments will come with a `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
 
 ## SASS Webpack loader
@@ -498,6 +498,8 @@ body {
 
 🚀 Restart your webpack server and see if you style changes are picked up.  Note how you can change styles and the hot-reloading kicks in!
 
+*Note: you will see that when you run locally as you are now that chrome devtools will tell you that the style.css file is a 404 error. You can ignore this error for now. The webpack-dev-server is injecting the styles via javascript when in development mode so that it can hot reload them, however in production mode that file will be automatically generated.*
+
 ## AutoPrefixing!
 
 As you've been playing with CSS you've probably noticed the internet mentioning vendor prefixes such as:
@@ -557,7 +559,7 @@ Now you have a deploy npm script you can run!
 💻 npm run deploy
 ```
 
-This will build your app into the build directory and the push all the right stuff to github to the right branch and everyting.
+This will build your app into the build directory and the push all the right stuff to github to the right branch and everything.
 
 
 ## A word about debugging
