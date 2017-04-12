@@ -17,9 +17,9 @@ Doesn't that make you want to make your own quiz? Ok, you could use buzzfeed to 
 This assignment is going to *flex* your html and css skills some more as well as some javascript!  We'll use some JS to compute the results of the quiz as well as to check that the quiz was filled out correctly.
 
 
-**Note:** You are allowed to use HTML5/CSS3/JS/jQuery in this assignment but no other libraries or frameworks.
+**Note:** You are allowed to use HTML5/CSS3/JS/jQuery in this assignment but no other libraries or frameworks. Try to use compatible plain JS/jQuery without any newer syntax so that your page will work in browsers without the need for anything aside from jQuery (if you choose to use it).
 
-**Note:** You can and should use the inspector 🔍 to examine the structure pages you see. Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) you'll find that the way they do things is ugly anyway and I would recommend not imitating them at all. If your code blatantly includes [un-cited code](/logistics/#citation-format) copied from buzzfeed.com, that will be considered an honor code violation :warning: Ask me if you have questions about this.
+**Note:** You can and should use the [inspector 🔍](https://developer.chrome.com/devtools) to examine the structure pages you see. Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) you'll find that the way they do things is ugly anyway and I would recommend not imitating them at all. If your code blatantly includes [un-cited code](/logistics/#citation-format) copied from buzzfeed.com, that will be considered an honor code violation :warning: Ask me if you have questions about this.
 
 
 ## Plan
@@ -31,11 +31,12 @@ You have a lot of flexibility in this assignment.  This is your content, so be c
 
 * Quiz Page:
   * Questions:
-    * display several questions
+    * display several questions (enough for this to be interesting)
     * have a header image and some text
     * have some number of potential answers
   * Question Answers:
     * be either text or an image (demonstrate some of both)
+      * *text answers are just clickable text boxes (not an image)*
     * have 4 potential display states:
       * initial none selected state
       * have a `:hover` effect
@@ -211,7 +212,7 @@ You should host this on github pages as you have in the past with the `gh-pages`
 
 ## To Turn In:
 
-* url to your hosted page (gh-pages is fine)
+* url to your hosted page (gh-pages enabled on your classroom repo is fine)
 * your page should have all the [MVP specs](#minimal-functional-specs) in addition to:
   * have clear document structure with proper semantic naming
   * functional calculations and error checking to get quiz results
@@ -235,3 +236,4 @@ You should host this on github pages as you have in the past with the `gh-pages`
 * [http://www.w3schools.com](http://www.w3schools.com)
 * [https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)
 * [http://learn.shayhowe.com/html-css/building-forms/#radio-buttons](http://learn.shayhowe.com/html-css/building-forms/#radio-buttons)
+* [Chrome Devtools](https://developer.chrome.com/devtools)
