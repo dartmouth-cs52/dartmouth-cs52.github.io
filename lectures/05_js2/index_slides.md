@@ -297,7 +297,7 @@ function plus1(value) {
 
 
 ---
-name: this
+name: this failures
 
 * `this` is special keyword for referring to the 'owner' of the function / context
   * when a function is executed not when defined
@@ -312,16 +312,16 @@ foo(); // `this` will refer to `window` in es5 and undefined in es6
 
 // as object method
 var obj = {
-  const foo='hi',
-  bar: console.log(this.foo)
+  foo:'hi',
+  bar: function() {console.log(this.foo)}
 };
 obj.bar(); // `this` will refer to `object`
-           // outputs "hi"
 
 ```
 
 ???
 * some examples, confusing yes
+* difference in object vs function
 * this will come back and haunt you sometimes
 
 
@@ -332,15 +332,16 @@ name: this
 
 ```javascript
 let flower = {
-  petalCount: 0,
-  bloom: function() {
+  petalCount: 10,
+  bloom: function(){
   	console.log(`I have ${this.petalCount} petals!`);
-  }
+  },
+  lateBloom: function(){ setTimeout(this.bloom,1000) },
 }
 
+flower.lateBloom();
 // after 1 second, trigger the 'bloom' method
-flower.petalCount=10;
-setTimeout(flower.bloom, 1000);
+setTimeout(flower.lateBloom, 1000);
 // but WAIT! logs undefined number of petals!
 ```
 
@@ -356,15 +357,10 @@ setTimeout(flower.bloom, 1000);
 name: this
 
 ```javascript
-setTimeout( flower.bloom.bind(this), 1000 );
-
-// or
-let flower = flower.bind(this);
-setTimeout( flower.bloom, 1000 );
+setTimeout(this.bloom.bind(this),1000)
 
 //or
-setTimeout( ()=>{ flower.bloom() }, 1000 );
-
+setTimeout( ()=> {this.bloom() }, 1000);
 ```
 
 * bind returns a new function with current `this` tied to the function
