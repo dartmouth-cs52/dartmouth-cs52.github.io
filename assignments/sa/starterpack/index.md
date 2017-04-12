@@ -236,6 +236,8 @@ Shall we look at what we have done so far?  We could start up a python webserver
 
 🚀 Edit your `package.json` again and change `"start": "NODE_ENV=development webpack-dev-server --inline"`
 
+*Note: on windows the syntax is a tiny bit different you need `SET NODE_ENV=development & webpack-dev-server --inline`*
+
 🚀 Now you can simple run:
 
 ```bash
