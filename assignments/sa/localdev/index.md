@@ -49,7 +49,11 @@ We'll be doing a lot of commandline stuff.  We'll introduce stuff as we go, so d
 If you are interested here's a tutorial that gives you more than enough to be a master:
 [learn just enough commandline to be dangerous](https://www.learnenough.com/command-line-tutorial)
 
-Here's some basics:
+Before you even think about opening Terminal, you should download [iTerm2](https://www.iterm2.com/downloads.html). It's completely open-source, and it's vastly superior to the default terminal. You can even open separate panes in the same window!
+
+You should also download a git command prompt to make life easier when we work with git later on. You can find a cool one [here](https://github.com/jimeh/git-aware-prompt). Follow the instructions on the README at that link to install it!
+
+Here's some commandline basics:
 
 * `ls -la`  will list files in current directory
 * `pwd`  will show current directory
