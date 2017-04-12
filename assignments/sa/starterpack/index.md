@@ -44,6 +44,14 @@ npm --version
 #4.2.0
 ```
 
+If you run into problems here you can try forcing a reinstall:
+
+```bash
+sudo chown -R $USER /usr/local  #in case you had ever run brew with sudo
+brew uninstall --force node
+brew install node
+```
+
 #### windows, other:
 
 install from [nodejs.org](https://nodejs.org/en/)
@@ -396,7 +404,7 @@ When you see errors such as below:
 
 You can click on the definition of the error to learn more.  Note: many of these show up as errors but are not compiler errors like you are used to in Eclipse.  The browser or node may still run the code fine — however it is recommended that you fix these errors or learn about what the errors mean and disable them only if you disagree with that particular rule stylistically. I left the above errors so you could fix them!
 
-🚀  Now let webpack include es-lint! In your `webpack.config.js` file, add `eslint-loader` to modules we will use (the line that says) `use: ['babel-loader']`. 
+🚀  Now let webpack include es-lint! In your `webpack.config.js` file, add `eslint-loader` to modules we will use (the line that says) `use: ['babel-loader']`.
 
 From here on most assignments will come with a `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and es6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
@@ -521,7 +529,7 @@ in between your `css-loader` and your `sass-loader` objects.
 
 🚀 and add in `const autoprefixer = require('autoprefixer');` to the top of the file.
 
-🚀 Guess what you need to `npm install --save-dev` as well?  Yup, `autoprefixer`. 
+🚀 Guess what you need to `npm install --save-dev` as well?  Yup, `autoprefixer`.
 
 
 
