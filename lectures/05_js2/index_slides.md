@@ -1162,34 +1162,3 @@ import coolCode from 'myModule';
 
 ???
 * more variations
-
-
-
-
----
-name: webpack
-
-.fancy.medium[![](img/what-is-webpack.png)]
-
-???
-
-
-
-
----
-name: babel
-
-.fancy.medium[![](img/babel.png)]
-
-
-???
-
-
-
-
----
-name: eslint with airbnb style guide
-
-.fancy.medium[![](img/airbnb.png)]
-
-???

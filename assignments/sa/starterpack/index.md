@@ -563,7 +563,7 @@ Now you have a deploy npm script you can run!
 💻 npm run deploy
 ```
 
-This will build your app into the build directory and the push all the right stuff to github to the right branch and everything.
+This will build your app into the build directory and the push all the right stuff to github to the gh-pages branch and everything. However!  This will not push your code that is still in `master` you will still need to `add`, `commit`, and `push` all of your actual code from `local/master` to `origin/master`.  All the deploy script does is help keep your published website in `gh-pages` clean and separate from your source code.
 
 
 ## A word about debugging

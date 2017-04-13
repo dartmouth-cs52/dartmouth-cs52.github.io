@@ -19,175 +19,63 @@ name: base
 .title[{{name}}]
 
 ---
-name: Frontend with REACT
+name: CS52
 
-
----
-name: On the Menu
-
-
-* project timeline
-* some review
-* MVC and frontend frameworks
-* React
-
+* Today:
+  * less javascript!
+  * workshop!
+  * what was this starterpack thing?!
+  * intro to react!
 
 ???
 
 
+---
+name: table questions
+
+* why aren't JS objects automatically bound to their context? what's the benefit of not.
+
+```js
+function handleClick(e) {
+  this.innerHTML="you clicked me!"
+}
+
+document.getElementById('button')
+  .addEventListener('click', handleClick);
+```
+
+.large[![](img/ohgahd.jpg)]
+
+???
+*  
 
 
 ---
-name: Final Projects!
+name: table questions
 
-* last weeks of class
-* projects from scratch
-  * libraries, frameworks, apis of course
-* required components
+* is it universally accepted that ES6 is better, or is there a debate against it?
+* does ES6 move JS to object oriented programming?
 
+.medium[![](img/house.jpg)]
 
 
 ???
+* there are quite a few debates in general about javascript language features, but no ES6 is superior in every way. some people might want more or different changes, but nobody wants less.
+* it helps with some object oriented style with the new `class` syntax but it also introduces new functional methods such as the arrow functions and generators and iterators.
 
+* objects that allow you iterate through a sequence while keeping track of position and providing a next funciton
+* generator is a function that acts as an iterator.
 
 
 ---
-name: Dates:
+name: quiz
 
-* Pitch Proposals (7/21/2016)
-* Pitch Presentation (7/28/2016)
-* Feature Spec (8/2/2016)
-* Scaffolding + Mockups (8/9/2016)
-* Dev Site Up (client+server) (8/11/2016)
-* Progress Presentations (8/16/2016)
-* Final Project Demos (8/23/2016)
 
+![](img/no.jpg)
 
 ???
+* let's take break a do a quiz!
 
-
-
-
-
----
-name: Pitch Proposals
-
- ![](http://i.giphy.com/IH3ZwYeR9AlP2.gif){: .fancy .medium_small}
-
-* submit idea to pitch, individually
-* scope and feasibility
-* proposal form
-
-???
-This will be your chance to submit an idea that you would like to pitch.  As the person submitting the idea you'll need to think a little bit about scope and feasibility.  Deliverables: proposal form.
-
-
-
-
-
----
-name: Pitch Presentation
-
-![](http://i.giphy.com/nldqZAXfXH6I8.gif){: .fancy .medium_small}
-
-* 5 minute presentation with 5 minutes Q&A
-* can do in pairs if you want
-* groups formed by voting for top 3
-
-???
-A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class. Deliverables: pitch deck
-
-
-
-
-
----
-name: Feature Spec
-
-![](http://i.giphy.com/13NR9a0aYuYMy4.gif){: .fancy .medium_small}
-
-* walk-though of project
-* from users perspective
-* listing of features
-
-???
-A walk-though of your project from the users perspective listing out every feature that it should have.
-
-
-
-
-
----
-name: Scaffolding + Mockups
-
-![](http://i.giphy.com/GWbMbUysgsIda.gif){: .fancy .medium_small}
-
-* mockups/sketches
-* initial code scaffolding
-* tools and frameworks chosen
-
-???
-Mockups/Sketches of your project and initial code scaffolding started with a component plan and tools and frameworks chosen
-
-
-
-
-
----
-name: Dev Site Up (client+server)
-
-![](http://i.giphy.com/IU9JNuUSmxZTy.gif){: .fancy .medium_small}
-
-* dev site up
-* basic flow in place:
-  * db ⇆ server api ⇆ frontend
-
-???
-Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
-
-
-
-
-
----
-name: Progress Presentations
-
-![](http://i.giphy.com/gPLD7lIdSo3Pq.gif){: .fancy .medium}
-
-* feedback
-
-???
-Presentations in class on progress, soliciting feedback.
-
-
-
----
-name: Final Project Demos
-
-![](http://i.giphy.com/p9O75RBS946He.gif){: .fancy .medium_small}
-
-* open to public
-* motivate idea, show in action, discuss challenges
-* user testing
-
-???
-Final presentation of project. Open to public. Motivate the idea, show it in action, discuss challenges and any user testing.
-
-
-
-
-
----
-name: Review
-
-* static sites
-* ajax
-* apis
-* webpack and build tools
-* node and npm
-
-
-???
 
 
 
@@ -195,7 +83,7 @@ name: Review
 ---
 name:
 
-![](img/static-sites.png){:  .white-background }
+![](img/static-sites.png)
 
 ???
 * static sites
@@ -208,7 +96,7 @@ name:
 ---
 name:
 
-![](img/server-side-rendering.png){: .white-background }
+![](img/server-side-rendering.png)
 
 ???
 * server side rendering
@@ -222,7 +110,7 @@ name:
 ---
 name:
 
-![](img/single-page-app.png){:  .white-background }
+![](img/single-page-app.png)
 
 
 ???
@@ -240,7 +128,7 @@ name:
 ---
 name:
 
-![](img/isomorphic-app.png){:  .white-background }
+![](img/isomorphic-app.png)
 
 
 ???
@@ -255,9 +143,9 @@ name:
 ---
 name:
 
-![](img/ajax.png){: .white-background .small}
+.small[![](img/ajax.png)]
 
-![](img/django-ajax.png){: .white-background .medium}
+.medium[![](img/django-ajax.png)]
 
 
 ???
@@ -273,7 +161,7 @@ name:
 ---
 name:
 
-![](img/JWMB2.png){: .white-background .medium}
+.medium[![](img/JWMB2.png)]
 
 ???
 * more ajax
@@ -305,7 +193,11 @@ name: apis
 * return JSON format data
 * [https://www.getpostman.com/](https://www.getpostman.com/)
 
+.medium[![](img/postman.jpg)]
+
+
 ???
+
 
 
 
@@ -313,7 +205,37 @@ name: apis
 ---
 name: webpack
 
-![](img/magic.png){: .medium_small}
+.fancy.medium[![](img/webpack2.png)]
+
+???
+* https://webpack.js.org/
+
+
+
+---
+name: babel
+
+.fancy.medium[![](img/babel.png)]
+
+
+???
+
+
+
+
+---
+name: eslint with airbnb style guide
+
+.fancy.medium[![](img/airbnb.png)]
+
+???
+
+
+
+---
+name: webpack
+
+.medium_small[![](img/magic.png)]
 
 
 
@@ -326,7 +248,7 @@ name: webpack
 ---
 name:
 
-![](img/what-is-webpack.jpg){: .medium}
+.medium[![](img/what-is-webpack.jpg)]
 
 ```bash
 babel app -d dist
@@ -346,7 +268,7 @@ sass app/sass:dist/css
 ---
 name:
 
-![](img/webpack-how-it-works.png){: .medium .white-background}
+.medium[![](img/webpack-how-it-works.png)]
 
 
 ???
@@ -358,8 +280,7 @@ name:
 ---
 name:
 
-![](img/webpack-dependencies.png){: .medium}
-
+.medium[![](img/webpack-dependencies.png)]
 ???
 * nice clean bundle
 
@@ -372,7 +293,7 @@ name:
 ---
 name: webpack-dev-server
 
-![](img/webpack-dev-server.gif){: .medium}
+.medium[![](img/webpack-dev-server.gif)]
 
 * just a local http server
   * picks up changes and builds
@@ -406,6 +327,8 @@ name: Node and NPM
   * uses `package.json` file to `--save` dependencies
   * can share project with `package.json` file
 
+.small[![](img/1n64e1.jpg)]
+
 ???
 * package.json file allows other devs or Heroku to load your project
 * no need to include the giant amounts of dependencies in your actual project git
@@ -433,7 +356,7 @@ name: node
 ---
 name:
 
-![](img/node-loop.png){: .medium}
+.medium[![](img/node-loop.png)]
 
 ???
 
@@ -549,7 +472,7 @@ name: 3rd gen frontend frameworks
 ---
 name: MVC
 
-![](img/mvc_tt.png){:.white-background .medium}
+.medium[![](img/mvc_tt.png)]
 
 
 ???
@@ -571,8 +494,7 @@ name: MVC
 ---
 name:
 
-![](img/templating.png){: .white-background .medium}
-
+.medium[![](img/templating.png)]
 
 * all frameworks — end product html/css
 * write html for parts of page that don't change
@@ -621,7 +543,7 @@ name:
 ---
 name:
 
-![](img/react-logo.png){: .small}
+.small[![](img/react-logo.png)]
 
 * what is React and why?
 * basic render function and virtual dom
@@ -678,7 +600,7 @@ name: tree diffs
 ---
 name: dirty state
 
-![](img/setstate-dirty.png){: .medium_small}
+.medium_small[![](img/setstate-dirty.png)]
 
 
 ???
@@ -694,7 +616,7 @@ name: dirty state
 ---
 name: rerendering
 
-![](img/dirty-rerendered.png){: .medium_small}
+.medium_small[![](img/dirty-rerendered.png)]
 
 
 ???
@@ -791,7 +713,7 @@ const aComponent = <MyComponent someProperty={true} />;
 name: component lifecycle
 
 
-![](img/component-lifecycle.png){: .medium_small}
+.medium_small[![](img/component-lifecycle.png)]
 
 * `setState` and `setProps` are key
 
@@ -805,7 +727,7 @@ name: component lifecycle
 ---
 name: down data flow
 
-![](img/data-event-flow.png){: .medium_small}
+.medium_small[![](img/data-event-flow.png)]
 
 * parent components send data down as `props`
 * children pass up actions in callbacks
