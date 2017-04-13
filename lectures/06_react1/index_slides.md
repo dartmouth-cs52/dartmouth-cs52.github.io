@@ -671,6 +671,14 @@ name:
 
 ???
 * facebook created
+* Facebook (Partially)
+* Instagram (Completely)
+* Khan Academy (Partially)
+* Codecademy (Partially)
+* New York Times (Partially)
+* Yahoo Mail (Completely)
+* Dropbox's Carousel (Completely)
+
 
 
 
