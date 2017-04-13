@@ -380,7 +380,7 @@ npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-j
         "no-else-return": 0,
         "new-cap": ["error", {"capIsNewExceptions": ["Router"]}],
         "no-console": 0,
-        "import/no-unresolved": [2, { "commonjs": true}],
+        "import/no-unresolved": [2, { "caseSensitive": false } ],
         "no-unused-vars": ["error", { "vars": "all", "args": "none" }],
         "no-underscore-dangle": 0,
         "arrow-body-style": 0,

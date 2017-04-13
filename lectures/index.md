@@ -15,6 +15,7 @@ permalink: /lectures/
 * [4/5 Some Design Things](03_design/)
 * [4/6 JS and DOM](04_js1)
 * [4/11 JS P2](05_js2)
+* [4/13 Frameworks Intro](06_react1)
 
 
 
