@@ -110,10 +110,22 @@ npm start
 
 If there are no errors we can move on!  Leave the server running as now we have everything necessary to just jump into the codes.
 
+One common cause of errors can be dependency version mismatches in the various npm packages.  This is because by default when you `npm install` something it will attempt to install the most recent thing. Addditionally in the `package.json` file it will save the installed version with a `^` prepended which indicates that future installs should be at least that version or greater. Sometimes the *or greater* can cause trouble.  One way to attempt to fix this is to update all the versions to the most recent, like so:
+
+```bash
+npm install -g npm-check-updates #installs a new command: ncu
+
+ncu #run in your project will tell you what packages can be udpated
+ncu -ua # will update all packages
+
+rm -rf node_modules #remove existing installed modules
+npm install  #reinstall new versions
+```
+
 
 ## Our First React View
 
-Let's make our first React view.  React operates on a concept of components -- there are a few different kinds of components with the most simple being just a function.  Lets start with that.
+Let's make our first React view.  React operates on a concept of components -- there are a few different kinds of components with the most simple being just a function (sometimes called a function or dumb component).  Lets start with that.
 
 🚀Edit your `index.js` file:
 
@@ -123,7 +135,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const App = () => {
-  return <div>All the React are belong to us!</div>;
+  return <div className="test">All the React are belong to us!</div>;
 };
 
 ReactDOM.render(<App />, document.getElementById('main'));
@@ -133,6 +145,10 @@ Now check your page: http://localhost:8080
 
 Our first React app!  Ok we're done. Kidding!
 
+
+## [JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
+
+Did you notice how there seems to be html like stuff in the above?  What is `<App />`?  It is a function that seems to return html?  In fact all the `<tags>` you see when working in react that are inside of javascript code are actually in [JSX](https://facebook.github.io/react/docs/introducing-jsx.html).  When we did `<div></div>` in the above what we are actually doing is `React.createElement("div", { className: "test" }, "All the React are belong to us!");`.  JSX happens to provide all the standard html elements for you so it feels like html while actually being cool react components, but there are some subtle differences: `class` is now `className` for instance because class is already a reserved keyword in javascript!
 
 
 ## Video Search App
@@ -152,7 +168,7 @@ What components do you think compose this app?
 
 ### Components
 
-A component is a logical unit that packages up some functionality or some part of the display that can potentially be reused.
+A component is a logical unit that packages up some functionality or some part of the display that can potentially be reused. React is basically just a tree of components. 🌴
 
 Let's break up our app into some components.
 
@@ -303,7 +319,7 @@ We've created a function `onInputChange` which we are registering as a callback 
 
 ## State
 
-Each class based React component has it's own internal state object which is used to react to and record events.  Whenever this state changes React re-renders the component.  This is the basis of React, and why it is so cool.
+Each class based React component has it's own internal state object which is used to react to and record events.  Whenever this state changes React re-renders the component.  This is the basis of React, and why it is so cool.  It is all about the state.
 
 
 ### Initialize state
@@ -323,7 +339,7 @@ ES6 classes have constructors.  This is where we would do setup stuff, in partic
 * First thing we do is call the parent classes constructor as any class that extends another should do.
 * Then we initialize a state object with one field `searchterm`.  This will be for our search term.
 
-Note: The constructor is the **ONLY** place you will ever set `this.state` directly like this.  We will see how to do this later, but in general, you initialize it once and then you use a method `setState` on it from then on. This  is critical, if you skip using `setState` then React doesn't know that anything happened.
+Note: The constructor is the **ONLY** place you will ever set `this.state` directly like this.  We will see how to do this later, but in general, you initialize it once and then you use a method `setState` on it from then on. This  is critical, if you skip using `setState` then React doesn't know that anything happened.  
 
 
 ### Update state
@@ -370,7 +386,7 @@ Now you have something like this:
 
 Great, we're now updating some random text on the page.
 
-Let's take this a step further and make the `<input>` field *driven*. What this means is that instead of the field showing the text that is being input directly and as a side effect updating state, we will make the field display the actual react state instead.
+Let's take this a step further and make the `<input>` field *driven*. What this means is that instead of the field showing the text that is being input directly and as a side effect updating state, we will make the field display the actual react state instead.  This is an important distinction, it is cleaner to have controlled or driven components because then always know that your state is in control of the output.
 
 
 🚀 Change `<input>`:
@@ -498,6 +514,8 @@ We're just console logging the response, open up inspector to examine!
 ![](img/youtube-results.png){: .fancy }
 
 Cool!
+
+Note: In the above you may have noticed we used a `Promise`.   [Promises](https://scotch.io/tutorials/javascript-promises-for-dummies) are a way of dealing with asynchronous callbacks in a more elegant fashion.
 
 
 ## Results and State
@@ -880,7 +898,7 @@ Turns out response iframe embeds are actually pretty difficult to achieve.  We'r
 
 ## Debugging
 
-You may want to install: [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+🚀 You **MUST install**: [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 
 This adds a tab to your Chrome Dev Tools which allows you to inspect state in your React app and more!
 
