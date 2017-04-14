@@ -17,7 +17,7 @@ Doesn't that make you want to make your own quiz? Ok, you could use buzzfeed to 
 This assignment is going to *flex* your html and css skills some more as well as some javascript!  We'll use some JS to compute the results of the quiz as well as to check that the quiz was filled out correctly.
 
 
-**Note:** You are allowed to use HTML5/CSS3/JS/jQuery in this assignment but no other libraries or frameworks. Try to use compatible plain JS/jQuery without any newer syntax so that your page will work in browsers without the need for anything aside from jQuery (if you choose to use it).
+**Note:** You are allowed to use HTML5/CSS3/JS/jQuery in this assignment but no other javascript libraries or frameworks. Try to use compatible plain JS/jQuery without any newer syntax so that your page will work in browsers without the need for anything aside from jQuery (if you choose to use it). You may use CSS libraries to help with styling but it is recommended to practice your CSS skills and try to do it from scratch. 🔩
 
 **Note:** You can and should use the [inspector 🔍](https://developer.chrome.com/devtools) to examine the structure pages you see. Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) you'll find that the way they do things is ugly anyway and I would recommend not imitating them at all. If your code blatantly includes [un-cited code](/logistics/#citation-format) copied from buzzfeed.com, that will be considered an honor code violation :warning: Ask me if you have questions about this.
 

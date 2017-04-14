@@ -18,7 +18,7 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 🚀 To start grab the github classroom link to start a new repository.  Then you'll pull in your webpack+babel+eslint starter code like so:
 
 ```bash
-cd sa3-your-github-username
+cd sa4-your-github-username
 git remote add starter git@github.com:your-github-username/your-webpack-starter.git
 git pull starter master
 ```
@@ -131,7 +131,7 @@ ReactDOM.render(<App />, document.getElementById('main'));
 
 Now check your page: http://localhost:8080
 
-Our first React app!  Ok we're done.
+Our first React app!  Ok we're done. Kidding!
 
 
 
