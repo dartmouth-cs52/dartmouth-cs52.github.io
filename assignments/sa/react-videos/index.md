@@ -789,10 +789,10 @@ Note the use of lots of arrow functions and the lack of `bind`.  EC: why might t
 🚀 In *SearchBar*  let's call this new callback! Add the following to your `onInputChange` method.
 
 ```javascript
-this.props.onSearchChange(this.state.searchterm);
+this.props.onSearchChange(event.target.value);
 ```
 
-Try it out!  You should now be able to type into the search bar and get the results to change.
+Try it out!  You should now be able to type into the search bar and get the results to change. Note that we couldn't use `this.state.searchterm` right after having on the previous line just run `setState`.  The reason for this is that `setState` is not guaranteed to be synchronous, in fact usually it is not as it tries to batch state changes for efficiency. Something to keep an eye out for if you are having bugs where your state seems to be lagging behind. 
 
 
 ## Debouncing
