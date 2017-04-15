@@ -19,7 +19,7 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 
 ```bash
 cd sa4-your-github-username
-git remote add starter git@github.com:your-github-username/your-webpack-starter.git
+git remote add starter git@github.com:dartmouth-cs52-17S/starterpack-your-github-username.git
 git pull starter master
 ```
 
