@@ -19,12 +19,18 @@ We will start with a version of the app that does not have a backend,  it'll use
 
 ### Part 2
 
-Then we will add in Firebase for persistent storage. Firebase is a backend as a service (BAAS). It provides a simple JSON data store ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. You can subscribe to change events on collections of objects,  this is perfect to use with React!
+Then we will add in Firebase for persistent storage. Firebase is a backend as a service (BAAS). It provides a simple JSON data store ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. You can subscribe to change events on collections of objects, this is perfect to use with React!
 
 
 ## Let's Start
 
-🚀 To start you can clone [js-react-starter](https://github.com/dartmouth-cs52/js-react-starter). This is just the js-starter-workshop solution with a few added libraries and presets for React, you could also start from what you ended up with in SA4 if you preferred.  Remember to set up a separate personal github remote repo for this, and a separate hosting so that you don't overwrite your previous assignments.
+🚀 To start grab the github classroom link to start a new repository.  Then you'll pull in your webpack+babel+eslint starter code like so:
+
+```bash
+#make sure you are in your project directory
+git remote add starter git@github.com:dartmouth-cs52-17S/starterpack-your-gitub-username.git
+git pull starter master
+```
 
 ```bash
 # also don't forget to run:
@@ -106,7 +112,7 @@ There are several reasons for this:
 
 * in Part 2 we'll be handing over state to Firebase
   * so we are going to structure our data to make that easier
-* if you don't make sure it is immutable, you might accidentally mutate it — `this.setState({foo: this.state.foo++})`f or a tiny moment,  the old state was modified before it was reassigned.
+* if you don't make sure it is immutable, you might accidentally mutate it — `this.setState({foo: this.state.foo++})` for a tiny moment,  the old state was modified before it was reassigned which can cause all sorts of bugs.
 * cleaner api
 
 Feel free to peruse the Immutable.js [docs](https://facebook.github.io/immutable-js/) for more info on how and why it is cool.
@@ -208,12 +214,11 @@ const newNotes = Object.assign({}, this.state.notes, newNote);
 
 Confused?  This takes an empty object `{}` assigns the properties from `this.states.notes` to it, and also merges in the properties from `newNote`.  However it only does the top level properties, so each nested object is still a reference rather than clone.  Deep cloning is hard and slow if you are doing it manually.  Immutable.js makes it speedy and clean!
 
-
 Great, now that you know how to clone an object we'll do that for updating a note!
 
 **Updates**:
 
-Immutable.js provides an [`update`](https://facebook.github.io/immutable-js/docs/#/Map/update) method, but there is a slight trick to it.  It expects a function that will update the passed in value.  Now that we know how to take an object and merrge properties on it we can use that as our update function:
+Immutable.js provides an [`update`](https://facebook.github.io/immutable-js/docs/#/Map/update) method, but there is a slight trick to it.  It expects a function that will update the passed in value.  Now that we know how to take an object and merge properties on it we can use that as our update function:
 
 ```javascript
 this.setState({

@@ -18,8 +18,8 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 🚀 To start grab the github classroom link to start a new repository.  Then you'll pull in your webpack+babel+eslint starter code like so:
 
 ```bash
-cd sa4-your-github-username
-git remote add starter git@github.com:dartmouth-cs52-17S/starterpack-your-github-username.git
+#make sure you are in your project directory
+git remote add starter git@github.com:dartmouth-cs52-17S/starterpack-your-gitub-username.git
 git pull starter master
 ```
 
@@ -121,6 +121,17 @@ ncu -ua # will update all packages
 rm -rf node_modules #remove existing installed modules
 npm install  #reinstall new versions
 ```
+
+### StarterPack
+
+At this point you might want to push these changes to your starter pack!  This will add React support to your starterpack.  
+
+```bash
+git push starter master
+```
+
+Careful!  Don't push anything else to starter, you want your starterpack to only contain starter configurations, not your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
+
 
 
 ## Our First React View
@@ -792,7 +803,7 @@ Note the use of lots of arrow functions and the lack of `bind`.  EC: why might t
 this.props.onSearchChange(event.target.value);
 ```
 
-Try it out!  You should now be able to type into the search bar and get the results to change. Note that we couldn't use `this.state.searchterm` right after having on the previous line just run `setState`.  The reason for this is that `setState` is not guaranteed to be synchronous, in fact usually it is not as it tries to batch state changes for efficiency. Something to keep an eye out for if you are having bugs where your state seems to be lagging behind. 
+Try it out!  You should now be able to type into the search bar and get the results to change. Note that we couldn't use `this.state.searchterm` right after having on the previous line just run `setState`.  The reason for this is that `setState` is not guaranteed to be synchronous, in fact usually it is not as it tries to batch state changes for efficiency. Something to keep an eye out for if you are having bugs where your state seems to be lagging behind.
 
 
 ## Debouncing

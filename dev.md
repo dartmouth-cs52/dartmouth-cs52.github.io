@@ -72,10 +72,10 @@ W3 4/13   Lecture: Frontend+React    SA: react-videos           WS: CSS         
 
 W4 4/18   Lecture: More React        SA:                        WS: static gen    HW: react-notes
 W4 4/19   XHOUR:  X
-W4 4/20   Lecture: APIs + Libraries  SA: X                      WS: vis, canvas   HW: react-notes+server
+W4 4/20   Lecture: APIs + Libraries  SA: X                      WS: vis, canvas   HW: ''
 
-W5 4/25   Lecture: Routing Frontend  SA: routing                WS: preprocs      HW: ''
-W5 4/26   XHOUR: routing
+W5 4/25   Lecture: Routing Frontend  SA: redux                  WS: preprocs      HW: ''
+W5 4/26   XHOUR: redux
 W5 4/27   Lecture: Redux             SA: X                      WS: preprocs      HW: redux-blog
 
 W6 5/2    Lecture: Pitches           SA:  slack-bot             WS: build         HW: ''

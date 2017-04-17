@@ -18,7 +18,9 @@ Redux is a fancy state management system that we'll be using to build our blog p
 
 ## Let's Start
 
-Clone your react+router starter or the [js-react-router-starter](https://github.com/dartmouth-cs52/js-react-starter), you should know the drill by now.  Redux does add some complexity to your project which is not always needed. So I would recommend either creating a branch for your starter code for redux. `git checkbout -b with_redux`. Or create a new repository. Your choice, but I do strongly recommend getting all your repos organized and named correctly. 😎
+🚀 We're going to be adding to your starterpack from sa3
+
+Redux does add some complexity to your project which is not always needed. So I would recommend either creating a branch for your starter code for redux. `git checkbout -b with_redux`. Or create a new repository. Your choice, but I do strongly recommend getting all your repos organized and named correctly. 😎
 
 
 ### Github Clone and Switch Reminder
