@@ -565,6 +565,8 @@ Now you have a deploy npm script you can run!
 
 This will build your app into the build directory and the push all the right stuff to github to the gh-pages branch and everything. However!  This will not push your code that is still in `master` you will still need to `add`, `commit`, and `push` all of your actual code from `local/master` to `origin/master`.  All the deploy script does is help keep your published website in `gh-pages` clean and separate from your source code.
 
+🚀 git `add`, `commit`, `push` all the code that is currently in your `master` branch to your `origin master` branch. You should now have:  `master` branch with `/src` and all your webpack and package files, and you don't have to worry about a `gh-pages` branch because that is fully automatic with the deploy script.
+
 
 ## A word about debugging
 

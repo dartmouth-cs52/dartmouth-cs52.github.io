@@ -1,6 +1,6 @@
 ---
 layout: page
-title: HW 3 p2
+title: Lab 3 Part 2
 published: true
 ---
 
@@ -12,21 +12,6 @@ Now that we have a working stand-alone app, we should connect it to backend to m
 
 One way to add persistent storage is to use a backend as a service (BAAS) platform. Firebase is one such platform that provides a JSON based database ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. For instance you can subscribe to change events on collections of objects. Can we use Firebase with our React app?  You bet!
 
-
-## Setup
-
-
-🚀 First things first.  Let's create a branch to work in as we add this new *feature* to our app! This is a good use case for a branch. You have a working version of your software, but you want to add some new functionality to it.
-
-```bash
-# make sure you are all commmited and pushed
-# with your master branch firest just in case
-# then
-git branch firebase
-git checkout firebase
-```
-
-Note: we'll want both branches to test with.
 
 
 ### Reminder of specs
@@ -100,8 +85,10 @@ Hey, what's this `fetchNotes` function?!  Just something that might help!
 
 You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal, however!  Our app is a frontend only app, we may be starting `webpack-dev-server` with `npm start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!   However, note that they key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data.
 
+Once you are ready to use these new functions you can just import it wherever you need it:
+
 ```javascript
-import * as firebasedb from './firebasedb'
+import * as firebasedb from '../firebasedb'
 // to get firebasedb.fetchNotes etc...
 ```
 
@@ -126,7 +113,7 @@ For now we aren't going to use authentication, but you can configure your app pe
 
 🚀 Configure your Database rules to allow Public access [here](https://firebase.google.com/docs/database/security/quickstart#sample-rules)
 
-However, it is extra credit to add authentication for users to your app.
+Note: it is extra credit to add authentication for users to your app and not just allow anybody to post notes.
 
 
 
@@ -152,6 +139,15 @@ If you thought `componentDidMount()` you are exactly right!
 
 🚀 Add a call from your App's `componentDidMount` method to a method in your firebase module. This method should take a callback as an argument!  This callback is critical as it is where you will take the results (the `snapshot`) and run `setState` in *App* with the results!
 
+Your `componentDidMount()` function might look something like this:
+
+```js
+firebasedb.fetchNotes(notes => {
+  this.setState({ notes: Immutable.Map(notes) });
+});
+```
+
+
 To summarize,  your *App* will subscribe to `value` events on a Firebase database reference (`ref`). Whenever a note is updated in Firebase it will trigger the callback you provided.  Your callback will take this `snapshot` of data and set your normal React `notes` state to the new notes object!   Nice, immutable, and should just be a seamless retrofit.
 
 
@@ -165,7 +161,7 @@ We have a few methods so far that set state:
 * delete note
 
 
-We've been using Immutable.js methods, but now we need to push our note state up to Firebase instead.   What we are going to do is instead of running `setState` on our local App component `notes` state,  we are instead going to just push our changes up to Firebase.  Then Firebase will essentially return a new notes state for us via the stuff we did above.  
+We've been using Immutable.js methods for our state changes, but now we need to push our note state up to Firebase rather than just dealing with it locally.   What we are going to do is instead of running `setState` on our local App component `notes` state,  we are instead going to just push our changes up to Firebase.  Then Firebase will essentially return a new notes state for us via the stuff we did above.  
 
 Let's write these functions in our firebase module to do these ops.
 
