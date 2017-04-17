@@ -90,7 +90,7 @@ Let's modify your `.eslintrc` to add in some React support.
 ```
 
 
-## Dependencies
+### Dependencies
 
 🚀 Let's just take care of all our dependencies up front so we can just dig into all of the codes without distraction.
 
@@ -122,17 +122,6 @@ rm -rf node_modules #remove existing installed modules
 npm install  #reinstall new versions
 ```
 
-### StarterPack
-
-At this point you might want to push these changes to your starter pack!  This will add React support to your starterpack.  
-
-```bash
-git push starter master
-```
-
-Careful!  Don't push anything else to starter, you want your starterpack to only contain starter configurations, not your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
-
-
 
 ## Our First React View
 
@@ -155,6 +144,19 @@ ReactDOM.render(<App />, document.getElementById('main'));
 Now check your page: http://localhost:8080
 
 Our first React app!  Ok we're done. Kidding!
+
+
+
+## StarterPack
+
+At this point you will want to push these changes to your starter pack!  This will add React support to your starterpack.  
+
+```bash
+git push starter master
+```
+
+Careful!  Don't push anything else to starter for this assignment, you want your starterpack to only contain starter configurations, not your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
+
 
 
 ## [JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
