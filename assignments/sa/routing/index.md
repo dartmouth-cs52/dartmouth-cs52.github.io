@@ -16,30 +16,13 @@ What if you want your frontend to have routes — different URLs that map to dif
 
 ## Let's Start
 
-🚀 To start you can clone [js-react-starter](https://github.com/dartmouth-cs52/js-react-starter) or **preferably** use your own starter that you have built. If you have been reusing your js-starter-workshop/js-react-starter/js-starter-reference github repos, then please try to reorganize stuff to make sense.
 
-For each of the past assignments you should really have new repositories, named appropriately.  So HW3 should be in a repository that is **not** named js-react-starter for instance.
+🚀 We're going to keep working on your starterpack for this assignment. So just dig up that repo and work there!
 
-The idea behind have a starter is that you can clone from that for any new project that you want to use that stack for and then just change your remotes.  
-
-For this workshop we're just going to add React Router to your personal starter repository so now you'll have react+webpack+babel+sass+react-router!
-
-### Github Clone and Switch Reminder
-
-If you need a reminder for how to clone and change repos here's the easy way.
-
-```bash
-# create new repo on github.com and use url for remote add line
-git clone git@github.com:dartmouth-cs52/js-react-starter.git    yournewprojectname
-cd yournewprojectname
-git remote rename origin starter
-git remote add origin git@github.com:yourusername/yournewprojectname.git
-```
-
-There are fancier ways to do this if you want to retain the full repository tags and all branches, but in most cases you do not, you just want the starter code.
+For this workshop we're just going to add React Router to your personal starter repository so now you'll have react+webpack+babel+sass+reactrouter!
 
 
-## Back to Scheduled Program
+## NPM It
 
 
 ```javascript
@@ -47,7 +30,6 @@ There are fancier ways to do this if you want to retain the full repository tags
 npm install --save react-router
 
 ```
-
 
 
 ## Done

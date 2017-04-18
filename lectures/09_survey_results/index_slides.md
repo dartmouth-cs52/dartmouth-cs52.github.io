@@ -18,12 +18,102 @@ name: base
 
 .title[{{name}}]
 
+---
+name: Immutability, BAAS, Promises
+
 
 ---
 name: CS52 Immutability
 
 
+
 ???
+
+
+
+
+
+
+
+---
+name: Course Survey Results
+
+<iframe src="https://dalilab.typeform.com/report/IXG61z/FKXP"  width="900" height="500" frameBorder="0" ></iframe>
+
+???
+* Soo, too fast!
+* more question sections and will slow down lecture material
+* we're a little behind the master plan, but thats ok!
+* majority understanding majority of material
+* stuff will start making more sense
+* lots to learn, but we'll make it
+
+
+
+
+
+---
+name: Classroom Utilization
+
+* "smaller breakout-sessions/workshops"
+* "use projectors more"
+* "more challenging table workshops"
+* "like it"
+* "more interactive"
+
+???
+* duly noted, lets do more!
+* everybody should download the client and we'll play with projectors a bit later
+
+
+
+
+
+
+---
+name: Things That Were Liked
+
+* "useful and cool assignments"
+* "material is interesting and the group is enthusiastic"
+* "projects are cool"
+* "grading [...] assignments reward revision / creativity / EC"
+* "breadth / cutting edge"
+* "learning environment"
+* "seem real and applicable and fun"
+* "love read-through tutorials"
+* "not afraid to ask for help"
+* "collaborative moments"
+* "first computer science course in which I've truly been engaged and passionate about my work"
+
+???
+* these are great, so we're doing some things right!
+
+
+
+
+
+
+---
+name: Things To Improve
+
+* "make quizzes have unlimited retakes"
+* "slow down pace / near impossible to understand"
+* "relate examples in lecture to assignments"
+* "more core concepts / html/css/js"
+* "more syntax"
+* "more conceptual explanations"
+* "more lecture notes"
+* "too much mindless cp/paste"
+* "workshops get cut off / make longer"
+* "workshops don't add anything"
+* "longer assignments"
+* "help hours at bad times"
+
+???
+* difference between the SA and HWs
+* lecture notes (s in slides) but yeah for next time i'll definitely expand these
+* quizzes are under review, but we'll have one next week :-)
+* x-hour
 
 
 
@@ -33,13 +123,70 @@ name: Javascript Fatigue Aside
 
 [![](img/stuck.png){: .medium}](https://medium.com/@pistacchio/i-m-a-web-developer-and-i-ve-been-stuck-with-the-simplest-app-for-the-last-10-days-fb5c50917df#.imprd0m6d)
 
-.medium[![](img/fuckwithit.png)]
+![](img/fuckwithit.png){: .medium}
 
 ???
 * so if you are confused, thats ok, the whole world is confused about webdev!
 * proliferation of technologies
 * everybody trying to fix the problem different ways
 * new standards coming out all the time
+
+
+
+
+
+---
+name: Questions
+
+* new questions time all the time!
+
+???
+
+
+
+
+
+---
+name: Office Hours
+
+* underutilized
+* other time?
+* **invoking individual meeting rule**
+
+???
+* Tuesday eve?  Sunday eve? I live in sudi
+* everybody should now have access to sudikoff
+* in one of my fav classes prof did a 15 minute individual meeting with every student
+* will send around sign up sheet, but in a week or two need to rework a few more of the assignments first
+
+
+
+
+---
+name: Peer Mentoring
+
+* hasn't quite worked out
+* rethinking it
+
+???
+* its an important part
+* thinking of doing a shoutout system for some undetermined grade effect
+* for groups who are signed up please continue to show up
+* any thoughts ideas?
+
+
+
+
+
+
+---
+name: Pitch Sign Ups!
+
+[On Canvas!](https://canvas.dartmouth.edu/courses/15258/assignments/79662) Due Sunday
+
+???
+* do it, or i'll just have to assign all of my own ideas!
+
 
 
 
@@ -260,10 +407,15 @@ arr = [1,2,3]
 ---
 name: Inefficient you ask?
 
-.left[![](img/dag1.png)]
+<div class='left' style='float:left;width:48%' markdown="1">
+![](img/dag1.png){: .medium}
+</div>
 
-.right[![](img/dag2.png)]
+<div class='right' style='float:left;width:48%' markdown="1">
+![](img/dag2.png){: .medium}
+</div>
 
+<br>
 
 ???
 * Structural Sharing
@@ -343,9 +495,21 @@ this.setState(this.state.whatever.push({foo: 'hello'}));
 
 
 ---
+name: Cool
+
+
+???
+
+
+
+
+
+
+
+---
 name:
 
-.medium[![](img/firebase-logo.png)]
+![](img/firebase-logo.png){: .medium}
 
 * BAAS
   * realtime data store
@@ -430,8 +594,6 @@ name: writing
 
 <p data-height="450" data-theme-id="24117" data-slug-hash="bfb7e2fcd1f8f4d3816e20160faf8648" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/bfb7e2fcd1f8f4d3816e20160faf8648/">React Comment Box with Firebase</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-[reading](#reading)
-
 ???
 
 
@@ -445,9 +607,67 @@ name: reading
 
 <p data-height="450" data-theme-id="24117" data-slug-hash="bab1c926da57c4136b409b49ec364c8d" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/bab1c926da57c4136b409b49ec364c8d/">React Firebase Comments Only</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-[writing](#writing)
+self-recursion: [http://cs52.me/slides/w5c1/#/3/4](http://cs52.me/slides/w5c1/#/3/4)
 
 ???
+
+
+
+
+
+
+
+---
+name: Callback and Promises
+
+<iframe src="//giphy.com/embed/FKi8xl7OAreCI" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+???
+
+
+
+
+
+
+
+---
+name: Callback Simulation
+
+<p data-height="400" data-theme-id="24117" data-slug-hash="7695b67d77d1282779bfb48e0d3ab863" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/7695b67d77d1282779bfb48e0d3ab863/">callback hell playground</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+???
+
+
+
+
+
+
+---
+name: Promises Simulation
+
+<p data-height="403" data-theme-id="24117" data-slug-hash="67475ea03f33ac4ca0469c9c2ee14552" data-default-tab="js,result" data-user="timofei" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/67475ea03f33ac4ca0469c9c2ee14552/">promise playground</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+???
+
+
+
+
+
+
+---
+name: Promises
+
+
+![](img/promises.png){: .medium}
+
+self-recursion: [http://cs52.me/slides/w5c1/#/4/3](http://cs52.me/slides/w5c1/#/4/3)
+
+???
+* here is how promises work?
+* shall we do an exercise
+
+
 
 
 
@@ -458,5 +678,17 @@ name: Question Time
 
 
 <iframe src="//giphy.com/embed/jTZVegIrdLCCY" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+???
+
+
+
+
+
+---
+name: Workshop == HW3
+
+
+
 
 ???

@@ -21,8 +21,7 @@ title: dev links
 
   * [Lab 1: Build a Landing Page](assignments/lab/landing-page)
   * [Lab 2: Build a Buzzfeed Quiz](assignments/lab/quizzical)
-  * [Lab 3 Part 1: React Notes](assignments/lab/react-notes)
-  * [Lab 3 Part 2: React Notes + BAAS](assignments/lab/react-notes+baas) (combining with above)
+  * [Lab 3 Part 1: React Notes](assignments/lab/react-notes) (combined with firebase all in one)
   * [Lab 3 Part 3: React Notes + WS](assignments/lab/react-notes+server) (combine with websockets SA)
   * [Lab 4 Part 1: Redux Blog](assignments/lab/redux-blog)
   * [Lab 4 Part 2: Redux Blog + API](assignments/lab/redux-blog+server)
@@ -39,7 +38,9 @@ title: dev links
   * [4/6 JS P1](lectures/04_js1)
   * [4/11 JS P2](lectures/05_js2)
   * [4/13 React and Review](lectures/06_react1)
-  * [4/18 More React](lectures/07_react  2)
+  * [4/18 More React](lectures/07_react2)
+  * [4/18 Project Intro](lectures/07_project_intro)
+
   * [4/20 Immutability, etc](lectures/08_immutable)
   * [4/25 Routing Frontend](lectures/09_routing)
   * [4/27 Redux](lectures/10_redux)

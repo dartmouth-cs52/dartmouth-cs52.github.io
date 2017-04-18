@@ -12,7 +12,7 @@ title: Assignments
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/30
 * [Short Assignment 2: Git Map](sa/git-map) — DUE 4/01
 * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) — DUE 4/13
-* [Short Assignment 4: ](sa/react-videos) — DUE 4/19
+* [Short Assignment 4: React Intro](sa/react-videos) — DUE 4/19
 <!-- * [Short Assignment 5](sa5/) — TBD -->
 
 
@@ -21,12 +21,10 @@ title: Assignments
 
 * [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/10
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/13
-* Lab 3 Part 1: React Notes
-* Lab 3 Part 2: React Notes + Server
+* [Lab 3: React Notes](lab/react-notes) - DUE 4/25
 * Lab 4 Part 1: Redux Blog
 * Lab 4 Part 2: Redux Blog + API
 * Lab 4 Part 3: Redux Blog + Auth
-
 
 
 ### 5-ish Short in-class quizzes:  10%
