@@ -434,7 +434,7 @@ Here is what you should end up with:
 class App extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {}; //nothing here yet
   }
 
   render() {
