@@ -17,6 +17,8 @@ permalink: /lectures/
 * [4/11 JS P2](05_js2)
 * [4/13 Frameworks Intro](06_react1)
 * [4/18 React](07_react2)
+* [4/18 Projects](07_project_intro)
+
 
 
 
