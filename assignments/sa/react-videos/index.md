@@ -65,7 +65,7 @@ npm install --save-dev babel-preset-react
 
 Let's modify your `.eslintrc` to add in some React support.
 
-🚀 Change your `.eslintrc` file. Here we only show the things to ADD. Do not delete any existing lines just add the following in the right locations:
+🚀 Change your `.eslintrc` file. Here we only show the things to **add** or **update**. Do not delete any existing lines just add the following in the right locations:
 
 ```json
 {
