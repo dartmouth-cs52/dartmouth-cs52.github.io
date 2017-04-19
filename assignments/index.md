@@ -21,7 +21,7 @@ title: Assignments
 
 * [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/10
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/13
-* [Lab 3: React Notes](lab/react-notes) - DUE 4/25
+* [Lab 3: React Notes](lab/react-notes) - DUE 4/24
 * Lab 4 Part 1: Redux Blog
 * Lab 4 Part 2: Redux Blog + API
 * Lab 4 Part 3: Redux Blog + Auth
