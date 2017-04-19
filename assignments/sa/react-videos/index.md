@@ -836,7 +836,7 @@ Ok, lets do a quick styling pass on this. You already have `style.scss` file wit
 
 🚀 Wrap *VideoDetail* and *VideoList* in `index.js` in a `<div id="video-section">` — this we can make a flex container.
 
-🚀 Add an id to the *SearchBar* div in `search_bar.js` also: `id="searchbar"`
+🚀 Add an id to the *SearchBar* div in `search_bar.js` also: `id="search-bar"`
 
 🚀 Here's some basic scss to get you started.
 
