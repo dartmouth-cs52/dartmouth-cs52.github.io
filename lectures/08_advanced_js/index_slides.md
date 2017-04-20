@@ -387,6 +387,24 @@ name: Promises Simulation
 
 
 
+---
+name: Game
+
+Practice your asynch:
+
+.medium[![](img/boomsync.png)]
+
+http://boomsync.surge.sh/
+
+by: Irene Feng, Ben Packer, Byrne Hollander, Jenny Seong
+
+???
+* a react app
+* won hackday a couple weeks back
+
+
+
+
 
 ---
 name: Question Time
@@ -400,29 +418,16 @@ name: Question Time
 
 
 ---
-name: Game
-
-Practice your asynch:
-
-.medium[![](img/boomsync.png)]
-s
-http://boomsync.surge.sh/
-
-by: Irene Feng, Ben Packer, Byrne Hollander, Jenny Seong
-
-???
-* a react app
-* won hackday a couple weeks back
-
-
-
----
 name: Immutable Data Structures
 
 <iframe src="//giphy.com/embed/zxxXYJqTlpBnO?hideSocial=true" width="480" height="259.2" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 * Randall mutates
 * Randall is bad
+* thus mutation is bad
+* $\blacksquare$
+
+???
 
 
 ---
@@ -883,3 +888,15 @@ import coolCode from 'myModule';
 
 ???
 * more variations
+
+
+
+
+---
+name: Next Time
+
+
+* Lab3 due Tuesday
+* Redux to help us with state management
+* Project Pitch Signups due 26th!
+* Come get Quizzes
