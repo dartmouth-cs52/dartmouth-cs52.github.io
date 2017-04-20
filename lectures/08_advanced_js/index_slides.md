@@ -59,6 +59,17 @@ name: Javascript Fatigue
 
 
 ---
+name: Too much? NEVER
+
+.medium[![](img/evil.jpg)]
+
+
+???
+*
+
+
+
+---
 name: Table Questions
 
 * how do you decide how many components there should be?
@@ -92,6 +103,8 @@ name: Drawing On Point
 * useful illustrations!
 * i think maybe there should be some tiny extra credit associated with this - please sign your artwork from now on
 * as they come in i'll illustrate more and more, you are contributing to the future of the class
+
+
 
 
 
