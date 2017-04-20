@@ -18,6 +18,7 @@ permalink: /lectures/
 * [4/13 Frameworks Intro](06_react1)
 * [4/18 React](07_react2)
 * [4/18 Projects](07_project_intro)
+* [4/20 Advanced JS](08_advanced_js)
 
 
 

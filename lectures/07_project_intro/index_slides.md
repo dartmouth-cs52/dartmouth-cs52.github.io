@@ -23,10 +23,14 @@ name: base
 ---
 name: Final Projects!
 
+.medium_small[![](img/finalproject.jpg)]
+
 * last 3 weeks of class
 * projects from scratch
   * libraries, frameworks, apis of course
 * required components
+
+
 
 
 ???
