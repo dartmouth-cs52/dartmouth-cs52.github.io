@@ -527,7 +527,7 @@ What we'll want to do is at some point early on subscribe to `value` events on s
 
 ```javascript
 firebase.database().ref('notes').on('value', function(snapshot) {
-  //
+  // do something with snapshot.val()
 });
 ```
 
