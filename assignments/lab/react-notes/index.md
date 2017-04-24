@@ -373,20 +373,20 @@ Once you have this working you can test with some markdown syntax!
 
 ```javascript
 {
-  id: 0,
-  title: 'testing',
-  text: '![](http://i.giphy.com/gyRWkLSQVqlPi.gif)',
-  x: 400,
-  y: 12,
-  zIndex: 10,
-},
-{
-  id: 1,
-  title: 'headings',
-  text: '# large ',
-  x: 300,
-  y: 300,
-  zIndex: 20,
+ 0: {
+   title: 'testing',
+   text: '![](http://i.giphy.com/gyRWkLSQVqlPi.gif)',
+   x: 400,
+   y: 12,
+   zIndex: 10,
+ },
+ 1: {
+   title: 'headings',
+   text: '# large ',
+   x: 300,
+   y: 300,
+   zIndex: 20,
+ }
 }
 ```
 
