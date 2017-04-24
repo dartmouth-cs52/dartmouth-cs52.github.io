@@ -11,7 +11,7 @@ published: true
 
 React + Routing
 
-What if you want your frontend to have routes — different URLs that map to different components and layouts of components?   We're going to add React Router to our js-react-starter repos so all your future projects can have it!
+What if you want your frontend to have routes — different URLs that map to different components and layouts of components?   We're going to add React Router to our starterpack so all your future projects can have it!
 
 
 ## Let's Start
