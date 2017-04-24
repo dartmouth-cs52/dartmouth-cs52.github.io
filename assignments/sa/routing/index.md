@@ -4,7 +4,7 @@ title: ""
 published: true
 ---
 
-![](img/react-router.png){: .small }
+![](img/router4.png){: .small }
 
 
 ## Overview
@@ -17,123 +17,175 @@ What if you want your frontend to have routes — different URLs that map to dif
 ## Let's Start
 
 
-🚀 We're going to keep working on your starterpack for this assignment. So just dig up that repo and work there!
+🚀 We're going to keep working on your starterpack for this assignment. So just dig up that repo and work there!  At this point you should have a starterpack that has webpack+babel+eslint+sass+react.
 
-For this workshop we're just going to add React Router to your personal starter repository so now you'll have react+webpack+babel+sass+reactrouter!
+For this workshop we're just going to add React Router to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter! Wow.
 
+
+*Note: if you forgot to push the react stuff from the first few steps of the React Videos assignment to your starterpack, you should go back and do that now. You can simply do those steps now directly in your starterpack repo.*
 
 ## NPM It
 
 
-```javascript
-
-npm install --save react-router
+```bash
+#make sure you in your sa3 starterpack repo
+npm install --save react-router-dom
 
 ```
-
 
 ## Done
 
-Now you are ready to add React Router to your starter package!
+Now you have added React Router to your starter package!
 
-Ok ok, Here's a bit more to get you going.
-
-
-## Route file
-
-It is good practice to put all your route definitions in one file (easy to tell what your app is doing then).
-
-🚀 Create a file in src:  `routes.js`
+We're going to be working with a brand new version (released April 12th 2017) of [react-router, version 4](https://reacttraining.com/react-router/web/example/basic).  This is a major rewrite and handles routing completely differently from how it has been done in the past.   Where it used to be that all routes were defined in one place, now you can have composable declarable routes spread throughout your components.  You'll see what that means shortly.
 
 
-In this file we're going to define some routes.
+## Route setup
 
+What we want to do is have the following URL structure:
 
-```javascript
-import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+* `/`  displays `Welcome` component and `Nav` component.
+* `/about` displays `About` component + `Nav`.
+* `/test/id` displays `Test` component and shows ID from url + `Nav`
 
-import App from './components/app';
-import Welcome from './components/welcome';
-
-export default(
-  <Route path="/" component={App}>
-    <IndexRoute component={Welcome} />
-  </Route>
-);
-```
-
-For now we'll keep it simple and just wrap the components we already have: *App* and *Welcome*
+This will demonstrate the power of routing and we'll be using this in our next lab as well.
 
 
 
-## Index File
+## Let's Build Some Test Components
+
+Go ahead and create three very simple function based components. You can make these in your `app.js` file for now. Generally components should go in their own files, but we're just playing around here.
 
 
-🚀 Now we want to use our routes in  `index.js` instead of just *App*
-
-```javascript
-// at top
-import { Router, browserHistory } from 'react-router';
-import routes from './routes';
-
-// replace ReactDOM.render with:
-// entry point that just renders app
-// could be used for routing at some point
-ReactDOM.render(
-  <Router history={browserHistory} routes={routes} />
-  , document.getElementById('main'));
+```js
+const About = (props) => {
+  return <div> All there is to know about me </div>;
+};
+const Welcome = (props) => {
+  return <div>Welcome</div>;
+};
 ```
 
 
-## Wait but APP
+🚀 Now edit App and let's import in some routing magic
 
-
-🚀 Now just edit App and put
-
-```
-{this.props.children}
+```js
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 ```
 
-Instead of where you are instantiating `<Welcome...`
+*Note: we are renaming BrowserRouter as Router. react-router gives us a few different routers including one for react-native for instance but we want the browser one. For now...*
 
 
-Note:  the page should still be working and printing out your basic welcome message!
+🚀 And let's add in some routes in our `App` component.  For now it can just be a dumb component.
 
-Great, now you can edit your basic welcome to include "React Router". 👍
-
-
-## Now for the FUN PART!
-
-🚀 Commit your code at this point. Now create a new branch called `testing`:
-
-```bash
-git commit -am "done with basic routing starter"
-git branch testing
-git checkout testing
+```js
+const App = (props) => {
+  return (
+    <Router>
+      <div>
+        <Nav />
+        <Route exact path="/" component={Welcome} />
+        <Route path="/about" component={About} />
+      </div>
+    </Router>
+  );
+};
 ```
 
-*This is so you have a nice simple starter all separated out, and now we'll mess around with it.*
+Woop, we forgot our `Nav` component, that is essential.
+
+```js
+const Nav = (props) => {
+  return (
+    <nav>
+      <ul>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+      </ul>
+    </nav>
+  );
+};
+```
+
+Here we use a special react-router `NavLink` component rather than an anchor tag. `NavLink` by default adds an `active` class to the link you are currently on, which is pretty cool.
+
+In your `style.scss` file add:
+
+```css
+.active {
+  color: pink;
+}
+```
+
+(don't forget `import '../style.scss';` in app)
 
 
-🚀 Create a more complicated layout and a couple of extra routes.
+Ok,  test this out.  What you should have when you first load the page is some links in the top nav that show up on every page, but when you click them they navigate the page and also change to the highlighted color.  Wait, but why does `Home` always stay active?  Because the match that `NavLink` is making is not exact, `/` is matching anything that begins with a `/`.   Changing `<NavLink to="/">` to `<NavLink to="/" exact>` should fix it.
 
-Here are some options, where each of the following is a React Component:
+Great, ok let's add in one more component to test with. 👍
 
-* *MainLayout*
-  * *Nav*
-  * *Center*
-  * *Footer*
-* add different routes for *Center* in addition to *Welcome* such as:
-  * `posts` -> some list
-  * `posts/:postId` -> can be hardwired to just display props.params.postId
+## URL Parameters
+
+So what if you want is to be able to pass in a URL parameter.  Something like `profile/some_id` where `some_id` might be how Facebook does your profile url:  `profile/username`
+
+Turns out we can do that!
+
+🚀 Add in a new route:
+
+```js
+<Route exact path="/test/:id" component={Test} />
+```
+
+```js
+const Test = (props) => {
+  return <div> ID: {props.match.params.id} </div>;
+};
+```
+
+Note the new `match` property!  This is given to use by react router for every path.  We can use it for some cool things like knowing what url we are on, but also for parsing out any URL parameters that we defined!
+
+Let's add in some links to our Nav as well:
+
+```js
+<li><NavLink to="/test/id1">test id1</NavLink></li>
+<li><NavLink to="/test/id2">test id2</NavLink></li>
+```
+
+Try it out.  Cool.
 
 
-## Let's see how far we get!
+## Unknown Routes
 
+What happens if we type in a route that is unknown to the router.  Currently that would mean that it would not match any of existing `Route` components and so will display the `Nav` and nothing else.  But what if we wanted a fallback route?
+
+React-router let's us do this with a `Switch` component -- this component wraps `Route` components and returns only the first one that matches. *By default if multiple `Route`s match they will all render.*
+
+🚀 Wrap your `Route`s in a `Switch` and add in a `FallBack` component that will always match (with no `path` specified):
+
+```html
+<Switch>
+  <Route exact path="/" component={Welcome} />
+  <Route path="/about" component={About} />
+  <Route exact path="/test/:id" component={Test} />
+  <Route component={FallBack} />
+</Switch>
+```
+
+
+```js
+const FallBack = (props) => {
+  return <div>URL Not Found</div>;
+};
+```
+
+Try it out by typing in some random url.  ⚠️ if you run into a problem where it says it can't find `bundle.js`  this means that in your `index.html` you are loading in your bundle with a relative url.  Generally that is fine, except that now our URL is changing so the relative URL ends up being wrong. To fix this change your `index.html` file to refer to `/build/bundle.js` and `/build/style.css`.
+
+
+## Done!
+
+Don't forget to commit and push your code so that your starterpack now has routing support and an example!
 
 
 ## Resources
 
-* [https://github.com/reactjs/react-router](https://github.com/reactjs/react-router)
-* [https://css-tricks.com/learning-react-router/](https://css-tricks.com/learning-react-router/)
+* [https://reacttraining.com/react-router/web/guides/quick-start](https://reacttraining.com/react-router/web/guides/quick-start)
