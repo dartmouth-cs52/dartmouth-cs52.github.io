@@ -18,26 +18,101 @@ name: base
 
 .title[{{name}}]
 
+
+
+
 ---
-name: Routing
+name: CS52 Art
+
+
+.large[![](img/nature.jpg)]
+
+
+???
+* how's lab?
+* js stuff?
+* firebase module?
+
+
+
+
+---
+name: CS52 Art
+
+
+![](img/firebase_architecture.jpg)
+
+
+???
+* wrapper module
+* there will be a websockets intro were we can replace what firebase is to us fairly quickly with websockets
+
+
+
+
+---
+name: CS52 Art
+
+
+.medium[![](img/saveme.jpg)]
+
+
+???
+* noooooo
+* hopefully JS is starting to make a little bit of sense
+* anything we should go over?
+
+
+
+
+---
+name: Speaking of boomerangs
+
+
+.medium_small[![](img/asynch_with_ben2.jpg)]
+
+
+???
+* 5-6pm DALI - pizza i think
+* ben packer - one of the minds behind boomsync
+* if you're looking for promises and free food
+
+
+
+---
+name: CS52 Art
+
+.left[
+.large[![](img/callbackhell.jpg)]
+
+]
+
+.right[
+.medium[![](img/rewards.jpg)]
+]
+
+
+???
+*
+
 
 
 
 ---
 name: Announcements
 
-* HW3 Extension
-  * p1 SAT
-  * p2 TUE
-  * much extra credit
-* office hours in carson 6-9pm TNIGHT
-* pitch signups, SUNDAY
+.small[![](img/fuq.jpg)]
+
+* Pitch Signups!
+* Lab 3 extension
+* SA5: Routing (super easy) due Thurs
+* SA6: Redux out Weds
+* Tiny Quiz Thurs
 
 ???
-
-
-
-
+* only one pitch signup so far - its 2 minutes, if you don't sign up i'll just assign final projects!
+* there will be another short for redux going out soon.
+* these are all super short just to get your starterpacks up and ready
 
 
 
@@ -46,13 +121,17 @@ name: Announcements
 ---
 name: Routing Frontend
 
-http://yummyserver.com/food/id/#/section?id=23j32j3j
+`http://yummyserver.com/food/id/#/section?id=23j32j3j`
 
-<iframe src="//giphy.com/embed/ezIkH40d6sesw" width="380" height="438" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.medium_small[![](img/suchold.gif)]
+
 
 ???
+* what if you want to pass some state into the url
+* or have a url that is meaningful to the user to help indicate where they are
 * what the what, who keeps track of all that junk
-* it crowd, no british comedy?
+* https://ed.fnal.gov/lincon/tech_web_links_types.shtml
+* https://www.slideshare.net/rfreebern/the-ux-of-urls
 
 
 
@@ -61,14 +140,14 @@ http://yummyserver.com/food/id/#/section?id=23j32j3j
 name:
 
 
-![](img/single-page-app.png){: .medium .white-background}
+.medium[![](img/single-page-app.png)]
 
-* remember single page apps?
 * app in browser
 * routes?
 
 ???
-
+* remember single page apps?
+* lives in the browser  - javascript application basically
 
 
 
@@ -78,7 +157,7 @@ name:
 
 
 
-![](img/single-page-web-applications.png){: .medium .white-background}
+.medium[![](img/single-page-web-applications.png)]
 
 
 ???
@@ -93,25 +172,31 @@ name:
 
 
 ---
-name: urls
+name: clean urls?
 
-![](img/complex_url.png){: .medium .white-background .bordered}
+.medium[![](img/complex_url.png)]
 
 ???
 * remember parts of the url again
+* if we had to choose between path, query and fragment for making a url that looks nice which?
 
 
 
 
 
 ---
-name: enter routes
+name: enter frontend routing
+
+`http://cs52-notes.cool/boardid`
+
 
 * `/posts/super_interesting_post`
 * app needs to know about this
 
 ???
 * lets call this thing a route
+* now our javascript app needs to know about this
+* remember what we have currently been building are basically fully js apps
 
 
 
@@ -209,16 +294,18 @@ name: desired behavior
 ---
 name: that would be perfect, thanks
 
-<iframe src="//giphy.com/embed/p5yJjfLjyNjy0" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="//giphy.com/embed/p5yJjfLjyNjy0" width="580" height="370" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
-
+* owls are so cool
 
 
 
 
 ---
 name: Deep Linking
+
+`https://www.amazon.com/Building-Isomorphic-JavaScript-Apps-Implementation/dp/1491932937/ref=sr_1_5?ie=UTF8&qid=1493142393&sr=8-5&keywords=react`
 
 * state in urls:
   * how much state/ui context to encode?
@@ -228,6 +315,8 @@ name: Deep Linking
 ???
 * how much of app state to include
 * state/ui context meaning if in app, do you have menus open? editing some field?
+* probably not everthing
+* notice amazon links have a lot of stuff encoded in them
 
 
 
@@ -272,33 +361,18 @@ http://html5demos.com/history
 
 
 
----
-name:
-
-
-![](http://i.imgur.com/UDXsrxj.gif){: .hfill}
-
-???
-* panda time
-
-
-
-
-
-
 
 ---
 name:
 
 
-![](img/react-router.png){: .medium .white-background}
+.medium[![](img/router4.png)]
 
-[https://github.com/reactjs/react-router](https://github.com/reactjs/react-router)
+[https://reacttraining.com/react-router](https://reacttraining.com/react-router)
 
 ???
 * react wraps all that js-dom history stuff
 * and allows us to define routes more easily!
-
 
 
 
@@ -312,12 +386,12 @@ name:
 * reusable layout
 * url routes
 * nested routes
-* index route
 * matching
 * declarative jsx
+* composable (new)
 
 ???
-* simply put
+* simply put, keeps ui logic matching the url
 * reusable layout
 
 
@@ -328,12 +402,12 @@ name:
 name:
 
 
-![](img/brad-westfall-1.svg){: .medium .white-background}
+![](img/brad-westfall-1.svg)
 
 *(from [css-tricks](https://css-tricks.com/learning-react-router/))*
 
 ???
-
+* here's a common layout with some components
 
 
 ---
@@ -342,10 +416,13 @@ name:
 
 http://somedomain.com/users
 
-![](img/brad-westfall-2.svg){: .medium .white-background}
+![](img/brad-westfall-2.svg)
 
 
 ???
+* nav
+* sidebar
+* and some inner components
 
 
 
@@ -356,11 +433,11 @@ name:
 
 http://somedomain.com/widgets
 
-![](img/brad-westfall-3.svg){: .medium .white-background}
+![](img/brad-westfall-3.svg)
 
 
 ???
-
+* and maybe we can search users, or widgets
 
 
 
@@ -371,10 +448,11 @@ name:
 
 http://somedomain.com/other
 
-![](img/brad-westfall-4.svg){: .medium .white-background}
+![](img/brad-westfall-4.svg)
 
 
 ???
+* or even replace the search with some other view
 
 
 
@@ -401,6 +479,7 @@ render() {
 ```
 
 ???
+* given our current state of information
 * we might do something like this no?
 * but what if we wanted to have multiple layouts?
 * and especially if we wanted to change this based on url?
@@ -411,15 +490,13 @@ render() {
 name: React Router
 
 ```html
-<Router>
-  <Route path="/" component={MainLayout}>
-    <IndexRoute component={Home} />
-    <Route component={SearchLayout}>
-      <Route path='users' component={ShowUsers} />
-      <Route path='widgets' component={ShowWidgets} />
-    </Route>
-  </Route>
-</Router>
+<Nav />
+<Switch>
+  <Route exact path="/" component={Home}>
+  <Route path='/users' component={Users} />
+  <Route path='/widgets' component={Widgets} />
+</Switch>
+<Footer />
 ```
 
 
@@ -431,24 +508,20 @@ name: React Router
 
 
 
-
-
-
-
 ---
 name: Defining
 
 
 
-```javascript
-
-<Route path='/' component={Home} />
-<Route path='users' component={Users} />
-
+```html
+<Route exact path='/' component={Home} />
+<Route path='/users' component={Users} />
 ```
 
 ???
 * basic route definition
+* component and path -
+* match can be exact or substring
 
 
 
@@ -460,34 +533,29 @@ name: Defining
 name: Nesting
 
 
-```javascript
-
-<Route component={MainLayout}>
-  <Route component={SearchLayout}>
-    <Route path='users' component={UserList} />
-  </Route>
-</Route>
-
-// http://localhost:8080/users
+```html
+const Posts = (props) => {
+  <div>
+    <Route path={`${props.match.url}/:postid`} component={Post}/>
+    <Route exact path={props.match.url} render={() => (
+      <h1>select a post</h1>
+    )} />
+  </div>
+}
+<Route path="/posts" component={Posts} />
 ```
+
+`props.match`
 
 
 ???
 * can nest components
+* props.match is cool
+* can extract url for instance
+* but also parameters
 
 
 
-
-
-
----
-name: Nesting
-
-* wait but like, where does it go?
-
-???
-* we're nesting these components but how does react know where to render then inside of the nested component?
-* dark magic!!
 
 
 
@@ -495,87 +563,54 @@ name: Nesting
 
 
 ---
-name: PROPS
+name: component wrapping tangent
 
-* when you nest a component it goes into props!
-
-```javascript
-/// SearchLayout
-
-render() {
-  <div>
-    <h1> search layout </h1>
-    {this.props.children}
-  </div>
-}
-
-```
-
-???
-* all there is to it. this.props.children will contain all the componets that are nested.
-*
-
-
-
-
----
-name: Not just for Router
-
-```javascript
+```html
 // App
 
 render() {
   <MainLayout>
-    <Contents />
+    {(this.state.isLoggedIn) ? <Profile /> : <Login /> }
   </MainLayout>
 }
 ```
 
-```javascript
+```html
 // MainLayout
-
 render() {
   <div>
-    <nav> {/*...*/ }</nav>
-      {this.props.children}
-    <footer> {/*...*/ }</footer>
+    <nav />
+    {this.props.children}
+    <footer />
   </div>
 }
 ```
 
 
 ???
-
-
-
+* all there is to it. this.props.children will contain all the componets that are nested.
+* Routes do something similar in that they wrap a component
+* you can do this with other components also if you want to add functionality for instance
 
 
 
 
 ---
-name: IndexRoute
+name: FallBack Route
 
 ```html
-<Route path="/" component={MainLayout}>
-
-  <IndexRoute component={Home} />
-
-  <Route component={SearchLayout}>
-    <Route path='users' component={UserList} />
-    <Route path='widgets' component={WidgetList} />
-  </Route>
-</Route>
+<Nav />
+<Switch>
+  <Route exact path="/" component={Home}>
+  <Route path='/users' component={Users} />
+  <Route path='/widgets' component={Widgets} />
+  <Route component={FallBack}
+</Switch>
+<Footer />
 ```
 
-* in case of `http://localhost:8080/`
-  * matches `/`
-  * does not match `/users` or `/widgets`
-
 ???
-* Search layout not rendering in this case
-
-
-
+* can define a route that matches if all other routes fail
 
 
 
@@ -584,53 +619,28 @@ name: Linking and Pushing
 
 ```html
 <ul>
-  <li><Link to="/">Home</Link></li>
-  <li><Link to="/users">Users</Link></li>
-  <li><Link to="/widgets">Widgets</Link></li>
+  <li><Link exact to="/">Home</Link></li>
+  <li><NavLink to="/users">Users</NavLink></li>
+  <li><NavLink to="/widgets">Widgets</NavLink></li>
 </ul>
 ```
 
 ```javascript
 handleClick() {
-  browserHistory.push('/some/path');
+  this.props.history.push('/some/path');
 }
+// must use: export default withRouter(MyComponent)
 ```
 
 ???
-* use Link to to avoid reloads and use router
-* use singleton browserHistory to  push urls from codes
-
-
-
+* use Link or NavLink to avoid reloads and use router
+* need to use withRouter to have props.history available in a component
+* NavLink will add an 'active' class to current match
 
 
 
 ---
-name: BrowserHistory vs HashHistory
-
-
-```javascript
-import { Router, browserHistory } from 'react-router';
-import routes from './routes';
-
-
-ReactDOM.render(
-  <Router history={browserHistory} routes={routes} />
-  , document.getElementById('main'));
-
-```
-
-???
-* i recommend separating routes into their own file
-* need to set browserHistory manually as default is dumb hashHistory
-
-
-
-
-
-
----
-name: Route matching
+name: Route matching and Params
 
 ```html
 <Route path="users/:userId" component={UserProfile} />
@@ -638,16 +648,16 @@ name: Route matching
 
 ```javascript
 //UserProfile
-const url = `https://api.someapp.com/users/${this.props.params.userId}`;
+const url = `https://api.com/users/${props.match.params.userId}`;
 
 fetch(url, { method: 'get'})
-  .then(function(response) {
-    this.setState({user: response})
+  .then(function(profile) {
+    this.setState({user: profile})
   })
 ```
 
 ???
-* available in props.params
+* available in props.match.params
 * pretty common, posts, users, etc
 * we'll use this for next hw
 * but can use for multiple boards for instance
@@ -663,6 +673,7 @@ name: 404!
 * BUT if first load is to specific resource...
 * serve needs to return index.html for all server side routes
 * surge:  `200.html`
+* can't do this on gh-pages... sadly
 
 ???
 * will cover more on this later
@@ -675,46 +686,21 @@ name: 404!
 ---
 name: Deprecated methods
 
-* React Router under heavy development
-* stackoverlow has lots of outdated info
+* React Router under heavy development, new version as of 12 days ago
+* stackoverlow has lots of outdated info about react router v2,3
 
 ???
-
-
 
 
 
 
 
 ---
-name:
+name: panda time
 
 
-<p data-height="300" data-theme-id="24117" data-slug-hash="GqxdAw" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/GqxdAw/">React-Router Demo</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-???
-
-
-
-
-
-
-
-
----
-name: Question Time
-
-
-<iframe src="//giphy.com/embed/jTZVegIrdLCCY" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.tiny[![](http://i.imgur.com/UDXsrxj.gif)]
 
 ???
-
-
-
-
----
-name: Lets try it!
-
-[http://cs52.me/workshops/routing](http://cs52.me/workshops/routing)
-
-???
+* panda time
+* is question time

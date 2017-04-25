@@ -13,7 +13,10 @@ title: Assignments
 * [Short Assignment 2: Git Map](sa/git-map) — DUE 4/01
 * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) — DUE 4/13
 * [Short Assignment 4: React Intro](sa/react-videos) — DUE 4/19
-<!-- * [Short Assignment 5](sa5/) — TBD -->
+* [Short Assignment 5: Frontend Routing](sa/routing) — DUE 4/27
+* Short Assignment 6: Redux
+* Short Assignment 7: WebSockets
+
 
 
 ### 5-ish week-long labs:  25%
@@ -22,9 +25,9 @@ title: Assignments
 * [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/10
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/13
 * [Lab 3: React Notes](lab/react-notes) - DUE 4/24
-* Lab 4 Part 1: Redux Blog
-* Lab 4 Part 2: Redux Blog + API
-* Lab 4 Part 3: Redux Blog + Auth
+* Lab 4: Redux Blog Frontend
+* Lab 5 Part 2: Redux Blog + API
+* Lab 5 Part 3: Redux Blog + Auth
 
 
 ### 5-ish Short in-class quizzes:  10%

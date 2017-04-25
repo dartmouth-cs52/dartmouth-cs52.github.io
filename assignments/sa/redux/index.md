@@ -18,28 +18,12 @@ Redux is a fancy state management system that we'll be using to build our blog p
 
 ## Let's Start
 
-🚀 We're going to be adding to your starterpack from sa3
+🚀 We're going to keep working on your starterpack for this assignment. So just dig up that repo and work there!  At this point you should have a starterpack that has webpack+babel+eslint+sass+react+reactrouter.
 
-Redux does add some complexity to your project which is not always needed. So I would recommend either creating a branch for your starter code for redux. `git checkbout -b with_redux`. Or create a new repository. Your choice, but I do strongly recommend getting all your repos organized and named correctly. 😎
-
-
-### Github Clone and Switch Reminder
-
-If you need a reminder for how to clone and change repos here's the easy way.
-
-```bash
-# create new repo on github.com and use url for remote add line
-git clone git@github.com:dartmouth-cs52/js-react-starter.git    yournewprojectname
-cd yournewprojectname
-git remote rename origin starter
-git remote add origin git@github.com:yourusername/yournewprojectname.git
-```
-
-There are fancier ways to do this if you want to retain the full repository tags and all branches, but in most cases you do not, you just want the starter code.
+For this workshop we're just going to add React Router to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter+redux! Wow.
 
 
 ## Redux
-
 
 
 🚀 Install redux

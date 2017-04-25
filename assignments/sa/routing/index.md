@@ -29,7 +29,7 @@ For this workshop we're just going to add React Router to your personal starter 
 
 ```bash
 #make sure you in your sa3 starterpack repo
-npm install --save react-router-dom
+npm install --save react-router-dom react-router
 
 ```
 
@@ -181,9 +181,32 @@ const FallBack = (props) => {
 Try it out by typing in some random url.  ⚠️ if you run into a problem where it says it can't find `bundle.js`  this means that in your `index.html` you are loading in your bundle with a relative url.  Generally that is fine, except that now our URL is changing so the relative URL ends up being wrong. To fix this change your `index.html` file to refer to `/build/bundle.js` and `/build/style.css`.
 
 
-## Done!
+## Commit!
 
 Don't forget to commit and push your code so that your starterpack now has routing support and an example!
+
+## Deployment
+
+There is one tricky bit with deployment now that we have frontend routes.  The problem is that say you go to your github.io/posts/id page. If you ask the server for this page the server will tell you it doesn't exist. Because in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-dev-server` happens to have a configuration option `historyApiFallback` which makes it serve up the base index.html file for every resource URL that it can't find.  But gh-pages doesn't do that for us.
+
+So what we're going to do is add a new deployment method.  We'll use [surge.sh](surge.sh) for this.  Surge is a fast static file hosting service similar to gh-pages but it has a couple of extra features.
+
+```bash
+npm install -g surge
+npm install --save-dev surge #both command and in dependencies
+```
+
+and then add in a new script in `package.json`
+```json
+    "surge": "npm run build; surge -p public -d cs52-my-cool-starterpack.surge.sh; npm run clean"
+```
+
+Now we're going to do something odd. We're going to make a copy of `public/index.html` to `public/200.html`.  What will happen is when you hit a route that surge doesn't know about, it will serve up the contents of the 200.html file. Since this file is your app, it will load up, read the current route, and change the page appropriately.
+
+Go ahead.  Change the `-d cs52-my-cool-starterpack.surge.sh` to be unique for you. `npm run surge`.  
+
+The other additional benefit of surge is that now your `/build/bundle.js` link will work,  on github pages if you were hosted in a subfolder like `https://dartmouth-cs52-17s.github.io/somerepository` then any resources starting with `/` would go too far up the tree.
+
 
 
 ## Resources
