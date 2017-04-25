@@ -293,7 +293,7 @@ Here is an example:
 
 The way to use this component is to wrap whatever JSX you want in your *Note* render method in `<Draggable>`.
 
-Note the 3 callbacks.  `onStart`, `onDrag`, `onStop`.   You would use these to drive the position of the note.  You'll want the position to be part of the note object as eventually we will synchronize using a cloud component.  
+Note the 3 callbacks.  `onStart`, `onDrag`, `onStop`.   You would use these to drive the position of the note.  You'll want the position to be part of the note object as eventually we will synchronize using a cloud component.  You may find that you only need to implement `onDrag`.
 
 In particular, Draggable will call onDrag with two arguments, let's call them `(e, ui)`.  Just to save you some digging, `ui` will have x and y components so you can extract them and use them for your `note.position` state.
 
@@ -469,7 +469,7 @@ firebase.initializeApp(config);
 const database = firebase.database();
 ```
 
-Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!
+Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods. 
 
 🚀 Create a file,  `firebasedb.js` in your `src/` directory. And since we're using npm to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
 
@@ -490,10 +490,11 @@ import * as firebasedb from '../firebasedb'
 // to get firebasedb.fetchNotes etc...
 ```
 
+*Note: if the linter complains about using default just add the other functions you'll probably need here. Like `updateNote`, etc. 
 
 ## Data Structure
 
-Firebase stores everything as JSON — in fact the whole thing can be thought of as a JSON tree.  This works pretty well with how we've been thinking of our notes app data-structures.   Everything we needed we stored in a Map, which essentially is a javascript object called notes, with individual notes underneath it stored by key.  We created our own key but now Firebase will just handle all the data storage for us.   All we need to do is figure out how.
+Firebase stores everything as JSON — in fact the whole thing can be thought of as a JSON tree.  This works pretty well with how we've already been thinking of our notes app data-structures.   Everything we needed we stored in a Map, which essentially is a javascript object called notes, with individual notes underneath it stored by key.  We created our own key but now Firebase will just handle all the data storage for us. All we need to do is figure out how.
 
 
 Here's what our data might look like in firebase:
@@ -527,7 +528,8 @@ What we'll want to do is at some point early on subscribe to `value` events on s
 
 ```javascript
 firebase.database().ref('notes').on('value', function(snapshot) {
-  // do something with snapshot.val()
+  const newNoteState = snapshot.val();
+  // do something with new note state
 });
 ```
 
@@ -535,7 +537,7 @@ In our React App where is the right place to initiate retrieving values?
 
 If you thought `componentDidMount()` you are exactly right!
 
-🚀 Add a call from your App's `componentDidMount` method to a method in your firebase module. This method should take a callback as an argument!  This callback is critical as it is where you will take the results (the `snapshot`) and run `setState` in *App* with the results!
+🚀 Add a call from your App's `componentDidMount` method to a method in your firebasedb module. This method should take a callback as an argument!  This callback is critical as it is where you will take the results (the `snapshot`) and run `setState` in *App* with the results!
 
 Your `componentDidMount()` function might look something like this:
 
@@ -559,7 +561,7 @@ We have a few methods so far that set state:
 * delete note
 
 
-We've been using Immutable.js methods for our state changes, but now we need to push our note state up to Firebase rather than just dealing with it locally.   What we are going to do is instead of running `setState` on our local App component `notes` state,  we are instead going to just push our changes up to Firebase.  Then Firebase will essentially return a new notes state for us via the stuff we did above.  
+We've been using Immutable.js methods for our state changes, but now we need to push our note state up to Firebase rather than dealing with it locally.   What we are going to do is instead of running `setState` on our local App component `notes` state,  we are instead going to just push our changes up to Firebase!  Then Firebase will essentially return a new notes state for us via the stuff we did above.
 
 Let's write these functions in our firebase module to do these ops.
 
@@ -571,7 +573,7 @@ Since we already have access to the `id` which is the `key` for each object in o
 
 ```javascript
 firebase.database().ref('notes').child(id).remove(); // update similarly
-// push doesn't take an id, but returns a new auto-generated one
+// ref('notes').push(newNote) doesn't take an id, but returns a new auto-generated one
 ```
 
 
