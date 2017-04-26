@@ -199,7 +199,7 @@ The answer could be displayed as a [simple modal](https://www.w3schools.com/howt
 
 ## Styling
 
-Now get it looking good!  If you need suggestions on how to improve your design come by any of our office hours.  This assignment will be partially graded on styling.  The minimum effort would be to do something like the primitive mockups or and equivalent attempt at improving the design of buzzfeed.
+Now get it looking good!  If you need suggestions on how to improve your design come by any of our office hours.  This assignment will be partially graded on styling.  The minimum effort would be to do something like the primitive mockups or an equivalent attempt at improving the design of buzzfeed.
 
 
 ## And You Are Done!
