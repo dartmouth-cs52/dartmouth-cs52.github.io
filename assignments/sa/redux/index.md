@@ -223,13 +223,6 @@ Our `CountReducer` gets called with actions.  When it is called with the 2 actio
 
 The Redux store is the main class responsible for bringing it all together.  The store is initialized with the reducers and knows when and how to call them. The store contains our state data and contains the dispatch functionality that we need to trigger actions. It is what holds it all together.
 
-At this point we want to integrate our store with our router, we can do this by installing another package ([docs](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux)):
-
-```javascript
-npm install --save react-router-redux@next
-```
-
-
 Just a tiny bit more boilerplate, I promise.
 
 🚀 Add the following to your root/main `index.js` file.
@@ -317,6 +310,7 @@ Some things to note about the this component:
 1. `mapStateToProps`.  This is a simple function that takes the full global state as an argument and maps some part or parts of it this components props.  The mapping is a simple object with key: value pairs. As is everything!
 1. `connect`.  This is the magic that connects the component to Redux.  It takes 2 arguments: mapStateToProps and mapDispatchToProps and returns a new version of the component.
 1. `props.count`.  Check it, passed into props from Redux.
+1. `withRouter`. Allows you to update components that are not "route components" (i.e. `<Route component={SomeConnectedThing}/>`) with redux
 
 
 🚀 Add `<Counter />` to the render method of one of the components that are currently displaying like *Welcome*
