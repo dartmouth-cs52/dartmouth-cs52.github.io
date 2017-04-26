@@ -238,32 +238,20 @@ Just a tiny bit more boilerplate, I promise.
 // at the top
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
 import reducers from './reducers';
 
-// Create a history of your choosing (we're using a browser history in this case)
-const history = createHistory();
-
-// Build the middleware for intercepting and dispatching navigation actions
-const middleware = routerMiddleware(history);
-
-// this creates the store with the reducers, applying the middleware for navigating, and does some other stuff to initialize devtools
-const store = createStore(
-  reducers, {}, compose(
-  applyMiddleware(middleware),
-  window.devToolsExtension ? window.devToolsExtension() : f => f,
+// this creates the store with the reducers, and does some other stuff to initialize devtools
+const store = createStore(reducers, {}, compose(
+  applyMiddleware(),
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 ));
-
 
 // replace your ReactDOM render with the following
 // note this uses the Router stuff from SA5
-// notice how instead of Router from ReactRouter we are now used ConnectedRouter
 const App = (props) => {
   return (
     <Provider store={store}>
-      { /* ConnectedRouter will use the store from Provider automatically */ }
-      <ConnectedRouter history={history}>
+      <Router>
         <div>
           <Nav />
           <Switch>
@@ -273,13 +261,12 @@ const App = (props) => {
             <Route component={FallBack} />
           </Switch>
         </div>
-      </ConnectedRouter>
+      </Router>
     </Provider>
   );
 };
 
 ReactDOM.render(<App />, document.getElementById('main'));
-
 ```
 
 
