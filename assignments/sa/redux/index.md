@@ -1,4 +1,5 @@
 ---
+
 layout: page
 title: ""
 published: true
@@ -220,7 +221,13 @@ Our `CountReducer` gets called with actions.  When it is called with the 2 actio
 
 ### Initialize Store
 
-The Redux store is the main class responsible for bringing it all together.  The store is initialized with the reducers and knows when and how to call them. The store contains our state data and contains the dispatch functionality that we need to trigger actions.   It is what holds it all together.
+The Redux store is the main class responsible for bringing it all together.  The store is initialized with the reducers and knows when and how to call them. The store contains our state data and contains the dispatch functionality that we need to trigger actions. It is what holds it all together.
+
+At this point we want to integrate our store with our router, we can do this by installing another package ([docs](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux)):
+
+```javascript
+npm install --save react-router-redux@next
+```
 
 
 Just a tiny bit more boilerplate, I promise.
@@ -231,23 +238,47 @@ Just a tiny bit more boilerplate, I promise.
 // at the top
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 import reducers from './reducers';
 
+// Create a history of your choosing (we're using a browser history in this case)
+const history = createHistory();
 
-// this creates the store with the reducers, and does some other stuff to initialize devtools
-const store = createStore(reducers, {}, compose(
-  applyMiddleware(),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+// Build the middleware for intercepting and dispatching navigation actions
+const middleware = routerMiddleware(history);
+
+// this creates the store with the reducers, applying the middleware for navigating, and does some other stuff to initialize devtools
+const store = createStore(
+  reducers, {}, compose(
+  applyMiddleware(middleware),
+  window.devToolsExtension ? window.devToolsExtension() : f => f,
 ));
 
 
-//replace your ReactDOM render with the following
-// note this uses the Router stuff from last week
-ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
-  </Provider>
-  , document.getElementById('main'));
+// replace your ReactDOM render with the following
+// note this uses the Router stuff from SA5
+// notice how instead of Router from ReactRouter we are now used ConnectedRouter
+const App = (props) => {
+  return (
+    <Provider store={store}>
+      { /* ConnectedRouter will use the store from Provider automatically */ }
+      <ConnectedRouter history={history}>
+        <div>
+          <Nav />
+          <Switch>
+            <Route exact path="/" component={Welcome} />
+            <Route path="/about" component={About} />
+            <Route exact path="/test/:id" component={Test} />
+            <Route component={FallBack} />
+          </Switch>
+        </div>
+      </ConnectedRouter>
+    </Provider>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('main'));
 
 ```
 
@@ -270,6 +301,7 @@ Now we should make some components that make use of our Redux setup!  These will
 ```javascript
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 // this can be dumb or smart component - connect works with either
 const Counter = (props) => {
@@ -281,14 +313,15 @@ const Counter = (props) => {
 };
 
 // connects particular parts of redux state to this components props
-const mapStateToProps = (state) => (
+const mapStateToProps = state => (
   {
     count: state.count,
   }
 );
 
 // react-redux glue -- outputs Container that know state in props
-export default connect(mapStateToProps, null)(Counter);
+// new way to connect with react router 4
+export default withRouter(connect(mapStateToProps, null)(Counter));
 ```
 
 
@@ -312,6 +345,8 @@ You should now see it rendering with a value of 0.  This value is coming from th
 ```javascript
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
 
 import { increment, decrement } from '../actions';
 
@@ -324,9 +359,9 @@ const Controls = (props) => {
   );
 };
 
-
 // react-redux glue -- outputs Container that knows how to call actions
-export default connect(null, { increment, decrement })(Controls);
+  // new way to connect with react router 4
+export default withRouter(connect(null, { increment, decrement })(Controls));
 ```
 
 
@@ -359,3 +394,5 @@ Last thing!  Try opening up the Redux Chrome DevTools and play with the timeline
 
 * [http://redux.js.org/index.html](http://redux.js.org/index.html)
 * [https://css-tricks.com/learning-react-redux/](https://css-tricks.com/learning-react-redux/)
+* [Redux integration with React Router](https://reacttraining.com/react-router/web/guides/redux-integration)
+* [React Router Redux Docs](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux)
