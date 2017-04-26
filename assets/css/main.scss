@@ -114,6 +114,11 @@ img.tiny, .tiny img {
 .main-content .highlighter-rouge pre.highlight, .remark-code, .remark-inline-code {
   background: rgba(238,238,255, 0.33) !important;
 }
+/*need to override background to show box shadow*/
+.main-content .example.highlighter-rouge pre.highlight, .remark-code, .remark-inline-code {
+  background: rgba(145, 145, 157, 0.19) !important;
+}
+
 
 /*for inline code instead more mild effect*/
 .main-content code.highlighter-rouge, .remark-inline-code {

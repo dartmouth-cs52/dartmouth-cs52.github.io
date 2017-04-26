@@ -84,6 +84,7 @@ For instance an action might be:
   video: videoID
 }
 ```
+{: .example}
 
 Actions ensure that no views or callbacks will write to the state. An action does not alter state itself,  it expresses an intent for the state to change. All actions are processed by associated reducers in a centralized manner.  Remember, actions are just plain old objects, they can be logged and stored, and replayed even!
 
@@ -228,38 +229,26 @@ Just a tiny bit more boilerplate, I promise.
 🚀 Add the following to your root/main `index.js` file.
 
 ```javascript
-// at the top
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
+
 import reducers from './reducers';
+
+import App from './components/app';
 
 // this creates the store with the reducers, and does some other stuff to initialize devtools
 const store = createStore(reducers, {}, compose(
   applyMiddleware(),
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  window.devToolsExtension ? window.devToolsExtension() : f => f,
 ));
 
-// replace your ReactDOM render with the following
-// note this uses the Router stuff from SA5
-const App = (props) => {
-  return (
-    <Provider store={store}>
-      <Router>
-        <div>
-          <Nav />
-          <Switch>
-            <Route exact path="/" component={Welcome} />
-            <Route path="/about" component={About} />
-            <Route exact path="/test/:id" component={Test} />
-            <Route component={FallBack} />
-          </Switch>
-        </div>
-      </Router>
-    </Provider>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById('main'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+, document.getElementById('main'));
 ```
 
 
