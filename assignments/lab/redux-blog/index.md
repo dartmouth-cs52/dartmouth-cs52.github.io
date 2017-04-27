@@ -113,14 +113,14 @@ We're going to use some routes to set up our app with different "pages".
 
 
 ```html
-<Route path="/" component={App}>
-  <IndexRoute component={Index} />
-  <Route path="posts/new" component={New} />
-  <Route path="posts/:id" component={Show} />
-</Route>
+<Switch>
+  <Route exact path="/" component={Posts} />
+  <Route path="/posts/new" component={NewPost} />
+  <Route exact path="/post/:id" component={Post} />
+</Switch>
 ```
 
-This is just the basics, feel free to expand on this. For reference it might help to look back on the [routes workshop](../workshops/routing).
+This is just the basics, feel free to expand on this. For reference it might help to look back on the [routes short assignment](../sa/routing).
 
 
 ### App
