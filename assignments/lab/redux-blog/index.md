@@ -130,17 +130,17 @@ Is a simple component that simply renders a *NavBar* component and the `{props.c
 
 ### NavBar
 
-A simple component that renders a nav with two `<Link>` react-router components such as the following:
+A simple component that renders a nav with two `<NavLink>` `react-router-dom` components such as the following:
 
-* `<Link to="/">your site name</Link>`
-* `<Link to="posts/new">new post</Link>`
+* `<NavLink to="/">Jason&apos;s Blog</NavLink>`
+* `<NavLink to="/posts/new">new post</NavLink>`
 
 
-### Index
+### Posts
 
 This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`.
 
-Try the curl commands above,  you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `Link` elements to `posts/postid` when you render the posts. Each post should be clickable to open it full page using the router.
+Try the curl commands above,  you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `NavLink` elements to `posts/:postid` when you render the posts. Each post should be clickable to open it full page using the router.
 
 Min specs at a glance:
 
@@ -150,21 +150,21 @@ Min specs at a glance:
 
 Hint: As this is a connected component that relies on the list of posts, you'll want to run your `fetchPosts()` ActionCreator from `componentWillMount`.
 
-### New
+### NewPost
 
 Component to create a new blog post (you can reuse this component for editing posts if you like). Should be a connected component that can trigger actions (ActionCreators).
 
-### Show + edit
+### Post (display and edit)
 
-This is the component that gets loaded when you want to see the full rendered contents of a single post.  *Show* should display the full content of the post (selected by the ID that is passed in through `this.props.params.id`.  This post id parameter will come from the react-router when you navigate to:  `/posts/:postID`.  Where does postID come from in general?  It is automatically assigned to your post by the API when you create the post.
+This is the component that gets loaded when you want to see the full rendered contents of a single post.  *Show* should display the full content of the post (selected by the ID that is passed in through `this.props.match.params.id`.  This post id parameter will come from the react-router when you navigate to:  `/posts/:postid`.  Where does postID come from in general?  It is automatically assigned to your post by the API when you create the post.
 
-Your *Show* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:id/edit` for instance.  Personal preference here.
+Your *Post* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:postid/edit` for instance.  Personal preference here.
 
 Note for now the API server only supports title, tags, content as fields.  In part 2 you will implement your own server and can add or change fields then.
 
 Min specs at a glance:
 
-* render full content of post at route `/posts/:id`
+* render full content of post at route `/posts/:postid`
 * render markdown
 * allow editing of post fields
   * either in separate form or as individual editable fields
