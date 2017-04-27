@@ -20,6 +20,7 @@ permalink: /lectures/
 * [4/18 Projects](07_project_intro)
 * [4/20 Advanced JS](08_advanced_js)
 * [4/25 Routing](09_routing)
+* [4/27 Redux](10_redux)
 
 
 

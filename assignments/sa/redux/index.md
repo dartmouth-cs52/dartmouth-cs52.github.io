@@ -299,7 +299,7 @@ Some things to note about the this component:
 1. `mapStateToProps`.  This is a simple function that takes the full global state as an argument and maps some part or parts of it this components props.  The mapping is a simple object with key: value pairs. As is everything!
 1. `connect`.  This is the magic that connects the component to Redux.  It takes 2 arguments: mapStateToProps and mapDispatchToProps and returns a new version of the component.
 1. `props.count`.  Check it, passed into props from Redux.
-1. `withRouter`. Allows you to update components that are not "route components" (i.e. `<Route component={SomeConnectedThing}/>`) with redux
+1. `withRouter`. Gives you access to history and match in your component, not required for Route components but is for (i.e. `<Route component={SomeConnectedThing}/>`) `connect`ed redux components. An unfortunate part of react-router4.
 
 
 🚀 Add `<Counter />` to the render method of one of the components that are currently displaying like *Welcome*
