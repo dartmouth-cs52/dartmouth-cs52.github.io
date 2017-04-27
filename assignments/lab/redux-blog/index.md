@@ -321,15 +321,76 @@ Earlier, we defined are state as looking something like:
 ```javascript
 posts: {
   all: [],
-  post: null,
+  post: {},
 }
 ```
 
-Where `all` would contain an array of all posts, and `post` would be the current individually displaying post (for *Show*).
+Where `all` would contain an array of all posts, and `post` would be the current individually displaying post (for *Post*).
 
 For FETCH_POSTS you would return the state object with the `all` property set to the new posts.  For FETCH_POST return that single post.  
 
 Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html).  You are also welcome to implement it with multiple reducers if that is easier to reason about.
+
+#### react-router-redux
+
+We need an additional library that help sync our routes with the application state that is managed by redux. We are going to use 'react-redux-router' [(docs)](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux).
+
+We want to setup deep integration with `react-redux-router`. In the redux SA, we setup shallow integration by using `withRouter` to wrap our connected components with actions and states. However, if we want to be able to navigate by dispatching actions, we need to implement deep integration.
+
+Some things to note that we need to do different in the router
+
+- we are using `ConnectedRouter` instead of `BrowserRouter` in the routing SA
+- we have an additional middleware to add to our store - `routerMiddleware(history)`
+- we have an additional reducer to add to our combinedReducers -     `router: routerReducer`
+
+The full example from the docs is below
+
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+
+import createHistory from 'history/createBrowserHistory'
+import { Route } from 'react-router'
+
+import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+
+import reducers from './reducers' // Or wherever you keep your reducers
+
+// Create a history of your choosing (we're using a browser history in this case)
+const history = createHistory()
+
+// Build the middleware for intercepting and dispatching navigation actions
+const middleware = routerMiddleware(history)
+
+// Add the reducer to your store on the `router` key
+// Also apply our middleware for navigating
+const store = createStore(
+  combineReducers({
+    ...reducers,
+    router: routerReducer
+  }),
+  applyMiddleware(middleware)
+)
+
+// Now you can dispatch navigation actions from anywhere!
+// store.dispatch(push('/foo'))
+
+ReactDOM.render(
+  <Provider store={store}>
+    { /* ConnectedRouter will use the store from Provider automatically */ }
+    <ConnectedRouter history={history}>
+      <div>
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+        <Route path="/topics" component={Topics}/>
+      </div>
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('root')
+  ```
 
 
 ## And you are on your way!
