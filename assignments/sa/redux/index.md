@@ -19,9 +19,9 @@ Redux is a fancy state management system that we'll be using to build our blog p
 
 ## Let's Start
 
-🚀 We're going to keep working on your starterpack for this assignment. So just dig up that repo and work there!  At this point you should have a starterpack that has webpack+babel+eslint+sass+react+reactrouter.
+🚀 We're going to keep working on your starterpack for this assignment. So just dig up that repo and work there!  At this point you should have a starterpack that has webpack+babel+eslint+sass+react+reactrouter.  Remember to just push your new stuff to this. For grading we'll know which commits to look at.  You want to keep building this up.
 
-For this workshop we're just going to add React Router to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter+redux! Wow.
+For this workshop we're just going to add Redux to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter+redux! Wow.
 
 
 ## Redux
