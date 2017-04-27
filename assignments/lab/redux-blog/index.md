@@ -29,7 +29,7 @@ We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo
 
 First we should do some basic setup steps.  
 
-🚀 You should start from your react+redux+starter from the [redux workshop](../workshops/redux) or you can grab the **with_redux** branch from the [js-react-starter](https://github.com/dartmouth-cs52/js-react-starter).  Do the usual: create your own repo and change the remote.
+🚀 You should start from your react+redux+starter from the [redux short assignment](../sa/redux). Do the usual: create your own repo and pull from the redux SA remote.
 
 🚀 Webpack. When a route reloads to an error webpack-dev-server needs to know that it should always serve up our app from index.html even when we end up asking it for another route.
 
