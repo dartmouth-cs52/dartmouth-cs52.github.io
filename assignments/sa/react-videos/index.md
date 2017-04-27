@@ -689,7 +689,7 @@ const VideoDetail = ({ video }) => {
 export default VideoDetail;
 ```
 
-🚀 And don't forget to add it in to the right place in `index.js`, this should be old hat for you know now.
+🚀 And don't forget to add it in to the right place in `index.js`, this should be old hat for you now.
 
 ```javascript
 // at the top-ish
