@@ -29,7 +29,7 @@ We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo
 
 First we should do some basic setup steps.  
 
-🚀 You should start from your react+redux+starter from the [redux workshop](../workshops/redux) or you can grab the **with_redux** branch from the [js-react-starter](https://github.com/dartmouth-cs52/js-react-starter).  Do the usual: create your own repo and change the remote.
+🚀 You should start from your react+redux+starter from the [redux short assignment](../sa/redux). Do the usual: create your own repo and pull from the redux SA remote.
 
 🚀 Webpack. When a route reloads to an error webpack-dev-server needs to know that it should always serve up our app from index.html even when we end up asking it for another route.
 
@@ -68,9 +68,10 @@ The API has the following endpoints:
 * DELETE `/api/posts/:postID`
   deletes the post found at `postID`
 
-
+###### API key
 For each of these you need to append an api key.  This key can just be your `firstinitial_lastname`.   You can test the api using postman or curl.
 
+###### Testing APIs from CLI with curl
 There is a command that you can run in Terminal called `curl` that can fetch remote data.  Here's how you would use it for testing the api server.  This will also come in handy when you have to create the api server next week!
 
 ```bash
@@ -112,14 +113,14 @@ We're going to use some routes to set up our app with different "pages".
 
 
 ```html
-<Route path="/" component={App}>
-  <IndexRoute component={Index} />
-  <Route path="posts/new" component={New} />
-  <Route path="posts/:id" component={Show} />
-</Route>
+<Switch>
+  <Route exact path="/" component={Posts} />
+  <Route path="/posts/new" component={NewPost} />
+  <Route exact path="/post/:id" component={Post} />
+</Switch>
 ```
 
-This is just the basics, feel free to expand on this. For reference it might help to look back on the [routes workshop](../workshops/routing).
+This is just the basics, feel free to expand on this. For reference it might help to look back on the [routes short assignment](../sa/routing).
 
 
 ### App
@@ -129,17 +130,17 @@ Is a simple component that simply renders a *NavBar* component and the `{props.c
 
 ### NavBar
 
-A simple component that renders a nav with two `<Link>` react-router components such as the following:
+A simple component that renders a nav with two `<NavLink>` `react-router-dom` components such as the following:
 
-* `<Link to="/">your site name</Link>`
-* `<Link to="posts/new">new post</Link>`
+* `<NavLink to="/">Jason&apos;s Blog</NavLink>`
+* `<NavLink to="/posts/new">new post</NavLink>`
 
 
-### Index
+### Posts
 
 This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`.
 
-Try the curl commands above,  you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `Link` elements to `posts/postid` when you render the posts. Each post should be clickable to open it full page using the router.
+Try the curl commands above,  you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `NavLink` elements to `posts/:postid` when you render the posts. Each post should be clickable to open it full page using the router.
 
 Min specs at a glance:
 
@@ -149,21 +150,21 @@ Min specs at a glance:
 
 Hint: As this is a connected component that relies on the list of posts, you'll want to run your `fetchPosts()` ActionCreator from `componentWillMount`.
 
-### New
+### NewPost
 
 Component to create a new blog post (you can reuse this component for editing posts if you like). Should be a connected component that can trigger actions (ActionCreators).
 
-### Show + edit
+### Post (display and edit)
 
-This is the component that gets loaded when you want to see the full rendered contents of a single post.  *Show* should display the full content of the post (selected by the ID that is passed in through `this.props.params.id`.  This post id parameter will come from the react-router when you navigate to:  `/posts/:postID`.  Where does postID come from in general?  It is automatically assigned to your post by the API when you create the post.
+This is the component that gets loaded when you want to see the full rendered contents of a single post.  *Show* should display the full content of the post (selected by the ID that is passed in through `this.props.match.params.id`.  This post id parameter will come from the react-router when you navigate to:  `/posts/:postid`.  Where does postID come from in general?  It is automatically assigned to your post by the API when you create the post.
 
-Your *Show* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:id/edit` for instance.  Personal preference here.
+Your *Post* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:postid/edit` for instance.  Personal preference here.
 
 Note for now the API server only supports title, tags, content as fields.  In part 2 you will implement your own server and can add or change fields then.
 
 Min specs at a glance:
 
-* render full content of post at route `/posts/:id`
+* render full content of post at route `/posts/:postid`
 * render markdown
 * allow editing of post fields
   * either in separate form or as individual editable fields
@@ -177,7 +178,7 @@ We will be using [redux](http://redux.js.org/) for our application state.  We're
 ```javascript
 posts: {
   all: [],
-  post: null,
+  post: {},
 }
 ```
 
@@ -320,15 +321,76 @@ Earlier, we defined are state as looking something like:
 ```javascript
 posts: {
   all: [],
-  post: null,
+  post: {},
 }
 ```
 
-Where `all` would contain an array of all posts, and `post` would be the current individually displaying post (for *Show*).
+Where `all` would contain an array of all posts, and `post` would be the current individually displaying post (for *Post*).
 
 For FETCH_POSTS you would return the state object with the `all` property set to the new posts.  For FETCH_POST return that single post.  
 
 Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html).  You are also welcome to implement it with multiple reducers if that is easier to reason about.
+
+#### react-router-redux
+
+We need an additional library that help sync our routes with the application state that is managed by redux. We are going to use 'react-redux-router' [(docs)](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux).
+
+We want to setup deep integration with `react-redux-router`. In the redux SA, we setup shallow integration by using `withRouter` to wrap our connected components with actions and states. However, if we want to be able to navigate by dispatching actions, we need to implement deep integration.
+
+Some things to note that we need to do different in the router
+
+- we are using `ConnectedRouter` instead of `BrowserRouter` in the routing SA
+- we have an additional middleware to add to our store - `routerMiddleware(history)`
+- we have an additional reducer to add to our combinedReducers -     `router: routerReducer`
+
+The full example from the docs is below
+
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+
+import createHistory from 'history/createBrowserHistory'
+import { Route } from 'react-router'
+
+import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+
+import reducers from './reducers' // Or wherever you keep your reducers
+
+// Create a history of your choosing (we're using a browser history in this case)
+const history = createHistory()
+
+// Build the middleware for intercepting and dispatching navigation actions
+const middleware = routerMiddleware(history)
+
+// Add the reducer to your store on the `router` key
+// Also apply our middleware for navigating
+const store = createStore(
+  combineReducers({
+    ...reducers,
+    router: routerReducer
+  }),
+  applyMiddleware(middleware)
+)
+
+// Now you can dispatch navigation actions from anywhere!
+// store.dispatch(push('/foo'))
+
+ReactDOM.render(
+  <Provider store={store}>
+    { /* ConnectedRouter will use the store from Provider automatically */ }
+    <ConnectedRouter history={history}>
+      <div>
+        <Route exact path="/" component={Home}/>
+        <Route path="/about" component={About}/>
+        <Route path="/topics" component={Topics}/>
+      </div>
+    </ConnectedRouter>
+  </Provider>,
+  document.getElementById('root')
+  ```
 
 
 ## And you are on your way!
