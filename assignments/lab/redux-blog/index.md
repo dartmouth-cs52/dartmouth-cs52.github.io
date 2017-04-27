@@ -68,9 +68,10 @@ The API has the following endpoints:
 * DELETE `/api/posts/:postID`
   deletes the post found at `postID`
 
-
+###### API key
 For each of these you need to append an api key.  This key can just be your `firstinitial_lastname`.   You can test the api using postman or curl.
 
+###### Testing APIs from CLI with curl
 There is a command that you can run in Terminal called `curl` that can fetch remote data.  Here's how you would use it for testing the api server.  This will also come in handy when you have to create the api server next week!
 
 ```bash
