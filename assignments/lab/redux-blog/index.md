@@ -178,7 +178,7 @@ We will be using [redux](http://redux.js.org/) for our application state.  We're
 ```javascript
 posts: {
   all: [],
-  post: null,
+  post: {},
 }
 ```
 
