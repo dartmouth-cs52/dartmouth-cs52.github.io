@@ -25,9 +25,9 @@ title: Assignments
 * [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/10
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/13
 * [Lab 3: React Notes](lab/react-notes) - DUE 4/24
-* Lab 4: Redux Blog Frontend
-* Lab 5 Part 2: Redux Blog + API
-* Lab 5 Part 3: Redux Blog + Auth
+* [Lab 4: Redux Blog Frontend](lab/redux-blog) - DUE 5/3
+* Lab 5 Part 1: Redux Blog + API - ~DUE 5/8
+* Lab 5 Part 2: Redux Blog + Auth + Photos - ~DUE 5/12
 
 
 ### 5-ish Short in-class quizzes:  10%

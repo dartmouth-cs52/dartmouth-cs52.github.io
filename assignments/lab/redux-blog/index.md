@@ -1,6 +1,6 @@
 ---
 layout: page
-title: HW 4
+title: Lab 4
 published: true
 ---
 
@@ -9,19 +9,21 @@ published: true
 
 ![](img/redux.png)
 
-We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be a blog,  could be photo's or really anything you want. As long as there are individual post items that have some content that need to be saved to a database!
+We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be a blog could be anything you want. As long as there are individual post items that have some content that need to be saved to a database! Aside from the core functionality of creating a post with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.
 
 
 <iframe width="640" height="480" src="https://www.youtube.com/embed/jWPw31kUTmw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 
-### Part 1 HW4
+### Part 1 Lab 4
 
-We'll build out a Create+Update+Delete (CRUD) style blogging app using React and Redux and React-Router.  We will use an API server hosted at: `cs52-blog.herokuapp.com`
+We'll build out a Create+Update+Delete (CRUD) style blogging app using React and Redux and React-Router.  We will use an API server hosted at: `cs52-blog.herokuapp.com`.   
 
-### Part 2 HW5
+For now the API only supports 'title', 'content', 'tags', but even with just those fields (especially if content supports markdown) you could think  of other things that you could display. Menu Items for a restaurant. Or even quiz answers (you'll be able to add fields in Lab 5).
 
-We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo based API server.  Finally FULL-STACK!
+### Part 2 Lab 5
+
+We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo based API server.  Finally FULL-STACK!  You'll be able to modify the data model at this point and really make your platform do anything.
 
 
 ## Some Setup
@@ -29,25 +31,7 @@ We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo
 
 First we should do some basic setup steps.  
 
-🚀 You should start from your react+redux+starter from the [redux short assignment](../sa/redux). Do the usual: create your own repo and pull from the redux SA remote.
-
-🚀 Webpack. When a route reloads to an error webpack-dev-server needs to know that it should always serve up our app from index.html even when we end up asking it for another route.
-
-
-```javascript
-//add to webpack.config.js
-devServer: {
-  port: 8080,
-  historyApiFallback: {
-    index: 'index.html',
-  },
-},
-```
-
-🚀 We should also make sure some of our paths in `index.html` are correct. Make sure each of the build paths starts with / like `/build/bundle.css` and `/build/bundle.js`.
-
-
-Ok, now that we got that out of the way. Let's dig in!
+🚀 You should start from your awesome up to date starterpack from the [redux short assignment](../sa/redux). Do the usual: grab the github classroom repository from canvas, clone it, add your starter as a separate remote and pull in some redux goodness.
 
 
 ## CRUD API
@@ -104,7 +88,6 @@ Try these out.  Run the create new post one a couple of times to populate your d
 
 
 
-
 ## Routes
 
 We're going to use some routes to set up our app with different "pages".  
@@ -116,7 +99,8 @@ We're going to use some routes to set up our app with different "pages".
 <Switch>
   <Route exact path="/" component={Posts} />
   <Route path="/posts/new" component={NewPost} />
-  <Route exact path="/post/:id" component={Post} />
+  <Route path="/post/:postID" component={Post} />
+  <Route render={() => (<div>post not found </div>)} />
 </Switch>
 ```
 
@@ -125,15 +109,15 @@ This is just the basics, feel free to expand on this. For reference it might hel
 
 ### App
 
-Is a simple component that simply renders a *NavBar* component and the `{props.children}` passed in by the router. You can think of this as your main layout — you can rename it to that if you prefer!
-
+Is a simple component that simply renders a *NavBar* component and the main route components. You can think of this as your main layout — you can rename it to that if you prefer!
 
 ### NavBar
 
 A simple component that renders a nav with two `<NavLink>` `react-router-dom` components such as the following:
 
-* `<NavLink to="/">Jason&apos;s Blog</NavLink>`
+* `<NavLink exact to="/">My Super Awesome Blog</NavLink>`
 * `<NavLink to="/posts/new">new post</NavLink>`
+
 
 
 ### Posts
@@ -148,23 +132,23 @@ Min specs at a glance:
 * show title and tags (for now)
 * use post id to link to full view
 
-Hint: As this is a connected component that relies on the list of posts, you'll want to run your `fetchPosts()` ActionCreator from `componentWillMount`.
+Hint: As this is a connected component that relies on the list of posts, you'll want to run your `fetchPosts()` ActionCreator from `componentDidMount`.
 
 ### NewPost
 
-Component to create a new blog post (you can reuse this component for editing posts if you like). Should be a connected component that can trigger actions (ActionCreators).
+Component to create a new blog post. Should be a connected component that can trigger actions (ActionCreators). You could have one component that is used for create, show, and update. Personal preference on this, but it might be easier at first to have a simple new post component and then refactor later to have one full featured component.
 
 ### Post (display and edit)
 
-This is the component that gets loaded when you want to see the full rendered contents of a single post.  *Show* should display the full content of the post (selected by the ID that is passed in through `this.props.match.params.id`.  This post id parameter will come from the react-router when you navigate to:  `/posts/:postid`.  Where does postID come from in general?  It is automatically assigned to your post by the API when you create the post.
+This is the component that gets loaded when you want to see the full rendered contents of a single post.  *Post* should display the full content of the post (selected by the ID that is passed in through `this.props.match.params.postID`.  This post id parameter will come from the react-router when you navigate to:  `/posts/:postID`.  Where does postID come from in general?  It is automatically assigned to your post by the API when you create the post (similarly to how firebase assigned automatic keys).
 
-Your *Post* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:postid/edit` for instance.  Personal preference here.
+Your *Post* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:postID/edit` for instance.  Personal preference here.
 
 Note for now the API server only supports title, tags, content as fields.  In part 2 you will implement your own server and can add or change fields then.
 
 Min specs at a glance:
 
-* render full content of post at route `/posts/:postid`
+* render full content of post at route `/posts/:postID`
 * render markdown
 * allow editing of post fields
   * either in separate form or as individual editable fields
@@ -173,10 +157,10 @@ This is a connected component that can both trigger actions and is connected to 
 
 ## Redux
 
-We will be using [redux](http://redux.js.org/) for our application state.  We're going to just have 1 reducer to start with: `postsReducer`.   This reducer will be associated with the key `posts` and will return an object to look something like this initially:
+We will be using [redux](http://redux.js.org/) for our application state.  We're going to just have 1 reducer to start with: `postsReducer`.   This reducer will be associated with the key `posts` in our `combineReducers` and will return an object to look something like this initially:
 
 ```javascript
-posts: {
+{
   all: [],
   post: {},
 }
@@ -185,7 +169,7 @@ posts: {
 
 ## Actions
 
-Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer in this implementation. However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place.
+Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer currently. This is because we are just updating and reloading all notes after a delete say, rather than manually editing the list. If you had millions of posts you might want to not have to do a full fetch of all posts on a delete, but in our case it doesn't matter.  However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place. IE. Don't do any api calls from anywhere else in the app, only in ActionCreators.
 
 ```javascript
 export const ActionTypes = {
@@ -199,7 +183,7 @@ export const ActionTypes = {
 
 Now you might ask,  how the heck do we fetch from an API using actions!?
 
-Don't worry, this part I'll walk you through.
+Don't worry, this part we'll walk you through.
 
 ###  Connecting to API
 
@@ -259,6 +243,8 @@ We'll dig more into what middleware is later, but for now what you need to know 
 
 Redux middleware wraps the dispatch function, allowing our `redux-thunk` middleware to process not just actions but also functions.  ActionCreators can now return thunks rather than just actions.  These thunks are functions that are created on the fly to run something later.  Whaaaat?
 
+![](img/reduxwithmiddleware.gif){: .small}
+
 Remember how ActionCreators just return an Action?  Well, what if you want the ActionCreator to first do something, perhaps fetch something from the internet?  Thunks allow this functionality.  Instead of immediately returning an Action object and flowing into the Reducer, we return a function that gets executed and can go off and do some stuff before dispatching the Action.
 
 A redux thunk allows your ActionCreators to return functions that can then dispatch actions.  Quite literally giving them access to a `dispatch` method.
@@ -268,6 +254,8 @@ export function anAction() {
   // ActionCreator returns a function
   // that gets called with dispatch
   return (dispatch) => {
+      // here is where you would do your asynch axios calls
+      // on the completion of which you would dispatch some new action!
       // can now dispatch stuff
       dispatch({ type: 'SOME_ACTION', payload: {stuff: ''} });
   };
@@ -276,11 +264,11 @@ export function anAction() {
 
 Dispatch is a function available in redux that handles distributing actions to reducers. In a connected component when you `mapDispatchToProps` you are wiring certain ActionCreators to automatically be called by `dispatch` like so:
 
-![](img/dispatch.png){: .fancy .small}
+![](img/dispatch.png){:  .small}
 
 With the redux-thunk middleware we are changing how dispatch works slightly.  We enable dispatch to accept not just action objects but also functions. These functions when executed can run asynchronous methods and upon return can manually `dispatch` further actions.  These further actions can be either action objects (what we will be doing) or for more complicated logic can be further thunk functions.
 
-![](img/dipatch+thunk.png){: .fancy .small}
+![](img/dipatch+thunk.png){:  .small}
 
 What we want to do is go and fetch some data from a rest api.  Being able to dispatch things in the middle of an action helps us do this. You'll want to do the `axios` call inside of your returned function.  You would dispatch the action if the promise was resolved and you potentially dispatch an error action in the catch.  You are combining the `redux-thunk` style ActionCreator with the `axios` api call.
 
@@ -291,18 +279,18 @@ Here are the methods that you should have in your `actions/index.js` file:
 ```javascript
 export function fetchPosts() {/* axios get */}
 
-export function createPost(post) {/* axios post */}
+export function createPost(post, history) {/* axios post */}
 
 export function updatePost(post) {/* axios put */}
 
 export function fetchPost(id) {/* axios get */}
 
-export function deletePost(id) {/* axios delete */}
+export function deletePost(id, history) {/* axios delete */}
 ```
 
 Each of these methods will return a function that takes dispatch as its argument, runs some axios call, and then dispatches some action. In the above that ActionType actions are named the same as the functions, however it might help to think of them as FETCH_POSTS_SUCCEEDED for instance.  It is the action that is dispatched to the reducers with the payload results of the asynchronous call.
 
-In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Show* page you would want to be taken back to the Index page.  Simple add `browserHistory.push('/')` to navigate to another page from within your ActionCreator function (you'll need to `import { browserHistory } from 'react-router'` also).  
+In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Post* page you would want to be taken back to the `Posts` page.  Simple add `history.push('/')` to navigate to another page from within your ActionCreator function. But where does history come from?  Unfortunately, only routed components have access to history (not our actions module), so we will have to pass that in to our ActionCreators when they are called.  Add a parameter to any actionCreator that needs to call history like so `this.props.createPost(post, this.props.history)`.
 
 ## Reducers
 
@@ -316,81 +304,20 @@ const rootReducer = combineReducers({
 
 The `postReducer` that you will define will currently only need to respond to 2 ActionTypes:  FETCH_POST, and FETCH_POSTS.
 
-Earlier, we defined are state as looking something like:
+We want our state to look like this:
 
 ```javascript
-posts: {
+const initialState = {
   all: [],
   post: {},
-}
+};
 ```
 
 Where `all` would contain an array of all posts, and `post` would be the current individually displaying post (for *Post*).
 
 For FETCH_POSTS you would return the state object with the `all` property set to the new posts.  For FETCH_POST return that single post.  
 
-Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html).  You are also welcome to implement it with multiple reducers if that is easier to reason about.
-
-#### react-router-redux
-
-We need an additional library that help sync our routes with the application state that is managed by redux. We are going to use 'react-redux-router' [(docs)](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux).
-
-We want to setup deep integration with `react-redux-router`. In the redux SA, we setup shallow integration by using `withRouter` to wrap our connected components with actions and states. However, if we want to be able to navigate by dispatching actions, we need to implement deep integration.
-
-Some things to note that we need to do different in the router
-
-- we are using `ConnectedRouter` instead of `BrowserRouter` in the routing SA
-- we have an additional middleware to add to our store - `routerMiddleware(history)`
-- we have an additional reducer to add to our combinedReducers -     `router: routerReducer`
-
-The full example from the docs is below
-
-```javascript
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-import { createStore, combineReducers, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-
-import createHistory from 'history/createBrowserHistory'
-import { Route } from 'react-router'
-
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
-
-import reducers from './reducers' // Or wherever you keep your reducers
-
-// Create a history of your choosing (we're using a browser history in this case)
-const history = createHistory()
-
-// Build the middleware for intercepting and dispatching navigation actions
-const middleware = routerMiddleware(history)
-
-// Add the reducer to your store on the `router` key
-// Also apply our middleware for navigating
-const store = createStore(
-  combineReducers({
-    ...reducers,
-    router: routerReducer
-  }),
-  applyMiddleware(middleware)
-)
-
-// Now you can dispatch navigation actions from anywhere!
-// store.dispatch(push('/foo'))
-
-ReactDOM.render(
-  <Provider store={store}>
-    { /* ConnectedRouter will use the store from Provider automatically */ }
-    <ConnectedRouter history={history}>
-      <div>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-        <Route path="/topics" component={Topics}/>
-      </div>
-    </ConnectedRouter>
-  </Provider>,
-  document.getElementById('root')
-  ```
+Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html). The spread operator requires an additional [babel plugin](https://babeljs.io/docs/plugins/transform-object-rest-spread/), but it is easy to add to your project. You are also welcome to implement it with multiple reducers if that is easier to reason about.
 
 
 ## And you are on your way!
@@ -412,13 +339,13 @@ If you don't know where to start, remember the steps in creating an React applic
 1. Ship it
 
 
-It might help for the ActionCreator -> Dispatch -> Reducer -> State flow, to try getting one working first.  For instance maybe get the *Show* component working first, the others will come more easily once you have the full path tested with one of them.
+It might help for the ActionCreator -> Dispatch -> Reducer -> State flow, to try getting one working first.  For instance maybe get the *Post* component working first, the others will come more easily once you have the full path tested with one of them.
 
-Don't forget to use the [hw4 slack channel](https://cs52-dartmouth.slack.com/messages/hw4/).
+Don't forget to use the [lab 4 slack channel](https://cs52-dartmouth.slack.com/messages/lab4-blog/).
 
 ## To Turn In
 
-1. GitHub repository URL
+1. GitHub classroom repository URL
 1. your working domain name URL on surge.sh
 1. App should have individual routes for:
   * new
@@ -430,6 +357,7 @@ Don't forget to use the [hw4 slack channel](https://cs52-dartmouth.slack.com/mes
   * delete
   * fetch post by id
   * fetch all posts
+1. should be styled reasonably
 1. your repo should include a README.md file with:
   * a couple sentence description about what you did
   * and what worked / didn’t work
@@ -437,11 +365,10 @@ Don't forget to use the [hw4 slack channel](https://cs52-dartmouth.slack.com/mes
 
 
 
-
 ## Extra Credit
 
-* look snazzy
-* handle axios errors in a graceful way, showing users a nice message rather than just console logging. (hint: new action and error state)
+* make it into something other than a blog platform as long as it has the CRUD functionality
+* handle `axios` errors in a graceful way, showing users a nice message rather than just console logging. (hint: new action and error state)
 * input validation — check that all fields have required values when creating new form for instance.
 * add a filter posts functionality, filter by tags initially.
   * for now our api is limited so additional search will come in part 2
