@@ -104,6 +104,7 @@ name: Course Survey Results
 name: Things That Were Liked
 
 * "Everything has the "coolness" factor	"
+* "awesome awesome awesome tas"
 * "I feel like we're creating real, useful applications from scratch"
 * "I like the short assignments and labs because they are super relevant, helpful and fun to do!	"
 * "I also like doing the workshops in class because it exposes us to new technologies and provides for more hands-on learning, which, in my experience, is how must programmers I know learn best."
@@ -117,6 +118,8 @@ name: Things That Were Liked
 
 ???
 * these are great, so we're doing some things right!
+* sounds like you guys like the labs generally so thats good
+* and the tas
 
 
 
@@ -246,9 +249,6 @@ name: The beginning
 ???
 * multiple parts of webpage that tracked messages in different ways
 * had a messenger window but also unread count
-
-
-
 
 
 
