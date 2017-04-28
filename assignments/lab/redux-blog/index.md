@@ -19,7 +19,7 @@ We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be
 
 We'll build out a Create+Update+Delete (CRUD) style blogging app using React and Redux and React-Router.  We will use an API server hosted at: `cs52-blog.herokuapp.com`.   
 
-For now the API only supports 'title', 'content', 'tags', but even with just those fields (especially if content supports markdown) you could think  of other things that you could display. Menu Items for a restaurant. Or even quiz answers (you'll be able to add fields in Lab 5).
+For now the API only supports 'title', 'content', 'tags', 'cover_url', but even with just those fields (especially if content supports markdown) you could think  of other things that you could display. Menu Items for a restaurant. Or even quiz answers (you'll be able to add fields in Lab 5).
 
 ### Part 2 Lab 5
 
@@ -42,10 +42,10 @@ The API has the following endpoints:
 
 * GET  `/api/posts/`
   returns **only** title, tags, and id for all posts
-  `[[{"id":"",title":"","tags":""},...]`
-* POST `/api/posts/` with post parameters `{'title', 'tags', 'content'}`
+  `[[{"id":"",title":"","tags":"", "cover_url":""},...]`
+* POST `/api/posts/` with post parameters `{'title', 'tags', 'content', 'cover_url'}`
   creates a new post
-* PUT `/api/posts/:postID` with parameters `{'title', 'tags', 'content'}`
+* PUT `/api/posts/:postID` with parameters `{'title', 'tags', 'content', 'cover_url'}`
   will update an entry
 * GET `/api/posts/:postID`
   returns the full post data found at `postID`, including `content`
@@ -66,14 +66,13 @@ curl -X GET "https://cs52-blog.herokuapp.com/api/posts?key=YOURKEY"
 curl -X POST -H "Content-Type: application/json" -d '{
     "title": "first post",
     "tags": "words",
-    "content":  "this is a test post"
+    "content":  "this is a test post",
+    "cover_url": "https://media.giphy.com/media/gyRWkLSQVqlPi/giphy.gif"
 }' "https://cs52-blog.herokuapp.com/api/posts/?key=YOURKEY"
 
 # update by POSTID
 curl -X PUT -H "Content-Type: application/json" -d '{
-    "title": "new title",
-    "tags": "new words",
-    "content":  "old content"
+    "title": "new title"
 }' "https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY"
 
 # fetch 1 by POSTID
@@ -122,15 +121,15 @@ A simple component that renders a nav with two `<NavLink>` `react-router-dom` co
 
 ### Posts
 
-This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`.
+This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`. In your listing you should utilize each posts *cover_url*, *title*, and *tags*. Note: the video demo does not show *cover_url*'s but you should. 😄
 
 Try the curl commands above,  you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `NavLink` elements to `posts/:postid` when you render the posts. Each post should be clickable to open it full page using the router.
 
 Min specs at a glance:
 
 * default page listing all posts
-* show title and tags (for now)
 * use post id to link to full view
+* show *cover_url*, *title*, *tags* in some form - can be a list, can be tiles, whatever you want!
 
 Hint: As this is a connected component that relies on the list of posts, you'll want to run your `fetchPosts()` ActionCreator from `componentDidMount`.
 
@@ -348,9 +347,9 @@ Don't forget to use the [lab 4 slack channel](https://cs52-dartmouth.slack.com/m
 1. GitHub classroom repository URL
 1. your working domain name URL on surge.sh
 1. App should have individual routes for:
-  * new
-  * list view
-  * full show view
+  * new (unless you make this a modal)
+  * list view (default view)
+  * full show view (needs to be a path like posts/:id)
 1. App should make CRUD api calls
   * create
   * update
