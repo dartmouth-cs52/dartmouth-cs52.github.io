@@ -290,6 +290,8 @@ Each of these methods will return a function that takes dispatch as its argument
 
 In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Post* page you would want to be taken back to the `Posts` page.  Simple add `history.push('/')` to navigate to another page from within your ActionCreator function. But where does history come from?  Unfortunately, only routed components have access to history (not our actions module), so we will have to pass that in to our ActionCreators when they are called.  Add a parameter to any actionCreator that needs to call history like so `this.props.createPost(post, this.props.history)`.
 
+⚠️ If you run into a problem where for some reason your ActionCreator seems to run but never dispatches an action, that might be because you are running the unconnected version that you imported rather than the connected version of the function that you get from mapDispatchToProps.  So always remember to run ActionCreators as their `this.props` version because that is what `connect()` does, it gives us a modified version of the function that is run inside of `dispatch`. 
+
 ## Reducers
 
 To start with we'll only need 1 reducer in `reducers/index.js`.  Something like this:
