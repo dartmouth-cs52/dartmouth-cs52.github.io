@@ -16,14 +16,14 @@ brew install node
 brew install mongodb
 ```
 
-🚀 We're going to be building a petition site, where users can sign various petitions. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel. Do the usual: create your own repo and change the remote.
+We're going to be building a petition site, where users can sign various petitions. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.
+
+🚀 Do what you did in [SA4](http://cs52.me/assignments/sa/react-videos/) when pulling from your own starterpack: create your own repo with the classroom link, add a starter remote to express-babel-starter, and pull from it. Then run these following commands to start our new node+express app in dev reloading mode.
 
 ```bash
 npm install
 npm run dev
 ```
-
-This will start our new node+express app in dev reloading mode.
 
 ## Intro Express
 
@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
   res.send('hi');
 });
 ```
-This function take 2 arguments:  request and response.  
+The 2nd parameter to `.get()` is a function take 2 arguments:  request and response.  
 
 Request is an express object that contains, among other things, any data that was part of the request. For instance, the JSON parameters we would POST or PUT in our asynchronous `axios` calls would be available as `req.body.parameterName`.
 
@@ -68,7 +68,7 @@ db.petitions.insert(
       'title': 'Sample Petition',
       'author':'Someone',
       'text': 'Some information about this petition. It is a really great petition.',
-      'imageURL': '/img/card_background.jpg'
+      'imageURL': 'https://muir.ucsd.edu/_images/academics/Dartmouth_College_2007.jpg'
    }
 )
 # will insert an object into the database
@@ -81,7 +81,7 @@ db.petitions.insert(
      'title': "Immediate Release of Donald Trump's Tax Returns",
      'author':'Dartmouth Faculty',
      'text': 'The unprecedented economic conflicts of this administration need to be visible to the American people, including any pertinent documentation which can reveal the foreign influences and financial interests which may put Donald Trump in conflict with the emoluments clause of the Constitution.',
-     'imageURL': '/img/card_background.jpg'
+     'imageURL': 'https://muir.ucsd.edu/_images/academics/Dartmouth_College_2007.jpg'
    }
 )
 
@@ -155,7 +155,7 @@ const SignerSchema = new Schema({
 //   virtuals: true,
 // });
 
-const SignerModel = mongoose.model('Signer', SigneeSchema);
+const SignerModel = mongoose.model('Signer', SignerSchema);
 export default SignerModel;
 
 ```
@@ -206,7 +206,7 @@ We need to create views for how our petitions will look like on the page.
 </div>
 ```
 
-🚀  Looks like we have some styling to do with modals, and we're using jQuery. Let's create a `head.ejs` file in the partials directory to include this for all of our pages.  
+🚀  Looks like we have some styling to do with modals, and we're using jQuery. Let's create a `head.ejs` file in the partials directory to include these for all of our pages.  
 ```html
 <head>
     <title>Voices of Dartmouth Faculty</title>
@@ -214,17 +214,16 @@ We need to create views for how our petitions will look like on the page.
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
-    <link href="/styles.css"rel="stylesheet" type="text/css"/>
-
+    <link href="/styles.css" rel="stylesheet" type="text/css"/>
 </head>
 ```
 
-Here's some css to get a working modal and navigation bar.
+Here's some css to get a working modal and navigation bar (modal css from [here](https://www.w3schools.com/howto/howto_css_modals.asp).
 ```css
 .topBar{
   height: 25%;
   top:0;
-  background-image: url(`img/dartmouth_background.png`);
+  background-image: url(``); /* put a background img here */
 }
 .modal {
     display: none; /* Hidden by default */
@@ -249,13 +248,10 @@ Here's some css to get a working modal and navigation bar.
 }
 ```
 
-(We're using this image file `dartmouth_background.png` for the background of our navigation bar, but you can find your own and insert your image in place of this one).
-![](img/dartmouth_background.png){:.small .fancy}
-
 Now, let's insert the nav bar and the modal into `index.ejs` file, which we create under the `app/views/` directory. This is really easy in ejs:
 ```html
 <html>
-  <& include partials/head %>
+  <% include partials/head %>
 <body>
   <% include partials/nav %>
   <% include partials/modal %>
@@ -269,48 +265,45 @@ Now, let's insert the nav bar and the modal into `index.ejs` file, which we crea
   <ul class="petitions">
    <% if (petitions.length > 0) { %>
       <% petitions.forEach(function(petition) { %>
-        <% const shorterText = petition.text.substring(0, 500) + "..."; %>
-          <li>
-            <div class="petition">
-              <div class="image">
-                <img class="petition-image" src=<%= petition.imageURL %> alt="petition_image">
-              </div>
-              <div>
-                <div class="title"><%= petition.title %></div>
-                <div class="author"><%= petition.author %></div>
-                <div class="preview_text"><%= petition.text %></div>
-                <div class="line">
-                  <div>
-                      <div>Number of Supporters: <%= petition.signatures.length %></div>
-                  </div>
-                  <div class="button-group">
-                    <a href="/petitions/<%= petition.id%>">
-                      <button class="btn" type="button">
-                        <img class="icon"/>View Details
-                      </button>
-                    </a>
-                    <button type="submit" class="button-primary" id="sign-button-<%=petition.id%>">
-                      <img class="icon"/>Sign Petition
+        <li>
+          <div class="petition">
+            <img class="petition-image" src=<%= petition.imageURL %> alt="petition_image">
+            <div>
+              <div><%= petition.title %></div>
+              <div><%= petition.author %></div>
+              <div><%= petition.text %></div>
+              <div class="line">
+                <div>
+                    <div>Number of Supporters: <%= petition.signatures.length %></div>
+                </div>
+                <div class="button-group">
+                  <a href="/petitions/<%= petition.id%>">
+                    <button class="btn" type="button">
+                      <img class="icon"/>View Details
                     </button>
-                    <script>
-                      document.getElementById('#sign-button-<%=petition.id%>').click(function(event) {
-                        event.preventDefault();
-                        document.getElementById('#confirmation_modal').show();
-                        document.getElementById('#confirmation_modal form').attr('action', "/sign/<%= petition._id %>");
-                      });
-                    </script>
-                  </div>
+                  </a>
+                  <button type="submit" id="sign-button-<%=petition.id%>">
+                    <img class="icon"/>Sign Petition
+                  </button>
+                  <script>
+                    document.getElementById('#sign-button-<%=petition.id%>').click(function(event) {
+                      event.preventDefault();
+                      document.getElementById('#confirmation_modal').show();
+                      document.getElementById('#confirmation_modal form').attr('action', "/sign/<%= petition._id %>");
+                    });
+                  </script>
                 </div>
               </div>
             </div>
-          </li>
+          </div>
+        </li>
       <% }); %>
     <% } %>
   </ul>
 </div>
 ```
 
-Here, ejs works its rendering magic. When we pass in an object to ejs, in this case, `petitions`, to render `index.ejs`, we follow this same template.   We don't have to write separate templates for every new petition added to `petitions`.       There are even more neat things ejs can help us with: we can use the control flow operator `%` for for loops and boolean logic, and we can display variable parameters with the `<%= %>` operator, such as `<%= petitions.title %>`.   In a nutshell, ejs makes our static html template dynamic.
+Here, ejs works its rendering magic. When we pass in an object to ejs, in this case, `petitions`, to render `index.ejs`, we follow this same template.   We don't have to write separate templates for every new petition added to `petitions`.       There are even more neat things ejs can help us with: we can use the control flow operator `%` for for loops, boolean logic, and even creating variables, and we can display variables with the `<%= %>` operator, such as `<%= petitions.title %>`.   In a nutshell, ejs makes our static html template dynamic.
 
 🚀 Let's hook our file to our app. First, download ejs:
 
@@ -358,7 +351,7 @@ Great, so now when we hit `localhost:9090`, we see the nav bar.
 🚀  To display not just the number of people who signed the petition but also the information of each signer, let's get rid of the button to view more details (because this page is the details page), and instead the information of all the signers under the sign petition button.  
 
 ```html
-<div class="line">
+<div>
   <div>
       <div>Number of Supporters: <%= petition.signatures.length %></div>
   </div>
@@ -374,7 +367,7 @@ Great, so now when we hit `localhost:9090`, we see the nav bar.
       });
     </script>
   </div>
-  <div class="signees">
+  <div>
     <% if (petition.signatures.length > 0) { %>
       <ul>
        <% petition.signatures.forEach(function(signer) { %>
@@ -388,7 +381,7 @@ Great, so now when we hit `localhost:9090`, we see the nav bar.
 </div>
 ```
 {: .example}
-We'll let you design how the signer's information is displayed yourself: use some properties from the Signer model we just created!
+We'll let you design how the signer's information within the `<li>` element is displayed: use some properties from the Signer model we just created!
 
 ## Controllers
 
@@ -431,19 +424,19 @@ All these methods do not do anything meaningful right now. Let's leave these met
 
 Now we are ready to wire our app all together with routes. We can create a separate routes file, but our application is pretty small, so we can store all of our routes in our `app/server.js`:
 
-Express allows us to use a chaining method to simplify how our routes look. For instance here is how we could define our `petitions/:id` routes, for all petitions.
+Express allows us to use the universal chaining method to simplify how our routes look. We can define our `petitions/:id` routes for all petitions like below.
 
 ```javascript
 // example!
 // on routes that end in /petitions
 // ----------------------------------------------------
-app.get('/someroute/:someID', (req, res) => {
+app.get('/petitions/:id', (req, res) => {
   /*someMethod*/
 });
 ```
 {: .example}
 
-Note `/*someMethod*/` is just a comment, you would call a method there in a module that we will call the controller — more on that shortly!
+Note `/*someMethod*/` is just a comment, you would call a method there that calls our controller methods — more on that shortly!
 
 Ok, remember how we defined all our API endpoints in our controller?   Let's map them in our router.
 
@@ -508,13 +501,13 @@ This returns `petition` as an object whose list of signatures are actual Signatu
 Great! We have everything working now. We will need to host this new server component!  Create a new Heroku app similarly to how to you did for the slack assignment:
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
-1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database.
-1. Follow the steps under "Deploy Using Heroku Git".
+2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database.
+3. Follow the steps under "Deploy Using Heroku Git".
 
 ## To Turn In
 
 1. github url to your repo
-2. url to your new heroku app instance for testing
+2. url to your new heroku app instance
 
 ### Extra Credit
 * add more useful routes, such as creating petitions or deleting them, or removing a signature from a petition.
