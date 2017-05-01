@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SA 6 MongoDB with Templating
+title: SA 7 Server-side rendering in Express, and MongoDB!
 published: true
 ---
 ![](img/enm.jpg){: .small }
@@ -27,7 +27,7 @@ npm run dev
 
 ## Intro Express
 
-[Express](https://expressjs.com/) is a web framework for Node.js.  What it does for us is provide a way to listen for and respond to incoming web requests. Today, we will be creating API endpoints to respond to certain GET requests.
+[Express](https://expressjs.com/) is a web framework for Node.js.  What it does for us is provide a way to listen for and respond to incoming web requests. Today, we will be creating API endpoints to respond to certain CRUD-style requests.
 
 Take a look through the current `app/server.js` file. This is the entry point for the app. Just like `index.js` has been in our frontend app (the names of these are arbitrary). Note how we are setting the route:
 
@@ -262,7 +262,7 @@ Now, let's insert the nav bar and the modal into `index.ejs` file, which we crea
 </html>
 ```
 
-🚀  Now let's make the rest of the index page. We want to display all of the petitions, and information about them. We also will include buttons for each petition: one to see more details and one to sign the petition.  Here is how we do it:
+🚀  Now let's make the rest of the index page. We want to display all of the petitions, and information about them. We also will include a button to sign the petition.  Here is how we do it:
 ```html
 <div>
   <ul class="petitions">
@@ -276,15 +276,10 @@ Now, let's insert the nav bar and the modal into `index.ejs` file, which we crea
               <div><%= petition.author %></div>
               <div><%= petition.text %></div>
               <div class="line">
-                <div>
-                    <div>Number of Supporters: <%= petition.signatures.length %></div>
+                <div class="signers">
+                    <div>Number of Supporters: <%= petition.signatures.length %></div>  
                 </div>
                 <div class="button-group">
-                  <a href="/petitions/<%= petition.id%>">
-                    <button class="btn" type="button">
-                      <img class="icon"/>View Details
-                    </button>
-                  </a>
                   <button type="submit" id="sign-button-<%=petition.id%>">
                     <img class="icon"/>Sign Petition
                   </button>
@@ -308,7 +303,23 @@ Now, let's insert the nav bar and the modal into `index.ejs` file, which we crea
 
 Here, ejs works its rendering magic. When we pass in an object to ejs, in this case, `petitions`, to render `index.ejs`, we follow this same template.   We don't have to write separate templates for every new petition added to `petitions`.       There are even more neat things ejs can help us with: we can use the control flow operator `%` for for loops, boolean logic, and even creating variables, and we can display variables with the `<%= %>` operator, such as `<%= petitions.title %>`.   In a nutshell, ejs makes our static html template dynamic.
 
-🚀 Let's hook our file to our app. First, download ejs:
+🚀  Now, we can design how the signer information for each petition will be displayed. Under `<div class="signers>`, let's display some information about each signer in the `petition.signatures` list:
+```html
+<% if (petition.signatures.length > 0) { %>
+  <ul>
+   <% petition.signatures.forEach(function(signer) { %>
+     <li>
+      ...
+    </li>
+   <% }); %>
+   </ul>
+<% } %>
+```
+We'll let you design how the signer's information within the `<li>` element is displayed: use some properties from the Signer model we just created!
+
+Note that when the Sign Petition button is clicked, it opens up the modal, and after the form is sent on the model, it reroutes to `/sign/:petitionId` on the server. We'll be doing some routing with that path later on!
+
+🚀 Now let's hook our ejs file to our app. First, download ejs:
 
 ```bash
 npm install --save ejs
@@ -333,59 +344,6 @@ app.get('/', (req, res) => {
 
 Great, so now when we hit `localhost:9090`, we see the nav bar.
 
-🚀  We will also make a page to look more closely at a specific petition (where the View Details button will link to).  Let's create an `/app/views/petition.ejs` file.   Let's start with including partials as usual.
-
-```html
-<html>
-<body>
-  <% include partials/nav %>
-  <% include partials/modal %>
-
-  <div>
-    <div class="petition">
-    </div>
-  </div>
-</body>
-</html>
-```
-
-🚀  Now, we can design how the petition information will be displayed. Within the `<div class="petition">` tag, we can insert the same html we did to display the `petition.imageURL`, `petition.title`, `petition.author`, etc. as we did in the index.
-
-🚀  To display not just the number of people who signed the petition but also the information of each signer, let's get rid of the button to view more details (because this page is the details page), and instead the information of all the signers under the sign petition button.  
-
-```html
-<div>
-  <div>
-      <div>Number of Supporters: <%= petition.signatures.length %></div>
-  </div>
-  <div class="button-group">
-    <button type="submit" class="button-primary" id="sign-button-<%=petition.id%>">
-      <img class="icon"/>Sign Petition
-    </button>
-    <script>
-      document.getElementById('#sign-button-<%=petition.id%>').click(function(event) {
-        event.preventDefault();
-        document.getElementById('#confirmation_modal').show();
-        document.getElementById('#confirmation_modal form').attr('action', "/sign/<%= petition._id %>");
-      });
-    </script>
-  </div>
-  <div>
-    <% if (petition.signatures.length > 0) { %>
-      <ul>
-       <% petition.signatures.forEach(function(signer) { %>
-         <li>
-          ...
-        </li>
-       <% }); %>
-       </ul>
-    <% } %>
-  </div>
-</div>
-```
-{: .example}
-We'll let you design how the signer's information within the `<li>` element is displayed: use some properties from the Signer model we just created!
-
 ## Controllers
 
 Notice anything a little familiar in our terminology?   Yup, we're on our way to creating a standard MVC for our API server!   
@@ -395,10 +353,6 @@ Notice anything a little familiar in our terminology?   Yup, we're on our way to
 ```javascript
 import Petition from '../models/petition';
 import * as Signatures from './signer_controller';
-
-export const getPetition = (petitionID, done) => {
-  done(null, petitionID); // should return Petition object
-};
 
 export const getPetitions = (done) => {
   done(null, []); // should return a list of Petition objects
@@ -446,7 +400,6 @@ Ok, remember how we defined all our API endpoints in our controller?  Let's map 
 🚀 Use the syntax above to make routes to map to the following:
 
 * GET `/`: Call petitions.getPetitions and render `index` in the callback
-* GET `/petitions/:id`:  Call Petitions.getPetition and render the `petition` page in the callback
 * GET `/sign/:petitionID`:  Call Petitions.addSigner and render the petition `petition` page in the callback
 
 🚀  For example, we should change the code to render our `/` route to be:
@@ -460,10 +413,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-🚀  We'll let you handle the next two routes. For both of these methods, you need to get the router id that is passed in when we hit `/petitions/:id`.  This is accessible as `req.params.id` inside each of our controller functions that had this `:id` path variable.
-
-For the `/sign/:petitionID`, you can likewise access `:petitionID` through `req.params.petitionID`. Also, because the `Petitions.addSigner()` method requires the role and the name of the signer, you can access these through `req.query.role` and `req.query.name`: inputs on a modal are stored as queries, which in urls are stored as `?name=value`. You also may want to use `res.redirect('petitions/req.params.petitionID')` instead of `res.render('petition', { petition })` so you don't have to pass in an entire petition object when you don't have to.
-
+🚀  We'll let you handle the `sign:petitionID` route. You need to get the id that is passed in when we hit `/petitions/:id`.  This is accessible as `req.params.petitionID` inside each of our controller functions that had this `:petitionID` path variable. Also, because the `Petitions.addSigner()` method requires the role and the name of the signer, you can access these through `req.query.role` and `req.query.name`. Inputs on a modal are stored as queries, which in urls are stored as `?name=value`. You also may want to use `res.redirect('/')` at the end of the route, if you wish.
 
 ## Controller Continued
 
@@ -486,18 +436,7 @@ export const getPetitions = (done) => {
 Now that we have the `getPetitions` method working, we have to use more database methods (all of them can be found in the [mongoose docs](http://mongoosejs.com/docs/queries.html)).
 to implement the `getPetition` and `addSigner` methods.
 
-🚀  In the `getPetition` method, we should use `.findOne()` to display the petition given by the id. However, mongoose does not give the entire object model of the signatures in `petitions.signatures`. Therefore, in the callback of the `.findOne()` function for the getPetition method, we have to call the `.populate()` function:
-
-```javascript
-Petition.findOne({ _id: petitionId}, (error, petition) => {
-    petition.populate('signatures', (result) => {
-      done(null, petition);
-    });
-  });
-```
-This returns `petition` as an object whose list of signatures are actual Signature objects: not just signature ids.
-
-🚀  In the `addSigner` method, `.findOne()`, and `.save()` need to be used. The `addSigner` method should find the petition, call the `Signatures.createSigner()` method, then add the id of the signer into the `petitions.signatures` list, and finally `save()` the petition to get the job done.
+🚀  In the `addSigner` method, the mongoose methods `.findOne()`, and `.save()` need to be used. The `addSigner` method should find the petition, and in the callback, call the `Signatures.createSigner()` method, then push the id of the signer onto the `petitions.signatures` list, and finally `.save()` the petition to get the job done.
 
 ## Deploy to Heroku
 
