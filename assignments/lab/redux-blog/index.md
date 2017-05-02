@@ -173,11 +173,12 @@ Here are some actions you should consider implementing.  Note, only FETCH_POST a
 export const ActionTypes = {
   FETCH_POSTS: 'FETCH_POSTS',
   FETCH_POST:  'FETCH_POST',
-  // CREATE_POST: 'CREATE_POST',
   // UPDATE_POST: 'UPDATE_POST',
+  // CREATE_POST: 'CREATE_POST',
   // DELETE_POST: 'DELETE_POST',
 };
 ```
+Wait, what about UPDATE_POST, surely that has to exist... technically yes you do want to update, but it is basically an exact duplicate of FETCH_POST.
 
 Now you might ask,  how the heck do we fetch from an API using actions!?
 
