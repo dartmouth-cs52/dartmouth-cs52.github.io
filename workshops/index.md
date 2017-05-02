@@ -20,7 +20,7 @@ The Workshop Assignment can be found here [here](https://github.com/dartmouth-cs
 * 4/20 [js visualization and canvas: p5js, paperjs, raphael](https://github.com/annieke/viz-workshop)
 * 4/25 [preprocessors: sass, jade](https://github.com/yeonjaepark/pug-workshop)
 * 4/27 [preprocessors: typescript, coffeescript, flow](https://github.com/nathanyu835/preprocessors-workshop)
-* 5/02 build systems: grunt, gulp
+<!-- * 5/02 build systems: grunt, gulp -->
 
 
   <!-- * 6/28 [git map workshop](git) -->
