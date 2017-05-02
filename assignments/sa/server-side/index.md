@@ -220,7 +220,8 @@ We need to create views for how our petitions will look like on the page.
 </head>
 ```
 
-Here's some css to get a working modal and navigation bar (modal css taken from [here](https://www.w3schools.com/howto/howto_css_modals.asp).
+
+Here's some css to get a working modal and navigation bar (modal css taken from [here](https://www.w3schools.com/howto/howto_css_modals.asp)).
 
 ```css
 .topBar{
@@ -251,6 +252,11 @@ Here's some css to get a working modal and navigation bar (modal css taken from 
 }
 ```
 
+(We're using this image file `dartmouth_background.png` for the background of our navigation bar, but you can find your own and insert your image in place of this one or right click and save image as).
+
+![](img/dartmouth_background.png){:.small .fancy}
+
+>>>>>>> pitches
 Now, let's insert the nav bar and the modal into `index.ejs` file, which we create under the `app/views/` directory. This is really easy in ejs:
 ```html
 <html>
@@ -330,6 +336,7 @@ npm install --save ejs
 ```javascript
 import path from 'path';
 
+//insert below 'bodyparser'
 app.set('view engine', 'ejs');
 app.use(express.static('static'));
 app.set('views', path.join(__dirname, '../app/views'));
@@ -343,6 +350,62 @@ app.get('/', (req, res) => {
 ```
 
 Great, so now when we hit `localhost:9090`, we see the nav bar.
+
+🚀  We will also make a page to look more closely at a specific petition (where the View Details button will link to).  Let's create an `/app/views/petition.ejs` file.   Let's start with including partials as usual.
+
+```html
+<html>
+<% include partials/head %>
+<body>
+  <% include partials/nav %>
+  <% include partials/modal %>
+
+  <div>
+    <div class="petition">
+    </div>
+  </div>
+</body>
+</html>
+```
+
+🚀  Now, we can design how the petition information will be displayed. Within the `<div class="petition">` tag, we can insert the same html we did to display the `petition.imageURL`, `petition.title`, `petition.author`, etc. as we did in the index.
+
+🚀  To display not just the number of people who signed the petition but also the information of each signer, let's get rid of the button to view more details (because this page is the details page), and instead the information of all the signers under the sign petition button.  
+
+# //TODO: what is happening here?
+
+```html
+<div class="line">
+  <div>
+      <div>Number of Supporters: <%= petition.signatures.length %></div>
+  </div>
+  <div class="button-group">
+    <button type="submit" class="button-primary" id="sign-button-<%=petition.id%>">
+      <img class="icon"/>Sign Petition
+    </button>
+    <script>
+      document.getElementById('#sign-button-<%=petition.id%>').click(function(event) {
+        event.preventDefault();
+        document.getElementById('#confirmation_modal').show();
+        document.getElementById('#confirmation_modal form').attr('action', "/sign/<%= petition._id %>");
+      });
+    </script>
+  </div>
+  <div class="signees">
+    <% if (petition.signatures.length > 0) { %>
+      <ul>
+       <% petition.signatures.forEach(function(signer) { %>
+         <li>
+          ...
+        </li>
+       <% }); %>
+       </ul>
+    <% } %>
+  </div>
+</div>
+```
+{: .example}
+We'll let you design how the signer's information is displayed yourself: use some properties from the Signer model we just created!
 
 ## Controllers
 
@@ -415,9 +478,15 @@ app.get('/', (req, res) => {
 
 🚀  We'll let you handle the `sign:petitionID` route. You need to get the id that is passed in when we hit `/petitions/:id`.  This is accessible as `req.params.petitionID` inside each of our controller functions that had this `:petitionID` path variable. Also, because the `Petitions.addSigner()` method requires the role and the name of the signer, you can access these through `req.query.role` and `req.query.name`. Inputs on a modal are stored as queries, which in urls are stored as `?name=value`. You also may want to use `res.redirect('/')` at the end of the route, if you wish.
 
+# //TODO: expand this a bit, how the functions are being called
+
+For the `/sign/:petitionID`, you can likewise access `:petitionID` through `req.params.petitionID`. Also, because the `Petitions.addSigner()` method requires the role and the name of the signer, you can access these through `req.query.role` and `req.query.name`: inputs on a modal are stored as queries, which in urls are stored as `?name=value`. You also may want to use `res.redirect('petitions/req.params.petitionID')` instead of `res.render('petition', { petition })` so you don't have to pass in an entire petition object when you don't have to.
+
+# //TODO: use ajax PUT
+
 ## Controller Continued
 
-Ok but our controller `controllers/petition_controller.js` is fairly useless.  We have everything wired, but we need to actually store stuff.
+Ok, but our controller `controllers/petition_controller.js` is fairly useless.  We have everything wired, but we need to actually store stuff.
 
 We should first implement the `getPetitions` endpoint.
 
@@ -437,6 +506,19 @@ Now that we have the `getPetitions` method working, we have to use more database
 to implement the `getPetition` and `addSigner` methods.
 
 🚀  In the `addSigner` method, the mongoose methods `.findOne()`, and `.save()` need to be used. The `addSigner` method should find the petition, and in the callback, call the `Signatures.createSigner()` method, then push the id of the signer onto the `petitions.signatures` list, and finally `.save()` the petition to get the job done.
+
+🚀  In the `getPetition` method, we should use `.findOne()` to display the petition given by the id. However, mongoose does not give the entire object model of the signatures in `petitions.signatures`. Therefore, in the callback of the `.findOne()` function for the getPetition method, we have to call the `.populate()` function:
+
+```javascript
+Petition.findOne({ _id: petitionID}, (error, petition) => {
+    petition.populate('signatures', (result) => {
+      done(null, petition);
+    });
+  });
+```
+This returns `petition` as an object whose list of signatures are actual Signature objects: not just signature ids.
+
+🚀  In the `addSigner` method, `.findOne()`, and `.save()` need to be used. The `addSigner` method should find the petition, call the `Signatures.createSigner()` method, then add the id of the signer into the `petitions.signatures` list, and finally `save()` the petition to get the job done.
 
 ## Deploy to Heroku
 

@@ -21,6 +21,8 @@ permalink: /lectures/
 * [4/20 Advanced JS](08_advanced_js)
 * [4/25 Routing](09_routing)
 * [4/27 Redux](10_redux)
+* [5/2 Pitches](11_pitches)
+
 
 
 
