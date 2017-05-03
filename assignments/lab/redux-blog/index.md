@@ -97,7 +97,7 @@ We're going to use some routes to set up our app with different "pages".
 <Switch>
   <Route exact path="/" component={Posts} />
   <Route path="/posts/new" component={NewPost} />
-  <Route path="/post/:postID" component={Post} />
+  <Route path="/posts/:postID" component={Post} />
   <Route render={() => (<div>post not found </div>)} />
 </Switch>
 ```
