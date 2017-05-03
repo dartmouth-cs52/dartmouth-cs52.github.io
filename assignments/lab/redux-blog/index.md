@@ -173,7 +173,6 @@ The state within the `postsReducer` looks like this:
 }
 ```
 
-
 ## Actions
 
 Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer currently. This is because we are just updating and reloading all notes after a delete say, rather than manually editing the list. If you had millions of posts you might want to not have to do a full fetch of all posts on a delete, but in our case it doesn't matter.  However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place. IE. Don't do any api calls from anywhere else in the app, only in ActionCreators.
@@ -189,7 +188,7 @@ export const ActionTypes = {
 ```
 Wait, what about UPDATE_POST, surely that has to exist... technically yes you do want to update, but it is basically an exact duplicate of FETCH_POST.
 
-Now you might ask,  how the heck do we fetch from an API using actions!?
+Now you might ask, how the heck do we fetch from an API using actions!?
 
 Don't worry, this part we'll walk you through.
 
