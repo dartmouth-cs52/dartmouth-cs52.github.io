@@ -7,7 +7,7 @@ published: true
 
 ## Overview
 
-Today we'll be learning how to create a petition site: it will be an [express](https://expressjs.com/) server that displays some data which is stored using [mongodb](https://www.mongodb.com/). We'll get a taste of backend development with server-side rendering.
+Today we'll be learning how to create a server side rendered polling webapp: it will be an [express](https://expressjs.com/) server that displays some data which is stored using [mongodb](https://www.mongodb.com/). We'll get a taste of how to use simple server side routes for displaying some html built up from data we will store in a database, and we will gain some knowledge about express — which we will be using in Lab 5! 
 
 ## Some Setup
 First, let's download `node` and `mongodb` packages.
