@@ -155,7 +155,16 @@ This is a connected component that can both trigger actions and is connected to 
 
 ## Redux
 
-We will be using [redux](http://redux.js.org/) for our application state.  We're going to just have 1 reducer to start with: `postsReducer`.   This reducer will be associated with the key `posts` in our `combineReducers` and will return an object to look something like this initially:
+We will be using [redux](http://redux.js.org/) for our application state.  We're going to just have 1 reducer to start with: `postsReducer`.   This reducer will be associated with the key `posts` in our `combineReducers` and will return the global state as an object that looks something like this initially:
+
+```javascript
+posts: {
+  all: [],
+  post: {},
+}
+```
+
+The state within the `postsReducer` looks like this:
 
 ```javascript
 {
@@ -291,7 +300,7 @@ Each of these methods will return a function that takes dispatch as its argument
 
 In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Post* page you would want to be taken back to the `Posts` page.  Simple add `history.push('/')` to navigate to another page from within your ActionCreator function. But where does history come from?  Unfortunately, only routed components have access to history (not our actions module), so we will have to pass that in to our ActionCreators when they are called.  Add a parameter to any actionCreator that needs to call history like so `this.props.createPost(post, this.props.history)`.
 
-⚠️ If you run into a problem where for some reason your ActionCreator seems to run but never dispatches an action, that might be because you are running the unconnected version that you imported rather than the connected version of the function that you get from mapDispatchToProps.  So always remember to run ActionCreators as their `this.props` version because that is what `connect()` does, it gives us a modified version of the function that is run inside of `dispatch`. 
+⚠️ If you run into a problem where for some reason your ActionCreator seems to run but never dispatches an action, that might be because you are running the unconnected version that you imported rather than the connected version of the function that you get from mapDispatchToProps.  So always remember to run ActionCreators as their `this.props` version because that is what `connect()` does, it gives us a modified version of the function that is run inside of `dispatch`.
 
 ## Reducers
 
