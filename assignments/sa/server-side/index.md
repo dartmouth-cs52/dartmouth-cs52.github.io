@@ -170,7 +170,7 @@ We need to create views for how our polls will look on the page.
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-  <link href="/styles.css"rel="stylesheet" type="text/css"/>
+  <link href="/style.css"rel="stylesheet" type="text/css"/>
 </head>
 ```
 
