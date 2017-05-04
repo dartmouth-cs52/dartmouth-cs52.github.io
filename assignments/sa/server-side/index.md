@@ -7,7 +7,9 @@ published: true
 
 ## Overview
 
-Today we'll be learning how to create a server side rendered polling webapp: it will be an [express](https://expressjs.com/) server that displays some data which is stored using [mongodb](https://www.mongodb.com/). We'll get a taste of how to use simple server side routes for displaying some html built up from data we will store in a database, and we will gain some knowledge about express — which we will be using in Lab 5! 
+Today we'll be learning how to create a server side rendered polling webapp: it will be an [express](https://expressjs.com/) server that displays some data which is stored using [mongodb](https://www.mongodb.com/). We'll get a taste of how to use simple server side routes for displaying some html built up from data we will store in a database, and we will gain some knowledge about [express](https://expressjs.com/) — which we will be using in Lab 5!  We'll also use some [materializecss](http://materializecss.com/) for some basic styling.
+
+<iframe width="640" height="299" src="https://www.youtube.com/embed/LjrdiK94FyU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ## Some Setup
 First, let's download `node` and `mongodb` packages.
@@ -16,9 +18,9 @@ brew install node
 brew install mongodb
 ```
 
-We're going to be building a petition site, where users can sign various petitions. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.
+We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.
 
-🚀 Do what you did in [SA4](http://cs52.me/assignments/sa/react-videos/) when pulling from your own starterpack: create your own repo with the classroom link, add a starter remote to express-babel-starter, and pull from it. Then run these following commands to start our new node+express app in dev reloading mode.
+🚀 Do what you did in [SA4](http://cs52.me/assignments/sa/react-videos/) when pulling from your own starterpack but in this case we'll pull from a different starter — create your own repo with the classroom link, add a starter remote to express-babel-starter, and pull from it. Then run these following commands to start our new node+express app in dev reloading mode.
 
 ```bash
 npm install
@@ -53,41 +55,31 @@ Mongo is the database that we are going to use.  We've already installed `mongod
 
 There is a commmandline client we'll use to connect to the database: `mongo`. You can also play around with a more graphical client [robomongo](https://robomongo.org/).
 
-🚀  Below are some commands to run in the mongo client to create some petitions.
+🚀  Below are some commands to run in the mongo client to create some polls.
 ```bash
 # mongoshell is a commandline interface to your local mongo db
 
 show dbs
 # will show your current databases
 
-use bodypolitic
-# will make bodypolitic the current database
+use cs52poll
+# will make cs52poll the current database
 
-db.petitions.insert(
+db.polls.insert(
    {
-      'title': 'Sample Petition',
-      'author':'Someone',
-      'text': 'Some information about this petition. It is a really great petition.',
-      'imageURL': 'https://muir.ucsd.edu/_images/academics/Dartmouth_College_2007.jpg'
+      'text': 'Pangolins are cute',
+      'imageURL':'https://media.giphy.com/media/uscuTAPrWqmqI/giphy.gif',
+      'upvotes': 0,
+      'downvotes': 0,
    }
 )
 # will insert an object into the database
-# into a collection called petitions
+# into a collection called polls
 
-db.petitions.find()
+db.polls.find()
 # returns everything in this collection
-db.petitions.insert(
-   {
-     'title': "Immediate Release of Donald Trump's Tax Returns",
-     'author':'Dartmouth Faculty',
-     'text': 'The unprecedented economic conflicts of this administration need to be visible to the American people, including any pertinent documentation which can reveal the foreign influences and financial interests which may put Donald Trump in conflict with the emoluments clause of the Constitution.',
-     'imageURL': 'https://muir.ucsd.edu/_images/academics/Dartmouth_College_2007.jpg'
-   }
-)
 
-# add in another entry
-
-db.petitions.find({"author": "Dartmouth Faculty"})
+db.polls.find({"text": "Pangolins are cute"})
 # finds a entry in database by key:value
 ```
 
@@ -107,7 +99,7 @@ To connect to mongo in our app, we will use a module called `mongoose`. [Mongoos
 import mongoose from 'mongoose';
 
 // DB Setup
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/bodypolitic';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/cs52poll';
 mongoose.connect(mongoURI);
 // set mongoose promises to es6 default
 mongoose.Promise = global.Promise;
@@ -118,339 +110,248 @@ mongoose.Promise = global.Promise;
 
 We're going to create a data model to work with.   A data model in mongoose is initialized from a schema, which is a description of the structure of the object.   This is much more like what you might be familiar with statically typed classes in Java.
 
-🚀 Create a directory `app/models` and a file inside this directory named `petition.js`.
+🚀 Create a directory `app/models` and a file inside this directory named `poll.js`.
 
 
 ```javascript
 import mongoose, { Schema } from 'mongoose';
 
-// create a schema for posts with a field
-const PetitionSchema = new Schema({
-  title: String,
-  author: String,
+const PollSchema = new Schema({
   text: String,
   imageURL: String,
-  signatures: [{ type: Schema.Types.ObjectId, ref: 'Signer' }],
+  upvotes: { type: Number, default: 0 },
+  downvotes: { type: Number, default: 0 },
+}, {
+  toJSON: {
+    virtuals: true,
+  },
+});
+
+PollSchema.virtual('score').get(function scoreCalc() {
+  return this.upvotes - this.downvotes;
 });
 
 // create model class
-const PetitionModel = mongoose.model('Petition', PetitionSchema);
+const PollModel = mongoose.model('Poll', PollSchema);
 
-export default PetitionModel;
+export default PollModel;
 ```
 
-🚀 We see that the Petition Schema has a list of signatures as a field, which is of type Signer. Therefore, we have to make an object model for Signers. Let's make a new file called `signer.js`.
+There's a bit of stuff going on here.  We're creating a new PollSchema - this is a definition of what fields our Poll document should have. We're also enabling *virtuals* on our schema which allows us to have a computed field `score` that is returned with our object but doesn't need to be stored explicitly.
 
-```javascript
-import mongoose, { Schema } from 'mongoose';
+From this schema we create a Poll class or model which we can use in other files to perform queries on our database!  Mongoose models give us a familiar code based approach to database queries.
 
-const SignerSchema = new Schema({
-  name: String,
-  petitions: [{ type: Schema.Types.ObjectId, ref: 'Petition' }],
-  role: String,
-  date: { type: Date, default: Date.now },
-});
-
-// SignerSchema.set('toJSON', {
-//   virtuals: true,
-// });
-
-const SignerModel = mongoose.model('Signer', SignerSchema);
-export default SignerModel;
-
-```
 
 ## Views
-We need to create views for how our petitions will look like on the page.
+We need to create views for how our polls will look on the page.
 
 🚀  Let us create the directory `app/views` to hold all our view templates. We will write some html with [ejs](https://www.npmjs.com/package/ejs), which allows us to embed javascript in html. This allows us to reuse html code and insert into other `.ejs` files. Let's create the directory `partials` within this directory for these reusable html components.  Another great thing we can do is pass javascript objects in html and perform simple functions to render them exactly the way we want it.
 
 🚀  We need a navigation bar on every page, don't we? In the `app/views/partials` directory, create a `nav.ejs` file.
 
 ```html
-<div class="topBar">
-    <h1><a href="/">Voices of Dartmouth</a></h1>
-    <h4>Hear Dartmouth faculty contribute their voices to things that matter</h4>
-</div>
-```
-
-🚀 We also want a modal partial for people to fill in their name and role when signing a petition. Therefore, let's create a file called `modal.ejs` in the `app/views/partials/` directory:
-```html
-<div id="confirmation_modal" class="modal">
-  <div class="modal-content">
-    <span id="modal_close">&times;</span>
-    <p>Please enter your name and role.</p>
-    <form action="" method="get">
-      <div>
-        <input type="text" id="name-input" name="name" placeholder="Name"></input>
-      </div>
-      <div>
-        <input type="text" id="role-input" name="role" placeholder="Class Year ('17) or Professor"></input>
-      </div>
-      <div>
-        <input id="confirm_button" type="submit" name="submit" value="Confirm Signature"></input>
-      </div>
-    </form>
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">Voices of Dartmouth</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/new">say what you wanna say</a></li>
+    </ul>
   </div>
-
-  <script>
-    const modal = $('#confirmation_modal');
-    const close = $("#modal_close");
-    close.click(function(event) {
-        modal.hide();
-    });
-    window.onclick = function(event) {
-        if (event.target.id == modal.attr('id')) {
-            modal.hide();
-        }
-    }
-  </script>
-</div>
+</nav>
 ```
 
-🚀  Looks like we have some styling to do with modals, and we're using jQuery. Let's create a `head.ejs` file in the partials directory to include these for all of our pages.  
+🚀 Before we move on you'll note a few classes above that may look familiar if you've used [materializecss](http://materializecss.com/) before. Let's create a `head.ejs` file in the partials directory to include all our CSS libraries and such.  
+
 ```html
 <head>
-    <title>Voices of Dartmouth Faculty</title>
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <link href="/styles.css" rel="stylesheet" type="text/css"/>
+  <title>Voices of Dartmouth</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <link href="/styles.css"rel="stylesheet" type="text/css"/>
 </head>
 ```
 
 
-Here's some css to get a working modal and navigation bar (modal css taken from [here](https://www.w3schools.com/howto/howto_css_modals.asp)).
+Here's some css to get you going, put this in your `static/style.css` file.  `static` is where any assets that aren't computed should go, images for instance also.
 
 ```css
-.topBar{
-  height: 25%;
-  top:0;
-  background-image: url(``); /* put a background img here */
-}
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+nav {
+  background-image: url(img/dartmouth_background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-left: 20px;
 }
 
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+.card {
+  width: 350px;
+  height: 350px;
+  margin: 20px;
 }
+
+.card-flex {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+.card-image {
+  height: 60%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 ```
 
 (We're using this image file `dartmouth_background.png` for the background of our navigation bar, but you can find your own and insert your image in place of this one or right click and save image as).
 
 ![](img/dartmouth_background.png){:.small .fancy}
 
->>>>>>> pitches
-Now, let's insert the nav bar and the modal into `index.ejs` file, which we create under the `app/views/` directory. This is really easy in ejs:
+🚀 Now, let's insert the nav bar and the modal into `index.ejs` file, which we create under the `app/views/` directory. This is really easy in ejs:
 ```html
 <html>
   <% include partials/head %>
 <body>
   <% include partials/nav %>
-  <% include partials/modal %>
+  Hello
 </body>
 </html>
 ```
 
-🚀  Now let's make the rest of the index page. We want to display all of the petitions, and information about them. We also will include a button to sign the petition.  Here is how we do it:
-```html
-<div>
-  <ul class="petitions">
-   <% if (petitions.length > 0) { %>
-      <% petitions.forEach(function(petition) { %>
-        <li>
-          <div class="petition">
-            <img class="petition-image" src=<%= petition.imageURL %> alt="petition_image">
-            <div>
-              <div><%= petition.title %></div>
-              <div><%= petition.author %></div>
-              <div><%= petition.text %></div>
-              <div class="line">
-                <div class="signers">
-                    <div>Number of Supporters: <%= petition.signatures.length %></div>  
-                </div>
-                <div class="button-group">
-                  <button type="submit" id="sign-button-<%=petition.id%>">
-                    <img class="icon"/>Sign Petition
-                  </button>
-                  <script>
-                    document.getElementById('#sign-button-<%=petition.id%>').click(function(event) {
-                      event.preventDefault();
-                      document.getElementById('#confirmation_modal').show();
-                      document.getElementById('#confirmation_modal form').attr('action', "/sign/<%= petition._id %>");
-                    });
-                  </script>
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-      <% }); %>
-    <% } %>
-  </ul>
-</div>
-```
 
-Here, ejs works its rendering magic. When we pass in an object to ejs, in this case, `petitions`, to render `index.ejs`, we follow this same template.   We don't have to write separate templates for every new petition added to `petitions`.       There are even more neat things ejs can help us with: we can use the control flow operator `%` for for loops, boolean logic, and even creating variables, and we can display variables with the `<%= %>` operator, such as `<%= petitions.title %>`.   In a nutshell, ejs makes our static html template dynamic.
-
-🚀  Now, we can design how the signer information for each petition will be displayed. Under `<div class="signers>`, let's display some information about each signer in the `petition.signatures` list:
-```html
-<% if (petition.signatures.length > 0) { %>
-  <ul>
-   <% petition.signatures.forEach(function(signer) { %>
-     <li>
-      ...
-    </li>
-   <% }); %>
-   </ul>
-<% } %>
-```
-We'll let you design how the signer's information within the `<li>` element is displayed: use some properties from the Signer model we just created!
-
-Note that when the Sign Petition button is clicked, it opens up the modal, and after the form is sent on the model, it reroutes to `/sign/:petitionId` on the server. We'll be doing some routing with that path later on!
-
-🚀 Now let's hook our ejs file to our app. First, download ejs:
-
-```bash
-npm install --save ejs
-```
-
-🚀 and to see what the page looks like without any petitions, and change `app/server.js` to read our new index ejs page:
+🚀 We should now be able to test this. Change `app/server.js` to read our new index ejs page:
 
 ```javascript
-import path from 'path';
-
-//insert below 'bodyparser'
-app.set('view engine', 'ejs');
-app.use(express.static('static'));
-app.set('views', path.join(__dirname, '../app/views'));
-// this just allows us to render ejs from the ../app/views directory
-
 app.get('/', (req, res) => {
-  // we will later be able to get the petitions by calling a function, but let's pass in no petitions for now
-  const petitions = [];
-  res.render('index', { petitions });
+  // we will later be able to get the polls by calling a function, but let's pass in no polls for now
+  const polls = [];
+  res.render('index', { polls });
 });
 ```
 
-Great, so now when we hit `localhost:9090`, we see the nav bar.
+`res.render` takes the name of an ejs template and a dictionary of data that will be available for use inside of the template. For now we'll pass in `{ polls: [] }`
 
-🚀  We will also make a page to look more closely at a specific petition (where the View Details button will link to).  Let's create an `/app/views/petition.ejs` file.   Let's start with including partials as usual.
+Great, so now when we hit `http://localhost:9090`, we see the nav bar. Cooool.
+
+
+### Main List View
+
+🚀  Now let's make the rest of the index page inside of `body`. We want to display all of the polls, and information about them. Here is how we do it:
+```html
+<div class="card-flex container section">
+   <% if (polls.length > 0) { %>
+      <% polls.sort(function(a,b) {return a.score < b.score}) %>
+      <% polls.forEach(function(poll) { %>
+
+        <div class="card">
+          <div class="card-image" style="background-image: url(<%= poll.imageURL %>)">
+          </div>
+          <div class="card-content">
+            <p><%= poll.text %></p>
+          </div>
+          <div class="card-action">
+            <a data-id="<%=poll.id%>" data-vote="up" class="vote" ><i class="material-icons">thumb_up</i><%= poll.upvotes %></a>
+            <a data-id="<%=poll.id%>" data-vote="down" class="vote" ><i class="material-icons">thumb_down</i><%= poll.downvotes %></a>
+          </div>
+        </div>
+      <% }); %>
+    <% } %>
+</div>
+```
+
+There is a bunch of stuff going on there. In short we sort the polls by some `score`,  loop over the polls, and render some materializecss cards.
+
+EJS is helping us by working its rendering magic. When we pass in an object to ejs, in this case, `polls`, to render `index.ejs`.  We don't have to write separate templates for every new poll added to `polls`.
+
+There are even more neat things ejs can help us with: we can use the control flow operator `%` for for loops, boolean logic, and even creating variables, and we can display variables with the `<%= %>` operator, such as `<%= polls.title %>`. In a nutshell, ejs makes our static html template dynamic.
+
+
+## Create A New Poll Page
+
+🚀  We will also make a page to create new polls.  Let's create an `/app/views/new.ejs` file.   Let's start with including partials as usual.
 
 ```html
 <html>
 <% include partials/head %>
 <body>
   <% include partials/nav %>
-  <% include partials/modal %>
-
-  <div>
-    <div class="petition">
-    </div>
-  </div>
 </body>
 </html>
 ```
 
-🚀  Now, we can design how the petition information will be displayed. Within the `<div class="petition">` tag, we can insert the same html we did to display the `petition.imageURL`, `petition.title`, `petition.author`, etc. as we did in the index.
+Now, we can design how the poll information will be displayed.  We can insert the same html we did to display the `poll.imageURL`, `poll.text`, etc. as we did in the index.
 
-🚀  To display not just the number of people who signed the petition but also the information of each signer, let's get rid of the button to view more details (because this page is the details page), and instead the information of all the signers under the sign petition button.  
-
-# //TODO: what is happening here?
+🚀 Here's some basic html for using a materializecss styled form. Note that the form method is `post` and that the action is `/new`.  This means that when we click the submit button we will submit an http post request to the server, hitting the `/new` route.
 
 ```html
-<div class="line">
-  <div>
-      <div>Number of Supporters: <%= petition.signatures.length %></div>
-  </div>
-  <div class="button-group">
-    <button type="submit" class="button-primary" id="sign-button-<%=petition.id%>">
-      <img class="icon"/>Sign Petition
-    </button>
-    <script>
-      document.getElementById('#sign-button-<%=petition.id%>').click(function(event) {
-        event.preventDefault();
-        document.getElementById('#confirmation_modal').show();
-        document.getElementById('#confirmation_modal form').attr('action', "/sign/<%= petition._id %>");
-      });
-    </script>
-  </div>
-  <div class="signees">
-    <% if (petition.signatures.length > 0) { %>
-      <ul>
-       <% petition.signatures.forEach(function(signer) { %>
-         <li>
-          ...
-        </li>
-       <% }); %>
-       </ul>
-    <% } %>
+<div class="section container">
+  <div class="row">
+    <form action="/new" method="post">
+      <div class="row">
+        <div class="input-field">
+          <input name="imageURL" id="imageURL" type="text" class="validate">
+          <label for="imageURL">Image URL</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <textarea name="text" id="text" type="text" class="materialize-textarea"></textarea>
+          <label for="text">Poll Text</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
   </div>
 </div>
 ```
-{: .example}
-We'll let you design how the signer's information is displayed yourself: use some properties from the Signer model we just created!
+
+Nice, this doesn't work yet but your frontend is practically finished.
 
 ## Controllers
 
 Notice anything a little familiar in our terminology?   Yup, we're on our way to creating a standard MVC for our API server!   
 
-🚀 Create a directory `app/controllers` and a file inside this named `petition_controller.js`.   What might this controller do? Well it should have methods that perform all the main functionality of our API.  In short those methods would be:
+🚀 Create a directory `app/controllers` and a file inside this named `poll_controller.js`.   What might this controller do? Well it should have methods that perform all the main functionality of our API.  In short those methods would be:
 
 ```javascript
-import Petition from '../models/petition';
-import * as Signatures from './signer_controller';
+import Poll from '../models/poll';
 
-export const getPetitions = (done) => {
-  done(null, []); // should return a list of Petition objects
+
+export const getPolls = () => {
+  // should return a promise that returns a list of polls
 };
 
-export const addSigner = (petitionID, role, name) => {
-  return {}; // this doesn't need to return anything necessarily, but we could return the Signer object
+export const createPoll = (poll) => {
+  // takes in an object with the fields that poll should shave
+  // and saves them to the database
+  // returns a promise
 };
 
+export const vote = (pollID, upvote) => {
+  // takes in the poll id to update and a boolean of whether
+  // to update or not.
+  // returns a promise
+}
 ```
-
-🚀  We set this code up to create another controller as well, `signer_controller`, which is adding signers to a certain petition.
-``` javascript
-import Signer from '../models/signer';
-
-export const createSigner = (name, role) => {
-  return {};
-};
-```
-Since this method will actually be always called by `addSigner` from the `petitions` controller, we do not need a `done` callback here, and all it will do is return a Signer mongoose object.
 
 All these methods do not do anything meaningful right now. Let's leave these methods now with filler and then deal with the details later.
-
 
 ### Routing
 
 Now we are ready to wire our app all together with routes. We can create a separate routes file, but our application is pretty small, so we can store all of our routes in our `app/server.js`:
 
-Express allows us to use the universal chaining method to simplify how our routes look. We can define our `petitions/:id` routes for all petitions like below.
+We can define our `polls/:id` routes for all polls like below:
 
 ```javascript
 // example!
-// on routes that end in /petitions
+// on routes that end in /polls
 // ----------------------------------------------------
-app.get('/petitions/:id', (req, res) => {
+app.get('/polls/:id', (req, res) => {
   /*someMethod*/
 });
 ```
@@ -458,80 +359,154 @@ app.get('/petitions/:id', (req, res) => {
 
 
 Note `/*someMethod*/` is just a comment, you would call a method there that calls our controller methods — more on that shortly!
-Ok, remember how we defined all our API endpoints in our controller?  Let's map them in our router.
+
+Ok, remember how we defined all our API endpoints in our controller?  Let's map them in our router. You have access to methods on app `.get()`, `.post()`, and others that we won't be using.  
 
 🚀 Use the syntax above to make routes to map to the following:
 
-* GET `/`: Call petitions.getPetitions and render `index` in the callback
-* GET `/sign/:petitionID`:  Call Petitions.addSigner and render the petition `petition` page in the callback
+* GET `/`: Call polls.getPolls and render `index` in the callback:
 
-🚀  For example, we should change the code to render our `/` route to be:
-```javascript
-import * as Petitions from './controllers/petition_controller';
-
-app.get('/', (req, res) => {
-  Petitions.getPetitions((err, petitions) => {
-    res.render('index', { petitions });
-  });
+```js
+Polls.getPolls().then((polls) => {
+  res.render('index', { polls });
+}).catch((error) => {
+  res.send(`error: ${error}`);
 });
 ```
 
-🚀  We'll let you handle the `sign:petitionID` route. You need to get the id that is passed in when we hit `/petitions/:id`.  This is accessible as `req.params.petitionID` inside each of our controller functions that had this `:petitionID` path variable. Also, because the `Petitions.addSigner()` method requires the role and the name of the signer, you can access these through `req.query.role` and `req.query.name`. Inputs on a modal are stored as queries, which in urls are stored as `?name=value`. You also may want to use `res.redirect('/')` at the end of the route, if you wish.
+* GET `/new`:  render the `new` page in the callback.
 
-# //TODO: expand this a bit, how the functions are being called
+```js
+res.render('new');
+```
 
-For the `/sign/:petitionID`, you can likewise access `:petitionID` through `req.params.petitionID`. Also, because the `Petitions.addSigner()` method requires the role and the name of the signer, you can access these through `req.query.role` and `req.query.name`: inputs on a modal are stored as queries, which in urls are stored as `?name=value`. You also may want to use `res.redirect('petitions/req.params.petitionID')` instead of `res.render('petition', { petition })` so you don't have to pass in an entire petition object when you don't have to.
+* POST `/new`: Call `Polls.createPoll()` and redirect to `/` on success.
 
-# //TODO: use ajax PUT
+```js
+const newpoll = {
+  text: req.body.text,
+  imageURL: req.body.imageURL,
+};
+Polls.createPoll(newpoll).then((poll) => {
+  res.redirect('/');
+});
+```
+
+* POST `/vote/:id`: Call `Polls.vote()` and return success, we will use this to upvote/downvote.
+
+```js
+const vote = (req.body.vote === 'up');// convert to bool
+Polls.vote(req.params.id, vote).then((result) => {
+  res.send(result);
+});
+```
+
+
+🚀  Don't forget to import our Poll controller functions:
+
+```javascript
+import * as Polls from './controllers/poll_controller';
+```
 
 ## Controller Continued
 
-Ok, but our controller `controllers/petition_controller.js` is fairly useless.  We have everything wired, but we need to actually store stuff.
+Ok, but our controller `controllers/poll_controller.js` is fairly useless.  We have everything wired, but we need to actually store stuff.
 
-We should first implement the `getPetitions` endpoint.
+### getPoll
 
-🚀 We just use our `Petition` Mongoose model schema to get all the petitions in the Petitions collection by calling the `.find()` method:
+We should first implement the `getPolls` endpoint.
+
+🚀 We just use our `Poll` Mongoose model schema to get all the polls in the Polls collection by calling the `.find()` method:
 
 ```javascript
-export const getPetitions = (done) => {
-  Petition.find({}, (error, petitions) => {
-    done(null, petitions);
+export const getPolls = () => {
+  return Poll.find({});
+};
+```
+
+What is happening with the return above?  I thought we said we needed to return that *promise* thing? Turns out the mongoose `find()` method is a promise already, so we can just return it and use `.then()` in our route. Nice!
+
+
+🚀 Let's test this now and view the page at `http://localhost:9090/`. They should show our two polls that we created in the `mongo` shell.
+
+Now that we have the `getPolls` method working, we have to use more database methods (all of them can be found in the [mongoose docs](http://mongoosejs.com/docs/queries.html)).
+to implement the `createPoll` and `vote` methods.
+
+### createPoll
+
+The createPoll function should take in an Object with `text` and `imageURL` fields. It will then instantiate a new Poll object, assign some values, and save.
+
+🚀 Like so:
+
+```js
+export const createPoll = (poll) => {
+  const p = new Poll();
+  p.text = poll.text;
+  p.imageURL = poll.imageURL;
+  return p.save();
+};
+```
+
+Note, `save` is a promise too!
+
+### vote
+
+The final controller function we need should take in a poll id and also whether to upvote or downvote. Let's take this argument in as a boolean.  At least that is one way to do it.  We will use the poll id to find the specific poll using `.findOne()`.
+
+```js
+export const vote = (pollID, upvote) => {
+  return Poll.findOne({ _id: pollID }).then((poll) => {
+    console.log(`updating vote: ${poll} ${upvote}`);
+    if (upvote) {
+      poll.upvotes += 1;
+    } else {
+      poll.downvotes += 1;
+    }
+    return poll.save();
   });
 };
 ```
 
-🚀 Let's test this now and view the page at `localhost:9090/`. They should show our two petitions that we created in the `mongo` shell.
+Note how here we are both returning a promise but also have a `.then`.  Since you can chain them you can return a promise plus a then and that it still a promise.
 
-Now that we have the `getPetitions` method working, we have to use more database methods (all of them can be found in the [mongoose docs](http://mongoosejs.com/docs/queries.html)).
-to implement the `getPetition` and `addSigner` methods.
 
-🚀  In the `addSigner` method, the mongoose methods `.findOne()`, and `.save()` need to be used. The `addSigner` method should find the petition, and in the callback, call the `Signatures.createSigner()` method, then push the id of the signer onto the `petitions.signatures` list, and finally `.save()` the petition to get the job done.
+## Upvote / Downvote
 
-🚀  In the `getPetition` method, we should use `.findOne()` to display the petition given by the id. However, mongoose does not give the entire object model of the signatures in `petitions.signatures`. Therefore, in the callback of the `.findOne()` function for the getPetition method, we have to call the `.populate()` function:
+We now have all the server endpoints in place to add upvote/downvote capability, we just need to call our `vote/:id` endpoint from the frontend.
 
-```javascript
-Petition.findOne({ _id: petitionID}, (error, petition) => {
-    petition.populate('signatures', (result) => {
-      done(null, petition);
-    });
-  });
+🚀 Let's add the following at the bottom of our `index.ejs` file.  It will enable our upvote / downvote buttons to actually work.
+
+```js
+<script>
+$('.vote').click(function(event) {
+  event.preventDefault();
+  var vote=$(event.currentTarget).data('vote');
+  var id=$(event.currentTarget).data('id');
+  $.ajax({
+    type: "POST",
+    url: "/vote/"+id,
+    data: {vote}
+  }).done(location.reload());
+});
+</script>
 ```
-This returns `petition` as an object whose list of signatures are actual Signature objects: not just signature ids.
 
-🚀  In the `addSigner` method, `.findOne()`, and `.save()` need to be used. The `addSigner` method should find the petition, call the `Signatures.createSigner()` method, then add the id of the signer into the `petitions.signatures` list, and finally `save()` the petition to get the job done.
+In the above we make an ajax call to the server to update the fields, and then we just reload the page. There are better ways of updating our display but for now this should suffice!
 
 ## Deploy to Heroku
 
-Great! We have everything working now. We will need to host this new server component!  Create a new Heroku app similarly to how to you did for the slack assignment:
+Great! We have everything working now. We will need to host this new server component!
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
-2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database.
+2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
 3. Follow the steps under "Deploy Using Heroku Git".
 
 ## To Turn In
 
 1. github url to your repo
-2. url to your new heroku app instance
+1. url to your new heroku app instance
 
-### Extra Credit
-* add more useful routes, such as creating petitions or deleting them, or removing a signature from a petition.
+## Extra Credit
+
+1. How might you delete polls?
+1. What about preventing people from voting multiple times using cookies or localstorage?
