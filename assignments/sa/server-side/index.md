@@ -9,7 +9,7 @@ published: true
 
 Today we'll be learning how to create a server side rendered polling webapp: it will be an [express](https://expressjs.com/) server that displays some data which is stored using [mongodb](https://www.mongodb.com/). We'll get a taste of how to use simple server side routes for displaying some html built up from data we will store in a database, and we will gain some knowledge about [express](https://expressjs.com/) — which we will be using in Lab 5!  We'll also use some [materializecss](http://materializecss.com/) for some basic styling.
 
-<iframe width="640" height="299" src="https://www.youtube.com/embed/LjrdiK94FyU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" height="374" src="https://www.youtube.com/embed/LjrdiK94FyU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ## Some Setup
 First, let's download `node` and `mongodb` packages.
