@@ -22,6 +22,7 @@ permalink: /lectures/
 * [4/25 Routing](09_routing)
 * [4/27 Redux](10_redux)
 * [5/2 Pitches](11_pitches)
+* [5/4 Databases](12_intro_to_databases)
 
 
 

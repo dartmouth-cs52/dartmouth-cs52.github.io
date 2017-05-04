@@ -15,7 +15,8 @@ title: Assignments
 * [Short Assignment 4: React Intro](sa/react-videos) — DUE 4/19
 * [Short Assignment 5: Frontend Routing](sa/routing) — DUE 4/27
 * [Short Assignment 6: Redux](sa/redux) - DUE 4/30
-* Short Assignment 7: WebSockets
+* [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/10
+* Short Assignment 8: WebSockets
 
 
 
@@ -30,7 +31,7 @@ title: Assignments
 * Lab 5 Part 2: Redux Blog + Auth + Photos - ~DUE 5/12
 
 
-### 5-ish Short in-class quizzes:  10%
+### 4-ish Short in-class quizzes:  10%
 *Concepts and methods from lectures and labs.*
 
 ### 1 group presentation and workshop: 10%

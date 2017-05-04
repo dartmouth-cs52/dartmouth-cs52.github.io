@@ -129,7 +129,7 @@ name: Pros
 
 
 ---
-name: Why Not Sockes for EVERYTHING?
+name: Why Not Sockets for EVERYTHING?
 
 * low level protocol means more things to implement
   * how to create/update/delete resources

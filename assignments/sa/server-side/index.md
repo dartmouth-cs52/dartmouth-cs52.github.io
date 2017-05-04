@@ -20,7 +20,7 @@ brew install mongodb
 
 We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.
 
-🚀 Do what you did in [SA4](http://cs52.me/assignments/sa/react-videos/) when pulling from your own starterpack but in this case we'll pull from a different starter — create your own repo with the classroom link, add a starter remote to express-babel-starter, and pull from it. Then run these following commands to start our new node+express app in dev reloading mode.
+🚀 Do what you did in [SA4](http://cs52.me/assignments/sa/react-videos/) when pulling from your own starterpack but in this case we'll pull from a different starter — create your own repo with the classroom link, add a starter remote to [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter), and pull from it. Then run these following commands to start our new node+express app in dev reloading mode.
 
 ```bash
 npm install
@@ -374,6 +374,8 @@ Polls.getPolls().then((polls) => {
 });
 ```
 
+*Note: in case of error we're just sending back a single string with the error. Not very robust.*
+
 * GET `/new`:  render the `new` page in the callback.
 
 ```js
@@ -401,6 +403,7 @@ Polls.vote(req.params.id, vote).then((result) => {
 });
 ```
 
+Note: `req.params.id` - where is that coming from? Similarly to how the routing works in react, the `:id` defined in the route!
 
 🚀  Don't forget to import our Poll controller functions:
 
@@ -426,7 +429,6 @@ export const getPolls = () => {
 
 What is happening with the return above?  I thought we said we needed to return that *promise* thing? Turns out the mongoose `find()` method is a promise already, so we can just return it and use `.then()` in our route. Nice!
 
-
 🚀 Let's test this now and view the page at `http://localhost:9090/`. They should show our two polls that we created in the `mongo` shell.
 
 Now that we have the `getPolls` method working, we have to use more database methods (all of them can be found in the [mongoose docs](http://mongoosejs.com/docs/queries.html)).
@@ -447,7 +449,7 @@ export const createPoll = (poll) => {
 };
 ```
 
-Note, `save` is a promise too!
+Note: `save` is a promise too! We were able to instantiate a new Poll easily with the `new` keyword just like a class, very nice.
 
 ### vote
 
@@ -467,7 +469,7 @@ export const vote = (pollID, upvote) => {
 };
 ```
 
-Note how here we are both returning a promise but also have a `.then`.  Since you can chain them you can return a promise plus a then and that it still a promise.
+This one is a bit more complicated, we have to find the specific vote and set some fields and then save it.  Note how here we are both returning a promise but also have a `.then`.  Since you can chain them you can return a promise plus a then and that it still a promise.
 
 
 ## Upvote / Downvote
