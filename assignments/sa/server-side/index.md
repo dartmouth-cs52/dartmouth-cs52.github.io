@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
   res.send('hi');
 });
 ```
-The 2nd parameter to `.get()` is a function take 2 arguments:  request and response.  
+The 2nd parameter to `.get()` is a function that takes 2 arguments:  request and response.  
 
 Request is an express object that contains, among other things, any data that was part of the request. For instance, the JSON parameters we would POST or PUT in our asynchronous `axios` calls would be available as `req.body.parameterName`.
 
