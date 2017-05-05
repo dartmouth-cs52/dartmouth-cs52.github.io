@@ -234,7 +234,7 @@ The chaining method simplifies how our routes look. For instance here is how we 
 // ----------------------------------------------------
 router.route('/someroute/:someID')
   .post(/*someMethod*/)
-  .get(/*someMethod*/);
+  .get(/*someMethod*/)
   .delete(/*someMethod*/);
 ```
 {: .example}
