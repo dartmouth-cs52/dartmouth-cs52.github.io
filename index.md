@@ -93,9 +93,9 @@ See [assignments](/assignments).
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jon.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jonathan Gonzalez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jongonzalez/">@jongonzalez</a></div>
-  <div style="order:3;" class="rtable-cell"><br></div>
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/mauPR.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:mauricio.esquivel.rogel.18@dartmouth.edu">Mauricio Esquivel Rogel</a><br><a href="https://cs52-dartmouth.slack.com/messages/@mauesrog/">@mauesrog</a></div>
+  <div style="order:3;" class="rtable-cell"></div>
+  <div style="order:4;" class="rtable-cell"></div>
+  <div style="order:5;" class="rtable-cell"></div>
 
 
 </div>
