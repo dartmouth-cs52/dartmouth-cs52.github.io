@@ -27,8 +27,8 @@ title: Assignments
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/13
 * [Lab 3: React Notes](lab/react-notes) - DUE 4/24
 * [Lab 4: Redux Blog Frontend](lab/redux-blog) - DUE 5/3
-* Lab 5 Part 1: Redux Blog + API - ~DUE 5/8
-* Lab 5 Part 2: Redux Blog + Auth + Photos - ~DUE 5/12
+* [Lab 5 Part 1: Redux Blog + API](lab/redux-blog+server) - DUE 5/10
+* Lab 5 Part 2: Redux Blog + Auth + Photos - ~DUE 5/14
 
 
 ### 4-ish Short in-class quizzes:  10%

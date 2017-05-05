@@ -18,6 +18,8 @@ brew install node
 brew install mongodb
 ```
 
+More Mongo [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
+
 We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.
 
 🚀 Do what you did in [SA4](http://cs52.me/assignments/sa/react-videos/) when pulling from your own starterpack but in this case we'll pull from a different starter — create your own repo with the classroom link, add a starter remote to [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter), and pull from it. Then run these following commands to start our new node+express app in dev reloading mode.
