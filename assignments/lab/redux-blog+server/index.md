@@ -123,7 +123,7 @@ db.posts.insert(
    {
      "title": "first post",
      "tags": "words",
-     "content":  "this is a test post"
+     "content":  "this is a test post",
      "cover_url": "https://media.giphy.com/media/uscuTAPrWqmqI/giphy.gif"
    }
 )
