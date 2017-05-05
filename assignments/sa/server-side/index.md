@@ -53,7 +53,7 @@ We'll add more routing in shortly, but first let's set up our database!
 
 Mongo is the database that we are going to use.  We've already installed `mongodb` using Homebrew.  Follow further [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
 
- 🚀 You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process.
+ 🚀 You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process. ⚠️ On OSX if you get a permissions error you need to make sure that the database dir is writable `sudo chown $USER /data/db`.
 
 There is a commmandline client we'll use to connect to the database: `mongo`. You can also play around with a more graphical client [robomongo](https://robomongo.org/).
 
