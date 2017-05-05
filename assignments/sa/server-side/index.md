@@ -347,14 +347,15 @@ All these methods do not do anything meaningful right now. Let's leave these met
 
 Now we are ready to wire our app all together with routes. We can create a separate routes file, but our application is pretty small, so we can store all of our routes in our `app/server.js`:
 
-We can define our `polls/:id` routes for all polls like below:
+For example we could define a `path/:id` route like below:
 
 ```javascript
-// example!
-// on routes that end in /polls
+// example only!
 // ----------------------------------------------------
 app.get('/polls/:id', (req, res) => {
-  /*someMethod*/
+  /* for POST you would use req.body for fields */
+  /* req.params.id would have the :id part of the route */
+  /* someMethod */
 });
 ```
 {: .example}
@@ -364,7 +365,7 @@ Note `/*someMethod*/` is just a comment, you would call a method there that call
 
 Ok, remember how we defined all our API endpoints in our controller?  Let's map them in our router. You have access to methods on app `.get()`, `.post()`, and others that we won't be using.  
 
-🚀 Use the syntax above to make routes to map to the following:
+🚀 Use syntax similar to the above to make routes to map to the following:
 
 * GET `/`: Call polls.getPolls and render `index` in the callback:
 
