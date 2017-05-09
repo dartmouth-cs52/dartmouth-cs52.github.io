@@ -270,10 +270,13 @@ import apiRouter from './router';
 
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
+// this should go AFTER body parser
 app.use('/api', apiRouter);
 ```
 
 Neat!
+
+Note: the `app.use('api` line should go towards the bottom of the file, in particular after bodyparser.  The `server.js` file is read top to bottom every connection request, so when it hits the route definition if the body of the request hasn't been parsed you will get errors when you try to use  `req.body`.
 
 ### First Pass Test
 
