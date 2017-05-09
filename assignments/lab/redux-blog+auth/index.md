@@ -9,7 +9,7 @@ published: true
 ## Blog: Authentication
 
 
-For this assignment we are going to build an [express](https://expressjs.com/) and [mongodb](https://www.mongodb.com/) CRUD api server for our react+redux blog frontend. This will finally bring our stack all the way down to the database.
+For this assignment we are going to build an [express](https://expressjs.com/) and [mongodb](https://www.mongodb.com/) CRUD api server for our react+redux blog frontend. This will finally bring our stack all the way down to the database. In this part we're going to be adding in Authentication!
 
 ## Assignment At a Glance
 
@@ -23,7 +23,27 @@ On the api server,  we're going to also add `/signin` and `/signup` routes that 
 
 ## Some Setup
 
-We'll just continue working on the same code from HW5p1, if you didn't make a branch of your react+redux app for HW5p1 then please create a new branch from where you left off in HW4.  For this assignment, we'll have a new version of hw4 and a new version of hw5 and each should have its own branch and also its own urls. You will end up with 3 server urls at the end of this: A surge url for loading the frontend, a herokuapp url for the api server, and a mLabs mongo databaase url (which we won't need to actually know but heroku will automatically help connect to).  
+We'll just continue working on the same code from Lab5 part1.
+
+We're going to do a new thing with our git repos. We're going to `tag` a certain revision so you'll know where you started on part 2.
+
+🚀 Go into your Lab5 directory and run:
+
+```bash
+git tag v1
+git push origin --tags
+```
+
+🚀 Go into your Lab4 directory and run:
+
+```bash
+git tag v1
+git push origin --tags
+```
+
+Great, now you can always remember where you veered off course and made this terrible decision to add authentication to your lovely blog.
+
+You will end up with 3 server urls at the end of this: A surge url for loading the frontend, a herokuapp url for the api server, and a mLabs mongo databaase url (which we won't need to actually know but heroku will automatically help connect to).  
 
 We'll be working on both the api server and frontend app.
 
@@ -45,7 +65,7 @@ dotenv.config({ silent: true });
 process.env.API_SECRET
 ```
 
-Note: during deployment for Heroku you'll need to add API_SECRET to your config variables in Settings.
+Note: during deployment for Heroku you'll need to add `API_SECRET` to your config variables in Settings!
 
 ## API Server Auth support
 
@@ -55,7 +75,7 @@ Let's start adding authentication support to the api server.
 
 To start with, we want to add Users. This means we'll need a User model.
 
-🚀 You know models from P1.  Create a `models/user_model.js` file.  It will be set up identically to your Post model (ie. copy and refactor), but with the following fields:
+🚀 You know models from P1, oh yes you do.  Create a `models/user_model.js` file.  It will be set up identically to your Post model (ie. copy and refactor), but with the following fields:
 
 ```javascript
 email: { type: String, unique: true, lowercase: true },
@@ -107,7 +127,7 @@ yourModelSchema.pre('save', function beforeyYourModelSave(next) {
 });
 ```
 
-For the [`bcrypt-nodejs`](https://github.com/shaneGirish/bcrypt-nodejs) part what we'll want to do first generate a salt and then use that salt to hash our password.
+For the [`bcrypt-nodejs`](https://github.com/shaneGirish/bcrypt-nodejs) part what we'll want to do first is generate a salt and then use that salt to hash our password.
 
 ```javascript
 // generate a salt then run callback
@@ -365,7 +385,7 @@ Both of these are POSTs so from our frontend we will need to pass them data.
 
 🚀 What other routes should be we protect?  For now let's use `requireAuth` to protect `createPost`, `updatePost`, and `deletePost`. As easy as:  `.post(requireAuth, Posts.createPost)`
 
-Try a `curl`  post to create a new post,  you should get unauthorized!
+Try a `curl`  post to create a new post, you should get an unauthorized error!
 
 Let's get a JWT we could use:
 
@@ -585,12 +605,14 @@ There are 2 ways to associate the user with the post.  You can save a `ref` to t
 
 Test it all out and make sure all the parts still work!
 
+Commit, tag both your Lab5 and Lab4 repos with `v2`, and push your tags! Deploy everything. At this point you don't need any help with that.
+
 
 ## To Turn In
 
 1. github url to your repo
-1. url to your new heroku app instance for testing
-1. new surge url for your blog app that uses your new API server and has authentication!
+1. url to your heroku app instance for testing
+1. surge url for your blog app that uses your new API server and has authentication!
 1. your app should:
   * have users sign-in, sign-up, sign-out
   * not allow people to access /posts/new when not logged in
