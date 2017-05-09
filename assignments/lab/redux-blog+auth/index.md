@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lab5 +Auth +S3
+title: Lab5 +Auth
 published: true
 ---
 

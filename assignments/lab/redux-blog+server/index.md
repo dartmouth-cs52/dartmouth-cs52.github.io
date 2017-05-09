@@ -1,6 +1,6 @@
 ---
 layout: page
-title: HW 5 p1
+title: Lab5 p1
 published: true
 ---
 
@@ -12,6 +12,8 @@ published: true
 
 
 For this assignment we are going to build an [express](https://expressjs.com/) and [mongodb](https://www.mongodb.com/) CRUD api server for our react+redux blog frontend. This will finally bring our stack all the way down to the database.
+
+Our server will be a pure api server, returning only JSON format data to our Lab4 frontend.
 
 ## Assignment At a Glance
 
