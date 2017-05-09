@@ -383,20 +383,23 @@ And finally, you'll need to get the router id that is passed in when we hit `/po
 Note, unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in each document and then query on it.
 
 
-## Hosting
+## Deploy
 
 We will need to host this new server component so your blog can use it instead of the `cs52-blog.herokuapp.com` one.  
 
-Create a new Heroku app similarly to how to you did for the slack assignment:
+Great! We have everything working now. We will need to host this new server component!
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
-1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database.
-1. Follow the steps under "Deploy Using Heroku Git".
+1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
+1. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/cs52-blog.git`.   
+1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the npm command that is listed in your `Procfile` to launch your app.  COOL!
+
+Note: Don't forget to push master to **both** heroku and origin.
 
 
 ## P1 Complete
 
-Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!  IE. Change your Lab4 `ROOT_URL` to point to your Heroku hosted server instance.  
+Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!  IE. Change your Lab4 `ROOT_URL` to point to your Heroku hosted server instance.  Commit and push your very slightly altered Lab4.
 
 
 ## To Turn In
