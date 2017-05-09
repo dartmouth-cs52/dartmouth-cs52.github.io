@@ -1,6 +1,6 @@
 ---
 layout: page
-title: HW 5 p2
+title: Lab5 +Auth +S3
 published: true
 ---
 
@@ -104,7 +104,7 @@ yourModelSchema.pre('save', function beforeyYourModelSave(next) {
   // call next with an error if you encounter one
   // return next();
 
-)};
+});
 ```
 
 For the [`bcrypt-nodejs`](https://github.com/shaneGirish/bcrypt-nodejs) part what we'll want to do first generate a salt and then use that salt to hash our password.

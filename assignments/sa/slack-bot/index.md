@@ -4,8 +4,6 @@ title: SA10 Slack Bot
 published: true
 ---
 
-# Make a Slack Bot!
-
 ![](http://i.giphy.com/5xtDarzqYMWFigufLws.gif)
 
 Are you ready to invent the next AI?  Any self-respecting bot needs to be able to communicate via Slack. The bot will be able to do things like respond to messages and message users as they join your Slack team. It will be a simple [Node.js](https://nodejs.org/en/) and [Express.js](http://expressjs.com/) app and run on [Heroku](https://www.heroku.com/). Don't worry if you haven't used these technologies before — all will be explained!
@@ -16,47 +14,43 @@ Are you ready to invent the next AI?  Any self-respecting bot needs to be able t
 ## Slack Bot Basics
 In Slack, bot users are similar to human users in that they have names, profile pictures, exist as part of the team, can post messages, invited to channels, and more. The main difference is that bots are controlled programmatically via an API that Slack provides. We'll be building a custom bot that listens to certain events, like a message or a new member joining your team, and responds accordingly.
 
-## APIs
-
-🚩Application Program Interfaces (APIs) are sets of methods and protocols by which programs talk to each other.
-
-We'll be talking a lot more about this when we start designing our own!  But for now we'll use Slack's API to communicate with Slack's servers.
 
 ## Setup
-Some of the technologies we'll be using are Slack, Github, Heroku, and Node.js. You're already familiar with Slack and Github, but Heroku and Node might be new. Node is runtime environment used for developing server-side web applications and Heroku is a [Platform-as-a-Service](https://en.wikipedia.org/wiki/Platform_as_a_service) which runs our Node application. Let's walk through these basic setup steps together.
+Some of the technologies we'll be using are Slack, Github, Heroku, and Node.js. Node is runtime environment used for developing server-side web applications and Heroku is a [Platform-as-a-Service](https://en.wikipedia.org/wiki/Platform_as_a_service) which runs our Node application. Let's walk through these basic setup steps together.
 
 1. **GitHub**
 
-    🐻Fork this repository!
+    🚀 Pull in some starter code from [express+babel+eslint](https://github.com/dartmouth-cs52/express-babel-starter).
 
 1. **Slack**
 
-    🐻From the Slack desktop app, click on the team name in the top-left and then go to "Apps & Integrations." Search for "bot" and click the top result, "Bots." Click "Add Configuration". Choose a name for your bot and fill in the details for the bot. Take note of the API Token, we'll use it later.
+    🚀 From the Slack desktop app, click on the team name in the top-left and then go to "Apps & Integrations." Search for "bot" and click the top result, "Bots." Click "Add Configuration". Choose a name for your bot and fill in the details for the bot. Take note of the API Token, we'll use it later.
 
     ![](img/slack_bot_add.png){: .fancy}
 
 1. **Setup Local Environment**
 
-    🚩Your app will need to know about the API token. This token allows you to talk to Slack's servers in an authenticated way.  API keys can be thought of as authentication for programs.
+    Your app will need to know about the API token. This token allows you to talk to Slack's servers in an authenticated way.  API keys can be thought of as authentication for programs.
 
-    You'll need to have the API token as a local environment variable. This way you can run and test your Node app locally and you don't have to put your secret API key into your code — which would be a security risk as then potentially it could be used by anybody if your code was public.
+    You'll need to have the API token as a local environment variable.  However, to make it simpler than editing individual shell environment variables we're going to use a node module:  [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code.
 
-    You can set an environment variable with `export  <name>="XXXX"` and view it with `echo $<name>`.
+    🚀 Save `SLACK_BOT_TOKEN="TOKEN_YOU_SAVED_EARLIER"` into a `.env` file that you do not add to git (add .env to your .gitignore file).
 
-    ```bash
-    export SLACK_BOT_TOKEN="TOKEN_YOU_SAVED_EARLIER"
-    echo $SLACK_BOT_TOKEN
+    Then in your code wherever you need it you can use:
+
+    ```javascript
+    import dotenv from 'dotenv';
+    dotenv.config({ silent: true });
+
+    // and then the secret is usable this way:
+    process.env.SLACK_BOT_TOKEN
     ```
 
-    Note: on Windows try `set SLACK_BOT_TOKEN "TOKEN_YOU_SAVED_EARLIER"`.
-
-    In our app we will be able to access this in javascript with `process.env.SLACK_BOT_TOKEN`.
-
-    🚩 The above export only sets the variable for our currently running shell.  To save on OS X or Linux something akin to: `echo 'export SLACK_BOT_TOKEN="TOKEN_YOU_SAVED_EARLIER"' >> ~/.profile`  should do the trick, but this differs a lot by shell and operating system.
+    Note: during deployment for Heroku you'll need to add SLACK_BOT_TOKEN to your config variables in Settings.
 
 1. **Node.js and Node Package Manager (npm)**
 
-    🐻First, let's install [Node.js](https://nodejs.org/en/).
+    🚀First, let's install [Node.js](https://nodejs.org/en/).
 
     macOS:
     ```bash
@@ -70,31 +64,31 @@ Some of the technologies we'll be using are Slack, Github, Heroku, and Node.js. 
 
     which both installs and **saves** the package as a dependency in the `package.json file`, explained below.
 
-    🐻 Open your project in Atom `atom .` and edit your `package.json` file, give your bot a name and add yourself as author:
+    🚀 Open your project in Atom `atom .` and edit your `package.json` file, give your bot a name and add yourself as author:
 
     Note that some stuff is already set up for you here.  This is a very basic template that includes support for es6.  We'll go through everything in here in more detail later.
 
-    🐻Notice that there are several dependencies already set up for your project.  Whenever you start working on a Node.js project that comes with a `package.json` file you should install them.
+    🚀Notice that there are several dependencies already set up for your project.  Whenever you start working on a Node.js project that comes with a `package.json` file you should install them.
 
     ```bash
     cd slackattack  #make sure you are in the cloned project
     npm install  #installs all the dependencies in node_modules
     ```
 
-    🚩Note that `node_modules` is in the `.gitignore` file. This is because there is no reason to version control these dependencies, as they are easily reinstalled.
+    Note that `node_modules` is in the `.gitignore` file. This is because there is no reason to version control these dependencies, as they are easily reinstalled.
 
 1. **Express**
 
     [Express](http://expressjs.com/) is a web framework for Node.
     This can be useful if we need to control our app remotely, for now we'll leave this set up.
 
-    🐻Open `app/server.js`.  This is the main file that launches your bot.
+    🚀Open `app/server.js`.  This is the main file that launches your bot.
 
 1. **Run Dev Mode**
 
     You can now start your app in dev mode.
 
-    🚩In the `package.json` there is a section named `scripts`.  This happens to have a few handy things already defined for you.  In particular the dev command which you can run with `npm run dev`.
+    In the `package.json` there is a section named `scripts`.  This happens to have a few handy things already defined for you.  In particular the dev command which you can run with `npm run dev`.
 
     This will launch your bot in development mode!  Node will watch for any file changes and relaunch itself as needed.
 
@@ -114,7 +108,7 @@ Some of the technologies we'll be using are Slack, Github, Heroku, and Node.js. 
 
 Ok so now you have a little server running, but how does it talk to Slack?
 
-1. 🐻Let's add a little library to do that. In a new Terminal window (cool thing about how we're running node in dev mode is that we can change things while it is  running and it'll pick up the changes):
+1. 🚀Let's add a little library to do that. In a new Terminal window (cool thing about how we're running node in dev mode is that we can change things while it is  running and it'll pick up the changes):
 
     ```bash
     cd slackattack #make sure you are in your project direct
@@ -123,11 +117,11 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
     We are going to use [botkit](https://github.com/howdyai/botkit), which is a library that helps create conversational bots.  
 
-    🚩Note how as soon as that finishes running your nodemon restarts.
+    Note how as soon as that finishes running your nodemon restarts.
 
 1. Import the library.
 
-    🐻in `app/server.js` add:
+    🚀in `app/server.js` add:
 
     ```js
     import botkit from 'botkit';
@@ -137,7 +131,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
 1. Setup Bot Controller
 
-    🐻After we create the express app, lets set up botkit.
+    🚀After we create the express app, lets set up botkit.
 
     ```js
     // botkit controller
@@ -165,7 +159,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
     If you notice an error: `Error: not_authed` this is because you forgot to export/set the environment variable for the SLACK_BOT_TOKEN.
 
-    🚩If you have trouble setting up your environment you can use a .env file with the [dotenv node package](https://www.npmjs.com/package/dotenv).
+    If you have trouble setting up your environment you can use a .env file with the [dotenv node package](https://www.npmjs.com/package/dotenv).
 
 
 1. Lets Say Hi!
@@ -214,7 +208,7 @@ The Botkit library provides us with a convenient wrapper around Slack's API. Our
 ### Events
 The Slack server issues **events** that are then consumed by clients. These are things like [messages](https://api.slack.com/events/message) and [team join](https://api.slack.com/events/team_join) events. Botkit can hook up to any of Slack's events.  `.hears` is a fancier way of listening to message events.   
 
-🐻Botkit [slack event integration](https://github.com/howdyai/botkit/blob/master/readme-slack.md#slack-specific-events).
+🚀Botkit [slack event integration](https://github.com/howdyai/botkit/blob/master/readme-slack.md#slack-specific-events).
 
 For instance:
 
@@ -237,9 +231,9 @@ At this point you've achieved a general understanding of what goes into making a
 
 Except first, lets make your bot actually helpful.  I am hungry, and I want your bot to suggest places to eat.
 
-🐻Add in [Yelp API for node](https://github.com/olalonde/node-yelp).
+🚀Add in [Yelp API for node](https://github.com/olalonde/node-yelp).
 
-🐻You'll need to [sign up and generate API keys](http://www.yelp.com/developers/getting_started/api_access
+🚀You'll need to [sign up and generate API keys](http://www.yelp.com/developers/getting_started/api_access
 ), similar to what you had to do for Slack.
 
 Tip: Yelp results come back looking something like:
@@ -308,11 +302,11 @@ Don't forget to make your bot able to respond to any messaged directed at it wit
 
 Ok the last step is to deploy your bot to Heroku!
 
-1. 🐻Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app. Head over to "Settings" and add a Config Variable `SLACK_BOT_TOKEN` with value set to the API token of the Slack bot you made in step 1. You probably also need to add all your YELP keys, and any other API's you used.
+1. 🚀Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app. Head over to "Settings" and add a Config Variable `SLACK_BOT_TOKEN` with value set to the API token of the Slack bot you made in step 1. You probably also need to add all your YELP keys, and any other API's you used.
 
 1. Follow the steps under "Deploy Using Heroku Git".
 
-🚩You may have noticed a file named `Procfile` in the project. This tells Heroku what commands to run in its [dynos](https://devcenter.heroku.com/articles/dynos). Our `Procfile` is just one line, `web: npm run prod`, where `web` defines the dyno type (this one receives HTTP traffic), `npm run prod` is the command defined in `package.js` that we want to run.
+You may have noticed a file named `Procfile` in the project. This tells Heroku what commands to run in its [dynos](https://devcenter.heroku.com/articles/dynos). Our `Procfile` is just one line, `web: npm run prod`, where `web` defines the dyno type (this one receives HTTP traffic), `npm run prod` is the command defined in `package.js` that we want to run.
 
 
 ## Outgoing Webhook

@@ -80,11 +80,11 @@ W5 4/26   XHOUR: redux
 W5 4/27   Lecture: Redux             SA: X                      WS: preprocs      HW: redux-blog
 
 W6 5/2    Lecture: Pitches           SA: X                      WS: build         HW: ''
-W6 5/3    XHOUR:  slack-bot
+W6 5/3    XHOUR:  server-side-rendering
 W6 5/4    Lecture: Databases         SA: X                      WS: alt-stack     HW: redux-blog+api
 
-W7 5/9    Lecture: Sessions + Auth   SA: server-side-rendering  WS: deployment    HW: ''
-W7 5/10   XHOUR:  server-side-rendering
+W7 5/9    Lecture: Sessions + Auth   SA:                        WS: deployment    HW: ''
+W7 5/10   XHOUR:  
 W7 5/11   Lecture: Catchup?          SA: X                      WS: deployment    HW: redux-blog+auth+uploading (TODO add s3)
 
 W8 5/16   Lecture: Websockets        SA: react-notes+ws         WS: platforms     HW: ''
