@@ -28,17 +28,15 @@ name: Today
 
 * Sessions
 * Authentication
-* HWs
 
 ???
 
 
 
-
-
-
 ---
 name: Sessions
+
+<iframe src="//giphy.com/embed/ukE9oP3kb7TVu" width="480" height="203" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 * state between each request to server
 * who is logged in?
@@ -67,10 +65,13 @@ name: Browser State Persistence
 ---
 name: Session State
 
+<iframe src="//giphy.com/embed/3hmmVGaDaFMdy" width="480" height="202" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 * keep some state in active browser
 * and between browser sessions
 
 ???
+* what we want to do
 
 
 
@@ -105,6 +106,20 @@ name: Stateless HTTP
 ---
 name: Cookies
 
+
+<iframe src="//giphy.com/embed/5LiNKV5YurvKo" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+???
+
+
+
+
+---
+name: Cookies
+
+.small[![](img/http_session_cookie_illustration.png)]
+
+
 * since early days of http:
   * some state set by web server
   * browser attaches to every request
@@ -122,28 +137,18 @@ name: Cookies
 
 
 
----
-name:
-
-
-<iframe src="//giphy.com/embed/5LiNKV5YurvKo" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
-???
-
-
-
 
 ---
 name: Cookies
 
-```
+```html
 // server
 HTTP/1.0 200 OK
 Content-type: text/html
 Set-Cookie: cookie_name2=cookie_value2; expires=Sun, 16 Jul 2016 06:23:41 GM
 ```
 
-```
+```html
 // browser cookie header
 GET /index.html HTTP/1.1
 Host: www.example.org
@@ -151,7 +156,9 @@ Cookie: cookie_name1=cookie_value1; cookie_name=cookie_value2;
 ```
 
 ???
-
+* server sends cookie, client remembers it
+* client sends cookie automatically back with each request
+* browser and server thing - not part of http specifically
 
 
 
@@ -173,13 +180,37 @@ name: Just a file
 
 
 ---
+name: Variety of Types
+
+
+.left[
+* session cookie (memory)
+* persistent cookie (disk)
+* secure (over https)
+* HttpOnly (no js)
+* 3d party (ads)
+* zombie (resurrects)
+]
+
+.right[
+<iframe src="//giphy.com/embed/Krc1VBel82kg0" width="380" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+]
+
+???
+* zombie cookie is stored in a variety of different ways,  cached image in your browser, session storage, flash, etc, ip addr etc.
+
+---
 name: Tracked and Stolen
 
 <iframe src="//giphy.com/embed/4KcDtVDyFRQKA" width="480" height="438" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
-
-
+* cookies can be used to track you
+* say you have an iframe and it loads foo.com
+  * this can now drop a cookie for domain foo.com
+  * but the iframe had some identifier that it was being shown on site y.com
+  * now every time you go to some site that also uses the advertising provider
+  * they know you've been there.
 
 
 ---
@@ -201,7 +232,11 @@ sessionStorage.removeItem('key')
 
 
 ???
+* so maybe cookies have problems
+* and we don't have enough control
+* but we like javascript everything now right?
 * accessed only thorugh javascripty
+* still per origin - can't read another domains storage
 
 
 
@@ -237,13 +272,14 @@ name: Framework Sessions
 * manual encryption if any
 
 ???
-* automatically set on client and returned
+* some frameworks automatically set on client and returned
+* typically no encryption but easy
 
 
 
 
 ---
-name: Server Session Storage
+name: Additional Server Session Storage
 
 * memory:
   * fast
@@ -257,7 +293,8 @@ name: Server Session Storage
   * fast key:value stores
 
 ???
-
+* server tracking of sessions
+* still requires client data but can extend local session storage
 
 
 
@@ -267,13 +304,10 @@ name: Server Session Storage
 name: Express.js Sessions
 
 * `request.session` through middlewares
-* we'll write out own that is more secure!
+* we'll write our own that is more secure!
 
 ???
-
-
-
-
+* is cookies based
 
 
 
@@ -281,18 +315,21 @@ name: Express.js Sessions
 ---
 name: Session Hijacking
 
-```
+```html
 // real bad
 Cookie: user.password='this is my plain text password'
 
 // still problematic
 Cookie: connect.sid=2398sf98792874hk2kjh23iu
 ```
+* security through obscurity
 
 ???
+* what should we store in a cookie?
 * if this could be guessed or stolen
 * then attacker could easily become you
 * predictable session ids
+* security through obscurity?
 
 
 

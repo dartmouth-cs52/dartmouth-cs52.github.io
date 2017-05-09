@@ -48,35 +48,6 @@ Some of the technologies we'll be using are Slack, Github, Heroku, and Node.js. 
 
     Note: during deployment for Heroku you'll need to add SLACK_BOT_TOKEN to your config variables in Settings.
 
-1. **Node.js and Node Package Manager (npm)**
-
-    🚀First, let's install [Node.js](https://nodejs.org/en/).
-
-    macOS:
-    ```bash
-    brew install node
-    ```
-
-    Windows:
-    download the installer from: [Node.js](https://nodejs.org/en/)
-
-    Node's package manager, npm, is installed automatically with Node. It lets you install packages with`npm install <package> --save`
-
-    which both installs and **saves** the package as a dependency in the `package.json file`, explained below.
-
-    🚀 Open your project in Atom `atom .` and edit your `package.json` file, give your bot a name and add yourself as author:
-
-    Note that some stuff is already set up for you here.  This is a very basic template that includes support for es6.  We'll go through everything in here in more detail later.
-
-    🚀Notice that there are several dependencies already set up for your project.  Whenever you start working on a Node.js project that comes with a `package.json` file you should install them.
-
-    ```bash
-    cd slackattack  #make sure you are in the cloned project
-    npm install  #installs all the dependencies in node_modules
-    ```
-
-    Note that `node_modules` is in the `.gitignore` file. This is because there is no reason to version control these dependencies, as they are easily reinstalled.
-
 1. **Express**
 
     [Express](http://expressjs.com/) is a web framework for Node.

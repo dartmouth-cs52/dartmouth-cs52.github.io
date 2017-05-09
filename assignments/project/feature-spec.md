@@ -12,11 +12,13 @@ The feature spec is a document that is a walk-though of your project from the us
 
 ## User Stories and Personas
 
-User stories are short scenarios about how your product is used.  User personas are the fictional individuals who comprise your product's users.  Your personas should have names and believable backgrounds.  They should have specific demonstrative use cases for your product.  You will refer to them as you work on the product and you'll find they will be quite useful!  The aim of user stories is to codify specific use cases for your product and allow them to be easily communicated as you build the product.  They help keep the team focused on the functionality of the product for specific people rather than getting sidetracked by features that seem "cool" or "look good".  For every feature in your spec you should have a user persona that would find it useful or compelling.
+User stories are short scenarios about how your product is used.  User personas are the fictional individuals who comprise your product's users.  Your personas should have names and believable backgrounds.  They should have specific demonstrative use cases for your product.  You will refer to them as you work on the product and you'll find they will be quite useful!  The aim of user stories is to codify specific use cases for your product and allow them to be easily communicated as you build the product.  They help keep the team focused on the functionality of the product for specific people rather than getting sidetracked by features that seem "cool" or "look good".  For every feature in your spec you should have a user persona that would find it useful or compelling. You can use [userforge.com](http://userforge.com) if you want to.
 
 ## Mockups/Sketches
 
-Based on the various features and pages you described in the feature spec, draw up sketches of each view.  Napkin style quick sketches are a good place to start. Focus more on thinking through the common actions that the users will be making rather than how and where the buttons go.  As you draw our these sketches with your team several things will come to light, features you might have missed or interactions that need to be changed.  Make your sketches comprehensive, they should cover all the views and functionality that your apps needs. Additionally you should make a site map style overview showing how the views are connected. Don't worry too much about making pixel perfect designs, once you have some sketches, refine them and feel free to make them pretty. It's more important to think through layout and functionality than making sure your color scheme or logo are perfect as you can continue to iterate on those.  I recommend against most wireframing software, for wireframing you might as well just sketch on paper. Once you are ready to make it prettier just go straight into a tool like [Figma](https://www.figma.com/).   There are many good design resources out there. Here's [one](http://cdn.ustwo.com/PPP/PP3.pdf) about pixel perfect design.
+Based on the various features and pages you described in the feature spec, draw up sketches of each view.  Napkin style quick sketches are a good place to start. Focus more on thinking through the common actions that the users will be making rather than how and where the buttons go.  As you draw our these sketches with your team several things will come to light, features you might have missed or interactions that need to be changed.  Make your sketches comprehensive, they should cover all the views and functionality that your apps needs. Additionally you should make a site map style overview showing how the views are connected. Don't worry too much about making pixel perfect designs, once you have some sketches, refine them and feel free to make them pretty. It's more important to think through layout and functionality than making sure your color scheme or logo are perfect as you can continue to iterate on those.  I recommend against most wireframing software, for wireframing you might as well just sketch on paper.  Once you are ready to make it prettier just go straight into a tool like [Figma](https://www.figma.com/).  [Invisionapp](https://www.invisionapp.com/) is a nice way to put your designs together.  [Pop](https://marvelapp.com/pop/) — Prototyping on Paper, is a good way to get started without doing high quality designs as well.  
+
+There are many good design resources out there. Here's [one](http://cdn.ustwo.com/PPP/PP3.pdf) about pixel perfect design.
 
 
 ## To Turn In:
@@ -24,9 +26,12 @@ Based on the various features and pages you described in the feature spec, draw 
 Overall this document does not need to be super extensive, it should cover the features and be compelling story about your product, but it doesn't need to be a million pages.
 
 * Feature Spec Doc (google doc share link):
-  * Short short summary intro to the project.
-  * Functionality of the product broken down by view, for example:
+  * Short short short summary intro to the project copied from project proposal.
+  * Short walkthrough of the app. Can be broken down into bulleted action steps.
+  * Brief list of views, for example:
     * login page
     * profile with name, birthday
     * feed view
-  * At least 3 short AND fun user stories
+    (please do not make this exhaustive. No need to talk about which buttons are available on each page — just which general action a user would take on that page)
+* At least 3 short AND fun user stories - can be in google doc or [userforge.com](http://userforge.com)
+* Mockups submitted in google doc or [invisionapp](https://www.invisionapp.com/) or [figma](https://www.figma.com)
