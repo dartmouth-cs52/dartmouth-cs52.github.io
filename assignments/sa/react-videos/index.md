@@ -273,12 +273,12 @@ let foo = {
   c: 'a string'
 }
 
-let { x: a, y: c } = foo;
-console.log(x, y); // → 100 a string
+let { a: x, c: y } = foo;
+console.log(x, y); // → 100 "a string"
 
-// or with shorthand if named the same
+// or with the more commonly used shorthand if named the same
 let { a, c } = foo;
-console.log(a, c); // → 100 5
+console.log(a, c); // → 100 "a string"
 ```
 
 More here: [mikaelb](http://git.mikaelb.net/presentations/bartjs/destructuring/#/)
