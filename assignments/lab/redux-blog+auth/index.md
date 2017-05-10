@@ -49,11 +49,11 @@ We'll be working on both the api server and frontend app.
 
 ## Secret Key
 
-For signing our JWT's we'll need a secret key.  Might as well set that up now.
+For signing our JWT's on the **server side** we'll need a secret key.  Might as well set that up now.
 
-We'll need to create an `API_SECRET` environment variable with some long random string (any characters). This is just like what we did for the slackbot assignment.
+We'll need to create an `AUTH_SECRET` environment variable with some long random string (any characters).
 
-Use the [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code. IE. Save `API_SECRET="somerweklhjhdf9879av8v928cjka asdflkaj889"` into a `.env` file that you do not add to git (add .env to your .gitignore file).
+Use the [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code. IE. Save `AUTH_SECRET="somerweklhjhdf9879av8v928cjka asdflkaj889"` into a `.env` file that you do not add to git (add .env to your .gitignore file).
 
 Then in your code wherever you need the secret you can use:
 
@@ -62,10 +62,10 @@ import dotenv from 'dotenv';
 dotenv.config({ silent: true });
 
 // and then the secret is usable this way:
-process.env.API_SECRET
+process.env.AUTH_SECRET
 ```
 
-Note: during deployment for Heroku you'll need to add `API_SECRET` to your config variables in Settings!
+Note: during deployment for Heroku you'll need to add `AUTH_SECRET` to your config variables in Settings!
 
 ## API Server Auth support
 
@@ -102,7 +102,7 @@ Remember how we planned on saving our passwords?
 
 Now we get to implement that!
 
-🚀 We're going to use the [`bcrypt-nodejs`](https://github.com/shaneGirish/bcrypt-nodejs) module for this. So you should `npm install --save bcrypt-nodejs` now and import it.
+🚀 We're going to use the [`bcryptjs`](https://github.com/dcodeIO/bcrypt.js) module for this. So you should `npm install --save bcryptjs` now and import it.
 
 #### Saving Salt+Hash
 
@@ -127,25 +127,20 @@ yourModelSchema.pre('save', function beforeyYourModelSave(next) {
 });
 ```
 
-For the [`bcrypt-nodejs`](https://github.com/shaneGirish/bcrypt-nodejs) part what we'll want to do first is generate a salt and then use that salt to hash our password.
-
-```javascript
-// generate a salt then run callback
-bcrypt.genSalt(10, (err, salt) => {
-  if (err) { return next(err); }
-
-  // hash (encrypt) our password using the salt
-  bcrypt.hash(user.password, salt, null, (err, hash) => {
-    if (err) { return next(err); }
-
-    // overwrite plain text password with encrypted password
-    user.password = hash;
-    return next();
-  });
-});
-```
+For the [`bcryptjs`](https://github.com/dcodeIO/bcrypt.js) part what we'll want to do first is generate a salt and then use that salt to hash our password.  Take a look at the docs, there's a few ways to do it. `10` (the default) is fine for the number of rounds.
 
 🚀 use the above to parts to construct a method for:  `userSchema.pre('save', function beforeUserSave(next) {`.  Don't forget that you'll need to set `user` to `this` at the top.
+
+
+🚀 Generate a salt and then hash `user.password` with the salt.
+
+🚀 Set the user.password to the hash and `return next()` which will allow the hook to proceed.
+
+```js
+// overwrite plain text password with encrypted password
+user.password = hash;
+return next();
+```
 
 But wait, won't this update every single time we save the user?  Yes, that might not be ideal if later want to add in new fields and such!
 
@@ -155,24 +150,22 @@ Luckily, you can add a check to see if the  `password` field is being updated or
 // only hash the password if it has been modified (or is new)
 if (!user.isModified('password')) return next();
 ```
-
 Great, now we've got the first part down, how about comparing.
 
 #### Comparing Salt+Hash
 
 This will be a little different. We want to add a method to our model to support comparing.  It is possible to [add methods to a schema](http://mongoosejs.com/docs/guide.html#methods) in Mongoose.
 
-I'll just give you this method as it isn't that complicated.  We just add a method that takes a `candidatePassword` and returns a promise that wraps a bcrypt.compare call.
+🚀 We need to add a method that takes a `candidatePassword` and a callback.  The callback arguments are `(error, result)` so you just have to make sure to return `(null, result)`.
 
 ```javascript
-// note use of named function rather than arrow notation
+//  note use of named function rather than arrow notation
 //  this arrow notation is lexically scoped and prevents binding scope, which mongoose relies on
 UserSchema.methods.comparePassword = function comparePassword(candidatePassword, callback) {
-  bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
-    if (err) { return callback(err); }
 
-    callback(null, isMatch);
-  });
+  //return callback(null, comparisonResult) for success
+  // or callback(error) in the error case
+
 };
 ```
 
@@ -206,7 +199,7 @@ When we generate a new JWT we need to simply encode a particular bit of json.  T
 // encodes a new token for a user object
 function tokenForUser(user) {
   const timestamp = new Date().getTime();
-  return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
+  return jwt.encode({ sub: user.id, iat: timestamp }, process.env.AUTH_SECRET);
 }
 ```
 
@@ -214,7 +207,7 @@ What should our two methods do?
 
 ![](img/token_process.png){: .small .fancy }
 
-For `signin`, once we have verified username/password we can just generate a new token. We're going to do the verification with a passport middleware, so our `signin` function will already be protected so all it has to do is return a new token.
+For `signin`, once we have verified username/password we can just generate a new token. We're going to do the verification with a passport middleware, so our `signin` function will already be protected -- all it has to do is return a new token.
 
 ```javascript
 res.send({ token: tokenForUser(req.user) });
@@ -269,9 +262,8 @@ import passport from 'passport';
 import LocalStrategy from 'passport-local';
 import { Strategy as JwtStrategy, ExtractJwt } from 'passport-jwt';
 
-// and import User and your config with the secret
+// and import User
 import User from '../models/user_model';
-import config from '../config';
 
 // options for local strategy, we'll use email AS the username
 // not have separate ones
@@ -282,7 +274,7 @@ const localOptions = { usernameField: 'email' };
 // so passport can find it there
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
-  secretOrKey: config.secret,
+  secretOrKey: process.env.AUTH_SECRET,
 };
 
 
@@ -404,7 +396,9 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: JUST_THE_LON
 
 Done!  You now have an API server that supports authentication. This is fairly rudimentary, but you can expand on this. For instance you can make sure that a user can only update their own posts (just save the userID along with the post).  Within `post_controller.js` for any route that is protected by `requireAuth` you will now have a `req.user` object.  Nice!
 
-🚀 Might as well just add in recording who the author is with each post now.  Edit your `post_model.js` file and add in this field to your schema:  `author: { type: Schema.Types.ObjectId, ref: 'User' },`.  We are saying that the author field is now a reference to a User.   We can later get this value automatically filled for us or can use the id to look up the author using [`populate`](http://mongoosejs.com/docs/populate.html)
+🚀 Might as well just add in recording who the author is with each post now.  Edit your `post_model.js` file and add in this field to your schema:  `author: { type: Schema.Types.ObjectId, ref: 'User' },`.  We are saying that the author field is now a reference to a User.   We can later get this value automatically filled for us or can use the id to look up the author using [`populate`](http://mongoosejs.com/docs/populate.html).
+
+🚀 Don't forget to update your controller to utilize this new field.
 
 Now when you make new posts, here's what your mongo database entry will look like:
 
