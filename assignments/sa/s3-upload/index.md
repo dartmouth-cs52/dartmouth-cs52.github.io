@@ -8,8 +8,6 @@ published: false
 
 ### Overview
 
-Today we'll be learning how to use [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/) to implement unit tests on our redux blog server that we built in Lab 5. Obviously testing is extremely important as you need to verify that your API works. What many people do not realize is that testing is even more important to make sure that your exisiting functionality of your code works after you add new functionality to it. Since our API is not very complex, this is just meant as an introduction to how to write API tests.
-
 Today we'll be learning how to directly upload images to Amazon Web Services Simple Storage Service (S3) on our blog application from Lab 4 and 5. We will be implementing a nice image input for handling image uploads and then these images will directly be uploaded to S3.
 
 Amazon S3 is a popular and reliable storage option for storing files such as images, documents, and videos. By uploading directly to S3, we can reduce server load because our server load no longer needs to handle receiving images from the client. When handling large images, our service will not be able to respond to other web requests as efficiently.
