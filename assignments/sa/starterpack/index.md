@@ -353,7 +353,7 @@ In *Atom* install the `linter-eslint` plugin.
 ![](img/atom-eslint.png){: .fancy .small}
 
 
-The recommended linter plugin for javascript is [Eslint](eslint.org).
+The recommended linter plugin for javascript is [Eslint](http://eslint.org/).
 
 🚀 Install `eslint`:
 
