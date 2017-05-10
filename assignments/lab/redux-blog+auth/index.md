@@ -178,8 +178,9 @@ Let's add an new User controller!
 
 🚀 Create a `controllers/user_controller.js`.
 
-To encode and decode our JWT's we're going to use the [`jwt-simple`](https://github.com/hokaccha/node-jwt-simple). Go ahead and npm install it and import it: `import jwt from 'jwt-simple';` Also import config and our new User model!
+To encode and decode our JWT's we're going to use the [`jwt-simple`](https://github.com/hokaccha/node-jwt-simple). Go ahead and npm install it and import it: `import jwt from 'jwt-simple';`
 
+🚀 Also import our new User model and dotenv!
 
 The controller has functions that we call for express routes. We are going to add 2 new routes `/signin` and `/signup`, so lets create function headers for those:
 
