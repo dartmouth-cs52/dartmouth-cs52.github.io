@@ -90,7 +90,7 @@ This routing concept is identical to the routing we used in our react app.  It m
 
 Request is an express object that contains, among other things, any data that was part of the request. For instance, the JSON parameters we would POST or PUT in our asynchronous `axios` calls would be available as `req.body.title`, etc.  
 
-Response is another special express object that contains, among other things, a method named `send` that allows us a send back a response to the client.  When your api call gets back JSON data this is how it is returned.  Consider `res.send()` the equivalent of a network based `return` statement.
+Response is another special express object that contains, among other things, a method named `send` that allows us to send back a response to the client.  When your api call gets back JSON data this is how it is returned.  Consider `res.send()` the equivalent of a network based `return` statement.
 
 We'll add more routing in shortly, but first let's set up our database!
 
@@ -232,7 +232,7 @@ The chaining method simplifies how our routes look. For instance here is how we 
 
 ```javascript
 // example!
-// on routes that end in /posts
+// on routes ending in /someroute/:someID
 // ----------------------------------------------------
 router.route('/someroute/:someID')
   .post(/*someMethod*/)
