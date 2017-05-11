@@ -439,7 +439,7 @@ We'll need 4 ActionCreators in your `actions/index.js` file.
 
 ```javascript
 
-export function signinUser({ email, password }) {
+export function signinUser({ email, password }, history) {
   // takes in an object with email and password (minimal user object)
   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
   // does an axios.post on the /signin endpoint
@@ -451,7 +451,7 @@ export function signinUser({ email, password }) {
 
 
 
-export function signupUser({ email, password }) {
+export function signupUser({ email, password }, history) {
   // takes in an object with email and password (minimal user object)
   // returns a thunk method that takes dispatch as an argument (just like our create post method really)
   // does an axios.post on the /signup endpoint (only difference from above)
@@ -464,11 +464,11 @@ export function signupUser({ email, password }) {
 
 // deletes token from localstorage
 // and deauths
-export function signoutUser() {
+export function signoutUser(history) {
   return (dispatch) => {
     localStorage.removeItem('token');
     dispatch({ type: ActionTypes.DEAUTH_USER });
-    browserHistory.push('/');
+    history.push('/');
   };
 }
 
@@ -493,8 +493,7 @@ We'll need to add an Authorization Header to some of the existing axios API call
 axios.post(`${ROOT_URL}/posts`, post, { headers: { authorization: localStorage.getItem('token') } })
 ```
 
-Note how we had to put the post in a `data` parameter.
-
+Note, the headers are in a config object being passed in as a third argument to axios.
 
 ### On First Load
 
@@ -507,7 +506,7 @@ if (token) {
 }
 ```
 
-This will set our state as authenticated if there is a token available that was previously saved.
+This will set our state as authenticated if there is a token available that was previously saved.  You can debug this in your *Application* -> *Local Storage* Chrome inspector tab.
 
 
 ### Reducer
@@ -538,7 +537,7 @@ Ok, finally we're ready for the `SignIn` and `SignUp` components.
 
 ### NavBar
 
-For SignOut simply make NavBar a connected component that has access to the `signoutUser` ActionCreator.  That ActionCreator can do a browserHistory push to '/' on signout. You can just have a signout button that triggers this ActionCreator. Additionally add Links to `/signin` and `/signout`.
+For SignOut simply make NavBar a connected component that has access to the `signoutUser` ActionCreator.  That ActionCreator can do a `history.push` to '/' on signout. You can just have a signout button that triggers this ActionCreator. Additionally add Links to `/signin` and `/signout`.
 
 `mapStateToProps` and use the `state.auth.authenticated` to only show the signout button if a user is logged in, and signup/signout otherwise.
 
@@ -549,7 +548,7 @@ One last thing.  Right now an unauthenticated user can access the Add a post fun
 
 How about wrapping a component in a wrapper function.  The function would take the component we want to require authentication as an argument, and then simply return a new component with the passed-in component mounted inside it.
 
-🚀 Create a new container component `require-auth.js`.
+🚀 Create a new container component `requireAuth.js`.
 
 It should be a class based redux connected component.  Make it very bare bones, it will have 3 lifecycle methods:  `componentWillMount`, `componentWillUpdate`, `render`.
 
@@ -578,12 +577,12 @@ Wait, what is `ComposedComponent`?  That is what we will now add to our render f
 
 🚀 Your render can simply return: `<ComposedComponent {...this.props} />`
 
-🚀 Now let's fill in `componentWillMount`.  This will be pretty simple, all it needs to do is check if not `this.props.authenticated` and then redirect to `/signin` with: `browserHistory.push('/signin');`.
+🚀 Now let's fill in `componentWillMount`.  This will be pretty simple, all it needs to do is check if not `this.props.authenticated` and then redirect to `/signin` with: `this.props.history.push('/signin');`.
 
 🚀 `componentWillUpdate` should be pretty similar except that it gets called with the props that will be passed in for the next render like so `componentWillUpdate(nextProps)`, so you just need to check `!nextProps.authenticated` instead.
 
 
-Done! Now in your `routes.js` you can import `RequireAuth` and for instance protect New path like so:
+Done! Now in your `routes.js` you can import `RequireAuth` and for instance protect the `New` path like so:
 `<Route path="posts/new" component={RequireAuth(New)} />`
 
 
@@ -618,14 +617,13 @@ Commit, tag both your Lab5 and Lab4 repos with `v2`, and push your tags! Deploy 
   * any extra credit attempted
 
 
-## Extra Credit (last chance for extra credit! extra extra credit is available!)
+## Extra Credit
 
 * so you now have users, what can you do with users? so many things!
 * if you didn't add error message handling before you should do it now (error state in store, error reducer, error action, error component)
 * add more pages and content to your app, how about a profile page for each user (add in /user frontend route and api endpoints)
 * extend the permissions system so that users can only edit their own posts
-* style it really nicely, make the editing process really smooths. (autofocus, onBlur, etc)
-  * add a preview to the main content editing (a parallel view that renders the markdown as you edit it).
+* add a live preview to the main content editing (a parallel view that renders the markdown as you edit it).
 * add in commenting system, authenticated users can comment on posts
 * add search functionality (advanced, [tips](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/))
 * add images to posts (advanced, [s3](http://www.benrlodge.com/blog/post/image-uploading-with-reactjs-nodejs-and-aws-s3))
