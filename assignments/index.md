@@ -17,6 +17,7 @@ title: Assignments
 * [Short Assignment 6: Redux](sa/redux) - DUE 4/30
 * [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/10
 * Short Assignment 8: WebSockets
+* Short Assignment 9: Photo Uploading S3
 
 
 
@@ -28,7 +29,7 @@ title: Assignments
 * [Lab 3: React Notes](lab/react-notes) - DUE 4/24
 * [Lab 4: Redux Blog Frontend](lab/redux-blog) - DUE 5/3
 * [Lab 5 Part 1: Redux Blog + API](lab/redux-blog+server) - DUE 5/10
-* Lab 5 Part 2: Redux Blog + Auth - ~DUE 5/14
+* [Lab 5 Part 2: Redux Blog + Auth](lab/redux-blog+auth) - DUE 5/14
 
 
 ### 4-ish Short in-class quizzes:  10%

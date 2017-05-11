@@ -24,8 +24,7 @@ permalink: /lectures/
 * [5/2 Pitches](11_pitches)
 * [5/4 Databases](12_intro_to_databases)
 * [5/9 Teams](13_teams)
-* 5/11 Sessions & Auth
-
+* [5/11 Sessions & Auth](13_sessions_auth)
 
 
 

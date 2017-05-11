@@ -19,9 +19,6 @@ name: base
 .title[{{name}}]
 
 
----
-name: Sessions and Auth
-
 
 ---
 name: Today
@@ -315,6 +312,8 @@ name: Express.js Sessions
 ---
 name: Session Hijacking
 
+<iframe src="https://giphy.com/embed/13w1iy7dhKR40o" width="480" height="249" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 ```html
 // real bad
 Cookie: user.password='this is my plain text password'
@@ -337,6 +336,8 @@ Cookie: connect.sid=2398sf98792874hk2kjh23iu
 ---
 name: HTTPS
 
+<iframe src="https://giphy.com/embed/kTEqpBl5W9X2w" width="480" height="357" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 * even with good session id
 * traffic can be monitored if not over HTTPS
 
@@ -349,6 +350,9 @@ name: HTTPS
 
 ---
 name: CSRF
+
+.medium_small[![](img/csrf_post.png)]
+
 
 * cross site request forgery
   1. visit bank site and get session cookie
@@ -375,7 +379,7 @@ name: CSRF
 ???
 * these days such an attack is rarer but still needs to be protected against
 * cookies... are problematic because of the automatic include
-* more about security later but today is auth
+* secret form fields with extra data for validation
 
 
 
@@ -410,7 +414,7 @@ name: username and passwords
 ---
 name: How to store password
 
-![](img/saving_password.png){: .medium .white-background}
+![](img/saving_password.png)
 
 
 ???
@@ -421,6 +425,7 @@ name: How to store password
 * store salt + hash
 * no way to decrypt password
 * on login compare hashes
+* salt helps add some randomness so that an attacker couldn't do an easier lookup of hash to password -  would have to try all possibilities for the salt.
 
 
 
@@ -439,33 +444,6 @@ name: But browser
 
 
 ---
-name: Tokens Over Cookies
-
-![](img/token_api_architecture.png){:  .medium_small .white-background}
-
-* can authenticate to another domain
-* allows API
-
-???
-
-
-
-
-
-
----
-name: Tokens Over Cookies
-
-![](img/cookie_token.png){:  .medium_small .white-background}
-
-
-???
-
-
-
-
-
----
 name: What to send back?
 
 * once auth'd
@@ -479,25 +457,63 @@ name: What to send back?
 
 
 
+---
+name: Tokens Over Cookies
+
+.medium[![](img/token_api_architecture.png)]
+
+* can authenticate to another domain
+* allows API
+
+???
+* cookies have problems
+* and we are all js anyway
+* separate servers for static and api
+
+
+
+
+
+---
+name: Tokens Over Cookies
+
+.medium[![](img/cookie_token.png)]
+
+
+???
+* token:
+  * manual wiring
+  * cross-domain
+* cookie:
+  * automatically included
+  * unique per domain
+  * don't work across
+
+
+
+
+
+
 
 
 ---
 name: Cookie
 
-![](img/toptal-cookie.jpeg){:  .medium_small }
+.medium[![](img/toptal-cookie.jpeg)]
 
 ???
-
+* included automatically
 
 
 
 ---
 name: Token
 
-![](img/toptal-token.jpeg){:  .medium_small }
+.medium[![](img/toptal-token.jpeg)]
 
 ???
-
+* multi server support
+* just need to include token for validation (stored salt+password == stored hash)
 
 
 
@@ -507,11 +523,11 @@ name: Token
 ---
 name: Auth Flow
 
-![](img/auth_flow.png){: .hfit .white-background}
+.medium_small[![](img/auth_flow.png)]
 
 
 ???
-
+* more auth flow
 
 
 
@@ -519,7 +535,7 @@ name: Auth Flow
 ---
 name: Tokens
 
-![](img/bond-token.gif){: .medium}
+![](img/bond-token.gif)
 
 
 ???
@@ -533,7 +549,7 @@ name: Tokens
 ---
 name: JWT
 
-![](img/jwt-logo.svg){: .small}
+.small[![](img/jwt-logo.svg)]
 
 * JSON Web Token: [jwt.io](http://jwt.io)
 * a bit of encrypted JSON
@@ -552,6 +568,7 @@ name: JWT
   * server side we take the header and payload and hash them with a secret key (known only on server)
   * on return we do the same and make sure the signature matches
   * if not deauth!
+  * can force signout by changing secret key
 
 
 
@@ -561,7 +578,7 @@ name: JWT
 ---
 name: JWT Contents
 
-![](img/jwt_contents.png){: .white-background}
+![](img/jwt_contents.png)
 
 ???
 * what should be inside the JWT
@@ -573,10 +590,14 @@ name: JWT Contents
 ---
 name: JWT Process
 
-![](img/jwt-diagram.png){: .white-background}
+![](img/jwt-diagram.png)
 
 ???
-
+* if we are reading the userid from jwt how can we be certain it wasn't changed?
+* it is after all just some JSON
+* clue: signature
+* what is in signature?
+* clue: header+payload+signature one way hashed
 
 
 
@@ -584,7 +605,7 @@ name: JWT Process
 ---
 name: Sign-in Sign-up
 
-![](img/token_process.png){: .white-background}
+![](img/token_process.png)
 
 ???
 
@@ -595,9 +616,14 @@ name: Sign-in Sign-up
 ---
 name: Social -> JWT Login
 
-![](img/social-network-token-authentication.png){: .white-background}
+.medium[![](img/social-network-token-authentication.png)]
 
 ???
+* social is a little tricker
+* once user is logged in with fb on Frontend
+* send to backend which needs to validate with FB
+* then uses the fbid to either signin/signup and return jwt
+* jwt then works for some extended period of time without need to reauth to FB
 
 
 
@@ -611,20 +637,7 @@ name: Tokens -> Access
 ???
 
 
-
-
-
-
-
-
-
 ---
-name:
+name:  
 
-
-* http://cs52.me/assignments/hw5p1
-* next week:
-  * Testing
-  * Scalability
-
-???
+<iframe src="https://giphy.com/embed/12OIWdzFhisgww" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
