@@ -20,7 +20,7 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Feature Spec + Mockups](feature-spec)** (5/9):<br><!--8/9/2016-->
   A walk-though of your project from the users perspective listing out every feature that it should have with a few user stories attached and mockups of user experience.
 
-* **[Scaffolding](scafffolding)** (5/14):<br><!--8/11/2016-->
+* **[Scaffolding](scaffolding)** (5/14):<br><!--8/11/2016-->
   Initial code scaffolding started with a component plan and tools and frameworks chosen.
 
 * **[Dev Site Up (client+server)](dev-site)** (5/18):<br><!--8/16/2016-->
