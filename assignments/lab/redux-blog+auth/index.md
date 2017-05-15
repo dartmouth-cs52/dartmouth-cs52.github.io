@@ -211,7 +211,7 @@ What should our two methods do?
 For `signin`, once we have verified username/password we can just generate a new token. We're going to do the verification with a passport middleware, so our `signin` function will already be protected -- all it has to do is return a new token.
 
 ```javascript
-res.send({ token: tokenForUser(req.user) });
+res.send({ token: tokenForUser(user) });
 ```
 
 For `signup`, it will be a bit more complicated. We need to create a new User object and save it, but first we need to verify that the user doesn't already exist in the system (check their email address).
