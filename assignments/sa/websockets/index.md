@@ -9,17 +9,18 @@ published: true
 
 ## Overview
 
-We're going to build a [websocket](https://en.wikipedia.org/wiki/WebSocket) based server and refactor our notes app to use our own server rather than firebase!
+We're going to build a [websocket](https://en.wikipedia.org/wiki/WebSocket) based server and refactor our notes app to use our own server rather than firebase!  You'll see how with just a little bit of code you can have a cool bidirectional event based server. You can also use this for implementing chat servers or push notification to your frontend!  
+
 
 ## Let's Start
 
-🚀 Clone your **HW3p2**. You should know the drill by now, create a new branch of `git checkout -b ws` or create a new repository. Your choice, but I do strongly recommend getting all your repos organized and named correctly. 😎  We'll need to refactor this very slightly to not use firebase but use our new backend instead.
+🚀 Clone your **Lab3 with firebase**.  Create a new branch with `git checkout -b websockets`. We'll need to refactor this very slightly to not use firebase but use our new backend instead, and using a branch seems reasonable for this.
 
 
 🚀 Clone [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) for our new server component.  When you clone remember you can rename the directory: so `git clone https://github.com/dartmouth-cs52/express-babel-starter.git notes-websocket-server`  would checkout the starter into a differently named directory.  
 
 
-In the following at times we'll do stuff to both client (HW3p2) and server (the new notes-websocket-server). This will be highlighted with **SERVER** vs **CLIENT**.
+In the following at times we'll do stuff to both client (Lab3) and server (the new notes-websocket-server). This will be highlighted with **SERVER** vs **CLIENT**.
 
 
 ## Overview
@@ -34,7 +35,7 @@ Frontend:  we will utilize our realtime react notes app and refactor slightly.
 
 **SERVER**
 
-🚀 Remember how to make a mongoose model?   Sure, create a Note model in your models directory and give it the following fields (you may need to adjust the names of these later based on how you coded your HW3p2):
+🚀 Remember how to make a mongoose model?   Sure, create a Note model in your models directory and give it the following fields (you may need to adjust the names of these later based on how you coded your Lab3):
 
 ```javascript
   title: String,
@@ -59,7 +60,7 @@ mongoose.Promise = global.Promise;
 
 🚀 And let's make a controller while we are at it!
 
-It'll be a bit simpler than the post controller,  it won't need to deal with req/res, but instead will be functions that return promises.  Here's a place to start.
+It'll be a bit simpler than the post controller.  We'll also do something similar to SA7 where we returned promises from our controller rather than operating on request and response objects.
 
 * createNote: super simple, takes in note fields, and returns the save promise (doesn't need to create a new promise).
 * getNotes:  this one is a bit trickier, hence full code is here. Returns the promise created by find(). If you recall our datastructure was a dictionary by note id. We can use an accumulator to construct an object from the array of notes that find gives us.
@@ -71,10 +72,6 @@ It'll be a bit simpler than the post controller,  it won't need to deal with req
 import Note from '../models/note_model';
 
 
-export const createNote = (fields) => {
-  const note = new Note(fields);
-  return note.save();
-};
 
 export const getNotes = () => {
   return Note.find({}).then(notes => {
@@ -90,9 +87,21 @@ export const deleteNote = (id) => {
   // remember to return the mongoose function you use rather than just delete
 }
 
+export const createNote = (fields) => {
+  // you know the drill. create a new Note mongoose object
+  // return .save()
+};
+
 export const updateNote = (id, fields) => {
-  // update the note and return the top level mongoose function you used, such as return Note.findById...
-}
+  return Note.findById(id)
+  .then((note) => {
+    // check out this classy way of updating only the fields necessary
+    Object.keys(fields).forEach((k) => {
+      note[k] = fields[k];
+    });
+    return note.save();
+  });
+};
 
 ```
 
@@ -134,23 +143,24 @@ server.listen(port);
 
 Websockets are statefull connections.  Each client gets their own socket. Let's define some functionality — for now we'll just do everything in our `server.js` file but for any larger app you'd separate this out into a separate module.
 
-At the bottom of `server.js` add:
+🚀 In `server.js` add:
 
 ```javascript
 // at top
 import * as Notes from './controllers/note_controller';
 
 
+// at the bottom of server.js
+// lets register a connection listener
 io.on('connection', (socket) => {
-
   // on first connection emit notes
-  Notes.getNotes().then(result => {
+  Notes.getNotes().then((result) => {
     socket.emit('notes', result);
   });
 
   // pushes notes to everybody
   const pushNotes = () => {
-    Notes.getNotes().then(result => {
+    Notes.getNotes().then((result) => {
       // broadcasts to all sockets including ourselves
       io.sockets.emit('notes', result);
     });
@@ -160,25 +170,24 @@ io.on('connection', (socket) => {
   socket.on('createNote', (fields) => {
     Notes.createNote(fields).then((result) => {
       pushNotes();
-    }).catch(error => {
+    }).catch((error) => {
       console.log(error);
       socket.emit('error', 'create failed');
     });
   });
-
 });
 ```
 
 
-Ok we have some basic functionality now. Let's work on the frontend for a little bit. We'll come back and add more listeners here. Dont' forget to start up mongod and also `npm run dev` the server.
+Ok we have some basic functionality now. Let's work on the frontend for a little bit. We'll come back and add more listeners here. Don't forget to start up mongod and also `npm run dev` the server.
 
 
 
 ## Socket.IO CLIENT
 
-In your HW3p2 new branch or cloned directory, let's add some socket.io smarts.
+In your Lab3 new branch, let's add some socket.io smarts.
 
-🚀 Install socket.io in CLIENT (HW3p2)
+🚀 Install socket.io in CLIENT (Lab3)
 
 ```bash
 npm install --save socket.io-client
@@ -195,7 +204,7 @@ const socketserver = 'http://localhost:9090';
 
 ## Event Listeners
 
-We will define some specific event listeners.  For firebase had the on value event listener, but for socket.io we will be able to define any number of our own custom events to listen to.
+We will define some specific event listeners.  Firebase had the *on value* event listener, but for socket.io we will be able to define any number of our own custom events to listen to.
 
 In your `app.js` **constructor** (we'll refactor simply and just put in all the socketio stuff directly into App for now) add the following:
 
@@ -207,7 +216,7 @@ this.socket.on('reconnect', () => { console.log('socket.io reconnected'); });
 this.socket.on('error', (error) => { console.log(error); });
 ```
 
-Great!  Now test it out,  load up http://localhost:8080 and you should be connecting and devtools console should be showing those connection logs.
+Great!  Now test it out,  load up http://localhost:8080 and you should be connecting and devtools console should be showing "socket.io connected".
 
 
 ### Notes Listener
@@ -219,13 +228,13 @@ But what about notes?!!
 ```javascript
 
 //instead of:
-firebase.fetchNotes(notes => {
+firebase.fetchNotes((notes) => {
   // where you handle all the setState and immutable stuff
   // keep this
 });
 
 // do
-this.socket.on('notes', notes => {
+this.socket.on('notes', (notes) => {
   // where you handle all the setState and immutable stuff
   // keep this
 });
@@ -258,7 +267,9 @@ this.socket.emit('createNote', note);
 
 ```
 
-And, that's it for the frontend.  Try creating a note!  
+And, that's it for the frontend!  Comment out your `import * as firebasedb` you won't need it no mo!
+
+Try creating a note!
 
 
 ## SERVER Part Deux
@@ -286,7 +297,7 @@ socket.on('deleteNote', (id) => {
 Now,  try it out!  
 
 
-## Optimization
+## Optimization (Optional)
 
 Ok, for now this seems to work pretty well. However, if you were to push the server to Heroku (don't forget mLab), you'd notice a bad jitter as you drag the notes around.  Especially if you had it set to no grid.  We're basically doing no optimization so we are sending thousands of update messages.  When there is no lag things work perfectly smoothly.  As soon as you have a bit of lag our driven Notes component starts behaving badly.  
 
@@ -297,14 +308,12 @@ One thing we can do it throttle and debounce. Here's a good article on the [diff
 
 🚀 On the **SERVER** side lets add in lodash.debounce and lodash.throttle: `npm install --save lodash.throttle lodash.debounce`.
 
-Import them:
-
+Import them in `server.js`
 
 ```javascript
 import throttle from 'lodash.throttle';
 import debounce from 'lodash.debounce';
 ```
-
 
 Now,  it turns out that in  particular we want to do different things depending on whether we are the viewer dragging around a note, or if we are another browser that is just seeing the note being dragged around.
 
@@ -328,7 +337,7 @@ let emitToOthers = (notes) => {
 emitToOthers = throttle(emitToOthers, 25);
 
 const pushNotesSmoothed = () => {
-  Notes.getNotes().then(result => {
+  Notes.getNotes().then((result) => {
     emitToSelf(result);
     emitToOthers(result);
   });
@@ -349,7 +358,8 @@ if (fields.text) {
 }
 ```
 
-Ok.  Now it should work much better when deployed.  You don't have to deploy or turn this in, it is just for fun to play with websockets, but if you were to deploy it, you would see that this makes a big difference.  There are more optimizations that can be done, the easiest would be to make **Note** position not driven by props directly when you are dragging.  For now though, you have implemented in half an hour an pretty decent alternative backend to firebase.
+
+Ok.  Now it should work much better when deployed.  You don't have to deploy or turn this in, it is just for fun to play with websockets, but if you were to deploy it, you would see that this makes a big difference.  There are more optimizations that can be done, the easiest would be to make **Note** position not driven by props directly when you are dragging.  For now though, you have implemented in half an hour a working alternative backend to firebase.  
 
 
 ## Resources
