@@ -205,4 +205,4 @@ router.get('/sign-s3', (req, res) => {
 * [Dotenv Docs](https://github.com/motdotla/dotenv)
 
 ###### Footnote
-* Ask Jason on slack with any comments, questions, or suggestions!
+* Ask Jason Feng on slack with any comments, questions, or suggestions!
