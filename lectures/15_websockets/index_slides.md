@@ -22,16 +22,85 @@ name: base
 name: Websockets
 
 
+* and stuff
+
+
+
 
 ---
-name: Today
+name: CS52 Art
 
-* websockets
-* project mockups
+
+.medium_small[![](img/cookieremembers.jpg)]
+.medium_small[![](img/zombiecookie.jpg)]
+
 
 ???
+* any questions about anything?
 
 
+
+---
+name: no more labs!
+
+
+.medium[![](img/nomorelabs.jpg)]
+
+
+???
+* we're done with labs!!!
+* only 5 more short assignments to go!
+* kidding
+* extra credit optional shorts that help with final project
+  * websockets - Today
+  * s3 uploading thursday
+  * testing frameworks next week
+
+
+
+---
+name: but we do has quiz
+
+
+.medium[![](img/quiztime.jpg)]
+
+
+---
+name: but we do has quiz
+
+
+<iframe src="https://giphy.com/embed/f4SoNPj4otohG" width="580" height="376" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+
+
+
+
+---
+name: Dev Site Project Milestone
+
+.medium_small.fancy[![](img/wiring.jpg)]
+
+
+* GitHub issues
+* Continuous Integration (Travis)
+* Wiring
+
+???
+* Create some github issues
+  * goal is to break up tasks into small units 1-2 hours
+  * assign each other / yourselves  (aggresiveness)
+  * large tasks such as 'login fctionality' are overwhelming
+  * break them up into 'create button', 'add signup route', etc
+  * keep up with issues, don't just let them stagnate
+  * github intengration into your slack channel
+* continuous integration
+  * PR merge to master automatically deploys
+  * idea is to keep a deployed dev site running for testing
+  * small feature branches
+  * do frequent PR's so you don't fall behind - at least daily
+* wiring
+  * get frontend talking to backend
+  * meaningful data - models etc.
 
 
 
@@ -39,7 +108,7 @@ name: Today
 ---
 name: HTML5 WebSockets
 
-![](img/globe.jpg){: .medium_small .white-background}
+.medium_small[![](img/globe.jpg)]
 
 
 ???
@@ -51,7 +120,7 @@ name: HTML5 WebSockets
 ---
 name: HTTP REST
 
-![](img/HTTP-Long-Polling-Diagram.png){: .medium_small .white-background}
+.medium[![](img/HTTP-Long-Polling-Diagram.png)]
 
 * request / response
 * stateless
@@ -68,26 +137,31 @@ name: HTTP REST
 ---
 name: But REALTIME
 
+<iframe src="https://giphy.com/embed/xT5LMFizV0j6HN97iw" width="480" height="274" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 * ajax polling
 * long polling
 * streaming
 
 
 ???
-* draw
-* oustretched hand
-* only one direction
+* ajax polling:
+  * every couple of seconds setInteval
+* long polling:
+  * poll an endpoint that then keeps connection open and only responds when it has something
+* streaming:
+  * keep sending incremental data
 
 
 
 ---
 name: HTML5 WebSockets
 
-![](img/httpsvsws.png){: .medium .white-background}
+![](img/httpsvsws.png)
 
 
 ???
-*
+* one persistent connection
 
 
 
@@ -100,7 +174,7 @@ name: HTML5 WebSockets
 * Low level socket interface (remember tcp)
 
 
-![](img/WebSockets-Diagram.png){: .medium_small .white-background}
+.small[![](img/WebSockets-Diagram.png)]
 
 
 
@@ -141,6 +215,8 @@ name: Why Not Sockets for EVERYTHING?
 
 ???
 * unlike http,  websockets are stateful
+* how do you scale many persistent connections
+* have to code more from scratch
 
 
 
@@ -151,7 +227,7 @@ name: Why Not Sockets for EVERYTHING?
 name:
 
 
-![](img/socket-io.png){: .medium .white-background}
+.medium[![](img/socket-io.png)]
 
 ???
 * library for working with websockets
@@ -161,8 +237,37 @@ name:
 
 
 
+
+
+
+
 ---
-name: Server
+name: Outgoing
+
+```javascript
+socket.emit('news', { hello: 'world' });
+```
+
+???
+* send an event with data server or client
+
+
+---
+name: Incoming
+
+```javascript
+socket.on('eventname', data => {
+  console.log(data);
+});
+```
+
+???
+* subscribe to a triggered event server or client
+
+
+
+---
+name: Server Connection
 
 ```javascript
 io.on('connection', socket => {
@@ -175,22 +280,16 @@ io.on('connection', socket => {
     console.log(data);
   });
 });
-
-io.sockets.emit('a broadcast', 'hello everyone');
-
 ```
 
 ???
-*
-
-
-
+* on establishing a connection
 
 
 
 
 ---
-name: Client
+name: Client Connection
 
 ```javascript
 const socket = io.connect('http://localhost');
@@ -206,10 +305,6 @@ socket.on('news', data => {
 
 ???
 *
-
-
-
-
 
 
 
@@ -235,7 +330,7 @@ const news = io
 ```
 
 ???
-* multiplexes so is efficient
+* runs these over one connection if connected to more than one namespace (multiplexing)
 
 
 
@@ -264,7 +359,18 @@ news.on('news', (data) => {
 
 
 
+---
+name: Callbacks Client
 
+```javascript
+socket.emit('fetchPost', id, (post) => {
+  console.log(post);
+});
+```
+
+???
+* you can use callbacks with events!!
+* emitting an event that also has an associated callback that gets returned
 
 
 
@@ -278,26 +384,8 @@ socket.on('fetchPost',  (id, done) {
 ```
 
 ???
-*
-
-
-
-
-
-
-
----
-name: Callbacks Client
-
-```javascript
-socket.emit('fetchPost', id, (post) => {
-  console.log(post);
-});
-```
-
-???
-
-
+* server side
+* soo cool
 
 
 
@@ -311,10 +399,7 @@ socket.broadcast.emit('user connected', username);
 ```
 
 ???
-*
-
-
-
+* can broadcast to all connected users
 
 
 
@@ -323,17 +408,7 @@ socket.broadcast.emit('user connected', username);
 ---
 name: Workshop!
 
-[cs52.me/workshops/websockets](/workshops/websockets)
+[cs52.me/assignments/sa/websockets](/assignments/sa/websockets)
 
-
-???
-
-
-
-
----
-name: Nexttime
-
-* project progress!
 
 ???

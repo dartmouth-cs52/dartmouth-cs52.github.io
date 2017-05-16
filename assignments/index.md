@@ -6,7 +6,7 @@ title: Assignments
 <span style="color: #F27D00">*assignments posted as they are released — check canvas*</span>
 
 
-### 5-ish In-class short assignments: 10%
+### *N* In-class short assignments: 10%
 *These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/30
@@ -18,7 +18,8 @@ title: Assignments
 * [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/10
 * [Short Assignment 8: WebSockets](sa/websockets) - Extra Credit (5/16)
 * [Short Assignment 9: Photo Uploading S3](sa/s3-upload) - Extra Credit (5/18)
-* Short Assignment 10: Testing Frameworks - Extra Credit
+* Short Assignment 10: ChatBot - Extra Credit (5/23)
+* Short Assignment 11: Testing Frameworks - Extra Credit - (5/25)
 
 
 

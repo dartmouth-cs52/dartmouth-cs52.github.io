@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SA9 - Uploading images to S3
-published: false
+published: true
 ---
 
 ![AWS S3](http://i.imgur.com/FBAnSyZ.png)
@@ -20,7 +20,6 @@ In general, the method described in this article follows these simple steps:
 - A file is selected for upload by the user in the client;
 - The client makes a request to your server, which produces a temporary signature with which to sign the upload request;
 - The browser then uploads the file directly to Amazon S3 using the signed request
-
 
 
 ### Setup
