@@ -22,7 +22,7 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
 2. Once you’re signed in, and we’ve synchronized your repositories from GitHub, go to your [profile page](https://travis-ci.org/profile/) and enable Travis CI builds for your repository.
 
-      ![profile](/imgs/travis/travis-ci.jpg)
+      ![profile](/assets/imgs/travis/travis-ci.jpg)
 
 3. Travis configuration
 
@@ -44,17 +44,17 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
     You want to set up protected branches for your GitHub repository to ensure that all required CI tests are passing before collaborators can make changes to a protected branch. This will prevent potentially buggy code from being merged into master. To do so simply visit `https://github.com/<team>/<repo>/settings/branches` and turn on protected branch for `master`.
 
-    ![protected-branch](/imgs/travis/protected-branch.jpg)
+    ![protected-branch](/assets/imgs/travis/protected-branch.jpg)
 
     After setting this up, click the `edit` button for more configuration options and make sure to check the `Require status checks to pass before merging` button.
 
-    ![status](/imgs/travis/check-status.png)
+    ![status](/assets/imgs/travis/check-status.png)
 
 6. Setting up a linter for your project
 
     I highly recommend setting up a linter plugin for your text editor of choice in addition to your linter. One that works well for atom is [Linter](https://atomlinter.github.io/). You can install specific linters for your selected language and the linter will display inline errors.
 
-    ![linter error](/imgs/travis/linter-error.png)
+    ![linter error](/assets/imgs/travis/linter-error.png)
 
     The recommended linter plugin for javascript is [Eslint](eslint.org). You can install `eslint` using `npm install --save-dev eslint`. The corresponding atom package is the [Eslint Plugin for AtomLinter](https://github.com/AtomLinter/linter-eslint).
 

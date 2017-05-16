@@ -16,8 +16,8 @@ title: Assignments
 * [Short Assignment 5: Frontend Routing](sa/routing) — DUE 4/27
 * [Short Assignment 6: Redux](sa/redux) - DUE 4/30
 * [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/10
-* [Short Assignment 8: WebSockets](sa/websockets) - Extra Credit
-* Short Assignment 9: Photo Uploading S3 - Extra Credit
+* [Short Assignment 8: WebSockets](sa/websockets) - Extra Credit (5/16)
+* [Short Assignment 9: Photo Uploading S3](sa/s3-upload) - Extra Credit (5/18)
 * Short Assignment 10: Testing Frameworks - Extra Credit
 
 
