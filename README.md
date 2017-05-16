@@ -4,6 +4,13 @@ Today we'll be using react-native to build a simple iOS app that allows us to se
 
 Note: for this workshop, you don't need to clone or fork this repo. Everything we do will be done locally.
 
+** Another important note!  If you are of the following people:
+* Windows User
+* Mac User who didn't follow instructions and didn't download XCode
+* Mac User who didn't follow instructions and didn't update XCode
+
+It just takes a while to download/update XCode and we have lots to do today! (* cough * quiz * cough * )
+
 ## Special Notes
 🚀 Take special note of this
 
@@ -279,10 +286,6 @@ import {
 
 🚀 Now that that's there, let's import it into `search.js` so we can use it.
 
-```
-// Near the top of search.js
-import VideoList from './video_list';
-```
 
 🚀 And lets create a new class component:
 
@@ -443,11 +446,15 @@ fetchData() {
 
 🚀 Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it:
 
+
 ```
 componentDidMount() {
-  this.fetchData();
+
 }
 ```
+
+What do you think will go inside this function?  Take a stab at it!
+
 
 :snowflake: Now when the page loads, we'll make a call to fetchData to populate our list view.
 
@@ -475,36 +482,12 @@ componentDidMount() {
 
 Ah darn, one other thing. We need to actually have a reference to the API, right? This next part should (hopefully) look super familiar.
 
-🚀 Create a new file at the top level of your project, `youtube-api.js`. Add the following:
+🚀 Create a new file at the top level of your project, `youtube-api.js`.
 
-```
-import axios from 'axios';
+Sound familiar?  We did this in short assignment 4, and we will be using the exact same api for this react-native app!  That's coooool.
 
-const API_URL = 'https://www.googleapis.com/youtube/v3/search';
-// const API_KEY = YOUR YOUTUBE DEVELOPER API KEY
+Go ahead and find that file and copy it here.  We need to do this because we need your individual api key, which you already made in sa4.  
 
-const youtubeSearch = (term) => {
-  const params = {
-    part: 'snippet',
-    key: API_KEY,
-    q: term,
-    type: 'video',
-  };
-
-  return new Promise((resolve, reject) => {
-    axios.get(API_URL, { params })
-      .then((response) => {
-        resolve(response.data.items);
-      })
-      .catch((error) => {
-        console.log(`youtube api error: ${error}`);
-        reject(error);
-      });
-  });
-};
-
-export default youtubeSearch;
-```
 
 🚀 There's just one little thing you need to change in the above file. Remember when you had to get your API key from youtube before? No? Well, here's a quick refresher.
 
