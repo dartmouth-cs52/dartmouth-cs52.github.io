@@ -276,13 +276,6 @@ import {
 
 🚀 Now that that's there, let's import it into `search.js` so we can use it.
 
-<<<<<<< HEAD
-=======
-```js
-// Near the top of search.js
-import VideoList from './video_list';
-```
->>>>>>> 41c88ac480508572b619ee9f7c5fb837527948f6
 
 🚀 And lets create a new class component:
 
@@ -451,25 +444,11 @@ fetchData() {
 }
 ```
 
-🚀 Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it.
+Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it.
 
-<<<<<<< HEAD
-
-```
-componentDidMount() {
-
-}
-```
-
-What do you think will go inside this function?  Take a stab at it!
-
-
-:snowflake: Now when the page loads, we'll make a call to fetchData to populate our list view.
-=======
 🚀 Create a function `componentDidMount` in `video_list.js`. Inside it, make a call to `fetchData`.
 
 :snowflake: Now when the page loads, we'll call `fetchData` to populate our list view.
->>>>>>> 41c88ac480508572b619ee9f7c5fb837527948f6
 
 🚀 Alright, let's update the `search.js` file to have a table view that lists all our videos. Replace the return statement in the render function with the following:
 
@@ -497,21 +476,10 @@ Ah darn, one other thing. We need to actually have a reference to the API, right
 
 🚀 Create a new file at the top level of your project, `youtube-api.js`.
 
-<<<<<<< HEAD
 Sound familiar?  We did this in short assignment 4, and we will be using the exact same api for this react-native app!  That's coooool.
-=======
-```js
-import axios from 'axios';
->>>>>>> 41c88ac480508572b619ee9f7c5fb837527948f6
 
 Go ahead and find that file and copy it here.  We need to do this because we need your individual api key, which you already made in sa4.  
 
-
-🚀 There's just one little thing you need to change in the above file. Remember when you had to get your API key from youtube before? No? Well, here's a quick refresher.
-
-- Go to the [Google API Developer's Console](http://console.developers.google.com) and open the API manager.
-- Go to 'credentials' on the left hand sidebar
-- Locate your Youtube Data API v3 key. It's the same one from your short assignment 4, but we can reuse it here! Copy and paste it into `youtube-api.js`, where we've marked YOUR YOUTUBE DEVELOPER API KEY
 - Accidentally deleted your API key? No biggie. Just follow the [old instructions from sa4](http://cs52.me/assignments/sa/react-videos/#youtube-api).
 
 🚀 What's this videoDetail thing? We'll also need to create that. Make a new file called `compnents/video_detail.js` and paste in this code:
