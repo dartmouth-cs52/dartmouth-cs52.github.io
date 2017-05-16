@@ -4,19 +4,26 @@ Today we'll be using react-native to build a simple iOS app that allows us to se
 
 Note: for this workshop, you don't need to clone or fork this repo. Everything we do will be done locally.
 
+## Special Notes
+🚀 Take special note of this
+
+:snowflake: This is pretty cool
+
+:camera: Take a screenshot!
+
 ## Set Up:
 
-We should already have node installed on our machines, but just in case, let's go way to the beginning:
+:warning: We should already have node installed on our machines, but just in case, let's go way to the beginning:
 
 `$ brew install node`
 
-And we should install Watchman, too, since react-native depends on it.
+🚀 And we should install Watchman, too, since react-native depends on it.
 
 `$ brew install watchman`
 
 Watchman is a file watching service that records when files change, and triggers actions when it detects changes.
 
-Alright, now we're ready to use react-native! We'll want to install the Command Line Interface so we can call react-native commands from the terminal:
+🚀 Alright, now we're ready to use react-native! We'll want to install the Command Line Interface so we can call react-native commands from the terminal:
 
 `$ npm install -g react-native-cli`
 
@@ -30,18 +37,22 @@ $ react-native run-ios
 
 When the iPhone simulator pops up, you should be seeing a basic template for an iPhone app.
 
-What just happened? React-Native bundled up everything for us, ran it through XCode, and opened up a simulator, all through the command line and without us ever having to open up XCode or write a single line of Swift code. Neat.
+:snowflake: What just happened? React-Native bundled up everything for us, ran it through XCode, and opened up a simulator, all through the command line and without us ever having to open up XCode or write a single line of Swift code. Neat.
+
+Let's take a sec to talk about how the simulator works. There are two things you can do: `command-R` will refresh the simulator, which is useful each time you save. It's a little annoying, though, especially since we're used to hot reloading in the browser at this point. If you hit `command-D`, a menu will pop up. From there, you can click "Enable Hot Reloading". It might take a few seconds to load (don't panic like we did when the percent complete actually starts going down...) but when it's done it'll refresh the page every time we save something in the project.
+
+:snowflake: Side note: We should appreciate how cool this is. If you've ever tried to program for smartphones before, you know that each time you test, you have to press run in the IDE and then wait for the app to compile. If you're uploading to an actual device instead of a simulator, it takes even longer. React Native is cutting through all the overhead for us so we can do instantaneous reloads without all the wait time.
 
 ## Installing Dependencies
 We're going to need a few dependencies from our trusty friend, the Node Package Manager.
 
-Since we're making calls to the YouTube api, it would help if we made GET calls with axios, so:
+🚀 Since we're making calls to the YouTube api, it would help if we made GET calls with axios, so:
 
 `$ npm install --save axios`
 
 Next, we'll need some specific react-native components that some other open source developers have kindly provided to us. This is fairly common in the react-native community, and it's great to have these pre-styled components at our disposal so we don't have to go through all the trouble of making an input field look nice, for example.
 
-There are two components we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), which is made to look like the classing iOS search bar, and most importantly, [react-native-youtube](https://github.com/inProgress-team/react-native-youtube), which allows us to play YouTube media within the application.
+🚀 There are two components we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), which is made to look like the classing iOS search bar, and most importantly, [react-native-youtube](https://github.com/inProgress-team/react-native-youtube), which allows us to play YouTube media within the application.
 
 `$ npm install --save react-native-search-box`
 
@@ -50,7 +61,7 @@ There are two components we'll be using in the workshop: [react-native-search-bo
 ## Basic Navigation
 One of the classic navigation components in iOS is the Tab Bar.
 
-Create a new director in the top level of the project folder called `components`.
+🚀 Create a new directory in the top level of the project folder called `components`.
 Then create two new files: `components/search.js` and `components/featured.js`.
 
 ```
@@ -77,11 +88,11 @@ class Search extends Component {
 module.exports = Search;
 ```
 
-And for  do the same for your `featured` component (with whatever refactoring is necessary).
+🚀 And for  do the same for your `featured` component (with whatever refactoring is necessary).
 
-Now let's connect them all together. Navigate to the file called `index.ios.js`. This is the top-level file for iOS dev in react native. (Side note: there's also an `index.android.js` file, which makes it fairly easy to convert to Android as well1 There are a few components in this workshop that aren't Android-friendly, so we won't be dealing with it, but it's nice to know it's there.)
+🚀 Now let's connect them all together. Navigate to the file called `index.ios.js`. This is the top-level file for iOS dev in react native. (Side note: there's also an `index.android.js` file, which makes it fairly easy to convert to Android as well1 There are a few components in this workshop that aren't Android-friendly, so we won't be dealing with it, but it's nice to know it's there.)
 
-Alright, so in `index.ios.js`, add the following code:
+🚀 Alright, so in `index.ios.js`, add the following code:
 
 ```
 import React, { Component } from 'react';
@@ -149,7 +160,7 @@ const styles = StyleSheet.create({
 });
 ```
 
-Don't forget to add `StyleSheet` to your imports at the top!
+🚀 Don't forget to add `StyleSheet` to your imports at the top!
 
 ```
 import {
@@ -161,7 +172,7 @@ import {
   } from 'react-native';
 ```
 
-Copy the same thing into `featured.js`. Refresh the simulator again. Now we have a nice looking tab bar at the bottom of the page. Should look something like this:
+🚀 Copy the same thing into `featured.js`. Refresh the simulator again. Now we have a nice looking tab bar at the bottom of the page. Should look something like this:
 
 ![tab bar](./images/tab-bar.png)
 
@@ -212,7 +223,7 @@ const Featured = (props) => {
 module.exports = Featured;
 ```
 
-Now create a new file called `components/imageView.js`. We'll just put this nice react logo in it, so the page isn't so dreadfully boring.
+🚀 Now create a new file called `components/imageView.js`. We'll just put this nice react logo in it, so the page isn't so dreadfully boring.
 
 Here's some more code!
 
@@ -238,7 +249,7 @@ const ImageView = (props) => {
 module.exports = ImageView;
 ```
 
-Now, instead of some gross text up in the top corner, we have this nice react logo, since we love react so much:
+:snowflake: Now, instead of some gross text up in the top corner, we have this nice react logo, since we love react so much:
 
 ![featured tab](./images/featured.png)
 
@@ -247,7 +258,7 @@ So we've got some basic navigation working on the app, but it looks pretty borin
 
 Since a table-view is specific to iOS, but react-native is cross-platform, there's no actual table view component. Instead, what we'll need to do is create a list component and instantiate it in our `search` page.
 
-Create a new file: `components/video_list.js`. Add some imports:
+🚀 Create a new file: `components/video_list.js`. Add some imports:
 
 ```
 import React, { Component } from 'react';
@@ -266,14 +277,14 @@ import {
   } from 'react-native';
 ```
 
-Now that that's there, let's import it into `search.js` so we can use it.
+🚀 Now that that's there, let's import it into `search.js` so we can use it.
 
 ```
 // Near the top of search.js
 import VideoList from './video_list';
 ```
 
-And lets create a new class component:
+🚀 And lets create a new class component:
 
 ```
 import VideoDetail from './video_detail';
@@ -334,8 +345,8 @@ class VideoList extends Component {
     return (
       <View style={styles.loading}>
         <Text>
-                   Loading videos...
-               </Text>
+          Loading videos...
+        </Text>
       </View>
     );
   }
@@ -353,14 +364,7 @@ class VideoList extends Component {
       <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="#dddddd">
         <View>
           <View style={styles.container}>
-            <Image
-              source={{ uri: video.snippet.thumbnails.default.url }}
-              style={styles.thumbnail}
-            />
-            <View style={styles.rightContainer}>
-              <Text style={styles.title}>{video.snippet.title}</Text>
-              <Text style={styles.subtitle}>{video.snippet.description}</Text>
-            </View>
+            //----- TableView Content should go here -----//
           </View>
           <View style={styles.separator} />
         </View>
@@ -398,7 +402,24 @@ class VideoList extends Component {
 module.exports = VideoList;
 ```
 
-We need to actually gather our data from Youtube. Let's add in the fetchData method to make our API call.
+🚀 Take a look at the simulator. We've now got some text indicating that the videos are loading. This is the default text we've provided if the API call hasn't returned videos yet. Since we haven't made an API call yet, that definitely makes sense.
+
+:camera: Take a screenshot of the search tab in the simulator at this point. You'll upload this later.
+
+🚀 Now, let's populate the table view! Add in the following lines to instantiate an image component containing the video thumbnail and some text with the video's title and description.
+
+```
+<Image
+  source={{ uri: video.snippet.thumbnails.default.url }}
+  style={styles.thumbnail}
+/>
+<View style={styles.rightContainer}>
+  <Text style={styles.title}>{video.snippet.title}</Text>
+  <Text style={styles.subtitle}>{video.snippet.description}</Text>
+</View>
+```
+
+🚀 Hmm...simulator says still just loading videos. That's because we need to actually gather our data from Youtube. Let's add in the fetchData method to make our API call.
 
 ```
 fetchData() {
@@ -413,7 +434,7 @@ fetchData() {
 }
 ```
 
-Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it:
+🚀 Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it:
 
 ```
 componentDidMount() {
@@ -421,9 +442,9 @@ componentDidMount() {
 }
 ```
 
-Now when the page loads, we'll make a call to fetchData to populate our list view.
+:snowflake: Now when the page loads, we'll make a call to fetchData to populate our list view.
 
-Alright, let's update the `search.js` file to have a table view that lists all our videos. Replace the return statement in the render function with the following:
+🚀 Alright, let's update the `search.js` file to have a table view that lists all our videos. Replace the return statement in the render function with the following:
 
 ```
 <View style={styles.container}>
@@ -447,7 +468,7 @@ Alright, let's update the `search.js` file to have a table view that lists all o
 
 Ah darn, one other thing. We need to actually have a reference to the API, right? This next part should (hopefully) look super familiar.
 
-Create a new file at the top level of your project, `youtube-api.js`. Add the following:
+🚀 Create a new file at the top level of your project, `youtube-api.js`. Add the following:
 
 ```
 import axios from 'axios';
@@ -478,14 +499,14 @@ const youtubeSearch = (term) => {
 export default youtubeSearch;
 ```
 
-There's just one little thing you need to change in the above file. Remember when you had to get your API key from youtube before? No? Well, here's a quick refresher.
+🚀 There's just one little thing you need to change in the above file. Remember when you had to get your API key from youtube before? No? Well, here's a quick refresher.
 
 - Go to the [Google API Developer's Console](http://console.developers.google.com) and open the API manager.
 - Go to 'credentials' on the left hand sidebar
 - Locate your Youtube Data API v3 key. It's the same one from your short assignment 4, but we can reuse it here! Copy and paste it into `youtube-api.js`, where we've marked YOUR YOUTUBE DEVELOPER API KEY
 - Accidentally deleted your API key? No biggie. Just follow the [old instructions from sa4](http://cs52.me/assignments/sa/react-videos/#youtube-api).
 
-What's this videoDetail thing? We'll also need to create that. Make a new file called `compnents/video_detail.js` and paste in this code:
+🚀 What's this videoDetail thing? We'll also need to create that. Make a new file called `compnents/video_detail.js` and paste in this code:
 
 ```
 import React, { Component } from 'react';
@@ -535,12 +556,12 @@ class VideoDetail extends Component {
 module.exports = VideoDetail;
 ```
 
-This is a little different from what we've been doing. The WebView component is a sort of hybrid component that's actually just rendering a webpage. The `source` prop holds a uri that's called as if in a browser and then displayed in our application. Notice how it looks just like watching youtube on a mobile device. Pretty cool that we can do this within our application alongside native components, huh?
+:snowflake: This is a little different from what we've been doing. The WebView component is a sort of hybrid component that's actually just rendering a webpage. The `source` prop holds a uri that's called as if in a browser and then displayed in our application. Notice how it looks just like watching youtube on a mobile device. Pretty cool that we can do this within our application alongside native components, huh?
 
 Here's what the app should be looking like now:
 ![finished app](./images/finished.png)
 
-Search something unique and take a screenshot. You'll upload this to your repo to turn in.
+:camera: Search for some unique searchterm and take a screenshot. You'll upload this to your repo to turn in.
 
 ## And We Are Done!
 Look at you! You spend eight weeks in full-stack web dev, but little did you know it was actually smartphone programming in disguise! Here's what we accomplished today:
