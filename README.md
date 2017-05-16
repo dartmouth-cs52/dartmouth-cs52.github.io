@@ -552,3 +552,12 @@ Look at you! You spend eight weeks in full-stack web dev, but little did you kno
 
 ## Submission
 To submit, create a new github repo and push your code up to it. In the README file, include the two screenshots we asked you to provide. On canvas, submit the URL to your repo. If you had a partner, submit their name too, so we can count the assignment for both of you.
+
+## Resources
+
+Really like React-Native?  Here are some more resources for you to look at and play around with:
+
+* http://www.reactnative.com/
+* https://facebook.github.io/react-native/
+
+* https://github.com/jondot/awesome-react-native
