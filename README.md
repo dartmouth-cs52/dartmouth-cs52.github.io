@@ -308,6 +308,8 @@ class VideoList extends Component {
     );
   }
 
+  //Handle your transition to the detail page
+  //pass along the clicked video into props to display it!
   showVideoDetail(video) {
     this.props.navigator.push({
       title: video.snippet.title,
@@ -316,7 +318,7 @@ class VideoList extends Component {
     });
   }
 
-  renderVideo(video) {
+  renderVideoCell(video) {
     return (
       <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="#dddddd">
         <View>
@@ -346,9 +348,13 @@ class VideoList extends Component {
           }
           }
         />
+
+        //This is equivalent to TableView in iOS.
+        //You need to define the location of your data in dataSource
+        //and define cell structure with renderRow
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={this.renderVideo.bind(this)}
+          renderRow={this.renderVideoCell.bind(this)}
           style={styles.listView}
         />
       </View>
