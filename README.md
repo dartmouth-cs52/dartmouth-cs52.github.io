@@ -289,41 +289,6 @@ import VideoList from './video_list';
 ```
 import VideoDetail from './video_detail';
 
-// Add styling here
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    backgroundColor: 'white',
-    padding: 10,
-  },
-  thumbnail: {
-    width: 80,
-    height: 80,
-    marginRight: 10,
-  },
-  rightContainer: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 3,
-  },
-  subtitle: {
-    fontSize: 12,
-  },
-  separator: {
-    height: 1,
-    backgroundColor: '#dddddd',
-  },
-  listView: {
-    backgroundColor: 'white',
-  },
-});
-
 class VideoList extends Component {
 
   constructor(props) {
@@ -401,6 +366,48 @@ class VideoList extends Component {
 
 module.exports = VideoList;
 ```
+
+🚀 Make sure to add styling! You know where to put this:
+
+```
+
+// Add styling here
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    backgroundColor: 'white',
+    padding: 10,
+  },
+  thumbnail: {
+    width: 80,
+    height: 80,
+    marginRight: 10,
+  },
+  rightContainer: {
+    flex: 1,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 3,
+  },
+  subtitle: {
+    fontSize: 12,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#dddddd',
+  },
+  listView: {
+    backgroundColor: 'white',
+  },
+});
+
+```
+
 
 🚀 Take a look at the simulator. We've now got some text indicating that the videos are loading. This is the default text we've provided if the API call hasn't returned videos yet. Since we haven't made an API call yet, that definitely makes sense.
 
