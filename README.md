@@ -324,7 +324,7 @@ class VideoList extends Component {
     });
   }
 
-  renderVideo(video) {
+  renderVideoCell(video) {
     return (
       <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="#dddddd">
         <View>
@@ -354,9 +354,13 @@ class VideoList extends Component {
           }
           }
         />
+        
+        //This is equivalent to TableView in iOS.
+        //You need to define the location of your data in dataSource
+        //and define cell structure with renderRow
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={this.renderVideo.bind(this)}
+          renderRow={this.renderVideoCell.bind(this)}
           style={styles.listView}
         />
       </View>
