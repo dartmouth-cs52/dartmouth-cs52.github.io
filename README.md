@@ -59,11 +59,9 @@ We're going to need a few dependencies from our trusty friend, the Node Package 
 
 Next, we'll need some specific react-native components that some other open source developers have kindly provided to us. This is fairly common in the react-native community, and it's great to have these pre-styled components at our disposal so we don't have to go through all the trouble of making an input field look nice, for example.
 
-🚀 There are two components we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), which is made to look like the classing iOS search bar, and most importantly, [react-native-youtube](https://github.com/inProgress-team/react-native-youtube), which allows us to play YouTube media within the application.
+🚀 There's one additional componentswe'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), a simple input field made to look like the classic iOS search bar.
 
 `$ npm install --save react-native-search-box`
-
-`$ npm install --save react-native-youtube`
 
 ## Basic Navigation
 One of the classic navigation components in iOS is the Tab Bar.
@@ -71,7 +69,7 @@ One of the classic navigation components in iOS is the Tab Bar.
 🚀 Create a new directory in the top level of the project folder called `components`.
 Then create two new files: `components/search.js` and `components/featured.js`.
 
-```
+```js
 import React, { Component } from 'react';
 
 import {
@@ -101,55 +99,55 @@ module.exports = Search;
 
 🚀 Alright, so in `index.ios.js`, add the following code:
 
-```
+```js
 import React, { Component } from 'react';
 import Featured from './components/featured';
 import Search from './components/search';
 
 import {
-    AppRegistry,
-    TabBarIOS,
-  } from 'react-native';
+  AppRegistry,
+  TabBarIOS,
+} from 'react-native';
 
 class VidSearch extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedTab: 'search'
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedTab: 'search'
+    };
+  }
 
-    render() {
-        return (
-            <TabBarIOS selectedTab={this.state.selectedTab}
-              translucent={false}
-              unselectedItemTintColor='#9E9E9E'
-              tintColor='#c4302b'
-            >
-                <TabBarIOS.Item
-                    selected={this.state.selectedTab === 'search'}
-                    systemIcon='search'
-                    onPress={() => {
-                        this.setState({
-                            selectedTab: 'search'
-                        });
-                    }}>
-                    <Search />
-                </TabBarIOS.Item>
-                <TabBarIOS.Item
-                    selected={this.state.selectedTab === 'featured'}
-                    systemIcon='featured'
-                    onPress={() => {
-                        this.setState({
-                            selectedTab: 'featured'
-                        });
-                    }}>
-                    <Featured />
-                </TabBarIOS.Item>
-            </TabBarIOS>
-        );
-    }
+  render() {
+    return (
+      <TabBarIOS selectedTab={this.state.selectedTab}
+        translucent={false}
+        unselectedItemTintColor='#9E9E9E'
+        tintColor='#c4302b'
+      >
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'search'}
+          systemIcon='search'
+          onPress={() => {
+            this.setState({
+              selectedTab: 'search'
+            });
+          }}>
+          <Search />
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'featured'}
+          systemIcon='featured'
+          onPress={() => {
+            this.setState({
+              selectedTab: 'featured'
+            });
+          }}>
+          <Featured />
+        </TabBarIOS.Item>
+      </TabBarIOS>
+    );
+  }
 }
 
 AppRegistry.registerComponent('VidSearch', () => VidSearch);
@@ -159,7 +157,7 @@ Alright, now head over to your simulator.
 
 What's going on here? We forgot to add styling! Head back to `search.js` and add the following styling:
 
-```
+```js
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -169,15 +167,7 @@ const styles = StyleSheet.create({
 
 🚀 Don't forget to add `StyleSheet` to your imports at the top!
 
-```
-import {
-    StyleSheet,
-    NavigatorIOS,
-    View,
-    Text,
-    StatusBar,
-  } from 'react-native';
-```
+:snowflake: Let's break down how this styling is working. Notice that we create a constant for our component called styles that contains a dictionary, where the id (in this case `container`), corresponds to that called by the `style` prop in the component itself. Take a look at the `<View>` tag in `search.js`. It's referencing `styles.container`, which is what we just declared. Also notice how there's no separate css stylesheet--all styling has to be done inline in React Native. This makes it easier to send through the bridge, which connects our JS code to native code.
 
 🚀 Copy the same thing into `featured.js`. Refresh the simulator again. Now we have a nice looking tab bar at the bottom of the page. Should look something like this:
 
@@ -185,7 +175,7 @@ import {
 
 Let's make the featured page look a little less boring. Replace all the code in it with this:
 
-```
+```js
 import React, { Component } from 'react';
 import ImageView from './imageView';
 
@@ -234,7 +224,7 @@ module.exports = Featured;
 
 Here's some more code!
 
-```
+```js
 import React from 'react';
 import {
   View,
@@ -267,7 +257,7 @@ Since a table-view is specific to iOS, but react-native is cross-platform, there
 
 🚀 Create a new file: `components/video_list.js`. Add some imports:
 
-```
+```js
 import React, { Component } from 'react';
 import youtubeSearch from '../youtube-api';
 import axios from 'axios';
@@ -286,11 +276,20 @@ import {
 
 🚀 Now that that's there, let's import it into `search.js` so we can use it.
 
+<<<<<<< HEAD
+=======
+```js
+// Near the top of search.js
+import VideoList from './video_list';
+```
+>>>>>>> 41c88ac480508572b619ee9f7c5fb837527948f6
 
 🚀 And lets create a new class component:
 
-```
+```js
 import VideoDetail from './video_detail';
+
+// Add styling here
 
 class VideoList extends Component {
 
@@ -319,6 +318,8 @@ class VideoList extends Component {
     );
   }
 
+  //Handle your transition to the detail page
+  //pass along the clicked video into props to display it!
   showVideoDetail(video) {
     this.props.navigator.push({
       title: video.snippet.title,
@@ -327,7 +328,7 @@ class VideoList extends Component {
     });
   }
 
-  renderVideo(video) {
+  renderVideoCell(video) {
     return (
       <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="#dddddd">
         <View>
@@ -357,9 +358,13 @@ class VideoList extends Component {
           }
           }
         />
+
+        //This is equivalent to TableView in iOS.
+        //You need to define the location of your data in dataSource
+        //and define cell structure with renderRow
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={this.renderVideo.bind(this)}
+          renderRow={this.renderVideoCell.bind(this)}
           style={styles.listView}
         />
       </View>
@@ -370,11 +375,9 @@ class VideoList extends Component {
 module.exports = VideoList;
 ```
 
-🚀 Make sure to add styling! You know where to put this:
+🚀 And we should add in some styles too. Let's make it a little more interesting this time:
 
-```
-
-// Add styling here
+```js
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -408,9 +411,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 });
-
 ```
 
+:snowflake: A few things to note here:
+- We can really see how the styles are represented as dictionaries, with the ids being similar to css classes
+- Property names need not go in quotes, but if the property itself is a string, it should (like in `backgroundColor: 'white'`)
+- Flex is dealt with in kind of a strange way. Instead of a `display` property, these stylesheets default to flex when you simply specify `flex:` followed by some integer. This integer is a lot like the `flex-grow` property that we're familiar with.
+- Finally, notice that all our integer values are simply integers! There's no `px`, `pt`, `em`, etc. Only numbers.
 
 🚀 Take a look at the simulator. We've now got some text indicating that the videos are loading. This is the default text we've provided if the API call hasn't returned videos yet. Since we haven't made an API call yet, that definitely makes sense.
 
@@ -418,7 +425,7 @@ const styles = StyleSheet.create({
 
 🚀 Now, let's populate the table view! Add in the following lines to instantiate an image component containing the video thumbnail and some text with the video's title and description.
 
-```
+```js
 <Image
   source={{ uri: video.snippet.thumbnails.default.url }}
   style={styles.thumbnail}
@@ -431,7 +438,7 @@ const styles = StyleSheet.create({
 
 🚀 Hmm...simulator says still just loading videos. That's because we need to actually gather our data from Youtube. Let's add in the fetchData method to make our API call.
 
-```
+```js
 fetchData() {
   youtubeSearch(this.state.query)
      .then((responseData) => {
@@ -444,8 +451,9 @@ fetchData() {
 }
 ```
 
-🚀 Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it:
+🚀 Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it.
 
+<<<<<<< HEAD
 
 ```
 componentDidMount() {
@@ -457,10 +465,15 @@ What do you think will go inside this function?  Take a stab at it!
 
 
 :snowflake: Now when the page loads, we'll make a call to fetchData to populate our list view.
+=======
+🚀 Create a function `componentDidMount` in `video_list.js`. Inside it, make a call to `fetchData`.
+
+:snowflake: Now when the page loads, we'll call `fetchData` to populate our list view.
+>>>>>>> 41c88ac480508572b619ee9f7c5fb837527948f6
 
 🚀 Alright, let's update the `search.js` file to have a table view that lists all our videos. Replace the return statement in the render function with the following:
 
-```
+```js
 <View style={styles.container}>
   <StatusBar
     backgroundColor="blue"
@@ -484,7 +497,12 @@ Ah darn, one other thing. We need to actually have a reference to the API, right
 
 🚀 Create a new file at the top level of your project, `youtube-api.js`.
 
+<<<<<<< HEAD
 Sound familiar?  We did this in short assignment 4, and we will be using the exact same api for this react-native app!  That's coooool.
+=======
+```js
+import axios from 'axios';
+>>>>>>> 41c88ac480508572b619ee9f7c5fb837527948f6
 
 Go ahead and find that file and copy it here.  We need to do this because we need your individual api key, which you already made in sa4.  
 
@@ -498,9 +516,8 @@ Go ahead and find that file and copy it here.  We need to do this because we nee
 
 🚀 What's this videoDetail thing? We'll also need to create that. Make a new file called `compnents/video_detail.js` and paste in this code:
 
-```
+```js
 import React, { Component } from 'react';
-import YouTube from 'react-native-youtube';
 
 import {
     StyleSheet,
@@ -551,7 +568,9 @@ module.exports = VideoDetail;
 Here's what the app should be looking like now:
 ![finished app](./images/finished.png)
 
-:camera: Search for some unique searchterm and take a screenshot. You'll upload this to your repo to turn in.
+🚀 Now that the app is complete, we're using all the styling we pasted in awhile ago. Now it's your turn: play around with the styling in `video_list.js`. If you haven't enabled hot-reloading yet, do that, it'll make it easy to see all your styling changes.
+
+:camera: Make the styling uniquely your own. Then, search for some unique searchterm and take a screenshot. You'll upload this to your repo to turn in.
 
 ## And We Are Done!
 Look at you! You spend eight weeks in full-stack web dev, but little did you know it was actually smartphone programming in disguise! Here's what we accomplished today:
