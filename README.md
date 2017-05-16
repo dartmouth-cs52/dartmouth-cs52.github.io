@@ -316,6 +316,8 @@ class VideoList extends Component {
     );
   }
 
+  //Handle your transition to the detail page
+  //pass along the clicked video into props to display it! 
   showVideoDetail(video) {
     this.props.navigator.push({
       title: video.snippet.title,
