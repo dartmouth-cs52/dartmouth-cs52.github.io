@@ -32,6 +32,21 @@ When the iPhone simulator pops up, you should be seeing a basic template for an 
 
 What just happened? React-Native bundled up everything for us, ran it through XCode, and opened up a simulator, all through the command line and without us ever having to open up XCode or write a single line of Swift code. Neat.
 
+## Installing Dependencies
+We're going to need a few dependencies from our trusty friend, the Node Package Manager.
+
+Since we're making calls to the YouTube api, it would help if we made GET calls with axios, so:
+
+`$ npm install --save axios`
+
+Next, we'll need some specific react-native components that some other open source developers have kindly provided to us. This is fairly common in the react-native community, and it's great to have these pre-styled components at our disposal so we don't have to go through all the trouble of making an input field look nice, for example.
+
+There are two components we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), which is made to look like the classing iOS search bar, and most importantly, [react-native-youtube](https://github.com/inProgress-team/react-native-youtube), which allows us to play YouTube media within the application.
+
+`$ npm install --save react-native-search-box`
+
+`$ npm install --save react-native-youtube`
+
 ## Basic Navigation
 One of the classic navigation components in iOS is the Tab Bar.
 
@@ -39,8 +54,6 @@ Create a new director in the top level of the project folder called `components`
 Then create two new files: `components/search.js` and `components/featured.js`.
 
 ```
-'use strict';
-
 import React, { Component } from 'react';
 
 import {
@@ -148,13 +161,13 @@ import {
   } from 'react-native';
 ```
 
-Copy the same thing into `featured.js`. Refresh the simulator again. Now we have a nice looking tab bar at the bottom of the page.
+Copy the same thing into `featured.js`. Refresh the simulator again. Now we have a nice looking tab bar at the bottom of the page. Should look something like this:
+
+![tab bar](./images/tab-bar.png)
 
 Let's make the featured page look a little less boring. Replace all the code in it with this:
 
 ```
-'use strict';
-
 import React, { Component } from 'react';
 import ImageView from './imageView';
 
@@ -225,6 +238,10 @@ const ImageView = (props) => {
 module.exports = ImageView;
 ```
 
+Now, instead of some gross text up in the top corner, we have this nice react logo, since we love react so much:
+
+![featured tab](./images/featured.png)
+
 ## Adding Content to the Search Page
 So we've got some basic navigation working on the app, but it looks pretty boring. Let's make some cool stuff on the search tab, like how about a nice table view?
 
@@ -233,8 +250,6 @@ Since a table-view is specific to iOS, but react-native is cross-platform, there
 Create a new file: `components/video_list.js`. Add some imports:
 
 ```
-'use strict';
-
 import React, { Component } from 'react';
 import youtubeSearch from '../youtube-api';
 import axios from 'axios';
@@ -249,6 +264,13 @@ import {
     ListView,
     TouchableHighlight,
   } from 'react-native';
+```
+
+Now that that's there, let's import it into `search.js` so we can use it.
+
+```
+// Near the top of search.js
+import VideoList from './video_list';
 ```
 
 And lets create a new class component:
@@ -466,8 +488,6 @@ There's just one little thing you need to change in the above file. Remember whe
 What's this videoDetail thing? We'll also need to create that. Make a new file called `compnents/video_detail.js` and paste in this code:
 
 ```
-'use strict';
-
 import React, { Component } from 'react';
 import YouTube from 'react-native-youtube';
 
@@ -516,3 +536,21 @@ module.exports = VideoDetail;
 ```
 
 This is a little different from what we've been doing. The WebView component is a sort of hybrid component that's actually just rendering a webpage. The `source` prop holds a uri that's called as if in a browser and then displayed in our application. Notice how it looks just like watching youtube on a mobile device. Pretty cool that we can do this within our application alongside native components, huh?
+
+Here's what the app should be looking like now:
+![finished app](./images/finished.png)
+
+Search something unique and take a screenshot. You'll upload this to your repo to turn in.
+
+## And We Are Done!
+Look at you! You spend eight weeks in full-stack web dev, but little did you know it was actually smartphone programming in disguise! Here's what we accomplished today:
+
+- [x] Learned how to set up a new iOS project in react native (from scratch!)
+- [x] Implement Tab Bar navigation (without Swift code)
+- [x] Learn how to use the react-native simulator
+- [x] Made a table view on an iPhone in JavaScript
+- [x] Make an API call to YouTube using axios
+- [x] Evaded a quiz for an extra hour!
+
+## Submission
+To submit, create a new github repo and push your code up to it. In the README file, include the two screenshots we asked you to provide. On canvas, submit the URL to your repo. If you had a partner, submit their name too, so we can count the assignment for both of you.
