@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SA8 - Uploading images to S3
+title: SA9 - Uploading images to S3
 published: false
 ---
 
@@ -65,10 +65,10 @@ S3_BUCKET=YOUR_BUCKET_NAME_HERE
 
 ###### Remember to add the `.env` file to your `.gitignore`, since this file should only be used for local testing.
 
-In order for your application to access the AWS credentials for signing upload requests, they will need to be added as configuration variables in Heroku. You can add these environment variables to Heroku for use on your server by running the following command:
+In order for your application to access the AWS credentials for signing upload requests, they will need to be added as configuration variables in Heroku. You can add these environment variables to Heroku for use on your server by running the following command for each of your variables, or you can log into Heroku dashboard and add them there.
 
 ```bash
-$ heroku config:get CONFIG-VAR-NAME -s  >> .env
+$ heroku config:set AWS_ACCESS_KEY_ID=YOUR_KEY_HERE
 ```
 
 We set all of these secret keys in a config variable because we don't want to expose these variables directly in code, where they could be potentially stolen.
@@ -86,7 +86,7 @@ We need to add some additional JSX to our frontend in both the `newPost` compone
 <input type="file" name="coverImage" onChange={this.onImageUpload} />
 ```
 
-This is the base JSX you would need, you should definetly revamp this to make this look nicer. The `preview` element shows a preview of the new image you just added after you choose it. We have a function `onImageUpload` that handles our input.
+This is the base JSX you would need, you should definitely revamp this to make this look nicer. The `preview` element shows a preview of the new image you just added after you choose it. We have a function `onImageUpload` that handles our input.
 
 ```javascript
 onImageUpload = (event) => {
@@ -100,25 +100,27 @@ const file = event.target.files[0];
 
 Since our post creation no longer relies on the `cover_url` field, we also need to modify the actions that we are calling. We are going to introduce some new actions to get a signed request and upload our image.
 
+However, first let's create a couple of helper functions that are *not* actionCreators:
+
 ```javascript
 function getSignedRequest(file) {
-const fileName = encodeURIComponent(file.name);
-return axios.get(`${ROOT_URL}/sign-s3?file-name=${fileName}&file-type=${file.type}`);
+  const fileName = encodeURIComponent(file.name);
+  return axios.get(`${ROOT_URL}/sign-s3?file-name=${fileName}&file-type=${file.type}`);
 }
 ```
 
 ```javascript
 function uploadFileToS3(signedRequest, file, url) {
-return (dispatch) => {
-  return new Promise((fulfill, reject) => {
-    axios.put(signedRequest, file, { headers: { 'Content-Type': file.type } }).then((response) => {
-      fulfill(url);
-    }).catch((error) => {
-      console.log(error);
-      reject(error);
+  return (dispatch) => {
+    return new Promise((fulfill, reject) => {
+      axios.put(signedRequest, file, { headers: { 'Content-Type': file.type } }).then((response) => {
+        fulfill(url);
+      }).catch((error) => {
+        console.log(error);
+        reject(error);
+      });
     });
-  });
-};
+  };
 }
 ```
 
@@ -126,12 +128,12 @@ We have two helper functions, `getSignedRequest` and `uploadFileToS3` that each 
 
 ```javascript
 export function uploadCoverImage(file) {
-return (dispatch) => {
-  return getSignedRequest(file).then(
-    response => dispatch(uploadFileToS3(response.data.signedRequest, file, response.data.url)),
-    error => console.log(error),
-  );
-};
+  return (dispatch) => {
+    return getSignedRequest(file).then(
+      response => dispatch(uploadFileToS3(response.data.signedRequest, file, response.data.url)),
+      error => console.log(error),
+    );
+  };
 }
 ```
 
@@ -139,10 +141,10 @@ We use our new action `uploadCoverImage` in our `createPostHandler`. Since this 
 
 #### Server
 
-We need some new packages to communicate with s3. `aws-dsk` is used to communicate with s3  and `dotenv` is used to load environment variables from `.env` for your server.
+We need some new packages to communicate with s3. `aws-sdk` is used to communicate with s3  and `dotenv` is used to load environment variables from `.env` for your server.
 
 ```bash
-npm install --save aws-sdk dotenv"
+npm install --save aws-sdk dotenv
 ```
 
 To setup `dotenv`, we want to call `dotenv.load({ path: '.env' });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET`.
@@ -181,7 +183,7 @@ Now in your router, we can add a new route
 
 ```javascript
 router.get('/sign-s3', (req, res) => {
-s3Upload(req, res);
+  s3Upload(req, res);
 });
 ```
 

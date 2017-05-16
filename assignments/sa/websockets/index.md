@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ""
+title: SA8 - Websockets
 published: true
 ---
 
