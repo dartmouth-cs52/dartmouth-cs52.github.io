@@ -95,15 +95,16 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
     By default all Node.js configurations of Travis run `npm test` automatically after the build completes.
 
-    `npm test` can be configured to run a script of your choice, we will be running `eslint`
+    `npm test` can be configured to run a script of your choice, we will be running `eslint`.
+    Later we can replace this with tests once your project has those.
 
-    Below is a sample `package.json` file that runs eslint on all javascript files
+    Below is a sample `package.json` file that runs eslint on all javascript files in your src directory
 
         {
           "name": "flux",
           "private": true,
           "scripts": {
-            "test": "./node_modules/.bin/eslint **.js"
+            "test": "./node_modules/.bin/eslint src"
           }
         }
 
@@ -113,6 +114,12 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
     Pre-commit hooks will typically run all of your linters against any files that you are attempting to stage. If there are any linter errors, you must fix errors before successfully committing.
 
-    You can use a simple script and add it to your `.git/hooks/pre-commit` file. A sample script for `eslint` can be found [here](https://gist.github.com/linhmtran168/2286aeafe747e78f53bf).
+    You can use a simple script and add it to your `.git/hooks/pre-commit` file.
 
-    Alternatively if you don't feel comfortable doing this yourself, you can use a third party git hook manager such as [Overcommit](https://github.com/brigade/overcommit), [Pre-commit](https://github.com/pre-commit/pre-commit), or [Git-hooks](https://www.npmjs.com/package/git-hooks)
+
+    ```bash
+    #!/bin/bash
+    npm test
+    ```
+
+    A sample script for some more advanced configurations for `eslint` can be found [here](https://gist.github.com/linhmtran168/2286aeafe747e78f53bf).
