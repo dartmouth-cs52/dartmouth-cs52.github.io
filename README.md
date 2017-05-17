@@ -36,7 +36,7 @@ Watchman is a file watching service that records when files change, and triggers
 
 Great! Now we're ready to create our repo.
 
-```
+```sh
 $ react-native init VidSearch
 $ cd VidSearch
 $ react-native run-ios
@@ -59,9 +59,13 @@ We're going to need a few dependencies from our trusty friend, the Node Package 
 
 Next, we'll need some specific react-native components that some other open source developers have kindly provided to us. This is fairly common in the react-native community, and it's great to have these pre-styled components at our disposal so we don't have to go through all the trouble of making an input field look nice, for example.
 
-🚀 There's one additional componentswe'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), a simple input field made to look like the classic iOS search bar.
+🚀 There's one additional component we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), a simple input field made to look like the classic iOS search bar.
 
 `$ npm install --save react-native-search-box`
+
+🚀 And of course, we need to just install everything that react-native init has kindly provided us with in its `package.json`:
+
+`$ npm install`
 
 ## Basic Navigation
 One of the classic navigation components in iOS is the Tab Bar.
