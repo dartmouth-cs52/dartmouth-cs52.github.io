@@ -25,7 +25,7 @@ The Workshop Assignment can be found here [here](https://github.com/dartmouth-cs
 * 5/9 [Deployment: AWS, Azure](https://github.com/samlee64/linode-workshop)
 * 5/11 [Deployment: Digital Ocean, Docker](https://github.com/dylansc/deployment_workshop)
 * 5/16 [Other Platforms: React Native](https://github.com/arinehouse/react-native-workshop)
-* 5/18 Other Platforms: Electron
+* 5/18 [Other Platforms: Electron](https://github.com/Pspanky/electron_presentation)
 
 
   <!-- * 6/28 [git map workshop](git) -->
