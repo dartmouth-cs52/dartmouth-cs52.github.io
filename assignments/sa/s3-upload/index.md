@@ -26,9 +26,9 @@ In general, the method described in this article follows these simple steps:
 
 #### S3 Setup
 
-Setup S3 with Heroku by following this [guide](https://devcenter.heroku.com/articles/s3#s3-setup).
+🚀 Setup S3 with Heroku by following this [guide](https://devcenter.heroku.com/articles/s3#s3-setup).
 
-You will now need to edit some of the permissions properties of the target S3 bucket so that the final request has sufficient privileges to write to the bucket. In a web-browser, sign in to the AWS console and select the S3 section. Select the appropriate bucket and click the ‘Properties’ tab. Select the Permissions section and three options are provided (Add more permissions, Edit bucket policy and Edit CORS configuration).
+You will now need to edit some of the permissions properties of the target S3 bucket so that the final request has sufficient privileges to write to the bucket. In a web-browser, sign in to the AWS console and select the S3 section. Select the appropriate bucket (or create a new one) and click the ‘Properties’ tab. Select the Permissions section and three options are provided (Add more permissions, Edit bucket policy and Edit CORS configuration).
 
 CORS (Cross-Origin Resource Sharing) will allow your application to access content in the S3 bucket. Each rule should specify a set of domains from which access to the bucket is granted and also the methods and headers permitted from those domains.
 
@@ -48,7 +48,9 @@ For this to work in your application, click ‘Add CORS Configuration’ and ent
   </CORSRule>
 </CORSConfiguration>
 ```
-Click 'Save’ in the CORS window and then 'Save’ again in the bucket’s 'Properties’ tab.
+
+🚀 Click 'Save’ in the CORS window and then 'Save’ again in the bucket’s 'Properties’ tab.
+
 This tells S3 to allow any domain access to the bucket and that requests can contain any headers, which is generally fine for testing. When deploying, you should change the 'AllowedOrigin’ to only accept requests from your domain.
 
 
@@ -78,7 +80,7 @@ We set all of these secret keys in a config variable because we don't want to ex
 
 #### File input component
 
-We need to add some additional JSX to our frontend in both the `newPost` component and `post` component that allows us to upload images for our cover image.
+We need to add some JSX to our frontend in both the `newPost` component and `post` component that allows us to upload images for our cover image.
 
 ```javascript
 <img id="preview" alt="preview" src={this.state.preview} />
@@ -88,12 +90,14 @@ We need to add some additional JSX to our frontend in both the `newPost` compone
 This is the base JSX you would need, you should definitely revamp this to make this look nicer. The `preview` element shows a preview of the new image you just added after you choose it. We have a function `onImageUpload` that handles our input.
 
 ```javascript
-onImageUpload = (event) => {
-const file = event.target.files[0];
-// Handle null file
-// Get url of the file and set it to the src of preview
+onImageUpload(event) {
+  const file = event.target.files[0];
+  // Handle null file
+  // Get url of the file and set it to the src of preview
 }
 ```
+
+You can also use external react components such as [react-dropzone](https://react-dropzone.netlify.com/)
 
 #### Redux Actions
 
@@ -146,33 +150,34 @@ We need some new packages to communicate with s3. `aws-sdk` is used to communica
 npm install --save aws-sdk dotenv
 ```
 
-To setup `dotenv`, we want to call `dotenv.load({ path: '.env' });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET`.
+To setup `dotenv`, we want to call `dotenv.config({ silent: true });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET`.
 
 We also need a new route on our server to return our signedRequest. Make a new folder under app called `services`, and add a new `s3.js` file.
 
 ```javascript
+
 const s3Upload = (req, res) => {
-const s3 = new aws.S3();
-const fileName = req.query['file-name'];
-const fileType = req.query['file-type'];
-const s3Params = {
-  Bucket: process.env.S3_BUCKET,
-  Key: fileName,
-  Expires: 60,
-  ContentType: fileType,
-  ACL: 'public-read',
-};
-s3.getSignedUrl('putObject', s3Params, (err, data) => {
-  if (err) {
-    console.log(err);
-    return res.end();
-  }
-  const returnData = {
-    signedRequest: data,
-    url: `https://${process.env.S3_BUCKET}.s3.amazonaws.com/${fileName}`,
+  const s3 = new aws.S3();
+  const fileName = req.query['file-name'];
+  const fileType = req.query['file-type'];
+  const s3Params = {
+    Bucket: process.env.S3_BUCKET,
+    Key: fileName,
+    Expires: 60,
+    ContentType: fileType,
+    ACL: 'public-read',
   };
-  return (res.send(JSON.stringify(returnData)));
-});
+  s3.getSignedUrl('putObject', s3Params, (err, data) => {
+    if (err) {
+      console.log(err);
+      return res.end();
+    }
+    const returnData = {
+      signedRequest: data,
+      url: `https://${process.env.S3_BUCKET}.s3.amazonaws.com/${fileName}`,
+    };
+    return (res.send(JSON.stringify(returnData)));
+  });
 };
 
 export default s3Upload;
