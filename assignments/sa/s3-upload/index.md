@@ -114,23 +114,21 @@ function getSignedRequest(file) {
 
 ```javascript
 function uploadFileToS3(signedRequest, file, url) {
-  return (dispatch) => {
-    return new Promise((fulfill, reject) => {
-      axios.put(signedRequest, file, { headers: { 'Content-Type': file.type } }).then((response) => {
-        fulfill(url);
-      }).catch((error) => {
-        console.log(error);
-        reject(error);
-      });
+  return new Promise((fulfill, reject) => {
+    axios.put(signedRequest, file, { headers: { 'Content-Type': file.type } }).then((response) => {
+      fulfill(url);
+    }).catch((error) => {
+      console.log(error);
+      reject(error);
     });
-  };
+  });
 }
 ```
 
-We have two helper functions, `getSignedRequest` and `uploadFileToS3` that each return a promise. The reason why we have this pattern is that `uploadFileToS3` requires `getSignedRequest` to return a success call. These functions are used by `uploadCoverImage` which also returns a promise.
+We have two helper functions, `getSignedRequest` and `uploadFileToS3` that each return a promise. The reason why we have this pattern is that `uploadFileToS3` requires `getSignedRequest` to return a success call. These functions are used by `uploadImage` which also returns a promise.
 
 ```javascript
-export function uploadCoverImage(file) {
+export function uploadImage(file) {
   return (dispatch) => {
     return getSignedRequest(file).then(
       response => dispatch(uploadFileToS3(response.data.signedRequest, file, response.data.url)),
