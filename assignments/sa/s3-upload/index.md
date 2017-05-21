@@ -27,6 +27,26 @@ In general, the method described in this article follows these simple steps:
 
 ### Setup
 
+#### Git Tags
+
+Before you start make sure to tag your previous Lab4 and Lab5 with v2.
+
+🚀 Go into your Lab5 directory and run:
+
+```bash
+git tag v1
+git push origin --tags
+```
+
+🚀 Go into your Lab4 directory and run:
+
+```bash
+git tag v1
+git push origin --tags
+```
+
+Great, now you can add uploading but always know the version that came before.
+
 #### S3 Setup
 
 🚀 Setup S3 with Heroku by following this [guide](https://devcenter.heroku.com/articles/s3#s3-setup).
