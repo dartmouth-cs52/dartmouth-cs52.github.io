@@ -34,14 +34,14 @@ Before you start make sure to tag your previous Lab4 and Lab5 with v2.
 🚀 Go into your Lab5 directory and run:
 
 ```bash
-git tag v1
+git tag v2
 git push origin --tags
 ```
 
 🚀 Go into your Lab4 directory and run:
 
 ```bash
-git tag v1
+git tag v2
 git push origin --tags
 ```
 
