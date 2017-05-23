@@ -6,7 +6,7 @@ published: true
 
 ![](http://i.giphy.com/5xtDarzqYMWFigufLws.gif)
 
-Are you ready to invent the next AI?  Any self-respecting bot needs to be able to communicate via Slack. The bot will be able to do things like respond to messages and message users as they join your Slack team. It will be a simple [Node.js](https://nodejs.org/en/) and [Express.js](http://expressjs.com/) app and run on [Heroku](https://www.heroku.com/). Don't worry if you haven't used these technologies before — all will be explained!
+Are you ready to invent the next AI?  Any self-respecting bot needs to be able to communicate via Slack. The bot will be able to do things like respond to messages and message users as they join your Slack team. It will be a simple [Node.js](https://nodejs.org/en/) and [Express.js](http://expressjs.com/) app and run on [Heroku](https://www.heroku.com/).
 
 ![](http://i.giphy.com/iUaHtkDPYX3Mc.gif){: .fancy .small}
 
@@ -15,29 +15,16 @@ Are you ready to invent the next AI?  Any self-respecting bot needs to be able t
 In Slack, bot users are similar to human users in that they have names, profile pictures, exist as part of the team, can post messages, invited to channels, and more. The main difference is that bots are controlled programmatically via an API that Slack provides. We'll be building a custom bot that listens to certain events, like a message or a new member joining your team, and responds accordingly.
 
 
-## Setup
-Some of the technologies we'll be using are Slack, Github, Heroku, and Node.js. Node is runtime environment used for developing server-side web applications and Heroku is a [Platform-as-a-Service](https://en.wikipedia.org/wiki/Platform_as_a_service) which runs our Node application. Let's walk through these basic setup steps together.
-
-1. **GitHub**
-
-    🚀 Pull in some starter code from [express+babel+eslint](https://github.com/dartmouth-cs52/express-babel-starter).
+## Some Setup
+Begin by cloning the starter code from [express+babel+eslint](https://github.com/dartmouth-cs52/express-babel-starter).
 
 1. **Slack**
 
-    🚀 From the Slack desktop app, click on the team name in the top-left and then go to "Apps & Integrations." Search for "bot" and click the top result, "Bots." Click "Add Configuration". Choose a name for your bot and fill in the details for the bot. Take note of the API Token, we'll use it later.
+    🚀 From the Slack desktop app, click on the team name in the top-left and then go to "Apps & Integrations." Search for "bot" and click the top result, "Bots." Click "Add Configuration". Choose a name for your bot and fill in the details for the bot. Add the Slack API token to the env file just as we did with previous assignments.
 
     ![](img/slack_bot_add.png){: .fancy}
 
-1. **Setup Local Environment**
-
-    Your app will need to know about the API token. This token allows you to talk to Slack's servers in an authenticated way.  API keys can be thought of as authentication for programs.
-
-    You'll need to have the API token as a local environment variable.  However, to make it simpler than editing individual shell environment variables we're going to use a node module:  [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code.
-
-    🚀 Save `SLACK_BOT_TOKEN="TOKEN_YOU_SAVED_EARLIER"` into a `.env` file that you do not add to git (add .env to your .gitignore file).
-
-    Then in your code wherever you need it you can use:
-
+	**Hint:**
     ```javascript
     import dotenv from 'dotenv';
     dotenv.config({ silent: true });
@@ -46,49 +33,29 @@ Some of the technologies we'll be using are Slack, Github, Heroku, and Node.js. 
     process.env.SLACK_BOT_TOKEN
     ```
 
-    Note: during deployment for Heroku you'll need to add SLACK_BOT_TOKEN to your config variables in Settings.
+    Note: Don't forget to set this environment variable on Heroku in the settings tab 
 
 1. **Express**
 
-    [Express](http://expressjs.com/) is a web framework for Node.
-    This can be useful if we need to control our app remotely, for now we'll leave this set up.
-
-    🚀Open `app/server.js`.  This is the main file that launches your bot.
+    🚀Open `app/server.js`. Just like the previous assignments this is our main file for running the project.
 
 1. **Run Dev Mode**
 
-    You can now start your app in dev mode.
-
-    In the `package.json` there is a section named `scripts`.  This happens to have a few handy things already defined for you.  In particular the dev command which you can run with `npm run dev`.
-
-    This will launch your bot in development mode!  Node will watch for any file changes and relaunch itself as needed.
-
-    ```bash
-    ➜ npm run dev
-
-    > example_express_with_es6@1.0.0 dev
-    > nodemon app/server.js --exec babel-node
-    [nodemon] 1.9.2
-    [nodemon] to restart at any time, enter `rs`
-    [nodemon] watching: *.*
-    [nodemon] starting `babel-node app/server.js`
-    listening on: 9090
+	```bash
+	$ npm run dev
     ```
 
 ## Your First Bot Words
 
 Ok so now you have a little server running, but how does it talk to Slack?
 
-1. 🚀Let's add a little library to do that. In a new Terminal window (cool thing about how we're running node in dev mode is that we can change things while it is  running and it'll pick up the changes):
+1. 🚀Let's add a library to do just that.
 
     ```bash
-    cd slackattack #make sure you are in your project direct
     npm install --save botkit
     ```
 
     We are going to use [botkit](https://github.com/howdyai/botkit), which is a library that helps create conversational bots.  
-
-    Note how as soon as that finishes running your nodemon restarts.
 
 1. Import the library.
 
@@ -96,8 +63,6 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
     ```js
     import botkit from 'botkit';
-    // this is es6 syntax for importing libraries
-    // in older js this would be: var botkit = require('botkit')
     ```
 
 1. Setup Bot Controller
@@ -130,8 +95,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
     If you notice an error: `Error: not_authed` this is because you forgot to export/set the environment variable for the SLACK_BOT_TOKEN.
 
-    If you have trouble setting up your environment you can use a .env file with the [dotenv node package](https://www.npmjs.com/package/dotenv).
-
+    If you have trouble setting up your environment you can use a .env file with the [dotenv node package](https://www.npmjs.com/package/dotenv) as we've done previously.
 
 1. Lets Say Hi!
 
@@ -142,7 +106,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
     });
     ```
 
-    Give it a shot,  try direct messaging your bot in Slack!
+    Give it a shot, try direct messaging your bot in Slack!
 
     ![](img/jackjack_speaks.png)
 
@@ -202,10 +166,41 @@ At this point you've achieved a general understanding of what goes into making a
 
 Except first, lets make your bot actually helpful.  I am hungry, and I want your bot to suggest places to eat.
 
-🚀Add in [Yelp API for node](https://github.com/olalonde/node-yelp).
+🚀Add in [Yelp API for node](https://github.com/tonybadguy/yelp-fusion) with
+```bash
+$ npm install --save yelp-fusion
+```
 
-🚀You'll need to [sign up and generate API keys](http://www.yelp.com/developers/getting_started/api_access
-), similar to what you had to do for Slack.
+🚀You'll need to [create and app and generate API keys](https://www.yelp.com/developers/v3/manage_app), similar to what you had to do for Slack.
+
+Once You have your keys add them to your .env file
+```bash
+export YELP_CLIENT_SECRET="YOUR_CLIENT_SECRET"
+export YELP_CLIENT_ID="YOUR_CLIENT_ID"
+```
+
+You can grab the yelp client like this
+```javascript
+  let yelpClient;
+  yelp.accessToken(process.env.YELP_CLIENT_ID, process.env.YELP_CLIENT_SECRET)
+    .then((res) => {
+      yelpClient = yelp.client(res.jsonBody.access_token);
+    });
+```
+
+Our client gives us a convenient search api. We can use the following to make a
+query
+
+```javascript
+  yelpClient.search({
+    term:'Sushi',
+    location: 'hanover, nh'
+  }).then(response => {
+    console.log(response.jsonBody.businesses[0].name);
+  }).catch(e => {
+    console.log(e);
+  });
+```
 
 Tip: Yelp results come back looking something like:
 
@@ -253,7 +248,7 @@ data.businesses.forEach(business => {
 
 instead of a c-style for loop.
 
-Here's some sample output that your bot too can return.  Just slack [jackjack](https://cs52-dartmouth.slack.com/messages/@jackjack/) and tell him you are `hungry`.
+Here's some sample output that your bot too can return. Just slack [jackjack](https://cs52-dartmouth.slack.com/messages/@jackjack/) and tell him you are `hungry`.
 
 ![sample output](img/sample_yelp.png)
 
