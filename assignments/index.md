@@ -18,7 +18,7 @@ title: Assignments
 * [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/10
 * [Short Assignment 8: WebSockets](sa/websockets) - Extra Credit (5/16)
 * [Short Assignment 9: Photo Uploading S3](sa/s3-upload) - Extra Credit
-* Short Assignment 10: ChatBot - Extra Credit
+* [Short Assignment 10: ChatBot](sa/slack-bot) - Extra Credit
 * Short Assignment 11: Testing Frameworks - Extra Credit
 
 
