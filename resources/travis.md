@@ -30,7 +30,7 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
         language: node_js
         node_js:
-          - "5.4"
+          - "7"
 
 4. Push to GitHub
 

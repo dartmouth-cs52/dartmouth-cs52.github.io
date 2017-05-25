@@ -1,14 +1,16 @@
 ---
 layout: page
-title: SA8 - Testing
-published: false
+title: SA10 - Testing
+published: true
 ---
 
 ![Mocha and CHai](http://i.imgur.com/XHXkjS4.png)
 
 ### Overview
 
-Today we'll be learning how to use [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/) to implement unit tests on our redux blog server that we built in Lab 5. Obviously testing is extremely important as you need to verify that your API works. What many people do not realize is that testing is even more important to make sure that your exisiting functionality of your code works after you add new functionality to it. Since our API is not very complex, this is just meant as an introduction to how to write API tests.
+Today we'll be learning how to use [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/) to implement unit tests on our redux blog server that we built in Lab 5. There are several kinds of testing. Obviously simply testing the functionality of your code as you are working on it is helpful, but regression testing can be a life saver.  Regression testing checks to make sure that existing code still works after you add new functionality to it.
+
+Since our API is not very complex, this is just meant as an introduction to how to write API tests.
 
 ### Setup
 
@@ -28,7 +30,9 @@ We need this because by default `mocha` only supports `es5`, therefore we need `
 
 Let's also configure our eslint to handle these new frameworks.
 
-add `mocha: true` under your `env`, `mocha` under your `plugins`, and add this additional `rule` - ` import/no-extraneous-dependencies: [2, { devDependencies: true }]`.
+* add `mocha: true` under your `env`
+* `mocha` under your `plugins`
+* and add this additional `rule` - `import/no-extraneous-dependencies: [2, { devDependencies: true }]`
 
 Your `.eslintrc` file should look something like this:
 
@@ -74,9 +78,14 @@ Your `.eslintrc` file should look something like this:
 
 Since we have a dev environment, a prod environment, and now we are adding a testing environment, its a good idea to add a configuration file in order to cleanup code like this `const port = process.env.PORT || 9090`.
 
-In a separate `app/config/` folder, make a new file called `project.config.js`. It should look something like this, where we define configuration variables for our three possible environments. We want to make sure that our test environment runs tests on a port and database that is separate from the development environment.
+In a separate `app/config.js` file. It should look something like this, where we define configuration variables for our three possible environments. We want to make sure that our test environment runs tests on a port and database that is separate from the development environment.
 
 ```javascript
+import dotenv from 'dotenv';
+dotenv.config({ silent: true });
+
+const env = process.env.NODE_ENV || 'development';
+
 const projectConfig = {
   development: {
     mongoURI: 'mongodb://localhost/blog',
@@ -92,16 +101,14 @@ const projectConfig = {
   },
 };
 
-export default projectConfig;
+export default projectConfig[env];
 ```
 
 To use this file, we can import it as such in our `server.js`.
 
 ```javascript
-import projectConfig from './config/project.config.js';
+import config from './config';
 
-const env = process.env.NODE_ENV || 'development';
-const config = projectConfig[env]
 mongoose.connect(config.mongoURI);
 ```
 
@@ -123,16 +130,18 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 ```
 
-Now we want to automate this by writing unit tests with Mocha and Chai. Mocha is a nodejs testing framework and Chai is an assertion framework. The idea behind assertions is that we want to run some block of code that we have written, in this case, an API route, and then assert that the response of the API is what we expected.
+Now we want to automate this by writing unit tests with Mocha and Chai. Mocha is a node.js testing framework and Chai is an assertion framework.
+
+An assertion is a way to run some block of code and expect a particular response.  In our case we can assert that the response from a particular API endpoint will be what we expect.
 
 #### Should
 
-`Chai` provides a `should` style that allows us to chain assertions on objects. We can use `should` to assert that variavle are certain types and have certain properties, attributes, and values. There are additional assertion types that you can read about [here](http://chaijs.com/guide/styles/).
+`Chai` provides a `should` style that allows us to chain assertions on objects. We can use `should` to assert that variables are certain types and have certain properties, attributes, and values. There are additional assertion types that you can read about [here](http://chaijs.com/guide/styles/).
 
 ```javascript
-var should = require('chai').should() //actually call the function
-  , foo = 'bar'
-  , beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
+// EXAMPLES
+const foo = 'bar'
+const beverages = { tea: [ 'chai', 'matcha', 'oolong' ] };
 
 foo.should.be.a('string');
 foo.should.equal('bar');
