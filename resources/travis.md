@@ -52,7 +52,7 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
 6. Setting up a linter for your project
 
-    I highly recommend setting up a linter plugin for your text editor of choice in addition to your linter. One that works well for atom is [Linter](https://atomlinter.github.io/). You can install specific linters for your selected language and the linter will display inline errors.
+    It is recommended that you set up a linter plugin for your text editor of choice. One that works well for atom is [Linter](https://atomlinter.github.io/). You can install specific linters for your selected language and the linter will display inline errors.
 
     ![linter error](/assets/imgs/travis/linter-error.png)
 
@@ -64,7 +64,7 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
     After installing `eslint`, you need to initalize your `.eslintrc` configuration file using `eslint --init`. More details about configurations can be found in the [config docs](http://eslint.org/docs/user-guide/configuring).
 
-    Below is an example of a potential `eslintrc` file.
+    Below is an example of a potential `eslintrc` file. You probably already have one set up!
 
         module.exports = {
         "extends": "airbnb",
@@ -101,14 +101,12 @@ Linters are code parsers that check your code for syntax errors, common style mi
     Below is a sample `package.json` file that runs eslint on all javascript files in your src directory
 
         {
-          "name": "flux",
-          "private": true,
           "scripts": {
             "test": "./node_modules/.bin/eslint src"
           }
         }
 
-8. Pre-commit Hooks
+8. Optional Pre-commit Hooks
 
     In addition to running server side testing through Travis CI, you can also set up pre-commit hooks locally in your git repository.
 
