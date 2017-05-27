@@ -30,7 +30,7 @@ We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo
 
 First we should do some basic setup steps.  
 
-🚀 You should start from your awesome up to date starterpack from the [redux short assignment](../sa/redux). Do the usual: grab the github classroom repository from canvas, clone it, add your starter as a separate remote and pull in some redux goodness.
+🚀 You should start from your awesome up to date starterpack from the [redux short assignment](http://cs52.me/assignments/sa/redux/). Do the usual: grab the github classroom repository from canvas, clone it, add your starter as a separate remote and pull in some redux goodness.
 
 
 ## CRUD API
