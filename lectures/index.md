@@ -27,6 +27,7 @@ permalink: /lectures/
 * [5/11 Sessions & Auth](13_sessions_auth)
 * [5/16 Websockets](15_websockets)
 * 5/18 Mockup Sharing
+* [5/30 Wrapup](16_wrapup)
 
 
 

