@@ -19,7 +19,7 @@ name: base
 .title[{{name}}]
 
 ---
-name: Wrap Up
+name: My Turn to DRAW
 
 .medium_small[![](img/biggest-fan.png)]
 
