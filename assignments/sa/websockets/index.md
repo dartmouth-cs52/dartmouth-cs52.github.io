@@ -286,7 +286,7 @@ socket.on('updateNote', (id, fields) => {
 });
 
 
-/// on deleteNote do what is needful
+// on deleteNote do what is needful
 socket.on('deleteNote', (id) => {
   // you can do it
 });
