@@ -12,7 +12,7 @@ Are you ready to invent the next AI?  Any self-respecting bot needs to be able t
 
 
 ## Slack Bot Basics
-In Slack, bot users are similar to human users in that they have names, profile pictures, exist as part of the team, can post messages, invited to channels, and more. The main difference is that bots are controlled programmatically via an API that Slack provides. We'll be building a custom bot that listens to certain events, like a message or a new member joining your team, and responds accordingly.
+In Slack, bot users are similar to human users in that they have names, profile pictures, exist as part of the team, can post messages, are invited to channels, and more. The main difference is that bots are controlled programmatically via an API that Slack provides. We'll be building a custom bot that listens to certain events, like a message or a new member joining your team, and responds accordingly.
 
 
 ## Some Setup
@@ -67,7 +67,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
 1. Setup Bot Controller
 
-    🚀After we create the express app, lets set up botkit.
+    🚀After we create the express app, let's set up botkit.
 
     ```js
     // botkit controller
@@ -97,7 +97,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
     If you have trouble setting up your environment you can use a .env file with the [dotenv node package](https://www.npmjs.com/package/dotenv) as we've done previously.
 
-1. Lets Say Hi!
+1. Let's Say Hi!
 
     ```js
     // example hello response
@@ -114,7 +114,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
     Want the bot to respond to the user by name?
 
-    Well we have full access to [Slacks web api](https://api.slack.com/methods/users.info). Lets look up the users name.
+    Well we have full access to [Slack's web api](https://api.slack.com/methods/users.info). Let's look up the user's name.
 
     ```js
     bot.api.users.info({ user: message.user }, (err, res) => {
@@ -131,7 +131,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
 
 ## Now for the Real Stuff!
 
-Ok now your Bot knows how to say hi.  But lets make it do some useful stuff!
+Ok now your Bot knows how to say hi.  But let's make it do some useful stuff!
 
 The rest of this assignment is more hands-off. We'll provide some direction and resources but you'll be looking up API docs and adding more cool stuff to your bot.
 
