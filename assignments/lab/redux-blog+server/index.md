@@ -18,7 +18,7 @@ Our server will be a pure api server, returning only JSON format data to our Lab
 ## Assignment At a Glance
 
 * Part 1:
-  * Intro to Express and Mongo. [SA7](../sa/server-side) got you started with Express.js and Mongo, we'll now use that knowledge to build up an API server.  The difference here is that we won't be returning HTML but rather JSON. Easier! We'll add in the `post` schema, get going with express routes, and get set up for adding in the other stuff.
+  * Intro to Express and Mongo. [SA7](http://cs52.me/assignments/sa/server-side/) got you started with Express.js and Mongo, we'll now use that knowledge to build up an API server.  The difference here is that we won't be returning HTML but rather JSON. Easier! We'll add in the `post` schema, get going with express routes, and get set up for adding in the other stuff.
   * Basic CRUD API: Building from the intro, we'll implement the full create, update, delete api for our blog.
 * Part 2:
   * Authentication: We'll extend both our frontend and our backend to support authentication and users and more!
