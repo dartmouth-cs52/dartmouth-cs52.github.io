@@ -21,7 +21,7 @@ The Workshop Assignment can be found here [here](https://github.com/dartmouth-cs
 * 4/25  [preprocessors: sass, jade](https://github.com/yeonjaepark/pug-workshop)
 * 4/27  [preprocessors: typescript, coffeescript, flow](https://github.com/nathanyu835/preprocessors-workshop)
 * 5/2   [build systems: grunt, gulp](https://github.com/zchr/gulp-workshop)
-* 5/4   [alternative stack : flask, django, rails, angular2, vue](https://github.com/allisonchuang/altStackWorkshop)
+* 5/4   alternative stack : flask, django, rails, angular2, vue [Presentation] (https://github.com/allisonchuang/altStackWorkshop) | [Workshop] (https://docs.google.com/presentation/d/1ooqt1j-rbH0_jnxZXAGRjzRmJN1L1ny574J91fYeE7o/edit#slide=id.p)
 * 5/9   [Deployment: AWS, Azure](https://github.com/samlee64/linode-workshop)
 * 5/11  [Deployment: Digital Ocean, Docker](https://github.com/dylansc/deployment_workshop)
 * 5/16  [Other Platforms: React Native](https://github.com/arinehouse/react-native-workshop)
