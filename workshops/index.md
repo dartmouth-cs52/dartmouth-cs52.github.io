@@ -18,7 +18,7 @@ The Workshop Assignment can be found here [here](https://github.com/dartmouth-cs
 * 4/13  CSS Frameworks/Cool Things: Bulma, Materialize, Animations [Presentation](https://docs.google.com/presentation/d/1nxKoKmzblLVGPi1yxzilKtdPL57iCjYGF7q2ROwubik/edit#slide=id.p) | [Workshop Tutorial](https://github.com/nmoolenijzer/workshop)
 * 4/18  static site generators: jekyll, other [Presentation](https://docs.google.com/presentation/d/1gT26ESlzLPcAR72_EDLKcnPr1ao4bX2okirUbTA1bD0/edit#slide=id.p) | [Workshop Tutorial](https://github.com/emilyJLin95/jekyll_workshop)
 * 4/20  js visualization and canvas: p5js, paperjs, raphael [Presentation](https://docs.google.com/presentation/d/1GMuKCstqOgKdToNW2GuJ_TVZ1dOnR2ks1uhbzmPM5Ik/edit#slide=id.p) | [Workshop Tutorial](https://github.com/annieke/viz-workshop) 
-* 4/25  [preprocessors: sass, jade](https://github.com/yeonjaepark/pug-workshop)
+* 4/25  preprocessors: sass, jade [Presentation](https://docs.google.com/presentation/d/1F1SMgC9e0rtEM4VE3gxO_o_6vYq9eJqPLufXh2JReCY/edit?usp=sharing) | [Workshop Tutorial](https://github.com/yeonjaepark/pug-workshop)
 * 4/27  preprocessors: typescript, coffeescript, flow [Presentation](https://docs.google.com/presentation/d/1S00Pvf7_EB3_QdpJ7mDHtLoxLLCOGxluenOlfvRbD6A/edit#slide=id.p) | [Workshop Tutorial](https://github.com/nathanyu835/preprocessors-workshop)
 * 5/2   build systems: grunt, gulp [Presentation](https://docs.google.com/presentation/d/1bndhmvGv3EcAgJXGOmNTsh5mDkpv-nu4uxUk5BmjxMs/edit) | [Workshop Tutorial](https://github.com/zchr/gulp-workshop)
 * 5/4   [alternative stack : flask, django, rails, angular2, vue](https://github.com/allisonchuang/altStackWorkshop)
