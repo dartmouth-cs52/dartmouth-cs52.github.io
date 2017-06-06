@@ -178,7 +178,7 @@ We use promises because we need the image to successfully upload to S3 first, be
 How would use our new `s3.uploadImage` function?   Well something like the following in your *onSubmit* or `onFinishEdit` handlers would work. All you are doing is waiting for the image to upload first and only then creating or updating your post.
 
 ```js
-if (file) {
+if (this.state.file) {
   uploadImage(this.state.file).then(url => {
     // use url for content_url and
     // either run your createPost actionCreator
@@ -227,6 +227,9 @@ const signS3 = (req, res) => {
 
 export default signS3;
 ```
+
+Note: if your S3 region got assigned to Ohio, instaed of `const s3 = new aws.S3();`, you'l need to use 
+`const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });`
 
 Now in your router, we can add a new route:
 
