@@ -84,3 +84,7 @@ Please do not create a horrible situation for all of us by just copying off of s
 ## Special accommodations and Religious observances##
 
 Students with disabilities who may need disability-related academic adjustments and services for this course are encouraged to see me privately as early in the term as possible.  Similarly for Religious observances please talk to the staff as early as possible to resolve any conflicts.
+
+## Wellness
+
+We recognize that the academic environment at Dartmouth is challenging, that our terms are intensive, and that classes are not the only demanding part of your life. There are a number of resources available to you on campus to support your wellness, including: your undergraduate dean (http://www.dartmouth.edu/~upperde/), Counseling and Human Development (http://www.dartmouth.edu/~chd/), and the Student Wellness Center (http://www.dartmouth.edu/~healthed/). I encourage you to use these resources and come speak with me to take care of yourself throughout the term.
