@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Dartmouth CS52 — 17S
+title: Dartmouth CS52 — 18S
 tagline: Full-Stack Web Development
 email: tim@zingweb.com
 # About/contact
@@ -23,5 +23,5 @@ github_username:  timofei7
 # Build settings
 markdown: kramdown
 
-gems:
+plugins:
   - jemoji

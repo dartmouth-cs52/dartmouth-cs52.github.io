@@ -5,7 +5,7 @@ title: Dartmouth CS52
 
 # Course Overview
 
-The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art (late 2016/early 2017) of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
+The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art (2017) of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
 
 By the end of term, you will:
 
@@ -39,7 +39,7 @@ See [assignments](/assignments).
   - We'll be using [Slack](https://cs52-dartmouth.slack.com) for most communication. Find us there!
 
   - Open Help Hours in Sudikoff 003: <br>
-    Sunday 6-9pm; Mon 8-11pm; Wed 4:35-5:25pm during X-hour, 9-11am, 8-10pm
+    TBD<!-- Sunday 6-9pm; Mon 8-11pm; Wed 4:35-5:25pm during X-hour, 9-11am, 8-10pm -->
 
   - Instructor:<br>
     Mon 3-5pm; Fri 11-1pm; or by appointment in Sudikoff 219/007
@@ -61,7 +61,9 @@ See [assignments](/assignments).
 
   - TAs:<br>
 
-<div class="rtable rtable--5cols">
+    TBA
+
+<div class="rtable rtable--5cols" style="display:none;">
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="https://www.linkedin.com/mpr/mpr/AAEAAQAAAAAAAAZWAAAAJGE3NTYzZDY1LTRlMjktNDNiYi05YTE1LWRhYjJjZWM0Njc4Ng.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:ahsan.azim.18@dartmouth.edu">Ahsan Azim</a><br><a href="https://cs52-dartmouth.slack.com/messages/@ahsan_azim/">@ahsan_azim</a></div>
@@ -97,7 +99,6 @@ See [assignments](/assignments).
   <div style="order:4;" class="rtable-cell"></div>
   <div style="order:5;" class="rtable-cell"></div>
 
-
 </div>
 
 
@@ -117,4 +118,4 @@ Unfortunately due to the nature of the class and our classroom size, auditing th
 See [logistics](/logistics)
 
 
-prior versions of this class: [16x](https://dartmouth-cs52-16x.github.io/)
+prior versions of this class: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/)
