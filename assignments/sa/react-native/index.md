@@ -4,6 +4,8 @@ title: SAX - React-Native Videos
 published: true
 ---
 
+{% raw %}
+<!-- raw mode to ignore liquid tags that have {{ }} -->
 
 
 # react-native-workshop
@@ -568,3 +570,5 @@ Really like React-Native?  Here are some more resources for you to look at and p
 * https://facebook.github.io/react-native/
 
 * https://github.com/jondot/awesome-react-native
+
+{% endraw %}
