@@ -2,6 +2,7 @@
 layout: page
 title: SAX - React-Native Videos
 published: true
+author:  Jane Lee, Sia Peng, Armin Mahban, Adam Rinehouse
 ---
 
 {% raw %}
@@ -15,9 +16,10 @@ Today we'll be using react-native to build a simple iOS app that allows us to se
 Note: for this workshop, you don't need to clone or fork this repo. Everything we do will be done locally.
 
 ** Another important note!  If you are of the following people:
-* Windows User
-* Mac User who didn't follow instructions and didn't download XCode
-* Mac User who didn't follow instructions and didn't update XCode
+
+  - Windows User
+  - Mac User who didn't follow instructions and didn't download XCode
+  - Mac User who didn't follow instructions and didn't update XCode
 
 It just takes a while to download/update XCode and we have lots to do today! (* cough * quiz * cough * )
 

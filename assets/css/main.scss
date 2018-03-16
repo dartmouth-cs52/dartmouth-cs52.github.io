@@ -15,6 +15,16 @@ $spacing-unit:     30px;
         "syntax-highlighting"
 ;
 
+
+.page-header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.task-list-item {
+  list-style-type: none;
+}
+
 .main-content {
   table {
     border:0px;
