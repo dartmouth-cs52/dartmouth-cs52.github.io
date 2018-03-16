@@ -1,3 +1,11 @@
+---
+layout: page
+title: SAX - React-Native Videos
+published: true
+---
+
+
+
 # react-native-workshop
 
 Today we'll be using react-native to build a simple iOS app that allows us to search YouTube (just like short assignment 4, way back when.)
