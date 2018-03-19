@@ -1,4 +1,6 @@
 # dartmouth-cs52.github.io
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/dartmouth-cs52/dartmouth-cs52.github.io.svg?columns=all)](https://waffle.io/dartmouth-cs52/dartmouth-cs52.github.io)
+
 
 Source for the website for Dartmouth CS52.  Updated periodically.  Now includes slides and notes. Contribute at your leisure.
 
