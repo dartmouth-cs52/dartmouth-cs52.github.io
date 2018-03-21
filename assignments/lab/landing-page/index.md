@@ -8,7 +8,16 @@ published: true
 
 Your assignment, should you choose to accept it, (not sure you have much choice there...) is to create a landing page.  
 
-A landing page you say?  Yes, actually a specific landing page.
+A landing page you say?  Yes, you will be making a landing page based on an real page out there in the world. You will be mimicking the structure and style of a page but with your own content.
+
+## Goal Overview
+
+* Become comfortable with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+* Be able to mimic structure and style of pages
+* Focus on refining html/css skills
+* Build a beautiful static landing page.
+
+## Getting Started
 
 🚀In an incognito browser window, go to [Slack.com](http://www.slack.com). It shows up a little differently if you are signed in. Here's a screen shot for you.
 
@@ -45,6 +54,10 @@ Some examples (in order of difficulty):
 * some set of side by side highlights<br>
   ![](img/responsive-nav.gif){: .tiny}
 
+**You can and should alter the text and images** as you please — make it be a landing page for your imagination!  What you are doing is basing the structure and styling of your landing page on that of one of these others. However, make the content your own – that is the whole point of the exercise.  The screenshots below are from one attempt at this and are examples only.
+
+**No functionality needs to implemented.** No JS, or any external libraries or CSS frameworks are allowed for this assignment. You can do all of it was just the HTML/CSS from scratch.  Don't worry it'll be fun!
+
 Using your fresh HTML and CSS skills you will make an **HTML and CSS only** version of this landing page (no JS allowed).  ❗None of the links or functionality needs to be there, it just needs to look good and be laid out properly.
 
 All anchor tags should look like this
@@ -55,19 +68,16 @@ All anchor tags should look like this
 
 Links to nowhere.
 
-**You can and should alter the text and images** as you please — make it be a landing page for your imagination!
-
-**Note:** no JS, or any external libraries or CSS frameworks are allowed for this assignment. You can do all of it was just the HTML/CSS from scratch.  Don't worry it'll be fun!
-
 **Note:** You can and should use the [Chrome DevTools Inspector](https://developers.google.com/web/tools/chrome-devtools/) 🔍 to examine the structure of the original page.  However, you'll find it is really messy and complicated!  Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) it won't really help you much to try to copy more.  If your code blatantly includes un-cited code copied from slack.com, that will be considered an honor code violation :warning:.  Ask me if you have questions about this.
 
-## Where to Start?!
+
+## Dive Right In!
 
 🚀Start in your git repo for the project -- Please use the github classroom link provided in the Canvas assignment to create the repo automatically.
 
-🚀Open up Atom and create an index.html and a style.css file.  
+🚀Open up Atom and create an `index.html` and a `style.css` file.  
 
-🚀Link your style.css file into the head of your html file.
+🚀Link your `style.css` file into the head of your html file.
 
 
 ## Outline
@@ -87,7 +97,7 @@ It should look approximately like this.
 
 ![html layout](img/html_layout.png){: .fancy .small}
 
-🚀Take a screen cap at this point.
+🚀Take a screen cap at this point!
 
 ## Adding in Fonts
 
@@ -97,14 +107,13 @@ Right, in the above you may have noticed that yours was Times New Roman...
 
 🚀And you might as well grab some nice icons while you are at it from [FontAwesome](http://fontawesome.io/). Easiest is to just download the whole fontawesome package and including that in your source.
 
-
 ![with icons](img/icons.png){: .fancy .tiny}
 
 ## Background
 
 🚀Go ahead and add a background in!
 
-I recommend getting rid of margin and padding on body:
+I recommend getting rid of margin and padding on body. Something like:
 
 
 ```css
@@ -114,14 +123,16 @@ body {
 }
 ```
 
-and then creating a top level div, lets call it main:
+and then creating a top level div with a background that is set to size `cover`:
 
 ```css
 .cover {
-  background-image: url(img/yourimageyname.jpg);
+  background-image: url(img/yourimagename.jpg);
   background-size: cover;
 }
 ```
+
+*Note: the above are just tips - you may need to expand / do something a little different in your particular case.*
 
 ## Flex Boxes
 
@@ -131,14 +142,13 @@ There's a couple tricky elements, like the gradient which I recommend using `abs
 
 Here is a good [guide to flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
-**Note:** for now only use pure CSS3 directives that are supported by the latest Chrome. Don't worry about the various [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) like `-webit` `-moz` or any of those prefixes.  Later on we'll learn about using [autoprefixers](https://css-tricks.com/autoprefixer/) to make our code work better cross platform, but for now use the latest the greatest that works in Chrome.  That is the browser we'll be testing your sites in and the only browser that matters for the time being. **Do not** use any other browser for your dev work. So please, points off for including vendor prefixes.
-
+**Note:** for now only use pure CSS3 directives that are supported by the latest Chrome. Don't worry about the various [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) like `-webit` `-moz` or any of those prefixes.  Later on we'll learn about using [autoprefixers](https://css-tricks.com/autoprefixer/) to make our code work better cross platform, but for now use the latest the greatest that works in Chrome.  That is the browser we'll be testing your sites in and the only browser that matters for the time being. **Do not** use any other browser for your dev work.
 
 Now things should look like they are coming together.
 
 ![](img/flexboxes.jpg){: .fancy .small}
 
-Still things not lining up and much of styling is missing but most things are in their proper places. Using only flexboxes and some very basic positioning.  No bootstrap here!
+Still things are not lining up and much of styling is missing but most things are in their proper places. Using only flexboxes and some very basic positioning.  No bootstrap here!
 
 
 ## Styling
