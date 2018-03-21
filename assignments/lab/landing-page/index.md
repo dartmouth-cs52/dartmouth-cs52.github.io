@@ -18,6 +18,33 @@ And if you narrow your browser you'll see some responsive design and it looks li
 
 ![](img/slack-mobile.png){: .fancy .tiny}
 
+You should feel free to choose another landing page to base yours off of, as long as it has the following features:
+
+* responsive navigation menu - one that collapses from columns into rows when in mobile.
+* expanding image - either as a background or central element
+* a clear call to action button with some hover states, some nice styling, and responsive
+* text input bar for signup or search (non-functional)
+* a footer with links that are responsive (change from side by side to vertical in smaller sizes)
+
+Some examples (in order of difficulty):
+* [slack.com](http://slack.com)
+* [apple.com](https://www.apple.com)
+* [wistia.com](http://wistia.com)
+* [hubspot.com](https://www.hubspot.com/)
+* [sunbasket.com](https://sunbasket.com/)
+* [patagonia.com](http://patagonia.com)
+
+**Please be creative with your content!** All of the above have the same basic elements. You'll find that many product landing pages have a lot of similarities:
+
+* A navbar that when resized turns into the hamburger menu 🍔<br>
+  ![](img/hamburger-icon.gif){: .tiny}
+* A CTA (call to action)<br>
+  ![](img/cta.gif){: .tiny}
+* some resizing background image<br>
+  ![](img/sizes.gif){: .tiny}
+* some set of side by side highlights<br>
+  ![](img/responsive-nav.gif){: .tiny}
+
 Using your fresh HTML and CSS skills you will make an **HTML and CSS only** version of this landing page (no JS allowed).  ❗None of the links or functionality needs to be there, it just needs to look good and be laid out properly.
 
 All anchor tags should look like this
@@ -32,7 +59,7 @@ Links to nowhere.
 
 **Note:** no JS, or any external libraries or CSS frameworks are allowed for this assignment. You can do all of it was just the HTML/CSS from scratch.  Don't worry it'll be fun!
 
-**Note:** You can and should use the inspector 🔍 to examine the structure of the slack.com page.  However, you'll find it is really messy and complicated!  Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) it won't really help you much to try to copy more.  If your code blatantly includes un-cited code copied from slack.com, that will be considered an honor code violation :warning:.  Ask me if you have questions about this.
+**Note:** You can and should use the [Chrome DevTools Inspector](https://developers.google.com/web/tools/chrome-devtools/) 🔍 to examine the structure of the original page.  However, you'll find it is really messy and complicated!  Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) it won't really help you much to try to copy more.  If your code blatantly includes un-cited code copied from slack.com, that will be considered an honor code violation :warning:.  Ask me if you have questions about this.
 
 ## Where to Start?!
 
@@ -183,8 +210,7 @@ Here's what it could look like:
 You should host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically, or in `Settings` you can choose to use the `master` branch for ghpages (even easier).  Another cool static page hosting platform is [surge.sh](http://surge.sh).  Easy to set up, and you are welcome to do that instead if you prefer.
 
 
-
-## To Turn In:
+## To Turn In (canvas):
 
 * url to your hosted page (gh-pages is fine)
 * your page should:
@@ -200,7 +226,7 @@ You should host this on github pages as you have in the past with the `gh-pages`
   * a couple sentence description of what you did and what worked / didn't work.
   * screen caps of your layout stage
   * screen caps with anything special you want to point out
-
+  * url to the original landing page you were mimicking
 
 
 ## Extra Credit

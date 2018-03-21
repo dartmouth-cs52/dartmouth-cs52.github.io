@@ -59,43 +59,43 @@ Calendar:
 TODO: move everything up half a week or so, add in topics for WS and all SAs, loadbalance
 
 ```
-W1 3/28   Lecture: Welcome+Interwebs SA: network+localdev       WS: X             HW: X
-W1 3/29   XHOUR:
-W1 3/30   Lecture: HTML + Git        SA: gitmap                 WS: X             HW: landing-page
+W1 3/27   Lecture: Welcome+Interwebs SA: network+localdev       WS: X             HW: X
+W1 3/28   XHOUR:
+W1 3/29   Lecture: HTML + Git        SA: gitmap                 WS: X             HW: landing-page
 
-W2 4/4    Lecture: CSS               SA: ??                     WS: X             HW: ''
-W2 4/5    XHOUR:
-W2 4/6    Lecture: JS Part 1         SA: X                      WS: ??            HW: quizzical
+W2 4/3    Lecture: CSS               SA: ??                     WS: X             HW: ''
+W2 4/4    XHOUR:
+W2 4/5    Lecture: JS Part 1         SA: X                      WS: ??            HW: quizzical
 
-W3 4/11   Lecture: JS Part 2         SA: starterpack            WS: CSS           HW: ''
-W3 4/12   XHOUR:  
-W3 4/13   Lecture: Frontend+React    SA: react-videos           WS: CSS           HW: X
+W3 4/10   Lecture: JS Part 2         SA: starterpack            WS: CSS           HW: ''
+W3 4/11   XHOUR:  
+W3 4/12   Lecture: Frontend+React    SA: react-videos           WS: CSS           HW: X
 
-W4 4/18   Lecture: More React        SA:                        WS: static gen    HW: react-notes
-W4 4/19   XHOUR:  X
-W4 4/20   Lecture: APIs + Libraries  SA: X                      WS: vis, canvas   HW: ''
+W4 4/17   Lecture: More React        SA:                        WS: static gen    HW: react-notes
+W4 4/18   XHOUR:  X
+W4 4/19   Lecture: APIs + Libraries  SA: X                      WS: vis, canvas   HW: ''
 
-W5 4/25   Lecture: Routing Frontend  SA: routing                WS: preprocs      HW: ''
-W5 4/26   XHOUR: redux
-W5 4/27   Lecture: Redux             SA: X                      WS: preprocs      HW: redux-blog
+W5 4/24   Lecture: Routing Frontend  SA: routing                WS: preprocs      HW: ''
+W5 4/25   XHOUR: redux
+W5 4/26   Lecture: Redux             SA: X                      WS: preprocs      HW: redux-blog
 
-W6 5/2    Lecture: Pitches           SA: X                      WS: build         HW: ''
-W6 5/3    XHOUR:  server-side-rendering
-W6 5/4    Lecture: Databases         SA: X                      WS: alt-stack     HW: redux-blog+api
+W6 5/1    Lecture: Pitches           SA: X                      WS: build         HW: ''
+W6 5/2    XHOUR:  server-side-rendering
+W6 5/3    Lecture: Databases         SA: X                      WS: alt-stack     HW: redux-blog+api
 
-W7 5/9    Lecture: Sessions + Auth   SA:                        WS: deployment    HW: ''
-W7 5/10   XHOUR:  
-W7 5/11   Lecture: Catchup?          SA: X                      WS: deployment    HW: redux-blog+auth+uploading (TODO add s3)
+W7 5/8    Lecture: Sessions + Auth   SA:                        WS: deployment    HW: ''
+W7 5/9   XHOUR:  
+W7 5/10   Lecture: Catchup?          SA: X                      WS: deployment    HW: redux-blog+auth+uploading (TODO add s3)
 
-W8 5/16   Lecture: Websockets        SA: react-notes+ws         WS: platforms     HW: ''
-W8 5/17   XHOUR: react-notes+ws
-W8 5/18   Lecture: X                 SA: X                      WS: platforms     HW: ''
+W8 5/15   Lecture: Websockets        SA: react-notes+ws         WS: platforms     HW: ''
+W8 5/16   XHOUR: react-notes+ws
+W8 5/17   Lecture: X                 SA: X                      WS: platforms     HW: ''
 
 (greenkey)
 
-W9 5/23   Lecture: X                 SA: X                      WS:               HW: projects
-W9 5/24   XHOUR:
-W9 5/25   Lecture: X                 SA: X                      WS: X             HW: ''
+W9 5/22   Lecture: X                 SA: X                      WS:               HW: projects
+W9 5/23   XHOUR:
+W9 5/24   Lecture: X                 SA: X                      WS: X             HW: ''
 
 Final Demos 5/30
 ```

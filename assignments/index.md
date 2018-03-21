@@ -32,7 +32,6 @@ title: Assignments
 
 
 
-
 ### 5-ish week-long labs:  25%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 

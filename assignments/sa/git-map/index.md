@@ -5,14 +5,13 @@ published: true
 ---
 
 Start here:
-[17S-git-map](https://github.com/dartmouth-cs52-17S/git-map)
-
+[18S-git-map](https://github.com/dartmouth-cs52-18S/git-map)
 
 ### To Turn In
 
-1. URLs to your successfully closed pull requests (you can find your pull requests [here](https://github.com/dartmouth-cs52-17S/git-map/pulls?q=is%3Apr+is%3Aclosed)). Its ok and normal to have several of these, you don't have to have gotten it right the first time. Requirements:
+1. URLs to your successfully closed pull requests (you can find your pull requests [here](https://github.com/dartmouth-cs52-18S/git-map/pulls?q=is%3Apr+is%3Aclosed)). Its ok and normal to have several of these, you don't have to have gotten it right the first time. Requirements:
   * your github username and email are correctly set
-  * you made a branch and did a pull request that was successfully merged into **dartmouth-cs52-17S/git-map:gh-pages**
+  * you made a branch and did a pull request that was successfully merged into **dartmouth-cs52-18S/git-map:master**
   * your face marker appears on the main page:  http://map.cs52.me
   * and your marker is clickable and shows your people page
 1. A short answer response to:

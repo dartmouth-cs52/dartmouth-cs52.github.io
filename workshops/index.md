@@ -4,11 +4,6 @@ title: Workshops
 permalink: /workshops/
 ---
 
-## Assignment
-
-The Workshop Assignment can be found here [here](https://github.com/dartmouth-cs52/workshop).
-
-
 ## Listing
 
 <span style="color: #F27D00">*Workshops will be published here as they happen.*</span>
@@ -28,9 +23,92 @@ The Workshop Assignment can be found here [here](https://github.com/dartmouth-cs
 <!-- * 5/18  [Other Platforms: Electron](https://github.com/Pspanky/electron_presentation) -->
 
 
-  <!-- * 6/28 [git map workshop](git) -->
-  <!-- * 6/30 [bootstrap](https://github.com/dado3212/cs52-workshop-1/tree/gh-pages) -->
-  <!-- * 7/7 [jekyll & sass](https://github.com/VLuisa/cs52-workshop-2) -->
-  <!-- * 7/14 [d3, p5, paper.js](https://github.com/virginiacook/workshop3-js-viz) -->
-  <!-- * 7/26 [redux](redux) -->
-  <!-- * 8/16 [websockets](websockets) -->
+<!-- * 6/28 [git map workshop](git) -->
+<!-- * 6/30 [bootstrap](https://github.com/dado3212/cs52-workshop-1/tree/gh-pages) -->
+<!-- * 7/7 [jekyll & sass](https://github.com/VLuisa/cs52-workshop-2) -->
+<!-- * 7/14 [d3, p5, paper.js](https://github.com/virginiacook/workshop3-js-viz) -->
+<!-- * 7/26 [redux](redux) -->
+<!-- * 8/16 [websockets](websockets) -->
+
+
+
+# CS52 Workshops Assignment
+
+![](http://i.giphy.com/eUh8NINbZf9Ys.gif)
+
+Each workshop session will be ~60 minutes on a web technology, tool, framework, or concept. It will consist of both a short presentation as well as a tutorial. The tutorial will be a written online document in the form of a [markdown](https://guides.github.com/features/mastering-markdown/) readme file in a git repo. During the tutorial section the class will work in teams of 3 following along with the instructions in the document. The team presenting will answer questions and help the individual teams along.
+
+## To Start
+
+We'll be using github classroom to autoprovision repositories and set up teams.
+
+Every member on your team **must** use github classroom to set up the teams correctly and automatically.  Choose your term and section below:
+
+* setup and clone a github repo using github classroom here: [https://classroom.github.com/a/PXXktsB5](https://classroom.github.com/a/PXXktsB5)
+
+The first person on your team will name the repo and the team. Each consecutive person will click on the same github classroom link above and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place.
+
+## Workshop Overview
+
+* [10-15 Minute Intro Presentation](#presentation-section)
+* [30 Minute Tutorial](#tutorial-section)
+* [5-10 Minute Wrap-Up Discussion](#wrap-up-discussion-section)
+
+## Teams
+
+Teams of ~5 will be formed around dates and a set of potential topics. Your and your team may chose 1 or 2 technologies from the list or may suggest alternative related technologies/topics.
+
+## Setup
+
+If your tutorial requires any lengthy download or install procedures please let the class know at least 2 days in advance.
+
+## Details
+
+### Presentation Section
+
+~(10-15 minutes)
+
+* motivate the technology
+* show where the technology fits into the web dev process (dev tool, frontend framework, preprocessor, language etc)
+* show some use cases
+* discuss pros/cons
+
+Motivating the technology is import.  This should start with an [ELI5](https://www.reddit.com/r/explainlikeimfive/) and then you can expand to how it fits in with what we've learned so far and use cases.
+
+### Tutorial Section
+
+(~30-40 minutes)
+
+Your written tutorial document will be a walkthrough of building something using the specific web technologies.
+
+It should include:
+
+* Overview of what will be attempted
+* Any necessary setup steps
+* Step by step instructions
+* Explanations of the what **and** the why behind each step. Try to include:
+  * higher level concepts
+  * best practices
+
+End the tutorial with a "what you should have at this point" section which includes a **short** listing of features. This is the minimal set of things you think they should accomplished/learned during the course of the tutorial and will be used in grading. Format this as a checklist:
+
+- [x] created navbar
+- [ ] styled body
+- [ ] clickable buttons
+
+### Wrap-Up Discussion Section
+
+(~5-10 minutes)
+
+* lead short discussion
+* answer questions
+* individual teams share results
+
+## To Turn In (due after workshop):
+
+* link to github repo for tutorial
+* link or file upload of presentation slides
+* a brief (3 short paragraphs) summary of the workshop itself (just in canvas):
+  * what went well
+  * what didn't
+  * what you would do differently "next time"

@@ -19,9 +19,9 @@ First things first.  You need a local development environment.
 web technology written in html+css+javascript using a platform called [Electron](http://electron.atom.io/). Using Electron to create a desktop app is an option for the final project.  We'll be using Atom for coding and utilizing a lot of its plugins. After installing and starting up Atom, run: *Atom -> Install Shell Commands* to be able to run `atom` from the commandline.
 
 🚀If you don't have it, install [Google Chrome](https://www.google.com/chrome/browser/desktop/).  Why?
-Because we'll be using [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) for debugging — more on that later.
+Because we'll be using [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) for debugging — more on that later.  Also because all the other browsers support slightly different standards, and Chrome just displays pages more correctly and sticks to the actual standards so we can all be on the same page.  To re-iterate: you are required to use Chrome.
 
-🚀Install [GitHub Desktop](http://desktop.github.com).  We will be mostly using `git` from the commandline but installing the App gives you a nice tree visualization.
+🚀 If you don't have git set up on your machine: Install [GitHub Desktop](http://desktop.github.com).  We will be mostly using `git` from the commandline but installing the App gives you a nice tree visualization and setups up your local git environment.
 
 
 ### OS X ###
@@ -31,16 +31,19 @@ We will use `brew` extensively to setup your dev environment.
 
 ### Various Linux ###
 
-Most of the directions through the class will be very similar on the various flavors of linux.  Mostly just replace any `brew` command with the package manager for your system (apt on Ubuntu or yum on Fedora).
+Most of the directions through the class will be very similar on the various flavors of linux.  Mostly just replace any `brew` command with the package manager for your system (`apt` on Ubuntu or `yum` on Fedora).
 
 ### Windows ###
 
 Windows is a trickier dev environment.  We'll try to provide directions but these may need revision.
 
-In general though whenever we refer to 💻 Terminal you can just use ***Git Shell*** (which comes bundled with the GitHub app).  You may want to check out [Chocolatey](http://chocolatey.org) which is a package manager for Windows.
+In general though whenever we refer to 💻 Terminal/iTerm you can just use ***Git Shell*** (which comes bundled with the GitHub app).  You may want to check out [Chocolatey](http://chocolatey.org) which is a package manager for Windows.
 
-If you want to be brave you can try out the very new beta of [ubuntu in windows](https://blogs.msdn.microsoft.com/commandline/2016/04/06/bash-on-ubuntu-on-windows-download-now-3/) — no guarantees there.
+You can also try out the newish [ubuntu in windows](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) if you have Windows 10 — no guarantees there.
 
+You could also run a [linux virtual machine](https://www.lifewire.com/run-ubuntu-within-windows-virtualbox-2202098) if you don't have windows 10 / the above didn't work out for you.  This runs a self-contained linux OS on your windows box.
+
+*see the `#windows` Slack channel for emotional support*
 
 ## Command Line ##
 
@@ -49,9 +52,9 @@ We'll be doing a lot of commandline stuff.  We'll introduce stuff as we go, so d
 If you are interested here's a tutorial that gives you more than enough to be a master:
 [learn just enough commandline to be dangerous](https://www.learnenough.com/command-line-tutorial)
 
-Before you even think about opening Terminal, you should download [iTerm2](https://www.iterm2.com/downloads.html). It's completely open-source, and it's vastly superior to the default terminal. You can even open separate panes in the same window!
+Before you even think about opening *Terminal*, you should download [iTerm2](https://www.iterm2.com/downloads.html). It is open-source, and vastly superior to the default terminal: panes, tabs, colors, unlimited scrollback, etc.
 
-You should also download a git command prompt to make life easier when we work with git later on. You can find a cool one [here](https://github.com/jimeh/git-aware-prompt). Follow the instructions on the README at that link to install it!
+You can also download a git command prompt to make life easier when we work with git later on. You can find a cool one [here](https://github.com/jimeh/git-aware-prompt). Follow the instructions on the README at that link to install it!
 
 Here's some commandline basics:
 
@@ -85,6 +88,7 @@ and lets register you a domain!
 ![](img//buy.png){: .fancy .small }
 
 🚀When prompted choose Github Pages Setup
+
 ![](img//choose_github_pages.png){: .fancy .small }
 
 🚀Great, now we'll do the rest of the setup manually so when prompted to setup github — instead to do advance setup.
@@ -93,13 +97,13 @@ and lets register you a domain!
 
 ## Create a GitHub Repo
 
-🚀 go to http://github.com  if you don't have an account, set one up! Use your .edu account and get the [GitHub Student Developer Pack](https://education.github.com/pack)
+🚀 go to [github.com](http://github.com) if you don't have an account, set one up! Use your .edu account and get the [GitHub Student Developer Pack](https://education.github.com/pack)
 
-🚀 create a new repo for your domain, probably best to name it with your domain name.
+🚀 create a new repo for your domain, name it with *your* domain name.
 
 ![](img//create_repo.png){: .fancy .small }
 
-Grab the URL for the repository (either SSH or HTML depending on how you have git setup.  If SSH gives you trouble just try HTML.)
+Grab the URL for the repository (either SSH or HTTP depending on how you have git setup.  If SSH gives you trouble just try HTTP.)
 
 **Note:**  the following are transcripts of MY terminal session while setting up **cs52.me** with my github URL.  You should replace anything with cs52.me with your repo name and your github URL instead.
 
@@ -114,6 +118,7 @@ Checking connectivity... done.
 💻 pwd  #checking current working directory
 /Users/tim/Sandbox/cs52.me
 ```
+{: .example}
 
 ### Create some HTML
 
@@ -136,7 +141,7 @@ Serving HTTP on 0.0.0.0 port 9000 ...
 
 ❓does anybody remember what `127.0.0.1` is the address for?
 
-Lets check out what we have made: http://localhost:9000
+Lets check out what we have made: [http://localhost:9000](http://localhost:9000)
 
 ![](img//localhost.png){: .fancy .small }
 
@@ -173,6 +178,7 @@ Changes to be committed:
  1 file changed, 10 insertions(+)
  create mode 100644 index.html
 ```
+{: .example}
 
 ### Git Branch
 
@@ -187,6 +193,7 @@ So lets rename our branch!
 💻 git branch
  * gh-pages
 ```
+{: .example}
 
 ### Git Push
 
@@ -200,6 +207,7 @@ Total 3 (delta 0), reused 0 (delta 0)
 To git@github.com:dartmouth-cs52/cs52.me.git
  * [new branch]      gh-pages -> gh-pages
 ```
+{: .example}
 
 ### Default GitHub Pages Hosting
 
@@ -220,7 +228,7 @@ Ok. Add another file to your local workspace named `CNAME`.  Inside this file pu
 
 ![cname](img//cname.png){: .fancy .small }
 
-🚀 Now you have to `git add` and `git commit` and `git push` this new file.  See [Git Add](#git-add) section (skip branching as thats a one time thing).
+🚀 Now you have to `git add` and `git commit` and `git push` this new file.  See [Git Add](#git-add) section (skip branching as that is a one time thing).
 
 ### DONE!
 

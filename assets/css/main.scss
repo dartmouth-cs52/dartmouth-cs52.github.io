@@ -126,7 +126,13 @@ img.tiny, .tiny img {
 }
 /*need to override background to show box shadow*/
 .main-content .example.highlighter-rouge pre.highlight, .remark-code, .remark-inline-code {
-  background: rgba(145, 145, 157, 0.19) !important;
+  background: rgba(165, 165, 165, 0.33) !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 
