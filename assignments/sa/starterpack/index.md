@@ -16,11 +16,14 @@ Today we'll be learning about a set of tools for making your code compact and pr
 🚀 To start grab the github classroom link to start a new repository. Work in the `master` branch for now, you'll see why later.
 
 
-## NPM
+## [yarn](https://yarnpkg.com/en/) and [NPM](https://www.npmjs.com/)
 
-![](img/npm.jpg){: .fancy .small }
+![](img/npm.jpg){: .fancy .tiny }
 
-[NPM](https://www.npmjs.com/) is the dependency package manager for Node.js and the javascript ecosystem in general.  While we won't exactly be using node just yet today, we will be using the package manager to install various javascript tools. Node.js is a javascript platform for running javascript outside of a browser for developing server side applications and we will be using it extensively later on.
+![](img/yarn.jpg){: .fancy .tiny }
+
+
+[NPM](https://www.npmjs.com/) is the dependency package manager for Node.js and the javascript ecosystem in general.  While we won't exactly be using node just yet today, we will be using the package manager to install various javascript tools. Node.js is a javascript platform for running javascript outside of a browser for developing server side applications and we will be using it extensively later on. You can do things like `npm install somepackage` and it will download that package and add it to your project. Great. WTF is [yarn](https://yarnpkg.com/en/)?  Yarn is a faster/better npm.  It uses the same repository of packages.  You can use it practically interchangeably - just decide which you will use and try to stick to it. Yarn is newer and we're going to try it out for 18S and see how it goes.
 
 
 ### Installation
@@ -33,16 +36,21 @@ Today we'll be learning about a set of tools for making your code compact and pr
 brew update
 brew upgrade
 brew install node
+brew install yarn
 ```
 
-Make sure you have the right version of node:
+Make sure you have the right versions of node/npm/yarn:
 
 ```bash
 node --version
-#v7.8.0
+#v9.8.0
 npm --version
-#4.2.0
+#5.6.0
+yarn --version
+#1.5.1
 ```
+
+Newer than these is fine, but if you have older ones you might need to force uninstall/reinstall:
 
 If you run into problems here you can try forcing a reinstall:
 
@@ -63,11 +71,10 @@ install from [nodejs.org](https://nodejs.org/en/). *you may need to restart git 
 ```bash
 #make sure you are in your cloned workspace
 
-npm init #accept all the default answers if you want
+yarn init #accept all the default answers if you want
 ```
 
 All this did was create a barebones `package.json`  file.  This file defines a nodejs based project and is required.  It will primarily list all of the dependencies of our project.  It will also define some convenient scripts for us.
-
 
 ### Index file
 
@@ -84,7 +91,7 @@ touch src/index.js   #creates an empty file
 console.log('starting up!');
 ```
 
-### npm start
+### yarn start
 
 Now lets make it so we can run our app!
 
@@ -92,21 +99,21 @@ Now lets make it so we can run our app!
 
 * change:
   `"main": "index.js"` to `"main": "src/index.js"`
-* under `"scripts"` add a line:
-  `"start": "node src/index.js"`
+* add/modify a `"scripts"` section:
+  `"scripts": { "start": "node src/index.js" }`
 
 Now in 💻 you can:
 
 ```bash
-💻 npm start
+💻 yarn start
 
-> js-starter@1.0.0 start ...
-> node src/index.js
-
+yarn run v1.5.1
+$ node src/index.js
 starting up!
+✨  Done in 0.16s.
 ```
 
-Great, you're now running a little bit of javascript on the computer without a browser.
+Great, you just ran a little bit of javascript on the computer without a browser.
 
 
 ## Webpack
@@ -115,27 +122,26 @@ Great, you're now running a little bit of javascript on the computer without a b
 
 ![](img/what-is-webpack.png){: .fancy .small}
 
-Webpack is a build tool.  What it does is take all your dependencies (all the various files and libraries that your project is using) and bundle them up together — but in a smart way where it will only bundle up the things you need. It can do any preprocessing that you need, such as SASS and supports hot-reloading, so you never have to refresh the page manually again.  Most cleverly it actually analyzes your code and figured out what you doing.  It does [tree shaking](https://webpack.js.org/guides/tree-shaking/) to only include code that actually used and discards everything else.
+[Webpack](https://webpack.js.org) is a build tool.  What it does is take all your dependencies (all the various files and libraries that your project is using) and bundle them up together — but in a smart way where it will only bundle up the things you need. It can do any preprocessing that you need, such as converting various code syntax and supports hot-reloading, so you never have to refresh the page manually again.  Most cleverly it actually analyzes your code and figures out what you are doing.  It does [tree shaking](https://webpack.js.org/guides/tree-shaking/) to only include code that actually used and discards everything else.
 
 🚀 Lets install webpack:
 
 ```bash
-npm install webpack webpack-dev-server --save-dev
+yarn add webpack webpack-dev-server webpack-cli --dev
 ```
 
-`npm install` is how you install most any javascript library.  It will install in a directory `node_modules` in your project.
+`yarn add` is how you add most any javascript library to your project.  It will install in a directory `node_modules` in your project.  Note: `yarn install` would install it but not add it to your `project.json`.  Generally you want to add it to your project so that later if others were to download the project they could install the same packages.
 
-Note: when you pass `--save-dev` it will add those modules to your `package.json`.  In this case we are saying these are *development* only dependencies. So you will now notice new lines declaring those dependencies in `package.json` as `"devDependencies"`. If you are adding in a library you want to always include just do `--save` instead.
+Note: when you pass `--dev` it will add those modules to your `package.json` in a `devDependencies` section.  In this case we are saying these are *development* only dependencies. So you will now notice new lines declaring those dependencies in `package.json` as `"devDependencies"`. Leave off the `--dev` flag if you are adding in a library you want to always include.
 
-:warning: `node_modules` is **not** something you need to commit to git.  These are libraries that you can assume will be available and so as long as you have saved the dependencies to the `package.json` file anybody can later install all of the required packages by simply running `npm install`.
+:warning: `node_modules` is **not** something you need to commit to git.  These are libraries that you can assume will be available and so as long as you have saved the dependencies to the `package.json` file anybody can later install all of the required packages by simply running `yarn install`.
 
 🚀 Let's make sure we don't do that now.  Create a file called `.gitignore` and add the following:
 
 ```bash
-npm-debug.log*
 public/build
 node_modules
-.npm
+yarn-error.log
 ```
 
 ### Now what?  
@@ -159,13 +165,14 @@ Let's set up a simple webapp so we can see start using webpack.
 </html>
 ```
 
-Note: `build/bundle.js`,  that is the file we are going to have webpack build for us.
+Wait what is this `build/bundle.js`? Good q. That is the file we are going to have webpack build for us.
 
 🚀 Lets add in [JQuery](http://jquery.com/) really quick. We won't really be using much jquery this term, but for a quick example it will suffice.
 
 ```bash
-💻 npm install jquery --save
+💻 yarn add jquery   #notice there is no --dev
 ```
+
 
 🚀 Change your `index.js` to the following:
 
@@ -210,22 +217,30 @@ public/  #where your static assets will live like images and your index.html fil
 public/build #autogenerated directory where webpack will put your bundle files
 ```
 
-🚀 Before we go on let's `mv index.html public/` so that it lives in the right place.
-
-🚀 now try running webpack directly from the commandline:
+🚀 Before we go on, let's move the `index.html` file so that it lives in the right place.
 
 ```bash
-💻  ./node_modules/.bin/webpack
-
-Hash: 6abdfc297e95edec1ef9
-Version: webpack 1.13.1
-Time: 305ms
-    Asset    Size  Chunks             Chunk Names
-bundle.js  273 kB       0  [emitted]  main
-   [0] multi main 28 bytes {0} [built]
-   [1] ./src/index.js 65 bytes {0} [built]
-    + 1 hidden modules
+mkdir public
+mv index.html public
 ```
+
+🚀 now try running webpack directly from the commandline: `./node_modules/.bin/webpack --mode development`
+
+```bash
+💻 ./node_modules/.bin/webpack --mode development
+Hash: 10aaf12a7b59b4cde0dc
+Version: webpack 4.2.0
+Time: 466ms
+Built at: 3/21/2018 11:05:35 PM
+        Asset     Size  Chunks             Chunk Names
+    bundle.js  269 KiB    main  [emitted]  main
+bundle.js.map  351 KiB    main  [emitted]  main
+Entrypoint main = bundle.js bundle.js.map
+[./src/index.js] 62 bytes {main} [built]
+   [0] multi ./src 28 bytes {main} [built]
+    + 1 hidden module
+```
+{: .example}
 
 Great! It is building our index file in addition to one hidden module which isn't ours. In this case this is jquery! How'd it know?  Well it analyzed our `index.js` and saw our `require` statement, then it located the module in `node_modules` and included it.
 
@@ -234,24 +249,22 @@ Great! It is building our index file in addition to one hidden module which isn'
 
 Shall we look at what we have done so far?  We could start up a python webserver but webpack comes with a dev server built in, lets use that instead.
 
-🚀 Edit your `package.json` again and change `"start": "NODE_ENV=development webpack-dev-server --inline"`
+🚀 Edit your `package.json` again and change `"start": "webpack-dev-server --inline --mode=development"`
 
 *Note: on windows the syntax is a tiny bit different you need `SET NODE_ENV=development & webpack-dev-server --inline`*
 
-🚀 Now you can simple run:
+🚀 Now you can simply run `yarn start`:
 
 ```bash
-💻 npm start
+💻 yarn start
 
-> js-starter@1.0.0 start /Users/tim/Sandbox/starterpack
-> webpack-dev-server --inline
-
-http://localhost:8080/
-webpack result is served from /
-content is served from /Users/tim/Sandbox/js-starter
-Hash: 9c2c72cddcf76bb7f71c
-Version: webpack 1.13.1
-Time: 636ms
+yarn run v1.5.1
+$ webpack-dev-server --inline --mode=development
+ℹ ｢wds｣: Project is running at http://localhost:8080/
+ℹ ｢wds｣: webpack output is served from /build/
+ℹ ｢wds｣: Content not from webpack is served from /Users/tim/Sandbox/CS52/18s/assignments/starter/public
+ℹ ｢wds｣: 404s will fallback to /index.html
+ℹ ｢wdm｣: Hash: 7ac205b0de50609287b4
 [...]
 ```
 
@@ -268,7 +281,7 @@ Ok, lets config that. This will make it so your page reloads every time you save
 
 🚀 Edit your `package.json` and add `--hot` to the end of the the `start` command.
 
-`ctrl + c` out of your webpack-dev-server and run `npm start` again.
+`ctrl + c` out of your webpack-dev-server and run `yarn start` again.
 
 Try changing your `index.js` file to change the text of `#main` to something else.  You should see those changes happen immediately!
 
@@ -279,7 +292,7 @@ On the terminal you'll see anytime you change the js file that the webpack recom
 
 ![](img/babel.png){: .fancy .small }
 
-We've talked a little bit about various JS versions.  Babel is a transpiler that converts new es6 javascript syntax to more compatible es5 syntax that browsers actually understand (browsers are typically behind in their ECMAScript support). If you are curious you can try it out at [babeljs](https://babeljs.io/repl/)
+We've talked a little bit about various JS versions.  Babel is a transpiler that converts newer es6+ javascript syntax to more compatible es5 syntax that browsers actually understand (browsers are typically behind in their ECMAScript support). If you are curious you can try it out at [babeljs](https://babeljs.io/repl/)
 
 
 ### Install and configure Babel
@@ -287,7 +300,7 @@ We've talked a little bit about various JS versions.  Babel is a transpiler that
 🚀 Let's install babel and the webpack babel-loader.
 
 ```bash
-npm install babel-core babel-loader babel-preset-env --save-dev
+yarn add babel-core babel-loader babel-preset-env babel-polyfill --dev
 ```
 
 Babel needs to be configured for the particulars of what feature set of ECMAScript you want.
@@ -315,13 +328,18 @@ module: {
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: ['babel-loader'],
-    },
+      use: [
+        { loader: 'babel-loader'}
+      ]
+    }
   ],
 },
 ```
 
-🚀 `ctrl + c` out of your webpack-dev-server and run `npm start` again to pick up the changes to the config files.
+🚀 and change your `entry` to be `entry: [ 'babel-polyfill', './src' ],`
+this loads in some nice extra babel functions before we get into our app so we can use them.
+
+🚀 `ctrl + c` out of your webpack-dev-server and run `yarn start` again to pick up the changes to the config files.
 
 ###  use some es6
 
@@ -339,7 +357,7 @@ import $ from 'jquery';
   * in fact you might run into scope problems if you don't use arrow notation as arrow notation does better things with scope than regular anonymous functions.
 * avoid using `var` (remember `let` and `const`)
 
-Excellent, now your page is keeping count of how long its been since you loaded / reloaded it. SUPER USEFUL!
+Excellent, now your page is keeping count of how long its been since you loaded / reloaded it. **SUPER USEFUL!**
 
 
 ## Linting
@@ -358,13 +376,13 @@ The recommended linter plugin for javascript is [Eslint](http://eslint.org/).
 🚀 Install `eslint`:
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-loader
-npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+yarn add --dev eslint babel-eslint eslint-loader
+yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 ```
 
-`eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **strongly** suggesting / requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).  
+`eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **strongly** requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).  
 
-🚀 After installing `eslint`, create an eslint configuration file `.eslintrc` with something like the following:
+🚀 After installing `eslint`, create an eslint configuration file `.eslintrc` with something like the following. This file instructs eslint to use the airbnb rules and overrides some of the common rules that I found particularly obtrusive. You are allowed to turn off certain rules if you prefer but take a look at the documentation and read about why the rule was implemented first.
 
 ```json
 {
@@ -393,9 +411,6 @@ npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-j
           "DebuggerStatement"
         ],
         "no-debugger": "warn"
-    },
-    "ecmaFeatures": {
-        "modules": true
     }
 }
 ```
@@ -408,9 +423,9 @@ When you see errors such as below:
 
 You can click on the definition of the error to learn more.  Note: many of these show up as errors but are not compiler errors like you are used to in Eclipse.  The browser or node may still run the code fine — however it is recommended that you fix these errors or learn about what the errors mean and disable them only if you disagree with that particular rule stylistically. I left the above errors so you could fix them!
 
-🚀  Now let webpack include es-lint! In your `webpack.config.js` file, add `eslint-loader` to modules we will use (the line that says) `use: ['babel-loader']`.
+🚀  Now let webpack include eslint! In your `webpack.config.js` file, add `eslint-loader` to the loaders section. This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise.
 
-From here on most assignments will come with a `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
+From here on your assignments will all use an `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
 
 ## SASS Webpack loader
@@ -427,11 +442,12 @@ Lets make webpack handle CSS for us also, and we'll even upgrade that to [SASS](
   <link rel="stylesheet" type="text/css" href="build/style.css">
 ```
 
+*Note: loading your own stylesheet should be the last in order of loading - so that your rules override previous ones.*
 
 🚀 The only loader that comes built-in to webpack is javascript so we need some more packages:
 
 ```bash
-npm install css-loader sass-loader postcss-loader node-sass style-loader extract-text-webpack-plugin --save-dev
+yarn add css-loader sass-loader postcss-loader node-sass style-loader extract-text-webpack-plugin --save-dev
 ```
 
 🚀 Now you need to modify the `webpack.config.js` file to include the css/sass loaders. This part gets a bit complicated.  We are including both css and sass loaders, and doing a little bit of trickery with the `extract-text-webpack-plugin`.  The reason for this is that by default webpack is really all about the javascript. That means if it was going to be in charge of CSS it would load it into the page using javascript. Which could cause annoying flashing as styles get applied.  We want the CSS to be output separately as text into `style.css` rather than into `bundle.js` so that we can load it in `<head>`.
