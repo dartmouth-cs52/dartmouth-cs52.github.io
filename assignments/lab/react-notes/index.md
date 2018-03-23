@@ -469,7 +469,7 @@ firebase.initializeApp(config);
 const database = firebase.database();
 ```
 
-Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods. 
+Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods.
 
 🚀 Create a file,  `firebasedb.js` in your `src/` directory. And since we're using npm to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
 
@@ -490,7 +490,7 @@ import * as firebasedb from '../firebasedb'
 // to get firebasedb.fetchNotes etc...
 ```
 
-*Note: if the linter complains about using default just add the other functions you'll probably need here. Like `updateNote`, etc. 
+*Note: if the linter complains about using default just add the other functions you'll probably need here. Like `updateNote`, etc.
 
 ## Data Structure
 

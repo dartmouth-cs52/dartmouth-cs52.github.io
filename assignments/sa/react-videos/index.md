@@ -28,10 +28,7 @@ What just happened?  You merged in the git tree from another repo (the remote we
 
 ## Setup
 
-
 We're going to need to add a few things to our project to get it ready for React.
-
-
 
 ### Babel
 
@@ -40,14 +37,15 @@ We're going to need to add a few things to our project to get it ready for React
 ```bash
 # just make sure you're in the root of your project
 
-npm install --save-dev babel-preset-react
-# installs a react babel preset
+yarn add --dev babel-preset-react babel-plugin-transform-class-properties
+# installs a react babel preset and really helpful plugin
 ```
 
 🚀 Add a `["react"]` preset to your existing `.babelrc` file to look something like this:
 
 ```json
 {
+  "plugins": ["transform-class-properties"],
   "presets": [
     ["react"],
     ["env", {
@@ -59,6 +57,7 @@ npm install --save-dev babel-preset-react
 }
 ```
 
+Note: we also added in [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties) to plugins as well.  This gives us some more cool notation including using arrow functions when defining class methods.
 
 
 ### eslint
@@ -76,15 +75,17 @@ Let's modify your `.eslintrc` to add in some React support.
         "react/prop-types": 0,
         "react/jsx-first-prop-new-line": 0,
         "react/jsx-filename-extension": 0,
-        "import/no-unresolved": [2, { "commonjs": true, "caseSensitive": false}],
-
+        "jsx-a11y/click-events-have-key-events": 0,
+        "jsx-a11y/no-noninteractive-element-interactions": 0
     },
     "plugins": [
         "react"
     ],
-    "ecmaFeatures": {
-        "jsx": true,
-        "modules": true
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "sourceType": "module"
+        }
     }
 }
 ```
@@ -96,7 +97,7 @@ Let's modify your `.eslintrc` to add in some React support.
 
 
 ```bash
-npm install --save lodash.debounce react react-dom react-router axios
+yarn add lodash.debounce react react-dom react-router axios
 ```
 
 We'll learn what all these do soon!
@@ -105,21 +106,16 @@ We'll learn what all these do soon!
 🚀 Start up your webpack-dev-server:
 
 ```bash
-npm start
+yarn start
 ```
 
 If there are no errors we can move on!  Leave the server running as now we have everything necessary to just jump into the codes.
 
-One common cause of errors can be dependency version mismatches in the various npm packages.  This is because by default when you `npm install` something it will attempt to install the most recent thing. Addditionally in the `package.json` file it will save the installed version with a `^` prepended which indicates that future installs should be at least that version or greater. Sometimes the *or greater* can cause trouble.  One way to attempt to fix this is to update all the versions to the most recent, like so:
+One common cause of errors can be dependency version mismatches in the various npm packages.  This is because by default when you `yarn add` something it will attempt to install the most recent thing. One way to attempt to fix this is to update all the versions to the most recent, like so:
 
 ```bash
-npm install -g npm-check-updates #installs a new command: ncu
-
-ncu #run in your project will tell you what packages can be udpated
-ncu -ua # will update all packages
-
-rm -rf node_modules #remove existing installed modules
-npm install  #reinstall new versions
+# if you have weird version errors
+yarn upgrade-interactive --latest #this is new so your mileage may vary
 ```
 
 
@@ -155,7 +151,7 @@ At this point you will want to push these changes to your starter pack!  This wi
 git push starter master
 ```
 
-Careful!  Don't push anything else to starter for this assignment, you want your starterpack to only contain starter configurations, not your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
+⚠️ Careful!  Don't push anything else to starter for this assignment, you want your starterpack to only contain starter configurations, not your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
 
 
 
@@ -168,7 +164,7 @@ Did you notice how there seems to be html like stuff in the above?  What is `<Ap
 
 Let's build something a little more complicated with multiple components.
 
-<!-- based loosly on https://www.udemy.com/react-redux-tutorial -->
+<!-- based loosely on https://www.udemy.com/react-redux-tutorial -->
 
 Here's a mockup of our soon to be amazing app:
 
@@ -220,7 +216,7 @@ const SearchBar = () => {
 export default SearchBar;
 ```
 
-Note: we still need to import `React` otherwise none of the JSX will be parsed correctly.
+Note: we still need to import `React` in each file that will contain any *JSX* otherwise it won't be parsed correctly.
 
 All we are doing here is exporting a function that returns an input component.
 
@@ -243,15 +239,21 @@ const App = () => {
 };
 ```
 
-We defined a new React component `SearchBar` and imported and added it to the main App render function.  Note for multiline JSX put it all in `()` for easier legibility.  In general remember that this is a tree — React expects a component to be **one** top level element.  You can also return an array of elements/components but not in your top level React App container.
+We defined a new React component `SearchBar` and imported and added it to the main App render function.  Note for multiline JSX put it all in `()` for easier legibility.  
+
+Remember that this is a tree — React expects a component to be **one** top level element.  You can also return an array of elements/components but not in your top level React App container.
+
+This is the tree that we are growing:
+
+![](img/video-tree.png){: .small}
 
 Great, now you should see a search bar on your page.
 
 ## Functional VS Class Components
 
-So far we've made 2 components and they have both been very simple, just a function really that returns some JSX.   This is great for simple components, but as we get more complicated components we might want to upgrade them.  In particular when a component needs to be aware of some internal state or perform any sort of logic, Class components come in handy.
+So far we've made 2 components and they have both been very simple, just a simple function that returns some *JSX*.   This is great for simple components, but as we get more complicated components we might want to upgrade them.  In particular when a component needs to be aware of some internal state or perform any sort of logic, Class based components come in handy.
 
-Let's refactor our functional SearchBar component to an es6 class. React has a handy class called Component that we will extend,  this class is what imbues our application with React powers.
+Let's refactor our functional `SearchBar` component into an ES6 class. React has a handy class called Component that we will extend,  this class is what imbues our application with React powers.
 
 🚀 First, we need to import it.
 
@@ -260,7 +262,7 @@ Let's refactor our functional SearchBar component to an es6 class. React has a h
 import React, { Component } from 'react';
 ```
 
-The `Component` class is actually already available to us as `React.Component` but we can extract it using es6 destructuring.
+The `Component` class is actually already available to us as `React.Component` but we can extract it using es6 [destructuring](http://exploringjs.com/es6/ch_destructuring.html).  
 
 ### Side note on destructuring
 
@@ -281,7 +283,7 @@ let { a, c } = foo;
 console.log(a, c); // → 100 "a string"
 ```
 
-More here: [mikaelb](http://git.mikaelb.net/presentations/bartjs/destructuring/#/)
+More [here](http://exploringjs.com/es6/ch_destructuring.html)
 
 
 ### SearchBar Class
@@ -302,8 +304,11 @@ class SearchBar extends Component {
 export default SearchBar;
 ```
 
-Great, now we have a fancy class component but what does it do?  The same thing right now as the functional component did, we should probably add some functionality...
+Great, now we have a fancy class component but what does it do?  The same thing right now as the functional component did, we should probably add some functionality...  In fact eslint is going to yell at you for making something that really should be stateless.
 
+![](img/component-prefer-stateless.jpg){: .fancy .medium }
+
+Question: do we think that the eslint airbnb rules insist that since the component currently is stateless we should change it?  Or do we disable the rule because we feel that generally we'd like to flexibility to not be yelled at about this?  If you click the [link next to the error](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md) you can see the justification. You should feel free to disable certain rules if you disagree with them. In this particular case we're going to add in some class specific things soon enough.
 
 ## Events in React
 
@@ -317,7 +322,8 @@ What we need to do is handle some events.  The browser emits events on things li
 onInputChange(event) {
   console.log(event.target.value);
 }
-
+```
+```javascript
 // in render method change return to:
 return <input onChange={this.onInputChange} />;
 
@@ -325,15 +331,21 @@ return <input onChange={this.onInputChange} />;
 
 We've created a function `onInputChange` which we are registering as a callback for the builtin `onChange` event on the input element.
 
+Oh no, not eslint again!
+
+![](img/class-methods-use-this.jpg){: .fancy .medium}
+
+This is telling us that the method we just wrote `onInputChange` doesn't need to be a class method (instance method) since it doesn't access any instance variables.  It is a fair point, however this is a little annoying because we do eventually want this to be a class method so let's turn this rule off.  
+
+🚀 Add `"class-methods-use-this": 0` to your `.eslintrc` file to just turn it off. You may need to restart webpack to pick up the new changes.
 
 ![](img/oninput.png){: .fancy .small}
 
-
+Great, now it works. 🙌
 
 ## State
 
 Each class based React component has it's own internal state object which is used to react to and record events.  Whenever this state changes React re-renders the component.  This is the basis of React, and why it is so cool.  It is all about the state.
-
 
 ### Initialize state
 
@@ -352,8 +364,7 @@ ES6 classes have constructors.  This is where we would do setup stuff, in partic
 * First thing we do is call the parent classes constructor as any class that extends another should do.
 * Then we initialize a state object with one field `searchterm`.  This will be for our search term.
 
-Note: The constructor is the **ONLY** place you will ever set `this.state` directly like this.  We will see how to do this later, but in general, you initialize it once and then you use a method `setState` on it from then on. This  is critical, if you skip using `setState` then React doesn't know that anything happened.  
-
+Note: The constructor is the **ONLY** place you will ever set `this.state` directly like this. 🐘 Remember this. We will see how to do this later, but in general, you initialize it once and then you use a method `setState` on it from then on. This is critical, if you skip using `setState` then React doesn't know that anything happened.  
 
 ### Update state
 
@@ -366,16 +377,13 @@ Ok, so now we should probably update the state as we type into the input.
 this.setState({ searchterm: event.target.value });
 ```
 
-
 Now, because `onInputChange` needs access to `this` we need to also bind it so that it can find it.  Multiple ways of making that work, we could either call `this.onInputChange` in a fat arrow function callback that we pass to `onChange` like so: `onChange={event => {this.onInputChange(event);}}` or we can bind it.  In the binding option we'll just assign a bound version of the function to that variable like so:
 
 ```javascript
 // add to the bottom of your constructor
 this.onInputChange = this.onInputChange.bind(this);
 ```
-
-This means whenever we reference `onInputChange` now within the class it will refer to a version of that function that is bound to the instance of the object. It also has the nice property of alerting readers that you have certain functions that are called from within other scope.
-
+This means whenever we reference `onInputChange` now within the class it will refer to a version of that function that is bound to the instance of the object. That is we make sure `onInputChange` runs inside of `SearchBar` rather than inside of `input`. Does that make sense?  Binding in the constructor has the nice property of alerting anybody reading your code that you have certain functions that are called from within other scope.
 
 🚀 And we should add some way to visualize this so let's add an element to your `render` method:
 
@@ -394,6 +402,7 @@ Now you have something like this:
 
 ![](img/state-value.png){: .fancy .tiny }
 
+Nice! 🌟
 
 ## Controlled field
 
@@ -408,18 +417,15 @@ Let's take this a step further and make the `<input>` field *driven*. What this 
 <input onChange={this.onInputChange} value="hi" />
 ```
 
-Now when you try the page, weird stuff happens.  The field is now driven by the constant value of 'hi'.  Not very helpful.  What should we change it to instead?
-
+Now when you try the page, weird stuff happens.  The field is now driven by the constant value of 'hi'.  Not very helpful. *Driven* means the values inside the component are given to it. In this case we are setting the *value* to always be `hi`. What should we change it to instead?  State?
 
 ```javascript
 <input onChange={this.onInputChange} value={this.state.searchterm} />
 ```
 
-Now when you type the value displayed by the field is actually what is currently in the state.  This is useful for a number of reasons, but primarily it means that the user sees exactly what the state is and React knows exactly what the input is at any point.  You never have to search the DOM for the input field and yank the value, it is always in the state.  In a more complicated example, say we forgot to `setState` in our `onChange` callback on a particular form field. If the field wasn't driven then you might not notice that your state wasn't recording that field and later on would have to debug missing values.  This way the state of the component is authoritative and visible.
-
+Now when you type the value displayed by the field is actually what is currently in the state.  This is useful for a number of reasons, but primarily it means that the user sees exactly what the state is and React knows exactly what the input is at any point.  You never have to search the DOM for the input field and yank the value, it is always in the state.  In a more complicated example, say we forgot to `setState` in our `onChange` callback on a particular form field. If the field wasn't driven then you might not notice that your state wasn't recording that field and later on would have to debug missing values.  This way the state of the component is authoritative and visible.  Driven components are good - always drive input fields unless you have a good reason not too (no idea what that would be).
 
 🚀 Go ahead and delete the `<p> State value: {this.state.searchterm} </p>` line completely, we don't need it.
-
 
 Ok, at this point you have an app that displays a search bar, it is a driven field so it's value is always the value that is in the state. Now, lets add some fun stuff.
 
@@ -456,16 +462,15 @@ We'll be using YouTube's api for finding videos. So we need to sign up and get a
 
 🚀 Go to:  [http://console.developers.google.com](http://console.developers.google.com )
 
-1. Per rather poor UX: click the hamburger menu on the top left
-  <br>![](img/youtube-1.png){: .fancy .tiny}
-1. Open **Api Manger**
+1. Select *Library* on the left hand invisible menu.
+  <br>![](img/google-library.jpg){: .fancy .tiny}
 1. Search for youtube and select **YouTube Data API V3**
-  <br>![](img/youtube-apimanager.png){: .fancy .tiny}
+  <br>![](img/google-enable.jpg){: .fancy .tiny}
 1. Click **Enable**
 1. Go to **Credentials**
 1. Click **Create Credentials**
-1. Choose **Browser Key**
-  <br>![](img/youtube-createcredentials.png){: .fancy .small}
+1. Choose **Api Key**
+  <br>![](img/google-create-apikey.jpg){: .fancy .small}
 1. Save the **API Key** for you will need it!
 
 
@@ -624,7 +629,6 @@ This is because React needs each component in a list to have a `key` property.  
 But, since we were just testing let's fix this when we create the *VideoListItem* component.
 
 
-
 ## VideoListItem
 
 Before we continue,  we should create our *VideoListItem* component.  Does this component need to know it's own state?  Does it need to be a class based on functional component?
@@ -651,7 +655,7 @@ export default VideoListItem;
 ```
 
 
-🚀 Now import it into *VideoList* and let's use it. Remember you'll need to set the key property on it as well as passing the video in to props, like so:
+🚀 Now import it `import VideoListItem from './video_list_item';` into *VideoList* and let's use it. Remember you'll need to set the key property on it as well as passing the video in to props, like so:
 
 ```javascript
 const videoItems = props.videos.map((video) => {
@@ -659,9 +663,7 @@ const videoItems = props.videos.map((video) => {
 });
 ```
 
-
 Great,  now we're showing the list!  
-
 
 ## VideoDetail
 
@@ -676,8 +678,8 @@ const VideoDetail = ({ video }) => {
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (
-    <div className="video-detail">
-      <iframe src={url}></iframe>
+    <div id="video-detail">
+      <iframe src={url} title="video-detail" />
       <div className="details">
         <div>{video.snippet.title}</div>
         <div>{video.snippet.description}</div>
@@ -707,7 +709,9 @@ Take a look at your page, what is happening? Oh wait, it's crashing! Why?
 
 Hmm, looks like for some reason `video` is undefined!
 
-This is because `this.state.videos[0]` which we are using for `this.state.selectedVideo` is actually undefined for a little bit of time when we first load the page.  The videos array is empty until the API request to youtube completes, but that takes a few milliseconds at least. However React just goes and runs the render() functions of all the components right away.  As soon as the state changes, it will re-render with all the data there, but for a brief moment the data isn't there yet.
+This is because `this.state.videos[0]` which we are using for `this.state.selectedVideo` is actually undefined for a little bit of time when we first load the page. WHAT?!
+
+The videos array is empty until the API request to youtube completes, but that takes a few milliseconds at least. However React just goes and runs the render() functions of all the components right away.  As soon as the state changes, it will re-render with all the data there, but for a brief moment the data isn't there yet.
 
 To fix this, we can just have the *VideoDetail* component render something else if video is not set.  How would you do that?
 
@@ -772,10 +776,10 @@ Ok, but wait.  The *SearchBar* doesn't actually do anything yet. We still have t
 
 You can see a pattern here, *SearchBar* is in a similar position where it has datas it needs to pass up to *App*.  Let's make that happen!
 
-🚀 In *App* let's refactor our youtubeSearch out into a separate method in the *App* class:
+🚀 In *App* let's refactor our youtubeSearch out into a separate method in the *App* class.
 
 ```javascript
-search(text) {
+search = (text) => {
   youtubeSearch(text).then(videos => {
     this.setState({
       videos,
@@ -794,10 +798,10 @@ this.search('pixar');
 🚀 Now let's pass this new `search` method down to *SearchBar*:
 
 ```javascript
-<SearchBar onSearchChange={text => this.search(text)} />
+<SearchBar onSearchChange={this.search} />
 ```
 
-Note the use of lots of arrow functions and the lack of `bind`.  EC: why might this be? How could we get rid of the `bind` in *SearchBar*?
+Note: because we defined search as an arrow function to begin with we don't need `bind`.
 
 🚀 In *SearchBar*  let's call this new callback! Add the following to your `onInputChange` method.
 
@@ -863,6 +867,9 @@ body {
   }
 }
 
+#video-detail {
+  width: 100%;
+}
 
 #video-section {
   display: flex;
@@ -898,7 +905,7 @@ Turns out response iframe embeds are actually pretty difficult to achieve.  We'r
 🚀 In `index.html` add bootstrap4-dev css only:
 
 ```html
-<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 ```
 
 🚀 Change your video iframe code in *VideoDetail*

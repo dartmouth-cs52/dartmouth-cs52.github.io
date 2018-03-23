@@ -6,6 +6,8 @@ published: true
 
 # Build a Buzzfeed® Quiz Site! :squirrel:
 
+![](img/quiz.gif){: .fancy .small}
+
 All the kids are doing it these days. This is where we'll learn a little bit about making interactive sites. We won't need to deal with any backend servers, just some nice clientside code (no server) to build up a fun quiz and show some calculated results.
 
 🚀 head over to buzzfeed and take [this quiz](https://www.buzzfeed.com/elainawahl/which-disney-animal-are-you). I'll wait.
@@ -15,7 +17,6 @@ All the kids are doing it these days. This is where we'll learn a little bit abo
 Doesn't that make you want to make your own quiz? Ok, you could use buzzfeed to do this, but you want to make one that doesn't have ugly ads. And looks classier too!
 
 This assignment is going to *flex* your html and css skills some more as well as some javascript!  We'll use some JS to compute the results of the quiz as well as to check that the quiz was filled out correctly.
-
 
 **Note:** You are allowed to use HTML5/CSS3/JS/jQuery in this assignment but no other javascript libraries or frameworks. Try to use compatible plain JS/jQuery without any newer syntax so that your page will work in browsers without the need for anything aside from jQuery (if you choose to use it). You may use CSS libraries to help with styling but it is recommended to practice your CSS skills and try to do it from scratch. 🔩
 
@@ -72,13 +73,17 @@ Here's some design specs thrown together in [Sketch](https://www.sketchapp.com/)
 
 ## Where to Start?!
 
-🚀 Start in your git repo for the project -- Please use the github classroom link provided in the Canvas assignment to create the repo automatically.
+🚀 Please use the github classroom link provided in the Canvas assignment to create the repo automatically.
 
-🚀 Open up Atom and create an index.html, a style.css, and a main.js file.  
+🚀 Open up Atom and create an `index.html`, a `style.css`, and a `main.js` file.  
 
-🚀 Link your style.css file into the head of your html file.
+🚀 Link your `style.css` file into the head of your html file.
 
-🚀 Link in your js file. Best place for this is right before your closing `</body>` tag.  
+```html
+<link rel="stylesheet" type="text/css" href="style.css">
+```
+
+🚀 Link in your `main.js` file. Best place for this is right before your closing `</body>` tag.  
 
 Extra credit:  why might it be better for this to be placed at the bottom rather than in `<head> ... </head>`?
 
@@ -165,8 +170,8 @@ For this assignment you are allowed to use [jQuery](https://jquery.com/) if you 
 
 ```javascript
 <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 ```
 
@@ -200,7 +205,6 @@ The answer could be displayed as a [simple modal](https://www.w3schools.com/howt
 ## Styling
 
 Now get it looking good!  If you need suggestions on how to improve your design come by any of our office hours.  This assignment will be partially graded on styling.  The minimum effort would be to do something like the primitive mockups or an equivalent attempt at improving the design of buzzfeed.
-
 
 ## And You Are Done!
 
