@@ -789,6 +789,8 @@ search = (text) => {
 }
 ```
 
+Note: in the above we are using [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties) to use a short hand that allows us to make `search` use arrow notation `(text) => ` which gives us [lexical binding](http://exploringjs.com/es6/ch_arrow-functions.html) for freeee!
+
 🚀 In the constructor,  call this new method
 
 ```javascript
@@ -801,7 +803,7 @@ this.search('pixar');
 <SearchBar onSearchChange={this.search} />
 ```
 
-Note: because we defined search as an arrow function to begin with we don't need `bind` because arrow notation gives us lexical binding for freeee!
+Note: because we defined search as an arrow function to begin with we don't need `bind` because arrow notation.
 
 
 🚀 In *SearchBar*  let's call this new callback! Add the following to your `onInputChange` method.
