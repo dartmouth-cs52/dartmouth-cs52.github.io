@@ -12,8 +12,21 @@ Today we'll be learning about a set of tools for making your code compact and pr
 💻 : run in Terminal<br>
 🚀 : a step to not forget
 
-
 🚀 To start grab the github classroom link to start a new repository. Work in the `master` branch for now, you'll see why later.
+
+## Today's Stack
+
+We'll build a starter package that will use:
+
+* webpack
+* sass
+* babel
+* eslint
+* as well as a suite of cool tools: node, npm, yarn, Atom
+
+Don't worry we'll learn allllll about it.
+
+🌵 Note: This *short* is a little on the long side, but it's important. Try to read the explanations so you understand what is happening — you will be using and building up from this starterpack for the next month.
 
 
 ## [yarn](https://yarnpkg.com/en/) and [NPM](https://www.npmjs.com/)
@@ -62,19 +75,20 @@ brew install node
 
 #### windows, other:
 
-install from [nodejs.org](https://nodejs.org/en/). *you may need to restart git shell afterwards*
+* windows: install from [nodejs.org](https://nodejs.org/en/). *you may need to restart git shell afterwards*
+* linux: use your distribution's package manager
 
 ### start a node project
 
-🚀 We will start a node project even though we will only be using the node package manager.
+🚀 We will start a node js project even though we will only be using the node package manager.
 
 ```bash
-#make sure you are in your cloned workspace
+#make sure you are cd'd into your cloned workspace
 
 yarn init #accept all the default answers if you want
 ```
 
-All this did was create a barebones `package.json`  file.  This file defines a nodejs based project and is required.  It will primarily list all of the dependencies of our project.  It will also define some convenient scripts for us.
+All this did was create a barebones `package.json`  file.  This file defines a node.js based project and is required.  It will primarily list all of the dependencies of our project.  It will also define some convenient scripts for us.
 
 ### Index file
 
@@ -115,40 +129,13 @@ starting up!
 
 Great, you just ran a little bit of javascript on the computer without a browser.
 
+But, we want to actually make a webpage right?
 
-## Webpack
+## Index HTML
 
-### Install Webpack for the project
+Let's set up a simple `index.html` to act as our main html page.
 
-![](img/what-is-webpack.png){: .fancy .small}
-
-[Webpack](https://webpack.js.org) is a build tool.  What it does is take all your dependencies (all the various files and libraries that your project is using) and bundle them up together — but in a smart way where it will only bundle up the things you need. It can do any preprocessing that you need, such as converting various code syntax and supports hot-reloading, so you never have to refresh the page manually again.  Most cleverly it actually analyzes your code and figures out what you are doing.  It does [tree shaking](https://webpack.js.org/guides/tree-shaking/) to only include code that actually used and discards everything else.
-
-🚀 Lets install webpack:
-
-```bash
-yarn add webpack webpack-dev-server webpack-cli --dev
-```
-
-`yarn add` is how you add most any javascript library to your project.  It will install in a directory `node_modules` in your project.  Note: `yarn install` would install it but not add it to your `project.json`.  Generally you want to add it to your project so that later if others were to download the project they could install the same packages.
-
-Note: when you pass `--dev` it will add those modules to your `package.json` in a `devDependencies` section.  In this case we are saying these are *development* only dependencies. So you will now notice new lines declaring those dependencies in `package.json` as `"devDependencies"`. Leave off the `--dev` flag if you are adding in a library you want to always include.
-
-:warning: `node_modules` is **not** something you need to commit to git.  These are libraries that you can assume will be available and so as long as you have saved the dependencies to the `package.json` file anybody can later install all of the required packages by simply running `yarn install`.
-
-🚀 Let's make sure we don't do that now.  Create a file called `.gitignore` and add the following:
-
-```bash
-public/build
-node_modules
-yarn-error.log
-```
-
-### Now what?  
-
-Let's set up a simple webapp so we can see start using webpack.
-
-🚀 Create an `index.html` in the project root folder (not in src/):
+🚀 Create an `index.html` in in the `src/` folder:
 
 ```html
 <!DOCTYPE html>
@@ -159,13 +146,54 @@ Let's set up a simple webapp so we can see start using webpack.
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-    <div id="main">Howdy</div>
+    <div class="logo"></div>
+    <div id="main">Loading</div>
   </body>
-  <script src="build/bundle.js"  charset="utf-8"></script>
 </html>
 ```
 
-Wait what is this `build/bundle.js`? Good q. That is the file we are going to have webpack build for us.
+Sweet, a page that says "loading". You rock.
+
+
+## Webpack
+
+![](img/what-is-webpack.png){: .fancy .small}
+
+[Webpack](https://webpack.js.org) is a build tool.  What it does is take all your dependencies (all the various files and libraries that your project is using) and bundle them up together — but in a smart way where it will only bundle up the things you need. It can do any preprocessing that you need, such as converting various code syntax and supports hot-reloading, so you never have to refresh the page manually again.  Most cleverly it actually analyzes your code and figures out what you are doing and only includes what is necessary. It makes 1 file out of all your JS files, it can optimize your images, it can make your CSS better.
+
+![](img/cart-sm.gif){: .profile}
+
+Webpack is the shopping cart; `package.json` is the shopping list; and your browser is um, the frying pan that cooks a delicious web meal for you?
+
+### Install Webpack for the project
+
+
+🚀 Lets add webpack to our 🚼 project:
+
+```bash
+yarn add webpack webpack-serve webpack-cli --dev
+```
+
+`yarn add` is how you add most any javascript library to your project.  It will install in a directory `node_modules` in your project.  Note: `yarn install` would install it but not add it to your `project.json`.  Generally you want to add it to your project so that later if others were to download the project they could install the same packages.
+
+Note: when you give `--dev` as an argument it will add those modules to your `package.json` in a `devDependencies` section.  In this case we are saying these are *development* only dependencies. So you will now notice new lines declaring those dependencies in `package.json` as `"devDependencies"`. Leave off the `--dev` flag if you are adding in a library you want to package up for the browser.
+
+⚠️ `node_modules` is **not** something you need to commit to git.  These are libraries that you can assume will be available and so as long as you have saved the dependencies to the `package.json` file anybody can later install all of the required packages by simply running `yarn install`.
+
+🚀 Let's make sure we don't do that now.  Create a file called `.gitignore` and add the following:
+
+```bash
+dist
+node_modules
+yarn-error.log
+.DS_Store
+```
+
+🚀 Let's add things to git while we are at it: `git add * .gitignore`, `git commit -am "we have some files in our project now"`
+
+
+### First JS On The Web
+
 
 🚀 Lets add in [JQuery](http://jquery.com/) really quick. We won't really be using much jquery this term, but for a quick example it will suffice.
 
@@ -185,108 +213,146 @@ $('#main').html('Here we go!');
 
 All this will do is find the element with the `id` of `main` and change the content to 'Here we go!'.
 
+At this point, you could try opening this page in a browser, but it won't work! The browser has no idea how to find jquery and this it all crashes and burns 🔥.
 
 ### Configure webpack
 
 🚀 Lets give webpack a very basic configuration. Create a file called `webpack.config.js` with these contents:
 
 ```javascript
-const path = require('path');
+const env = process.env.NODE_ENV || 'development';
+// set to 'production' or 'development' in your env
+
 module.exports = {
-  entry: [ './src' ], // this is where our app lives
+  mode: env,
+  entry: ['./src'], // this is where our app lives
   devtool: 'source-map', // this enables debugging with source in chrome devtools
-  output: {
-    path: path.join(__dirname, 'public/build'), ////output files go to public/build
-    publicPath: '/build/',
-    filename: 'bundle.js', //package it all up in one bundle
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+      },
+    ],
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'public'), //any static files should go in public
-    historyApiFallback: true, // useful later
-  },
+  plugins: [],
 };
 ```
 
-Note, we are now doing something a bit different with our directory structure. We've added `public`.
-
-The overall project structure will now look like:
+All this is saying is that we want to look in `src` for `.js` files. Webpack will assume some other things about our project - in particular it will package things up into a directory called `dist`.
 
 ```bash
-src/ #all the js and scss source files for your app
-public/  #where your static assets will live like images and your index.html file
-public/build #autogenerated directory where webpack will put your bundle files
+src/ #all the source html,js,css,scss files for your app
+dist/  #autogenerated directory where webpack will put your bundle files
 ```
 
-🚀 Before we go on, let's move the `index.html` file so that it lives in the right place.
+🚀 now try running webpack directly from the commandline: `./node_modules/.bin/webpack`
 
 ```bash
-mkdir public
-mv index.html public
-```
-
-🚀 now try running webpack directly from the commandline: `./node_modules/.bin/webpack --mode development`
-
-```bash
-💻 ./node_modules/.bin/webpack --mode development
-Hash: 10aaf12a7b59b4cde0dc
+💻 ./node_modules/.bin/webpack
+Hash: 1ab8c0f7ebef096a6462
 Version: webpack 4.2.0
-Time: 466ms
-Built at: 3/21/2018 11:05:35 PM
-        Asset     Size  Chunks             Chunk Names
-    bundle.js  269 KiB    main  [emitted]  main
-bundle.js.map  351 KiB    main  [emitted]  main
-Entrypoint main = bundle.js bundle.js.map
-[./src/index.js] 62 bytes {main} [built]
+Time: 484ms
+Built at: 3/22/2018 6:14:54 PM
+      Asset     Size  Chunks             Chunk Names
+    main.js  270 KiB    main  [emitted]  main
+main.js.map  351 KiB    main  [emitted]  main
+Entrypoint main = main.js main.js.map
+[./src/index.js] 448 bytes {main} [built]
    [0] multi ./src 28 bytes {main} [built]
     + 1 hidden module
 ```
 {: .example}
 
-Great! It is building our index file in addition to one hidden module which isn't ours. In this case this is jquery! How'd it know?  Well it analyzed our `index.js` and saw our `require` statement, then it located the module in `node_modules` and included it.
+🚀 Now if you do `ls dist`, you'll see some files in there!
+
+Great! It is building our `index.js` file and packaging it up into a new bundle called `main.js`. There is also one hidden module which isn't ours. In this case this is jquery! How'd it know?  Well it analyzed our `index.js` and saw our `require` statement, then it located the module in `node_modules` and included it. 😎
+
+Ok, but like, there is no `.html` file and how is this useful, you can't even see the page.
+
+🚀 Let's delete dist for now. `rm -rf dist`
+
+### webpack-serve
+
+![](img/js-engine.gif){: .fancy .tiny}
 
 
-### webpack-dev-server
+This is where webpack-serve comes in. It is a development server setup that will help us run our web app.
 
-Shall we look at what we have done so far?  We could start up a python webserver but webpack comes with a dev server built in, lets use that instead.
+We could start up a python webserver to load the files, but webpack comes with a dev server built in and it is much better.
 
-🚀 Edit your `package.json` again and change `"start": "webpack-dev-server --inline --mode=development"`
+🚀 Edit your `package.json` again and change the `start` line to: `"start": "NODE_ENV=development webpack-serve ./webpack.config.js",`
 
-*Note: on windows the syntax is a tiny bit different you need `SET NODE_ENV=development & webpack-dev-server --inline`*
+*Note: on windows the syntax may be a tiny bit different `SET NODE_ENV=development & webpack-serve ./webpack.config.js`*
 
 🚀 Now you can simply run `yarn start`:
 
-```bash
+```
 💻 yarn start
 
 yarn run v1.5.1
-$ webpack-dev-server --inline --mode=development
-ℹ ｢wds｣: Project is running at http://localhost:8080/
-ℹ ｢wds｣: webpack output is served from /build/
-ℹ ｢wds｣: Content not from webpack is served from /Users/tim/Sandbox/CS52/18s/assignments/starter/public
-ℹ ｢wds｣: 404s will fallback to /index.html
-ℹ ｢wdm｣: Hash: 7ac205b0de50609287b4
+$ NODE_ENV=development webpack-serve ./webpack.config.js
+ℹ ｢hot｣: webpack: Compiling...
+ℹ ｢hot｣: WebSocket Server Listening at localhost:8081
+ℹ ｢serve｣: Project is running at http://localhost:8080
+ℹ ｢serve｣: Server URI copied to clipboard
+ℹ ｢hot｣: webpack: Compiling Done
+ℹ ｢wdm｣: Hash: bcbf4953e7e2b154c1b6
+Version: webpack 4.2.0
+Time: 11648ms
+Built at: 3/22/2018 6:23:18 PM
+      Asset     Size  Chunks             Chunk Names
+    main.js  371 KiB    main  [emitted]  main
+main.js.map  466 KiB    main  [emitted]  main
+Entrypoint main = main.js main.js.map
 [...]
+ℹ ｢wdm｣: Compiled successfully.
 ```
+{: .example}
+
+![](img/not-found.jpg){: .fancy .tiny}
+
+Ok,  we're now *supposedly* showing our page through webpack-serve, but why isn't it working??!?!  
+
+### HtmlWebpackPlugin
+
+Well... by default webpack understands javascript, but honestly has no idea what to do with our `index.html` file. That is the file we need the browser to see. So we have to tell webpack about html. To do this we're going to add a webpack plugin.
+
+🚀 The plugin we are looking for now is the `html-webpack-plugin`.  Go ahead `yarn add --dev` that and add
+`const HtmlWebpackPlugin = require('html-webpack-plugin');` to the top of your `webpack.config.js` file.
+
+🚀 And in the `plugins: []`array add in:
+
+```js
+new HtmlWebpackPlugin({
+  template: './src/index.html',
+  filename: './index.html',
+}),
+```
+
+This just tells webpack that we want it to know that we have a `src/index.html` file and we want it to be available as just `index.html` in our final product.
+
+🚀 ctrl-c out of your webpack server and rerun `yarn start`.
+
+Now it works!
 
 ![](img/webpack-dev-server01.png){: .fancy .tiny}
 
-Ok,  we're now loading our page through webpack-dev-server and also loading in our javascript and changing some HTML!
+Notice that now index.html is being output by webpack in addition to the main.js file.
+
+```
+Asset       Size  Chunks             Chunk Names
+main.js    371 KiB    main  [emitted]  main
+main.js.map    466 KiB    main  [emitted]  main
+./index.html  374 bytes          [emitted]
+```
 
 
-### Hot reloading
+#### Webpack loaders
 
-Wait, we were promised hot-reloading, whatever that means!
+Webpack [loaders](https://webpack.js.org/concepts/loaders/) are modules that help webpack understand certain types of files. Loaders are the magic that allow webpack to `import` js files, compile sass to css, optimize images etc.
 
-Ok, lets config that. This will make it so your page reloads every time you save any files that are part of the javascript app (`index.html` is not included however).
-
-🚀 Edit your `package.json` and add `--hot` to the end of the the `start` command.
-
-`ctrl + c` out of your webpack-dev-server and run `yarn start` again.
-
-Try changing your `index.js` file to change the text of `#main` to something else.  You should see those changes happen immediately!
-
-On the terminal you'll see anytime you change the js file that the webpack recompiles automatically.
-
+We're now going to add a loader that teaches webpack about newer ES6 syntax javascript - the `babel-loader`.
 
 ## Babel
 
@@ -320,7 +386,7 @@ Babel needs to be configured for the particulars of what feature set of ECMAScri
 ```
 
 
-🚀 Finally add the following to your `webpack.config.js` file:
+🚀 Finally merge the following with your `webpack.config.js` file
 
 ```javascript
 module: {
@@ -328,7 +394,7 @@ module: {
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: [
+      use: [ //here's the part you want
         { loader: 'babel-loader'}
       ]
     }
@@ -339,7 +405,7 @@ module: {
 🚀 and change your `entry` to be `entry: [ 'babel-polyfill', './src' ],`
 this loads in some nice extra babel functions before we get into our app so we can use them.
 
-🚀 `ctrl + c` out of your webpack-dev-server and run `yarn start` again to pick up the changes to the config files.
+🚀 `ctrl + c` out of your webpack server and run `yarn start` again to pick up the changes to the config files.
 
 ###  use some es6
 
@@ -360,7 +426,7 @@ import $ from 'jquery';
 Excellent, now your page is keeping count of how long its been since you loaded / reloaded it. **SUPER USEFUL!**
 
 
-## Linting
+## Linting and Linting Loader
 
 ![](img/eslint.png){: .fancy .small}
 
@@ -415,112 +481,175 @@ yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y 
 }
 ```
 
-🚀 Now go to Atom -> Preferences -> Packages -> linter-eslint -> Settings, and check "Fix Errors on Save". Super useful. This will fix indentation problems and some other things automatically whenever you save.
+🚀 Now go to Atom -> Preferences -> Packages -> linter-eslint -> Settings, and check "Fix Errors on Save". Super useful. This will fix indentation problems and some other things automatically whenever you save. Now restart Atom.
 
 When you see errors such as below:
 
 ![linter error](img/linter-error.png){: .fancy .small}
 
-You can click on the definition of the error to learn more.  Note: many of these show up as errors but are not compiler errors like you are used to in Eclipse.  The browser or node may still run the code fine — however it is recommended that you fix these errors or learn about what the errors mean and disable them only if you disagree with that particular rule stylistically. I left the above errors so you could fix them!
+You can click on the definition of the error to learn more.  Note: many of these show up as errors but are not compiler errors like you are used to in Eclipse.  The browser or node may still run the code fine — however it is recommended that you fix these errors or learn about what the errors mean and disable them only if you disagree with that particular rule stylistically.
 
-🚀  Now let webpack include eslint! In your `webpack.config.js` file, add `eslint-loader` to the loaders section. This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise.
+🚀  Now let webpack include eslint! In your `webpack.config.js` file, add `eslint-loader` to the loaders section. This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise. Not only will Atom show the errors - but the browser console will as well.
 
 From here on your assignments will all use an `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
 
 ## SASS Webpack loader
 
-Lets make webpack handle CSS for us also, and we'll even upgrade that to [SASS](http://sass-lang.com/guide)!
+Let's make webpack handle CSS for us also, and we'll even upgrade that to [SASS](http://sass-lang.com/guide)!  SASS is nicer - and demonstrates why webpack is so cool.
 
 ![](img/sass.png){: .fancy .small}
 
-
-🚀 Add loading the output `style.css` file into your `index.html`:
-
-```html
-<head>
-  <link rel="stylesheet" type="text/css" href="build/style.css">
-```
-
-*Note: loading your own stylesheet should be the last in order of loading - so that your rules override previous ones.*
-
-🚀 The only loader that comes built-in to webpack is javascript so we need some more packages:
+🚀 Does this mean we need another loader? Yup!
 
 ```bash
-yarn add css-loader sass-loader postcss-loader node-sass style-loader extract-text-webpack-plugin --save-dev
+yarn add css-loader sass-loader node-sass style-loader mini-css-extract-plugin --dev
 ```
 
-🚀 Now you need to modify the `webpack.config.js` file to include the css/sass loaders. This part gets a bit complicated.  We are including both css and sass loaders, and doing a little bit of trickery with the `extract-text-webpack-plugin`.  The reason for this is that by default webpack is really all about the javascript. That means if it was going to be in charge of CSS it would load it into the page using javascript. Which could cause annoying flashing as styles get applied.  We want the CSS to be output separately as text into `style.css` rather than into `bundle.js` so that we can load it in `<head>`.
+😑 Too many!  We have a few loaders:
 
+* [css-loader](https://github.com/webpack-contrib/css-loader): allows you to use @import and url() in css to import other files
+* [sass-loader](https://github.com/webpack-contrib/sass-loader): loads SASS/SCSS files and compiles to CSS
+* [style-loader](https://github.com/webpack-contrib/style-loader): Adds CSS to the DOM by injecting a <style> tag
+
+And a couple other helper packages.
+
+🚀 Now you need to modify the `webpack.config.js` file to include the css/sass loaders. Here's what it should look like now:
 
 
 ```javascript
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractSass = new ExtractTextPlugin({
-  filename: 'style.css',
-  disable: process.env.NODE_ENV === 'development',
-});
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const env = process.env.NODE_ENV || 'development';
+// set to 'production' or 'development' in your env
+
+const finalCSSLoader = (env === 'production') ? MiniCssExtractPlugin.loader : { loader: 'style-loader' };
 
 module.exports = {
-  entry: ['./src'],
-  devtool: 'inline-source-map',
-  output: {
-    path: path.join(__dirname, 'public/build'),
-    publicPath: '/build/',
-    filename: 'bundle.js',
-  },
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    historyApiFallback: true,
-  },
+  mode: env,
+  entry: ['babel-polyfill', './src'], // this is where our app lives
+  devtool: 'source-map', // this enables debugging with source in chrome devtools
   module: {
     rules: [
       {
-        test: /(\.scss)$/,
-        use: extractSass.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: { sourceMap: true },
-            },
-            {
-              loader: 'sass-loader',
-              options: { sourceMap: true },
-            },
-          ],
-          fallback: 'style-loader', // use style-loader in development mode
-        }),
-      },
-      {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: [
+          { loader: 'babel-loader' },
+          { loader: 'eslint-loader' },
+        ],
+      },
+      {
+        test: /\.s?css/,
+        use: [
+          finalCSSLoader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
     ],
   },
   plugins: [
-    extractSass,
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
+    }),
   ],
 };
 ```
+Don't worry about the `MiniCssExtractPlugin` part - that is for outputting files for publishing later.
 
 🚀 Create a  `src/style.scss` file and add in some style!
 
 ```css
-body {
+body, html {
   font-family: "Roboto", sans-serif;
-  background: darken(white, 0.2);
+  background: linear-gradient(to bottom, #87e0fd 0%,#53cbf1 40%,#05abe0 100%);
+  height: 100%;
 }
 ```
 
-🚀 Now, you need to have webpack include it, so add `import './style.scss'` to your `index.js` file! Remember webpack won't include anything that isn't used by your app directly.
+🚀 Now, you need to have webpack include it, so add `import './style.scss'` to your `index.js` file! Remember webpack won't include anything that isn't used by your app directly - and the way to tell it is to import it into your app somewhere.  Your whole app right now is `index.js` so let's import it there.
 
-🚀 Restart your webpack server and see if you style changes are picked up.  Note how you can change styles and the hot-reloading kicks in!
+🚀 Restart your webpack server and see if you style changes are picked up.
 
-*Note: you will see that when you run locally as you are now that chrome devtools will tell you that the style.css file is a 404 error. You can ignore this error for now. The webpack-dev-server is injecting the styles via javascript when in development mode so that it can hot reload them, however in production mode that file will be automatically generated.*
+### Hot reloading
+
+Wait, we were promised hot-reloading, whatever that means!
+
+You got it!  Try changing your `style.scss` file – you should see changes but your counter doesn't restart!
+
+On the terminal you'll see anytime you change your project files that webpack recompiles automatically - and in your browser console log as well.  Right now if you edit `index.js` you might be a full reload - that is because that file is everything so any changes in it will trigger a full reload.
+
+## MiniCssExtractPlugin
+
+This part gets a bit complicated.  We are including both css and sass loaders, and doing a little bit of trickery with the `mini-css-extract-plugin`.  The reason for this is that by default webpack is really all about the javascript. This means that webpack loads your CSS in via javascript.  This could cause an annoying flash of unstyled content ([FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content)) when you first load the page.  We want the CSS to be output separately as text into a `main.css` rather than loaded from `main.js`.  
+
+The ternary line we have `(env === 'production') ? MiniCssExtractPlugin.loader : { loader: 'style-loader' };`
+evaluates so that in *development* mode we use the `style-loader` which injects the CSS into the DOM via JS so that we can have hot-reloading, whereas in *production* mode it compiles it all down to an actual file.
+
+## Image File Loader
+
+![](img/compiler-bot.gif){: .fancy .tiny}
+
+Ok, so now webpack understands html, js, sass, and css.  But what if we want to include an image?
+
+🚀 Just add another loader!  Let's use [file-loader](https://github.com/webpack-contrib/file-loader)
+
+```bash
+yarn add file-loader --dev
+```
+
+🚀 Here's the bit to include, where do you think it goes in your `webpack.config.js` file? *Hint: look for where you already have an example using `test`*
+
+```js
+{
+  test: /\.(jpe?g|png|gif|svg)$/,
+  use: [
+    {
+      loader: 'file-loader',
+      options: {
+        useRelativePath: true,
+        name: '[name].[ext]',
+      },
+    },
+  ],
+},
+```
+
+🚀 Restart webpack server to pick up config changes.
+
+🚀 Try adding an image into your `src/img` folder maybe and then showing it in the logo div:
+
+```css
+.logo {
+  background-image: url('img/MYIMAGE.jpg');
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+```
+
+Yeah, can you see it?
+
 
 ## AutoPrefixing!
+
+![](img/autoprefix.gif){: .small}
+
 
 As you've been playing with CSS you've probably noticed the internet mentioning vendor prefixes such as:
 
@@ -536,55 +665,83 @@ Due to varying browser support of features these are often associated with newer
 
 This is a module that we can incorporate and have webpack automatically prefix our canonical css to work in all browsers. It is actually a plugin for a [loader](https://webpack.js.org/concepts/loaders/), but regardless, you can see how it is configured here.
 
+🚀 Let's add the [postcss-loader](https://github.com/postcss/postcss-loader), this allows us to add in some post processing of the CSS.
+
+
 🚀 Edit your `webpack.config.js` file once again and add in:
 
 ```js
-  {
-    loader: 'postcss-loader',
-    options: {
-      plugins: () => [autoprefixer()],
-    },
+{
+  loader: 'postcss-loader',
+  options: {
+    plugins: () => [autoprefixer()],
+    sourceMap: true,
   },
+},
 ```
 
 in between your `css-loader` and your `sass-loader` objects.
 
 🚀 and add in `const autoprefixer = require('autoprefixer');` to the top of the file.
 
-🚀 Guess what you need to `npm install --save-dev` as well?  Yup, `autoprefixer`.
+🚀 Oh, and guess what you need to `yarn add --dev` as well?  Yup, `autoprefixer`and `postcss-loader`.
 
 
 
 ## Deployment
+
+![](img/deploy.gif){: .fancy .small}
+
 
 How would you deploy a webpack setup such as this?
 
 Well we can continue using gh-pages!  But we can make it even easier. We're going to add in a little package to help.
 
 ```bash
-💻 npm install gh-pages
+💻 yarn add gh-pages --dev
 ```
 
 🚀 Add the following to your `package.json` `scripts` section:
 
-```javaScript
-"build": "WEBPACK_ENV=production webpack --colors",
-"clean": "rimraf public/build",
-"deploy": "npm run build; gh-pages -d public; npm run clean"
+```javascript
+"build": "yarn clean; NODE_ENV=production webpack --colors",
+"clean": "rimraf dist",
+"deploy": "yarn build; gh-pages -d dist; yarn clean"
 ```
 
 Now you have a deploy npm script you can run!
 
+🚀 run:
+
 ```
-💻 npm run deploy
+💻 yarn build
 ```
 
-This will build your app into the build directory and the push all the right stuff to github to the gh-pages branch and everything. However!  This will not push your code that is still in `master` you will still need to `add`, `commit`, and `push` all of your actual code from `local/master` to `origin/master`.  All the deploy script does is help keep your published website in `gh-pages` clean and separate from your source code.
+And poke around in the newly created `dist` folder.  It should look something like:
+
+```bash
+img          main.css     main.js
+index.html   main.css.map main.js.map
+```
+{: .example}
+
+
+🚀 Now try:
+
+```
+💻 yarn deploy
+```
+
+This will build your app into the `dist` directory and the push all the right stuff to github to the gh-pages branch and everything.  However!  This will not push your code that is still in `master` you will still need to `add`, `commit`, and `push` all of your actual code from `local/master` to `origin/master`.  All the deploy script does is help keep your published website in `gh-pages` clean and separate from your source code.
 
 🚀 git `add`, `commit`, `push` all the code that is currently in your `master` branch to your `origin master` branch. You should now have:  `master` branch with `/src` and all your webpack and package files, and you don't have to worry about a `gh-pages` branch because that is fully automatic with the deploy script.
 
+To repeat: All your source code is in your `master` branch.  The deploy script will manage and automatically push a `ghpages` branch to github from the contents of `dist`.
+
 
 ## A word about debugging
+
+![](img/debugging-code.gif){: .fancy .small}
 
 As always you should use Chrome Dev Tools with the console as the first line of defense. Checking for errors there is the first thing you should look for.  You can also use breakpoints.  The recommended way to is locate the source in devtools and click the line number to add the breakpoint. Because of webpacks magic all sources end up in webpack:// *(Sources -> weback:// -> . -> src)*
 
@@ -595,20 +752,21 @@ You can also use the statement `debugger;` in your code, but that is somewhat fr
 
 ## Frontend Stater Pack is ready to go!
 
-You now have a nicely set up starter pack that you can do
+You now have a nicely set up starter pack that you can use for all your cool projects.  We will use this in most of the future assignments and build up on it too, so it is worth getting this all working.
 
 ### To Turn In
 
 1. Checklist:
-  * webpack-dev-server starts and serves pages
-  * hot-reloading works as advertised
+  * webpack-serve starts and serves pages
   * babel is configured
   * eslint is configured
   * webpage displays and counts seconds
+  * image displays and is loaded via webpack
   * js is es6 and linted without errors
 1. A short answer response to:
   * describe the environment you set up.
   * any questions about what/why/how that you feel are unresolved?
+
 
 
 
