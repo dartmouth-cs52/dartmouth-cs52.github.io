@@ -772,11 +772,10 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 
 ### Extra Credit
 
+* add in [HistoryApiFallback](https://gist.github.com/timofei7/e2ba157ccb4a09dc5f382292af110b9a) - we'll do this one eventually anyway, but if you're in the mood now.
 * add in more robust image loading than just file-loader. (compress + optimize)
 
-
 ## Resources:
-
 
 * [getting started with webpack2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783)
 * [webpack docs](https://webpack.js.org/)
