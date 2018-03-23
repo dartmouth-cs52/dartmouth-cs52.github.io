@@ -752,12 +752,13 @@ As always you should use Chrome Dev Tools with the console as the first line of 
 You can also use the statement `debugger;` in your code, but that is somewhat frowned upon as you might forget and leave one in a piece of code that doesn't get executed often causing mayhem.
 
 
-## Frontend Stater Pack is ready to go!
+## Frontend Starter Pack is ready to go!
 
 You now have a nicely set up starter pack that you can use for all your cool projects.  We will use this in most of the future assignments and build up on it too, so it is worth getting this all working.
 
 ### To Turn In
 
+1. url to your github repository
 1. Checklist:
   * webpack-serve starts and serves pages
   * babel is configured
@@ -765,14 +766,13 @@ You now have a nicely set up starter pack that you can use for all your cool pro
   * webpage displays and counts seconds
   * image displays and is loaded via webpack
   * js is es6 and linted without errors
-1. A short answer response to:
+1. A short answer response on canvas to:
   * describe the environment you set up.
   * any questions about what/why/how that you feel are unresolved?
 
 ### Extra Credit
 
 * add in more robust image loading than just file-loader. (compress + optimize)
-*
 
 
 ## Resources:
@@ -782,3 +782,4 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 * [webpack docs](https://webpack.js.org/)
 * [babeljs](https://babeljs.io/)
 * [State of the Art Javascript 2016](https://medium.com/javascript-and-opinions/state-of-the-art-javascript-in-2016-ab67fc68eb0b#.26xksjxvt)
+* [Survive Webpack](https://survivejs.com/webpack/foreword/)
