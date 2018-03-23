@@ -801,7 +801,8 @@ this.search('pixar');
 <SearchBar onSearchChange={this.search} />
 ```
 
-Note: because we defined search as an arrow function to begin with we don't need `bind`.
+Note: because we defined search as an arrow function to begin with we don't need `bind` because arrow notation gives us lexical binding for freeee!
+
 
 🚀 In *SearchBar*  let's call this new callback! Add the following to your `onInputChange` method.
 
