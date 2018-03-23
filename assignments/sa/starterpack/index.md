@@ -489,7 +489,9 @@ When you see errors such as below:
 
 You can click on the definition of the error to learn more.  Note: many of these show up as errors but are not compiler errors like you are used to in Eclipse.  The browser or node may still run the code fine — however it is recommended that you fix these errors or learn about what the errors mean and disable them only if you disagree with that particular rule stylistically.
 
-🚀  Now let webpack include eslint! In your `webpack.config.js` file, add `eslint-loader` to the loaders section. This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise. Not only will Atom show the errors - but the browser console will as well.
+🚀  Now let webpack include eslint! In your `webpack.config.js` file, add `{ loader: 'eslint-loader' }` to the loaders section for `test: /\.js$/`.
+
+This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise. Not only will Atom show the errors - but the browser console will as well.
 
 From here on your assignments will all use an `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
@@ -767,7 +769,10 @@ You now have a nicely set up starter pack that you can use for all your cool pro
   * describe the environment you set up.
   * any questions about what/why/how that you feel are unresolved?
 
+### Extra Credit
 
+* add in more robust image loading than just file-loader. (compress + optimize)
+*
 
 
 ## Resources:
