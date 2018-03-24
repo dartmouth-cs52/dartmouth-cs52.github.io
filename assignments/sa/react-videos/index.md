@@ -628,7 +628,7 @@ Are you getting console log errors?
 
 This is because React needs each component in a list to have a `key` property.  If you click on an element React needs to have more information about that element, which it is in the list etc and it uses the unique identifier key property to do so.
 
-But, since we were just testing let's fix this when we create the *VideoListItem* component.
+But, since we were just testing let's fix this when we create the *VideoListItem* component.  But **do** fix this generally when you see it — key errors will have points taken off. Keys must be [unique and unchanging ids](https://stackoverflow.com/questions/28329382/understanding-unique-keys-for-array-children-in-react-js#answer-43892905) associated with every component that is in a list — that is whenever you have react elements that are siblings. Lots of weirdness can happen when keys are not set or not set correctly,  list items won't appear in the right order, some may not display, or they may not update.
 
 
 ## VideoListItem
