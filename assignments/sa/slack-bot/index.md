@@ -33,7 +33,7 @@ Begin by cloning the starter code from [express+babel+eslint](https://github.com
     process.env.SLACK_BOT_TOKEN
     ```
 
-    Note: Don't forget to set this environment variable on Heroku in the settings tab 
+    Note: Don't forget to set this environment variable on Heroku in the settings tab
 
 1. **Express**
 
@@ -143,7 +143,7 @@ The Botkit library provides us with a convenient wrapper around Slack's API. Our
 ### Events
 The Slack server issues **events** that are then consumed by clients. These are things like [messages](https://api.slack.com/events/message) and [team join](https://api.slack.com/events/team_join) events. Botkit can hook up to any of Slack's events.  `.hears` is a fancier way of listening to message events.   
 
-🚀Botkit [slack event integration](https://github.com/howdyai/botkit/blob/master/readme-slack.md#slack-specific-events).
+🚀Botkit [slack event integration](https://github.com/howdyai/botkit/blob/master/docs/slack-events-api.md).
 
 For instance:
 
