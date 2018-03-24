@@ -59,45 +59,73 @@ See [assignments](/assignments).
 </table>
 
 
-  - TAs:<br>
+  - TAs, Graders, Webdev experts:<br>
 
-    TBA
+<!-- <div class="rtable rtable--5cols" style="display:none;"> -->
+<div class="rtable rtable--5cols">
 
-<div class="rtable rtable--5cols" style="display:none;">
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="https://www.linkedin.com/mpr/mpr/AAEAAQAAAAAAAAZWAAAAJGE3NTYzZDY1LTRlMjktNDNiYi05YTE1LWRhYjJjZWM0Njc4Ng.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:ahsan.azim.18@dartmouth.edu">Ahsan Azim</a><br><a href="https://cs52-dartmouth.slack.com/messages/@ahsan_azim/">@ahsan_azim</a></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:TBD">TBD</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBD/">@TBD</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="https://avatars3.githubusercontent.com/u/8921279?v=3&u=633957fe03707df790ec23af6d884b820a6a0ecb&s=400"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:robin.e.jayaswal.18@dartmouth.edu">Robin Jayaswal</a><br><a href="https://cs52-dartmouth.slack.com/messages/@robin-jayaswal/">@robin-jayaswal</a></div>
+
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:TBD">TBD</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBD/">@TBD</a></div>
+  <div style="order:6;" class="rtable-cell"><br></div>
+
+  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:8;" class="rtable-cell"><a href="mailto:TBD">TBD</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBD/">@TBD</a></div>
 
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/irene.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:irene.l.feng.17@dartmouth.edu">Irene Feng</a><br><a href="https://cs52-dartmouth.slack.com/messages/@irenelfeng/">@irenelfeng</a></div>
+
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:TBD">TBD</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBD/">@TBD</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/emma.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:emma.c.oberstein.18@dartmouth.edu">Emma Oberstein</a><br><a href="https://cs52-dartmouth.slack.com/messages/@emmaoberstein/">@emmaoberstein</a></div>
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jason.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:jason.s.feng.17@dartmouth.edu">Jason Feng</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jason/">@jason</a></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:tbd">TBD</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
+  <div style="order:6;" class="rtable-cell"><br></div>
+
+  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:8;" class="rtable-cell"><a href="mailto:">TBD</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBD/">@TBD</a></div>
+
+
+
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:jason.s.feng.17@dartmouth.edu">TBD</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBD/">@TBD</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
+
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/alma.jpg"/></div>
   <div style="order:5;" class="rtable-cell"><a href="mailto:alma.wang.18@dartmouth.edu">Alma Wang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@almawang/">@almawang</a></div>
+  <div style="order:6;" class="rtable-cell"><br></div>
+
+  <div style="order:7;" class="rtable-cell"></div>
+  <div style="order:8;" class="rtable-cell"></div>
+
+
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/luisa.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:luisa.n.vasquez.gutierrez.18@dartmouth.edu">Luisa Vasquez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@luisa/">@luisa</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy"
-  src="assets/imgs/sidney.jpeg"/></div>
-  <div style="order:5;" class="rtable-cell"><a
-  href="mailto:sidney.g.wijngaarde.17@dartmouth.edu">Sidney Wijngaarde</a><br><a
-  href="https://cs52-dartmouth.slack.com/messages/@luisa/">@sidneyw</a></div>
+
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:TBD">TBD</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBD/">@TBD</a></div>
+  <div style="order:6;" class="rtable-cell"><br></div>
+
+  <div style="order:7;" class="rtable-cell"></div>
+  <div style="order:8;" class="rtable-cell"></div>
+
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jon.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jonathan Gonzalez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jongonzalez/">@jongonzalez</a></div>
-  <div style="order:3;" class="rtable-cell"></div>
-  <div style="order:4;" class="rtable-cell"></div>
-  <div style="order:5;" class="rtable-cell"></div>
+  <div style="order:3;" class="rtable-cell"><br></div>
+
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/mauPR.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:mauricio.esquivel.rogel.18@dartmouth.edu">Mauricio Esquivel Rogel</a><br><a href="https://cs52-dartmouth.slack.com/messages/@mauesrog/">@mauesrog</a></div>
+  <div style="order:6;" class="rtable-cell"><br></div>
+
+  <div style="order:7;" class="rtable-cell"></div>
+  <div style="order:8;" class="rtable-cell"></div>
+
 
 </div>
 
