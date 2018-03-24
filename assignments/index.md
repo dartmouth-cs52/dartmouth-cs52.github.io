@@ -9,21 +9,21 @@ title: Assignments
 ### *N* In-class short assignments: 10%
 *These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
-* Short Assignment 1: Local Dev Environment + Domain — DUE 3/30
-<!-- * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/30 -->
-* Short Assignment 2: Git Map — DUE 4/01
+<!-- * Short Assignment 1: Local Dev Environment + Domain — DUE 3/29 -->
+* [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/29
+* Short Assignment 2: Git Map
 <!-- * [Short Assignment 2: Git Map](sa/git-map) — DUE 4/01 -->
-* Short Assignment 3: Webpack+Babel+Eslint starterpack — DUE 4/13
+* Short Assignment 3: Webpack+Babel+Eslint starterpack
 <!-- * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) — DUE 4/13 -->
-* Short Assignment 4: React Intro — DUE 4/19
+* Short Assignment 4: React Intro
 <!-- * [Short Assignment 4: React Intro](sa/react-videos) — DUE 4/19 -->
-* Short Assignment 5: Frontend Routing — DUE 4/27
+* Short Assignment 5: Frontend Routing
 <!-- * [Short Assignment 5: Frontend Routing](sa/routing) — DUE 4/27 -->
-* Short Assignment 6: Redux - DUE 4/30
+* Short Assignment 6: Redux
 <!-- * [Short Assignment 6: Redux](sa/redux) - DUE 4/30 -->
-* Short Assignment 7: Express and Mongo - DUE 5/10
+* Short Assignment 7: Express and Mongo
 <!-- * [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/10 -->
-* Short Assignment 8: WebSockets - Extra Credit (5/16)
+* Short Assignment 8: WebSockets - Extra Credit
 <!-- * [Short Assignment 8: WebSockets](sa/websockets) - Extra Credit (5/16) -->
 * Short Assignment 9: Photo Uploading S3 - Extra Credit
 <!-- * [Short Assignment 9: Photo Uploading S3](sa/s3-upload) - Extra Credit -->

@@ -79,10 +79,10 @@ To start with, we want to add Users. This means we'll need a User model.
 
 ```javascript
 email: { type: String, unique: true, lowercase: true },
-password: String,
+password: { type: String } //, select: false },
 ```  
 
-For now we won't store anything else in the User model, but you may eventually want to add to this.
+For now we won't store anything else in the User model, but you may eventually want to add to this. `select: false` makes it so the password isn't returned in queries by default.
 
 Might as well add in:
 
