@@ -42,7 +42,7 @@ See [assignments](/assignments).
     TBD<!-- Sunday 6-9pm; Mon 8-11pm; Wed 4:35-5:25pm during X-hour, 9-11am, 8-10pm -->
 
   - Instructor:<br>
-    Mon 3-5pm; Fri 11-1pm; or by appointment in Sudikoff 219/007
+    Fri 11-1pm; or by appointment in Sudikoff 219/007
 
 <table>
   <tr>
