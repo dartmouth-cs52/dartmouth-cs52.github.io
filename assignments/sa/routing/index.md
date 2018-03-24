@@ -4,7 +4,7 @@ title: ""
 published: true
 ---
 
-![](img/router4.png){: .small }
+![](img/react-router.jpg){: .small }
 
 
 ## Overview
@@ -21,15 +21,22 @@ What if you want your frontend to have routes — different URLs that map to dif
 
 For this workshop we're just going to add React Router to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter! Wow.
 
-
 *Note: if you forgot to push the react stuff from the first few steps of the React Videos assignment to your starterpack, you should go back and do that now. You can simply do those steps now directly in your starterpack repo.*
 
-## NPM It
+🐙 Before we start let's tag the starterpack with v2!  This is with react but before we add routing.
+
+```bash
+git tag v2
+git push origin --tags
+```
+
+
+## Start adding in routing
 
 
 ```bash
 #make sure you in your sa3 starterpack repo
-npm install --save react-router-dom react-router
+yarn add react-router-dom react-router
 
 ```
 
@@ -37,7 +44,7 @@ npm install --save react-router-dom react-router
 
 Now you have added React Router to your starter package!
 
-We're going to be working with a brand new version (released April 12th 2017) of [react-router, version 4](https://reacttraining.com/react-router/web/example/basic).  This is a major rewrite and handles routing completely differently from how it has been done in the past.   Where it used to be that all routes were defined in one place, now you can have composable declarable routes spread throughout your components.  You'll see what that means shortly.
+[React Router](https://reacttraining.com/react-router/web/example/basic) has undergone some major rewrites in the past but has been stable for a year (didn't have to rewrite this section this year!). It used to be that all routes were defined in one place, now you can have composable declarable routes spread throughout your components.  You'll see what that means shortly.
 
 
 ## Route setup
@@ -54,7 +61,7 @@ This will demonstrate the power of routing and we'll be using this in our next l
 
 ## Let's Build Some Test Components
 
-Go ahead and create three very simple function based components. You can make these in your `app.js` file for now. Generally components should go in their own files, but we're just playing around here.
+Go ahead and create three very simple function based components. You can make these in your `index.js` file for now. Generally components should go in their own files, but we're just playing around here.
 
 
 ```js
@@ -67,13 +74,13 @@ const Welcome = (props) => {
 ```
 
 
-🚀 Now edit App and let's import in some routing magic
+🚀 Now let's import in some routing magic
 
 ```js
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 ```
 
-*Note: we are renaming BrowserRouter as Router. react-router gives us a few different routers including one for react-native for instance but we want the browser one. For now...*
+Note: **we are renaming BrowserRouter to Router** with the `as` keyword. The react-router gives us a few different routers including one for react-native for instance but we want the browser one. For now...
 
 
 🚀 And let's add in some routes in our `App` component.  For now it can just be a dumb component.
@@ -142,7 +149,7 @@ const Test = (props) => {
 };
 ```
 
-Note the new `match` property!  This is given to use by react router for every path.  We can use it for some cool things like knowing what url we are on, but also for parsing out any URL parameters that we defined!
+Note the new `match` property!  This is given to us by react router for every path.  We can use it for some cool things like knowing what url we are on, but also for parsing out any URL parameters that we defined!
 
 Let's add in some links to our Nav as well:
 
@@ -178,36 +185,68 @@ const FallBack = (props) => {
 };
 ```
 
-Try it out by typing in some random url.  ⚠️ if you run into a problem where it says it can't find `bundle.js`  this means that in your `index.html` you are loading in your bundle with a relative url.  Generally that is fine, except that now our URL is changing so the relative URL ends up being wrong. To fix this change your `index.html` file to refer to `/build/bundle.js` and `/build/style.css`.
-
-
 ## Commit!
 
 Don't forget to commit and push your code so that your starterpack now has routing support and an example!
 
 ## Deployment
 
-There is one tricky bit with deployment now that we have frontend routes.  The problem is that say you go to your github.io/posts/id page. If you ask the server for this page the server will tell you it doesn't exist. Because in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-dev-server` happens to have a configuration option `historyApiFallback` which makes it serve up the base index.html file for every resource URL that it can't find.  But gh-pages doesn't do that for us.
+There is one tricky bit with deployment now that we have frontend routes.  The problem is that say you go to your yoursitename.surge.sh/posts/id page. If you ask the server for this page the server will tell you it doesn't exist. Because in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-serve` happens to have a configuration option `historyApiFallback` which makes it serve up the base index.html file for every resource URL that it can't find, but hosting services don't do this by default.
 
-So what we're going to do is add a new deployment method.  We'll use [surge.sh](surge.sh) for this.  Surge is a fast static file hosting service similar to gh-pages but it has a couple of extra features.
+🚀 So we're going to alter our webpack a bit to be more robust.
 
 ```bash
-npm install -g surge
-npm install --save-dev surge #both command and in dependencies
+yarn add --dev connect-history-api-fallback koa-connect
 ```
 
-and then add in a new script in `package.json`
-```json
-    "surge": "npm run build; surge -p public -d cs52-my-cool-starterpack.surge.sh; npm run clean"
+🚀 Then add to the top of your `webpack.config.js` file:
+
+```js
+const history = require('connect-history-api-fallback');
+const convert = require('koa-connect');
 ```
 
-Now we're going to do something odd. We're going to make a copy of `public/index.html` to `public/200.html`.  What will happen is when you hit a route that surge doesn't know about, it will serve up the contents of the 200.html file. Since this file is your app, it will load up, read the current route, and change the page appropriately.
+🚀 Now we have to make sure that we are telling webpack to output our files to the root '/' rather than using relative links. Add the following
 
-Go ahead.  Change the `-d cs52-my-cool-starterpack.surge.sh` to be unique for you. `npm run surge`.  
+```javascript
+mode: env, // right after:
+output: { publicPath: '/' },
+```
 
-The other additional benefit of surge is that now your `/build/bundle.js` link will work,  on github pages if you were hosted in a subfolder like `https://dartmouth-cs52-17s.github.io/somerepository` then any resources starting with `/` would go too far up the tree.
+and to the bottom add:
 
+```js
+if (env === 'development') {
+  module.exports.serve = {
+    content: [__dirname],
+    add: (app, middleware, options) => {
+      const historyOptions = {
+        index: '/index.html',
+      };
+      app.use(convert(history(historyOptions)));
+    },
+  };
+}
+```
 
+This tells `webpack-serve` to serve up the `index.html` file always, otherwise if it would reload on any url that wasn't `/` it would return page not found.
+
+Now we're going to do something odd. We're going to make a copy of `index.html` to `200.html`.  What will happen is when you hit a route that *surge* doesn't know about, it will serve up the contents of the `200.html` file. Since this file is your app, it will load up, read the current route, and change the page appropriately. This is *surge* specific but will make our SPA setup pretty robust.
+
+🚀 Duplicate the `HtmlWebpackPlugin` entry in the `webpack.config.js` file so you have one with `filename: './200.html'` and one with `filename: './index.html'` both using the same template file `template: './src/index.html'`.
+
+## Test Deploy
+
+`yarn deploy`
+
+Check it out in your browser.  Try changing the url to `/badlink`,  it should load your test app and hit the fallback route!
+
+## Release V3!
+
+```bash
+git tag v3
+git push origin --tags
+```
 
 ## Resources
 

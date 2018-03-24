@@ -228,7 +228,7 @@ const signS3 = (req, res) => {
 export default signS3;
 ```
 
-Note: if your S3 region got assigned to Ohio, instaed of `const s3 = new aws.S3();`, you'l need to use 
+Note: if your S3 region got assigned to Ohio, instaed of `const s3 = new aws.S3();`, you'l need to use
 `const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });`
 
 Now in your router, we can add a new route:

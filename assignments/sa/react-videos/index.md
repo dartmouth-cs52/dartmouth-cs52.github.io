@@ -142,17 +142,19 @@ Now check your page: http://localhost:8080
 Our first React app!  Ok we're done. Kidding!
 
 
-
 ## StarterPack
 
-At this point you will want to push these changes to your starter pack!  This will add React support to your starterpack.  
+At this point you will want to push these changes to your starter pack!  This will add React support to your starterpack.   Note, how we are pushing to `starter` **not** `origin` here.
+
+🚀 Git `add`, `commit` and:
 
 ```bash
 git push starter master
 ```
 
-⚠️ Careful!  Don't push anything else to starter for this assignment, you want your starterpack to only contain starter configurations, not your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
+Since we added your starterpack repo as a remote named `starter` you can push to it even though after this point we'll diverge.
 
+⚠️ **Careful!  Don't push anything else to starter for this assignment**, you want your starterpack to only contain starter configurations, not the rest of your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
 
 
 ## [JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
@@ -928,10 +930,18 @@ This adds a tab to your Chrome Dev Tools which allows you to inspect state in yo
 ![](img/react-dev-tools.png){: .fancy}
 
 
+## Git
 
+Now don't forget to git add, commit, and push. **But** remember that now we are back to pushing to `origin`, not the starter pack like we did at the beginning.  Why did we do that?
+
+
+## Deployment
+
+And don't forget to deploy. However!  First change your `package.json` and change your surge url to something new akin to `yourname-cs52-videos.surge.sh` so that you aren't deploying on top of your previous assignments.
 
 ## To Turn In
 
+1. Submit github url and your deployed surge url on canvas.
 1. Your App should have the following working:
   * search, with new videos loading
   * clicking on a list item changes state and the main detail view

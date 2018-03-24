@@ -697,10 +697,16 @@ in between your `css-loader` and your `sass-loader` objects.
 
 How would you deploy a webpack setup such as this?
 
-Well we can continue using gh-pages!  But we can make it even easier. We're going to add in a little package to help.
+We're prepping this to be our SPA (single-page-app) starter pack and unfortunately github-pages doesn't have SPA support.  So we're going to be using another service to host our pages. Super easy though.
+
+So what we're going to do is add a new deployment method.  We'll use [surge.sh](surge.sh) for this.  Surge is a fast static file hosting service similar to gh-pages but it has a couple of extra features.
+
+![](img/surge.png){: .fancy .small}
+
 
 ```bash
-💻 yarn add gh-pages --dev
+npm install -g surge
+yarn add --dev surge #both command and in dependencies
 ```
 
 🚀 Add the following to your `package.json` `scripts` section:
@@ -708,12 +714,15 @@ Well we can continue using gh-pages!  But we can make it even easier. We're goin
 ```javascript
 "build": "yarn clean; NODE_ENV=production webpack --colors",
 "clean": "rimraf dist",
-"deploy": "yarn build; gh-pages -d dist; yarn clean"
+"deploy": "yarn build; surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh; yarn clean"
 ```
 
-Now you have a deploy npm script you can run!
+Go ahead.  Change the `MYCOOLSTARTERPACKNAME` to be a domain unique for you - say `yourname-cs52-starter.surge.sh`. `yarn deploy`.  
 
-🚀 run:
+
+Now you have a deploy script you can run!
+
+🚀 first run:
 
 ```
 💻 yarn build
@@ -727,6 +736,7 @@ index.html   main.css.map main.js.map
 ```
 {: .example}
 
+These are the compiled/built output files — the actual files that the browser sees. `dist` should never be added to git as it is generated output.
 
 🚀 Now try:
 
@@ -734,11 +744,22 @@ index.html   main.css.map main.js.map
 💻 yarn deploy
 ```
 
-This will build your app into the `dist` directory and the push all the right stuff to github to the gh-pages branch and everything.  However!  This will not push your code that is still in `master` you will still need to `add`, `commit`, and `push` all of your actual code from `local/master` to `origin/master`.  All the deploy script does is help keep your published website in `gh-pages` clean and separate from your source code.
+This will build your app into the `dist` directory and the deploy all the right stuff to surge.
 
-🚀 git `add`, `commit`, `push` all the code that is currently in your `master` branch to your `origin master` branch. You should now have:  `master` branch with `/src` and all your webpack and package files, and you don't have to worry about a `gh-pages` branch because that is fully automatic with the deploy script.
+🚀 git `add`, `commit`, `push` all the code that is currently in your `master` branch to your `origin master` branch. You should now have:  `master` branch with `/src` and all your webpack and package files.
 
-To repeat: All your source code is in your `master` branch.  The deploy script will manage and automatically push a `ghpages` branch to github from the contents of `dist`.
+## Release V1
+
+🐙 Before we finish let's tag our repo so that there is a *release version* associated with our starterpack. This is convenient so you can keep track of how your starterpack progresses and for us to grade as well.
+
+```bash
+git tag v1
+git push origin --tags
+```
+
+Now on github you can look at official releases of your startpack! So official.
+
+![](img/record.gif){: .fancy .small}
 
 
 ## A word about debugging
@@ -759,6 +780,7 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 ### To Turn In
 
 1. url to your github repository
+1. url to deployed surge url
 1. Checklist:
   * webpack-serve starts and serves pages
   * babel is configured
@@ -772,8 +794,8 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 
 ### Extra Credit
 
-* add in [HistoryApiFallback](https://gist.github.com/timofei7/e2ba157ccb4a09dc5f382292af110b9a) - we'll do this one eventually anyway, but if you're in the mood now.
 * add in more robust image loading than just file-loader. (compress + optimize)
+
 
 ## Resources:
 
