@@ -101,16 +101,12 @@ See [assignments](/assignments).
   <div style="order:7;" class="rtable-cell"></div>
   <div style="order:8;" class="rtable-cell"></div>
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/bencooper.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:benjamin.k.cooper.18@dartmouth.edu">Ben Cooper</a><br><a href="https://cs52-dartmouth.slack.com/messages/@ben/">@ben</a></div>
-  <div style="order:3;" class="rtable-cell"><br></div>
-
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/luisa.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:luisa.n.vasquez.gutierrez.18@dartmouth.edu">Luisa Vasquez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@luisa/">@luisa</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:TBA">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/bencooper.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:benjamin.k.cooper.18@dartmouth.edu">Benjamin Cooper</a><br><a href="https://cs52-dartmouth.slack.com/messages/@ben/">@ben</a></div>
   <div style="order:6;" class="rtable-cell"><br></div>
 
   <div style="order:7;" class="rtable-cell"></div>
