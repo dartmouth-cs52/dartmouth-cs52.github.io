@@ -404,7 +404,8 @@ name: that = this
 
 ???
 * this is button -- but setTimeout scope is window
-
+* can .bind on the function inside the setTimeout
+* or can alias that above setTimeout
 
 
 
