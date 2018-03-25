@@ -113,7 +113,7 @@ See [assignments](/assignments).
   <div style="order:8;" class="rtable-cell"></div>
 
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jongonzalez.jpg"/></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jongonzalez.JPG"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jon Gonzalez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jongonzalez/">@jongonzalez</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
