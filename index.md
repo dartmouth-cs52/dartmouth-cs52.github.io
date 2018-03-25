@@ -85,13 +85,13 @@ See [assignments](/assignments).
   <div style="order:5;" class="rtable-cell"><a href="mailto:TBA">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
   <div style="order:6;" class="rtable-cell"><br></div>
 
-  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:8;" class="rtable-cell"><a href="mailto:">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
+  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/barry.jpg"/></div>
+  <div style="order:8;" class="rtable-cell"><a href="mailto:barry.a.yang.18@dartmouth.edu">Barry Yang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@barryyang/">@barryyang</a></div>
 
 
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/barry.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:barry.a.yang.18@dartmouth.edu">Barry Yang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@barryyang/">@barryyang</a></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/sia.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:shiyao.peng.20@dartmouth.edu">Sia Peng</a><br><a href="https://cs52-dartmouth.slack.com/messages/@siapeng/">@siapeng</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/alma.jpg"/></div>
