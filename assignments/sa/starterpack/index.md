@@ -75,7 +75,7 @@ brew install node
 
 #### windows, other:
 
-* windows: install from [nodejs.org](https://nodejs.org/en/). *you may need to restart git shell afterwards*
+* windows: install from [nodejs.org](https://nodejs.org/en/) and [yarnpkg.com](https://yarnpkg.com/en/). *you may need to restart git shell afterwards*
 * linux: use your distribution's package manager
 
 ### start a node project
