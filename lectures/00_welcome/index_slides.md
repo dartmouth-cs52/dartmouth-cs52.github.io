@@ -178,7 +178,7 @@ name: Wait List?!?
 * from blank terminal to full project
 
 ???
-* 130 people tried to get into this course
+* 120 people tried to get into this course
 * you are the few the proud
 * second time around, but still an experiment
 * not going to dumb things down so you'll be doing industry standard stuff, no web ide's or lots of starter code.
@@ -264,7 +264,7 @@ name: Project Demos
 * invite your friends!
 
 ???
-* together with cs98 and dali
+* together with cs98 and dali and others
 * 500+ people
 * not presentations (science fair style)
 
