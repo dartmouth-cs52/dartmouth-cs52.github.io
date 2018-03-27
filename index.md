@@ -64,8 +64,8 @@ See [assignments](/assignments).
 <!-- <div class="rtable rtable--5cols" style="display:none;"> -->
 <div class="rtable rtable--5cols">
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:TBD">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jiachen.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:jiachen.jiang.20@dartmouth.edu">Jiachen Jiang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jcjiang/">@jcjiang</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
