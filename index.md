@@ -68,17 +68,19 @@ See [assignments](/assignments).
   <div style="order:2;" class="rtable-cell"><a href="mailto:TBD">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:TBA">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy"
+  src="assets/imgs/justing.png"/></div>
+  <div style="order:5;" class="rtable-cell"><a
+  href="mailto:Justin.D.Gualtieri.18@dartmouth.edu">Justin Gualtieri</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jgualtieri/">@jgualtieri</a></div>
   <div style="order:6;" class="rtable-cell"><br></div>
 
   <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
   <div style="order:8;" class="rtable-cell"><a href="mailto:TBA">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
 
 
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:TBA">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/mahnoor.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a
+  href="mailto:mahnoor.maqsood.18@dartmouth.edu">Mahnoor Maqsood</a><br><a href="https://cs52-dartmouth.slack.com/messages/@mahnoormaqsood/">@TBA</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kfarmer.jpg"/></div>
