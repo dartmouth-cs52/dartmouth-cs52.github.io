@@ -866,7 +866,7 @@ background-image: url(http://i.giphy.com/k8kG3Plo87Aqs.gif)
 background-position: center
 background-repeat: no-repeat
 background-size: cover
-name: 16X Let's go!
+name: 18S Let's go!
 
 
-.white-foreground[short assignment 1 out: due Thursday 30th 🕛]
+.white-foreground[short assignment 1 out: due Thursday 29th 🕛]
