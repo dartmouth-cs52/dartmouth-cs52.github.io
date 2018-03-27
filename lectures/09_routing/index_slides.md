@@ -25,7 +25,7 @@ name: base
 name: CS52 Art
 
 
-.large[![](img/nature.jpg)]
+.large[![](img/nature-table.jpg)]
 
 
 ???
@@ -40,7 +40,7 @@ name: CS52 Art
 name: CS52 Art
 
 
-![](img/firebase_architecture.jpg)
+![](img/firebase_architecture-table.jpg)
 
 
 ???
@@ -54,7 +54,7 @@ name: CS52 Art
 name: CS52 Art
 
 
-.medium[![](img/saveme.jpg)]
+.medium[![](img/saveme-table.jpg)]
 
 
 ???
@@ -83,12 +83,12 @@ name: Speaking of boomerangs
 name: CS52 Art
 
 .left[
-.large[![](img/callbackhell.jpg)]
+.large[![](img/callbackhell-table.jpg)]
 
 ]
 
 .right[
-.medium[![](img/rewards.jpg)]
+.medium[![](img/rewards-table.jpg)]
 ]
 
 
@@ -101,7 +101,7 @@ name: CS52 Art
 ---
 name: Announcements
 
-.small[![](img/fuq.jpg)]
+.small[![](img/fuq-table.jpg)]
 
 * Pitch Signups!
 * Lab 3 extension

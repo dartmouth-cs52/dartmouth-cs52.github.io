@@ -31,8 +31,8 @@ name: Websockets
 name: CS52 Art
 
 
-.medium_small[![](img/cookieremembers.jpg)]
-.medium_small[![](img/zombiecookie.jpg)]
+.medium_small[![](img/cookieremembers-table.jpg)]
+.medium_small[![](img/zombiecookie-table.jpg)]
 
 
 ???
@@ -44,7 +44,7 @@ name: CS52 Art
 name: no more labs!
 
 
-.medium[![](img/nomorelabs.jpg)]
+.medium[![](img/nomorelabs-table.jpg)]
 
 
 ???
@@ -62,7 +62,7 @@ name: no more labs!
 name: but we do has quiz
 
 
-.medium[![](img/quiztime.jpg)]
+.medium[![](img/quiztime-table.jpg)]
 
 
 ---

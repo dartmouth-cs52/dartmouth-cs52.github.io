@@ -43,7 +43,7 @@ document.getElementById('button')
   .addEventListener('click', handleClick);
 ```
 
-.large[![](img/ohgahd.jpg)]
+.large[![](img/ohgahd-table.jpg)]
 
 ???
 *  in this example, handleClick needs `this` to refer to the calling owner (ie the button).
@@ -56,7 +56,7 @@ name: table questions
 * is it universally accepted that ES6 is better, or is there a debate against it?
 * does ES6 move JS to object oriented programming?
 
-.medium[![](img/house.jpg)]
+.medium[![](img/house-table.jpg)]
 
 
 ???
@@ -83,7 +83,7 @@ name: SA3
 name: quiz
 
 
-![](img/no.jpg)
+![](img/no-table.jpg)
 
 ???
 * let's take break a do a quiz!

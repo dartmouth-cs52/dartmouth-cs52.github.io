@@ -74,7 +74,7 @@ name: Table Questions
 
 * how do you decide how many components there should be?
 
-.medium[![](img/mock_components.jpg)]
+.medium[![](img/mock_components-table.jpg)]
 
 ???
 * anything reussable
@@ -86,15 +86,15 @@ name: Table Questions
 name: Drawing On Point
 
 .left[
-.tiny[![](img/borderboxing.jpg)]
-.tiny[![](img/reactjuggler.jpg)]
-.tiny[![](img/robot.jpg)]
-.tiny[![](img/suave.jpg)]
+.tiny[![](img/borderboxing-table.jpg)]
+.tiny[![](img/reactjuggler-table.jpg)]
+.tiny[![](img/robot-table.jpg)]
+.tiny[![](img/suave-table.jpg)]
 ]
 
 .right[
-.medium_small[![](img/fishing.jpg)]
-.medium[![](img/ellis.jpg)]
+.medium_small[![](img/fishing-table.jpg)]
+.medium[![](img/ellis-table.jpg)]
 ]
 
 

@@ -29,7 +29,7 @@ name: Redux
 name: CS52 Art
 
 
-.medium[![](img/firebasemontster.jpg)]
+.medium[![](img/firebasemontster-table.jpg)]
 
 
 ???
@@ -40,7 +40,7 @@ name: CS52 Art
 
 
 
-.medium[![](img/pug.jpg)]
+.medium[![](img/pug-table.jpg)]
 
 
 ???
@@ -50,7 +50,7 @@ name: CS52 Art
 ---
 name: CS52 Art
 
-.medium[![](img/routeoflife.jpg)]
+.medium[![](img/routeoflife-table.jpg)]
 
 
 ???

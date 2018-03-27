@@ -39,6 +39,34 @@ name: full-stack
 .large[![](img/stackCover.png)]
 *(remixed from [brianfalls.com](http://brianfalls.com/))*
 
+???
+* what is this full-stack thing?
+* last year I tried cupstacking
+* this year I almost got a giant stack of pancakes (too desperate)
+* the stack is the set of tools/concepts/steps
+  involved in building a modern client-server application
+  (in particular on the web)
+
+---
+name: Survey Results
+
+* I want coding to feel fun and fulfilling, and to gain experience for future internships and jobs.
+* I am really excited to take this course! I do not know much about webdev but it seems extremely relevant and useful for real world applications.
+* I'd like to become more comfortable building real-time applications with web technologies. I find myself getting lost in the array of available frameworks
+* I would like to be able to design beautiful, interactive websites so that I can start working on some ideas for companies
+* Learning useful coding skills for creating back end apis and elegant front end ui.
+
+???
+
+* some requests for learning included:
+  * more frontend
+  * what is the DOM
+  * how to make pretty things on the web
+  * a few mentions of design (should we have a design workshop?)
+  * "designing / working with design for the web"
+  * best practices
+
+
 ---
 name: Magicians Of The Web
 
@@ -103,7 +131,7 @@ name: Sample Weekly Projects
 name: Online @
 
 * web: [http://cs52.me](http://cs52.me)
-* github: [http://github.com/dartmouth-cs52-17S](http://github.com/dartmouth-cs52-17S)
+* github: [http://github.com/dartmouth-cs52-18s](http://github.com/dartmouth-cs52-18s)
 
 ???
 
@@ -267,12 +295,14 @@ name: Project Demos
 * together with cs98 and dali and others
 * 500+ people
 * not presentations (science fair style)
+* some amazing projects like yipyip: https://projects.invisionapp.com/share/HABOKZQRZ
 
 
 ---
 name: Quizzes?!?!
 
-<iframe src="//giphy.com/embed/u9hgTtUu0DDws?hideSocial=true" width="480" height="238.08" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+.small[![](img/whyquiz-table.jpg)]
 
 * after each assignment
 * if you did the assignment, you can do the quiz
@@ -283,6 +313,52 @@ name: Quizzes?!?!
 * web is open platform - you can see a lot of the codes
 * unfortunate assessment problem
 * if you did the assignment should understand the concepts behind it
+
+
+---
+name: Drawings?!
+
+.medium[![](img/routeoflife-table.jpg)]
+
+
+
+???
+* you get points for making illustrations for the class
+* some have been philosophical
+
+---
+name: Drawings?!
+
+.medium[![](img/server-table.jpg)]
+
+
+???
+* others poignant
+
+---
+name: Drawings?!
+
+.medium[![](img/index_vs_linear-table.jpg)]
+
+
+???
+* others perfectly describe the concept
+
+
+
+---
+name: Contribution
+
+.small[![](img/drawing.gif)]
+
+
+* illustrations, doodles, etc
+* pull requests, github issues on site
+
+
+???
+* others perfectly describe the concept
+
 
 
 
@@ -313,6 +389,20 @@ name: Code
   * provide lots of help
   * I offer lots of outs - worst case you panic, can't figure it out and you end up cheating - just cite it. you might get a 0 but you won't get a 2 term vacation.
 * remember, I am hyper available, just talk to me
+
+---
+name: Survey Results
+
+.fancy.medium[![](img/easy-peasy.jpg)]
+.fancy.medium[![](img/easypeasy.png)]
+
+
+.fancy.small[![](img/awesomestuff.jpg)]
+
+???
+* good mix of backgrounds and desires
+* we'll have fun and learn to build cool stuff
+* by end of class you will!
 
 
 

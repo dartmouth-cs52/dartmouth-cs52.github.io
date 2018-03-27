@@ -34,7 +34,7 @@ name: Today
 name: CS52 Art
 
 
-![](img/finishedthelab.jpg)
+![](img/finishedthelab-table.jpg)
 
 
 
@@ -45,7 +45,7 @@ name: CS52 Art
 
 
 
-![](img/functions.jpg)
+![](img/functions-table.jpg)
 
 
 ???
@@ -57,7 +57,7 @@ name: CS52 Art
 
 
 
-.medium_small[![](img/whyquiz.jpg)]
+.medium_small[![](img/whyquiz-table.jpg)]
 
 
 ???
@@ -70,7 +70,7 @@ name: CS52 Art
 
 
 
-.medium[![](img/store.jpg)]
+.medium[![](img/store-table.jpg)]
 
 
 ???

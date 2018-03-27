@@ -23,7 +23,7 @@ name: base
 ---
 name: Final Projects!
 
-.medium_small[![](img/finalproject.jpg)]
+.medium_small[![](img/finalproject-table.jpg)]
 
 * last 3 weeks of class
 * projects from scratch

@@ -45,7 +45,7 @@ name: Lab4 Selections
 name: CS52 Art
 
 
-![](img/npm.jpg)
+![](img/npm-table.jpg)
 
 ???
 * but all the packages
@@ -56,7 +56,7 @@ name: CS52 Art
 name: CS52 Art
 
 
-.medium_small[![](img/fatarrows.jpg)]
+.medium_small[![](img/fatarrows-table.jpg)]
 
 ???
 * but they are so pretty!
@@ -66,14 +66,14 @@ name: CS52 Art
 name: CS52 Art
 
 .left[
-.tiny[![](img/gulp.jpg)]
-.tiny[![](img/toomanylabs.jpg)]
-![](img/state-store-reducer.jpg)
+.tiny[![](img/gulp-table.jpg)]
+.tiny[![](img/toomanylabs-table.jpg)]
+![](img/state-store-reducer-table.jpg)
 ]
 
 .right[
-.medium_small[![](img/primary_foreign_keys.jpg)]
-![](img/index_vs_linear.jpg)
+.medium_small[![](img/primary_foreign_keys-table.jpg)]
+![](img/index_vs_linear-table.jpg)
 ]
 
 
