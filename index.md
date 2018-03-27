@@ -1,4 +1,4 @@
----
+``` ---
 layout: default
 title: Dartmouth CS52
 ---
@@ -9,13 +9,14 @@ The Web is a powerful delivery tool for complex real-time applications. This is 
 
 By the end of term, you will:
 
-* use your knowledge of the fundamental concepts and best practices of web application development to design web systems from the ground up
-* utilize state of the art tools and frameworks used to build web technologies
-* build your own web applications with front-end UIs and server-side APIs
+  - use your knowledge of the fundamental concepts and best practices of web application development to design web systems from the ground up
+  - utilize state of the art tools and frameworks used to build web technologies
+  - build your own web applications with front-end UIs and server-side APIs
 
 Topics include: static pages, Internet protocols, layout, markup, event-driven asynchronous programming, deployment, security, scalability, and user experience.
 
 Prerequisites: CS10 or permission of [instructor](mailto:tim@cs.dartmouth.edu)
+
 
 ## Coursework:
 
@@ -27,21 +28,21 @@ See [assignments](/assignments).
 
 ### Class:
 
-* 2A Classes will meet Tuesday and Thursday (2:25-4:15pm).<br>
-* X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and some Workshops.<br>
-* Location: LSC 200
+  - 2A Classes will meet Tuesday and Thursday (2:25-4:15pm).<br>
+  - X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and Workshops.<br>
+  - Location: LSC 200
 
 ![](assets/imgs/lsc200.jpg){: .fancy }
 
 ### Office Hours and Contact:
 
-* We'll be using [Slack](https://cs52-dartmouth.slack.com) for most communication. Find us there!
+  - We'll be using [Slack](https://cs52-dartmouth.slack.com) for most communication. Find us there!
 
-* Open Help Hours in Sudikoff 003: <br>
-  TBD<!-- Sunday 6-9pm; Mon 8-11pm; Wed 4:35-5:25pm during X-hour, 9-11am, 8-10pm -->
+  - Open Help Hours in Sudikoff 003: <br>
+    TBD<!-- Sunday 6-9pm; Mon 8-11pm; Wed 4:35-5:25pm during X-hour, 9-11am, 8-10pm -->
 
-* Instructor:<br>
-  Fri 11-1pm; or by appointment in Sudikoff 219/007
+  - Instructor:<br>
+    Fri 11-1pm; or by appointment in Sudikoff 219/007
 
 <table>
   <tr>
@@ -57,25 +58,29 @@ See [assignments](/assignments).
   </tr>
 </table>
 
-* TAs, Graders, Webdev experts:<br>
+
+  - TAs, Graders, Webdev experts:<br>
 
 <!-- <div class="rtable rtable--5cols" style="display:none;"> -->
-
 <div class="rtable rtable--5cols">
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jiachen.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:jiachen.jiang.20@dartmouth.edu">Jiachen Jiang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jcjiang/">@jcjiang</a></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:TBD">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:TBA">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy"
+  src="assets/imgs/justing.png"/></div>
+  <div style="order:5;" class="rtable-cell"><a
+  href="mailto:Justin.D.Gualtieri.18@dartmouth.edu">Justin Gualtieri</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jgualtieri/">@jgualtieri</a></div>
   <div style="order:6;" class="rtable-cell"><br></div>
 
-  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/annie.jpg"/></div>
-  <div style="order:8;" class="rtable-cell"><a href="mailto:yichen.ke.19@dartmouth.edu">Annie Ke</a><br><a href="https://cs52-dartmouth.slack.com/messages/@annieke/">@annieke</a></div>
+  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
+  <div style="order:8;" class="rtable-cell"><a href="mailto:TBA">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/yeonjae.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:yeonjae.park.19@dartmouth.edu">Yeonjae Park</a><br><a href="https://cs52-dartmouth.slack.com/messages/@yeonjae/">@yeonjae</a></div>
+
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/mahnoor.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a
+  href="mailto:mahnoor.maqsood.18@dartmouth.edu">Mahnoor Maqsood</a><br><a href="https://cs52-dartmouth.slack.com/messages/@mahnoormaqsood/">@TBA</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kfarmer.jpg"/></div>
@@ -84,6 +89,8 @@ See [assignments](/assignments).
 
   <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/barry.jpg"/></div>
   <div style="order:8;" class="rtable-cell"><a href="mailto:barry.a.yang.18@dartmouth.edu">Barry Yang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@barryyang/">@barryyang</a></div>
+
+
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/sia.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:shiyao.peng.20@dartmouth.edu">Sia Peng</a><br><a href="https://cs52-dartmouth.slack.com/messages/@siapeng/">@siapeng</a></div>
@@ -107,6 +114,7 @@ See [assignments](/assignments).
   <div style="order:7;" class="rtable-cell"></div>
   <div style="order:8;" class="rtable-cell"></div>
 
+
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jon.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jon Gonzalez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jongonzalez/">@jongonzalez</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
@@ -118,13 +126,16 @@ See [assignments](/assignments).
   <div style="order:7;" class="rtable-cell"></div>
   <div style="order:8;" class="rtable-cell"></div>
 
+
 </div>
 
-Half of each class will be hands-on demonstrations, code and project discussions, and exercises. See [schedule](/schedule).
+
+
+Half of each class will be hands-on demonstrations, code and project discussions, and exercises.  See [schedule](/schedule).
 
 ## Lectures:
 
-Will be hands-on and interactive. See [lectures](/lectures).
+Will be hands-on and interactive.  See [lectures](/lectures).
 
 Unfortunately due to the nature of the class and our classroom size, auditing the class will not be permitted. All class material will be posted here online though!
 
@@ -134,4 +145,6 @@ Unfortunately due to the nature of the class and our classroom size, auditing th
 
 See [logistics](/logistics)
 
+
 prior versions of this class: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/)
+```
