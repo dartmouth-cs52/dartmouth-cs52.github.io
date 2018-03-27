@@ -77,8 +77,8 @@ See [assignments](/assignments).
 
 
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:TBA">TBA</a><br><a href="https://cs52-dartmouth.slack.com/messages/@TBA/">@TBA</a></div>
+  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/yeonjae.jpg"/></div>
+  <div style="order:2;" class="rtable-cell"><a href="mailto:yeonjae.park.19@dartmouth.edu">Yeonjae Park</a><br><a href="https://cs52-dartmouth.slack.com/messages/@yeonjae/">@yeonjae</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
   <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kfarmer.jpg"/></div>
