@@ -35,7 +35,7 @@ name: table questions
 
 * how is processing var / function declarations done / how is efficient?
 
-.medium[![](img/table1.jpeg)]
+.medium[![](img/table1-pizza-hut.jpeg)]
 
 
 ???
@@ -46,7 +46,7 @@ name: table questions
 
 * was js developed specifically for web browsers
 
-.medium[![](img/table2.jpeg)]
+.medium[![](img/table2-flex-container.jpeg)]
 
 
 ???
@@ -58,7 +58,7 @@ name: table questions
 
 * when you use chrome inspector to change styles does it make a whole new render tree
 
-.medium[![](img/table3.jpeg)]
+.medium[![](img/table3-doodle-vs-question.jpeg)]
 
 ???
 * yes, although it can be smart about it knowing that you can only down the tree so only that subtree needs to change
@@ -81,7 +81,7 @@ name: table questions
 
 * can a buzzfeed quiz be made only in html/css
 
-.medium[![](img/table5.jpeg)]
+.medium[![](img/table5-doodles.jpeg)]
 
 
 ???
@@ -92,7 +92,7 @@ name: table questions
 name: table questions
 
 * can we use both js and jquery for the assignment?
-.tiny[![](img/table6.jpeg)]
+.tiny[![](img/table6-sergey-brin.jpeg)]
 
 ```js
 function html(value) {
@@ -123,7 +123,7 @@ name: various administrative
 * short assignment 4 out Thursday! due Tuesday
 ]
 
-.right.small[![](img/table4.jpeg)]
+.right.small[![](img/table4-balloon.jpeg)]
 
 
 ???
@@ -137,7 +137,7 @@ name: various administrative
 name: but also good news
 
 
-.left.small[![](img/table4.jpeg)]
+.left.small[![](img/table4-balloon.jpeg)]
 
 .right[* extension on lab2 till Sunday 6pm!]
 

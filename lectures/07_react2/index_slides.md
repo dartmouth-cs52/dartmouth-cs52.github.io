@@ -26,7 +26,7 @@ name: CS52 Today's Menu
 * All the Quizzes
 * Projects
 
-.medium[![](img/extensions.png)]
+.medium[![](img/extensions-table.png)]
 
 ???
 * heading into week 4! so intense
@@ -61,7 +61,7 @@ React.createElement("div", { className: "red" },
 );
 ```
 
-.tiny[![](img/react.png)]
+.tiny[![](img/react-table.png)]
 
 
 ???

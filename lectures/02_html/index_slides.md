@@ -32,28 +32,8 @@ name: TA Hours
 
 in 003 Sudikoff
 
----
-name:  Discovery Stats
-
-.fancy.medium[![](img/easypeasy.png)]
-
-.fancy.medium[![](img/awesomestuff.png)]
-
-???
-
-* by end of class you will!
-* 61% used PRs - the rest we'll learn!
-* some requests for learning included:
-  * more frontend
-  * what is the DOM
-  * how to make pretty things on the web
-  * a few mentions of design (should we have a design workshop?)
-  * "designing / working with design for the web"
-  * best practices
 
 ---
-
-
 name: HyperText Markup Language
 
 HTML != programming

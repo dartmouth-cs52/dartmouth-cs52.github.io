@@ -7,10 +7,10 @@ permalink: /lectures/
 
 <span style="color: #F27D00">*posted prior to class*</span>
 
-* 3/28 Welcome
-<!-- * [3/28 Welcome](00_welcome/) -->
-* 3/28 Structure of the Internet
-<!-- * [3/28 Structure of the Internet](01_interwebs/) -->
+<!-- * 3/27 Welcome -->
+* [3/27 Welcome](00_welcome/)
+<!-- * 3/27 Structure of the Internet -->
+* [3/27 Structure of the Internet](01_interwebs/)
 * 3/30 HTML
 <!-- * [3/30 HTML](02_html/) -->
 * 3/30 Git

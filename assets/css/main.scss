@@ -15,6 +15,13 @@ $spacing-unit:     30px;
         "syntax-highlighting"
 ;
 
+.orange {
+  color: #FF9C33;
+}
+
+.blue {
+  color: #58AADA;
+}
 
 .page-header {
   padding-top: 2rem;
@@ -73,6 +80,8 @@ $spacing-unit:     30px;
 .rtable--4cols > .rtable-cell  { width: 25%; }
 .rtable--5cols > .rtable-cell  { width: 20%; }
 .rtable--6cols > .rtable-cell  { width: 16.6%; }
+.rtable--7cols > .rtable-cell  { width: 14%; }
+
 
 
 img.profile {
@@ -80,6 +89,13 @@ img.profile {
   border-radius:50%;
   min-width:100px;
 }
+
+img.profile-small {
+  width:50px;
+  border-radius:50%;
+  min-width:50px;
+}
+
 
 img.large, .large img {
   width: 90% !important;
@@ -128,7 +144,7 @@ img.tiny, .tiny img {
 .main-content .example.highlighter-rouge pre.highlight, .remark-code, .remark-inline-code {
   background: rgba(165, 165, 165, 0.33) !important;
   -webkit-touch-callout: none;
-  -webkit-user-select: none; 
+  -webkit-user-select: none;
    -khtml-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

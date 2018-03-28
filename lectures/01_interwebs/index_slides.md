@@ -42,6 +42,9 @@ Your browser does not support the audio element.
 
 ???
 * CS60
+* an internets was sent by my staff!
+* we'll be sending each other lots of internets this term
+* not wrong though
 
 ---
 template: base
@@ -90,9 +93,11 @@ URL=protocol+IP+port<br>
 http://127.0.0.1:8000
 
 ???
+* at its most basic -
 * how to get from one computer - your laptop - to somewhere else
 * or to this magical cloud thing
 * or the pentagon
+* lets start with the URL
 
 ---
 name: Protocols
@@ -101,6 +106,10 @@ class: center, top
 
 What is a protocol?
 
+???
+* Anybody?
+
+
 --
 name: Protocols
 template: fragment
@@ -108,7 +117,6 @@ template: fragment
 
 
 ???
-* Anybody?
 * we have social protocols all time
 * secret handshakes!
 
@@ -123,11 +131,11 @@ name: Social Protocols
 
 ???
 * Computers talk to each other like humans.  
-* interaction at a cafe with the barista
+* ordering my starbucks iced reserve
 * social protocol.
-* Protocols are simply the order and format of the conversation
+* Protocols are **simply the order and format of the conversation**
 * both computer hardware and software employ protocols to communicate.
-* many protocols from how to transmit email to how your wifi sends radio signals.
+* many protocols from how to **transmit email** to how your **wifi sends radio signals**.
 
 
 ---
@@ -138,7 +146,7 @@ name: Layers
 
 
 ???
-* not just tubes, also layers
+* turns out, not just tubes, also layers
 
 --
 template: fragment
@@ -148,7 +156,7 @@ of protocols
 
 
 ???
-* internet currently operates using a system of layered protocols.
+* internet currently operates using a **system of layered protocols**.
 * Your mail program does not need to know about how data gets transmitted between your computer and your wifi router
 * but both of these things have to work to get the data to your destination.
 * So the internet is made of layers. Like parfait.
@@ -180,21 +188,23 @@ name: Airline Routing
 * you are carrying some important data
 * want to get from Boston to SF
 * want to fly.
-* layered systems involved
+* lots of layered systems involved
+* what are some of the things required to fly?
+* write down?
 
 ---
 name: Airline Routing
 
 
-.fancy.medium[![](img/airline_packets.png)]
+.fancy.large[![](img/airline_packets.png)]
 
 *(image from [Computer Networking: A Top Down Approach](https://wps.pearsoned.com/ecs_kurose_compnetw_6/) p. 48)*
 
 ???
 * Note how these are layered
-* Any given system adds information and provides a service.
+* Any given system **adds information and provides a service**.
 * baggage layer provides the service of transferring baggage
-* gives you a baggage tracking code that you carry with you.
+* gives you a **baggage tracking code** that you carry with you.
 
 
 
@@ -253,6 +263,7 @@ name: Transport Layer
   * doesn't actually know how to get places
   * network layer does the routing
   * makes sure all application data gets to the right application
+  * breaks application data into packets - makes sure they all arrive / get resent if necessary
 
 ---
 name: Network Layer
@@ -260,7 +271,7 @@ name: Network Layer
 <iframe src="//giphy.com/embed/WWfOzRDQS20ZG" width="480" height="270" frameBorder="0" class="giphy-embed"></iframe>
 
 * machine to machine addressing
-* contains the IP protocol
+* usually IP protocol
 * IP sends and routes packets between hosts
 * IP protocol required for any network connected device
 * TCP passes the target destination in the form of the IP address
@@ -268,6 +279,7 @@ name: Network Layer
 ???
 * network layer doesn't know low level hardware details
 * but it knows addresses - like street addresses
+* IP is the mailperson / postoffice
 
 ---
 name: Link Layer
@@ -286,7 +298,7 @@ name: Physical Layer
 
 <iframe src="//giphy.com/embed/l41YvpiA9uMWw5AMU" width="480" height="270" frameBorder="0" class="giphy-embed" ></iframe>
 
-* transferring bits along a wire or fiber optic cable
+* transferring bits along a wire, fiber optic cable, or waves, or pigeons
 
 ???
 * how the electrical signals are manipulated to transfer bits
@@ -390,9 +402,10 @@ background-image: url(img/3327.jpg)
 
 
 ???
-* its filling up
+* its filling up - image from xkcd
 * Publicly routable: IPs that you can get to from anywhere.
 * various registrars and countries are responsible for different blocks
+* dartmouth owns 129.170.\*.\*
 
 
 ---
@@ -409,6 +422,7 @@ http://127.0.0.1:8000
 * each computer has 2^16-1  65535
 * identifies know apps as ports
 * specific services can run on ports
+* btw don't worry about memorizing any of the little details
 
 
 ---
@@ -458,9 +472,10 @@ All I want is myname.com!
 
 
 ???
-* Ok, but question. I'm seeing all these numbers, but what about domain names? All I want is myname.com!
+* what about domain names? All I want is myname.com.co.uk.bbc.radiolab.website.ly?!
 
-* That is where DNS (Domain Name Service) comes in.  DNS is a protocol for mapping names to IP numbers -- sort of like the yellow pages (😮does anybody even know what that is anymore?) for the internet
+* DNS is a protocol for mapping names to IP numbers
+* sort of like the yellow pages (😮does anybody even know what that is anymore?) for the internet
 * IP doesn't understand names another layer comes in to help with this.
 
 * What layer in the stack do you think DNS fits into?  Application layer actually
@@ -484,6 +499,7 @@ host dartmouth.edu
 
 
 ???
+* but internet is distributed system  - where does this lookup live?
 * DHCP == Dynamic Host Configuration Protocol
 * every time your computer needs to lookup a name to tell IP where to go it asks a number of servers
 
@@ -497,7 +513,7 @@ name: Lookup
 ???
 * bottom lines with server tell you which local server was used
 * not necessarily the authoritative ones
-* in this example happens to be a 10 year old PC running DNS in the basement of sudi
+* if we were in sudi it would be a 10 year old PC running DNS in the basement machine room
 
 
 
@@ -535,6 +551,7 @@ How does a packet find its way around all those tubes!?
 ???
 * wait packet?
 * packet travels from one host to another it crosses through a series routers.
+* your computer, dartmouth, some machine in boston, etc
 * forwards the packet on based on a set of rules
 * routing tables that tell it where to send packets.
 * bit similar to DNS
@@ -740,6 +757,7 @@ GET /~testuser/ HTML/1.1
 ```
 ???
 * hit enter twice
+* telnet may not exist on your machine... so we'll go on
 
 ---
 name:
@@ -866,7 +884,7 @@ background-image: url(http://i.giphy.com/k8kG3Plo87Aqs.gif)
 background-position: center
 background-repeat: no-repeat
 background-size: cover
-name: 16X Let's go!
+name: 18S Let's go!
 
 
-.white-foreground[short assignment 1 out: due Thursday 30th 🕛]
+.white-foreground[short assignment 1 out: due Thursday 29th 🕛]

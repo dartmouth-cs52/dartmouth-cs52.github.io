@@ -110,7 +110,7 @@ Then follow further [installation instructions here](https://docs.mongodb.com/ma
 
 You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process.
 
-There is a commmandline client you can use to connect to the database: `mongo`. You can also play around with a more graphical client [robomongo](https://robomongo.org/).
+There is a commmandline client you can use to connect to the database: `mongo`. You can also play around with a more graphical client [mongodb compass community](https://www.mongodb.com/download-center?jmp=nav#compass) (just make sure to download the *community* version).
 
 ```javascript
 // mongoshell is a commandline interface to your local mongo db
