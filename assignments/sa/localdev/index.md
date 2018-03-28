@@ -243,11 +243,11 @@ You didn't actually have to do any DNS setup,  what happened?
 
 NameCheap set up all the right Domain Name Service Records automatically for you. In NameCheap you can inspect what it did:
 
-![](img//github_dns_already_setup.png){: .fancy .small }
+![](img//github_dns_already_setup.png){: .fancy .large }
 
 Take a look at your settings in your Namecheap Dashboard.
 
-Note the 2 IP addresses in the `A Record` fields,  those are github servers.
+Note the 2 IP addresses in the `A Record` fields,  those are github servers ([apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider))
 
 🚀 Try doing a reverse DNS lookup (IP address to name):
 
