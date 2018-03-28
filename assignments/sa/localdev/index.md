@@ -243,7 +243,7 @@ You didn't actually have to do any DNS setup,  what happened?
 
 NameCheap set up all the right Domain Name Service Records automatically for you. In NameCheap you can inspect what it did:
 
-![](img//github_dns_already_setup.png){: .fancy .small }
+![](img//github_dns_already_setup.png){: .fancy .large }
 
 Take a look at your settings in your Namecheap Dashboard.
 
