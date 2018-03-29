@@ -13,8 +13,8 @@ permalink: /lectures/
 * [3/27 Structure of the Internet](01_interwebs/)
 <!-- * 3/30 HTML -->
 * [3/30 HTML](02_html/)
-* 3/30 Git
-<!-- * [3/30 Git](02_git/) -->
+<!-- * 3/30 Git -->
+* [3/30 Git](02_git/)
 * 4/4 CSS
 <!-- * [4/4 CSS](03_css/) -->
 * 4/5 Some Design Things
