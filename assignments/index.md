@@ -11,8 +11,8 @@ title: Assignments
 
 <!-- * Short Assignment 1: Local Dev Environment + Domain — DUE 3/29 -->
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/29
-* Short Assignment 2: Git Map
-<!-- * [Short Assignment 2: Git Map](sa/git-map) — DUE 4/01 -->
+<!-- * Short Assignment 2: Git Map -->
+* [Short Assignment 2: Git Map](sa/git-map) — DUE 3/30
 * Short Assignment 3: Webpack+Babel+Eslint starterpack
 <!-- * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) — DUE 4/13 -->
 * Short Assignment 4: React Intro

@@ -26,12 +26,13 @@ name:  CS52 HTML
 ---
 name: TA Hours
 
-* Mon 8-11pm
-* Wed 9-11am, Wed 8-11pm
-* Sunday 6-9pm
+* Mon 4-6pm: Sudikoff 148
+* Mon 8-10pm: Sudikoff 114
+* Thurs 6-9 pm: Sudikoff 114
+* Sun 6-9 pm: Sudikoff 114
 
-in 003 Sudikoff
-
+???
+none tonight though
 
 ---
 name: HyperText Markup Language
@@ -46,8 +47,7 @@ HTML != programming
 * just like this cat is not really a panda
 * It is a descriptor language.
   * describes what things are
-  * not how they work or look
-
+  * not how they work or **even how they look**
 
 
 
@@ -72,16 +72,25 @@ vs
 
 ???
 * HTML describes the structure of a document semantically
-* It has no operations or actions, so you can't compute with it, but you can define structure.  
+* no operations or actions
+* can't compute with it
+* but you can define structure.  
 * When someone says they can program in HTML, look at them funny. 😑
 * WORD analogy - in word you typically just say, italize this, change the font here - thats not scalable
 
+---
+name: Skeleton
 
+.fancy.medium_small[![](https://media.giphy.com/media/3oEjI53nBYOOEQgDcY/giphy.gif)]
+
+???
+* another way to think of it as the skeleton upon which to hang pretty wings
+* ok maybe lets not get carried away with analogies
 
 ---
 name: Declarative Vs Imperative
 
-what vs how
+**what** vs **how**
 
 ```html
 <div class="ball"></div>
@@ -98,10 +107,10 @@ draw_circle(135, 110, 20)
 ```
 
 ???
-* HTML layout would be declarative.
-* sequence of drawing instructions would be imperative.
-* granted some style somewhere would have to describe the display properties of the ball
-* thats for next week - but with css its still descriptive
+* HTML => declarative.
+* sequence of drawing instructions => imperative.
+* soome style somewhere would have to describe the display properties of the ball
+* thats for next week - css is also descriptive
 
 
 ---
@@ -112,11 +121,14 @@ name: Markup Not Dressup
 
 * built-in browser styles exist
 * but html != styles
+* dressup is css
 
 
 ???
+* html is a type of markup
+* adding marks to something to indicate some structure
 * markdown, LaTex
-* in the assignment going out today you'll see how we focus on structure
+* in the first lab - you'll see how we focus on structure first
 * example: underlining and color of links
 * we'll often have to undo these bad design decisions
 
@@ -131,17 +143,19 @@ name: semantic structure
 * describe the content
 
 ???
-* what you want to do is annotate your content
-* with syntactically identifiable notation/descriptions in your document that can dictate presentation or describe what it is.
+* what you want to do is **annotate your content**
+* with **syntactically identifiable notation/descriptions** in your document that can dictate presentation or describe what it is.
 
 
 ---
 name: these slides
 
+.fancy.medium_small[![](img/fancy.gif)]
+
 * started out as [markdown](https://en.wikipedia.org/wiki/Markdown)
 * simple structure annotation language
-* For instance **this** is bold because I wrote `**this**`.
-* and this is a list because I wrote ` * and this is a list because I wrote ...`
+* For instance **this** is important because I wrote `**this**`.
+* and this is a list because I wrote ` * and this is a list because...`
 
 ???
 * you'll be using some markdown this term for your README files!
@@ -152,17 +166,19 @@ name: these slides
 ---
 name: Brief History
 
-1990
+## 1990
 
-> "I just had to take the hypertext idea and connect it to the Transmission Control Protocol and domain name system ideas and—ta-da!—the World Wide Web" —Sir Tim Berners-Lee
+.fancy.small[![](img/90s.gif)]
 
+> "I just had to take the **hypertext** idea and connect it to the Transmission Control Protocol and domain name system ideas and—ta-da!—the World Wide Web" —Sir Tim Berners-Lee
 
 
 
 ???
-* so checkit, we know TCP and DNS. dudes lets connect em
-* hypertext was a concept of linking text documents together with hyperlinks (on disk).
-* built html and http and first web browser
+* just tim back then
+* so checkit, we know TCP and DNS. dudes lets connect em to document
+* **hypertext** was a concept of linking text documents together with hyperlinks (on disk).
+* built **html** and **http** and **first web browser**
 
 
 ---
@@ -173,7 +189,7 @@ name: Brief History
 ???
 * he was later surprised in a reddit ama that kittens took over the internet
 * silly human
-
+* btw, i photoshopped that kitten
 
 
 ---
@@ -183,8 +199,8 @@ name: First Browser
 
 
 ???
-* was called WorldWideWeb 1990ish
-* marc andreesens mosaic and then netscape
+* was called **WorldWideWeb 1990ish**
+* **marc andreesens mosaic** and then netscape
 
 
 ---
@@ -195,10 +211,18 @@ name: HyperText
 .fancy.medium_small[![](https://upload.wikimedia.org/wikipedia/commons/c/cc/SRI_Computer_Mouse.jpg)]
 
 ???
-* hypertext was around in works of fiction as early as the 40s (theoretically linked microfilms and such)
+* hypertext was around in works of fiction as early as the 40s (theoretically **linked microfilms** and such)
 * 1968 Douglas Engelbart - Mother of all Demos (mouse / video conferencing / and hypertext)
 
 
+---
+name: HyperText
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yJDv-zdhzMY?start=238" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+???
+* theoretical demo mouse and videoconfercing and hypertext idea
+* but wasn't implementable
 
 ---
 name: Structural tags and links!
@@ -206,7 +230,7 @@ name: Structural tags and links!
 Unchanged basic premise of **document**
 
 ???
-* The basic idea of structural tags with links between documents has remained the same since then.
+* The basic idea of **structural tags** with **links between documents** has remained the same since then.
 
 
 
@@ -222,7 +246,8 @@ varying compatibilities
 * now we have lots of browsers
 * Due to some original problems with various implementations of the HTML standard in browsers
 * allowing missing closing tags
-* XHTML standard developed (2000) to enforce stricter adherence to proper syntax.
+* XHTML standard developed (2000) mucho stricter and yay
+* back then everybody coded html manually - now we have better tools
 
 
 
@@ -232,8 +257,11 @@ name: Browser Wars
 
 .medium_small[![](img/bw.jpg)]
 
+* for our purposes, ONLY CHROME FOREVER
+
 ???
 * safari is clearly just out the jungle somewhere taking pretty pictures of animals instead
+* for this class... ONLY CHROME WILL DO
 
 
 ---
@@ -247,12 +275,15 @@ name: HTML5 2014
 ???
 * HTML5 (2014) is the latest version (also has an XML version enforcing strictness).
 * new apis: editable content, drag-and-drop, canvas
-* navs and footers are here to stay
-
-
+* `nav` and `footers` are here to stay
+* things like `<b>` for bold are frowned on - `<em>` for emphasis
+* all promoting the structural definition way of thinking
+* crazy how it wasn't that long ago that this stuff became normal
 
 ---
 name:
+
+.medium[![](img/blinky.gif)]
 
 ```html
 
@@ -275,9 +306,10 @@ name: Note About Syntax, Tabs, Spaces, Legibility, Structure, Comments
 ???
 * there's an art and a craft to coding
 * will rant frequently
-* Later on you'll learn about [linting](http://stackoverflow.com/questions/8503559/what-is-linting), but for now this is the first of many rants about best practices
+* Later, learn [linting](http://stackoverflow.com/questions/8503559/what-is-linting)
+* first of many rants about best practices
 * clean correct syntax and code abstraction
-* case statements instead of giant elseifs
+* case statements instead of giant elseifs for instance
 * consistent indentation
 
 
@@ -339,14 +371,17 @@ name: Comment and Cite
 * comment when:
   * "borrowing code", code needs clarification, caveats, or todos
   * basically when the code has poor legibility
-* no comment when: paraphrasing what your code does
+* no comment when: code is self-explanatory, things are named well
 
 .medium[![](img/fb_comments.png)]
 
 
 ???
 
-* method header should make sense in its naming - you don't need to say readFromDisk // reads from disk
+* method header should make sense in its naming
+* you don't need to say readFromDisk // reads from disk
+* please name variables and functions well - if you end up changing what a variable is - rename it!
+* i've seen code like `string kittenname; //actually string id of user object`
 
 
 
@@ -359,9 +394,8 @@ name: HTML Elements and Tags
 
 
 ???
-* everything in between a pair of start and end tags can be thought of as the child/children of that tag.
-* underneath it all, your HTML is parsed into a particular datastructure - any gueses?
-
+* everything in between a pair of **start** and **end** tags can be thought of as the **child/children** of that tag.
+* underneath it all, your HTML is parsed into a particular **datastructure** - any gueses?
 
 
 
@@ -373,7 +407,7 @@ name: HTML Underneath it all
 
 ???
 * browser parses it into a tree.
-* pretty much everything in this course is going to be a tree! :deciduous_tree:
+* pretty much everything in this course is going to be a tree! 🌳
 * basically everything in world is a graph - if you've taken algos, you can be happy now
 * more next week
 
@@ -440,14 +474,15 @@ name: headings
 ---
 name: paragraph
 
+* html is white space collapsing
 * [`<p></p>`](http://www.w3schools.com/tags/tag_p.asp)
   * defines a paragraph
   * annoying but define structure
 
 ???
+* what is white space?  spaces/newlines/tabs/etc multiple spaces become 1 space
 * html is generally white-space collapsing (multiple spaces and new lines are ignored)
 * parser needs to know what is paragraphs
-
 
 
 
@@ -470,7 +505,7 @@ name: lists
 ---
 name: images
 
-* [`<img />`](http://www.w3schools.com/tags/tag_img.asp)
+* [`<img src="https://gph.to/2GhMDt2"/>`](http://www.w3schools.com/tags/tag_img.asp)
   * defines an image to include
   * is a *self-closing* tag:  ` />`
   * contains an **attribute** `src` with URL to image file
@@ -508,6 +543,7 @@ name: iframes
 ???
 * can be tricky to size automatically
 * code running inside iframe can't affect parent
+* can be prohibited by origin
 
 
 
@@ -524,6 +560,7 @@ Hypertext REFerence
 ???
 * HyperLinks are what hypertext is all about
 * Anchor tags need to have an `href` attribute which is a string URL to the target.
+* ie hypertext reference
 * usually urls, but can also be javascript
 
 
@@ -548,13 +585,13 @@ name: URLs
 
 [Uniform Resource Locators](https://en.wikipedia.org/wiki/Uniform_Resource_Locator)
 
-`protocol:[//host[:port]][/]path[?query][#fragment]`
+.orange[protocol]://.blue[host][:port]/.green[path][?query][#fragment]
 
 Absolute URLs consist of at least three parts:
 
-* the protocol (`http://`, `https://`, `etc`)
-* the name of the host (`www.domainname.com`)
-* the path to the given resource (`/assets/image.jpg`)
+* the .orange[protocol] (`http://`, `https://`, `etc`)
+* the name of the .blue[host] (`www.domainname.com`)
+* the .green[path] to the given resource (`/assets/image.jpg`)
 
 ???
 
@@ -564,7 +601,7 @@ Absolute URLs consist of at least three parts:
 ---
 name: Relative Paths
 
-`protocol:[//host[:port]][/]path[?query][#fragment]`
+.orange[protocol:[//host][:port]][/]path[?query][#fragment]
 
 * if same protocol and host:
   * path can be relative to current page location
@@ -584,7 +621,7 @@ name: Relative Paths
 ---
 name: query
 
-`protocol:[//host[:port]][/]path[?query][#fragment]`
+`protocol://host[:port]/path[`.orange[`?query`]`][#fragment]`
 
 * `?query`
   * is an optional set of arguments
@@ -600,12 +637,12 @@ name: query
 ---
 name: fragment
 
-`protocol:[//host[:port]][/]path[?query][#fragment]`
+`protocol:[//host[:port]][/]path[?query][` .orange[`#fragment`] `]`
 
 * `#fragment`
   * an optional fragment identifier
-  * often refers to an id of an element
-  * browsers will usually scroll to fragment id
+  * usually refers to an `id` of an element
+  * browsers will scroll to fragment if it is an element id!
 
 ???
 * some frontend frameworks use # identifiers for routing
@@ -679,8 +716,8 @@ name: class
 
 
 ???
-* By adding a `class` to an element you are saying it belongs to set of elements that mean a certain thing and should be styled a particular way
-* Where styled really means selected.
+* By adding a `class` to an element you are saying it belongs to **set of elements** that mean a certain thing and should be styled a particular way
+* Where styled really means **selected** or **grouped**.
 * The `class` property is assigned a space separated quoted string with potentially multiple classes. `class="aclass"` but also `class="aclass anotherclass"` this is convenient as you can have one element belong to multiple style classes, inheriting styles from each!  
 
 
@@ -712,6 +749,8 @@ name: IDs
 ---
 name: Inline Elements
 
+.fancy.small[![](img/inline.gif)]
+
 * does not start on a new line
 * only takes up as much width as necessary
 
@@ -725,6 +764,7 @@ name: Inline Elements
 
 ???
 * certain elements are by default displayed a certain way
+* important to remember this so you arent' overriding these
 
 
 
@@ -733,9 +773,11 @@ name: Inline Elements
 ---
 name: Block Element
 
+.fancy.small[![](img/block.gif)]
+
 * starts on a new line
 * takes up the full width available
-  * stretches out to the left and right as far as it can
+  * stretches out to the left and right as far as it can (width of parent)
 
 ```html
 <h1><h2><h3>
@@ -811,7 +853,7 @@ So far we've only talked about **STRUCTURE** but it all looks so boring.
 
 How do I make it pretty with colors?!
 
-<iframe src="//giphy.com/embed/TjoOq3WY5vBiU?hideSocial=true" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.fancy.medium[![](img/shiny.gif)]
 
 
 ???
@@ -910,10 +952,10 @@ name: twitter 2006
 
 
 ---
-name:
+name: evolution
 
-<iframe src="http://fabianburghardt.de/webolution/" width="100%" height="500px" style="background:white;"></iframe>
 
+[http://fabianburghardt.de/webolution/](http://fabianburghardt.de/webolution/)
 
 ???
 
@@ -1005,14 +1047,6 @@ name: tools
   * Hubspot's [Website Grader](https://website.grader.com/)
 
 ???
-
-
----
-name:
-
-<iframe width="650" height="480" src="https://www.youtube.com/embed/RLgqJdkT5z4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-
-I just like bollywood, ok.
 
 
 ---

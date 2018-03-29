@@ -187,9 +187,7 @@ facebook 2004
 ![](img/original-twitter.png){: .fancy }<br>
 twitter!
 
-Here's a review through time!
-<iframe src="http://fabianburghardt.de/webolution/" width="100%" height="650px"></iframe>
-
+[Here's a review](http://fabianburghardt.de/webolution/) through time!
 
 ### Classes and IDs
 
