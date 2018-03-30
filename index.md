@@ -44,7 +44,7 @@ See [assignments](/assignments).
   Sun 6-9 pm: Sudikoff 114
 
 * Instructor:<br>
-  Fri 11-1pm; or by appointment in Sudikoff 219/007
+  Fri 9-10am, 11am-12pm; or by appointment in Sudikoff 219/007
 
 <table>
   <tr>
