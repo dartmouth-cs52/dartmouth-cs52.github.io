@@ -71,7 +71,8 @@ Links to nowhere.
 **Note:** You can and should use the [Chrome DevTools Inspector](https://developers.google.com/web/tools/chrome-devtools/) 🔍 to examine the structure of the original page.  However, you'll find it is really messy and complicated!  Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) it won't really help you much to try to copy more.  If your code blatantly includes un-cited code copied from slack.com, that will be considered an honor code violation :warning:.  Ask me if you have questions about this.
 
 
-## Dive Right In!
+## PART 1: HTML
+### Dive Right In!
 
 🚀Start in your git repo for the project -- Please use the github classroom link provided in the Canvas assignment to create the repo automatically.
 
@@ -80,7 +81,7 @@ Links to nowhere.
 🚀Link your `style.css` file into the head of your html file.
 
 
-## Outline
+### Outline
 
 In HTML only,  outline the main elements you envision for the page.  Here's some hints:
 
@@ -99,7 +100,9 @@ It should look approximately like this.
 
 🚀Take a screen cap at this point!
 
-## Adding in Fonts
+## PART 2: Styling!
+
+### Adding in Fonts
 
 Right, in the above you may have noticed that yours was Times New Roman...
 
@@ -109,7 +112,7 @@ Right, in the above you may have noticed that yours was Times New Roman...
 
 ![with icons](img/icons.png){: .fancy .tiny}
 
-## Background
+### Background
 
 🚀Go ahead and add a background in!
 
@@ -134,7 +137,7 @@ and then creating a top level div with a background that is set to size `cover`:
 
 *Note: the above are just tips - you may need to expand / do something a little different in your particular case.*
 
-## Flex Boxes
+### Flex Boxes
 
 🚀Pretty much all the layout you can do with flex boxes.  In fact you should absolutely do as much of the layout of this page using flexbox layout.
 
@@ -151,7 +154,7 @@ Now things should look like they are coming together.
 Still things are not lining up and much of styling is missing but most things are in their proper places. Using only flexboxes and some very basic positioning.  No bootstrap here!
 
 
-## Styling
+### Styling
 
 Now get it looking good!
 
@@ -165,7 +168,7 @@ It should start looking something like this at this point.
 
 ![](img/full_width.jpg){: .fancy .small}
 
-## Media query
+### Media query
 
 Now for the tricky part!  Shrink the width of your browser window all the way down!  GASP! 💩
 
@@ -202,7 +205,7 @@ You should end up with something akin to:
 **Note:** I did not bother with making the bottom Link Heading sections expand. Extra credit if you do.
 
 
-## Speaking of CSS responding to clicks...
+### Speaking of CSS responding to clicks...
 
 Notice on the slack page when you're in the narrow responsive site if you click on the Menu button an overlay menu comes up.   This is done with javascript the world over. BUT it is possible to trick CSS into responding to clicks!
 
