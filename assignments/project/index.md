@@ -2,6 +2,7 @@
 layout: page
 title: Final Project
 published: true
+comment_term: projects
 ---
 
 

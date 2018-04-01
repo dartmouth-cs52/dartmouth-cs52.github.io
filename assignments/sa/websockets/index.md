@@ -2,6 +2,7 @@
 layout: page
 title: SA8 - Websockets
 published: true
+comment_term: sa-websockets
 ---
 
 ![](img/socket-io.png){: .small }

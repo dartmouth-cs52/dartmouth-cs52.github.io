@@ -2,6 +2,7 @@
 layout: page
 title: Dev Site and Wiring
 published: true
+comment_term: project-dev-site
 ---
 
 

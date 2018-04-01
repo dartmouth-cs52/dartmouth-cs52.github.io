@@ -2,6 +2,7 @@
 layout: page
 title: Project Teams
 published: true
+comment_term: project-teams
 ---
 
 

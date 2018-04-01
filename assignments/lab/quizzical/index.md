@@ -2,6 +2,7 @@
 layout: page
 title: Lab 2
 published: true
+comment_term: lab-quizzical
 ---
 
 # Build a Buzzfeed® Quiz Site! :squirrel:

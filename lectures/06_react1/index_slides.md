@@ -497,7 +497,7 @@ name: 1st gen web frameworks
   * sessions
   * database interfaces
 
-```php
+```
 <?php echo '<h1>Hello World</h1>'; ?>
 ```
 

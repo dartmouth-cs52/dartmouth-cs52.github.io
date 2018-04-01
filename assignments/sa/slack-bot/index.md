@@ -2,6 +2,7 @@
 layout: page
 title: SA10 Slack Bot
 published: true
+comment_term: sa-slack-bot
 ---
 
 ![](http://i.giphy.com/5xtDarzqYMWFigufLws.gif)

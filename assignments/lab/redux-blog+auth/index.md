@@ -2,6 +2,7 @@
 layout: page
 title: Lab5 +Auth
 published: true
+comment_term: lab-redux-blog+auth
 ---
 
 

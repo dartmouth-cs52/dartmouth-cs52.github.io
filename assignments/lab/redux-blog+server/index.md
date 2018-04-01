@@ -2,6 +2,7 @@
 layout: page
 title: Lab5 p1
 published: true
+comment_term: lab-redux-blog+server
 ---
 
 

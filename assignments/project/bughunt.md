@@ -2,6 +2,7 @@
 layout: page
 title: Pre-Demo Bug Hunt
 published: true
+comment_term: project-bughunt
 ---
 
 

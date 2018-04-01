@@ -2,6 +2,7 @@
 layout: page
 title: Final Demos
 published: true
+comment_term: project-final-demos
 ---
 
 

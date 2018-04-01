@@ -2,6 +2,7 @@
 layout: page
 title: Lab 4
 published: true
+comment_term: lab-redux-blog
 ---
 
 

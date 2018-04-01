@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Logistics
+comment_term: logistics
 ---
 
 

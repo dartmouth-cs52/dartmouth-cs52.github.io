@@ -3,6 +3,7 @@ layout: page
 title: SAX - React-Native Videos
 published: true
 author:  Jane Lee, Sia Peng, Armin Mahban, Adam Rinehouse
+comment_term: sa-react-native
 ---
 
 {% raw %}

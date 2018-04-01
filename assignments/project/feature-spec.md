@@ -2,6 +2,7 @@
 layout: page
 title: Feature Spec
 published: true
+comment_term: project-feature-spec
 ---
 
 

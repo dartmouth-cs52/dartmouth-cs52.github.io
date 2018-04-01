@@ -1,6 +1,7 @@
 ---
-layout: default
-title: Dartmouth CS52
+layout: page
+title: ""
+comment_term: main
 ---
 
 # Course Overview

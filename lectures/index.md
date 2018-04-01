@@ -2,6 +2,7 @@
 layout: page
 title: Lectures
 permalink: /lectures/
+comment_term: lectures
 ---
 
 

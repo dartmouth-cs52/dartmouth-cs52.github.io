@@ -2,6 +2,7 @@
 layout: page
 title: SA10 - Testing
 published: true
+comment_term: sa-testing
 ---
 
 ![Mocha and CHai](http://i.imgur.com/XHXkjS4.png)

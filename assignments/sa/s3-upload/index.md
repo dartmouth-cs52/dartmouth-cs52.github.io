@@ -2,6 +2,7 @@
 layout: page
 title: SA9 - Uploading images to S3
 published: true
+comment_term: sa-s3-upload
 ---
 
 ![AWS S3](http://i.imgur.com/FBAnSyZ.png)

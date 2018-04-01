@@ -2,6 +2,7 @@
 layout: page
 title: Lab 1
 published: true
+comment_term: lab-landing-page
 ---
 
 # Build a Landing Page!  :airplane:

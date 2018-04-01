@@ -2,6 +2,7 @@
 layout: page
 title: Short Assignment 2
 published: true
+comment_term: sa-git-map
 ---
 
 Start here:

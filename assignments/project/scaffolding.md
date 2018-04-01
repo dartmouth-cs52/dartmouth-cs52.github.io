@@ -2,6 +2,7 @@
 layout: page
 title: Scaffolding
 published: true
+comment_term: project-scaffolding
 ---
 
 

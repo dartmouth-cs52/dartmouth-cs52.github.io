@@ -2,6 +2,7 @@
 layout: page
 title: Short Assignment 1
 published: true
+comment_term: sa-localdev
 ---
 
 # Local Dev Environment and Hosting a Domain

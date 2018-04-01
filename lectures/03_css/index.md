@@ -2,6 +2,7 @@
 layout: page_with_slides
 title: CSS
 published: true
+comment_term: lecture-css
 ---
 
 # CSS — Cascading Style Sheets
