@@ -25,3 +25,11 @@ markdown: kramdown
 
 plugins:
   - jemoji
+
+
+algolia:
+  application_id: D3R6EYXRKJ
+  index_name:     jekyll
+  # Actually index the index.html/index.md pages
+  files_to_exclude: []
+  search_only_api_key: 41d80d2fb4d78a95b5ee5bf78cfe1080
