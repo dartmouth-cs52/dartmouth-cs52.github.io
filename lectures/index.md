@@ -16,8 +16,8 @@ comment_term: lectures
 * [3/29 HTML](02_html/)
 <!-- * 3/29 Git -->
 * [3/29 Git](02_git/)
-* 4/3 CSS
-<!-- * [4/3 CSS](03_css/) -->
+<!-- * 4/3 CSS -->
+* [4/3 CSS](03_css/)
 * 4/4 Some Design Things
 <!-- * [4/4 Some Design Things](03_design/) -->
 * 4/5 JS and DOM

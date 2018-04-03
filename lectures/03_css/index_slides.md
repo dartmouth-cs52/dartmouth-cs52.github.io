@@ -31,21 +31,16 @@ name: CS52
 
 .fancy.medium[![](img/tabledrawing1.jpg)]
 
-.fancy.tiny[![](img/tabledrawing2.jpg)]
-
+* [http://map.cs52.me/](http://map.cs52.me/)
 
 
 ???
 * today:
-  * how did the git assignment go?
-    * json validation / linting
-    * pull requests
-    * 60 people might be too many for this but in the end it worked out, people helped and fixed others bugs
   * map map!
   * on the order of a million slides to get through
   * and games,  don't worry if it all seems overwhelming - plenty of time to practice and don't need to memorize it all
 * tomorrow DESIGN workshop during x-hour, will help with extra credit - not mandatory but you'll learn some stuff
-* Thursday lab2 goes out, will overlap with lab1, but we gotta start cranking through these so don't procrastinate
+*
 
 
 ---
@@ -53,10 +48,35 @@ name: Table Questions
 
 <iframe src="//giphy.com/embed/q0FBs96PQmjDi?hideSocial=true" width="480" height="269.76" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
-* is git leveraging something your computer automatically does or does it do tracking/recording from scratch?
-* iframe is how prof had code next to generated page within a page?
-* any reason to use `<p>` over `<div>`?
-* why would you ever change branches / what is purpose?
+* how does github pages hosting work? that all seemed magical
+
+
+
+---
+name: Table Questions
+
+.small[![](img/ghpages.png)]
+
+* mysql stores routing tables
+* domain -> repository lookup
+* fileservers store ghpages branch
+* all updated on PUSH
+
+???
+
+* https://githubengineering.com/rearchitecting-github-pages/
+
+
+---
+name: Table Questions
+
+.medium_small[![](img/table-mean-languages.jpg)]
+
+* what do `<head>` and `<body>` do?
+* what makes ⚓ tags special?
+
+???
+* they connect us together?
 
 
 
@@ -76,8 +96,9 @@ name: CSS — Cascading Style Sheets
 "It has been a constant source of delight for me over the past year to get to continually tell hordes (literally) of people who want to -- strap yourselves in, here it comes -- control what their documents look like in ways that would be trivial in TeX, Microsoft Word, and every other common text processing environment: '<strong>Sorry, you're screwed.</strong>'" — Mark Andreessen, 1994
 
 ???
-* we'll dive deeper into the CSS render tree next class
-* this is a video of the layout reflow render passes the browser makes just to display google, later we'll talk tips on how to optimize this sort of thing
+* we'll dive deeper into the CSS render tree next class when we learn how the browser thinks about the document interally
+* this is a video of the layout reflow render passes the browser makes just to display google
+
 
 ---
 name: CSS — Cascading Style Sheets
@@ -89,13 +110,15 @@ name: CSS — Cascading Style Sheets
 * CSS v2 1998
 * ...
 * CSS v3 ~2014
-* ...
+* ...2018
 
 ???
-* we're a new era now boys and girls, finally things are evolving
-* long period of time when people had all sorts of workarounds for things, like using tables for everything - please don't
+* this image is what cssv1 supported - all the functionality in one test frame
+* we're a new era now boys and girls, finally things are evolving, new things being rolled out
+* long period of time when people had **all sorts of workarounds for things, like using tables** for everything
 * css is faster than js for animations
 * netscape used javascript at first for css (super slow and still is)
+* [full history](https://eager.io/blog/the-languages-which-almost-were-css/)
 
 
 
@@ -111,13 +134,13 @@ name: Semantics vs. Style
 
 
 ???
-* in early days was all browser defined style
+* in early days was all **browser defined style**
 * defining structure but display up to browser
 * relied on the default display styles provided by the browser
 * set the `h1` tag the font size increased
 * What we were defining was a section of content that was intended to be a header of level 1.
-* In Word,  the default way to format the document is by setting typesetting directly.  You select something and change the font size, or make it bold.  The problem with this is that it unmaintainable in the long term.  Want to change all your headings?  Good luck — should have set up some styles.
-* specify the intended use of the content,  whether it is a header or a paragraph etc,  and then you define the look and feel of these blocks separately.
+* In Word,  one of the ways to style things is by directly changing the font size, or make it bold.  The problem with this is that it unmaintainable in the long term.  Want to change all your headings?  Good luck — should have set up some styles.
+* **specify the intended use of the content**,  whether it is a header or a paragraph etc,  and then you **define the look and feel of these blocks separately**.
 
 
 
@@ -130,7 +153,7 @@ name: Enter CSS
 
 ???
 * CSS will be friend and foe this term.
-* Certain things will be easy, certain things will feel impossible.
+* Certain things will be easy, certain things will feel impossible - but together we will prevail.
 * css inside joke: Try to vertically center something
 * We will conquer this though, quite easily, anybody know?
 
@@ -155,9 +178,12 @@ name: we will however
 ---
 name: CSS Rules
 
+.medium[![](img/CSS-spinners.gif)]
+
+
 * CSS is:
-  * a list of rules specifying how elements should be displayed
-  * each rule starts with selector
+  * a **list of rules** specifying how elements should be displayed
+  * each rule starts with **selector**
   * now your page structure comes in handy
 
 ???
@@ -172,7 +198,13 @@ name: CSS Rules
 .fancy.medium[![anatomy of css rule](img/anatomy_of_css_rule.jpg)]
 
 ???
-* ok and now you know css. ship it, send it.
+* ok and now you know css. ship it, send it.\
+* hereto follows a lot of css stuff
+* don't worry we'll get play with it.
+* what does selector do?
+* selector chooses element
+* property is what is  being set
+* value self explanatory
 
 
 
@@ -239,6 +271,7 @@ a, input, .classy {...} /* multiple selectors */
 
 ???
 * what would happen if I clicked 'lets go'?
+* what kind of element is span in terms of display?
 
 
 
@@ -265,10 +298,10 @@ input[type=checkbox]:checked ~ #hiddenmenu {
 
 
 ???
-* gets even better, some selectors can select for a particular state of an element
+* **gets even better**, some selectors can select for a **particular state** of an element
 * these are super useful,  checkboxes can be used to record some state in CSS for instance
-* plus things like :first-child, or :not
-* ok that last one is cheating, more complicated even:
+* plus things like **:first-child**, or **:not**
+* ok that last one might be giving away too much... more complicated even:
   * ~ is sibling selector, so it selects the second selector based on the first.
   * can someone explain what this does?
 
@@ -302,10 +335,10 @@ ul > li {  } /* child */
 ```
 ???
 * remember that this is a tree
-* descendent would include any nested li's
-* child would only include direct children, so say a nested `ol`'s children would be left untouched
-* adjacent sibling, directly adjacent with no elemnts in between
-* general sibling any matching as long as parent is same
+* descendent would include any nested li's: 1,2,nested1, 3
+* child would only include direct children, so say a nested `ol`'s children would be left untouched: 1,2,3
+* adjacent sibling, directly adjacent with no elemnts in between: list1
+* general sibling any matching as long as parent is same: list1, list2
 
 
 
@@ -318,7 +351,7 @@ name: Colors
 .fancy.medium[![](https://upload.wikimedia.org/wikipedia/commons/d/d6/RGB_color_cube.svg)]
 
 * additive digital color:
-  * <span style="color:red;">red</span>, <span style="color:green;">green</span>, and <span style="color:blue;">blue</span> color light
+  * <span style="color:red;">red</span>, <span style="color:green;">green</span>, and <span style="color:blue;">blue</span> color light, + alpha channel
   * 1 byte per color intensity
   * unsigned integer value of 0-255
 
@@ -344,7 +377,7 @@ name: Colors
 ???
 * which of these is most legible -- stick with one
 * don't use color names
-* atom color picker and pigments plugins
+* **atom color picker and pigments plugins**
 
 
 ---
@@ -354,8 +387,6 @@ name: Selectors and Colors
 
 ???
 * Note: I cheated in the above example and included some magic for that font.
-* when i added color to text what inline element did I use?
-
 
 
 
@@ -434,6 +465,7 @@ name: Size Units Tangent
   * relative units
 
 ???
+* programmatic ways to think abouut sizes
 * lots of overwhelming options for setting size
 * what are best practices
 
@@ -443,11 +475,11 @@ name: Size Units Tangent
 name: absolute units
 
 * `px`: *device pixels (1/96th of 1in at 28inches viewing distance)* ✅
-* `pt`: *points (1/72 of 1in)*
-* `pc`: *pica (12 pt)*
-* `in`: *inches (96px)*
-* `cm`: *centimeters (37.8px)*
-* `mm`: *pixel (3.78px)*
+* `pt`: *points (1/72 of 1in)* ❌
+* `pc`: *pica (12 pt)* ❌
+* `in`: *inches (96px)* ❌
+* `cm`: *centimeters (37.8px)* ❌
+* `mm`: *pixel (3.78px)* ❌
 
 <iframe src="//giphy.com/embed/xT0Gqcy5YrVjXdkZgs?hideSocial=true" width="220" height="220" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -478,10 +510,11 @@ $px = 5376 \times \tan(\alpha)$
 more at [http://tinyurl.com/cssmath](http://tinyurl.com/cssmath)
 
 ???
-* css pixels are not physical pixels
+* css pixels are **not physical pixels**
 * pixels are actually an angular measurement
 * reference pixel be the visual angle of one pixel on a device with a pixel density of 96dpi and a distance from the reader of an arms length. For a nominal arm's length of 28 inches, the visual angle is therefore about 0.0213 degrees.
-* takeaway: 1css inch is what an inch would look like at 28inches away
+* takeaway: **1css inch is what an inch would look like at 28inches away**
+* devices with different pixel densities still use 96dpi for the px unit
 * tan(α) = opp./adj.
 * tan(α) = ((1/96) / 2) / 28
 * tan(α) = (1/192) / 28
@@ -510,22 +543,23 @@ name: Relative Units
 
 * relative units are what you'll often be using.
 * 1 rem is 16px by default
-* also yesterday was jane goodall's birthday
-* em originally was C when metal type was a thing
+* also today is jane goodall's birthday
+* **em originally** was the lineheight *C* when metal type was a thing and was also the same as the width of the letter m - hence em dash vs en dash
 * older browsers don't support `vh`/`vw` units, but they can be very useful if you don't mind losing some compatibility.
 
 
 ---
 name: reasonable practice
 
-![](img/layout.svg)
+.fancy.medium[![](img/layout.svg)]
+
+* [css-tricks rems-ems](https://css-tricks.com/rems-ems/)
 
 ???
 * body set pixels (16px is default em)
 * main sections are in `rem`
 * contents of each section are in `em`
 * independent control of scaling for the main sections
-* (from [css-tricks](https://css-tricks.com/rems-ems/))
 
 
 
@@ -592,11 +626,12 @@ There are 3 ways to include CSS styles in your page.
 ```
 
 ???
+* waiiit how do include css in my paaage?
 * Inline style: `<p style="color: orange;">` BAD
 * Internal style sheet: is a block of CSS inside of your html. Better.
 * External style sheet: separate file included in head section. BEST.
 * CSS Preprocessor Magics:  is actually best, we'll look into this more later. See: [SASS](http://sass-lang.com/)
-
+* why is inline worst?
 
 
 
@@ -680,10 +715,11 @@ name: position: absolute;
 
 .fancy.tiny[![](img/position/absolute.gif)]
 
-Position is relative to the nearest absolute parent element via `top`, `right`, `bottom`, `left` properties. Element is removed from flow so other elements ignore it.
+Position is **relative** to the **nearest absolute parent** element via `top`, `right`, `bottom`, `left` properties. Element is removed from flow so other elements ignore it.
 
 ???
 * tricky to remember that the nearest absolute parent
+* have to go and set absolute on some parent as is not default
 
 
 
@@ -705,13 +741,13 @@ name: z-index: 10;
 
 .fancy.tiny[![](img/position/z-index.gif)]
 
-Similar to layers and allows elements to be ordered. Parameter: signed integer
+Similar to layers and allows elements (absolute and fixed) to be ordered. Parameter: signed integer
 
 ???
 * helps layer absolute and fixed elements
 * and 3d transformed layers
 * tricky beccause of [z-index context](https://philipwalton.com/articles/what-no-one-told-you-about-z-index/)
-* stacking order:
+* **stacking order**:
   * order of appearance in the doc
   * positioned (non-static) elements go in front of non-positioned
   * new context for each parent that is positioned or opacity less than 1
@@ -750,7 +786,7 @@ name: More positioning and aligning, the old way
 <p data-height="400" data-theme-id="24117" data-slug-hash="cc696879a64585dc629b27fba80c183d" data-default-tab="css,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/cc696879a64585dc629b27fba80c183d/">floats</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 ???
-
+* imagine this with multiple elements in columns or something?!?
 
 
 
@@ -763,8 +799,8 @@ Alignment used to be miserable.
 
 CSS3 [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) make things much better!
 
+.fancy.medium[![](img/flexybox.gif)]
 
-<iframe src="//giphy.com/embed/fAKOQ4gRr5kME" width="480" height="200" frameBorder="0" class="giphy-embed" ></iframe>
 
 ???
 * main idea: give the container the ability to alter its items' width/height (and order) to best fill the available space based on some rules
@@ -790,8 +826,9 @@ name: Flexbox model
 .fancy[![](img/flexbox-model.jpg)]
 
 ???
-* justify is main
-* align is cross
+* **justify is main**
+* **align is cross**
+* default is row
 * *main axis* / *main dimension*:
   * primary axis along which flex items are laid out
   * extends in the *main dimension*.
@@ -819,7 +856,7 @@ name: Flex Parent Properties
 
 ```css
 .container {
-  flex-direction: row | row-reverse | column | column-reverse;
+  flex-direction:  column | column-reverse | row | row-reverse ;
 }
 ```
 
@@ -857,7 +894,7 @@ name: Flex Parent Properties
 ```
 
 ???
-
+* in main axis
 
 
 
@@ -890,6 +927,7 @@ name: Flex Parent Properties
 ```
 
 ???
+* cross direction!
 * modifies the behavior of the flex-wrap property
 * similar to align-items, but instead of aligning flex items, it aligns flex lines
 
@@ -949,7 +987,20 @@ name: Flex Child Properties
 }
 ```
 ???
+* remember cross direction!
 
+
+
+---
+name: Flexbox Games
+
+Want to learn more?
+
+**go play this now:**
+<br>[http://flexboxfroggy.com/](http://flexboxfroggy.com/)
+<br>[http://flexboxdefense.com](http://flexboxdefense.com/)
+
+???
 
 
 
@@ -957,11 +1008,6 @@ name: Flex Child Properties
 ---
 name: Flexbox resources
 
-Want to learn more?
-
-**go play this now:**
-<br>[http://flexboxfroggy.com/](http://flexboxfroggy.com/)
-<br>[http://flexboxdefense.com](http://flexboxdefense.com/)
 
 * images from: [guide-to-flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [flexboxin5.com/](http://flexboxin5.com/)
@@ -1028,13 +1074,14 @@ name: Precedence and Cascading
 ---
 name: CSS Box Model `content-box`
 
-Every element on the page is a box.
+.medium[![box model](img/content-box.png)]
 
-.medium_small[![box model](img/box_model_content-box.png)]
-
-totals =  content width/height + padding + borders + margins
+* Every element on the page is a box.
+* totals =  content width/height + padding + borders + margins
 
 ???
+* oh no not more about sizing things?!?!
+* bunch of things go into the size that something appears on screen
 * default is content-box
 * `margin:` defines the spacing **around** the element
 * `border:` defines thickness of a border line
@@ -1047,16 +1094,17 @@ totals =  content width/height + padding + borders + margins
 ---
 name: CSS Box Model `border-box`
 
-Better newer CSS3 model
 
-.medium_small[![box model](img/box_model_border-box.png)]
+.medium[![box model](img/border-box.png)]
 
+* Better newer CSS3 model
+* border and padding on the inside!
 
 ???
 * The border and padding values were moved inside the element's box, cutting into the width/height of the box rather than expanding it.
 * width = actual visible/rendered width of an element's box
 * height = actual visible/rendered height of an element's box
-* much more straighforward
+* much more straightforward
 
 ???
 
@@ -1112,8 +1160,6 @@ name: Transitions
 ???
 * now we're getting to the good stuff
 * CSS3 can do a lot of stuff.  Transitions, animations, and even 3D transforms.
-* Here's a super fancy solar system simulation in CSS
-* We won't do anything that fancy,  plus this isn't a real simulation, all the motions are hardcoded, no physics.
 
 
 
@@ -1240,6 +1286,19 @@ Ok, that might be enough of 3D for one day! More demos can be found here:
 
 
 
+---
+name: Some Resources
+
+* [learn.shayhowe.com](http://learn.shayhowe.com/html-css/) is also a good resource.
+* [advanced-css-selectors-you-never-knew-about](https://medium.com/the-web-crunch-publication/advanced-css-selectors-you-never-knew-about-972d8275d079)
+* [css-tricks](https://css-tricks.com/)
+* [flexbox patterns](http://www.flexboxpatterns.com/home)
+* [bootstrap](http://getbootstrap.com/)
+* [semantic-ui (an alternative to bootstrap that looks cool)](http://semantic-ui.com/)
+* [transitions and transforms](https://robots.thoughtbot.com/transitions-and-transforms)
+* [3d transforms](http://desandro.github.io/3dtransforms)
+
+???
 
 
 
@@ -1258,20 +1317,68 @@ Use the Chrome Devtools [Inspector](https://developers.google.com/web/tools/chro
 
 
 
+---
+name: Chrome DevTools
+
+.medium[![chrome color picker](img/Chrome-Colorpicker.gif)]
+
+
+* Press `Ctrl + Shift + I` (Windows, Linux) or `Command + Option + I` (Mac)
+* or right click on an element in website and select `Inspect`.
+
+
 
 ---
-name: More Resources
+name: Select Elements
 
-* [learn.shayhowe.com](http://learn.shayhowe.com/html-css/) is also a good resource.
-* [advanced-css-selectors-you-never-knew-about](https://medium.com/the-web-crunch-publication/advanced-css-selectors-you-never-knew-about-972d8275d079)
-* [css-tricks](https://css-tricks.com/)
-* [flexbox patterns](http://www.flexboxpatterns.com/home)
-* [bootstrap](http://getbootstrap.com/)
-* [semantic-ui (an alternative to bootstrap that looks cool)](http://semantic-ui.com/)
-* [transitions and transforms](https://robots.thoughtbot.com/transitions-and-transforms)
-* [3d transforms](http://desandro.github.io/3dtransforms)
+.medium[![](img/select_elements.gif)]
 
-???
+
+---
+name: Change Text
+
+.medium[![](img/text-change.gif)]
+
+
+---
+name: Change Images
+
+.medium[![](img/url-change.gif)]
+
+---
+name: Inspect Hover States
+
+.medium[![](img/hover.gif)]
+
+
+---
+name: Add Rules
+
+.medium[![](img/add-css.gif)]
+
+
+---
+name: much More!
+
+[https://developers.google.com/web/tools/chrome-devtools/](https://developers.google.com/web/tools/chrome-devtools/)
+
+* full javascript debugger with breakpoints, etc
+* analyze performance
+* run code
+
+
+---
+name: Today's activity
+
+.medium[![](img/fsociety.gif)]
+
+
+* Pair up with a neighbor
+* get their domain name and open it up in inspector
+* play around with it
+* take a screenshot and post it in [#18s](https://cs52-dartmouth.slack.com/messages/C9XBP87PX)
+
+
 
 
 ---

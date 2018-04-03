@@ -5,7 +5,9 @@ published: true
 comment_term: lecture-css
 ---
 
-# CSS — Cascading Style Sheets
+## <span style="color: #F27D00">*see slides for updated version*</span> ##
+
+## Cascading Style Sheets
 
 ## Semantics vs. Style
 

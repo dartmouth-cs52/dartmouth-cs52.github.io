@@ -38,6 +38,7 @@ You should feel free to choose another landing page to base yours off of, as lon
 
 Some examples (in order of difficulty):
 * [slack.com](http://slack.com)
+* [tesla.com](https://www.tesla.com)
 * [apple.com](https://www.apple.com)
 * [wistia.com](http://wistia.com)
 * [hubspot.com](https://www.hubspot.com/)
