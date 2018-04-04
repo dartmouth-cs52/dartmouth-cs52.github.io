@@ -38,16 +38,16 @@ name: Step 1: Inspiration Board
 * take screenshots
 * save urls
 * copy color schemes
+* cool tool: [invision mood board](https://projects.invisionapp.com/boards/BM3H6DPXY76/)
 
 .fancy.medium[![](img/inspiration.jpg)]
-
 
 ???
 * other people have made pretty designs,  look at them, use them for inspiration, copy them as best you can
 
 
 ---
-name: Step 2: Sketches
+name: Step 2a: Sketches
 
 * paper is best
 * quickly jot down views and functionalities
@@ -56,8 +56,20 @@ name: Step 2: Sketches
 
 
 ???
+
+---
+name: Step 2b: Sketches
+
+* use [device paper](http://sneakpeekit.com/)
+* use [PopPaper](https://marvelapp.com/pop/)
+
+.super-tiny[![mockups](img/popapp-prototype-animation.gif)]
+
+
+???
 * make them on paper first
 * much faster
+
 
 
 ---
@@ -82,7 +94,7 @@ name: Step 4: Functional Mockups
 * put mockups together
 * built in to [Figma](http://figma.com) or
 * Invision: https://www.invisionapp.com/education-signup
-* PopPaper: https://marvelapp.com/pop/
+* or even PopPaper: https://marvelapp.com/pop/
 
 .fancy.medium[[![invision](img/invision.gif)](http://invisionapp.com)]
 
@@ -90,6 +102,7 @@ name: Step 4: Functional Mockups
 * great way to test your interactions
 * woop forgot some logic path from one view to another
 * can run it by users and see if they can figure it out
+
 
 
 ---
@@ -139,12 +152,32 @@ UX is like a joke...
 ???
 * famous designer
 * every choice you make conveys something
-* you chose blue for a restaurant site because you like blue
-* but blue is not appetizing, doesn't make people feel hungry - RED does weird.
 * think about and defend every choice you make - 'i just like it' doesn't cut it.
 * hidden interaction like swiping or hamburger - be careful.
 * ux is like a joke - its bad if it needs explaining
 * can use this time to test that!
+
+---
+name: Appetizing?
+
+
+.fancy.left[![mockups](img/appetite-blue-toast.jpg)]
+.fancy.right[![mockups](img/bluerice.jpg)]
+
+???
+* but blue is not appetizing, doesn't make people feel hungry - RED does weird.
+
+---
+name: Flux Express
+
+
+.fancy[![mockups](img/flux-design.jpg)]
+
+???
+* you chose blue for a restaurant site because you like blue
+* but blue isn't appetizing - they rebranded multiple times
+* it looks clean - until you realize you're supposed to order food
+
 
 
 ---
