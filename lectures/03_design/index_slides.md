@@ -21,14 +21,13 @@ name: base
 ---
 name: Design
 
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/r-RfH8aKbws?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-
+.fancy.medium[![](https://media.giphy.com/media/povenlBAIz14s/giphy.gif)]
 
 
 ???
 * just some tips
-* not really a designer but here's what I've learned from hanging around designers
+* not really a designer (tried to go to graphic design school many years ago though)
+* here's what I've learned from hanging around designers
 * based on working on hundreds of projects
 
 
@@ -57,31 +56,40 @@ name: Step 2: Sketches
 
 
 ???
+* make them on paper first
+* much faster
 
 
 ---
 name: Step 3: Mockups
 
 * with inspiration and sketches
-* start on mockups (figma, sketch, etc)
+* start on mockups ([figma](http://figma.com), [sketch](https://www.sketchapp.com), etc)
 * don't code them yet
 
 .fancy.medium[![mockups](img/mockupthings.jpg)]
 
 
 ???
+* the case for mockups:
 * help you remember what needs to be built
 * much quicker to play around with different options quickly and easily to determine what works best for your product
-
+* coordinate with your team - keep everybody on track
 
 ---
 name: Step 4: Functional Mockups
 
 * put mockups together
+* built in to [Figma](http://figma.com) or
 * Invision: https://www.invisionapp.com/education-signup
 * PopPaper: https://marvelapp.com/pop/
 
 .fancy.medium[[![invision](img/invision.gif)](http://invisionapp.com)]
+
+???
+* great way to test your interactions
+* woop forgot some logic path from one view to another
+* can run it by users and see if they can figure it out
 
 
 ---
@@ -98,6 +106,8 @@ name: Colors
 * beg, borrow, steal color schemes
 
 
+
+
 ---
 name: Hierarchy
 
@@ -110,7 +120,8 @@ name: Hierarchy
 
 ???
 
-* When laying out your page, remember to think about the visual hierarchy
+* laying out your page, remember to think about the visual hierarchy
+* ordering of what users see based on size/color/movement
 * What will users eyes see first, your call to action, or the large user profile button that they never really need to go to
 * Try to imagine what you would notice first as a new user and then order your elements in terms of visual saliency appropriately
 * Larger and brighter colored things tend to be noticed first
@@ -118,11 +129,12 @@ name: Hierarchy
 
 
 ---
-name: Mindfullness
+name: Mindfulness
 
 
 .fancy.medium[![mockups](img/quote.jpg)]
 
+UX is like a joke...
 
 ???
 * famous designer
@@ -130,11 +142,17 @@ name: Mindfullness
 * you chose blue for a restaurant site because you like blue
 * but blue is not appetizing, doesn't make people feel hungry - RED does weird.
 * think about and defend every choice you make - 'i just like it' doesn't cut it.
+* hidden interaction like swiping or hamburger - be careful.
+* ux is like a joke - its bad if it needs explaining
+* can use this time to test that!
+
 
 ---
 name: resources
 
-* lots of resources out there
+lots of resources out there
+
+* [cs52.me/workshops/design](http://cs52.me/workshops/design)
 * https://dribbble.com/
 * https://blog.prototypr.io/design-for-programmers-d38c56982cd0
 * http://www.cssdesignawards.com/
@@ -147,7 +165,7 @@ name: resources
 name: Let's play!
 
 
-[cs52.me/workshops/design](../workshops/design)
+[cs52.me/workshops/design](/workshops/design)
 
 
 ???

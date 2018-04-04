@@ -103,7 +103,11 @@ Masked and positioned:
 
 ![header masked](imgs/header_masked.png){: .fancy }
 
-To make the rest of editing easier, lock your header layer.
+To make the rest of editing easier, group your mask and image together.
+
+![group](imgs/group.jpg){: .fancy .tiny}
+
+You can also lock things so they aren't accidentally moved around.
 
 ![header_lock](imgs/header_lock.png){: .fancy .tiny}
 
