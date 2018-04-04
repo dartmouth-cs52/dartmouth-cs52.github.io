@@ -266,8 +266,3 @@ Yes, those IPs point to load balancers that direct requests based on the transpo
 
 1. GitHub repository URL (should be public so we can see it)
 1. your working domain name URL
-
-### Extra Credit
-
-* Make your page more interesting than mine.
-* Add in some CSS even though we haven't talked about it yet.

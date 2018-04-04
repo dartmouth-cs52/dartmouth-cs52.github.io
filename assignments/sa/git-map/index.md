@@ -21,6 +21,5 @@ Start here:
 
 ### Extra Credit
 
-* Not much available here, you can make your page look prettier for EC on sa1.
 * You could play around with adding more things to the map or improving how things are scaled or displayed on the map (difficult).
 * Make a pull request to fix any bugs in the workshop README.md, leave these open so we can see them.
