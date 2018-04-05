@@ -20,8 +20,8 @@ comment_term: lectures
 * [4/3 CSS](03_css/)
 <!-- * 4/4 Some Design Things -->
 * [4/4 Some Design Things](03_design/)
-* 4/5 JS and DOM
-<!-- * [4/5 JS and DOM](04_js1) -->
+<!-- * 4/5 JS and DOM -->
+* [4/5 JS and DOM](04_js1)
 * 4/10 JS P2
 <!-- * [4/10 JS P2](05_js2) -->
 * 4/12 Frameworks Intro

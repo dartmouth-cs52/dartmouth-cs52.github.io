@@ -18,7 +18,7 @@ name: base
 .title[{{name}}]
 
 ---
-name: cs52
+name: CS52
 
 <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fnatgeo%2Fvideos%2F10154506688308951%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
@@ -31,19 +31,25 @@ name: CS52
 * Today:
   * basic javascript
   * the DOM
+* Next:
+  * [lab1-landingpage](http://cs52.me/assignments/lab/landing-page/) due Friday night
+  * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due Monday night
+  * next week quiz and 2 shorts
 * Table Questions
   * can you do flex boxes within flex boxes?
-  * why don't issues come up when a rebased branch is pushed and other try to pull - won't revision histories be different?
-  * is flex native to CSS? do you define it in the HTML file?
 
-.tiny[![](img/meow.png)]
+.medium[![](img/table-face-removed.jpg)]
 
 
 ???
 * can do better on Questions
 * i know i'm an amazing lecturer, everything just makes sense whenever i speak
 * but lets do put down questions on the sheets
-
+* lab2 should be pretty quick for all, ya'all - its a half lab
+* we'll cover some stuff today that will be helpful.
+* lab2 - building your own buzzfeed style quizz - 30 lines of js or less
+* lots to cover today but more fun if you doodle or ask questions
+* quizzes generally unannounced as studying for them doesn't necessarily help - just pay attention to assignments - maybe study up on git branches and merges and pulls
 
 ---
 name: Where in the Stack?
@@ -63,27 +69,27 @@ name: Where in the Browser?
 
 ???
 * parts of the browser
-* The user interface:address bar, back/forward button, etc. except the window with page
-* The browser engine: sits between the UI and the rendering engine - passes commands
-* The rendering engine : displays requested content. parses HTML and CSS, and displays the parsed content on the screen
-* Networking: for network calls such as HTTP requests
-* UI backend: used for drawing basic widgets like combo boxes and windows
-* JavaScript interpreter. Used to parse and execute JavaScript code.
-* Data storage. Browser local storage like Cookies
+* **user interface**:address bar, back/forward button, etc. except the window with page
+* **browser engine**: sits between the UI and the rendering engine - passes commands
+* **rendering engine** : displays requested content. parses HTML and CSS, and displays the parsed content on the screen
+* **Networking**: for network calls such as HTTP requests
+* **UI backend**: used for drawing basic widgets like combo boxes, main windows, menus
+* **JavaScript interpreter**. Used to parse and execute JavaScript code.
+* **Data storage**. Browser local storage like Cookies
 
 
 
 ---
 name: What is JS?
 
-.medium_small[![](img/jabba_with_text.png)]
+.medium[![](img/jabba_with_text.png)]
 
 
 ???
 * custom designed jabbascript for cs52 by a friend of mine
 * we'll be doing sooo much javascript
 * good parts and bad parts (books written)
-* a scripting language for coding inside of the browser - the browser has a JS interpreter and runtime.
+* a **scripting language for coding inside of the browser** - the browser has a JS interpreter and runtime
 * only real way to do interactive stuff in browser is through js,  otherwise need plugins
 
 
@@ -101,6 +107,8 @@ name:
 
 ???
 * called lots of different names, some inappropriate
+* originally mocha by netscape
+* partially interactivity to be able to do styling
 
 
 
@@ -109,29 +117,32 @@ name:
 ---
 name: ECMAScript
 
+.fancy.small[![](img/netscape2.png)]
+
+
 * Javascript =>  ECMAScript:
   * high-level, dynamic, un/weirdly-typed, interpreted scripting language
   * prototype-based with first-class functions
   * multi-paradigm: object-oriented, imperative, and functional
-  * closer to c than java
+  * closer to c syntax than java
 
 ???
 * first-class function: functions are objects
-* * ECMA (standards organization) was originally **European Computer Manufacturers Association**, but then decided to just stop being an acronym for anything. Still in Geneva.
-* some things i like about js:  functional paradigm, first class functions, everything is a dictionary
+* * ECMA (standards organization) was originally **European Computer Manufacturers Association**, but then decided to just stop being an acronym for anything. Still in **Geneva**. Meet periodically to p lan how to make things better.
+* some things i like about js:  **functional paradigm, first class functions, everything is a dictionary**
 
 
 
 ---
 name: mixed reviews
 
-[2017 stackoverflow developer survey](http://stackoverflow.com/research/developer-survey-2017):
+[2018 stackoverflow developer survey](https://insights.stackoverflow.com/survey/2018/):
 
 
-.fancy.medium[![](img/stackoverflow/programming_languages.png)]
+.fancy.medium[![](img/stackoverflow/js-popularity.jpg)]
 
 ???
-* no relation to java (named that way by sun as a marketing move because java was popular)
+* no relation to java (named that way by netscape as a marketing move because sun's java was popular)
 * love it, hate it
 * sure is popular though
 
@@ -156,7 +167,7 @@ name:
 ???
 * ha don't worry we'll dig into this
 * i tried to find some fun learn js game but not much out there, most of them seem overly complicated, if anybody knows of one though!
-
+* lets channel some sergey bratus and hack game instead,  he would not hack this game as it is javascript which is insecure and he disables on all computers
 
 
 
@@ -192,7 +203,8 @@ for (i = 0; i < 10; i++)  {
 ???
 * but there's some things here we shouldn't do...
 * c style for loop badness
-* these are all JS! but BAD JS
+* these are all JS! but NOT IDIOMATIC javascript.
+* we will learn next class how to not use these syntaxes
 
 
 
@@ -243,6 +255,9 @@ console.log(false == 0) // → true
 * sometimes useful, generally though.. not so  much
 * anything funny with the string and number examples?
 * can this cause problems? yes
+* more on false shortly
+* `console.log([] == "")` is true
+* `console.log(false == "")` is true etc
 
 
 
@@ -257,11 +272,11 @@ name: number type
   * `NaN`, `Infinity` are numbers
   * `1/0 == Infinity`
   * NaN
-    * `parseFloat('hi')` is `NaN`
-    * `console.log(NaN === NaN); // false`
-    * `0/0` is `NaN`
-    * `Math.sqrt(-1)` is `NaN`
-    * `isNaN()`
+      * `parseFloat('hi')` is `NaN`
+      * `console.log(NaN === NaN); // false`
+      * `0/0` is `NaN`
+      * `Math.sqrt(-1)` is `NaN`
+      * `isNaN()`
 ???
 * lots of crazy you probably won't run into but you might when things are NaN and you forget that checking for it is difficult
 
@@ -271,7 +286,7 @@ name: number type
 ---
 name: string type
 
-* string is variable length
+* string is variable length char arrayish
 
 ```js
 
@@ -304,6 +319,7 @@ false == 0 == '' == null == undefined == NaN
 //truthy
 true == Object == '.+' == (num > 0) == function() {}
 
+// use === if you care
 ```
 
 
@@ -336,6 +352,8 @@ null === undefined // false
 ```
 
 ???
+* undefined — does not have a value assigned
+* null — value to represent whatever coder wants (like a sentinel)
 
 
 
@@ -346,8 +364,10 @@ name:  function type
 
 * called with any number of arguments
   * name if specified or `arguments[0]`
+  * .blue[arguments are positional]
 * always returns value (default is undefined)
 * unspecified args: undefined
+* .orange[functions can be arguments to other functions!]
 
 ```js
 
@@ -366,8 +386,8 @@ typeof useless == 'function'
 ???
 * `arguments[0]` (weird and bad)
 * also actually is an object will dig in a bit later
-
-
+* in function declaration you name the argument
+* can have default value
 
 
 
@@ -375,7 +395,7 @@ typeof useless == 'function'
 ---
 name: object type
 
-* is a hashmap or dictionary of:
+* is a .orange[hashmap] aka a .blue[dictionary] of:
   * name-value pairs called properties
 * global scope is just an object (in browser `window`)
 * can have functions as properties (called methods)
@@ -396,10 +416,11 @@ var bar = {
 bar.name === bar['name']
 ```
 ???
+* what it all boils down to though is objects and what they are
 * note es6 arrow function
 * note es6 template string builder
 * this will be explained
-
+* also functions -- everything is really just a dictionary
 
 
 
@@ -420,7 +441,6 @@ Object.keys({building: "Hop", height: 40}) == ["building", "height"]
 ```
 
 ???
-* also functions -- everything is really just a dictionary
 
 
 
@@ -443,6 +463,7 @@ list[4](); // ?
 list[500] = 'sparse array';
 // useful methods: push(), pop(), sort(), reverse(), splice()
 // and properties: length
+list.myownthing = 'why is this here';
 ```
 
 ???
@@ -470,8 +491,7 @@ date.toISOString() = '2016-01-09T17:08:36.314Z'
 date.toLocaleString() = '1/9/2016, 9:08:36 AM'
 ```
 ???
-
-
+* date is a special type of ...?
 
 
 
@@ -497,7 +517,7 @@ console.log(false ? 1 : 2);  // → 2
 
 ???
 * i'm a fan of ternary -- dumb python
-* ternary would be used in assignment
+* they come in handy when you want an easy way to evaluate and return a changing value - return loading component if something doesnt' exist yet for instance
 
 
 
@@ -519,12 +539,36 @@ console.log("Karl" || "user") // → Karl
 ```
 
 ???
+* because of the falsy booleans coercion
 * useful to set default values if the first thing failed
 * say username if exists otherwise "username string"
 
 
+---
+name: short-circuiting
+
+.fancy.medium[![](img/short-circuit1.webp)]
+
+???
+* speaking of short circuiting
+* are these the same image?
+
+---
+name: short-circuiting
+
+.fancy.medium[![](img/short-circuit2.gif)]
+
+???
+* brain  is trying to perceive as single image
+
+---
+name: short-circuiting
+
+.fancy.medium[![](img/cafe-wall.webp)]
 
 
+???
+* these lines are all parallel - your poor brain
 
 
 ---
@@ -536,7 +580,7 @@ name: DOM essentials
 
 
 ???
-* we'll be talking about the dom a lot
+* we'll be working directly with the DOM in lab2 but later will move into the *shadow DOM* instead...
 
 
 ---
@@ -570,12 +614,12 @@ name: Rendering Engine first
 
 ???
 * to be able to render the page the browser first needs to parse your HTML into a tree
-* parsing: parse HTML document and convert elements to DOM nodes in a tree called the "content tree"
-* also parses CSS into a tree called CSSOM  CSS object model
-* combines two trees together to form Render Tree!
-* render tree is almost there, all the rectangles with content in the right order to display
-* layout/reflow: computes the exact position and size of each object
-* painting: traverse the render tree and display pixels on screen
+* parsing: **parse HTML** document and convert elements to DOM nodes in a tree called the **"content tree"**
+* also parses CSS into a tree called **CSSOM  CSS object model**
+* combines two trees together to form **Render Tree**!
+* render tree is almost there, **all the rectangles with content in the right order to display**
+* **layout/reflow**: computes the **exact position and size of each object**
+* **painting**: traverse the render tree and display pixels on screen
 * gradual process with lots of updates and repaints
 * https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#DOM
 
@@ -587,10 +631,10 @@ name: Render Tree Construction
 
 
 ???
-* start at root of the DOM tree, traverse each visible node. (some aren't )
-* For each visible node, find the appropriate matching CSSOM rules and apply them.
-* outputs only  visible nodes with content and their computed styles.
-* so what happens if you change the visibility of an element?
+* start at root of the DOM tree, traverse each node.
+* For each node, find the appropriate matching CSSOM rules and apply them.
+* paint - outputs only visible nodes with content and their computed styles.
+* so what happens if you change the visibility of an element? needs to recompute!
 * https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction
 
 ---
@@ -614,25 +658,26 @@ name: `document`
 
 * DOM is available in global variable `document`
 * JS can query or modify the DOM and CSSOM
-* in browsers `window` is top level global scope javascript object
+* in browsers, `window` is top level global scope javascript object
 
 
 ???
 * dom objects have lots of private methods, can be annoying!
+* so document is under window technically
 
 
 ---
-name:
+name: tree graph
 
 .medium[![](img/simple-dom.png)]
 
 ???
 * tree is directed and acyclic graph with 1 parent
-
+* text inner nodes are leaves
 
 
 ---
-name:
+name: traversal
 
 .fancy.medium_small[![](img/dom-links.png)]
 
@@ -650,7 +695,7 @@ element = document.body.firstChild.nextSibling.firstChild;
 
 
 ---
-name:
+name: indexing
 
 ```html
 <div id="better">before</div>
@@ -667,7 +712,7 @@ element.textContent = "after";
 
 
 ???
-
+* but we have nice helper methods to do things like index / search the tree
 
 
 
@@ -785,9 +830,9 @@ name: Events
   * Keyboard-related: `onkeypress`
   * Input Field: `onfocus`, `onblur`, `onchange`, `onsubmit`
   * Other:
-    * `setTimeout`
-    * `ondrag`, `ondrop`
-    * `onload`
+      * `setTimeout`
+      * `ondrag`, `ondrop`
+      * `onload`
 
 
 ???
@@ -801,9 +846,9 @@ name: event handling
 <iframe src="//giphy.com/embed/DDyJmi8wFJuP6?hideSocial=true" width="380" height="164" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 * to handle an event one needs:
-  * target element
-  * event type
-  * function to call
+  * .orange[target element]
+  * .blue[event type]
+  * .green[function to call]
 
 
 ???
@@ -861,6 +906,7 @@ $('#myButton').off('click', function(e) { alert('hello!'); });
 ???
 
 * what is this `e` argument we keep seeing?
+* it is a refernce to event object triggered
 
 
 
@@ -962,7 +1008,52 @@ name: Tired?
 
 
 ---
-name: Lexical Variable Scoping
+name: kittens game
+
+.small[![](img/kittten-game.gif)]
+
+
+* play: http://bloodrizer.ru/games/kittens/
+* all code is non-minified - UTSL
+
+???
+
+```js
+// inspect buttons
+
+// find btnContent first
+$('.btnContent').hide();
+$('.btnContent').show();
+
+$('.btnContent').css('background-color', 'pink');
+
+// click it!
+var gather = setInterval(function() { $('.btnContent')[0].click(); }, 2 * 1000);
+var gatherB = setInterval(function() {$( "span:contains('Gather catnip')").click();}, 2*1000);
+
+//set a background iamge
+$('#midColumn').css('background-image', 'url(//cs52.me/mythical.gif)');
+
+// add a click event to something random
+// create a selected class with background: blue
+$('.console-intro').on('click', function(e) {
+  $(this).toggleClass('selected');
+});
+
+// global objects:
+// game;
+
+game.resPool.resources // change some up
+
+game.tick();
+
+//max resources
+game.resPool.resources.forEach(function(resource) { resource.value = 100000000; })
+```
+
+
+---
+name: Variable Scoping
 
 Two scopes: Global and function local
 
@@ -985,13 +1076,12 @@ console.log(x);  // → inside f2
 ```
 
 ???
+* scope is the visibility of a variable, etc
 * everything outside of function is global
 * inside of function is function scope
 * if declared
 * in second example just refers to global
 * shadowing is bad (redeclaring locally on purpose)
-* lexical scope is that an identifier at a particular place in a program always refers to the same variable location — where “always” means “every time that the containing expression is executed”
-
 
 
 
@@ -1036,6 +1126,8 @@ function foo() {
 ???
 * variable declarations only get hoisted not assignment
 * would log 'undefined'
+* careful because things can get hoisted to be global if you didn't do a var at all - ends up in window
+
 
 
 
@@ -1048,10 +1140,12 @@ name: Function hoisting
 showState1();  // output: Ready
 showState2();  // undefined
 
+// is variable
 var showState2 = function() {
   console.log("Idle");
 };
 
+// is function
 function showState1() {
   console.log("Ready");
 }
@@ -1227,7 +1321,12 @@ var backToPerson = JSON.parse(s)
 * json is what the map used, you'll be using a lot of JSON
 * is the preferred interchange format between many web services and apis
 
+---
+name: resources
 
+* https://javascript.info
+* https://www.w3schools.com/js/default.asp
+* http://www.learn-js.org/
 
 ---
 name:  intermission

@@ -39,10 +39,10 @@ See [assignments](/assignments).
 * We'll be using [Slack](https://cs52-dartmouth.slack.com) for most communication. Find us there!
 
 * Open Help Hours in Sudikoff: <br>
-  Mon 4-6pm: Sudikoff 148<br>
-  Mon 8-10pm: Sudikoff 114<br>
-  Thurs 6-9 pm: Sudikoff 114<br>
-  Sun 6-9 pm: Sudikoff 114
+  Mon 4-6pm: Sudikoff 148s<br>
+  Mon 8-10pm: Neukom (Sudikoff 123)<br>
+  Thurs 6-9 pm:  Neukom (Sudikoff 123)<br>
+  Sun 6-9 pm:  Neukom (Sudikoff 123)
 
 * Instructor:<br>
   Fri 9-10am, 11am-12pm; or by appointment in Sudikoff 219/007
