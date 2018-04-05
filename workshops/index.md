@@ -45,7 +45,7 @@ We'll be using github classroom to autoprovision repositories and set up teams.
 
 Every member on your team **must** use github classroom to set up the teams correctly and automatically.  Choose your term and section below:
 
-* setup and clone a github repo using github classroom here: [https://classroom.github.com/a/PXXktsB5](https://classroom.github.com/a/PXXktsB5)
+* setup and clone a github repo using github classroom here: [https://classroom.github.com/g/6woYybH6](https://classroom.github.com/g/6woYybH6)
 
 The first person on your team will name the repo and the team. Each consecutive person will click on the same github classroom link above and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place.
 
