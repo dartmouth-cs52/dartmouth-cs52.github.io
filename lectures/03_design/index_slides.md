@@ -38,7 +38,7 @@ name: Step 1: Inspiration Board
 * take screenshots
 * save urls
 * copy color schemes
-* cool tool: [milanote board](milanote.com)
+* cool tool: [milanote board](https://www.milanote.com/refer/rcAxjfzasgu2C6IoR8)
 
 .fancy.medium[![](img/inspiration.jpg)]
 
