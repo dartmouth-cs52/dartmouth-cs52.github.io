@@ -41,13 +41,13 @@ Each workshop session will be ~60 minutes on a web technology, tool, framework, 
 
 ## To Start
 
-We'll be using github classroom to autoprovision repositories and set up teams.
+We'll be using **github classroom** to autoprovision repositories and set up teams.
 
 Every member on your team **must** use github classroom to set up the teams correctly and automatically.  Choose your term and section below:
 
 * setup and clone a github repo using github classroom here: [https://classroom.github.com/g/6woYybH6](https://classroom.github.com/g/6woYybH6)
 
-The first person on your team will name the repo and the team. Each consecutive person will click on the same github classroom link above and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place.
+The first person on your team will name the repo and the team. Each consecutive person will click on the same github classroom link above and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place. Remember, use the github classroom to create **and join** the repository. Everybody on your team must click this link. Do not add team members as collaborators manually.
 
 ## Workshop Overview
 
