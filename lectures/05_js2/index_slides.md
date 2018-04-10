@@ -26,42 +26,38 @@ name: CS52
   * more javascript!
   * newer javascript!
   * tricky javascript!
-  * and then our first team workshop!
+  * our first team workshop!
+  * our first quiz!
 
 ???
 
 ---
 name: table questions
 
-* how is processing var / function declarations done / how is efficient?
+* if `===` checks for type, why does `NaN===NaN` evaluate to false?
 
-.medium[![](img/table1-pizza-hut.jpeg)]
-
-
-???
-*  efficient hoisting - just means parsing through the code 1x more times. From algos we know that 2x is a constant, thus not really a factor worth worrying about. :-)
-
----
-name: table questions
-
-* was js developed specifically for web browsers
-
-.medium[![](img/table2-flex-container.jpeg)]
+.medium[![](img/table-html-is-joke.jpg)]
 
 
 ???
-* js for web:  yes specifically by netscape to add functionality
+* because NaN is the only thing that doesn't equal itself in any way in js. by design?  thats one way of checking if a value is NaN in fact.
+
 
 
 ---
 name: table questions
 
-* when you use chrome inspector to change styles does it make a whole new render tree
+.medium[![](img/table-games-question.jpg)]
 
-.medium[![](img/table3-doodle-vs-question.jpeg)]
+.medium[![](img/table-nested-flexbox.jpg)]
+
 
 ???
-* yes, although it can be smart about it knowing that you can only down the tree so only that subtree needs to change
+* there havent' been any that I thought were any good...
+* until today!  we'll play one later when we talk about callbacks
+* hoist is when you raise something up, so in JS it means that the parser raises up the functions to the top of the file basically
+* its cool but not necessary to remember on the daily
+
 
 
 ---
@@ -73,6 +69,7 @@ name: table questions
 * Ctrl+Shift+J or Cmd+Opt+J
 
 ???
+* just a reminder from last year - just always have this open
 * in [chrome devtools](https://developer.chrome.com/devtools)
 
 
@@ -81,18 +78,33 @@ name: table questions
 
 * can a buzzfeed quiz be made only in html/css
 
-.medium[![](img/table5-doodles.jpeg)]
+.small[![](img/table-jquery-weary.jpg)]
 
 
 ???
-* theoretically with real tricky css - long rules where everything is a sibling
+* theoretically with real tricky css - long rules where everything is a sibling so everything can be selected and possibly duplicates
+* how did it go?  we'll look at them next time as we have a lot to do today.
+
+
+---
+name: table questions
+
+
+.medium_small.left[![](img/table-js-precision.jpg)]
+
+[floating point arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+
+???
+* because it is stored in binary there's always some imprecision given the bit storage limit
+* proof in the link
+* most languages shield you from it a bit better by rounding earlier when printing
+* https://www.reddit.com/r/javascript/comments/2scikz/eli5_why_is_this_true_01_02_030000000000000004/
 
 
 ---
 name: table questions
 
 * can we use both js and jquery for the assignment?
-.tiny[![](img/table6-sergey-brin.jpeg)]
 
 ```js
 function html(value) {
@@ -110,17 +122,16 @@ function html(value) {
 ```
 
 ???
-* did you notice we had a guest?!
 * jquery is largely just a wrapper for various plain js stuff
+
 
 ---
 name: various administrative
 
 
 .left[
-* quizzes start Thursday (don't worry)
-* short assignment 3 out today! due Thursday
-* short assignment 4 out Thursday! due Tuesday
+* short assignment 3 out today! due Friday
+* short assignment 4 out Thursday! due Monday
 ]
 
 .right.small[![](img/table4-balloon.jpeg)]
@@ -131,17 +142,6 @@ name: various administrative
 * nothing to worry about, if you understood what you did in the assignment (ie read it and coded it) should be fine
 * 2 short assignments out at the same time, both should be doable in one sit down
 * js asynch game will hopefully be out thursday!
-
-
----
-name: but also good news
-
-
-.left.small[![](img/table4-balloon.jpeg)]
-
-.right[* extension on lab2 till Sunday 6pm!]
-
-???
 
 
 
@@ -164,10 +164,9 @@ name: what is es6?!?!
 ???
 * a bunch of cool new stuff that makes javascript not crappy
 * apologies, but i love programming language coolness and currently js is one of my favorites
-* i also kindof love to read code to see what people are doing, i think its an important skill, so please if you have question about any of the codes, just yell at me, or write your question down and give it to a designated yeller at your table!
 
 ---
-name: what is es6?!?!
+name: what is es6/es7?!?!
 
 <iframe src="//giphy.com/embed/ZtufItCGJM3Vm?hideSocial=true" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -208,7 +207,7 @@ name: closure and scope trickiness
 
 ???
 * reference retained to a variable that changes!
-* note: easy way to fix this in es6
+* note: easy way to fix this in es6, use let, or don't use for loops
 * DON"T USE var:
   * i is hoisted above for loop
   * i is available after for loop
@@ -223,11 +222,13 @@ name:  let
 * `for (let x...)` create a fresh binding for x in each iteration
 * error to use a let variable before its declaration is reached
 * redeclaring a variable with let is a SyntaxError
+* use for variables that need reassigning
 
 <!-- from https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/ -->
 ???
 * all good things
 * use let instead of var, kids
+* for variable that need reassigning
 
 
 ---
@@ -268,8 +269,6 @@ console.log(o.increment(2)); // 5
 ???
 * everything is already an object
 * everything is a dictionary, hence...
-* what is this? anybody?>
-
 
 
 ---
@@ -308,7 +307,7 @@ name: this failures
 function foo() { console.log(this); }
 
 // normal function call
-foo(); // `this` will refer to `window` in es5 and undefined in es6
+foo(); // `this` will refer to parent `window`
 
 // as object method
 var obj = {
@@ -329,28 +328,14 @@ obj.bar(); // `this` will refer to `object`
 ---
 name: this
 
+<p data-height="435" data-theme-id="24117" data-slug-hash="d79000007acee9162b42e3ce4b915f0e" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/f2e5b9149a019b953859e6de0af83f54/">talking cat var scoping problem</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-```javascript
-let flower = {
-  petalCount: 10,
-  bloom: function(){
-  	console.log(`I have ${this.petalCount} petals!`);
-  },
-  lateBloom: function(){ setTimeout(this.bloom,1000) },
-}
-
-flower.lateBloom();
-// after 1 second, trigger the 'bloom' method
-setTimeout(flower.lateBloom, 1000);
-// but WAIT! logs undefined number of petals!
-```
 
 ???
 * why do we care about `this`?
 * this won't run
-* setTimeout runs in the context of window
+* setTimeout always runs in the context of window
 * window does not have a petalCount!
-
 
 
 ---
@@ -392,7 +377,8 @@ setTimeout( function() {
 ???
 * anybody want to take a stab at why this works? / what is the name for this?
 * sometimes you will see people fix this with a closure
-* reassigning the current this to another variable
+* reassigning the current this to another variable so that is closed over and included
+* rather than the magic this
 * BAD
 
 
@@ -430,6 +416,7 @@ console.log(r)
 
 ???
 * anybody remember constructors in java? what do they do?  (function that returns an instance of the class -> an object)
+* this is basically the constructor - setting everything including methods there
 
 
 
@@ -504,6 +491,7 @@ let Square = Object.create(Rectangle);
 
 ???
 * can use Object.create() instead of constructor
+* don't need to memorize this stuff
 
 
 
@@ -543,6 +531,7 @@ name: BUT WAIT!
 * es6 has "real" classes
 * stop talking about prototypes
 * still really just an object / function
+* we'll use classes in all the next assignments
 
 <iframe src="//giphy.com/embed/CKBuF2Sz3zuOQ?hideSocial=true" width="380" height="260" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -598,6 +587,7 @@ class BelgianHare extends Bunny {
 ???
 * as you would expect `extends`
 * super to invoke base class constructor *required*
+* why do belgian hares drink?
 
 
 
@@ -647,7 +637,6 @@ let results = [];
 for (let i = 0; i < anArray.length; i++) {
   results[i] = anArray[i] * i;
 }
-
 ```
 
 ```javascript
@@ -662,7 +651,6 @@ let results = anArray.map( (value, i) => {
 
 ???
 * no idea why we are multiplying each value by its index but there you have it
-
 * map example, map calls the function with value and index
   * basically a for loop for populating / altering arrays
 * pass functions as arguments is key
@@ -746,7 +734,8 @@ inFive( ()=> {console.log('hi'); } );
 ```
 
 ???
-* saw a higherorder function already
+* setTimeout is a higher order function as it takes a function as an argument
+* later will build functions that return new functions
 
 
 
@@ -833,8 +822,10 @@ name: Side Effects
 ---
 name: asynchronous js
 
+.fancy.medium[![](img/sync-async.gif)]
+
 * some functions take time
-  * making network requests
+  * making network requests (talking to a server)
   * any io really
   * or `setInterval / setTimeout`
 
@@ -957,3 +948,13 @@ xhttp.send();
 ???
 * oh you wanted to see what it would be like in plain es5 js?
 * now what if we needed to make further callbacks and requests based on the response?
+
+
+
+---
+name: yay!
+
+
+* next time:
+   * intro to react!
+* sa3 is starterpack
