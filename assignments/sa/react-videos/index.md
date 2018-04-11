@@ -956,4 +956,3 @@ And don't forget to deploy. However!  First change your `package.json` and chang
 
 * add in other video / media sources such as vimeo, giphy, etc
 * pull in the weather or other data sources
-* make it responsive
