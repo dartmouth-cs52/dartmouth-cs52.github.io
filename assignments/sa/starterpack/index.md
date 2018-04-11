@@ -689,7 +689,25 @@ in between your `css-loader` and your `sass-loader` objects.
 
 🚀 Oh, and guess what you need to `yarn add --dev` as well?  Yup, `autoprefixer`and `postcss-loader`.
 
+## Project Structure
 
+At this point your project structure should look something like:
+
+```
+.babelrc
+.eslintrc
+.git
+.gitignore
+node_modules/
+package.json
+src/
+    img
+    index.html
+    index.js
+    style.scss
+webpack.config.js
+yarn.lock
+```
 
 ## Deployment
 
