@@ -30,53 +30,49 @@ name: CS52
 
 
 ---
-name: table questions
+name: Sharing is Caring
 
-* why aren't JS objects automatically bound to their context? what's the benefit of not.
-
-```js
-function handleClick(e) {
-  this.innerHTML="you clicked me!"
-}
-
-document.getElementById('button')
-  .addEventListener('click', handleClick);
-```
-
-.large[![](img/ohgahd-table.jpg)]
+* multiple:  https://dartmouth-cs52-18s.github.io/lab2-Teddarific/
+* animal: https://dartmouth-cs52-18s.github.io/lab2-weilingx46/
+* dartmouth:https://dartmouth-cs52-18s.github.io/lab2-thekevhu/
+* calories: https://dartmouth-cs52-18s.github.io/lab2-amy-guan/
+* sex: https://dartmouth-cs52-18s.github.io/lab2-stevenrchun/
+* cheese: https://dartmouth-cs52-18s.github.io/lab2-alexandergbailey/
+* blur effect: https://dartmouth-cs52-18s.github.io/lab2-epills/
+* sports: https://dartmouth-cs52-18s.github.io/lab2-Jolenepb/
+* war: http://war-fighter.surge.sh/
+* kittens insta: https://dartmouth-cs52-18s.github.io/lab2-ckim18/
+* snek: https://dartmouth-cs52-18s.github.io/lab2-j-mai/
+* extra effects: https://dartmouth-cs52-18s.github.io/lab2-Moyo97/
+* more puppies: https://dartmouth-cs52-18s.github.io/lab2-alexpetros/
+* because tswift: https://dartmouth-cs52-18s.github.io/lab2-stopic13/
 
 ???
-*  in this example, handleClick needs `this` to refer to the calling owner (ie the button).
-* might want to use this in quizzical
+
 
 
 ---
 name: table questions
 
-* is it universally accepted that ES6 is better, or is there a debate against it?
-* does ES6 move JS to object oriented programming?
+* Is materialUI the same as bootstrap?
+* can you go over @media query and how it works
 
-.medium[![](img/house-table.jpg)]
-
+.medium[![](img/definingmobile-mediaquery.jpg)]
 
 ???
-* there are quite a few debates in general about javascript language features, but no ES6 is superior in every way. some people might want more or different changes, but nobody wants less.
-* it helps with some object oriented style with the new `class` syntax but it also introduces new functional methods such as the arrow functions and generators and iterators.
-
-* objects that allow you iterate through a sequence while keeping track of position and providing a next funciton
-* generator is a function that acts as an iterator. can return intermediate values for instance.
-
+* device: print, screen, speech
+* too many features to list
+* can be very specific but generally best not over do it
 
 
 ---
-name: SA3
+name: SA3 StartPack
 
 
 <iframe src='https://gfycat.com/ifr/DearestIllinformedBlackbird' frameborder='0' scrolling='no' width='440' height='520' allowfullscreen></iframe>
 
 ???
-* shall we code together on the board?
-
+* questions?
 
 
 ---
@@ -86,16 +82,7 @@ name: quiz
 ![](img/no-table.jpg)
 
 ???
-* let's take break a do a quiz!
-* don't worry just get the answers right and you'll be fine
-
-
----
-name: Back to SA3
-
-
-
-<iframe src="//giphy.com/embed/xT8qBpccknAjZalxe0?hideSocial=true" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+* how did it go?
 
 
 
@@ -148,17 +135,6 @@ $theme: #95c34c;
 
 
 
-<!-- ---
-name: webpack
-
-.fancy[![](img/webpack2.png)]
-
-???
-* https://webpack.js.org/
-* is a build
- -->
-
-
 ---
 name: babel
 
@@ -204,9 +180,9 @@ name:
 .medium[![](img/what-is-webpack.jpg)]
 
 ```bash
-babel app -d public
-uglify public
-sass app/sass:public/css
+babel app -d dist
+uglify dist
+sass app/sass:dist/css
 # reload server / pages
 ```
 
@@ -248,20 +224,31 @@ name:
 
 
 
-
-
-
 ---
-name: webpack-dev-server
+name: webpack-serve
 
 .medium[![](img/webpack-dev-server.gif)]
 
 * just a local http server
   * picks up changes and builds
   * with magic reload-only-certain-modules powers
+  * injects modules and css into page
 
 ???
+* what is a potential downside of injecting css with javascript?
 
+
+
+
+---
+name: Deployment
+
+.medium[![](img/deploy-meme.gif)]
+
+
+???
+* what is this deployment thing?
+* act it out?
 
 
 
@@ -272,9 +259,10 @@ name: Deployment
 * for production
   * need to build outputs to files
   * host static output files
-  * would not be running webpack-dev-server
+  * would not be running webpack-serve
 
-* `gh-pages` is just one way of publishing compiled output
+* ghpage and surge for static files
+
 
 .small[![](img/collabocats.jpg)]
 
@@ -286,19 +274,19 @@ name: Deployment
 
 
 ---
-name: Node and NPM
+name: Node NPM/yarn
 
-* `npm` is package manager
+* `yarn` is package manager
   * downloads js modules
-  * uses `package.json` file to `--save` dependencies
+  * uses `package.json` file to keep track of dependencies
   * can share project with `package.json` file
+  * gitignore `node_modules`
 
 .small[![](img/1n64e1.jpg)]
 
 ???
 * package.json file allows other devs or Heroku to load your project
 * no need to include the giant amounts of dependencies in your actual project git
-
 
 
 
@@ -312,7 +300,7 @@ name: node.js
 * Node.js is javascript interpreter without a browser
 * used for server side processing
 * used for desktop js apps like Atom
-* webpack-dev-server is a Node app
+* webpack-serve is a Node app
 
 
 .tiny[![](img/nodejs-dribbble_1.gif)]
@@ -332,7 +320,153 @@ name: More event loop
 ???
 
 
-<!-- ripped out events here to put into 04_js -->
+---
+name: asynchronous js
+
+.fancy.medium[![](../05_js2/img/sync-async.gif)]
+
+* some functions take time
+  * making network requests (talking to a server)
+  * any io really
+  * or `setInterval / setTimeout`
+
+???
+* so far all the functions we have passed in have pretty much run instantly
+* this is not always the case!
+* setInterval
+
+
+
+
+---
+name: non-blocking
+
+
+* java/python
+  * when you run I/O functions
+  * they block -- program does nothing while waiting
+* javascript is non-blocking!
+  * how it do?!
+
+.fancy.medium[![](../05_js2/img/shieldgate.jpg)]
+
+
+???
+* javascript in your browser is basically single threaded - does one thing at a time
+* how can you make that work fast?
+* non-blocking - majority of functions that take time are asynch
+
+
+
+
+---
+name: Event Driven Programming
+
+.fancy.medium[![](../05_js2/img/event-gui.png)]
+
+
+* application flow control driven by events/changes in state
+* central mechanism that listens for events
+* calls callback function once event is detected
+
+
+???
+* event driven programming is used when you have inputs that can come at any time - interrupts if you will
+* you may have seen this dealt with as a game while loop - did that happen in 1/10?
+* events trigger changes in state
+* in js there is a built in event loop
+
+
+
+---
+name: Event Loop
+
+.fancy.medium[![](../05_js2/img/event-loop.png)]
+
+???
+* you've used this by registering an event with setTimeout/interval (doesn't have to be user input)
+* we register an event listener
+* so that on a particular event a function gets executed
+* in a particular context (remember this)
+
+
+
+---
+name: ajax
+
+.left[
+* asynchronous javascript and XML
+* people no longer really fetch xml/html
+* JSON data format
+]
+
+.right[![](../05_js2/img/infinite-scroll-mobile.gif)]
+
+???
+* can't load all data in world
+* load js and then fetch data asynchronously into the page
+* you click a button to "show more"
+* you scroll and more data is loaded
+* this is interactive content being loaded into the page
+* but also,  your page doesn't stop scrolling just because you are waiting to load content
+
+
+---
+name: Why is this tricky?
+
+```javascript
+var data;       
+$.ajax({
+    url: 'http://api.something.com/all-datas',
+    success: function( result ) {
+        data = results;
+        console.log( data );
+    }
+})
+console.log( data );
+//
+
+```
+
+???
+* this uses jquery ajax for readability
+* this is super common mistakes
+* what is happening here?  
+
+
+
+
+
+---
+name: Vanilla ES5
+
+```javascript
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (xhttp.readyState == 4 && xhttp.status == 200) {
+   document.getElementById("demo").innerHTML = xhttp.responseText;
+  }
+};
+xhttp.open("GET", "http://api.something.com/all-datas", true);
+xhttp.send();
+```
+
+???
+
+* now what if we needed to make further callbacks and requests based on the response?
+
+
+---
+name: ES6
+
+```js
+fetch('http://api.something.com/all-datas').then( data => {
+  console.log(data)
+})
+```
+
+???
+* and now in es6 with fetch and promises
 
 
 ---
@@ -368,6 +502,7 @@ name:
 
 ???
 * server side rendering
+  * server is running code
   * server constructs custom response for every page
   * uses template and results from database
 
@@ -418,7 +553,7 @@ name:
 
 
 ???
-* ajax is what talks to api's
+* ajax is how we talk to api's
 * process by which a page loads new data via javascript rather than html
 
 <!--http://stackoverflow.com/questions/25336156/how-to-immediately-invoke-jquery-upon-clicking-remote-link-in-rails-->
@@ -435,6 +570,7 @@ name:
 .medium[![](img/JWMB2.png)]
 
 ???
+* javascript modifying the page is powerful
 * more ajax
   * page updates happen in background separate from full page loads
   * we will use JSON isntead of XML, but note that new html only happens once the data is fetched
@@ -447,9 +583,9 @@ name: apis
 * http/s requests
   * GET, POST, etc
 * return JSON format data
-* [https://www.getpostman.com/](https://www.getpostman.com/)
+* [https://insomnia.rest/](https://insomnia.rest/)
 
-.medium[![](img/postman.jpg)]
+.medium[![](img/insomnia.png)]
 
 
 ???
@@ -478,7 +614,15 @@ perl -e 'print "<html>Hello World</html>"'
 ```
 
 ???
+* cgi not computer-generated imagery
+* frameworks help
+* bash cgi
 * server spits out full display html
+```
+echo "Content-type: text/html"
+echo ""
+echo '<html>'
+```
 
 
 
@@ -552,7 +696,8 @@ app.get('/', (req, res) => {
 ```
 
 ???
-
+* we'll use express later in the term
+* somewhat more geared toward api than templating
 
 
 
@@ -596,7 +741,7 @@ name: MVC
 ???
 * mvc is common code architecture pattern - specifically for uis
 * model stores your datas, objects
-* controller operates on the datas
+* controller operates on the datas, the logic
 * view presents it, webpage
 * can be both frontend and backend
   * often both!
@@ -690,9 +835,10 @@ name: React
 * V in MVC
 * but actually more
   * super fast virtual dom
+  * no more digging around
 
 ???
-
+* tries to optimize the tedious digging around in the dom
 
 
 ---
@@ -722,9 +868,13 @@ name: tree diffs
 * wouldn't comparing trees be expensive?
   * $O(n^{3})$ yes
   * but React does it in $O(n)$
+* [reconciliation](https://reactjs.org/docs/reconciliation.html) heuristic
 
 ???
-
+* heuristic O(n) algorithm
+* assumption1: Two elements of different types will produce different trees.
+* 2: developer can hint at which child elements may be stable across different renders with a key prop.
+* https://reactjs.org/docs/reconciliation.html
 
 
 
@@ -736,6 +886,7 @@ name: dirty state
 
 
 ???
+* when a components state changes via setState.
 * when you run `setstate` it markes a node as dirty
 * potentially rerendering the entire subtree but in practice is performant
 
@@ -924,15 +1075,12 @@ name: tiny todo
 
 
 
-
-
 ---
 name:
 
-![](https://cdn.meme.am/instances/59617068.jpg)
+![](img/59617068.jpeg)
 
 ???
-
 
 
 
