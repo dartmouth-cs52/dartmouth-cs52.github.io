@@ -41,11 +41,11 @@ See [assignments](/assignments).
 * Open Help Hours in Sudikoff: <br>
   Mon 4-6pm: Sudikoff 148s<br>
   Mon 8-10pm: Neukom (Sudikoff 123)<br>
-  Thurs 6-9 pm:  Neukom (Sudikoff 123)<br>
+  Thurs 7:30-9:30 pm:  Neukom (Sudikoff 123)<br>
   Sun 6-9 pm:  Neukom (Sudikoff 123)
 
 * Instructor:<br>
-  Fri 9-10am, 11am-12pm; or by appointment in Sudikoff 219/007
+  Fri 9-10am (!4/13), 11am-12pm; or by appointment in Sudikoff 219/007
 
 <table>
   <tr>

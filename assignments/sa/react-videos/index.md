@@ -20,7 +20,7 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-17S/starterpack-your-gitub-username.git
+git remote add starter git@github.com:dartmouth-cs52-18s/starterpack-your-gitub-username.git
 git pull starter master
 ```
 
