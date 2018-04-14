@@ -16,8 +16,8 @@ comment_term: assignments
 * [Short Assignment 2: Git Map](sa/git-map) — DUE 3/30
 <!-- * Short Assignment 3: Webpack+Babel+Eslint starterpack -->
 * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) — DUE 4/13
-* Short Assignment 4: React Intro
-<!-- * [Short Assignment 4: React Intro](sa/react-videos) — DUE 4/19 -->
+<!-- * Short Assignment 4: React Intro -->
+* [Short Assignment 4: React Intro](sa/react-videos) — DUE 4/16
 * Short Assignment 5: Frontend Routing
 <!-- * [Short Assignment 5: Frontend Routing](sa/routing) — DUE 4/27 -->
 * Short Assignment 6: Redux
