@@ -279,7 +279,7 @@ Here is an example:
     handle=".note-mover"
     grid={[25, 25]}
     defaultPosition={ {x: 20, y: 20} }
-    position={position} //looks like {x, y, width, height}
+    position={position} {/*looks like {x, y, width, height*/}
     onStart={this.onStartDrag}
     onDrag={this.onDrag}
     onStop={this.onStopDrag}
