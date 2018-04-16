@@ -677,7 +677,8 @@ We promised that we would have a larger video view with details.  I suppose we s
 import React from 'react';
 
 const VideoDetail = ({ video }) => {
-  const {videoId} = video.id; // Example of destructuring!!
+  const videoId = video.id.videoId; //will give linting error - read it and decide for yourself
+  // {videoId} = video.id // is example of destructuring
   const url = `https://www.youtube.com/embed/${videoId}`;
 
   return (

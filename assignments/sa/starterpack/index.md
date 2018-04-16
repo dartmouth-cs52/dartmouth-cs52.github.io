@@ -739,7 +739,7 @@ yarn add --dev surge #both command and in dependencies
 For Windows:
 
 ```javascript
-"build": "yarn clean & SET WEBPACK_ENV=production & webpack --colors",
+"build": "yarn clean & SET WEBPACK_ENV=production& webpack --colors",
 "clean": "rimraf dist",
 "deploy": "yarn build & surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh & yarn clean"
 ```
