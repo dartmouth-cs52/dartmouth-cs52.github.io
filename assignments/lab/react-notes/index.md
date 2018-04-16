@@ -16,7 +16,7 @@ Where we dive deeper into React and construct a realtime collaborative post-it n
 
 ### Part 1
 
-We will start with a version of the app that does not have a backend,  it'll use state for notes but if you refresh the page all your hard work will disappear.
+We will start with a version of the app that does not have a backmend,  it'll use state for notes but if you refresh the page all your hard work will disappear.
 
 ### Part 2
 
@@ -29,13 +29,13 @@ Then we will add in Firebase for persistent storage. Firebase is a backend as a 
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-18S/starterpack-your-gitub-username.git
-git pull starter master
+git remote add starter git@github.com:dartmouth-cs52-18s/starterpack-your-gitub-username.git
+git pull starter master  # you may need --allow-unrelated-histories
 ```
 
 ```bash
 # also don't forget to run:
-npm install #to fetch all your webpack dependencies
+yarn #to fetch all your webpack dependencies
 ```
 
 
@@ -125,12 +125,10 @@ Feel free to peruse the Immutable.js [docs](https://facebook.github.io/immutable
 🚀 Install Immutable.js
 
 ```javascript
-npm install --save immutable
+yarn add immutable
 
 // import Immutable from 'immutable';
 ```
-
-Note: we used `--save` rather than `--save-dev` because immutable will need to be available in our build not just during development.
 
 Here is what I recommend you do for your *App* component state initialization:
 
@@ -156,7 +154,7 @@ Good question! We are going to use an immutable map for a couple of reasons:
 ## Notes State
 
 
-Our main state object (note you may have additional components that have local state for things like editing or driven fields) is going to be an Immutable.Map that looks something like this:
+Our main state object (note you may have additional components that have local state for things like editing or driven fields) is going to be an `Immutable.Map` that looks something like this:
 
 ```javascript
 {
@@ -247,6 +245,7 @@ notes.entrySeq().map(([id, note]) => {
 });
 ```
 
+*Note: if we were mapping over a regular array as you may sometimes want, remember that `entrySeq` only pertains to Immutable.js map objects, not regular JS objects/arrays.*
 
 ## Note Component
 
@@ -280,7 +279,7 @@ Here is an example:
     handle=".note-mover"
     grid={[25, 25]}
     defaultPosition={ {x: 20, y: 20} }
-    position={position}
+    position={position} //looks like {x, y, width, height}
     onStart={this.onStartDrag}
     onDrag={this.onDrag}
     onStop={this.onStopDrag}
@@ -296,7 +295,7 @@ The way to use this component is to wrap whatever JSX you want in your *Note* re
 
 Note the 3 callbacks.  `onStart`, `onDrag`, `onStop`.   You would use these to drive the position of the note.  You'll want the position to be part of the note object as eventually we will synchronize using a cloud component.  You may find that you only need to implement `onDrag`.
 
-In particular, Draggable will call onDrag with two arguments, let's call them `(e, ui)`.  Just to save you some digging, `ui` will have x and y components so you can extract them and use them for your `note.position` state.
+In particular, Draggable will call `onDrag` with two arguments, let's call them `(e, ui)`.  Just to save you some digging, `ui` will have x and y components so you can extract them and use them for your `note.position` state.
 
 Here's a potential component hierarchy you could end up with:
 
@@ -358,7 +357,7 @@ render() {
 
 ### Markdown
 
-For markdown support in the main text portion of the note, just use the [marked](https://github.com/chjj/marked) package.
+For markdown support in the main text portion of the note, you can use the [marked](https://github.com/chjj/marked) package.
 
 There's a tiny trick for this in React, so I'll just show it here:
 
@@ -408,6 +407,8 @@ Now that we have a working stand-alone app, we should connect it to backend to m
 
 One way to add persistent storage is to use a backend as a service (BAAS) platform. Firebase is one such platform that provides a JSON based database ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. For instance you can subscribe to change events on collections of objects. Can we use Firebase with our React app?  You bet!
 
+*Note: we'll be using Firebase Realtime Database for this rather than the newer Cloud Firestore Beta, although both would work for our purposes.*
+
 
 
 ### Reminder of specs
@@ -437,6 +438,19 @@ One way to add persistent storage is to use a backend as a service (BAAS) platfo
 
 🚀 Create an account and new project at [firebase.google.com](https://firebase.google.com/).
 
+🚀 Enable Realtime Database with public access
+
+![](img/realtime-rules.jpg){: .fancy .medium}
+
+By default Firebase only allows authenticated users access to the realtime database, so if we tried to read or write anything right now it would fail!
+
+For now we aren't going to use authentication, but you can configure your app permissions to allow public read/write while testing.
+
+You can see other [sample rules](https://firebase.google.com/docs/database/security/quickstart#sample-rules), but for now public is what we will use.
+
+Note: it is extra credit to add authentication for users to your app and not just allow anybody to post notes.
+
+
 You'll need to install firebase command line tools also:
 
 ```bash
@@ -448,12 +462,13 @@ Note: `-g` installs globally rather than in your project, so we're installing a 
 🚀 While we are at it let's add the firebase js library to your project:
 
 ```bash
-npm install --save firebase
+yarn add firebase
 ```
+
 
 🚀 Now go to your *Project Overview* page -> *Add Firebase To Your App*
 
-You'll need to grab the `config` part that looks something like:
+You'll need to grab the `config` part that looks something like (grab the whole object):
 
 ```javascript
 // Set the configuration for your app
@@ -463,6 +478,7 @@ var config = {
   authDomain: '<your-auth-domain>',
   databaseURL: '<your-database-url>',
   storageBucket: '<your-storage-bucket>'
+  projectId: '<your-project-id>'
 };
 firebase.initializeApp(config);
 
@@ -470,9 +486,9 @@ firebase.initializeApp(config);
 const database = firebase.database();
 ```
 
-Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods.
+Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods - fact we'll just abstract it out into something we'll consider our datastore.
 
-🚀 Create a file,  `firebasedb.js` in your `src/` directory. And since we're using npm to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
+🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `yarn` to fetch the firebase SDK for us, just do `import Firebase from 'firebase';` and you're all set to go!
 
 My recommendation is to put all your firebase functions in this file and export them.  We briefly talked about ES6 modules.  Easiest way to make this module is to simply export every public function:
 
@@ -482,13 +498,13 @@ export function fetchNotes(callback) { /* ... */ }
 
 Hey, what's this `fetchNotes` function?!  Just something that might help!
 
-You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal, however!  Our app is a frontend only app, we may be starting `webpack-dev-server` with `npm start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!   However, note that they key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data.
+You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal, however!  Our app is a frontend only app, we may be starting `webpack-serve` with `yarn start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!  However, note that the key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data.
 
-Once you are ready to use these new functions you can just import it wherever you need it. In particular you would want to import these functions in your top level component.
+Once you are ready to use these new functions you can just import it wherever you need it. In particular you would want to import these functions in your top level component where you have your note state related callbacks.
 
 ```javascript
-import * as firebasedb from '../firebasedb'
-// to get firebasedb.fetchNotes etc...
+import * as db from './services/datastore';
+// to get db.fetchNotes etc...
 ```
 
 *Note: if the linter complains about using default just add the other functions you'll probably need here. Like `updateNote`, etc.*
@@ -501,19 +517,6 @@ Firebase stores everything as JSON — in fact the whole thing can be thought of
 Here's what our data might look like in firebase:
 
 ![](img/firebase-object.png){: .fancy .small}
-
-
-
-## Authentication
-
-
-By default Firebase only allows authenticated users access to the realtime database, so if we tried to read or write anything right now it would fail!
-
-For now we aren't going to use authentication, but you can configure your app permissions to allow public read/write while testing.
-
-🚀 Configure your Database rules to allow Public access [here](https://firebase.google.com/docs/database/security/quickstart#sample-rules)
-
-Note: it is extra credit to add authentication for users to your app and not just allow anybody to post notes.
 
 
 
