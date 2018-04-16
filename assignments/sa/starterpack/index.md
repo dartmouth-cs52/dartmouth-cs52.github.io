@@ -284,7 +284,7 @@ We could start up a python webserver to load the files, but webpack comes with a
 
 🚀 Edit your `package.json` again and change the `start` line to: `"start": "NODE_ENV=development webpack-serve ./webpack.config.js",`
 
-*Note: on windows the syntax may be a tiny bit different `SET NODE_ENV=development & webpack-serve ./webpack.config.js`*
+*Note: on windows the syntax may be a tiny bit different `SET NODE_ENV=development& webpack-serve ./webpack.config.js`*
 
 🚀 Now you can simply run `yarn start`:
 
@@ -734,6 +734,14 @@ yarn add --dev surge #both command and in dependencies
 "build": "yarn clean; NODE_ENV=production webpack --colors",
 "clean": "rimraf dist",
 "deploy": "yarn build; surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh; yarn clean"
+```
+
+For Windows:
+
+```javascript
+"build": "yarn clean & SET WEBPACK_ENV=production & webpack --colors",
+"clean": "rimraf dist",
+"deploy": "yarn build & surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh & yarn clean"
 ```
 
 Go ahead.  Change the `MYCOOLSTARTERPACKNAME` to be a domain unique for you - say `yourname-cs52-starter.surge.sh`. `yarn deploy`.  
