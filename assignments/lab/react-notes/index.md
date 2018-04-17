@@ -16,7 +16,7 @@ Where we dive deeper into React and construct a realtime collaborative post-it n
 
 ### Part 1
 
-We will start with a version of the app that does not have a backmend,  it'll use state for notes but if you refresh the page all your hard work will disappear.
+We will start with a version of the app that does not have a backend,  it'll use state for notes but if you refresh the page all your hard work will disappear.
 
 ### Part 2
 
