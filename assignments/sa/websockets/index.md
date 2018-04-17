@@ -46,7 +46,7 @@ Frontend:  we will utilize our realtime react notes app and refactor slightly.
   text: String,
 ```
 
-npm install and **save** `mongoose`.
+yarn add `mongoose`.
 
 In your `server.js` set up your mongo connection:
 
@@ -116,7 +116,7 @@ We'll be using [socket.io](http://socket.io) serverside and clientside.  We coul
 🚀 Install socket.io in **SERVER**:
 
 ```bash
-npm install --save socket.io http
+yarn add socket.io http
 ```
 
 We'll need to change a few things in our `server.js` file:
@@ -191,11 +191,11 @@ In your Lab3 new branch, let's add some socket.io smarts.
 🚀 Install socket.io in CLIENT (Lab3)
 
 ```bash
-npm install --save socket.io-client
+yarn add socket.io-client
 ```
 
 
-🚀 Some Setup in `app.js`
+🚀 Some Setup in `index.js` or your main app component.
 
 ```javascript
 // at top
@@ -207,7 +207,7 @@ const socketserver = 'http://localhost:9090';
 
 We will define some specific event listeners.  Firebase had the *on value* event listener, but for socket.io we will be able to define any number of our own custom events to listen to.
 
-In your `app.js` **constructor** (we'll refactor simply and just put in all the socketio stuff directly into App for now) add the following:
+In your App **constructor** (we'll refactor simply and just put in all the socketio stuff directly into App for now) add the following:
 
 ```javascript
 this.socket = io(socketserver);
