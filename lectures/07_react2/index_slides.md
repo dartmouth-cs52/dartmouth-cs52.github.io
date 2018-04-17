@@ -22,30 +22,258 @@ class: center, middle
 name: CS52 Today's Menu
 
 
+* Site Architecture Basics
 * All the React
-* All the Quizzes
-* Projects
 
-.medium[![](img/extensions-table.png)]
+
+.medium[![](img/table-git.jpg)]
 
 ???
-* heading into week 4! so intense
+* heading into week 4 yaaay
+* questioons commments concerns?
+
+
 
 ---
-name: Random Sampling of Quizzicals
+name: static sites
 
-* [moose](https://dartmouth-cs52-17s.github.io/lab2-watermandrew/)
-* [goat](https://dartmouth-cs52-17s.github.io/lab2-randaline11/)
-* [pokemon](https://dartmouth-cs52-17s.github.io/lab2-TPeterW/q1.html)
-* [cat](https://dartmouth-cs52-17s.github.io/lab2-emilyJLin95/)
-* [dog](https://dartmouth-cs52-17s.github.io/lab2-KevinFarmer/)
-* [psychoanalyze](https://dartmouth-cs52-17s.github.io/lab2-annieke/)
-* [swearer](https://dartmouth-cs52-17s.github.io/lab2-allisonchuang/)
-* [gelato](https://dartmouth-cs52-17s.github.io/lab2-zchr/)
-* [90's gadget](https://dartmouth-cs52-17s.github.io/lab2-ArminMahban/)
-* [friend](https://dartmouth-cs52-17s.github.io/lab2-yeonjaepark/)
-* [composer](https://dartmouth-cs52-17s.github.io/lab2-arinehouse/)
-* [yeezy](http://yeezyyeezyyeezy.me/h2)
+![](../06_react1/img/static-sites.png)
+
+???
+* an overview of different web architectures
+* we'll go over these more in depth also
+* static sites
+  * just files, transmitted on the network
+  * what we've been doing so far
+
+
+
+
+
+---
+name: server side rendered
+
+![](../06_react1/img/server-side-rendering.png)
+
+???
+* server side rendering
+  * server is running code
+  * server constructs custom response for every page
+  * uses template and results from database
+
+
+
+
+
+---
+name: spa
+
+![](../06_react1/img/single-page-app.png)
+
+
+???
+* single page app
+  * 1 index html file that loads javascript
+  * javascript then handles all content and urls
+  * loads all content asynchronously and inserts into page
+  * DOM manipulation + frontend framework
+  * largely the architecture we'll be using
+
+
+
+
+
+---
+name: isomorphic
+
+![](../06_react1/img/isomorphic-app.png)
+
+
+???
+* isomorphic app
+  * does both server side rendering
+  * AND javascript client side content fetching and display
+  * this is useful in a few cases where say you want bots to read your page better or for SEO, so we'll learn about it but not have to inmplement it.
+
+
+
+
+
+---
+name:
+
+.small[![](../06_react1/img/ajax.png)]
+
+.medium[![](../06_react1/img/django-ajax.png)]
+
+
+???
+* ajax is the concept of how we talk to api's
+* process by which a page loads new data via javascript rather than html
+
+<!--http://stackoverflow.com/questions/25336156/how-to-immediately-invoke-jquery-upon-clicking-remote-link-in-rails-->
+<!--https://realpython.com/blog/python/django-and-ajax-form-submissions-more-practice/-->
+
+
+
+---
+name:
+
+.medium[![](../06_react1/img/JWMB2.png)]
+
+???
+* javascript modifying the page is powerful
+* more ajax
+  * page updates happen in background separate from full page loads
+  * we will use JSON isntead of XML, but note that new html only happens once the data is fetched
+
+
+
+---
+name: apis
+
+* http/s requests
+  * GET, POST, etc
+* return JSON format data
+* [https://insomnia.rest/](https://insomnia.rest/)
+
+.medium[![](../06_react1/img/insomnia.png)]
+
+
+???
+* what does api mean?  application programming interface
+* when people say apis'
+* what they mean is:
+  * a server that returns/mutates data
+  * based on http get/post requests
+* often companies have public apis - allowing developers to interact with their datas
+* but also private apis whereby their own data is available to an ecosystem of own apps etc
+
+
+
+---
+name: React.js
+
+
+.medium[![](img/reactjs.gif)]
+
+.medium[![](img/revolution.gif)]
+
+???
+* wait backup - we're still in frontend mode
+* course description said: how to make powerful - extensible - modern web apps
+* used by everyone
+* made by facebook
+* large open source community
+
+
+---
+name: why react?
+
+
+.medium[![](img/stackoverflow-2018-react.jpg)]
+
+
+* https://insights.stackoverflow.com/survey/2018/
+
+
+
+
+
+---
+name: why react?
+
+
+.medium[![](img/stackoverflow-2018-react.jpg)]
+
+
+* https://insights.stackoverflow.com/survey/2018/
+
+
+
+---
+name: why react?
+
+
+.medium[![](img/stateofjs-2017-react.jpg)]
+
+
+* https://stateofjs.com/
+
+
+
+
+---
+name: React Onwards and Upwards
+
+.small[![](img/pure-function.png)]
+
+
+* `fn(data) = View`
+* UI is a function of your state
+* props are to components what arguments are to functions
+
+
+
+???
+* why revolutionary?
+* view as a pure function of data
+* we'll be talking a lot about component this component that
+* everything is a component in react
+* each node in virtual DOM is component
+* trees on trees on trees
+
+
+
+
+---
+name: old way
+
+```javascript
+$("button").on("click", function(button) {
+  if(button.value=="OFF") {
+      button.value="ON";
+  } else {
+      button.value="OFF";
+  }
+});
+```
+
+gross
+
+???
+* gross and a gross exaggeration
+* storing state in the DOM
+* or a slew of global variables
+* have to query for it if we want to know anything
+* super gross
+
+
+
+
+
+---
+name: new way
+
+.small[![](img/mind.gif)]
+
+
+```js
+<button enabled={this.state.button} onClick={
+  () => this.setState({ button: !button })
+} />
+```
+
+* prettier?
+
+???
+* ok not yet mind blowing - bad example
+* fp principles
+* each component has local state which is an object (dictionary/hashmap)
+* has method `setState` to change it
+* never mutate state directly without `setState`
+
+
 
 
 
@@ -69,9 +297,31 @@ React.createElement("div", { className: "red" },
 * this can be react - well jsx
 * who's confused about JSX?
 * javascript XML
-* Today F8 started, react 16 may be announced soon
-  * facebook dev tools
+* syntax for defining views in render
 
+
+
+---
+name: JSX
+
+```js
+const aDivElement = <div className="foo" />hi</div>;
+//or
+React.createElement("div", { className: "foo" }, "hi");
+
+const aComponent = <MyComponent someProperty={true} />;
+//or
+React.createElement(MyComponent, { someProperty: true });
+
+```
+
+* JSX is html-like syntax for defining react tree nodes
+* instantiate your components for fun and profit!
+
+
+???
+* react components rendering is defined in JSX
+* what enables us to use this nice syntax?  babel
 
 
 ---
@@ -81,10 +331,13 @@ name:
 
 ???
 * now that you are all jquery masters
+* with jquery you can change stuff on the page but your code logic doesn't necessarily know anything about it
+* lab2 vs lab3
 * react simplifies things
 * we'll build like 5 react apps in the coming weeks so don't worry if its all a bit confusing
 * state isn't hidden in many components requiring you to read state and then change stuff
-
+* change state -> render, repeat
+* not a render loop
 
 
 
@@ -95,7 +348,7 @@ name:
 name: Data Binding
 
 
- * establishes a connection between the application UI and business logic
+ * connection between application UI and business logic
  * when data changes value the elements that are bound to the data reflect changes
  * most UI frameworks have some form of data binding
 
@@ -109,19 +362,10 @@ var username = '';
 
 ???
 * concept evolved in more complex frameworks than jquery (angular say)
+* you have some data - and you have some display - how to make it easier to work together
 * idea was what if a UI display could be directly tied to the persistent value in your code
 * if one changes so does the other
 * at least two types
-
-
-
----
-name: Nope
-
-.medium_small[![](img/dontalwaysdatabind.jpg)]
-
-
-???
 
 
 
@@ -151,8 +395,18 @@ name: One Way
 ???
 * driven by state
 * an event updates the state
+* not automatic
 
 
+
+---
+name: Nope
+
+.medium_small[![](img/dontalwaysdatabind.jpg)]
+
+
+???
+* ok maybe not
 
 
 ---
@@ -226,7 +480,6 @@ name:
 ???
 * this is all to say that 2 way data binding
 * is like globals and sideffects. shit can get messed up
-* so drink the koolaid that is react and know that the river of data is clean
 
 
 
@@ -248,11 +501,11 @@ name: Some React Postulates
   * what radio button was clicked
   * what is being displayed etc
 * transparency: effects of a code change should be limited/local
-  * or at least easy to reason about
+  * or at least **easy to reason about**
   * Also a useful concept regarding state change
   * Two-way bindings open Pandora’s box:
     * No easy way of knowing how far-reaching a change in the reverse direction is going to be
-* mutable state and sideeffects are not transparent
+* **mutable state and sideeffects are not transparent**
 * hard to test
 * what if you needed to compute somethings or validate something on that data
 
@@ -268,7 +521,8 @@ name:
 
 
 ???
-* reacts solution - all state changes go through setState
+* react's solution - all state changes are events
+* you run setState and it only affects shit downriver
 
 
 
@@ -279,22 +533,76 @@ name:
 ![](img/2setstate.png)
 
 ???
+* so drink the koolaid that is react and know that the river of data is clean
+
+
+---
+name: What is this I hear about Virtual DOM?
+
+.medium_small.fancy[![](../06_react1/img/reactjs-virtual-dom-real-dom.png)]
+
+
+* isn't one DOM already enough?!?!
+* normal DOM traversal is slow
+* Virtual DOM allows for faster DOM manipulation
+* Virtual DOM simpler and faster
+  * React diffs Virtual DOM and DOM
+  * only updates what is changed
+
+
+???
+* what is the DOM again? document object model - a tree of html elements
+* to be able to efficiently manage the display of your complex view
+* react builds up a virtual DOM tree
+* dom trees are large, react component virtual tree is smaller
+* saved unneccessary dom manipulation (state changes but don't need to rerender a lot of stuff)
 
 
 
 
 ---
-name: React Drawbacks
+name: tree diffs
 
-* NONE
-  * long props chains
-  * component separation
-  * input fields a little annoying
+* wouldn't comparing trees be expensive?
+  * $O(n^{3})$ yes
+  * but React does it in $O(n)$
+* [reconciliation](https://reactjs.org/docs/reconciliation.html) heuristic
 
 ???
-* but we'll fix most of this next week with Redux
-* the answer to state management everywhere
-* more and more framework are adopting the state first reactive approach
+* heuristic O(n) algorithm
+* assumption1: Two elements of different types will produce different trees.
+* 2: developer can hint at which child elements may be stable across different renders with a key prop.
+* https://reactjs.org/docs/reconciliation.html
+
+
+
+
+---
+name: dirty state
+
+.medium[![](../06_react1/img/setstate-dirty.png)]
+
+
+???
+* when a components state changes via setState.
+* when you run `setstate` it markes a node as dirty
+* potentially rerendering the entire subtree but in practice is performant
+
+*(img from [perfplanet](http://calendar.perfplanet.com/2013/diff/))*
+
+
+
+
+
+---
+name: rerendering
+
+.medium[![](../06_react1/img/dirty-rerendered.png)]
+
+
+???
+* actually a bit better than shown here
+* you can indicate that nodes are stable and unchanged via the codes
 
 
 ---
@@ -347,11 +655,12 @@ name:
 
 
 ???
-* based on state and props
-* composable (nestable)
-* reusable (cause props)
+* sa4 yay
+* components are:
+   * composable (nestable)
+   * reusable (cause props)
 * unidirectional (rerenders everything in component)
-* think reusable: generic input bar vs youtube searchbar
+* hint: think reusable: generic input bar vs youtube searchbar
 
 
 
@@ -367,10 +676,19 @@ name:
 ???
 * lets talk components
 * searchbar is smart because its driven, doesn't have to be but better when it is
+* data flows down
+* events are passed up
 
 
+---
+name: local state
 
 
+.medium[![](img/local-state.jpg)]
+
+???
+* state internal to a component
+* can be passed down to children as props
 
 
 ---
@@ -380,13 +698,21 @@ name: local state
 ![](img/component-tree-setstate.png)
 
 ???
-* based on state and props
-* composable (nestable)
-* reusable (cause props)
-* unidirectional (rerenders everything in component)
+* we had local state somewhere else in sa4?
+* yeah top level app component
 
 
 
+
+
+---
+name: props
+
+
+.medium[![](img/props-read-only.jpg)]
+
+???
+* pass an event up to change state in parent
 
 ---
 name: parent state
@@ -395,18 +721,16 @@ name: parent state
 ![](img/component-tree-callback.png)
 
 ???
-* based on state and props
-* composable (nestable)
-* reusable (cause props)
-* unidirectional (rerenders everything in component)
-
+* create function that runs setState in parent smart container
+* pass function down to children who can run it
 
 
 
 
 
 ---
-name: Props
+name: state summary
+
 
 .medium[![](img/props-state.png)]
 
@@ -441,24 +765,24 @@ const SmallComponent = (props) => {
 ```
 
 ```javascript
-const ParentComponent = (props) => {
-  const handleClick = () => {console.log('clicked')}
+class ParentComponent extends Component {
+  handleClick = () => {console.log('clicked')}
 
-  const list = props.people.map( person => {
-    return <SmallComponent person={person} onClick={handleClick}/>
+  const list = this.props.people.map( person => {
+    return <SmallComponent person={person} onClick={this.handleClick}/>
   });
 
-  return <ul> {list} </ul>;
+  render() {\
+    return <ul> {list} </ul>;
+  }
 };
 ```
 
 
 ???
-* props are passed in
-* defined on initialization
-* immutable
-* can be callbacks
-* both of these are "dumb" components
+* simplified example, why is parentComponent a bad example?
+* doesnt' do anything useful with click event
+* should run setState
 
 
 
@@ -478,10 +802,24 @@ name: component lifecycle
 
 
 
+---
+name: React Drawbacks
+
+* NONE
+  * long props chains
+  * component separation
+  * input fields a little annoying
+
+???
+* but we'll fix most of this next week with Redux
+* the answer to state management everywhere
+* more and more framework are adopting the state first reactive approach
+
+
 
 
 ---
-name: State
+name: State Details
 
 ```javascript
 //initialize State
