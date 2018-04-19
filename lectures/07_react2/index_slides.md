@@ -608,6 +608,8 @@ name: rerendering
 ---
 name: Thinking In React
 
+.medium[![](img/mock_components-table.jpg)]
+
 1. Start with a mock
 ???
 1. mock: features + data

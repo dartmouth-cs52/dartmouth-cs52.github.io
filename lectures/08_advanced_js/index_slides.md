@@ -59,51 +59,63 @@ name: Javascript Fatigue
 
 
 ---
-name: Too much? NEVER
+name: Too much?
 
-.medium[![](img/evil.jpg)]
+
+![](img/table-too-fast.jpg)
 
 
 ???
-*
+* learning is good for you - builds character
+
+---
+name: Not enough!
+
+
+.large[![](img/evil.jpg)]
+
+
+???
+* last year had overlapping assignments eek
 
 
 
 ---
 name: Table Questions
 
-* how do you decide how many components there should be?
+* can you use a static site generator with react to provide a static site that can do some dynamic stuff?   Yes: https://www.gatsbyjs.org/ and...
 
-.medium[![](img/mock_components-table.jpg)]
+.left[![](img/table-comparing-trees.jpg)]
+
+.right[![](img/table-webpack-100.jpg)]
+
+
 
 ???
-* anything reussable
-* anything that stores data
-* anything that encapsultes other things
+* yes - there's even a concept: jamstack
+* javascript, apis, and markdown
+* mostly static - but also using various apis to put together pages, for dynamic content.
+
+
+
 
 
 ---
-name: Drawing On Point
+name: Table Questions
 
-.left[
-.tiny[![](img/borderboxing-table.jpg)]
-.tiny[![](img/reactjuggler-table.jpg)]
-.tiny[![](img/robot-table.jpg)]
-.tiny[![](img/suave-table.jpg)]
-]
 
-.right[
-.medium_small[![](img/fishing-table.jpg)]
-.medium[![](img/ellis-table.jpg)]
-]
+.large[![](img/table-js-tim-vs-sergey.jpg)]
+
 
 
 ???
-* drawing game has stepped up
-* useful illustrations!
-* i think maybe there should be some tiny extra credit associated with this - please sign your artwork from now on
-* as they come in i'll illustrate more and more, you are contributing to the future of the class
-
+* engineering - knowing the properties of your materials
+* in software - how do you test other peoples code / know its properties
+* does it scale?  does it work in older browsers?
+* does it handle all input safely?
+* tests are important but also we aren't making programs to run rockets
+* [apollo moon code](https://qz.com/726338/the-code-that-took-america-to-the-moon-was-just-published-to-github-and-its-like-a-1960s-time-capsule/)
+* [nasa rules](http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf)
 
 
 
@@ -113,10 +125,11 @@ name: Drawing On Point
 name: Callbacks
 
 
-.medium[![](img/callbacks.jpg)]
+.medium[![](img/callbacks-table.jpg)]
 
 ???
 * what is this callback thing
+* functions that you pass to other functions
 
 
 
@@ -129,11 +142,13 @@ name: Callbacks Are Like Minions
 minionHandleClick = (event) {
   this.setState({lastclicked: event.target })
 }
-<Component onClick=(minionHandleClick) />
+<Component onClick=(this.minionHandleClick) />
 ```
 ???
 * fyi in a class this is an experimental syntax you can [enable](http://babeljs.io/docs/plugins/transform-class-properties/)
-* you give them a task and they run off to do it
+* this analogy will get old
+* you give a minion a task and they run off to do it
+* and report back later
 
 ---
 name: Callbacks?Asynchronous?Non-blocking?
@@ -146,11 +161,14 @@ name: Callbacks?Asynchronous?Non-blocking?
 <iframe src="//giphy.com/embed/uBuzWfwVcadRC?hideSocial=true" width="480" height="307.2" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
+* what are some things that you might need to wait for?
+* not waiting enables you to keep doing stuff
+* whether evil or not
 
 ---
 name: Minions Can Call A Friend
 
-<iframe src="//giphy.com/embed/PskgQUtRwqggg?hideSocial=true" width="410" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.small[![](img/minion-fight.gif)]
 
 ```js
 kevin = (error, results) => {
@@ -176,18 +194,18 @@ name: Tasks that only a minion can do
 <iframe src="//giphy.com/embed/13FznCEnWSiUfK?hideSocial=true" width="480" height="259.9384615384615" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ```js
-fetchMeBeer = (minion) => {
-  // do something that takes a long time
-  fetch(beer).then( beer => {
-    minion(null, beer)
-  }).catch(error => {
-    minion(`sorry boss, ${error}`, null)
-  });
-}
+fetch(beer).then( beer => {
+  handleDrink(null, beer)
+}).catch(error => {
+  handleDrink(`sorry boss, ${error}`, null)
+});
 ```
 
 ???
 * oooh some new notation here, promises
+* fetch takes time
+* then notation - if success then otherwise catch
+* what is drink here?
 
 
 ---
@@ -217,6 +235,7 @@ name: Callback Hell!
 ???
 * callback hell is when you have lots of nested callbacks
 * functions that call other anonymous functions when they are done.
+* how might we fix this?
 
 
 
@@ -229,7 +248,7 @@ name: How to Fix?
   * use named functions
   * use modules
   * promises
-  * async (later)
+  * async/await
 ]
 
 .right[
@@ -268,6 +287,8 @@ doSomething(args).then(doneStuff);
 ---
 name:
 
+<iframe src="https://giphy.com/embed/gVROkjyShPnos" width="450" height="304" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 ```javascript
 fetch('http://api.something.com/all-datas"').then( response => {
 	// do something with response, check for fields etc
@@ -299,13 +320,13 @@ const cherishAndHonor = new Promise( (resolve, reject) => {
   // do a thing that takes a long time async, then…
   goDoSomethingAsynchronous( (error, result) => {
     if (error) { reject(Error('It broke')) }
-    else { resolve(`Stuff worked!`) }
+    else { resolve(`Stuff worked! ${result}`) }
   });
 });
 ```
 
 ???
-* construct a promise
+* here's how to  make a promise
 * return resolve if it worked
 * reject if not
 * you made a youtube promise already
@@ -371,6 +392,9 @@ name: Promises
 
 ???
 * here is how promises work
+* create a promise with two callback functions
+* one to handle success .then
+* one to handle error .catch
 
 
 
@@ -396,9 +420,57 @@ name: Promises Simulation
 ???
 
 
+---
+name: async / await
+
+```js
+const waitabit = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("done!"), 1000)
+});
+
+async function f() {
+  let result = await waitabit(); // wait till the promise resolves (*)
+  alert(result); // "done!"
+
+  let response = await fetch('http://someapi.io');
+  let user = await response.json();
+  alert(user); //done
+}
+
+f();
+```
+
+* more: https://javascript.info/async-await
+
+???
+* async/await provides a more natural syntax for working with Promises
+* have some promises but want to write code that looks imperative style
+* declare a function async
+* then can use await inside it
+* wait what about errors?
 
 
+---
+name: async / await
 
+```js
+async function f() {
+
+  try {
+    let response = await fetch('/no-user-here');
+    let user = await response.json();
+  } catch(err) {
+    // catches errors both in fetch and response.json
+    alert(err);
+  }
+}
+
+f();
+```
+
+???
+* can use familiar try/catch
+* i honestly prefer the promise then notation
 
 ---
 name: Game
@@ -407,21 +479,14 @@ Practice your asynch:
 
 .medium[![](img/boomsync.png)]
 
-http://boomsync.surge.sh/
+http://boomsync.me/
 
-by: Irene Feng, Ben Packer, Byrne Hollander, Jenny Seong
+credit: Irene Feng'17, Ben Packer'17, Byrne Hollander'17, Jenny Seong'GR
 
 ???
 * a react app
-* won hackday a couple weeks back
+* won hackday last year
 
-
----
-name: async / await
-
-https://javascript.info/async-await
-
-# TODO FIX
 
 
 ---
@@ -440,13 +505,13 @@ name: Immutable Data Structures
 
 <iframe src="//giphy.com/embed/zxxXYJqTlpBnO?hideSocial=true" width="480" height="259.2" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
-* Randall mutates
-* Randall is bad
-* thus mutation is bad
-* $\blacksquare$
+1. Randall mutates
+1. Randall is bad
+1. thus mutation is bad
+1. $\blacksquare$
 
 ???
-
+* i haz proof
 
 ---
 name: but why?
@@ -486,6 +551,7 @@ name: time and value
 
 ---
 name: side effects
+exclude: true
 
 ```javascript
 
@@ -635,27 +701,7 @@ v1 = [1]
 ```
 
 ???
-* no data loss
-
-
-
-
-
----
-name: Inefficient you ask?
-
-.left[![](img/dag1.png)]
-
-.right[![](img/dag2.png)]
-
-$O(log32 N)$
-
-???
-* Structural Sharing
-* Directed Acyclic Graph
-* ok so its efficient $O(log32 N)$
-* https://www.youtube.com/watch?v=YFP8lbdZ0cs
-
+* no data loss!
 
 
 
@@ -674,6 +720,66 @@ let updatedNote = note.update({title: 'bye'});
 
 ???
 * update is easy
+* any drawbacks?
+
+
+
+---
+name: Inefficient you ask?
+
+![](img/shared-structure.gif)
+
+<!-- .left[![](img/dag1.png)] -->
+
+<!-- .right[![](img/dag2.png)] -->
+
+[$O(log32 N)$ and more](https://www.youtube.com/watch?v=I7IdS-PbEgI)
+
+
+???
+* Structural Sharing
+* Directed Acyclic Graph
+* ok so its efficient $O(log32 N)$
+* can use Trie to store arrays
+* https://www.youtube.com/watch?v=I7IdS-PbEgI
+
+
+---
+name: Array in Trie
+
+`const val = list.get(141)`
+
+![](img/trie-array-get.jpg)
+
+???
+* array get stored in a trie
+* trie for re-trie-val, now often pronounced try
+* ordered tree, keyed by prefix
+* usually 32bit binary keys, here we have 8 bits
+* here we start from most significant bit
+
+
+---
+name: Array in Trie
+
+`const newlist = list.set(141, 'foo')`
+
+![](img/trie-array-set.jpg)
+
+???
+* and here's setting an array value
+
+
+
+---
+name: Map in Trie
+
+![](img/trie-map-get.jpg)
+
+???
+* and here's a map
+* only difference is index is hash value of key
+
 
 
 
@@ -700,6 +806,7 @@ note = note.update({content: 'real import stuff'});
 * easiest undo in the world
 * remember this could be your whole app state for instance
 * because render only relies on state...
+* why does this work?  what is it that we are putting into the history array?
 
 
 
@@ -714,16 +821,17 @@ name: React and Immutable
 
 ```javascript
 //init
-this.state.whatever = Immutable.Map();
+this.state.notes = Immutable.Map();
 
 //add something in
-this.setState(this.state.whatever.push({foo: 'hello'}));
+this.setState(this.state.notes.push({title: 'new note'}));
 
 ```
 
 
 ???
 * literally made for each other at facebook
+* for some internal reasons you can't make your whole state immutable but working on it
 
 
 
@@ -794,19 +902,18 @@ name: realtime database api
 
 ```javascript
 //push()
-const userId = firebase.database().ref('users').push({username: name}).key()
+const fb=firebase.database();
+
+const id = fb.ref('users').push({username: name}).key()
 
 //set()
-firebase.database().ref(`users/${userId}`).set({
-  username: name,
-  email: email
-});
+fb.ref(`users/${id}`).set({username: name, email});
 
 //update()
-firebase.database().ref('users').update({id: userId, email: newEmail});
+fb.ref('users').child(id).update({email: newEmail});
 
 //remove()
-firebase.database().ref('users').child(userId).remove();
+fb.ref('users').child(id).remove();
 ```
 
 ???
@@ -823,8 +930,6 @@ name: writing
 
 <p data-height="450" data-theme-id="24117" data-slug-hash="bfb7e2fcd1f8f4d3816e20160faf8648" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/bfb7e2fcd1f8f4d3816e20160faf8648/">React Comment Box with Firebase</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
-[reading](#reading)
-
 ???
 
 
@@ -834,8 +939,6 @@ name: writing
 name: reading
 
 <p data-height="450" data-theme-id="24117" data-slug-hash="bab1c926da57c4136b409b49ec364c8d" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/bab1c926da57c4136b409b49ec364c8d/">React Firebase Comments Only</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-[writing](#writing)
 
 ???
 
@@ -908,13 +1011,28 @@ import coolCode from 'myModule';
 * more variations
 
 
+---
+name: Game
+
+Practice your asynch:
+
+.medium[![](img/boomsync.png)]
+
+http://boomsync.me/
+
+credit: Irene Feng'17, Ben Packer'17, Byrne Hollander'17, Jenny Seong'GR
+
+???
+* a react app
+* won hackday last year
+
+
+
 
 
 ---
 name: Next Time
 
 
-* Lab3 due Tuesday
+* Lab3 due Monday
 * Redux to help us with state management
-* Project Pitch Signups due 26th!
-* Come get Quizzes
