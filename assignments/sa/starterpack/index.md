@@ -482,6 +482,8 @@ yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y 
 }
 ```
 
+If you find a rule you want to modify, or ignore — you can add it in above.  `0` means turn off, `1` means warning, `2` means throw an error, with additional options available per each rule's description page.
+
 🚀 Now go to Atom -> Preferences -> Packages -> linter-eslint -> Settings, and check "Fix Errors on Save". Super useful. This will fix indentation problems and some other things automatically whenever you save. Now restart Atom.
 
 When you see errors such as below:

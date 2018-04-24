@@ -22,7 +22,7 @@ What if you want your frontend to have routes — different URLs that map to dif
 
 For this workshop we're just going to add React Router to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter! Wow.
 
-*Note: if you forgot to push the react stuff from the first few steps of the React Videos assignment to your starterpack, you should go back and do that now. You can simply do those steps now directly in your starterpack repo.*
+*Note: if you forgot to push the react stuff from the first few steps of the [React Videos assignment](../react-videos) to your starterpack, you should go back and do that now! You can simply do those steps now directly in your starterpack repo.*
 
 🐙 Before we start let's tag the starterpack with v2!  This is with react but before we add routing.
 
@@ -36,7 +36,7 @@ git push origin --tags
 
 
 ```bash
-#make sure you in your sa3 starterpack repo
+#make sure you are in your sa3 starterpack repo
 yarn add react-router-dom react-router
 
 ```
@@ -159,7 +159,7 @@ Let's add in some links to our Nav as well:
 <li><NavLink to="/test/id2">test id2</NavLink></li>
 ```
 
-Try it out.  Cool.
+Try it out.  Cool.  The "/path/:parameter" style of defining a http route is very common and used in many frameworks.
 
 
 ## Unknown Routes
@@ -248,6 +248,19 @@ Check it out in your browser.  Try changing the url to `/badlink`,  it should lo
 git tag v3
 git push origin --tags
 ```
+
+
+## To Turn In (Canvas)
+
+* url to github repo (makes grading a whole lot easier and friendlier)
+* url to surge.sh
+* your starter pack should now
+    * have working test routes
+    * be deployed to surge with working 200.html
+    * lint correctly
+    * have fallback webpack serving index.html for any route
+
+
 
 ## Resources
 

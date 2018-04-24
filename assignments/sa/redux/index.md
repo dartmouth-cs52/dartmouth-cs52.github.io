@@ -24,13 +24,22 @@ Redux is a fancy state management system that we'll be using to build our blog p
 For this workshop we're just going to add Redux to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter+redux! Wow.
 
 
+## Double check your tags:
+
+```bash
+git tag
+```
+
+You should have v1, v2, and v3. if you don't have v3 then [go back](../routing) and do that now.
+
+
 ## Redux
 
 
 🚀 Install redux
 
 ```bash
-npm install --save redux react-redux redux-thunk
+yarn add redux react-redux redux-thunk
 ```
 
 These are the packages we will be using. Redux is a general state management paradigm that does not necessarily need to be tied to React. But together they are an unstoppable force for clean webdevelopment — so we will use another module `react-redux` that connects the two.   We won't use `redux-thunk` today but will soon — it allows us to work better with asynchronous server calls.
@@ -49,7 +58,7 @@ More docs [here](https://github.com/facebook/react-devtools).
 
 ### Redux Dev Tools
 
-And [redux-devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) will give us time travel! No joke.
+And [redux-devtools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) will give us time travel! No joke! Install this now!
 
 More docs [here](https://github.com/zalmoxisus/redux-devtools-extension).
 
@@ -251,6 +260,7 @@ ReactDOM.render(
 , document.getElementById('main'));
 ```
 
+*Note: in the above App is being loaded from the file `src/components/app.js`. You are welcome to move all your router navigation functional components there if you'd like to hang on to it as a an example. A nice pattern is to keep index.js as just the entry point with only setup stuff — and your main App component separated out.*
 
 
 ## Connected components
