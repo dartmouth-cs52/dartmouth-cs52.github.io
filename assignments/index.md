@@ -18,8 +18,8 @@ comment_term: assignments
 * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) — DUE 4/13
 <!-- * Short Assignment 4: React Intro -->
 * [Short Assignment 4: React Intro](sa/react-videos) — DUE 4/16
-* Short Assignment 5: Frontend Routing
-<!-- * [Short Assignment 5: Frontend Routing](sa/routing) — DUE 4/27 -->
+<!-- * Short Assignment 5: Frontend Routing -->
+* [Short Assignment 5: Frontend Routing](sa/routing) — DUE 4/27
 * Short Assignment 6: Redux
 <!-- * [Short Assignment 6: Redux](sa/redux) - DUE 4/30 -->
 * Short Assignment 7: Express and Mongo
