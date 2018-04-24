@@ -26,12 +26,20 @@ For now the API only supports 'title', 'content', 'tags', 'cover_url', but even 
 We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo based API server.  Finally FULL-STACK!  You'll be able to modify the data model at this point and really make your platform do anything.
 
 
-## Some Setup
+## Let's Start
 
+🚀 To start grab the github classroom link from canvas to start a new repository.  Then you'll pull in your webpack+babel+eslint+react+routing+redux starter code like so:
 
-First we should do some basic setup steps.  
+```bash
+#make sure you are in your project directory
+git remote add starter git@github.com:dartmouth-cs52-18s/starterpack-your-gitub-username.git
+git pull starter master  # you may need --allow-unrelated-histories
+```
 
-🚀 You should start from your awesome up to date starterpack from the [redux short assignment](http://cs52.me/assignments/sa/redux/). Do the usual: grab the github classroom repository from canvas, clone it, add your starter as a separate remote and pull in some redux goodness.
+```bash
+# also don't forget to run:
+yarn #to fetch all your webpack dependencies
+```
 
 
 ## CRUD API

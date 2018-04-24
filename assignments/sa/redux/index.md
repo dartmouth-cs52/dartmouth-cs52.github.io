@@ -248,11 +248,13 @@ import reducers from './reducers';
 import App from './components/app';
 
 // this creates the store with the reducers, and does some other stuff to initialize devtools
+// boilerplate to copy, don't have to know
 const store = createStore(reducers, {}, compose(
   applyMiddleware(),
   window.devToolsExtension ? window.devToolsExtension() : f => f,
 ));
 
+// we now wrap App in a Provider
 ReactDOM.render(
   <Provider store={store}>
     <App />
@@ -356,7 +358,6 @@ Some things to note about the this component:
 🚀 Add `<Controls />` to the render method of one of the components that are currently displaying like *Welcome*
 
 
-
 Ok, so that may seem like a lot of code for a toy examples, but note that these two components don't need to have a common parent, and you don't to pass around functions in callbacks.  In a simple example like this it might not make much of a difference,  we could have put the counter into the local component state of the parent. However if you had multiple levels of components the callback tracking would get difficult.
 
 
@@ -368,6 +369,7 @@ We'll do much more React+Redux so if this is confusing don't worry!
 
 Last thing!  Try opening up the Redux Chrome DevTools and play with the timeline to move the state forward and back.
 
+Play with the *slider* and note how you can export and import state. Imagine how powerful that would be if we could just save the whole state of a very complex app!
 
 
 ## Resources

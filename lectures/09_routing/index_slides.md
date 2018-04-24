@@ -37,10 +37,10 @@ name: CS52 Art
 
 
 ---
-name: CS52 Art
+name: Firebase React Notes Architecture
 
 
-![](img/firebase_architecture-table.jpg)
+![](img/firebase-architecture.jpg)
 
 
 ???
@@ -58,7 +58,7 @@ name: CS52 Art
 
 
 ???
-* noooooo
+* from last year, no drawings like this this year
 * hopefully JS is starting to make a little bit of sense
 * anything we should go over?
 
@@ -66,30 +66,33 @@ name: CS52 Art
 
 
 ---
-name: Speaking of boomerangs
+name: React Notes
 
-
-.medium_small[![](img/asynch_with_ben2.jpg)]
-
+* [create modal](http://dartmouthnotes.surge.sh/)
+* [multiple boards](http://kevinhu-cs52-notes.surge.sh/)
+* [note resizing](http://christina-cs52-notes.surge.sh/)
+* [class](http://moyo-cs52-lab3.surge.sh/)
+* [auth and permissions](http://waddupboard.surge.sh/)
+* [integrated api](http://raul-cs52-lab3.surge.sh/)
+* [more auth](http://noted.surge.sh/)
+* [tag search](http://morgansorbaro-cs52-lab3.surge.sh/)
+* [nickname + editing](http://morgansorbaro-cs52-lab3.surge.sh/)
+* [style](http://emmakennelly-cs52-lab3.surge.sh/)
+* [gif content award](http://abenezer-cs52-postit.surge.sh/)
+* [transparency](http://colecorrente-cs52-react-notes.surge.sh/)
+* [scrolling board](http://thomaskim-cs52-notes.surge.sh/)
+* [github auth and zindex](http://ted-react-notes.surge.sh/)
+* [colors](http://benjihannam-cs52-lab3.surge.sh/)
 
 ???
-* 5-6pm DALI - pizza i think
-* ben packer - one of the minds behind boomsync
-* if you're looking for promises and free food
-
-
+* some examples
+* will try to speed up our grading to get you feedback quicker
 
 ---
 name: CS52 Art
 
-.left[
+
 .large[![](img/callbackhell-table.jpg)]
-
-]
-
-.right[
-.medium[![](img/rewards-table.jpg)]
-]
 
 
 ???
@@ -103,17 +106,16 @@ name: Announcements
 
 .small[![](img/fuq-table.jpg)]
 
-* Pitch Signups!
-* Lab 3 extension
-* SA5: Routing (super easy) due Thurs
-* SA6: Redux out Weds
-* Tiny Quiz Thurs
+* Project Pitching Next Week!
+* SA5: Routing (super short)
+* SA6: Redux (extra short)
 
 ???
-* only one pitch signup so far - its 2 minutes, if you don't sign up i'll just assign final projects!
+* people were way grumpier last time - you are all so sunny!
+* we should start talking about final project ideas!
+* thursday we'll discuss in more detail - but get excited!
 * there will be another short for redux going out soon.
 * these are all super short just to get your starterpacks up and ready
-
 
 
 
@@ -125,6 +127,8 @@ name: Routing Frontend
 
 .medium_small[![](img/suchold.gif)]
 
+* the UX of routes
+
 
 ???
 * what if you want to pass some state into the url
@@ -132,6 +136,23 @@ name: Routing Frontend
 * what the what, who keeps track of all that junk
 * https://ed.fnal.gov/lincon/tech_web_links_types.shtml
 * https://www.slideshare.net/rfreebern/the-ux-of-urls
+
+
+
+---
+name: The UX of Routes
+
+> people spent 25% of their time looking at the URL in navigational tasks vs 22% in informational tasks --E. Cutrell, et al 2007
+
+
+> searchers are particularly interested in the URL when they are assessing the credibility of a destination --J Nielssen, 2007
+
+* the [UX of routes](https://www.slideshare.net/rfreebern/the-ux-of-urls)
+
+
+???
+* you judge a site by its urls
+
 
 
 
@@ -143,11 +164,16 @@ name:
 .medium[![](img/single-page-app.png)]
 
 * app in browser
-* routes?
+* routes?  serverside vs clientside
 
 ???
 * remember single page apps?
 * lives in the browser  - javascript application basically
+* what are some pros/cons:
+  * serverside cons: page reloads, background flash, slow
+  * serverside pros: no js needed (sergey would love), directory structure?
+  * clientside cons: not sure how it would work not builtin, js needed
+  * clientside pros: fast, no page reload, only fetching data needed
 
 
 
@@ -218,6 +244,7 @@ name: Basic Browser
 * stepping back a sec to basic browser functionality
 * default browser actions
 * loading pages from scratch
+* cookies we'll dive into later
 
 
 
@@ -244,12 +271,13 @@ name: Attempt 1: Hash History
 
 * http://example.com
 * http://example.com#fragment
+*
 * http://example.com?id=3535
 * http://example.com?id=3535#fragment
 
 
 ???
-* can already change fragments and query parameters wihtout reload
+* can already change fragments without reload
 * some early frontend frameworks only used hash history
 
 
@@ -277,7 +305,7 @@ window.onbeforeunload = function(e) {
 ---
 name: desired behavior
 
-* do the right thing:
+* all that we want:
   * browser page history
   * navigate with forward and back buttons
   * navigate away and come back to the app
@@ -286,7 +314,8 @@ name: desired behavior
   * refresh reloads to same place
 
 ???
-* loss of state on navigation away from page
+* dont' want loss of state on navigation away from page
+* urls that are meaningful to allow bookmarking etc
 
 
 
@@ -317,7 +346,7 @@ name: Deep Linking
 * state/ui context meaning if in app, do you have menus open? editing some field?
 * probably not everthing
 * notice amazon links have a lot of stuff encoded in them
-
+* these days on mobile you can deep link into an application not just web
 
 
 
@@ -351,7 +380,7 @@ http://html5demos.com/history
 
 ???
 * allow JS access to history
-* change url with history without reloading page
+* change url with history without! reloading page
 * mostly supported these days
 * http://diveintohtml5.info/history.html
 
@@ -483,6 +512,8 @@ render() {
 * we might do something like this no?
 * but what if we wanted to have multiple layouts?
 * and especially if we wanted to change this based on url?
+* could just read the url in - and use that as a bit of state?
+* but lots of checking
 
 
 
@@ -504,7 +535,8 @@ name: React Router
 * more declarative
 * connected to urls
 * just same old JSX notation!
-
+* yeah - you feel *that* comfortable with jsx!
+* what is cool about this? where are these components coming from?
 
 
 
@@ -522,6 +554,8 @@ name: Defining
 * basic route definition
 * component and path -
 * match can be exact or substring
+* pattern matching happens in order listed - is why we needed to say the first is exact
+* what might happen if we left that off?
 
 
 
@@ -553,6 +587,7 @@ const Posts = (props) => {
 * props.match is cool
 * can extract url for instance
 * but also parameters
+* crazy stuff
 
 
 
@@ -563,7 +598,7 @@ const Posts = (props) => {
 
 
 ---
-name: component wrapping tangent
+name: your components can be parents
 
 ```html
 // App
@@ -588,6 +623,7 @@ render() {
 
 
 ???
+* your components too can have children! tanget
 * all there is to it. this.props.children will contain all the componets that are nested.
 * Routes do something similar in that they wrap a component
 * you can do this with other components also if you want to add functionality for instance
@@ -604,7 +640,7 @@ name: FallBack Route
   <Route exact path="/" component={Home}>
   <Route path='/users' component={Users} />
   <Route path='/widgets' component={Widgets} />
-  <Route component={FallBack}
+  <Route component={FallBack} />
 </Switch>
 <Footer />
 ```
@@ -664,32 +700,40 @@ fetch(url, { method: 'get'})
 
 
 
+---
+name: 404!
+
+.medium[![](img/server-fail-route.jpg)]
+
+
+???
+* no requests being made to the server except first app load
+* BUT if first load is to specific resource...
+
+
 
 
 ---
 name: 404!
 
-* no requests being made to the server except first app load
-* BUT if first load is to specific resource...
+```bash
+my-project.surge.sh/
+  ├─200.html
+  ├─index.html
+  └─main.js
+```
+
+```html
+<!-- 200.html -->
+<script src="app.js"></script>
+```
+
 * serve needs to return index.html for all server side routes
 * surge:  `200.html`
 * can't do this on gh-pages... sadly
 
 ???
 * will cover more on this later
-
-
-
-
-
-
----
-name: Deprecated methods
-
-* React Router under heavy development, new version as of 12 days ago
-* stackoverlow has lots of outdated info about react router v2,3
-
-???
 
 
 
