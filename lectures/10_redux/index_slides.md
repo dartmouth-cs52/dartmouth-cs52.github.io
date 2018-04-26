@@ -88,6 +88,7 @@ name: course survey so far
 * more ta hours or different times?
 * enjoying hmws and learnign from them
 * and good understand
+* majority of class is understanding majority of material - perfect
 
 
 ---
@@ -96,41 +97,43 @@ name: things to like
 * Super fun projects, learning a lot, TA's and prof super helpful
 * The feeling of finishing a lab :)
 * Everything we learn in class is directly applicable. I feel like I can go build something on my own after this class.
-* Work load is pretty good
+* Work load is pretty good; I feel like I am BUILDING stuff; I love the labs
 * making pretty/useful sites; the fun assignments! I like that creativity and humor are encouraged.
 * The hands-on parts of the class are really fun.
 * The material is really great -- enjoy building front-end stuff that I can show my parents or friends!
 * Lots of assignments to get the hang of things
-* That it’s not all lecture
+* That it’s not all lecture; I think the workshops are nice. I had no idea these frameworks existed.
 * Fun classes and labs, great ideas with the workshops.
 * Workshops in class!
 * Lectures are good and easy to follow. The interactive games and activities built into lectures!
 * The short assignments are very helpful - probably more helpful than the lectures in learning the material.
 
-
+???
+* situation is more complex - people both love and hate various parts, so its a balancing act
 
 ---
 name: things to improve
 
-* Maybe we could work on the lecture notes
 * There is so much material that is being thrown very quickly and I am absorbing only a part of it. As fun as the labs and short assignments are, having a slightly slower pace would be great!
 * Although I definitely think the late policy is very fair, even just one late day pass would be really helpful
 * I'm not sure. Being able to start labs in class. The hardest part for me is just starting the lab...
-* I think less workshops would be good
+* I think less workshops would be good; More time walking through code examples
 * Reduce number of workshops. I feel like I don’t learn much from them.  Would prefer if we could expand the list of technologies we learned in class
-* Quizzes are too hard; The quizzes feel like they don't reflect the stated goal of just checking if you did the assignments.
-* Nothing off the top of my head! I've really enjoyed it so far.
-* More time walking through code examples
-* More interactive breaks or parts of lecture
-
+* Quizzes are too hard; feel like they don't reflect the stated goal of just checking if you did the assignments.
+* Nothing off the top of my head! I've really enjoyed it so far.; I love the labs
+* More interactive breaks or parts of lecture; Maybe we could work on the lecture notes
+* lectures feel a little tangential
+* Small coding sessions with TAs to get used to syntax etc
+* Some parts of the shorts are't explained as well/deep as I would prefer.
+* What's yarn?? Do I need to know all of JavaScript?? What are all the node modules and how does the starter pack work(!!!!)?
 
 
 ???
-* 1 free 12hrs day pass is now available. - have given a couple out for extenuating circumstances, assignments are just close together so want to make sure people don't cascade
+* 1 free 12hrs day pass is now available but must be arranged in advance. - have given a couple out for extenuating circumstances, assignments are just close together so want to make sure people don't cascade
 * too late to change how workshops work - generally i like them because they give you a breadth that we couldn't cover otherwise.  don't feel like you have to finish them or work on them outside of class though!
 * i know I'm trying to do both a survey of everything - plus a deep dive on one stack
 * but honestly which of those would you prefer to forgo?
-* tips: start labs early and ask questions - some ta hours have nobody and then last day is swamped
+* tips: start labs early and ask questions - some ta hours have nobody and then last day is swamped. xhours have few people but i'm happy to work through stuff then
 * lecture notes are somewhat available by hitting 'p' on the slides to go into presenter mode
 
 
@@ -619,7 +622,7 @@ export default function (state = [], action) {
 ???
 * we're going to use multiple reducers in most projects
 * each reducer is responsible for one piece of the state object
-
+* draw out what your state looks like - this is important!
 
 
 
@@ -638,16 +641,6 @@ name: Reducers
 * do not have access to anything else
 
 ???
-
-
-
-
-
-
-
-
-
-
 
 
 
