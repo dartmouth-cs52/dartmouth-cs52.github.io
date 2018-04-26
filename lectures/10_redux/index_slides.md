@@ -95,7 +95,7 @@ name: course survey so far
 name: things to like
 
 * Super fun projects, learning a lot, TA's and prof super helpful
-* The feeling of finishing a lab :)
+* The feeling of finishing a lab; The learning is visible–I can make things that I couldn't before
 * Everything we learn in class is directly applicable. I feel like I can go build something on my own after this class.
 * Work load is pretty good; I feel like I am BUILDING stuff; I love the labs
 * making pretty/useful sites; the fun assignments! I like that creativity and humor are encouraged.
@@ -148,6 +148,7 @@ name: other comments/concerns/etc
 * Can we go over the starter pack? Also my computer is rapidly running out of space. Is that a me problem? I wish I understood the basic tools we use better so I could use them myself in the future. I get the projects and the coding, but not how all the dependencies work and what they mean I can do.
 * nope! it's a great class
 * Really enjoying the class so far!
+* I really enjoy all of the tutorials in the group presentations. Just copying and pasting code with only a small amount of thought allows for a surprising amount of learning and familiarization.
 
 
 
