@@ -71,8 +71,8 @@ See [assignments](/assignments).
   <div style="order:2;" class="rtable-cell"><a href="mailto:jiachen.jiang.20@dartmouth.edu">Jiachen Jiang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jcjiang/">@jcjiang</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/justing.png"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:Justin.D.Gualtieri.18@dartmouth.edu">Justin Gualtieri</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jgualtieri/">@jgualtieri</a></div>
+  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/mahnoor.jpg"/></div>
+  <div style="order:5;" class="rtable-cell"><a href="mailto:mahnoor.maqsood.18@dartmouth.edu">Mahnoor Maqsood</a><br><a href="https://cs52-dartmouth.slack.com/messages/@mahnoormaqsood/">@mahnoormaqsood</a></div>
   <div style="order:6;" class="rtable-cell"><br></div>
 
   <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/annie.jpg"/></div>
@@ -97,8 +97,8 @@ See [assignments](/assignments).
   <div style="order:5;" class="rtable-cell"><a href="mailto:alma.wang.18@dartmouth.edu">Alma Wang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@almawang/">@almawang</a></div>
   <div style="order:6;" class="rtable-cell"><br></div>
 
-  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/mahnoor.jpg"/></div>
-  <div style="order:8;" class="rtable-cell"><a href="mailto:mahnoor.maqsood.18@dartmouth.edu">Mahnoor Maqsood</a><br><a href="https://cs52-dartmouth.slack.com/messages/@mahnoormaqsood/">@mahnoormaqsood</a></div>
+  <div style="order:7;" class="rtable-cell"></div>
+  <div style="order:8;" class="rtable-cell"></div>
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/luisa.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:luisa.n.vasquez.gutierrez.18@dartmouth.edu">Luisa Vasquez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@luisa/">@luisa</a></div>
@@ -115,8 +115,8 @@ See [assignments](/assignments).
   <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jon Gonzalez</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jongonzalez/">@jongonzalez</a></div>
   <div style="order:3;" class="rtable-cell"><br></div>
 
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/mauPR.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:mauricio.esquivel.rogel.18@dartmouth.edu">Mauricio Esquivel Rogel</a><br><a href="https://cs52-dartmouth.slack.com/messages/@mauesrog/">@mauesrog</a></div>
+  <div style="order:4;" class="rtable-cell"></div>
+  <div style="order:5;" class="rtable-cell"></div>
   <div style="order:6;" class="rtable-cell"><br></div>
 
   <div style="order:7;" class="rtable-cell"></div>
