@@ -10,7 +10,7 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 ## Past Projects
 
 * 18s (coming soon!)
-* [**17s**](17s/)
+* [**17s**](17s)
 * 16x
 
 
