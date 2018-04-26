@@ -119,6 +119,16 @@ name: Announcements
 
 
 
+---
+name: Quiz
+
+<iframe src="//giphy.com/embed/BnlSxZ1nJy9C8" width=700" height="422" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+???
+
+
+
+
 
 ---
 name: Routing Frontend

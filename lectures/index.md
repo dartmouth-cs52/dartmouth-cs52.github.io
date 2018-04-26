@@ -30,12 +30,12 @@ comment_term: lectures
 * [4/17 React](07_react2)
 <!-- * 4/19 Advanced JS -->
 * [4/19 Advanced JS](08_advanced_js)
-* 4/17 Projects
+<!-- * 4/17 Projects -->
 <!-- * [4/17 Projects](07_project_intro) -->
 <!-- * 4/24 Routing -->
 * [4/24 Routing](09_routing)
-* 4/26 Redux
-<!-- * [4/26 Redux](10_redux) -->
+<!-- * 4/26 Redux -->
+* [4/26 Redux](10_redux)
 * 5/1 Pitches
 <!-- * [5/1 Pitches](11_pitches) -->
 * 5/3 Databases

@@ -28,6 +28,18 @@ name: Redux
 ---
 name: CS52 Art
 
+.left[![](img/table-redux-is-coming.jpg)]
+
+.right[![](img/table-readucks.jpg)]
+
+
+???
+*
+
+
+---
+name: CS52 Art
+
 
 .medium[![](img/firebasemontster-table.jpg)]
 
@@ -38,125 +50,109 @@ name: CS52 Art
 ---
 name: CS52 Art
 
+.medium[![](img/table-all-the-react.jpg)]
 
 
-.medium[![](img/pug-table.jpg)]
+* what are benefits of firebase over other stuff like amazon aws?
+* what is robots.txt for?
+* can JS push fake history to user's browser?
 
 
 ???
-*
+* robots.txt is for robots!
+* pushState url needs to be same origin (same protocol+domain+port) according to the docs
+* pretty much yup
+
 
 
 ---
 name: CS52 Art
 
-.medium[![](img/routeoflife-table.jpg)]
+.tiny[![](img/table-all-the-assignments.jpg)]
+.tiny[![](img/table-quiz-lab.jpg)]
+.tiny[![](img/table-gpa-forgive-me.jpg)]
+.tiny[![](img/table-dont-call-me.jpg)]
 
 
 ???
-*
+* finally some tears
 
 
+---
+name: course survey so far
+
+<iframe src="https://dalilab.typeform.com/report/m0bPyl/D5ZFUjWpn0sOT64K" style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" frameBorder="0" ></iframe>
+
+
+???
+* more ta hours or different times?
+* enjoying hmws and learnign from them
+* and good understand
+
+
+---
+name: things to like
+
+* Super fun projects, learning a lot, TA's and prof super helpful
+* The feeling of finishing a lab :)
+* Everything we learn in class is directly applicable. I feel like I can go build something on my own after this class.
+* Work load is pretty good
+* making pretty/useful sites; the fun assignments! I like that creativity and humor are encouraged.
+* The hands-on parts of the class are really fun.
+* The material is really great -- enjoy building front-end stuff that I can show my parents or friends!
+* Lots of assignments to get the hang of things
+* That it’s not all lecture
+* Fun classes and labs, great ideas with the workshops.
+* Workshops in class!
+* Lectures are good and easy to follow. The interactive games and activities built into lectures!
+* The short assignments are very helpful - probably more helpful than the lectures in learning the material.
 
 
 
 ---
-name: Quiz
+name: things to improve
 
-<iframe src="//giphy.com/embed/BnlSxZ1nJy9C8" width=700" height="422" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+* Maybe we could work on the lecture notes
+* There is so much material that is being thrown very quickly and I am absorbing only a part of it. As fun as the labs and short assignments are, having a slightly slower pace would be great!
+* Although I definitely think the late policy is very fair, even just one late day pass would be really helpful
+* I'm not sure. Being able to start labs in class. The hardest part for me is just starting the lab...
+* I think less workshops would be good
+* Reduce number of workshops. I feel like I don’t learn much from them.  Would prefer if we could expand the list of technologies we learned in class
+* Quizzes are too hard; The quizzes feel like they don't reflect the stated goal of just checking if you did the assignments.
+* Nothing off the top of my head! I've really enjoyed it so far.
+* More time walking through code examples
+* More interactive breaks or parts of lecture
+
+
 
 ???
-
-
+* 1 free 12hrs day pass is now available. - have given a couple out for extenuating circumstances, assignments are just close together so want to make sure people don't cascade
+* too late to change how workshops work - generally i like them because they give you a breadth that we couldn't cover otherwise.  don't feel like you have to finish them or work on them outside of class though!
+* i know I'm trying to do both a survey of everything - plus a deep dive on one stack
+* but honestly which of those would you prefer to forgo?
+* tips: start labs early and ask questions - some ta hours have nobody and then last day is swamped
+* lecture notes are somewhat available by hitting 'p' on the slides to go into presenter mode
 
 
 ---
-name:  Stuff
+name: other comments/concerns/etc
 
-* Idea Pitches: Tuesday!
-  * 2 minute pitch + some q&a
-  * voting offline
-* a good pitch:
-  * motivation the problem
-  * have a user story
-  * why you and your solution
+* Can we learn about Django
+* do we have quizzes after every lab?
+* I like your gifs!!
+* More time plz
+* Socket.io and Slackbots!
+* Can we go over the starter pack? Also my computer is rapidly running out of space. Is that a me problem? I wish I understood the basic tools we use better so I could use them myself in the future. I get the projects and the coding, but not how all the dependencies work and what they mean I can do.
+* nope! it's a great class
+* Really enjoying the class so far!
+
+
 
 ???
-
-
-
----
-name: Course Survey Results
-
-<iframe src="https://dalilab.typeform.com/report/ECghOO/c0YU"  width="800" height="400" frameBorder="0" ></iframe>
-
-???
-* we're a little behind the master plan, but thats ok!
-* majority understanding majority of material
-* stuff will start making more sense
-* lots to learn, but we'll make it
-
-
-
-
-
----
-name: Things That Were Liked
-
-* "Everything has the "coolness" factor	"
-* "awesome awesome awesome tas"
-* "I feel like we're creating real, useful applications from scratch"
-* "I like the short assignments and labs because they are super relevant, helpful and fun to do!	"
-* "I also like doing the workshops in class because it exposes us to new technologies and provides for more hands-on learning, which, in my experience, is how must programmers I know learn best."
-* "The gifs"
-* "fun assignments, engaging classes	"
-* "Exposure to many different technologies, labs are interesting, course team is incredibly responsive on Slack	"
-* "I like how we're building on top of what we learn. Javascript -> Jquery -> React	"
-* "love how much exposure we have to cool stuff on the web- and I am amazed at how just a few lines of code can have so much power."
-* "One of my favorite cs courses because the atmosphere is serious yet fun	"
-* great ta's! wish there were more office hours
-
-???
-* these are great, so we're doing some things right!
-* sounds like you guys like the labs generally so thats good
-* and the tas
-
-
-
-
-
-
----
-name: Things To Improve
-
-* "More extensions"
-* "Not a huge fan of overlapping assignments"
-* "Maybe have recap sessions?	"
-* "I don't really feel like I'm learning much from the workshops other than just copy pasting code blocks into a skeleton -- maybe it's hard to do much more than that in an hour though.	"
-* "Not much, I think it's understood that the course is fast paced	"
-* "more time for labs	"
-* "idk i like it"
-* "the lectures are sometimes confusing. Like, when computer related jargons are used: frontend, backend, queue etc.. Once I lose track of the lecture for a bit, I end up not understanding the rest of it."
-* "Doing a brief breakdown of some popular websites (e.g. Airbnb, Facebook) and discussing the tools they use and specific components would be awesome to make things more real."
-* "examples of nice solutions to the short assignments and the labs, it would be really helpful to see other ways of doing these."
-
-???
-* go into react dev tools and redux dev tools on sites and explore
-* workshop goal is to provide a resource and very brief exposure
-* recap sessions are often what x-hour open help hours turn into - come!
-* notes - additional explanations might be in the presenter notes - slides help available via h key
-* more questions - if i use a term that's confusing ask via whisperbot
-* companies:
-  * giphy
-  * facebook (obvi)
-  * instagram (obvi)
-  * netflix
-  * khanacademy
-  * airbnb  (also redux)
-  * walmart
-  * tesla
-
-
+* i too wish for more time! :-)
+* something like django with alternative server side workshop a bit later
+* but we'll do server side ddon't worry
+* sockets coming soon
 
 
 ---
@@ -181,7 +177,7 @@ name: Problems
 
 
 ???
-
+* look familiar? we will fix it
 
 
 
@@ -189,13 +185,14 @@ name: Problems
 ---
 name: Smart and Dumb components
 
+.small[![](img/table-dumb-component-jpg.jpg)]
+
+
 * smart components have state + props
 * dumb components only props (function)
 
 ???
-
-
-
+* dumb components can react too
 
 
 
@@ -211,17 +208,13 @@ name: Presentational and Container Components
 * ***container***
   * concerned with data
   * pass data to presentational components
-  * binds callbacks for dumb
-  * *connected*
+  * binds callbacks to self
+  * can be *connected*
 
 ???
 * so far we'd had both
-* either can be smart or dumb
-* we've not really talkeda bout this abstraction
+* we've not really talked about this abstraction
 * but will have a bit more of it soon with redux!
-
-
-
 
 
 
@@ -234,9 +227,6 @@ name: Flux
 ???
 * facebook's answer to scalability
 * interesting worth watching
-
-
-
 
 
 
@@ -262,9 +252,11 @@ name: questionable design
 ???
 * bugs were insidious
 * how do you handle both staying in synch - read in one meant mark as read in another
+* had multiple data models responsible for each view
 * updating one model would need to update another
   * unread thread count
   * unread messages
+* had unread counts that were false positive
 
 
 
@@ -281,6 +273,7 @@ name: Chat
 * if open append message in messages Views
 * if chat tab is focused or messages is open - decrement unseen
 * complex login living in multiple places
+* imperative lots of steps with checks
 
 
 
@@ -291,10 +284,20 @@ name: Chat
 
 
 ???
+* problem kept coming back as they fixed things due to complexity
+* here's what the basic logic looked like
+* handler had too much to do
 * large amount of centralized logic is one solution but have to code for consistency problems
+*
+* chat tabs is easy - get a new message - append it
+* less clear about unseen
 * perhaps storing unseen as a list by threadID would be better
+*
+* use explicit data - actual unseen threads, not just counter
+*
 * moving display logic to each component so it can decide based on data how to render (sound familiar)
 * separating data from view
+* wanted to move these decisions closer to the actual views.
 
 
 
@@ -319,6 +322,7 @@ name: MVC Problems
 ???
 * too much stuff to keep track off
 * data changing over time
+* would you be able to tell if there is an infinite loop - one model updating another and back
 
 
 
@@ -337,6 +341,8 @@ name: Enter Flux
 * finish a layer you are done
 * with multiple Views easy as arrows go in one direction
 * easy to reason about
+* data changes - views update
+* except that is more global and neat
 
 
 
@@ -403,20 +409,19 @@ name:
 ---
 name:
 
-
-
 ![Redux](img/redux-logo.png)
-
 
 .small[![805k downloads](img/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f72656475782e7376673f7374796c653d666c61742d737175617265.svg)] 7/2016
 
-.small[![805k downloads](img/downloads.svg)] 4/2017
+.small[![2m downloads](img/downloads.svg)] 4/2017
+
+.small[![6m downloads](img/redux-downloads.svg)] 4/2018
+
 
 ???
 * Redux - a flux framework for the rest of us
 * flux was more a paradigm
 * redux takes those principles and makes them functional and awesome
-
 
 
 
@@ -533,29 +538,12 @@ name: example
 name: example+redux
 
 
-![](img/youtube-redux.png)
+![](img/redux-videos.jpg)
 
 ???
-* lets take youtube app
-* had some complicated double layer wiring
-* would have been nice not to pass so much stuff in props right?
-
-
-
-
-
----
-name: Thunks
-
-.medium[![](img/ARCH-Redux2-extended-real-declerative.gif)]
-
-* what about asynch stuff like api calls?!?!
-
-???
-* in CS a thunk is a method that is created, often automatically, to assist a call to another method.
-* what if we need to make an api call that takes time
-* there a way we can fix that also
-* we'll work with these in SA6
+* heres a version with redux
+* seemed like too much to ask you all to rewrite the videos so the redux short is much simpler
+* this drawing
 
 
 
@@ -831,6 +819,51 @@ ReactDOM.render(
 ???
 * last thing, provides access to store to connected components
 * required boilerplate
+
+
+
+
+
+---
+name: Redux Map
+
+.medium[![](img/redux-map.jpg)]
+
+???
+
+
+---
+name: Thunks
+
+.medium[![](img/ARCH-Redux2-extended-real-declerative.gif)]
+
+* what about asynch stuff like api calls?!?!
+
+???
+* in CS a thunk is a method that is created, often automatically, to assist a call to another method.
+* what if we need to make an api call that takes time
+* there a way we can fix that also
+* we'll work with these in SA6
+
+
+
+
+---
+name: React-Videos with Thunks
+
+.medium[![](img/redux-videos-with-middlewares.jpg)]
+
+
+???
+
+
+
+---
+name: Redux Cheat Sheet
+
+.medium[![](img/full-redux-cheat-sheet.jpg)]
+
+???
 
 
 
