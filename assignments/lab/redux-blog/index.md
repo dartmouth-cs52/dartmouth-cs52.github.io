@@ -208,8 +208,8 @@ First thing we'll need is to install the `redux-thunk` library. Not another libr
 
 ```javascript
 
-npm install --save redux-thunk
-npm install --save axios
+yarn add redux-thunk
+yarn add axios
 
 ```
 
@@ -268,7 +268,7 @@ A redux thunk allows your ActionCreators to return functions that can then dispa
 ```javascript
 export function anAction() {
   // ActionCreator returns a function
-  // that gets called with dispatch
+  // that gets called by the middleware passing in dispatch to it as an argument
   return (dispatch) => {
       // here is where you would do your asynch axios calls
       // on the completion of which you would dispatch some new action!
