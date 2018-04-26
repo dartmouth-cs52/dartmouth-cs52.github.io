@@ -371,6 +371,27 @@ Last thing!  Try opening up the Redux Chrome DevTools and play with the timeline
 Play with the *slider* and note how you can export and import state. Imagine how powerful that would be if we could just save the whole state of a very complex app!
 
 
+## Release it!
+
+```bash
+# commit and push as you normally would - but also
+git tag v4
+git push origin --tags
+```
+
+## To Turn In (Canvas)
+
+* url to github repo (makes grading a whole lot easier and friendlier)
+* url to surge.sh
+* your starter pack should now
+    * have a working redux counter!
+    * be deployed to surge
+    * lint correctly
+
+
+
+
+
 ## Resources
 
 * [http://redux.js.org/index.html](http://redux.js.org/index.html)
