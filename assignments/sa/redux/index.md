@@ -62,7 +62,7 @@ And [redux-devtools](https://chrome.google.com/webstore/detail/redux-devtools/lm
 
 More docs [here](https://github.com/zalmoxisus/redux-devtools-extension).
 
-
+Using these tools will help save you hours/days of debugging.
 
 
 ## What is Redux
@@ -122,7 +122,6 @@ Note the switch statement.  Actions are global and every reducer gets called wit
 ### Store
 
 Finally there is the Redux Store.  A redux store is a way to store the global state for your app.  So far for the React apps that we have built we have had local component state for a few of our smart components, and often have had a top level state inside of our App component.  Having your app state (minus in a single state tree has lots of positive benefits.  The store is initialized in your top level `index.js` file.
-
 
 
 ## Code

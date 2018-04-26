@@ -52,22 +52,125 @@ name: Final Projects!
   * airbnb for parking spaces
   * hackathon communication and planning platform
 
-
-
-
 ???
 * a couple groups went all out and build both a react-native app and a web app
 
 
 ---
+name: YipYip
+
+
+<iframe style="transform: scale(0.5) translateY(-500px)" width="494" height="1010" src="//invis.io/HABOKZQRZ" frameborder="0" allowfullscreen></iframe>
+
+
+---
+name: full stack music
+
+<iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="http://prettymusicmaker.io/" frameborder="0" allowfullscreen></iframe>
+
+
+
+---
+name: mychef
+
+
+<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://mychef.surge.sh/" frameborder="0" allowfullscreen></iframe>
+
+---
+name: dart courses
+
+
+![](img/projects/dartcourses.jpg)
+
+
+---
+name: dart courses
+
+
+![](img/projects/dartcourses2.jpg)
+
+
+---
+name: dart courses
+
+
+![](img/projects/dartcourses3.jpg)
+
+
+---
+name: dart courses
+
+
+![](img/projects/dartcourses4.jpg)
+
+
+
+
+---
+name: munch buddy
+
+
+.left[![](img/projects/muchbuddy3.png)]
+
+.right[![](img/projects/muchbuddy2.png)]
+
+---
+name: munch buddy
+
+
+.left[![](img/projects/muchbuddy0.png)]
+
+.right[![](img/projects/munchbuddy5.png)]
+
+
+
+---
+name: mafia
+
+
+<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://mafia.surge.sh/" frameborder="0" allowfullscreen></iframe>
+
+
+
+---
+name: lyfeontrack
+
+
+<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://lyfeontrack.surge.sh/" frameborder="0" allowfullscreen></iframe>
+
+
+
+---
+name: grouprr
+
+<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://grouprr.surge.sh/" frameborder="0" allowfullscreen></iframe>
+
+
+???
+* better splitwise
+
+
+---
+name: roommate finder
+
+<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://roommate-finder.surge.sh/" frameborder="0" allowfullscreen></iframe>
+
+
+???
+* better splitwise
+
+
+
+
+---
 name: Dates:
 
-* Pitch Sign-Up (4/30)
-* Pitch Presentation (5/4)
-* Feature Spec + Mockups (5/9)
+* Pitches (5/1, 5/2, 5)
+* Groups Formed (5/4)
+* Feature Spec + Mockups (5/8)
 * Scaffolding (5/14)
-* Dev Site Up (client+server) (5/18)
-* Pre-demo Bug Hug (5/25)
+* Dev Site Up (client+server) (5/17)
+* Pre-demo Bug Hug (5/24)
 * Final Project Demos (5/30)
 * Final Submission (6/5)
 
@@ -80,7 +183,7 @@ name: Dates:
 
 
 ---
-name: Pitch Sign-Up
+name: Pitches
 
  .fancy.medium[![](http://i.giphy.com/IH3ZwYeR9AlP2.gif)]
 
