@@ -10,7 +10,7 @@ comment_term: lab-redux-blog
 
 ![](img/redux.png)
 
-We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be a blog could be anything you want. As long as there are individual post items that have some content that need to be saved to a database! Aside from the core functionality of creating a post with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.
+We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be a blog could be anything you want. As long as there are individual post items that have some content that need to be saved to a database! Aside from the core functionality of creating a post with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.  It will basically be a CRUD platform — create, read, update, delete, storing data on a server with best practices user authentication and security — those features encompass a world of possibilities.
 
 
 <iframe width="800" height="591" src="https://www.youtube.com/embed/MtZQlDwH4cs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
