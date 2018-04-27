@@ -361,6 +361,16 @@ It might help for the ActionCreator -> Dispatch -> Reducer -> State flow, to try
 
 Don't forget to use the [lab 4 slack channel](https://cs52-dartmouth.slack.com/messages/lab4-blog/).
 
+
+## Release it!
+
+```bash
+# commit and push as you normally would - but also
+git tag v1
+git push origin --tags
+```
+
+
 ## To Turn In
 
 1. GitHub classroom repository URL
