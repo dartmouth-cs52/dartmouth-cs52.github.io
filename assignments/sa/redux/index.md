@@ -334,8 +334,8 @@ import { increment, decrement } from '../actions';
 const Controls = (props) => {
   return (
     <div>
-      <button onClick={props.increment} className="btn btn-info">+</button>
-      <button onClick={props.decrement} className="btn btn-warning">-</button>
+      <button onClick={props.increment} className="btn">+</button>
+      <button onClick={props.decrement} className="btn">-</button>
     </div>
   );
 };
