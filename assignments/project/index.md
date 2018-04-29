@@ -16,11 +16,11 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 
 ## Milestones At a Glance
 
-* **Pitch Signups** (4/30):<br><!--7/21/2016-->
+* **[Pitch Signups](pitch)** (4/30):<br><!--7/21/2016-->
   Signup to pitch your idea! (with a partner)
 
-* **Pitch Presentation** (5/1, 5/2, 5/3):<br><!--7/28/2016-->
-  A 5 minute presentation with 5 minutes of Q&A to pitch your idea to the class. Everybody will rank their top choices and groups will be formed that way.
+* **[Pitch Presentation](pitch)** (5/1, 5/2, 5/3):<br><!--7/28/2016-->
+  Pitch your problem/solution/topic to the class. Everybody will rank their top choices and groups will be formed that way.
 
 * **[Feature Spec + Mockups](feature-spec)** (5/8):<br><!--8/9/2016-->
   A walk-though of your project from the users perspective listing out every feature that it should have with a few user stories attached and mockups of user experience.
