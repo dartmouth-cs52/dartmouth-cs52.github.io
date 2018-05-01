@@ -13,28 +13,41 @@ Today we'll be learning how to create a server side rendered polling webapp: it 
 <iframe width="800" height="374" src="https://www.youtube.com/embed/LjrdiK94FyU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 ## Some Setup
-First, let's download `node` and `mongodb` packages.
+
+You already have `node` installed but let's install our database:
+
 ```bash
-brew install node
 brew install mongodb
 ```
 
 More Mongo [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
 
-We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.
+We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52-18s/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
 
-🚀 Do what you did in [SA4](http://cs52.me/assignments/sa/react-videos/) when pulling from your own starterpack but in this case we'll pull from a different starter — create your own repo with the classroom link, add a starter remote to [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter), and pull from it. Then run these following commands to start our new node+express app in dev reloading mode.
+🚀 Do what you did in [lab4](../../lab/redux-blog) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
 
 ```bash
-npm install
-npm run dev
+#make sure you are in your project directory
+git remote add starter git@github.com:dartmouth-cs52-18S/express-babel-starter.git
+git pull starter master
 ```
+
+Then run these following commands to start our new node+express app in dev reloading mode.
+
+```bash
+yarn install
+yarn dev
+```
+
+❓ EC: What is `yarn dev` doing here?
+
+Take a look around the project now.  There is a `src` folder similar to our react project.  There is a `package.json` and the usual `.eslintrc`, `.babelrc`. Poke around the `scripts` part of the `package.json` file.  Note that it is a little different.
 
 ## Intro Express
 
 [Express](https://expressjs.com/) is a web framework for Node.js.  What it does for us is provide a way to listen for and respond to incoming web requests. Today, we will be creating API endpoints to respond to certain CRUD-style requests.
 
-Take a look through the current `app/server.js` file. This is the entry point for the app. Just like `index.js` has been in our frontend app (the names of these are arbitrary). Note how we are setting the route:
+Take a look through the current `src/server.js` file. This is the entry point for the app. Just like `index.js` has been in our frontend app (the names of these are arbitrary). Note how we are setting the route:
 
 ```javascript
 // default index route
@@ -94,7 +107,7 @@ Ok, so now you've played a little bit with mongo directly, let's build something
 
 To connect to mongo in our app, we will use a module called `mongoose`. [Mongoose](http://mongoosejs.com/) is a an object model for mongo. This allows us to treat data that we are storing in mongo as objects that have a nice API for querying, saving, validating, etc.  Mongo is in general considered a schema-less store.  We store JSON documents in a large object tree similarly to firebase. However, with Mongoose we are able to specify a schema for our objects.  This is purely in code and allows use to validate and assert our data before inserting it into the database.
 
-🚀 Install mongoose:  `npm install --save mongoose`
+🚀 Install mongoose:  `yarn add mongoose`
 
 🚀 And add just a little bit of code to get mongoose initialized with our database in `server.js`:
 
@@ -113,7 +126,7 @@ mongoose.Promise = global.Promise;
 
 We're going to create a data model to work with.   A data model in mongoose is initialized from a schema, which is a description of the structure of the object.   This is much more like what you might be familiar with statically typed classes in Java.
 
-🚀 Create a directory `app/models` and a file inside this directory named `poll.js`.
+🚀 Create a directory `src/models` and a file inside this directory named `poll.js`.
 
 
 ```javascript
@@ -148,9 +161,9 @@ From this schema we create a Poll class or model which we can use in other files
 ## Views
 We need to create views for how our polls will look on the page.
 
-🚀  Let us create the directory `app/views` to hold all our view templates. We will write some html with [ejs](https://www.npmjs.com/package/ejs), which allows us to embed javascript in html. This allows us to reuse html code and insert into other `.ejs` files. Let's create the directory `partials` within this directory for these reusable html components.  Another great thing we can do is pass javascript objects in html and perform simple functions to render them exactly the way we want it.
+🚀  Let us create the directory `src/views` to hold all our view templates. We will write some html with [ejs](https://www.npmjs.com/package/ejs), which allows us to embed javascript in html. This allows us to reuse html code and insert into other `.ejs` files. Let's create the directory `partials` within this directory for these reusable html components.  Another great thing we can do is pass javascript objects in html and perform simple functions to render them exactly the way we want it.
 
-🚀  We need a navigation bar on every page, don't we? In the `app/views/partials` directory, create a `nav.ejs` file.
+🚀  We need a navigation bar on every page, don't we? In the `src/views/partials` directory, create a `nav.ejs` file.
 
 ```html
 <nav>
@@ -213,7 +226,7 @@ nav {
 
 ![](img/dartmouth_background.png){:.small .fancy}
 
-🚀 Now, let's insert the nav bar and the modal into `index.ejs` file, which we create under the `app/views/` directory. This is really easy in ejs:
+🚀 Now, let's insert the nav bar and the modal into `index.ejs` file, which we create under the `src/views/` directory. This is really easy in ejs:
 ```html
 <html>
   <% include partials/head %>
@@ -225,7 +238,7 @@ nav {
 ```
 
 
-🚀 We should now be able to test this. Change `app/server.js` to read our new index ejs page:
+🚀 We should now be able to test this. Change `src/server.js` to read our new index ejs page:
 
 ```javascript
 app.get('/', (req, res) => {
@@ -274,7 +287,7 @@ There are even more neat things ejs can help us with: we can use the control flo
 
 ## Create A New Poll Page
 
-🚀  We will also make a page to create new polls.  Let's create an `/app/views/new.ejs` file.   Let's start with including partials as usual.
+🚀  We will also make a page to create new polls.  Let's create an `src/views/new.ejs` file.   Let's start with including partials as usual.
 
 ```html
 <html>
@@ -319,7 +332,7 @@ Nice, this doesn't work yet but your frontend is practically finished.
 
 Notice anything a little familiar in our terminology?   Yup, we're on our way to creating a standard MVC for our API server!   
 
-🚀 Create a directory `app/controllers` and a file inside this named `poll_controller.js`.   What might this controller do? Well it should have methods that perform all the main functionality of our API.  In short those methods would be:
+🚀 Create a directory `src/controllers` and a file inside this named `poll_controller.js`.   What might this controller do? Well it should have methods that perform all the main functionality of our API.  In short those methods would be:
 
 ```javascript
 import Poll from '../models/poll';
@@ -346,7 +359,7 @@ All these methods do not do anything meaningful right now. Let's leave these met
 
 ### Routing
 
-Now we are ready to wire our app all together with routes. We can create a separate routes file, but our application is pretty small, so we can store all of our routes in our `app/server.js`:
+Now we are ready to wire our app all together with routes. We can create a separate routes file, but our application is pretty small, so we can store all of our routes in our `src/server.js`:
 
 For example we could define a `path/:id` route like below:
 
@@ -435,7 +448,7 @@ What is happening with the return above?  I thought we said we needed to return 
 
 🚀 Let's test this now and view the page at `http://localhost:9090/`. They should show our two polls that we created in the `mongo` shell.
 
-Now that we have the `getPolls` method working, we have to use more database methods (all of them can be found in the [mongoose docs](http://mongoosejs.com/docs/queries.html)).
+Now that we have the `getPolls` method working, we have to use more database methods (all of them can be found in the [mongoose docs](http://mongoosejs.com/docs/queries.html))
 to implement the `createPoll` and `vote` methods.
 
 ### createPoll
@@ -497,7 +510,7 @@ $('.vote').click(function(event) {
 </script>
 ```
 
-In the above we make an ajax call to the server to update the fields, and then we just reload the page. There are better ways of updating our display but for now this should suffice!
+In the above we make an ajax call to the server to update the fields, and then we just reload the page. There are better ways of updating our display but for now this should suffice!  What is a problem with this approach that we wouldn't have if we used React?
 
 ## Deploy to Heroku
 
@@ -518,4 +531,4 @@ Note: Don't forget to push master to **both** heroku and origin.
 ## Extra Credit
 
 1. How might you delete polls?
-1. What about preventing people from voting multiple times using cookies or localstorage?
+1. What about preventing people from voting multiple times using cookies or localstorage? not super secure but a first pass.

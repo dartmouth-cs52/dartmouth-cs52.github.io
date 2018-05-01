@@ -36,10 +36,10 @@ comment_term: lectures
 * [4/24 Routing](09_routing)
 <!-- * 4/26 Redux -->
 * [4/26 Redux](10_redux)
-* 5/1 Pitches
-<!-- * [5/1 Pitches](11_pitches) -->
-* 5/3 Databases
-<!-- * [5/3 Databases](12_intro_to_databases) -->
+<!-- * 5/1 Databases -->
+* [5/1 Databases](12_intro_to_databases)
+* 5/3 Pitches
+<!-- * [5/3 Pitches](11_pitches) -->
 * 5/8 Teams
 <!-- * [5/8 Teams](13_teams) -->
 * 5/10 Sessions & Auth

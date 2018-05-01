@@ -21,7 +21,6 @@ name: base
 ---
 name: Today and Stuff
 
-* Lab3
 * REST apis
 * Databases
 * SA7
@@ -32,23 +31,141 @@ name: Today and Stuff
 
 
 
+
 ---
-name: Lab3 Selections
+name: CS52 Art
 
-* [multiple boards - http://tinyurl.com/floatnotes ](https://dartmouth-cs52-17s.github.io/lab3-annieke/)
-* [locking edits](https://dartmouth-cs52-17s.github.io/lab3-arinehouse/)
-* [authentication](https://dartmouth-cs52-17s.github.io/lab3-zchr/)
-* [reset?!](https://dartmouth-cs52-17s.github.io/lab3-utterbackj/)
-* [global undo](https://dartmouth-cs52-17s.github.io/lab3-RuoniWang/)
-* [persisting undo per note!](https://dartmouth-cs52-17s.github.io/lab3-yeonjaepark/)
-* [resizeable](https://dartmouth-cs52-17s.github.io/lab3-samlee64/)
-* [colorable](https://dartmouth-cs52-17s.github.io/lab3-daniellemidulla/)
-* [snapable](https://dartmouth-cs52-17s.github.io/lab3-nmoolenijzer/)
-* [in use!](https://dartmouth-cs52-17s.github.io/lab3-justkdeng/)
-* [draggy thingy](https://dartmouth-cs52-17s.github.io/lab3-RcrsvSquid/)
-* [style](https://dartmouth-cs52-17s.github.io/lab3-dapoeso/)
-* [color and style](https://dartmouth-cs52-17s.github.io/lab3-jennyseong/)
 
+
+![](img/functions-table.jpg)
+
+
+???
+* quiz grading tonight, do people want a quick review?
+
+
+
+
+
+
+---
+name: CS52 Art
+
+
+
+![](img/table-dash-redux.jpg)
+
+
+???
+* redux review
+
+
+
+
+---
+name: CS52 Art
+
+
+
+![](img/table-redux-takeover.jpg)
+
+
+???
+* redux review
+
+
+
+
+---
+name: Final Project Ideas
+
+
+<iframe width="600" height="400" src="https://www.youtube.com/embed/J-GVd_HLlps?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+* Thoughts on pitching
+* Ideas+
+
+???
+* today talk about pitching ideas and do a idea workshop thing
+* I generally dislike formal brainstorming
+  - but hopefully this will be fun and fruitful
+
+
+---
+name: Story
+
+<iframe src="https://giphy.com/embed/IoQETeY2ue5bi" width="308" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+* What is the problem?
+  * Story hook / why it matters?
+* What are you doing / your solution?
+* How are you special?
+* Next step?
+
+
+???
+---
+name: Ok but like, why?
+
+<iframe src="https://giphy.com/embed/113udJYmASs3qE" width="480" height="282" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+???
+* get roommate to cleanup
+* go on a date
+* get a job
+* anytime present what you care about
+
+* last term we had a pitching activity
+* where people pitched their favorite food and then we got that food later in term
+* we can do that or move on to an ideation workshop?
+
+---
+name: Ideas
+
+
+.fancy.medium[![](https://media.giphy.com/media/PIYuiILBo5OnK/giphy.gif)]
+
+
+???
+* hard to generate
+* today we'll do some brainstorming
+* today will be different
+* queue smoke machine
+
+
+
+---
+name: Some Inspiration Sources
+
+
+* http://www.ycombinator.com/resources/
+* https://www.startupschool.org/
+* http://www.paulgraham.com/startupideas.html
+* https://www.ycombinator.com/rfs/
+* https://www.npr.org/podcasts/510313/how-i-built-this
+* https://dribbble.com/
+* http://abc.go.com/shows/shark-tank
+
+
+
+???
+* how i built this is a cool interview series
+
+
+---
+name: Your Pitch
+
+* Propose either:
+    * problem with a potential solution
+    * OR pose a problem you want to attempt to solve without a solution
+    * OR a topic that you think might be interesting to brainstorm around
+
+* on thurs will do some more brainstorming
+
+
+???
+* dont' overdefine
+* but also who wouldn't want to be on a project with someone passionate?
 
 
 
@@ -64,7 +181,7 @@ name: What Is REST API?
 
 ???
 * what we used for bloggy
-* transfer some state -> remote to client
+* transfer some state -> from remote server to client
 * where state is data from server
 * some conflicting opinions
 * api -> on the web
@@ -87,6 +204,7 @@ name:  RESTful API
 ???
 * resources avaible via http
 * in file like paths
+* helps to organize and think in terms of paths to resources rather than actions or functions
 
 
 
@@ -109,6 +227,9 @@ name:  RESTful API
 ???
 * endpoints are resources not actions
 * why would it be bad to have action endpoints?
+   * have hundreds potentially
+   * getUser, getUserProfile, getListViewAuthorized, etc
+
 
 
 
@@ -178,12 +299,13 @@ name:
 
 
 ---
-name: Problems
+name: Complications
 
 * complicated data requires multiple round trips to server
 * versioning with old clients breaking
 * variability in REST design
 * data returned may not be what is needed
+* realtime?
 
 ???
 * user firstname+lastname = fullname
@@ -248,6 +370,8 @@ name: GraphQL
 * function like query part
 * very cool
 * helps with getting the data you need
+* btws, if you read that redux is dead - don't worry it isnt
+* lots of different ideas about redux and graphql - but you still want to manage your state in a smart way
 
 
 
@@ -280,7 +404,7 @@ name: Lab 5
 
 ???
 * expressjs is a lightweigth web framework on the server-side
-* webpack-dev-server is actually built on express
+* webpack-serve is actually built on express
 
 
 
@@ -320,6 +444,7 @@ name: Storage
 * structured maybe?
 * need to be able to query
 * ask specific questions
+* btw piles are a real thing - double ended priority queues - added to either end, if needs middle then new pile is started.
 
 
 
@@ -384,6 +509,8 @@ name: RDBMS
 ---
 name: ACID
 
+.small[![](img/vitamin-c.gif)]
+
 * atomicity
 * consistency
 * isolation
@@ -394,6 +521,8 @@ name: ACID
 * consistency:  valid states of database by some rules. (non-negative inventory)
 * isolation:  steps in transactions don't affect each other. (can't interleave transaction components).
 * durability:  committed data never lost
+* also this is vitamin c
+
 
 
 
@@ -403,13 +532,16 @@ name: ACID
 ---
 name: Schema
 
+.small[![](img/scheme-brain.jpg)]
+
+
 * structure of the database
 * tables, columns and types
 * any additional constraints
 
 ???
 * describes the structure of the db
-
+* some cognition theories think our brain stores objects as schemas
 
 
 
@@ -437,6 +569,9 @@ name: Example Schema
 
 ---
 name: SQL
+
+.medium[![](img/squirrel.gif)]
+
 
 * Structured Query Language
   * relational algebra
@@ -468,7 +603,6 @@ ON Employee.DeptName=dept.DeptName;
 ```
 
 ???
-* lots of relational algebra in discrete
 * set operations, unions, intersections etc
 * right out join, left inner join
 * won't be needing this in this class
@@ -481,7 +615,7 @@ name: JOINS
 
 
 ???
-* keeping rows of one side even if don't have keys in other for instance
+* left/right: keeping rows of one side even if don't have matching keys in other for instance
 * generally full join or inner join are useful
 * oof
 
@@ -496,7 +630,7 @@ SELECT * FROM Users WHERE id = 2
 * scan through rows
 * lookup result from index instead
 * index maps:
-  * value to rows
+  * value as hashkey to row
   * lookup table $O(1)$
   * or $O(log(n))$
 * primary key: unique row ID
@@ -526,18 +660,23 @@ name: Object vs Table
 
 
 ---
-name: ORM
+name: In practice: ORM
+
+.medium[![](img/littlebobbytables.png)]
+
 
 * Object Relational Mapping
   * Objects map to database records
   * A class for each table
   * Objects of class are rows
-  * Attributes of columns
+  * Attributes are columns
+* less sql the better
 
 ???
 * dealing with SQL syntax is hard
 * we can add abstraction layer!
 * we like objects better
+* also provides sanitization
 
 
 
@@ -615,7 +754,7 @@ name: MongoDB
 
 
 ---
-name: JSON blobs
+name: Freeform JSON
 
 <iframe src="//giphy.com/embed/zMDQIudRLFKco?hideSocial=true" width="480" height="331.2" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -687,6 +826,7 @@ author: {
 ???
 * data eventual consistency
 * but also across servers sometimes
+* facebook example, cassandra as store
 
 
 
