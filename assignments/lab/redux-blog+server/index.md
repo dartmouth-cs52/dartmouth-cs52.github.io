@@ -30,14 +30,13 @@ Our server will be a pure api server, returning only JSON format data to our Lab
 
 First we should do some basic setup steps.  
 
-🚀 Do what you did in [SA4](http://cs52.me/assignments/sa/react-videos/) when pulling from your own starterpack but in this case we'll pull from a different starter — create your own repo with the classroom link, add a starter remote to [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter), and pull from it. Then run these following commands to start our new node+express app in dev reloading mode.
+🚀 Do what you did in [lab4](../../lab/redux-blog) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
 
 ```bash
-npm install
-npm run dev
+#make sure you are in your project directory
+git remote add starter git@github.com:dartmouth-cs52-18S/express-babel-starter.git
+git pull starter master
 ```
-
-This will start our new node+express app on [http://localhost:9090](http://localhost:9090) in dev reloading mode.
 
 Ok, now that we got that out of the way. Let's dig in!  
 
@@ -78,7 +77,7 @@ To recap the API has the following endpoints:
 
 Let's implement these and more!
 
-Take a look through the current `app/server.js` file. This is the entry point for the app. Just like `index.js` has been in our frontend app (the names of these are arbitrary). Note how we are setting the route:
+Take a look through the current `src/server.js` file. This is the entry point for the app. Just like `index.js` has been in our frontend app (the names of these are arbitrary). Note how we are setting the route:
 
 ```javascript
 // default index route
@@ -149,13 +148,11 @@ Ok, so now you've played a little bit with mongo directly, let's build something
 Don't forget to install  Mongoose! Just repeat the Mongoose section from [SA7](../sa/server-side/#mongoose)
 
 
-
-
 ## Model
 
 We're going to create a `Post` data model to work with. You've already made something similar in [SA7](../sa/server-side/#models)
 
-🚀 Create a directory `app/models` and a file inside this directory named `post_model.js`.
+🚀 Create a directory `src/models` and a file inside this directory named `post_model.js`.
 
 
 ```javascript
@@ -174,7 +171,7 @@ This will do for now, let's see about how to use this.
 
 ## Controller
 
-🚀 Create a directory `app/controllers` and a file inside this named `post_controller.js`.
+🚀 Create a directory `src/controllers` and a file inside this named `post_controller.js`.
 
 What might our controller do?
 
@@ -207,7 +204,7 @@ Let's just have them empty for now and then deal with the details later.  ⚠️
 
 Now we are ready to wire it all together with routes!  The way we were doing it earlier is not very extensible. Lets create a separate file for routes.
 
-🚀 Create:  `app/router.js`.
+🚀 Create:  `src/router.js`.
 
 Here's some boilerplate to get us going:
 
@@ -263,7 +260,7 @@ You will have 2 `router.route()` definitions with separate chains of HTTP verb m
 
 ### Import New Routes
 
-🚀 Now in your `app/server.js` file import our new routes and assign them to handle all `/api/*` routes!
+🚀 Now in your `src/server.js` file import our new routes and assign them to handle all `/api/*` routes!
 
 ```javascript
 //at top of server.js
@@ -396,7 +393,7 @@ Great! We have everything working now. We will need to host this new server comp
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
 1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
 1. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/cs52-blog.git`.   
-1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the npm command that is listed in your `Procfile` to launch your app.  COOL!
+1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
 
 Note: Don't forget to push master to **both** heroku and origin.
 
