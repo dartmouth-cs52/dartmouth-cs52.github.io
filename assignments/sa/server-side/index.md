@@ -67,11 +67,12 @@ We'll add more routing in shortly, but first let's set up our database!
 
 Mongo is the database that we are going to use.  We've already installed `mongodb` using Homebrew.  Follow further [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
 
- 🚀 You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process. ⚠️ On OSX if you get a permissions error you need to make sure that the database dir is writable `sudo chown $USER /data/db`.
+ 🚀 You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process. ⚠️ On OSX if you get a permissions error you need to make sure that the database dir is writable `sudo chown $USER /data/db`. If you get an error about `/data/db` not existing you can run: `sudo mkdir -p /data/db`.
 
 There is a commmandline client we'll use to connect to the database: `mongo`. You can also play around with a more graphical client [mongodb compass community](https://www.mongodb.com/download-center?jmp=nav#compass) (just make sure to download the *community* version).
 
 🚀  Below are some commands to run in the mongo client to create some polls.
+
 ```bash
 # mongoshell is a commandline interface to your local mongo db
 
@@ -518,8 +519,10 @@ Great! We have everything working now. We will need to host this new server comp
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
 2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
-3. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/YOUR_HEROKU_APP.git`.   
+3. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/YOUR_HEROKU_APP.git`.
 4. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the npm command that is listed in your `Procfile` to launch your app.  COOL!
+
+You can also set up the "Deploy Using GitHub" if you prefer - I'm old fashioned so I like the explicit push to heroku but up to you.
 
 Note: Don't forget to push master to **both** heroku and origin.
 

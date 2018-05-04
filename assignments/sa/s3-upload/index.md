@@ -32,16 +32,17 @@ In general, the method described in this article follows these simple steps:
 
 Before you start make sure to tag your previous Lab4 and Lab5 with v2.
 
-🚀 Go into your Lab5 directory and run:
+🚀 Make sure everything is commited and pushed to github normally.
+
+🚀 Go into your Lab5 and Lab4 directories and run:
 
 ```bash
-git tag v2
-git push origin --tags
+git tag
 ```
 
-🚀 Go into your Lab4 directory and run:
+to double check your versions, then if you didn't tag your last version do so now:
 
-```bash
+```
 git tag v2
 git push origin --tags
 ```

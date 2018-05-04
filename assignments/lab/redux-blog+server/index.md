@@ -356,33 +356,15 @@ db.posts.find()
 
 ## Get All Endpoints Working
 
-
 Your mission is to now implement the rest of the endpoints!  You have the wiring ready, all you need is to use the [mongoose docs](http://mongoosejs.com/docs/queries.html) to implement `getPost`, `getPosts`, `updatePost`, and `deletePost`.  You may find mongoose methods such as: `.find()`, `.findById()`, `.remove()` helpful.  You might want to look into sorting the results for `getPosts` by `created_at`.
 
 Note!  In the above we only saved `title`, none of the other fields were defined in our Post Schema!  You should now go back and add the other fields we need to the model as well as to the all the controller methods.
 
-One more caveat! Mongo happens to use `_id` instead of `id` as we have been so you could use a method like the following to format the list of posts to be cleaner.
-
-```javascript
-// this cleans the posts because we use id instead of dangling _id
-// and we purposefully don't return content here either
-const cleanPosts = (posts) => {
-  return posts.map((post) => {
-    return { id: post._id, title: post.title, tags: post.tags, cover_url: post.cover_url };
-  });
-};
-```
-
-This would be before you `res.json()` them back to the client.
-
 And finally, you'll need to get the router id that is passed in when we hit `/posts/:id`.  This is accessible as `req.params.id` inside each of our controller functions that had this `:id` path variable.
-
-
 
 ## What about APIKEY
 
 Note, unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in each document and then query on it.
-
 
 ## Deploy
 
