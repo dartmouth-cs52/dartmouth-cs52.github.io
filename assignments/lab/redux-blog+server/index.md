@@ -34,7 +34,7 @@ First we should do some basic setup steps.
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-18S/express-babel-starter.git
+git remote add starter git@github.com:dartmouth-cs52-18s/express-babel-starter.git
 git pull starter master
 ```
 
@@ -376,6 +376,7 @@ Great! We have everything working now. We will need to host this new server comp
 1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
 1. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/cs52-blog.git`.   
 1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
+1. Once it is deployed you can get your new heroku URL by clicking 'open app' on heroku.
 
 Note: Don't forget to push master to **both** heroku and origin.
 
@@ -387,9 +388,9 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 
 ## To Turn In
 
-1. github url to your repo
+1. github url to your repo, readme.md with what worked and what didn't
 1. url to your new heroku app instance for testing
-1. working url for Lab4 on surge that points to your new API server. You can just change it to post to your own.
+1. working url for Lab4 on surge that points to your new API server. You should change it to post to the new heroku url that you get by clicking 'open app' on heroku.
 
 ## Extra Credit
 
