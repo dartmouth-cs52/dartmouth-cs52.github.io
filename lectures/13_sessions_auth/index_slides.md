@@ -30,7 +30,9 @@ name: Today
 
 ???
 * quiz tomorrow
-
+* adjusting milestones and will publish dates on canvas
+* going to move quickly to get the projects started
+* lab5.p2 is pretty short more liek a short
 
 ---
 name: Sessions
