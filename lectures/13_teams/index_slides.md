@@ -19,6 +19,17 @@ name: base
 .title[{{name}}]
 
 
+---
+name: today
+
+* quiz 3
+* final project milestones
+* meet your team
+
+???
+* questions? last lab due
+* will publish extra credit shorts which will help with final projects tomorrow - just need to do a test pass on them make sure they are updated
+* 
 
 ---
 name: Current Final Project Milestone
