@@ -425,7 +425,7 @@ Ok,  so now we should update our frontend to support authentication too right?  
 
 ### Actions
 
-![](img/auth_flow_frontend.png){: .small .fancy }
+![](img/auth_flow_frontend.png){: .medium .fancy }
 
 
 🚀 Add in 3 new action types:
