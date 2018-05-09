@@ -21,63 +21,6 @@ name: base
 
 
 ---
-name: Lab4 Selections
-
-* [one blog to rule them all](http://cs52-benblog.surge.sh/)
-* [lab catharsis](http://traumabox.surge.sh/)
-* [preview](http://zchr-lab-4.surge.sh/)
-* [comments](http://lab4-kevinfarmer.surge.sh/)
-* [comments](http://starterpack-heyssshhh.surge.sh/)
-* [comments](http://ogrenblogs.surge.sh/)
-* [classy times](http://nmoolenijzer-news.surge.sh/)
-* [full width](http://squids-den.surge.sh/)
-* [filtering](http://rightful-selection.surge.sh/)
-* [pokemon](http://byang-lab4.surge.sh/)
-* [retro](http://cs52-lab4-tyler-burnam.surge.sh/)
-* [material-ui](http://annie.surge.sh/)
-* [snoopy](http://starterpack-ruoniwang.surge.sh/)
-* [recipes](http://lab4-emilyjlin95.surge.sh/)
-* [cover and error handling](http://cs52-blog-nikoru-chen.surge.sh/)
-
-
-
----
-name: CS52 Art
-
-
-![](img/npm-table.jpg)
-
-???
-* but all the packages
-
-
-
----
-name: CS52 Art
-
-
-.medium_small[![](img/fatarrows-table.jpg)]
-
-???
-* but they are so pretty!
-
-
----
-name: CS52 Art
-
-.left[
-.tiny[![](img/gulp-table.jpg)]
-.tiny[![](img/toomanylabs-table.jpg)]
-![](img/state-store-reducer-table.jpg)
-]
-
-.right[
-.medium_small[![](img/primary_foreign_keys-table.jpg)]
-![](img/index_vs_linear-table.jpg)
-]
-
-
----
 name: Current Final Project Milestone
 
 
@@ -107,12 +50,22 @@ name: Inspiration
 
 
 
+
 ---
-name: Feature Spec
+name: Feature Spec + Mockups
 
-* walk-through as a user
-* high level - not buttons
+ .fancy.medium[![](http://i.giphy.com/13NR9a0aYuYMy4.gif)]
 
+* terse walk-though of project
+* from users perspective
+* terse listing of features
+* terse+memorable user personas
+* mockups/sketches
+
+???
+* A walk-though of your project from the users perspective listing out every feature that it should have
+* a few user stories attached
+* mockups of user experience.
 
 
 ---
@@ -132,8 +85,6 @@ steps:
 1. mockups
 1. functional flow
 
-
-
 ---
 name: User Personas
 
@@ -147,3 +98,92 @@ name: User Personas
 
 ???
 like real humans
+
+
+---
+name: Scaffolding
+
+ .fancy.medium[![](http://i.giphy.com/GWbMbUysgsIda.gif)]
+
+* initial code scaffolding
+* tools and frameworks chosen
+* team has local dev environment set up
+
+???
+* Initial code scaffolding started
+* component plan
+* tools and frameworks chosen
+* everybody has local dev environment set up
+
+
+
+
+
+---
+name: Dev Site Up (client+server)
+
+ .fancy.medium[![](http://i.giphy.com/IU9JNuUSmxZTy.gif)]
+
+* dev site up
+* basic flow in place:
+  * db ⇆ server api ⇆ frontend
+
+???
+* Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
+* initial wiring is in place so things are talking to each other
+
+
+
+
+
+---
+name: Pre-Demo Bug Hunt
+
+<iframe src="//giphy.com/embed/VBVY9IJKDxwHK?hideSocial=true" width="242.8571428571429" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+* week prior to final demos!
+* bug bounty!
+* git issues
+* PRs
+
+???
+* In class session of breaking each others projects to reveal bugs and give last minute feedback.
+*  We'll offer bug rewards in the form of snacks!
+* Bugs will need to be submitted in the form of git issues on each others repositories
+* PR's are extra credit!
+
+
+
+---
+name: Final Project Demos
+
+ .fancy.medium[![](http://i.giphy.com/p9O75RBS946He.gif)]
+
+* open to public!
+* motivate idea, show in action, discuss challenges
+* user testing
+
+???
+* Final presentation of project. Open to public.
+* Motivate the idea, show it in action, discuss challenges
+* will be in hanover inn ballroom!
+
+
+
+
+---
+name: Meet your TEAM!
+
+ .fancy.medium_small[![](http://i.giphy.com/p9O75RBS946He.gif)]
+
+* don't feel tied to your initial idea
+* each person ask: what if?
+* each person say what drew them to the idea?
+* and what worries them about it?
+* write this all down on your sheets
+
+???
+* what if it was this idea but for a different audience
+* what if it was an app instead?
+* what if it had more gifs?
+* use this time to

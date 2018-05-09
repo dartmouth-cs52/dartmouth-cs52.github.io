@@ -22,10 +22,10 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Pitch Presentation](pitch)** (5/1, 5/2, 5/3):<br><!--7/28/2016-->
   Pitch your problem/solution/topic to the class. Everybody will rank their top choices and groups will be formed that way.
 
-* **[Feature Spec + Mockups](feature-spec)** (5/8):<br><!--8/9/2016-->
+* **[Feature Spec + Mockups](feature-spec)** (5/13):<br><!--8/9/2016-->
   A walk-though of your project from the users perspective listing out every feature that it should have with a few user stories attached and mockups of user experience.
 
-* **[Scaffolding](scaffolding)** (5/14):<br><!--8/11/2016-->
+* **[Scaffolding](scaffolding)** (5/15):<br><!--8/11/2016-->
   Initial code scaffolding started with a component plan and tools and frameworks chosen.
 
 * **[Dev Site Up (client+server)](dev-site)** (5/17):<br><!--8/16/2016-->
@@ -37,7 +37,7 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Final Project Demos](final)** (5/30):<br><!--8/24/2016-->
   Final Demos! Catered open to public event combined with other CS projects, CS98 and DALI Demos! Science fair style: Motivate the idea, show it in action, discuss challenges and any user testing.
 
-* **[Final Project Code Submission](final-submission)** (6/3):<br>
+* **[Final Project Code Submission](final-submission)** (6/4):<br>
   Final code submission with up to date documentation.
 
 

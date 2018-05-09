@@ -42,8 +42,8 @@ comment_term: lectures
 <!-- * [5/3 Pitches](11_pitches) -->
 <!-- * 5/8 Sessions & Auth -->
 * [5/8 Sessions & Auth](13_sessions_auth)
-* 5/9 Teams
-<!-- * [5/9 Teams](13_teams) -->
+<!-- * 5/9 Teams -->
+* [5/9 Teams](13_teams)
 * 5/15 Websockets
 <!-- * [5/15 Websockets](15_websockets) -->
 * 5/17 Mockup Sharing
