@@ -12,26 +12,24 @@ comment_term: sa-react-native
 
 # react-native-workshop
 
-Today we'll be using react-native to build a simple iOS app that allows us to search YouTube (just like short assignment 4, way back when.)
+Today we'll be using react-native to build a simple react native app that allows us to search YouTube (just like short assignment 4, way back when.)
 
-Note: for this workshop, you don't need to clone or fork this repo. Everything we do will be done locally.
+React Native is very cool - all your react skills can transfer over.
 
-** Another important note!  If you are of the following people:
-
-  - Windows User
-  - Mac User who didn't follow instructions and didn't download XCode
-  - Mac User who didn't follow instructions and didn't update XCode
-
-It just takes a while to download/update XCode and we have lots to do today! (* cough * quiz * cough * )
+⚠️ Important note!  This is tested on OS X and requires an updated version of Xcode. If you are on windows or have a mixed operating systems on your team - we will be using [Expo.io](http://expo.io) to start your project rather than react-native-init. Expo provides a cool cloud simulator so you can test your app more easily. Everywhere you see the ☁️ symbol, is where you would do something slightly differently for Expo.
 
 ## Special Notes
 🚀 Take special note of this
 
 :snowflake: This is pretty cool
 
-:camera: Take a screenshot!
-
 ## Set Up:
+
+### Expo.io
+
+🚀 Go to http://expo.io and create a free account!
+
+### Command Line
 
 :warning: We should already have node installed on our machines, but just in case, let's go way to the beginning:
 
@@ -43,9 +41,9 @@ It just takes a while to download/update XCode and we have lots to do today! (* 
 
 Watchman is a file watching service that records when files change, and triggers actions when it detects changes.
 
-🚀 Alright, now we're ready to use react-native! We'll want to install the Command Line Interface so we can call react-native commands from the terminal:
+🚀 Alright, now we're ready to use react-native! We'll be using `exp` the expo command line to init our project.
 
-`$ npm install -g react-native-cli`
+`$ npm install -g exp`
 
 Great! Now we're ready to create our repo.
 
@@ -68,17 +66,17 @@ We're going to need a few dependencies from our trusty friend, the Node Package 
 
 🚀 Since we're making calls to the YouTube api, it would help if we made GET calls with axios, so:
 
-`$ npm install --save axios`
+`$ yarn add axios`
 
 Next, we'll need some specific react-native components that some other open source developers have kindly provided to us. This is fairly common in the react-native community, and it's great to have these pre-styled components at our disposal so we don't have to go through all the trouble of making an input field look nice, for example.
 
 🚀 There's one additional component we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), a simple input field made to look like the classic iOS search bar.
 
-`$ npm install --save react-native-search-box`
+`$ yarn add react-native-search-box`
 
 🚀 And of course, we need to just install everything that react-native init has kindly provided us with in its `package.json`:
 
-`$ npm install`
+`$ yarn`
 
 ## Basic Navigation
 One of the classic navigation components in iOS is the Tab Bar.
@@ -107,14 +105,14 @@ class Search extends Component {
   }
 }
 
-module.exports = Search;
+export default Search;
 ```
 
 🚀 And for  do the same for your `featured` component (with whatever refactoring is necessary).
 
-🚀 Now let's connect them all together. Navigate to the file called `index.ios.js`. This is the top-level file for iOS dev in react native. (Side note: there's also an `index.android.js` file, which makes it fairly easy to convert to Android as well1 There are a few components in this workshop that aren't Android-friendly, so we won't be dealing with it, but it's nice to know it's there.)
+🚀 Now let's connect them all together. Navigate to the file called `App`. This is the top level default component created for us by `react-native-init`. ☁️ expo may be different.
 
-🚀 Alright, so in `index.ios.js`, add the following code:
+🚀 Add the following code:
 
 ```js
 import React, { Component } from 'react';
@@ -167,7 +165,6 @@ class VidSearch extends Component {
   }
 }
 
-AppRegistry.registerComponent('VidSearch', () => VidSearch);
 ```
 
 Alright, now head over to your simulator.

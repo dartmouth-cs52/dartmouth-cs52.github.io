@@ -18,92 +18,18 @@ name: base
 
 .title[{{name}}]
 
----
-name: Websockets
-
-
-* and stuff
-
-
 
 
 ---
-name: CS52 Art
+name: Websockets, S3, ReactNative
 
 
-.medium_small[![](img/cookieremembers-table.jpg)]
-.medium_small[![](img/zombiecookie-table.jpg)]
+* concepts for the extra credit shorts
+* team time
 
 
 ???
-* any questions about anything?
-
-
-
----
-name: no more labs!
-
-
-.medium[![](img/nomorelabs-table.jpg)]
-
-
-???
-* we're done with labs!!!
-* only 5 more short assignments to go!
-* kidding
-* extra credit optional shorts that help with final project
-  * websockets - Today
-  * s3 uploading thursday
-  * testing frameworks next week
-
-
-
----
-name: but we do has quiz
-
-
-.medium[![](img/quiztime-table.jpg)]
-
-
----
-name: but we do has quiz
-
-
-<iframe src="https://giphy.com/embed/f4SoNPj4otohG" width="580" height="376" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
-
-
-
-
----
-name: Dev Site Project Milestone
-
-.medium_small.fancy[![](img/wiring.jpg)]
-
-
-* GitHub issues
-* Continuous Integration (Travis)
-* Wiring
-
-???
-* Create some github issues
-  * goal is to break up tasks into small units 1-2 hours
-  * assign each other / yourselves  (aggresiveness)
-  * large tasks such as 'login fctionality' are overwhelming
-  * break them up into 'create button', 'add signup route', etc
-  * keep up with issues, don't just let them stagnate
-  * github intengration into your slack channel
-* continuous integration
-  * PR merge to master automatically deploys
-  * idea is to keep a deployed dev site running for testing
-  * small feature branches
-  * do frequent PR's so you don't fall behind - at least daily
-* wiring
-  * get frontend talking to backend
-  * meaningful data - models etc.
-
-
-
+* this is to help with things in your projects
 
 ---
 name: HTML5 WebSockets
@@ -149,8 +75,10 @@ name: But REALTIME
   * every couple of seconds setInteval
 * long polling:
   * poll an endpoint that then keeps connection open and only responds when it has something
+  * restart when disconnected
 * streaming:
   * keep sending incremental data
+  * timeouts after some minutes
 
 
 
@@ -355,8 +283,26 @@ news.on('news', (data) => {
 ```
 
 ???
-*
+* also rooms
 
+
+---
+name: Rooms
+
+```javascript
+//on server
+io.on('connection', function(socket){
+  // determine if that client socket should join some room
+  // say part of a conversation
+  socket.join('some room');
+});
+
+io.to('some room').emit('some event');
+
+```
+
+???
+* on client would just get `some event`
 
 
 ---
@@ -371,7 +317,7 @@ socket.emit('fetchPost', id, (post) => {
 ???
 * you can use callbacks with events!!
 * emitting an event that also has an associated callback that gets returned
-
+* like running a remote asynch function
 
 
 ---
@@ -404,11 +350,132 @@ socket.broadcast.emit('user connected', username);
 
 
 
-
 ---
-name: Workshop!
+name: Image Upload
 
-[cs52.me/assignments/sa/websockets](/assignments/sa/websockets)
+.small[![](img/drag-drop-upload-1.gif)]
+
+* where to store uploaded images?
+    * database 🚫
+    * server file system 🚫
+    * amazon s3? ❤️
 
 
 ???
+* why might it be bad to store images in database?
+* on heroku - the filesystem gets wiped
+* databases are optimized for not large data blobs
+
+
+---
+name: S3
+
+* [aws s3](https://aws.amazon.com/s3/)?
+
+.medium[![](img/s3.jpg)]
+
+
+???
+
+
+---
+name: S3
+
+* don't publish your secret key! keep it on your api
+
+.large[![](img/s3_upload.jpg)]
+
+
+???
+* keep keys on server
+* create one time use signed urls from server
+* give to client to upload directly
+* why is this better?
+
+
+
+
+---
+name: React Native
+
+* All I know is React - I wanna make a mobile app!
+
+.large[![](img/rn-whos.jpg)]
+
+
+???
+* in good company so do many people
+
+
+---
+name: React Native
+
+* cool because:
+   * javascript thread controlling native components
+   * wrapper around all native
+   * one way data flow!
+   * virtual dom in native app
+
+
+???
+
+
+
+---
+name: React Native
+
+
+.large[![](img/rn-vs-react.jpg)]
+
+
+???
+
+
+---
+name: React Native
+
+
+.large[![](img/react-native-reload.gif)]
+
+
+???
+
+---
+name: React Native
+
+
+.large[![](img/rn-flow.jpg)]
+
+
+???
+* native layer bridges to javascript control thread
+
+---
+name: React Native
+
+
+.large[![](img/rn-reddit.jpg)]
+
+
+???
+* has changed a bit since last year will have update out tonight
+
+
+---
+name: Expo.io
+
+.super-tiny[![](img/expoio.png)]
+
+
+.medium[![](img/expoio.gif)]
+
+
+???
+* makes it super easy to develop on both
+
+
+
+---
+name: TeamWorkTime!
+
+.medium[![](img/teamwork.gif)]

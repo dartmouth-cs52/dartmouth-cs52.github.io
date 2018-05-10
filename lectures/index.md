@@ -44,9 +44,9 @@ comment_term: lectures
 * [5/8 Sessions & Auth](13_sessions_auth)
 <!-- * 5/9 Teams -->
 * [5/9 Teams](13_teams)
-* 5/15 Websockets
-<!-- * [5/15 Websockets](15_websockets) -->
+<!-- * 5/15 Websockets, S3, ReactNative -->
+* [5/15 Websockets, S3, ReactNative (ec shorts)](15_ec_shorts)
 * 5/17 Mockup Sharing
-<!-- * 5/17 Mockup Sharing -->
+<!-- * 5/17 Mockup Sharing -->s
 * 5/29 Wrapup
 <!-- * [5/29 Wrapup](16_wrapup) -->

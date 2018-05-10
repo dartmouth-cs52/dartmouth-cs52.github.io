@@ -368,7 +368,6 @@ Ok.  Now it should work much better when deployed.  You don't have to deploy or 
   * server
 
 
-
 ## Resources
 
 * https://github.com/socketio/socket.io

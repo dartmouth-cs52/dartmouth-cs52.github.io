@@ -18,6 +18,38 @@ name: base
 
 .title[{{name}}]
 
+
+
+
+---
+name: Dev Site Project Milestone
+
+.medium_small.fancy[![](img/wiring.jpg)]
+
+
+* GitHub issues
+* Continuous Integration (Travis)
+* Wiring
+
+???
+* Create some github issues
+  * goal is to break up tasks into small units 1-2 hours
+  * assign each other / yourselves  (aggresiveness)
+  * large tasks such as 'login fctionality' are overwhelming
+  * break them up into 'create button', 'add signup route', etc
+  * keep up with issues, don't just let them stagnate
+  * github intengration into your slack channel
+* continuous integration
+  * PR merge to master automatically deploys
+  * idea is to keep a deployed dev site running for testing
+  * small feature branches
+  * do frequent PR's so you don't fall behind - at least daily
+* wiring
+  * get frontend talking to backend
+  * meaningful data - models etc.
+
+
+
 ---
 name: My Turn to DRAW
 
