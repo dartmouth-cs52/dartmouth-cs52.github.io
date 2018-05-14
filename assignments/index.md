@@ -30,8 +30,8 @@ comment_term: assignments
 * [EC Short Assignment 9: Photo Uploading S3](sa/s3-upload) - DUE 6/1
 <!-- * EC Short Assignment 10: ChatBot- DUE (6/1) -->
 * [EC Short Assignment 10: ChatBot](sa/slack-bot) - DUE 6/1
-* EC Short Assignment 11: ReactNative - DUE (6/1)
-<!-- * [EC Short Assignment 11: ReactNative](sa/react-native) - DUE 6/1 -->
+<!-- * EC Short Assignment 11: ReactNative - DUE (6/1) -->
+* [EC Short Assignment 11: ReactNative](sa/react-native) - DUE 6/1
 
 
 
