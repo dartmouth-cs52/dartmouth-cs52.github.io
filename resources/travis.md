@@ -24,13 +24,15 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
       ![profile](/assets/imgs/travis/travis-ci.jpg)
 
+      *Note: for private repositories you need to go to [http://travis-ci.com](http://travis-ci.com) but the same account works in both.*
+
 3. Travis configuration
 
-    Create a `.travis.yml` file in your home directory. This is the configuration file that Travis uses. You can read more about detailed configurations [here](https://docs.travis-ci.com/user/customizing-the-build/). Below is a sample configuration file that we are using for a Meteor project. By default, `node_js` configurations will run `npm test` after the build completes.
+    Create a `.travis.yml` file in your home directory. This is the configuration file that Travis uses. You can read more about detailed configurations [here](https://docs.travis-ci.com/user/customizing-the-build/). Below is a sample configuration file that we are using for a Meteor project. By default, `node_js` configurations will run `npm test` or `yarn test` after the build completes. That is a script you have defined in your `package.json` file named 'test'.
 
         language: node_js
         node_js:
-          - "7"
+          - "9"
 
 4. Push to GitHub
 
@@ -56,16 +58,15 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
     ![linter error](/assets/imgs/travis/linter-error.png)
 
-    The recommended linter plugin for javascript is [Eslint](eslint.org). You can install `eslint` using `npm install --save-dev eslint`. The corresponding atom package is the [Eslint Plugin for AtomLinter](https://github.com/AtomLinter/linter-eslint).
+    The recommended linter plugin for javascript is [Eslint](eslint.org). You can install `eslint` using `yarn add --dev eslint`. The corresponding atom package is the [Eslint Plugin for AtomLinter](https://github.com/AtomLinter/linter-eslint).
 
-    The `--save-dev` flag adds `eslint` as a dev dependency in your `package.json` file. devDependencies are installed on `npm install` on a directory that contains `package.json` but not installed with the `--production` flag. This is used for local development.
+    The `--dev` flag adds `eslint` as a dev dependency in your `package.json` file. devDependencies are installed on `npm install` on a directory that contains `package.json` but not installed with the `--production` flag. This is used for local development.
 
     `eslint` comes with a series of plugins for various javascript packages. It is also recommended that you install the [react plugin](https://github.com/yannickcr/eslint-plugin-react) and if you would like, you can also follow a style guide, we are a fan of [Airbnb's](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb).
 
-    After installing `eslint`, you need to initalize your `.eslintrc` configuration file using `eslint --init`. More details about configurations can be found in the [config docs](http://eslint.org/docs/user-guide/configuring).
-
     Below is an example of a potential `eslintrc` file. You probably already have one set up!
 
+        ```
         module.exports = {
         "extends": "airbnb",
         "plugins": [
@@ -90,6 +91,7 @@ Linters are code parsers that check your code for syntax errors, common style mi
             "arrow-body-style": 0,
               }
           };
+        ```
 
 7. Connecting Eslint and TravisCI
 
@@ -106,7 +108,7 @@ Linters are code parsers that check your code for syntax errors, common style mi
           }
         }
 
-8. Optional Pre-commit Hooks
+8. *Optional* Pre-commit Hooks
 
     In addition to running server side testing through Travis CI, you can also set up pre-commit hooks locally in your git repository.
 
