@@ -16,6 +16,8 @@ This milestone is all about setting up initial code scaffolding and getting read
 
 Now that you have your functionality mapped out let's start on planning the coding.  You now have the features all planned out.  How do you want to build it?  Plan out what technology you think you want to use and let's get some code scaffolding ready.   The project does have some minimal technical specs that must be fulfilled, but you are free to use alternative tech stacks as long as the whole team has some experience with them.
 
+Use the canvas github classroom links to get your repos set up. As usual - first person on your team gets to name it, the rest use the *same* links and select the team that was created.  This adds everybody to a github team and makes all the permissions work. 
+
 ### Minimal Architecture:
 
 * API server backend
