@@ -75,7 +75,6 @@ script:
 
 for instance if you have to customize what it runs on install and have a main deploy script set up in your `package.json` file.
 
-
 ## Such Dev Environment
 
 Now, you can work in your local environment on your feature branch and when you are ready, merge it into master which will deploy it automatically. Do not simply start using the master branch and the dev site directly as your primary method of testing.  You should always be working locally first! But this does allow you to merge in changes quickly and you can have a shared dev site where you can see the latest pushed version of everyone's code and ask others for feedback.
