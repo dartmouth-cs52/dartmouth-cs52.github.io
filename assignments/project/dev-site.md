@@ -47,6 +47,8 @@ Milestones allow you to assign a due date to a set of issues.  These are useful 
 
 You will need to set up Travis CI for your project with automatic linting. You already have been using eslint, so now we'll just make sure that whenever you push to github it will automatically run eslint again just in case.  We'll also have Travis CI run other stuff for us, in particular it will push to surge automatically.  Here's a bit of a howto on [how to set up Travis](http://cs52.me/resources/travis).
 
+You should set this up for *all* your repositories.  You already have working `.eslintrc` files so might as well be checking linting on before allowing merges.
+
 ### Deployment API
 
 ![](img/Heroku_logo.png){:  .tiny}
@@ -57,7 +59,21 @@ Set up your Heroku app to be connected to GitHub with [automatic deploys](https:
 
 ![](img/surge.png){:  .tiny}
 
-For the frontend, we can set up Surge with Travis so that it too will update automatically.  Here's how to set up [surge+travis](https://surge.sh/help/integrating-with-travis-ci).
+For the frontend, we can set up Surge with Travis so that it too will update automatically.  Here's how to set up [surge+travis](https://surge.sh/help/integrating-with-travis-ci).  You may need to add some customized parts to this.  In particular on your front end you will most likely have a separate `yarn build` step.  Travis has a bunch of [configuration steps that you can customize](https://docs.travis-ci.com/user/customizing-the-build).  
+
+Your file might end up looking like:
+
+```
+language: node_js
+node_js:
+  - "10"
+install:
+  - yarn --ignore-engines
+script:
+  - yarn deploy
+```
+
+for instance if you have to customize what it runs on install and have a main deploy script set up in your `package.json` file.
 
 
 ## Such Dev Environment
