@@ -31,6 +31,9 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Dev Site Up (client+server)](dev-site)** (5/17):<br><!--8/16/2016-->
   Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
 
+<!-- * **[Progress Pull Request](progress-pr)** (5/22):<br>
+  Submit a Pull Request that you are proud of -->
+
 * **[Pre-Demo Bug Hunt](bughunt)** (5/24):<br><!--8/18/2016-->
   In class session of breaking each others projects to reveal bugs and give last minute feedback.
 
