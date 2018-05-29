@@ -50,5 +50,5 @@ comment_term: lectures
 * 5/17 In Class TeamWorkTime
 * 5/22 In Class TeamWorkTim
 * 5/24 In Class Bug Hunt
-* 5/29 Wrapup
-<!-- * [5/29 Wrapup](16_wrapup) -->
+<!-- * 5/29 Wrapup -->
+* [5/29 Wrapup](16_wrapup)
