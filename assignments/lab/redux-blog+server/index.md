@@ -383,14 +383,34 @@ Note: Don't forget to push master to **both** heroku and origin.
 
 ## P1 Complete
 
-Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!  IE. Change your Lab4 `ROOT_URL` to point to your Heroku hosted server instance.  Commit and push your very slightly altered Lab4.
+Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work! Change your Lab4 `ROOT_URL` to point to your Heroku hosted server instance. 
+
+The fastest way to change your `ROOT_URL` is simply to comment out the localhost `ROOT_URL`, as we've been doing. For a small scale app like this, that's not a *bad* idea, but it becomes a pain if you're re-deploying constantly (like for your final project!). So, it's nice to have code that will automatically change the `ROOT_URL` for you, dependent upon whether you're running it locally or not.
+
+A clever way of checking which ROOT_URL to use can be done like this: 
+
+
+```javascript
+// default to heroku
+let ROOT_URL = 'YOUR_HEROKU_URL_HERE';
+
+// get what url we're using from the browser
+const currentURL = window.location.hostname;
+
+// if url has localhost in it, change ROOT_URL to localhost
+if (currentURL.indexOf('localhost') >= 0) {
+  ROOT_URL = 'http://localhost:9090/api';
+}
+```
+
+**Commit and push your very slightly altered Lab4.**
 
 
 ## To Turn In
 
-1. github url to your repo, readme.md with what worked and what didn't
+1. github url to your repo, README.md with what worked and what didn't
 1. url to your new heroku app instance for testing
-1. working url for Lab4 on surge that points to your new API server. You should change it to post to the new heroku url that you get by clicking 'open app' on heroku.
+1. working url for Lab4 on surge that points to your new API server. You should change it to post to the new heroku url that you get by clicking 'open app' on heroku, as detailed in the section directly above.
 
 ## Extra Credit
 
