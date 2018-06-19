@@ -17,7 +17,7 @@ In Slack, bot users are similar to human users in that they have names, profile 
 
 
 ## Some Setup
-Begin by cloning the starter code from [express+babel+eslint](https://github.com/dartmouth-cs52/express-babel-starter).
+Begin by cloning the starter code from [express+babel+eslint](https://github.com/dartmouth-cs52-18s/express-babel-starter).
 
 1. **Slack**
 
@@ -38,12 +38,12 @@ Begin by cloning the starter code from [express+babel+eslint](https://github.com
 
 1. **Express**
 
-    🚀Open `app/server.js`. Just like the previous assignments this is our main file for running the project.
+    🚀Open `server.js`. Just like the previous assignments this is our main file for running the project.
 
 1. **Run Dev Mode**
 
 	```bash
-	$ npm run dev
+	$ yarn dev
     ```
 
 ## Your First Bot Words
@@ -53,14 +53,14 @@ Ok so now you have a little server running, but how does it talk to Slack?
 1. 🚀Let's add a library to do just that.
 
     ```bash
-    npm install --save botkit
+    yarn add botkit
     ```
 
     We are going to use [botkit](https://github.com/howdyai/botkit), which is a library that helps create conversational bots.  
 
 1. Import the library.
 
-    🚀in `app/server.js` add:
+    🚀in `server.js` add:
 
     ```js
     import botkit from 'botkit';
@@ -169,7 +169,7 @@ Except first, lets make your bot actually helpful.  I am hungry, and I want your
 
 🚀Add in [Yelp API for node](https://github.com/tonybadguy/yelp-fusion) with
 ```bash
-$ npm install --save yelp-fusion
+$ yarn add yelp-fusion
 ```
 
 🚀You'll need to [create and app and generate API keys](https://www.yelp.com/developers/v3/manage_app), similar to what you had to do for Slack.
@@ -273,7 +273,7 @@ Ok the last step is to deploy your bot to Heroku!
 
 1. Follow the steps under "Deploy Using Heroku Git".
 
-You may have noticed a file named `Procfile` in the project. This tells Heroku what commands to run in its [dynos](https://devcenter.heroku.com/articles/dynos). Our `Procfile` is just one line, `web: npm run prod`, where `web` defines the dyno type (this one receives HTTP traffic), `npm run prod` is the command defined in `package.js` that we want to run.
+You may have noticed a file named `Procfile` in the project. This tells Heroku what commands to run in its [dynos](https://devcenter.heroku.com/articles/dynos). Our `Procfile` is just one line, `web: yarn prod`, where `web` defines the dyno type (this one receives HTTP traffic), `yarn prod` is the command defined in `package.js` that we want to run.
 
 
 ## Outgoing Webhook

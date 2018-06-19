@@ -1,37 +1,30 @@
 ---
 layout: page
-title: SAX - React-Native Videos
+title: SA11 - React-Native Videos
 published: true
-author:  Jane Lee, Sia Peng, Armin Mahban, Adam Rinehouse
 comment_term: sa-react-native
 ---
 
 {% raw %}
 <!-- raw mode to ignore liquid tags that have {{ }} -->
 
-
 # react-native-workshop
 
-Today we'll be using react-native to build a simple iOS app that allows us to search YouTube (just like short assignment 4, way back when.)
+Today we'll be using react-native to build a simple react native app that allows us to search YouTube (just like short assignment 4, way back when.)
 
-Note: for this workshop, you don't need to clone or fork this repo. Everything we do will be done locally.
+![](images/react-native-videos.gif){: .tiny }
 
-** Another important note!  If you are of the following people:
+React Native is very cool - all your react skills can transfer over.
 
-  - Windows User
-  - Mac User who didn't follow instructions and didn't download XCode
-  - Mac User who didn't follow instructions and didn't update XCode
-
-It just takes a while to download/update XCode and we have lots to do today! (* cough * quiz * cough * )
-
-## Special Notes
-🚀 Take special note of this
-
-:snowflake: This is pretty cool
-
-:camera: Take a screenshot!
+⚠️ Important note!  This is tested on OS X with a recent version of Xcode. We will be using [Expo.io](http://expo.io) to start your project which should allow it to work more easily on Windows and older OS X though. Expo provides a cool cloud simulator so you can test your app more easily.
 
 ## Set Up:
+
+### Expo.io
+
+🚀 Go to [http://expo.io](http://expo.io) and create a free account!
+
+### Command Line
 
 :warning: We should already have node installed on our machines, but just in case, let's go way to the beginning:
 
@@ -43,342 +36,384 @@ It just takes a while to download/update XCode and we have lots to do today! (* 
 
 Watchman is a file watching service that records when files change, and triggers actions when it detects changes.
 
-🚀 Alright, now we're ready to use react-native! We'll want to install the Command Line Interface so we can call react-native commands from the terminal:
+🚀 Alright, now we're ready to use react-native! We'll be using `exp` the expo command line to init our project. *There exists Expo XDE also, but for our purposes we will stick with the command line stuff for now.*
 
-`$ npm install -g react-native-cli`
+`$ npm install -g exp`
 
 Great! Now we're ready to create our repo.
 
 ```sh
-$ react-native init VidSearch
-$ cd VidSearch
-$ react-native run-ios
+💻 exp init my-new-project
+# choose blank as the template
+# although at another time you can play with the more complicated one
+💻 cd my-new-project
+💻 exp start
 ```
 
-When the iPhone simulator pops up, you should be seeing a basic template for an iPhone app.
+This will run a server than you can then either connect to with then Expo app on your phone or launch a simulator via the directions (open another terminal and run `exp ios`).
 
-:snowflake: What just happened? React-Native bundled up everything for us, ran it through XCode, and opened up a simulator, all through the command line and without us ever having to open up XCode or write a single line of Swift code. Neat.
+When the app loads you should be seeing a basic template for a mobile app.
 
-Let's take a sec to talk about how the simulator works. There are two things you can do: `command-R` will refresh the simulator, which is useful each time you save. It's a little annoying, though, especially since we're used to hot reloading in the browser at this point. If you hit `command-D`, a menu will pop up. From there, you can click "Enable Hot Reloading". It might take a few seconds to load (don't panic like we did when the percent complete actually starts going down...) but when it's done it'll refresh the page every time we save something in the project.
+![](images/welcome-expo.png){: .tiny .fancy}
+
+:snowflake: What just happened? React-Native bundled up everything for us, ran it through XCode/Android SDK, and opened up a simulator, all through the command line and without us ever having to open up XCode or write a single line of Swift code. Neat.
+
+Let's take a sec to talk about how the simulator works. There are two things you can do: `command-R` will refresh the simulator, which is useful each time you save. It's a little annoying, though, especially since we're used to hot reloading in the browser at this point. If you hit `command-D`, a menu will pop up. From there, you can click "Enable Hot Reloading". It might take a few seconds to load, but when it's done it'll refresh the page every time we save something in the project.
 
 :snowflake: Side note: We should appreciate how cool this is. If you've ever tried to program for smartphones before, you know that each time you test, you have to press run in the IDE and then wait for the app to compile. If you're uploading to an actual device instead of a simulator, it takes even longer. React Native is cutting through all the overhead for us so we can do instantaneous reloads without all the wait time.
+
+⚠️ Sometimes 'Hot Reloading' doesn't catch a change, doing a `command-R` to reload then helps.
 
 ## Installing Dependencies
 We're going to need a few dependencies from our trusty friend, the Node Package Manager.
 
 🚀 Since we're making calls to the YouTube api, it would help if we made GET calls with axios, so:
 
-`$ npm install --save axios`
+
+```bash
+# make sure you are cd'd into project dir
+💻 yarn add axios
+```
 
 Next, we'll need some specific react-native components that some other open source developers have kindly provided to us. This is fairly common in the react-native community, and it's great to have these pre-styled components at our disposal so we don't have to go through all the trouble of making an input field look nice, for example.
 
 🚀 There's one additional component we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), a simple input field made to look like the classic iOS search bar.
 
-`$ npm install --save react-native-search-box`
+🚀 `💻 yarn add react-native-search-box`
 
-🚀 And of course, we need to just install everything that react-native init has kindly provided us with in its `package.json`:
+## Eslint
 
-`$ npm install`
+We can't live without this:
+
+```bash
+💻 yarn add --dev eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint
+```
+
+🚀 Create a `.eslintrc` file from [this gist](https://gist.github.com/timofei7/c8df5cc69f44127afb48f5d1dffb6c84) and restart Atom to pick up changes.
 
 ## Basic Navigation
-One of the classic navigation components in iOS is the Tab Bar.
+One of the classic navigation components in iOS is the Tab Bar. We'll be using the [React Navigation](https://reactnavigation.org/docs/en/getting-started.html) plugin to help with this. You may encounter many conficting packages for doing this,  TabBarIOS, NavigatorIOS, etc, but React Navigation's Stack Navigator is currently the best option for this.  It navigates using string *Screen* identifiers. There is lots of documentation available.
 
-🚀 Create a new directory in the top level of the project folder called `components`.
-Then create two new files: `components/search.js` and `components/featured.js`.
+🚀 Create a new directory in the top level of the project folder called `navigation`.
 
-```js
-import React, { Component } from 'react';
+### Tabs
 
-import {
-    NavigatorIOS,
-    View,
-    Text,
-  } from 'react-native';
+Tabs are a pretty common feature of apps, let's set up some using [Tab Navigation](https://reactnavigation.org/docs/en/tab-based-navigation.html).
 
-class Search extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>
-          Search component
-        </Text>
-      </View>
-    );
-  }
-}
-
-module.exports = Search;
-```
-
-🚀 And for  do the same for your `featured` component (with whatever refactoring is necessary).
-
-🚀 Now let's connect them all together. Navigate to the file called `index.ios.js`. This is the top-level file for iOS dev in react native. (Side note: there's also an `index.android.js` file, which makes it fairly easy to convert to Android as well1 There are a few components in this workshop that aren't Android-friendly, so we won't be dealing with it, but it's nice to know it's there.)
-
-🚀 Alright, so in `index.ios.js`, add the following code:
-
-```js
-import React, { Component } from 'react';
-import Featured from './components/featured';
-import Search from './components/search';
-
-import {
-  AppRegistry,
-  TabBarIOS,
-} from 'react-native';
-
-class VidSearch extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedTab: 'search'
-    };
-  }
-
-  render() {
-    return (
-      <TabBarIOS selectedTab={this.state.selectedTab}
-        translucent={false}
-        unselectedItemTintColor='#9E9E9E'
-        tintColor='#c4302b'
-      >
-        <TabBarIOS.Item
-          selected={this.state.selectedTab === 'search'}
-          systemIcon='search'
-          onPress={() => {
-            this.setState({
-              selectedTab: 'search'
-            });
-          }}>
-          <Search />
-        </TabBarIOS.Item>
-        <TabBarIOS.Item
-          selected={this.state.selectedTab === 'featured'}
-          systemIcon='featured'
-          onPress={() => {
-            this.setState({
-              selectedTab: 'featured'
-            });
-          }}>
-          <Featured />
-        </TabBarIOS.Item>
-      </TabBarIOS>
-    );
-  }
-}
-
-AppRegistry.registerComponent('VidSearch', () => VidSearch);
-```
-
-Alright, now head over to your simulator.
-
-What's going on here? We forgot to add styling! Head back to `search.js` and add the following styling:
-
-```js
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-```
-
-🚀 Don't forget to add `StyleSheet` to your imports at the top!
-
-:snowflake: Let's break down how this styling is working. Notice that we create a constant for our component called styles that contains a dictionary, where the id (in this case `container`), corresponds to that called by the `style` prop in the component itself. Take a look at the `<View>` tag in `search.js`. It's referencing `styles.container`, which is what we just declared. Also notice how there's no separate css stylesheet--all styling has to be done inline in React Native. This makes it easier to send through the bridge, which connects our JS code to native code.
-
-🚀 Copy the same thing into `featured.js`. Refresh the simulator again. Now we have a nice looking tab bar at the bottom of the page. Should look something like this:
-
-![tab bar](./images/tab-bar.png)
-
-Let's make the featured page look a little less boring. Replace all the code in it with this:
-
-```js
-import React, { Component } from 'react';
-import ImageView from './imageView';
-
-import {
-    StyleSheet,
-    View,
-    NavigatorIOS,
-    Text,
-    Image,
-    StatusBar,
-  } from 'react-native';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-const Featured = (props) => {
-
-  return (
-    <View style={styles.container}>
-    <StatusBar
-     backgroundColor="blue"
-     barStyle="light-content"
-   />
-    <NavigatorIOS
-      style={styles.container}
-      translucent={false}
-      barTintColor='#c4302b'
-      titleTextColor='white'
-      initialRoute={{
-        title: 'Yay React',
-        component: ImageView,
-      }}
-    />
-    </View>
-  );
-};
-
-
-module.exports = Featured;
-```
-
-🚀 Now create a new file called `components/imageView.js`. We'll just put this nice react logo in it, so the page isn't so dreadfully boring.
-
-Here's some more code!
+🚀 Create a file called `navigation/main_tab_bar.js`:
 
 ```js
 import React from 'react';
-import {
-  View,
-  Image,
-} from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation';
+import { View, Text } from 'react-native';
 
-
-const ImageView = (props) => {
-  return (
-    <View>
-      <Image
-        style={{ width: 400, height: 300 }}
-        source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
-      />
-    </View>
-  );
+const AboutTab = (props) => {
+  return <View style={{ flex: 1, justifyContent: 'center' }}><Text>about</Text></View>;
 };
 
-module.exports = ImageView;
+const SearchTab = (props) => {
+  return <View style={{ flex: 1, justifyContent: 'center' }}><Text>Search</Text></View>;
+};
+
+
+const MainTabBar = createBottomTabNavigator({
+  SearchTab,
+  AboutTab,
+}, {
+  initialRouteName: 'SearchTab',
+});
+
+
+export default MainTabBar;
 ```
 
-:snowflake: Now, instead of some gross text up in the top corner, we have this nice react logo, since we love react so much:
+🚀  Now lets load this in the main `App.js`. Change `App.js` to be:
 
-![featured tab](./images/featured.png)
+```js
+import React from 'react';
+import MainTabBar from './navigation/main_tab_bar';
 
-## Adding Content to the Search Page
-So we've got some basic navigation working on the app, but it looks pretty boring. Let's make some cool stuff on the search tab, like how about a nice table view?
+// disable really annoying in app warnings
+console.disableYellowBox = true;
 
-Since a table-view is specific to iOS, but react-native is cross-platform, there's no actual table view component. Instead, what we'll need to do is create a list component and instantiate it in our `search` page.
+const App = (props) => {
+  return <MainTabBar />;
+};
 
-🚀 Create a new file: `components/video_list.js`. Add some imports:
+
+export default App;
+```
+
+📱 Test it out.  Looks great, right?
+
+## About
+
+Let's play around with a simple *About* view.
+
+
+🚀 Create a new directory in the top level of the project folder called `components`.
+Then create `components/about.js`.
 
 ```js
 import React, { Component } from 'react';
-import youtubeSearch from '../youtube-api';
-import axios from 'axios';
-import Search from 'react-native-search-box';
+import { StyleSheet, View, Text, Image } from 'react-native';
 
-import {
-    StyleSheet,
-    View,
-    Image,
-    Text,
-    TextInput,
-    ListView,
-    TouchableHighlight,
-  } from 'react-native';
-```
-
-🚀 Now that that's there, let's import it into `search.js` so we can use it.
-
-
-🚀 And lets create a new class component:
-
-```js
-import VideoDetail from './video_detail';
-
-// Add styling here
-
-class VideoList extends Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      query: 'dog',
-      isLoading: true,
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2,
-      }),
-    };
-  }
-
-  //---------- componentDidMount here! -----------//
-
-  //------------ put fetchData here! -------------//
-
-  renderLoadingView() {
-    return (
-      <View style={styles.loading}>
-        <Text>
-          Loading videos...
-        </Text>
-      </View>
-    );
-  }
-
-  showVideoDetail(video) {
-    this.props.navigator.push({
-      title: video.snippet.title,
-      component: VideoDetail,
-      passProps: { video },
-    });
-  }
-
-  renderVideoCell(video) {
-    return (
-      <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="#dddddd">
-        <View>
-          <View style={styles.container}>
-            //----- TableView Content should go here -----//
-          </View>
-          <View style={styles.separator} />
-        </View>
-      </TouchableHighlight>
-    );
-  }
-
+class About extends Component {
   render() {
-    if (this.state.isLoading) {
-      return this.renderLoadingView();
-    }
     return (
-      <View style={{ marginBottom: 150 }}>
-        <Search
-          backgroundColor='#c4302b'
-          showsCancelButton={false}
-          textFieldBackgroundColor='#c4302b'
-          onChangeText={(query) => {
-            this.setState({ query });
-            // Call fetchData here!
-            this.fetchData();
-          }
-          }
+      <View style={styles.container}>
+        <Image
+          style={styles.image}
+          source={{ uri: 'https://facebook.github.io/react/logo-og.png' }}
         />
-
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this.renderVideoCell.bind(this)}
-          style={styles.listView}
-        />
+        <Text>
+          This app was written in React-Native.
+        </Text>
       </View>
     );
   }
 }
 
-module.exports = VideoList;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  image: {
+    width: 400,
+    height: 300,
+  },
+});
+
+export default About;
 ```
+
+
+📱 try it out!  
+
+❄️ Note how we are doing styling:
+- We can really see how the styles are represented as dictionaries, with the ids being similar to css classes
+- Property names need not go in quotes, but if the property itself is a string, it should (like in `backgroundColor: 'white'`)
+- Flex is dealt with in kind of a strange way. Instead of a `display` property, these stylesheets default to flex when you simply specify `flex:` followed by some integer. This integer is a lot like the `flex-grow` property that we're familiar with.
+- Finally, notice that all our integer values are simply integers! There's no `px`, `pt`, `em`, etc. Only numbers.
+- If we had a central style we could simply import it wherever we need it from a `style_constants.js` file for instance. For now we'll create the styles in the same files.
+
+
+
+### Connect About
+
+Let's load this new *About* component and make out TabBar better looking at the same time.
+
+🚀 In your `navigation/main_tab_bar.js` file add some imports:
+
+```js
+import Ionicons from 'react-native-vector-icons/FontAwesome';
+import About from '../components/about';
+```
+
+🚀 And replace the createBottomTabNavigator function with:
+
+```js
+const MainTabBar = createBottomTabNavigator(
+  {
+    SearchTab,
+    AboutTab: {
+      screen: About,
+      navigationOptions: ({ navigation }) => ({
+        tabBarLabel: 'About',
+        tabBarIcon: ({ focused }) => (
+          <Ionicons
+            name="info-circle"
+            size={26}
+            color={focused ? '#58AADA' : 'grey'}
+          />
+        ),
+      }),
+    },
+  },
+  {
+    initialRouteName: 'SearchTab',
+  },
+);
+```
+
+📱 Check it out!
+
+![](images/tabbar.jpg){: .small}
+
+## Search and Detail
+
+
+So we've got some basic navigation working on the app, but it looks pretty boring. Let's make some cool stuff on the search tab, like how about a nice table view?
+
+What we want to end up with is VideoDetail and a VideoList view similar to the SA4!
+
+![](images/VideoList.jpg){: .small .left}
+
+![](images/VideoDetail.jpg){: .small}
+
+Note how the *VideoDetail* view has a back button at the top.  This indicates that it is part of a different type of navigation structure. Specifically, it is in a *StackNavigator* where screens exist in a stack to push and pop on/off.
+
+But we already have a TabNavigator?!  Turns out you can nest navigation stacks. This allows us to start off with a TabNavigator and have a StackNavigator as any of the tabs themselves.  This is so that you can organize your screen flow in ways that make sense. It wouldn't make sense to have a a back button when you switch tabs for instance.
+
+### Create SearchTab
+
+🚀 Create `navigation/search_tab.js` and populate with:
+
+```js
+import React from 'react';
+import { createStackNavigator } from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/FontAwesome';
+import { Button } from 'react-native';
+
+// import VideoList from '../components/video_list';
+// import VideoDetail from '../components/video_detail';
+
+const TempSearch = props => (<Button onPress={() => { props.navigation.navigate('Detail'); }} title="next" />);
+const TempDetail = props => (<Button onPress={() => { props.navigation.pop(); }} title="close" />);
+
+// nest stack navigator to handle two internal views
+const SearchTab = createStackNavigator({
+  // keys are the names of the "routes"
+  Search: TempSearch,
+  Detail: TempDetail,
+});
+
+// override some navigation options - set a pretty icon
+SearchTab.navigationOptions = ({ navigation }) => ({
+  tabBarLabel: 'Search',
+  tabBarIcon: ({ focused }) => (
+    <Ionicons
+      name="search"
+      size={26}
+      color={focused ? '#58AADA' : 'grey'}
+    />
+  ),
+});
+
+
+export default SearchTab;
+```
+
+Here we are using `createStackNavigator` instead but it works very similarly. Additionally, we want a pretty tabBar icon so we do something similar to what we did in for the `about` tab. Note how `navigationOptions` can be set in multiple ways/places.
+
+📱 You should now see how this type of stack navigation works
+
+### VideoList
+
+We want to do more.
+
+🚀 Let's create `components/video_list.js` and fill it in:
+
+ ```js
+ import React, { Component } from 'react';
+import Search from 'react-native-search-box';
+
+
+import {
+  ActivityIndicator,
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  ListView,
+  TouchableHighlight,
+} from 'react-native';
+
+import youtubeSearch from '../services/youtube-api';
+
+class VideoList extends Component {
+    static navigationOptions = {
+      title: 'Youtube Search',
+      headerStyle: {
+        backgroundColor: '#f4511e',
+      },
+      headerTintColor: 'white',
+    };
+
+    constructor(props) {
+      super(props);
+      this.state = {
+        query: 'true facts',
+        isLoading: true,
+        dataSource: new ListView.DataSource({
+          rowHasChanged: (row1, row2) => row1 !== row2,
+        }),
+      };
+
+      this.renderVideoCell = this.renderVideoCell.bind(this);
+    }
+
+    // ---------- componentDidMount here! -----------//
+
+    // ------------ put fetchData here! -------------//
+
+
+    showVideoDetail(video) {
+      // pass in video into this.props.navigation.state.params.video in navigated view
+      this.props.navigation.navigate('Detail', { video });
+    }
+
+    renderLoadingView() {
+      return (
+        <View style={styles.loading}>
+          <ActivityIndicator size="large" color="#0000ff" />
+        </View>
+      );
+    }
+
+
+    renderVideoCell(video) {
+      return (
+        <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="orange">
+          <View>
+            <View style={styles.container}>
+              <Image
+                source={{ uri: video.snippet.thumbnails.default.url }}
+                style={styles.thumbnail}
+              />
+              <View style={styles.rightContainer}>
+                <Text style={styles.title}>{video.snippet.title}</Text>
+                <Text style={styles.subtitle}>{video.snippet.description}</Text>
+              </View>
+            </View>
+            <View style={styles.separator} />
+          </View>
+        </TouchableHighlight>
+      );
+    }
+
+    render() {
+      if (this.state.isLoading) {
+        return this.renderLoadingView();
+      }
+      return (
+        <View>
+          <Search
+            backgroundColor="#c4302b"
+            showsCancelButton={false}
+            textFieldBackgroundColor="#c4302b"
+            onChangeText={(query) => {
+              this.setState({ query });
+              this.fetchData();
+              }
+            }
+          />
+
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this.renderVideoCell}
+            style={styles.listView}
+          />
+        </View>
+      );
+    }
+}
+
+export default VideoList;
+ ```
+
 
 🚀 And we should add in some styles too. Let's make it a little more interesting this time:
 
@@ -387,18 +422,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    backgroundColor: 'white',
-    padding: 10,
+    backgroundColor: 'rgb(240,240,240)',
   },
   thumbnail: {
-    width: 80,
-    height: 80,
-    marginRight: 10,
+    width: 100,
+    height: 100,
+    marginRight: 5,
+    backgroundColor: 'black',
   },
   rightContainer: {
     flex: 1,
+    padding: 5,
+    height: 100,
   },
   title: {
     fontSize: 16,
@@ -410,79 +445,53 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 1,
-    backgroundColor: '#dddddd',
+    backgroundColor: 'rgb(200,200,200)',
   },
   listView: {
-    backgroundColor: 'white',
+    backgroundColor: 'rgb(240,240,240)',
+  },
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 ```
 
-:snowflake: A few things to note here:
-- We can really see how the styles are represented as dictionaries, with the ids being similar to css classes
-- Property names need not go in quotes, but if the property itself is a string, it should (like in `backgroundColor: 'white'`)
-- Flex is dealt with in kind of a strange way. Instead of a `display` property, these stylesheets default to flex when you simply specify `flex:` followed by some integer. This integer is a lot like the `flex-grow` property that we're familiar with.
-- Finally, notice that all our integer values are simply integers! There's no `px`, `pt`, `em`, etc. Only numbers.
-
-🚀 Take a look at the simulator. We've now got some text indicating that the videos are loading. This is the default text we've provided if the API call hasn't returned videos yet. Since we haven't made an API call yet, that definitely makes sense.
-
-:camera: Take a screenshot of the search tab in the simulator at this point. You'll upload this later.
-
-🚀 Now, let's populate the table view! Add in the following lines to instantiate an image component containing the video thumbnail and some text with the video's title and description.
+🚀 Alright, let's update the `search_tab.js` to show our new VideoList component:
 
 ```js
-<Image
-  source={{ uri: video.snippet.thumbnails.default.url }}
-  style={styles.thumbnail}
-/>
-<View style={styles.rightContainer}>
-  <Text style={styles.title}>{video.snippet.title}</Text>
-  <Text style={styles.subtitle}>{video.snippet.description}</Text>
-</View>
+Search: VideoList,
 ```
 
-🚀 Hmm...simulator says still just loading videos. That's because we need to actually gather our data from Youtube. Let's add in the fetchData method to make our API call.
+🚀 Take a look at the simulator: Loady-spinny!  This is the default `<ActivityIndicator />` component we're showing if the API call hasn't returned videos yet. Since we haven't made an API call yet, that definitely makes sense.
+
+![](images/spinner.jpg){: .small}
+
+🚀 Let's add in the fetchData method to make our API call.
 
 ```js
 fetchData() {
   youtubeSearch(this.state.query)
-     .then((responseData) => {
-       this.setState({
-         dataSource: this.state.dataSource.cloneWithRows(responseData),
-         isLoading: false,
-       });
-     })
-     .done();
+    .then((responseData) => {
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(responseData),
+        isLoading: false,
+      });
+    }).catch((error) => {
+      console.log(error);
+    });
 }
 ```
 
 Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it.
 
-🚀 Create a function `componentDidMount` in `video_list.js`. Inside it, make a call to `fetchData`.
+🚀 Create a function `componentDidMount` in `video_list.js`. Inside it, make a call to `this.fetchData`.
 
 :snowflake: Now when the page loads, we'll call `fetchData` to populate our list view.
 
-🚀 Alright, let's update the `search.js` file to have a table view that lists all our videos. Replace the return statement in the render function with the following:
 
-```js
-<View style={styles.container}>
-  <StatusBar
-    backgroundColor="blue"
-    barStyle="light-content"
-  />
-  <NavigatorIOS
-    style={styles.container}
-    translucent={false}
-    barTintColor='#c4302b'
-    titleTextColor='white'
-    tintColor='white'
-    initialRoute={{
-      title: 'Featured Videos',
-      component: VideoList,
-    }}
-  />
-</View>
-```
+### Youtube API
 
 Ah darn, one other thing. We need to actually have a reference to the API, right? This next part should (hopefully) look super familiar.
 
@@ -490,88 +499,80 @@ Ah darn, one other thing. We need to actually have a reference to the API, right
 
 Sound familiar?  We did this in short assignment 4, and we will be using the exact same api for this react-native app!  That's coooool.
 
-Go ahead and find that file and copy it here.  We need to do this because we need your individual api key, which you already made in sa4.  
+🚀 Go ahead and find that file and copy it here.  We need to do this because we need your individual api key, which you already made in sa4.  If you want more than 5 results at a time then add in `maxResults: 15` to the `params`.
 
 - Accidentally deleted your API key? No biggie. Just follow the [old instructions from sa4](http://cs52.me/assignments/sa/react-videos/#youtube-api).
 
-🚀 What's this videoDetail thing? We'll also need to create that. Make a new file called `compnents/video_detail.js` and paste in this code:
+
+📱 At this point you should be showing a list of videos, coolbeans.
+
+## VideoDetail
+
+At list point clicking on a list takes us to a boring screen. Let's make that better.
+
+🚀 Create new file called `compnents/video_detail.js` and paste in this code:
 
 ```js
-import React, { Component } from 'react';
+import React from 'react';
+import { WebView } from 'react-native';
 
-import {
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    WebView,
-  } from 'react-native';
+const VideoDetail = (props) => {
+  // what an annoyingly long path
+  const { videoId } = props.navigation.state.params.video.id;
+  return (
+    <WebView
+      source={{ uri: `https://www.youtube.com/embed/${videoId}` }}
+      automaticallyAdjustContentInsets={false}
+    />
+  );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-  },
-  image: {
-    width: 107,
-    height: 165,
-    padding: 10,
-  },
-  description: {
-    padding: 10,
-    fontSize: 15,
-    color: '#656565',
-  },
-});
-
-class VideoDetail extends Component {
-  render() {
-    const video = this.props.video;
-    const description = video.snippet.description || '';
-    const vidId = video.id.videoId;
-    return (
-      <WebView
-          style={styles.frame}
-          source={{uri: `https://www.youtube.com/watch?v=${vidId}`}}
-          renderLoading={this.renderLoading}
-          renderError={this.renderError}
-          automaticallyAdjustContentInsets={false}
-      />
-    );
-  }
-}
-
-module.exports = VideoDetail;
+export default VideoDetail;
 ```
 
-:snowflake: This is a little different from what we've been doing. The WebView component is a sort of hybrid component that's actually just rendering a webpage. The `source` prop holds a uri that's called as if in a browser and then displayed in our application. Notice how it looks just like watching youtube on a mobile device. Pretty cool that we can do this within our application alongside native components, huh?
+🚀 Swap out the `TempDetail` view in your `search_tab.js` for this new component.
 
-Here's what the app should be looking like now:
-![finished app](./images/finished.png)
+:snowflake: The WebView component is a sort of hybrid component that's actually just rendering a webpage. The `source` prop holds a uri that's called as if in a browser and then displayed in our application. Notice how it looks just like watching youtube on a mobile device. Pretty cool that we can do this within our application alongside native components, huh?
 
 🚀 Now that the app is complete, we're using all the styling we pasted in awhile ago. Now it's your turn: play around with the styling in `video_list.js`. If you haven't enabled hot-reloading yet, do that, it'll make it easy to see all your styling changes.
 
-:camera: Make the styling uniquely your own. Then, search for some unique searchterm and take a screenshot. You'll upload this to your repo to turn in.
 
 ## And We Are Done!
-Look at you! You spend eight weeks in full-stack web dev, but little did you know it was actually smartphone programming in disguise! Here's what we accomplished today:
+Look at you! You spend eight weeks in full-stack web dev, but little did you know it was actually smartphone programming in disguise!
 
-- [x] Learned how to set up a new iOS project in react native (from scratch!)
-- [x] Implement Tab Bar navigation (without Swift code)
-- [x] Learn how to use the react-native simulator
-- [x] Made a table view on an iPhone in JavaScript
-- [x] Make an API call to YouTube using axios
-- [x] Evaded a quiz for an extra hour!
+There's a lot going on in the VideoList view that we breezed through. [Read through it](#videolist) a bit more carefully. Pay special attention to how we are initializing and updating the listView dataSource:
+
+```js
+dataSource: new ListView.DataSource({
+  rowHasChanged: (row1, row2) => row1 !== row2,
+}),
+```
+
+```js
+this.setState({
+  dataSource: this.state.dataSource.cloneWithRows(responseData),
+  isLoading: false,
+});
+```
+
+Remember that state has be a new object - we can't just add a row and hope react notices - we use `cloneWithRows` to create a new datasource when we update.
+
+Also note how simply the `Search` component updates our query state and triggers a `fetchData`.
+
 
 ## Submission
-To submit, create a new github repo and push your code up to it. In the README file, include the two screenshots we asked you to provide. On canvas, submit the URL to your repo. If you had a partner, submit their name too, so we can count the assignment for both of you.
+To submit, create a new github repo and push your code up to it. On canvas, submit the URL to your repo.
 
 ## Resources
 
-Really like React-Native?  Here are some more resources for you to look at and play around with:
-
+* https://docs.expo.io/
 * http://www.reactnative.com/
+* https://reactnavigation.org
 * https://facebook.github.io/react-native/
-
 * https://github.com/jondot/awesome-react-native
+
+
+*Thanks to: Jane Lee, Sia Peng, Armin Mahban, Adam Rinehouse for the original workshop in 17s. Refactored in 18s for expo.io and reactnavigation.*
+
 
 {% endraw %}

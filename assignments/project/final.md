@@ -7,22 +7,18 @@ comment_term: project-final-demos
 
 
 
-![](img/17s_daliXcs_poster-v2copy.jpg){: .fancy .medium}
+![](img/technigala18S.jpg){: .fancy .medium}
 
 Final presentations and demos of the projects. Will be open to public!
 
-Demos are **Tuesday, May 30th, Hanover Inn Ballroom 5:30-7pm**. Please show up at **5:15pm** to set up your table (remember we could have had a final instead!).  The event will be science fair style - you will have a table with your project name and either a screen or a stand for a laptop to better demo your awesome projects.
+Demos are **Wednesday, May 30th, First Floor Berry 6-8pm**. Please show up at **5:45pm** to set up your table (remember we could have had a final instead!).  The event will be science fair style - you will have a table with your project name and either a screen or a stand for a laptop to better demo your awesome projects.
 
-[Invite your friends!](https://www.eventbrite.com/e/computer-science-unleashed-tickets-34734714466)
+## Invite your friends, your enemies, everyone!
 
-Each team will set up their table with a large screen to show the project. The focus is on having a fully functional demo!  
+Each team will get a poster to demarcate their table. This is a great time to see your product in action, get some real users signed up, and enjoy the fruits of your labors.
 
-You can have up to 4 slides or a custom website to help:
-* Motivate the idea
-* Show it in action
-* Discuss challenges
-* Show user testing
+Your mission is to show off your fully functional demo!  Have a really short intro to your project ready for when people come by to ask what you have built - don't overwhelm them with too much info, quick intro and then let them play with your demo.  Feel free to have another screen open to your designs if you want.
 
-There will be voting and prizes for best demos!
+Grading will be based on how functional the demo is and how bug free it is.
 
 ![](http://i.giphy.com/p9O75RBS946He.gif){: .fancy .small}

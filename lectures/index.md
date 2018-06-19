@@ -40,13 +40,15 @@ comment_term: lectures
 * [5/1 Databases](12_intro_to_databases)
 * 5/3 Pitches
 <!-- * [5/3 Pitches](11_pitches) -->
-* 5/8 Teams
-<!-- * [5/8 Teams](13_teams) -->
-* 5/10 Sessions & Auth
-<!-- * [5/10 Sessions & Auth](13_sessions_auth) -->
-* 5/15 Websockets
-<!-- * [5/15 Websockets](15_websockets) -->
-* 5/17 Mockup Sharing
-<!-- * 5/17 Mockup Sharing -->
-* 5/29 Wrapup
-<!-- * [5/29 Wrapup](16_wrapup) -->
+<!-- * 5/8 Sessions & Auth -->
+* [5/8 Sessions & Auth](13_sessions_auth)
+<!-- * 5/9 Teams -->
+* [5/9 Teams](13_teams)
+<!-- * 5/10 Websockets, S3, ReactNative -->
+* [5/10 Websockets, S3, ReactNative (ec shorts)](15_ec_shorts)
+* 5/15 Mockup Sharing
+* 5/17 In Class TeamWorkTime
+* 5/22 In Class TeamWorkTim
+* 5/24 In Class Bug Hunt
+<!-- * 5/29 Wrapup -->
+* [5/29 Wrapup](16_wrapup)

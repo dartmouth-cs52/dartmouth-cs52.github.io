@@ -32,17 +32,18 @@ In general, the method described in this article follows these simple steps:
 
 Before you start make sure to tag your previous Lab4 and Lab5 with v2.
 
-🚀 Go into your Lab5 directory and run:
+🚀 Make sure everything is commited and pushed to github normally.
+
+🚀 Go into your Lab5 and Lab4 directories and run:
 
 ```bash
-git tag v2
-git push origin --tags
+git tag
 ```
 
-🚀 Go into your Lab4 directory and run:
+to double check your versions, then if you didn't tag your last version do so now:
 
-```bash
-git tag v2
+```
+git tag v2 #or whatever version your previous should have been tagged with
 git push origin --tags
 ```
 
@@ -196,7 +197,7 @@ if (this.state.file) {
 We need some new packages to communicate with s3. `aws-sdk` is used to communicate with s3  and `dotenv` is used to load environment variables from `.env` for your server.
 
 ```bash
-npm install --save aws-sdk dotenv
+yarn add aws-sdk dotenv
 ```
 
 To setup `dotenv`, we want to call `dotenv.config({ silent: true });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET`.
@@ -229,7 +230,7 @@ const signS3 = (req, res) => {
 export default signS3;
 ```
 
-Note: if your S3 region got assigned to Ohio, instaed of `const s3 = new aws.S3();`, you'l need to use
+Note: if your S3 region got assigned to Ohio rather than the usual `us-east-2`: instead of `const s3 = new aws.S3();`, you'l need to use
 `const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });`
 
 Now in your router, we can add a new route:

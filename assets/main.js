@@ -47,7 +47,7 @@ function onSlideToggle(event) {
     // reload codepen so it picks up changes
     // could do this more automatically perhaps with arrivejs
     // reloadScript(codepenScript);
-    
+
     // render the math
     var slideAreas = $('.remark-slides-area');
     if (slideAreas.length > 0) {
@@ -81,6 +81,15 @@ function reloadScript(src) {
     $('<script>').attr('src', src).appendTo('head');
 }
 
+
+$(document).keyup(function(e) {
+     var $mainContent = $('.main-content');
+     if (e.keyCode == 27) { // escape key maps to keycode `27`
+       if ($mainContent.is(":hidden")) {
+         onSlideToggle();
+      }
+    }
+});
 
 // setup toggle and convert any slide markdown left over
 // this is to workaround having markdown content specficially for slides

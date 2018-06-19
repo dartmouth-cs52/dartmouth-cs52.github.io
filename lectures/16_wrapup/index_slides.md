@@ -18,15 +18,101 @@ name: base
 
 .title[{{name}}]
 
----
-name: My Turn to DRAW
 
-.medium_small[![](img/biggest-fan.png)]
 
 
 
 ---
-name: Datacenters
+name: Final Countdown
+
+.large.fancy[![](img/table-almost-there.jpg)]
+
+* [final drawings pdf](img/cs52-final-drawings-18s.pdf)
+
+
+
+---
+name: What you've accomplished
+
+.medium.fancy[![](img/table-cs52-table.jpg)]
+
+???
+* in 9 short weeks
+* you've learned so much
+* some code patterns
+* some tools
+* some languages
+
+
+
+
+---
+name: Conquered
+
+.medium_small.fancy[![](img/table-cs52monster.jpg)]
+
+???
+* all the webbev
+
+
+
+---
+name: Conquered
+
+.medium_small.fancy[![](img/table-frontend-backend.jpg)]
+
+???
+* client and server!
+
+
+
+
+---
+name: Conquered
+
+.medium_small.fancy[![](img/table-labs-vs-quizzes.jpg)]
+
+???
+* quizzes
+
+
+
+---
+name: Conquered
+
+.medium.fancy[![](img/table-git-flow.jpg)]
+
+
+
+???
+* git flow
+
+
+
+---
+name: Conquered
+
+.medium.fancy[![](img/table-feedback.jpg)]
+
+
+
+???
+* building lots of cool projects
+* and given feedback and improved the class for future generations
+
+
+---
+name: You've Earned It
+
+.medium_small.fancy[![](img/table-mongodb-drink.jpg)]
+
+
+???
+* you are all rockstarssss
+
+
+---
+name: Datacenters Tangent
 
 
 <iframe src="//giphy.com/embed/l39727g11ikHsDzKE" width="780" height="568" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -35,12 +121,18 @@ name: Datacenters
 
 ???
 * where are these servers?
+* also here's some of the crazy infrastructure
+* that is running all your labs and projects
+* when you do a git push
+* travis, heroku, aws,etc
+* all these tools make it so much easier to do this Stuff
+* used to be you need to get a high speed connection to your house to run a website
 
 
 
 
 ---
-name: Datacenters
+name: 1 Datacenter
 
 * 15-40 megawatts power
 * 50,000-200,000 servers
@@ -49,20 +141,24 @@ name: Datacenters
 
 ???
 * hardware failures alone...
-
-
-
----
-name: Considerations
-
 * power
 * backup
 * network
 * cooling
 * failures
+* some numbers thrown around for cost per search in terms of electricity ends up being 1$ cent to 1$ depending on how much of the infrastructure you include. if only google then 1c if you include your computer, all the internet from your computer to google, all the routers used while google crawls pages and then the number goes up.
+
+
+
+---
+name:
+
+
+.fancy[![](img/google211.jpg)]
+
+
 
 ???
-
 
 
 
@@ -71,34 +167,7 @@ name: Considerations
 name:
 
 
-![](img/google211.jpg)
-
-
-
-???
-
-
-
-
-
----
-name:
-
-
-![](img/screen-shot-2015-06-24-at-11-54-41-am.png)
-
-
-???
-
-
-
-
-
----
-name:
-
-
-![](img/stormtrooper.jpg)
+.fancy[![](img/stormtrooper.jpg)]
 
 
 ???
@@ -111,10 +180,40 @@ name:
 name:
 
 
-![](img/google-datacenter-tech-05.jpg)
+.fancy[![](img/google-datacenter-tech-05.jpg)]
 
 
 ???
+* at google
+* need ear protection
+
+
+
+
+---
+name:
+
+
+.fancy[![](img/Google-Datacenter-3.jpg)]
+
+???
+* power and cooling at google
+
+
+
+
+---
+name:
+
+
+.medium_small.fancy[![](img/heroku-datacenter.jpg)]
+
+.medium.fancy[![](img/salesforce-datacenter.jpg)]
+
+
+???
+* heroku datacenters
+
 
 
 
@@ -124,22 +223,10 @@ name:
 name:
 
 
-![](img/Google-Datacenter-3.jpg)
+.fancy[![](img/inteldoesmat.jpg)]
 
 ???
-
-
-
-
-
----
-name:
-
-
-![](img/inteldoesmat.jpg)
-
-???
-
+* liquid dipped
 
 
 
@@ -147,10 +234,13 @@ name:
 ---
 name: Problems Of Webdev
 
+.small.fancy[![](img/table-pretty.jpg)]
+
 * Software engineering problems programming *at scale*
   * javascript lack of strong type system
   * browsers
   * interpreted performance
+  * too much tooling
 
 ???
 * What are some complaints about webdev?
@@ -162,109 +252,35 @@ name: Problems Of Webdev
 name:  The future!
 
 * language and framework improvements
-* es7 (not much there)
-* es8?!
+* es7
+* es8
 * taking over the world (desktop and mobile)
+* progressive web apps
+  * offline
+  * web push notifications
+  * add to home screen
+* big data cloud
+* instant apps (streaming mobile apps)
+* constantly evolving tools
+* react-native for web/desktop!
 
 ???
 * in the stanford webdev class currently being taught react is "the future"
 * you guys learned the latest and greatest.  fun right?
+* constantly evolving tools - getting easier every day :)
 
 
 ---
-name: async and await
+name: You Invent The Future
 
-```javascript
-export default async function getLikes () {
-  const users = await getUsers();
-  const filtered = await filterUsersWithFriends(users);
-  return getUsersLikes(filtered);
-}
-```
-
-* syntax on top of promises
-* await casts to promise
-* returns promises
-* errors -> reject
-* return -> resolve
-* available now in babel `stage-3`
-
-???
-* is like wrapping a promise in a generator
-* returning intermediate values
-* https://zeit.co/blog/async-and-await#the-future:-async-and-await
-* http://bevacqua.github.io/promisees/
-
-
-
-
-
-
----
-name:  The future: Observables
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lil4YCCXRYc?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-
-* asynch methods that can be subscribed to
-  * function which returns an observable stream of events
-  * can map / filter over streams of events
-  * producer -> consumer
-  * es8?
-
-???
-
-
-
----
-name: More FP Please!
-
-* functional programming paradigms
-* scalability and parallelism
-* testability
-
-???
-* immutability
-* vector programming
-* mocha with chai for testing
-
-
-
----
-name: Big Data Cloud
-
-* more scalable architectures in the "clooouudd"
-* cloud functions:
-  * Azure Functions
-  * AWS Lambda
-  * Google Cloud Functions
-
-???
-*  functions in the cloud
-
-
-
----
-name: Instant Apps
-
-* Android Instant Apps
-* iOS App Thinning
-* apps that stream native to mobile
-* react-native though...
-
-
-???
-
-
-
-
----
-name: ?
-
+.medium_small.fancy[![](img/table-cs52-rocket.jpg)]
 
 
 ???
 * you invent the future!
+* tips for life, not that i'm any good at it mind you:
+* but ask questions - be engaged in your craft
+* be curious about the whys not just copy/paste from stackoverflow
 
 
 
@@ -321,18 +337,23 @@ name: Last Words
 
 
 ---
-name: Last Words
+name: Pass On What You have Learned
 
-* Related Courses:
-  * cs65: Mobile
-  * cs74: ML
-  * cs60: Networks
-* Cool Courses:
-  * cs89: Computational Fabrication
-  * cs76: AI
+.medium_small.fancy[![](img/table-inferno.jpg)]
 
 ???
+* you've learned so much
+* don't worry if you keep building more and more of it will make sense
+* you have the foundation to do great things
 
+
+---
+name: Keep Building Stuff
+
+.medium.fancy[![](img/table-best-quote.jpg)]
+
+
+???
 
 
 
@@ -350,8 +371,25 @@ name: Last Words
 
 ???
 * future courses pending
-* course assesments and carson 61 survey
+* course assesments
 
+
+
+
+---
+name: Adventure
+
+.super-tiny[![](img/table-dont-want-to-end.jpg)]
+
+
+???
+* for me it has been an adventure - miss you all already
+
+
+---
+name: My turn to draw
+
+.medium_small[![](img/biggest-fan.png)]
 
 
 
@@ -360,6 +398,13 @@ name: Last Words
 ---
 name: Project Demos!
 
+.medium.fancy[![](img/table-finals.jpg)]
+
+
 * SUCH EXCITE!
 
 ???
+* tomorrow 6-8pm in First Floor Berry
+* i'll walk around and will want to see demos :-)
+* grilled cheese, beer, and lots of people excited to see your work - some vps from amazon i heard were even coming
+* rest of today just works

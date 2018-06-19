@@ -25,10 +25,14 @@ name: Today
 
 * Sessions
 * Authentication
+* X-hour tomorrow!
+* Teams released, milestones discussed during xhour!
 
 ???
-
-
+* quiz tomorrow
+* adjusting milestones and will publish dates on canvas
+* going to move quickly to get the projects started
+* lab5.p2 is pretty short more liek a short
 
 ---
 name: Sessions
@@ -50,6 +54,9 @@ name: Sessions
 
 ---
 name: Browser State Persistence
+
+.small[![](img/closewindow.gif)]
+
 
 * what about after closing browser window?
 
@@ -103,8 +110,8 @@ name: Stateless HTTP
 ---
 name: Cookies
 
+.large[![](img/cookieremembers-table.jpg)]
 
-<iframe src="//giphy.com/embed/5LiNKV5YurvKo" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
 
@@ -159,7 +166,6 @@ Cookie: cookie_name1=cookie_value1; cookie_name=cookie_value2;
 
 
 
-
 ---
 name: Just a file
 
@@ -189,8 +195,7 @@ name: Variety of Types
 * zombie (resurrects)
 ]
 
-.right[
-<iframe src="//giphy.com/embed/Krc1VBel82kg0" width="380" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.right[![](img/zombiecookie-table.jpg)
 ]
 
 ???
@@ -199,7 +204,7 @@ name: Variety of Types
 ---
 name: Tracked and Stolen
 
-<iframe src="//giphy.com/embed/4KcDtVDyFRQKA" width="480" height="438" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="//giphy.com/embed/N4ZMex19Ju3XG" width="480" height="438" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
 * cookies can be used to track you
@@ -271,6 +276,7 @@ name: Framework Sessions
 ???
 * some frameworks automatically set on client and returned
 * typically no encryption but easy
+* typically use cookies
 
 
 
@@ -290,6 +296,7 @@ name: Additional Server Session Storage
   * fast key:value stores
 
 ???
+* frameworks might employ additinal server session tracking
 * server tracking of sessions
 * still requires client data but can extend local session storage
 
@@ -327,7 +334,7 @@ Cookie: connect.sid=2398sf98792874hk2kjh23iu
 * what should we store in a cookie?
 * if this could be guessed or stolen
 * then attacker could easily become you
-* predictable session ids
+* **predictable session ids**
 * security through obscurity?
 
 
@@ -416,9 +423,8 @@ name: How to store password
 
 ![](img/saving_password.png)
 
-
 ???
-* as a user you might store password on sticky note
+* as a user you might store password on **sticky note**
 * computer should do better
 * generate random salt
 * hash the password (where a hash is a one way crytographic function)
@@ -439,16 +445,17 @@ name: But browser
 
 ???
 * probably need to send back something to include in future requests
-
+* dont' want to send password over and over / store password locally?
 
 
 
 ---
 name: What to send back?
 
+* but stateless?
 * once auth'd
-* give back identifying bit of data
-* need to include that data on every request
+   * give back identifying bit of data
+   * need to include that data on every request
 
 ???
 * wee could just say, yup authenticated; return true
@@ -469,6 +476,7 @@ name: Tokens Over Cookies
 * cookies have problems
 * and we are all js anyway
 * separate servers for static and api
+* multiple domains responsible for site
 
 
 
@@ -597,7 +605,7 @@ name: JWT Process
 * it is after all just some JSON
 * clue: signature
 * what is in signature?
-* clue: header+payload+signature one way hashed
+* clue: header+payload one way hashed with secret
 
 
 

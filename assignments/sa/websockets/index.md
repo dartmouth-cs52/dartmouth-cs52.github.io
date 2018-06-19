@@ -18,7 +18,7 @@ We're going to build a [websocket](https://en.wikipedia.org/wiki/WebSocket) base
 🚀 Clone your **Lab3 with firebase**.  Create a new branch with `git checkout -b websockets`. We'll need to refactor this very slightly to not use firebase but use our new backend instead, and using a branch seems reasonable for this.
 
 
-🚀 Clone [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) for our new server component.  When you clone remember you can rename the directory: so `git clone https://github.com/dartmouth-cs52/express-babel-starter.git notes-websocket-server`  would checkout the starter into a differently named directory.  
+🚀 Clone [express-babel-starter](https://github.com/dartmouth-cs52-18s/express-babel-starter) for our new server component.  When you clone remember you can rename the directory: so `git clone https://github.com/dartmouth-cs52/express-babel-starter.git notes-websocket-server`  would checkout the starter into a differently named directory.  
 
 
 In the following at times we'll do stuff to both client (Lab3) and server (the new notes-websocket-server). This will be highlighted with **SERVER** vs **CLIENT**.
@@ -361,6 +361,11 @@ if (fields.text) {
 
 
 Ok.  Now it should work much better when deployed.  You don't have to deploy or turn this in, it is just for fun to play with websockets, but if you were to deploy it, you would see that this makes a big difference.  There are more optimizations that can be done, the easiest would be to make **Note** position not driven by props directly when you are dragging.  For now though, you have implemented in half an hour a working alternative backend to firebase.  
+
+## Turn it in on Canvas for Extra Credit
+* links to your github repos for:
+  * frontend branch
+  * server
 
 
 ## Resources

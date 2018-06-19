@@ -16,6 +16,8 @@ This milestone is all about setting up initial code scaffolding and getting read
 
 Now that you have your functionality mapped out let's start on planning the coding.  You now have the features all planned out.  How do you want to build it?  Plan out what technology you think you want to use and let's get some code scaffolding ready.   The project does have some minimal technical specs that must be fulfilled, but you are free to use alternative tech stacks as long as the whole team has some experience with them.
 
+Use the canvas github classroom links to get your repos set up. As usual - first person on your team gets to name it, the rest use the *same* links and select the team that was created.  This adds everybody to a github team and makes all the permissions work. 
+
 ### Minimal Architecture:
 
 * API server backend
@@ -59,7 +61,9 @@ TODO: list of authors
 
 You don't have to fill in the whole document for this milestone, but do start on it and fill in what you can. You should get some basics of your project up and running. If you are using starter code from the course, pull it into your repo.  Try do to a little layout so that you have a main component and a hello world for the frontend and a hello world from the backend.  If you have an idea of any modules and libraries you are planning on using, document them and or get them installed in your repos.
 
-Note: using github will be an essential part of the final project.  We'd like you to use branches and pull requests as you work on the final project together.  You don't necessarily need to do code reviews, but doing git flow with feature branches will help you organize your team and your code. Additionally doing PR's is required and you will be graded on your github code contributions to your project.
+Note: using github will be an essential part of the final project.  We'd like you to use branches and pull requests as you work on the final project together.  You don't necessarily need to do code reviews, but doing git flow with feature branches will help you organize your team and your code. Additionally doing pull requests (PRs) is required and you will be graded on your github code contributions to your project.
+
+Here is a good tutorial [pull requests](https://yangsu.github.io/pull-request-tutorial/).   
 
 Make sure that your github username and email are set correctly so that we can track your contributions.
 
@@ -68,8 +72,9 @@ git log
 ```
 
 will show you recent commits and you should check to make sure your email is one that works and is listed as one of your emails in your github settings: https://help.github.com/articles/setting-your-email-in-git/
+so that your commits are recognized as belonging to you.  Make sure you have at least 2 commits connected to your github email on this.
 
-🚀 Make sure each team member has made a github pull request to contribute to this as we want to make sure that at this point everybody is comfortable running the starter code and contributing via git.
+🚀 Make sure each team member has made a github pull request to contribute to this as we want to make sure that at this point everybody is comfortable running the starter code and contributing via git.  Remember the map workshop, here's a [reminder about how we used Pull Requests then](https://github.com/dartmouth-cs52-18S/git-map#proper-git-flow).
 
 
 ## To Turn In:

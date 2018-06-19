@@ -80,10 +80,10 @@ To start with, we want to add Users. This means we'll need a User model.
 
 ```javascript
 email: { type: String, unique: true, lowercase: true },
-password: { type: String } //, select: false },
+password: { type: String }
 ```  
 
-For now we won't store anything else in the User model, but you may eventually want to add to this. `select: false` makes it so the password isn't returned in queries by default.
+For now we won't store anything else in the User model, but you may eventually want to add to this.
 
 Might as well add in:
 
@@ -99,11 +99,11 @@ This provides a mapping to `id` from `_id`, since you might need that later if y
 
 Remember how we planned on saving our passwords?
 
-![](img/saving_password.png){: .small .fancy }
+![](img/saving_password.png){: .medium .fancy }
 
 Now we get to implement that!
 
-🚀 We're going to use the [`bcryptjs`](https://github.com/dcodeIO/bcrypt.js) module for this. So you should `npm install --save bcryptjs` now and import it.
+🚀 We're going to use the [`bcryptjs`](https://github.com/dcodeIO/bcrypt.js) module for this. So you should `yarn add bcryptjs` now and import it.
 
 #### Saving Salt+Hash
 
@@ -143,7 +143,7 @@ user.password = hash;
 return next();
 ```
 
-But wait, won't this update every single time we save the user?  Yes, that might not be ideal if later want to add in new fields and such!
+But wait, won't this update every single time we save the user?  Yes, that might not be ideal if later we want to add in new fields and such!
 
 Luckily, you can add a check to see if the  `password` field is being updated or not at the top:
 
@@ -179,7 +179,7 @@ Let's add an new User controller!
 
 🚀 Create a `controllers/user_controller.js`.
 
-To encode and decode our JWT's we're going to use the [`jwt-simple`](https://github.com/hokaccha/node-jwt-simple). Go ahead and npm install it and import it: `import jwt from 'jwt-simple';`
+To encode and decode our JWT's we're going to use the [`jwt-simple`](https://github.com/hokaccha/node-jwt-simple). Go ahead and yarn add it and import it: `import jwt from 'jwt-simple';`
 
 🚀 Also import our new User model and dotenv!
 
@@ -247,7 +247,7 @@ Ok, now we have our controller and model done.  We need one more module. A modul
 We're going to use more npm modules! Yay!
 
 ```bash
-npm install --save passport passport-local passport-jwt
+yarn add passport passport-local passport-jwt
 ```
 
 We'll be using [Passport.js](http://passportjs.org/) to provide authentication services.  Passport gives us multiple authentication "strategies".  We'll use `passport-local` for authenticating with username and password, and `passport-jwt` for using JWT's.
@@ -425,7 +425,7 @@ Ok,  so now we should update our frontend to support authentication too right?  
 
 ### Actions
 
-![](img/auth_flow_frontend.png){: .small .fancy }
+![](img/auth_flow_frontend.png){: .medium .fancy }
 
 
 🚀 Add in 3 new action types:

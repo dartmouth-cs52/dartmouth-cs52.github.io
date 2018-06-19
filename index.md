@@ -45,7 +45,7 @@ See [assignments](/assignments).
   Sun 6-9 pm:  Neukom (Sudikoff 123)
 
 * Instructor:<br>
-  Fri 9-10am (!4/13), 11am-12pm; or by appointment in Sudikoff 219/007
+  Fri 9-10am, 11am-12pm (not 5/11); or by appointment in Sudikoff 219/007
 
 <table>
   <tr>

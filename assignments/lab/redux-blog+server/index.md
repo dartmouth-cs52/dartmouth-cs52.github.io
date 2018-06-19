@@ -34,7 +34,7 @@ First we should do some basic setup steps.
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-18S/express-babel-starter.git
+git remote add starter git@github.com:dartmouth-cs52-18s/express-babel-starter.git
 git pull starter master
 ```
 
@@ -356,33 +356,15 @@ db.posts.find()
 
 ## Get All Endpoints Working
 
-
 Your mission is to now implement the rest of the endpoints!  You have the wiring ready, all you need is to use the [mongoose docs](http://mongoosejs.com/docs/queries.html) to implement `getPost`, `getPosts`, `updatePost`, and `deletePost`.  You may find mongoose methods such as: `.find()`, `.findById()`, `.remove()` helpful.  You might want to look into sorting the results for `getPosts` by `created_at`.
 
 Note!  In the above we only saved `title`, none of the other fields were defined in our Post Schema!  You should now go back and add the other fields we need to the model as well as to the all the controller methods.
 
-One more caveat! Mongo happens to use `_id` instead of `id` as we have been so you could use a method like the following to format the list of posts to be cleaner.
-
-```javascript
-// this cleans the posts because we use id instead of dangling _id
-// and we purposefully don't return content here either
-const cleanPosts = (posts) => {
-  return posts.map((post) => {
-    return { id: post._id, title: post.title, tags: post.tags, cover_url: post.cover_url };
-  });
-};
-```
-
-This would be before you `res.json()` them back to the client.
-
 And finally, you'll need to get the router id that is passed in when we hit `/posts/:id`.  This is accessible as `req.params.id` inside each of our controller functions that had this `:id` path variable.
-
-
 
 ## What about APIKEY
 
 Note, unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in each document and then query on it.
-
 
 ## Deploy
 
@@ -394,6 +376,7 @@ Great! We have everything working now. We will need to host this new server comp
 1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
 1. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/cs52-blog.git`.   
 1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
+1. Once it is deployed you can get your new heroku URL by clicking 'open app' on heroku.
 
 Note: Don't forget to push master to **both** heroku and origin.
 
@@ -405,9 +388,9 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 
 ## To Turn In
 
-1. github url to your repo
+1. github url to your repo, readme.md with what worked and what didn't
 1. url to your new heroku app instance for testing
-1. working url for Lab4 on surge that points to your new API server. You can just change it to post to your own.
+1. working url for Lab4 on surge that points to your new API server. You should change it to post to the new heroku url that you get by clicking 'open app' on heroku.
 
 ## Extra Credit
 
