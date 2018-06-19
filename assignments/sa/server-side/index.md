@@ -519,8 +519,8 @@ Great! We have everything working now. We will need to host this new server comp
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
 2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
-3. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/YOUR_HEROKU_APP.git`.
-4. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the npm command that is listed in your `Procfile` to launch your app.  COOL!
+3. Once you've connected your database, go to *Deploy* and select "Heroku Git" as your Deployment Method. Download and install the Heroku CLI using `brew install heroku/brew/heroku`. Given that you're already working in a git repository, use `heroku git:clone -a YOUR_HEROKU_APP` to add a new git remote (use `git remote -v` to see). If you haven't done so already, add and commit your changes.
+4. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
 
 You can also set up the "Deploy Using GitHub" if you prefer - I'm old fashioned so I like the explicit push to heroku but up to you.
 
