@@ -49,7 +49,7 @@ comment_term: assignments
 * [Lab 4: Redux Blog Frontend](lab/redux-blog) - DUE 5/1
 <!-- * Lab 5 Part 1: Redux Blog + API - DUE 5/7 -->
 * [Lab 5 Part 1: Redux Blog + API](lab/redux-blog+server) - DUE 5/7
-<!-- * Lab 5 Part 2: Redux Blog + Auth - DUE 5/14 -->atom
+<!-- * Lab 5 Part 2: Redux Blog + Auth - DUE 5/14 -->
 * [Lab 5 Part 2: Redux Blog + Auth](lab/redux-blog+auth) - DUE 5/14
 
 
