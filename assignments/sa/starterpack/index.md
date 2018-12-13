@@ -367,7 +367,7 @@ We've talked a little bit about various JS versions.  Babel is a transpiler that
 🚀 Let's install babel and the webpack babel-loader.
 
 ```bash
-yarn add babel-core babel-loader babel-preset-env babel-polyfill --dev
+yarn add @babel/core @babel/preset-env babel-loader babel-polyfill --dev
 ```
 
 Babel needs to be configured for the particulars of what feature set of ECMAScript you want.
