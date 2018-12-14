@@ -377,7 +377,7 @@ Babel needs to be configured for the particulars of what feature set of ECMAScri
 ```json
 {
   "presets": [
-    ["env", {
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["last 2 versions"]
       }

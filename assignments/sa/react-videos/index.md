@@ -38,18 +38,18 @@ We're going to need to add a few things to our project to get it ready for React
 ```bash
 # just make sure you're in the root of your project
 
-yarn add --dev babel-preset-react babel-plugin-transform-class-properties
+yarn add --dev @babel/preset-react babel-plugin-transform-class-properties
 # installs a react babel preset and really helpful plugin
 ```
 
-🚀 Add a `["react"]` preset to your existing `.babelrc` file to look something like this:
+🚀 Add a `["@babel/react"]` preset to your existing `.babelrc` file to look something like this:
 
 ```json
 {
   "plugins": ["transform-class-properties"],
   "presets": [
-    ["react"],
-    ["env", {
+    ["@babel/react"],
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["last 2 versions"]
       }
