@@ -63,9 +63,9 @@ See [assignments](/assignments).
 
 * TAs, Graders, Webdev experts:<br>
 
-<!-- <div class="rtable rtable--5cols" style="display:none;"> -->
+<div class="rtable rtable--5cols" style="display:none;">
 
-<div class="rtable rtable--5cols">
+<!-- <div class="rtable rtable--5cols"> -->
 
   <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jiachen.jpg"/></div>
   <div style="order:2;" class="rtable-cell"><a href="mailto:jiachen.jiang.20@dartmouth.edu">Jiachen Jiang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jcjiang/">@jcjiang</a></div>
@@ -138,4 +138,4 @@ Unfortunately due to the nature of the class and our classroom size, auditing th
 
 See [logistics](/logistics)
 
-prior versions of this class: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/)
+Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/)
