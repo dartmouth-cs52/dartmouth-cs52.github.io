@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Server Starter-Pack
-published: true
+title: Server Starter-Pack — Short Assignment
+published: false
 comment_term: sa-server-starterpack
 ---
 ![](img/enm.jpg){: .small }

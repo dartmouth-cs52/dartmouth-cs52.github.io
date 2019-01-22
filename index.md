@@ -61,7 +61,7 @@ See [assignments](/assignments).
   </tr>
 </table>
 
-* TAs, Graders, Webdev experts:<br>
+* TAs, Graders, Webdev experts: **TBD**<br>
 
 <div class="rtable rtable--5cols" style="display:none;">
 
@@ -138,4 +138,9 @@ Unfortunately due to the nature of the class and our classroom size, auditing th
 
 See [logistics](/logistics)
 
+
+## The Archives 
+
 Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/)
+
+Also check out [previous projects](assignments/project).

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: SA3 Webpack + Babel + eslint
-published: true
+title: Frontend Starterpack — Short Assignment
+published: false
 comment_term: sa-starterpack
 ---
 

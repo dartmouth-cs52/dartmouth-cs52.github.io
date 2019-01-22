@@ -18,7 +18,15 @@ const hitTemplate = function(hit) {
 
   let url = `{{ site.baseurl }}${hit.url}#${hit.anchor}`;
 
-  const title = hit._highlightResult.title.value;
+  const frontmatter = hit._highlightResult.html.value.split(/\n/);
+  const exists = frontmatter.find(e => {
+    return e.match(/name:(.*)$/)
+  })
+  // const name = hit._highlightResult.html.value.match(/name:(.+?)(?=\ [a-zA-Z-]*:)/);
+
+  const name = (exists) ? exists.match(/name:(.*)$/)[1] : ''
+
+  const title = (hit._highlightResult.title) ? hit._highlightResult.title.value : name;
 
   let breadcrumbs = '';
   if (hit._highlightResult.headings) {

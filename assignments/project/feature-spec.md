@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Feature Spec
-published: true
+published: false
 comment_term: project-feature-spec
 ---
 

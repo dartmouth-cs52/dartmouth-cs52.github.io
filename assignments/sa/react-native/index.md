@@ -1,7 +1,7 @@
 ---
 layout: page
-title: SA11 - React-Native Videos
-published: true
+title: React-Native — Short Assignment
+published: false
 comment_term: sa-react-native
 ---
 

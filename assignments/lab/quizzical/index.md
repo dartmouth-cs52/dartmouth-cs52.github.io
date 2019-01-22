@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab 2
-published: true
+published: false
 comment_term: lab-quizzical
 ---
 

@@ -1,6 +1,6 @@
 layout: true
 class: center, middle
-name: pic
+name: MORON
 background-size: contain
 
 ---
@@ -10,6 +10,7 @@ class: center, top
 name: fragment
 
 .title[{{name}}]
+published: false
 
 ---
 layout: true
@@ -19,6 +20,7 @@ name: base
 .title[{{name}}]
 
 
+published: false
 
 ---
 name: CS52

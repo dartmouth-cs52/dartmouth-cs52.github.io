@@ -9,7 +9,7 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 
 ## Past Projects
 
-* 18s (coming soon!)
+* [**18s**](18s)
 * [**17s**](17s)
 * 16x
 
@@ -44,4 +44,4 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
   Final code submission with up to date documentation.
 
 
-### <span style="color: #F27D00">Dates approximate and may be adjusted</span> ##
+*Dates approximate and may be adjusted*{: .warning}

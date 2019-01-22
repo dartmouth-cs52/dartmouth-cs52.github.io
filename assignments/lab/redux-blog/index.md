@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab 4
-published: true
+published: false
 comment_term: lab-redux-blog
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Project Teams
-published: true
+published: false
 comment_term: project-teams
 ---
 

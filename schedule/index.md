@@ -3,7 +3,7 @@ layout: page
 title: Schedule
 ---
 
-## <span style="color: #F27D00">Schedule is approximate and adaptive!</span> ##
+*Schedule is approximate and adaptive!*{: .warning}
 
 # Term Overview
 

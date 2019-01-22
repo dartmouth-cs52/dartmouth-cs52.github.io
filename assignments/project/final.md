@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Final Demos
-published: true
+published: false
 comment_term: project-final-demos
 ---
 

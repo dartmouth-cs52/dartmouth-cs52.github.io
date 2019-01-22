@@ -1,11 +1,9 @@
 ---
 layout: page
-title: Short Assignment 1
-published: true
+title: Local Dev Environment — Short Assignment
+published: false
 comment_term: sa-localdev
 ---
-
-# Local Dev Environment and Hosting a Domain
 
 First things first.  You need a local development environment.  
 

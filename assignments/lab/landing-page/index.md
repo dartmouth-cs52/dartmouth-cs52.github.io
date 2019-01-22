@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab 1
-published: true
+published: false
 comment_term: lab-landing-page
 ---
 

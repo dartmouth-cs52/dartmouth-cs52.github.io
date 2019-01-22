@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ""
-published: true
+title: Intro React — Short Assignment
+published: false
 comment_term: sa-react-videos
 ---
 

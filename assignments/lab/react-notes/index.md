@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab 3
-published: true
+published: false
 comment_term: lab-react-notes
 ---
 

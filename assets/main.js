@@ -118,7 +118,6 @@ $('document').ready(function() {
     })
   }
 
-
   $('body').append('<div class="slide" markdown="0"></div>');
 
   // pull in slides from separate file

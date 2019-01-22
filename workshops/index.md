@@ -7,7 +7,7 @@ comment_term: workshops
 
 ## Listing
 
-<span style="color: #F27D00">*Workshops will be published here as they happen.*</span>
+*Workshops will be published here as they happen.*{: .warning}
 
 <!-- * 4/5   [design+figma](design) -->
 <!-- * 4/11  [CSS Frameworks/Cool Things: Bootstrap, Semantic-UI, Transitions](https://github.com/jgualtieri/bootstrap_workshop) -->

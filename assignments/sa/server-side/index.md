@@ -1,7 +1,7 @@
 ---
 layout: page
-title: SA 7 Server-side rendering in Express, and MongoDB!
-published: true
+title: Server-side Rendering — Short Assignment
+published: false
 comment_term: sa-server-side
 ---
 ![](img/enm.jpg){: .small }

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ""
-published: true
+title: Redux — Short Assignment
+published: false
 comment_term: sa-redux
 ---
 

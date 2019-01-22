@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Pre-Demo Bug Hunt
-published: true
+published: false
 comment_term: project-bughunt
 ---
 

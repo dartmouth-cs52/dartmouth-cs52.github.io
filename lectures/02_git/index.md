@@ -1,7 +1,7 @@
 ---
 layout: page_with_slides
 title: git
-published: true
+published: false
 comment_term: lecture-git
 ---
 

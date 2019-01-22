@@ -888,3 +888,4 @@ name: 18S Let's go!
 
 
 .white-foreground[short assignment 1 out: due Thursday 29th 🕛]
+

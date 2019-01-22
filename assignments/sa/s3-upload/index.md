@@ -1,7 +1,7 @@
 ---
 layout: page
-title: SA9 - Uploading images to S3
-published: true
+title: Uploading images to S3 — Short Assignment
+published: false
 comment_term: sa-s3-upload
 ---
 

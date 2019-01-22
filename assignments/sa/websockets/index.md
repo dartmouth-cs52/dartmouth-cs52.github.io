@@ -1,7 +1,7 @@
 ---
 layout: page
-title: SA8 - Websockets
-published: true
+title: Websockets — Short Assignment
+published: false
 comment_term: sa-websockets
 ---
 

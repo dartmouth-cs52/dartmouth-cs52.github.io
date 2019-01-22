@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Short Assignment 2
-published: true
+title: Git — Short Assignment
+published: false
 comment_term: sa-git-map
 ---
 
