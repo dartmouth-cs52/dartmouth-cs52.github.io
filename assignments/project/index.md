@@ -11,7 +11,7 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 
 * [**18s**](18s)
 * [**17s**](17s)
-* 16x
+* [**16x**](16x)
 
 
 ## Milestones At a Glance
