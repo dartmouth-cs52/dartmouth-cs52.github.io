@@ -13,10 +13,10 @@ First things first.  You need a local development environment.
 ## Tools! ##
 
 🚀Install [VSCode](https://code.visualstudio.com/download). VSCode is a code editor. VSCode is an open source, made by Microsoft
-web technology written in html+css+javascript using a platform called [Electron](https://electronjs.org/). Using Electron to create a desktop app is an option for the final project.  We'll be using VSCode for coding and utilizing a lot of its plugins. After installing and starting up VSCode, run: *cmd + shift + p -> Shell Command: Install 'code' command in PATH* to be able to run `code` from the command line.
+web technology written in html+css+javascript using a platform called [Electron](https://electronjs.org/). Using Electron to create a desktop app is an option for the final project.  We'll be using VSCode for coding and utilizing a lot of its plugins. After installing and starting up VSCode, run: *cmd + shift + p -> Shell Command: Install 'code' command in PATH* to be able to run `code` from the command line. *You are welcome to use another editor like [Atom](http://atom.io) instead, but we'll be adding various plugins and you'll need to make sure the equivalent functionality such as eslinting is available.*
 
 🚀If you don't have it, install [Google Chrome](https://www.google.com/chrome/browser/desktop/).  Why?
-Because we'll be using [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) for debugging — more on that later.  Also because all the other browsers support slightly different standards, and Chrome just displays pages more correctly and sticks to the actual standards so we can all be on the same page.  To re-iterate: you are required to use Chrome.
+Because we'll be using [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) for debugging — more on that later.  Also because all the other browsers support slightly different standards, and Chrome simply displays pages more correctly and sticks to the actual standards so we can all be on the same page.  To re-iterate: you are required to use Chrome for this class.
 
 🚀 If you don't have git set up on your machine: Install [GitHub Desktop](http://desktop.github.com).  We will be mostly using `git` from the command line but installing the App gives you a nice tree visualization and setups up your local git environment.
 

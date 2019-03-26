@@ -44,6 +44,7 @@ Your browser does not support the audio element.
 * CS60
 * an internets was sent by my staff!
 * we'll be sending each other lots of internets this term
+* so we'll learn today what happens from your browser on out
 * not wrong though
 
 ---
@@ -246,6 +247,7 @@ name: Application Layer
 ???
 
 * we'll all be running this web server thing by thursday
+* browser and web server - client - server
 
 
 ---
