@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Local Dev Environment — Short Assignment
-published: false
+published: true
 comment_term: sa-localdev
 ---
 

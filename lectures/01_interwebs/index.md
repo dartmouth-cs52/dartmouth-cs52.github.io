@@ -1,7 +1,7 @@
 ---
 layout: page_with_slides
 title: The Interwebs
-published: false
+published: trues
 comment_term: lecture-interwebs
 ---
 
