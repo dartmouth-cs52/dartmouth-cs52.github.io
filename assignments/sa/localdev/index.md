@@ -14,7 +14,7 @@ First things first.  You need a local development environment.
 
 ![](https://github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/logo@2x-a922b71bfaf4cdc1dcf7a5ea29b92a91.png)
 
-🚀Install [atom](http://atom.io).  Atom is a code editor.  Atom is an open source, made by Github
+🚀Install [VSCode](http://atom.io).  Atom is a code editor.  Atom is an open source, made by Github
 web technology written in html+css+javascript using a platform called [Electron](http://electron.atom.io/). Using Electron to create a desktop app is an option for the final project.  We'll be using Atom for coding and utilizing a lot of its plugins. After installing and starting up Atom, run: *Atom -> Install Shell Commands* to be able to run `atom` from the commandline.
 
 🚀If you don't have it, install [Google Chrome](https://www.google.com/chrome/browser/desktop/).  Why?
