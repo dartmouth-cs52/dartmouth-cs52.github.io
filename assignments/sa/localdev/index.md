@@ -12,15 +12,13 @@ First things first.  You need a local development environment.
 
 ## Tools! ##
 
-![](https://github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/logo@2x-a922b71bfaf4cdc1dcf7a5ea29b92a91.png)
-
-🚀Install [VSCode](http://atom.io).  Atom is a code editor.  Atom is an open source, made by Github
-web technology written in html+css+javascript using a platform called [Electron](http://electron.atom.io/). Using Electron to create a desktop app is an option for the final project.  We'll be using Atom for coding and utilizing a lot of its plugins. After installing and starting up Atom, run: *Atom -> Install Shell Commands* to be able to run `atom` from the commandline.
+🚀Install [VSCode](https://code.visualstudio.com/download). VSCode is a code editor. VSCode is an open source, made by Microsoft
+web technology written in html+css+javascript using a platform called [Electron](https://electronjs.org/). Using Electron to create a desktop app is an option for the final project.  We'll be using VSCode for coding and utilizing a lot of its plugins. After installing and starting up VSCode, run: *cmd + shift + p -> Shell Command: Install 'code' command in PATH* to be able to run `code` from the command line.
 
 🚀If you don't have it, install [Google Chrome](https://www.google.com/chrome/browser/desktop/).  Why?
 Because we'll be using [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) for debugging — more on that later.  Also because all the other browsers support slightly different standards, and Chrome just displays pages more correctly and sticks to the actual standards so we can all be on the same page.  To re-iterate: you are required to use Chrome.
 
-🚀 If you don't have git set up on your machine: Install [GitHub Desktop](http://desktop.github.com).  We will be mostly using `git` from the commandline but installing the App gives you a nice tree visualization and setups up your local git environment.
+🚀 If you don't have git set up on your machine: Install [GitHub Desktop](http://desktop.github.com).  We will be mostly using `git` from the command line but installing the App gives you a nice tree visualization and setups up your local git environment.
 
 
 ### OS X ###
@@ -122,9 +120,9 @@ Checking connectivity... done.
 ### Create some HTML
 
 ```bash
-💻 atom index.html
+💻 code index.html
 ```
-🚀basically just start Atom and create a file called `index.html` in your cloned workspace.
+🚀basically just start VSCode and create a file called `index.html` in your cloned workspace.
 
 ![](img//index_html.png){: .fancy .small }
 
