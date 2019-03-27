@@ -41,9 +41,9 @@ See [assignments](/assignments).
 * Open Help Hours in Sudikoff: <br>
   Mon 4-6pm: Sudikoff 213<br>
   Mon 8-10pm: Carson 61<br>
-  Weds 4:30-5:30 (when there is no official x-hour): Sudikoff 214 
+  Weds 4:35-5:25 (when there is no official x-hour): LSC 200<br>
   Thurs 7:30-9:30 pm: Carson 61<br>
-  Sun 6-9 pm: Carson 61
+  Sun 6-9 pm: Carson 61<br>
 
 * Instructor:<br>
   Fri 11am-1pm; or by appointment in Sudikoff 219/007
