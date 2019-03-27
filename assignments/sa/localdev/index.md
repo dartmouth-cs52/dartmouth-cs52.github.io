@@ -240,22 +240,22 @@ You didn't actually have to do any DNS setup,  what happened?
 
 NameCheap set up all the right Domain Name Service Records automatically for you. In NameCheap you can inspect what it did:
 
-![](img//github_dns_already_setup.png){: .fancy .large }
+![](img/a-records.jpg){: .fancy .large }
 
 Take a look at your settings in your Namecheap Dashboard.
 
 Note the several IP addresses in the `A Record` fields,  those are github servers ([apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider))
 
-⚠️ If you have a *URL Redirect Record / CNAME Record* then the github setup failed. You should delete both the *URL Redirect Record* and the *CNAME* in NameCheap and add in the *A Record* per the[github apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider). Here's [more on adding in *A Records*.](https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain)
+⚠️ If you have a *URL Redirect Record / CNAME Record* then the github setup failed. You should delete both the *URL Redirect Record* and the *CNAME* in NameCheap and add in the *A Record* per the[github apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider). Here's [more on adding in *A Records*.](https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain). Basically just make it match the above screenshot. 
 
 🚀 Try doing a reverse DNS lookup (IP address to name):
 
 ```bash
-💻 host 192.30.252.153
-153.252.30.192.in-addr.arpa domain name pointer pages.github.com.
+💻 host 185.199.108.153
+Host 153.108.199.185.in-addr.arpa. not found: 3(NXDOMAIN)
 ```
 
-Wait,  but how does pages.github.com know? Does that machine serve lots of addresses?
+Wait, so it doesn't even have a DNS entry? But how does github know what page to show? Does that machine serve lots of addresses?
 
 Yes, those IPs point to load balancers that direct requests based on the transport packet which happens to have the domain name requested in it.  This is where that magical `CNAME` file comes in.  That tells GitHub Pages that your repository should be served when requests come in for that domain. :cool:
 
