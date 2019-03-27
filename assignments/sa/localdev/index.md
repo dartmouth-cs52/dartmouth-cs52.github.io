@@ -246,7 +246,7 @@ Take a look at your settings in your Namecheap Dashboard.
 
 Note the several IP addresses in the `A Record` fields,  those are github servers ([apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider))
 
-⚠️ If you have a *URL Redirect Record* then the github setup failed. You should delete the *URL Redirect Record* in NameCheap and add in the *A Record* per the[github apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider).
+⚠️ If you have a *URL Redirect Record / CNAME Record* then the github setup failed. You should delete both the *URL Redirect Record* and the *CNAME* in NameCheap and add in the *A Record* per the[github apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider). Here's [more on adding in *A Records*.](https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain)
 
 🚀 Try doing a reverse DNS lookup (IP address to name):
 
