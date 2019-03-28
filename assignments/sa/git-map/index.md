@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Git — Short Assignment
-published: false
+published: true
 comment_term: sa-git-map
 ---
 
@@ -20,7 +20,7 @@ Start here:
   * your face marker appears on the main page:  http://map.cs52.me
   * and your marker is clickable and shows your people page
 1. A short answer response to:
-  * How comfortable do you feel you are with git after this assignment/workshop?
+  * How comfortable do you feel you are with git?
   * Is there anything about git flow you'd like covered in more detail?
 
 ### Extra Credit

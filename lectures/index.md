@@ -12,10 +12,10 @@ comment_term: lectures
 * [3/27 Welcome](00_welcome/)
 <!-- * 3/26 Structure of the Internet -->
 * [3/26= Structure of the Internet](01_interwebs/)
-* 3/28 HTML
-<!-- * [3/29 HTML](02_html/) -->
-* 3/28 Git
-<!-- * [3/29 Git](02_git/) -->
+<!-- * 3/28 HTML -->
+* [3/28 HTML](02_html/)
+<!-- * 3/28 Gits -->
+* [3/28 Git](02_git/)
 * 4/2 CSS
 <!-- * [4/3 CSS](03_css/) -->
 * 4/3 Some Design Things

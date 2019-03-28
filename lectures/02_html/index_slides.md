@@ -26,13 +26,14 @@ name:  CS52 HTML
 ---
 name: TA Hours
 
-* Mon 4-6pm: Sudikoff 148
-* Mon 8-10pm: Sudikoff 114
-* Thurs 6-9 pm: Sudikoff 114
-* Sun 6-9 pm: Sudikoff 114
+* Mon 4-6pm: Sudikoff 213
+* Mon 8-10pm: Carson 61
+* Weds 4:35-5:25: LSC 200
+* Thurs 7:30-9:30 pm: Carson 61
+* Sun 6-9 pm: Carson 61
+
 
 ???
-none tonight though
 
 ---
 name: HyperText Markup Language
@@ -126,7 +127,7 @@ name: Markup Not Dressup
 
 ???
 * html is a type of markup
-* adding marks to something to indicate some structure
+* adding marks to something to indicate **what it is**
 * markdown, LaTex
 * in the first lab - you'll see how we focus on structure first
 * example: underlining and color of links
@@ -189,7 +190,7 @@ name: Brief History
 ???
 * he was later surprised in a reddit ama that kittens took over the internet
 * silly human
-* btw, i photoshopped that kitten
+* he'd probably also be surprised by how fake this photo looks
 
 
 ---
@@ -200,7 +201,8 @@ name: First Browser
 
 ???
 * was called **WorldWideWeb 1990ish**
-* **marc andreesens mosaic** and then netscape
+* i can remember the days without the internet, it was a scary world
+* **marc andreesens mosaic 1993** and then netscape 1994, etc
 
 
 ---
@@ -213,7 +215,20 @@ name: HyperText
 ???
 * hypertext was around in works of fiction as early as the 40s (theoretically **linked microfilms** and such)
 * 1968 Douglas Engelbart - Mother of all Demos (mouse / video conferencing / and hypertext)
+* who knows that microfilms/fiche were? 
 
+
+---
+name: Microfilm/Microfiche aside
+
+.fancy.medium[![](img/microfilm.jpg)]
+
+* because carrier pigeons! 🕊
+
+
+???
+* originally invented for use by carrier pigeons in the late 1800s
+* can imagine thinking how nice it would be to have links
 
 ---
 name: HyperText
@@ -222,7 +237,8 @@ name: HyperText
 
 ???
 * theoretical demo mouse and videoconfercing and hypertext idea
-* but wasn't implementable
+* wasn't quite all implementable, but showed all the basic features of modern computing, mouse, browser,video
+* and somehow 50 years later videoconferencing is still shit
 
 ---
 name: Structural tags and links!
@@ -257,11 +273,12 @@ name: Browser Wars
 
 .medium_small[![](img/bw.jpg)]
 
-* for our purposes, ONLY CHROME FOREVER
+* for our purposes, ONLY CHROME
 
 ???
 * safari is clearly just out the jungle somewhere taking pretty pictures of animals instead
 * for this class... ONLY CHROME WILL DO
+* everybody wants your data
 
 
 ---
@@ -279,6 +296,7 @@ name: HTML5 2014
 * things like `<b>` for bold are frowned on - `<em>` for emphasis
 * all promoting the structural definition way of thinking
 * crazy how it wasn't that long ago that this stuff became normal
+* basically get rid of style, bring in structure
 
 ---
 name:
@@ -295,6 +313,7 @@ name:
 ???
 * other elements got axed
 * this used to be a thing
+* now you have to write a bunch of css animation keyframes to achieve what you could in just 15 characters
 
 
 ---
@@ -310,7 +329,7 @@ name: Note About Syntax, Tabs, Spaces, Legibility, Structure, Comments
 * first of many rants about best practices
 * clean correct syntax and code abstraction
 * case statements instead of giant elseifs for instance
-* consistent indentation
+* in particular for hierarchical data like HTML - consistent indentation
 
 
 
@@ -344,7 +363,7 @@ VS
 
 ???
 * bad idents bad points!
-* I have a linter so this was actively difficult for me to even type in Atom
+* i use linter so this was actively difficult for me to even type it kept reindenting
 
 
 
@@ -627,6 +646,7 @@ name: query
   * is an optional set of arguments
   * `?foo=bar&search=help`
   * can be processed by host
+  * only way to send data in `GET`
 
 ???
 * data out in the open but often used for id's and such
@@ -685,17 +705,17 @@ name: define my own semantics?
 What if I want a `slide` or a `profile-image`?
 
 * html5 spec has some support
-  * requires javascript
-  * not worth it unless making reusable *web components*
+  * requires javascript / not widely used
 * BUT
   * you can use `class` and `id` attributes
   * and `div` and `span` elements.
-  * Easy peasy lemon squeezy. 🍋
+  * is the way to create your own structure markers
 
 ???
 * ok structure over style.
 * what about other semantic tags?
 * but there are generic tags that you can give id's and classes to!
+* REACT will give us more powerful abstraction
 
 
 
@@ -740,7 +760,6 @@ name: IDs
 ???
 * Define your meaning and style information once and use it in many places.
 * properly classing and iding your html structure will be critical once we start styling it.
-* if everything is just a div how can you style it.
 
 
 
@@ -815,7 +834,7 @@ name: div
 * [`div` elements (divisions)](http://www.w3schools.com/tags/tag_div.asp)
   * take up space by default
   * `display: block;`
-  * `<div class="row">a row of stuff</div><div class="row">more row</div>`
+  * `<div>on one line</div><div>on the line below</div>`
 
 ???
 
@@ -1016,6 +1035,7 @@ name: gif
   * not good compression (best with images with few colors)
   * automatically support animation
   * transparency
+  * but honestly pretty terrible format
 
 ???
 
@@ -1041,8 +1061,7 @@ name: resolution
 name: tools
 
 * creating image assets:
-  * [Sketch](https://www.sketchapp.com/)
-  * pixel perfect web optimized
+  * [figma](https://figma.com)
 * why is it so slow:
   * Hubspot's [Website Grader](https://website.grader.com/)
 

@@ -1,9 +1,21 @@
 ---
 layout: page_with_slides
 title: HTML
-published: false
+published: true
 comment_term: lecture-html
 ---
+
+
+{% include slides-toggle.html %}
+
+<br>
+<hr>
+<br>
+<h2>deprecated notes:</h2>
+
+
+
+
 
 # HyperText Markup Language
 

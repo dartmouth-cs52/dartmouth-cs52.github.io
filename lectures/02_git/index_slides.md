@@ -28,6 +28,7 @@ name: this is git
 * TREEEESSS
 * whaaaat?
 * code version control system
+* submitting assignments, group work, grading, etc
 
 ---
 name: social coding
@@ -59,6 +60,13 @@ var h = 'Hi!';
 >>>>>> cb1abc6bd98cfc84317f8aa95a7662815417802d
 ```
 
+1. eeeeek
+2. take a deep breath
+3. fix the file, make sure it works locally
+4. `git add conflicted_file_name`
+5. `git commit` # comment is prefilled out OR
+6. `git rebase --continue` # if you were rebasing 
+
 ???
 * is scariest
 * but take a deep breath will be fine
@@ -85,9 +93,10 @@ name: git visualization
 
 
 ---
-name: git cheatsheet
+name: more resources
 
-[http://www.ndpsoftware.com/git-cheatsheet.html](http://www.ndpsoftware.com/git-cheatsheet.html)
+* [http://www.ndpsoftware.com/git-cheatsheet.html](http://www.ndpsoftware.com/git-cheatsheet.html)
+* [https://learngitbranching.js.org](https://learngitbranching.js.org/)
 
 ???
 

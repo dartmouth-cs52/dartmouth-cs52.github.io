@@ -12,8 +12,8 @@ comment_term: assignments
 
 <!-- * Short Assignment 1: Local Dev Environment + Domain -->
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/28
-* Short Assignment 2: Git Map (in-class)
-<!-- * [Short Assignment 2: Git Map](sa/git-map) — DUE 3/30 -->
+<!-- * Short Assignment 2: Git Map (in-class) -->
+* [Short Assignment 2: Git Map](sa/git-map) — DUE 3/29
 * Short Assignment 3: Webpack+Babel+Eslint starterpack
 <!-- * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) — DUE 4/13 -->
 * Short Assignment 4: React Intro
@@ -39,8 +39,8 @@ comment_term: assignments
 ### 5-ish week-long labs:  25%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
-* Lab 1: Build a Landing Page
-<!-- * [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/6 -->
+<!-- * Lab 1: Build a Landing Page -->
+* [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/6
 * Lab 2: Build a Buzzfeed Quiz -
 <!-- * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/9 -->
 * Lab 3: React Notes

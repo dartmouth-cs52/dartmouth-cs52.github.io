@@ -24,38 +24,40 @@ A landing page you say?  Yes, you will be making a landing page based on an real
 
 Here, I chose slack.com (it no longer looks like this and is now surprisingly even uglier, so don't choose that one). 
 
-![](img/slack-desktop.png){: .fancy .small}
+![](img/slack-desktop0.jpg){: .fancy .medium_small}
 
 And if you narrow your browser you'll see some responsive design and it looks like so:
 
-![](img/slack-mobile.png){: .fancy .tiny}
+![](img/slack-mobile0.jpg){: .fancy .tiny}
 
 You should choose another landing page to base your page off of, as long as it has the following features:
 
 * responsive navigation menu - one that collapses from columns into rows when in mobile.
-* expanding image - either as a background or central element
+* expanding image(s) - either as a background or central element
 * a clear call to action button with some hover states, some nice styling, and responsive
 * text input bar for signup or search (will be non-functional)
 * a footer with links that are responsive (change from side by side to vertical in smaller sizes)
 
-Some examples (in order of difficulty):
-* [figma.com](https://www.figma.com)
-* [getfrustration.com](https://getfrustration.com/)
-* [notion.so](https://www.notion.so/)
-* [collegepulse](https://collegepulse.com/)
+Some examples (in very approx order of difficulty):
+* [flourbakery.com](https://flourbakery.com/)
+* [github.com](https://github.com/) *(incognito mode)*
+* [starbucks.com](https://www.starbucks.com/) *(add a fullwidth image)*
 * [stripe.com](https://stripe.com/)
+* [collegepulse](https://collegepulse.com/)
 <!-- * [tesla.com](https://www.tesla.com) -->
 <!-- * [apple.com](https://www.apple.com) -->
+* [figma.com](https://www.figma.com)
+* [mixpanel.com](https://mixpanel.com)
 * [wistia.com](http://wistia.com)
+* [notion.so](https://www.notion.so/)
 <!-- * [hubspot.com](https://www.hubspot.com/) -->
 * [simpleanalytics.io](https://simpleanalytics.io/)
 * [sunbasket.com](https://sunbasket.com/) 
-* [patagonia.com](http://patagonia.com) *don't do side scroller*
-* [humaans.com](https://www.humaaans.com/) *can use humaaans in your page!*
+* [patagonia.com](http://patagonia.com) *(with [carousel in pure css](https://codeburst.io/how-to-pure-css-carousel-ce1a8cb231c8) challenge)*
 
-You can also browse for inspiration here: [landingfolio.com](https://www.landingfolio.com/)
+You can also browse for inspiration here: [landingfolio.com](https://www.landingfolio.com/).  You can also choose multiple pages to pick and choose things from. 
 
-**Please be creative with your content!**  You can and should make your own content on this page. Do not copy my content, make up your own.
+**Please be creative with your content!**  You can and should make your own content on this page. Do not copy my content, or the websites content, make up your own.
 
 What you'll find is that many product landing pages have a lot of similarities:
 
@@ -85,7 +87,6 @@ All anchor tags should look like this
 Links to nowhere.
 
 **Simplify a lot!**  This is more re-imagining than it is making a carbon copy. You'll very much need to simplify and leave things out. You will submit both the original that you used for inspiration and your version, but what we are looking for is for a clever adaptation given the limitations of no javascript. 
-
 
 **Note:** You **can and should use** the [Chrome DevTools Inspector](https://developers.google.com/web/tools/chrome-devtools/) 🔍 to examine the structure of the original page.  You'll find it is really messy and complicated!  Although it is a good idea to inspect individual elements (for instance: a button to see how they styled the borders) it won't really help you much to try to copy more. If your code blatantly includes un-cited code copied from one of these websites or another students assignment, that will be considered an honor code violation ⚠️.  Ask me if you have questions about this.
 
@@ -119,6 +120,22 @@ It may look approximately like this.
 
 ⚠️⚠️⚠️
 🚀Take a screen cap at this point!  You will need to submit this for part of the grade.
+
+### Git Tags
+
+🐙 To keep track of specific important changes in our repositories, we're going to be using [git tags](https://git-scm.com/book/en/v2/Git-Basics-Tagging#_lightweight_tags).  Tags are a way to give a specific git commit a name/label for easy retrieval later.  Github uses tags to mark software release versions as well.
+
+
+```bash
+# first make sure you've committed your code
+git commit -am "done with html layout stage"
+# when you run git tag it will label the current latest commit
+git tag html
+# tags need to be pushed to github manually
+git push origin --tags
+```
+
+**Now you can take a break, we'll learn some CSS in class and you can come back and make this pretty.**
 
 
 ## PART 2: Styling!
