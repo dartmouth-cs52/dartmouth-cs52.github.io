@@ -7,7 +7,7 @@ comment_term: sa-git-map
 
 First things first. If you didn't fill out the beginning of term survey on canvas, you'll need to join the github team:
 
-Did you accept the invitation to the https://github.com/dartmouth-cs52-19S organization via this link:  [https://classroom.github.com/g/F2r_btUo](https://classroom.github.com/g/F2r_btUo)?  When prompted please join the **19s** group! Otherwise you won't have permissions on the repo to do anything with it. 
+Did you accept the invitation to the https://github.com/dartmouth-cs52-19S organization via the github classroom link provided?  When prompted please join the **19s** group! Otherwise you won't have permissions on the repo to do anything with it. 
 
 Start here:
 [19S-git-map](https://github.com/dartmouth-cs52-19S/git-map)
