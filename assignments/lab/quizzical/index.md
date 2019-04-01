@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab 2
-published: false
+published: true
 comment_term: lab-quizzical
 ---
 
@@ -53,7 +53,7 @@ You have a lot of flexibility in this assignment.  This is your content, so be c
     * should display an error if not all questions were answered
 
 
-Here's some design specs thrown together in [Sketch](https://www.sketchapp.com/)
+Here's some design specs thrown together in [Figma](https://www.figma.com/)
 
 1. Quiz page with a question and some image answers - nothing selected:
 
@@ -76,7 +76,7 @@ Here's some design specs thrown together in [Sketch](https://www.sketchapp.com/)
 
 🚀 Please use the github classroom link provided in the Canvas assignment to create the repo automatically.
 
-🚀 Open up Atom and create an `index.html`, a `style.css`, and a `main.js` file.  
+🚀 Open up your code editor and create an `index.html`, a `style.css`, and a `main.js` file.  
 
 🚀 Link your `style.css` file into the head of your html file.
 
@@ -186,7 +186,7 @@ $('#idOfYourButton').on('click', function(e) {
   var choices = $("input[type='radio']:checked").map(function(i, radio) {
     return $(radio).val();
   }).toArray();
-  // now you have an choices = ["valueofradiobox1", "valueofradiobox2", "valueofradiobox2"]
+  // now you have an array of choices = ["valueofradiobox1", "valueofradiobox2", "valueofradiobox2"]
   // you'll need to do some calculations with this
   // a naive approach would be to just choose the most common option - seems reasonable
 });
@@ -201,13 +201,108 @@ There's a lot you can do here, but the basics that you want are a button that ca
 
 The answer could be displayed as a [simple modal](https://www.w3schools.com/howto/howto_css_modals.asp) or inline like how buzzfeed does it.
 
-🍸 Extra Credit:  Create a generalized framework for quizzes. This would involve something like reading in quiz questions and answers from a [JSON file](http://api.jquery.com/jquery.getjson/) and then looping through them and [appending](http://api.jquery.com/append/) to the html of the page with javascript.
 
 ## Styling
 
 Now get it looking good!  If you need suggestions on how to improve your design come by any of our office hours.  This assignment will be partially graded on styling.  The minimum effort would be to do something like the primitive mockups or an equivalent attempt at improving the design of buzzfeed.
 
-## And You Are Done!
+## Choose Your Own Adventure Part
+
+You are required to **choose 1 of the next 2 options** to complete.  Extra credit if you do both, but 1 is part of the assignment.
+
+At this point you should tag your working base version first:
+
+```bash
+git tag v1
+git push origin --tags
+```
+
+## Javascript Focus (Option 1)
+
+🍸 Create a generalized framework for quizzes. This will help you understand frontend frameworks and get a better feel for javascript and how to work with the DOM.
+
+This will involve reading in quiz questions and answers from a [JSON file](http://api.jquery.com/jquery.getjson/) and then looping through them and [appending](http://api.jquery.com/append/) to the html of the page with javascript.
+
+Imagine you had a `data.json` file that looked like this:
+
+```json
+{
+    "title": "quiz title",
+    "outcomes": {
+            "outcome1": {"img": "img/outcome1.jpg", "text": "outcome 1"},
+            "outcome2": {"img": "img/outcome2.jpg", "text": "outcome 2"}
+    },
+    "questions": [
+        {
+            "question_name": "question1",
+            "question_img_url": "img/question1.jpg",
+            "answers": [
+                {
+                    "text": "",
+                    "img_url": "img/image1.jpg",
+                    "outcome": "outcome2"
+                },
+                {
+                    "text": "",
+                    "img_url": "img/image2.jpg",
+                    "outcome": "outcome2"
+                },
+                {
+                    "text": "",
+                    "img_url": "img/image3.jpg",
+                    "outcome": "outcome1"
+                }
+
+            ]
+        },
+        {/*........*/}
+    ]
+}
+```
+
+You may load this file into your main javascript using the [jQuery getJSON](https://api.jquery.com/jquery.getjson/) function:
+
+```js
+  $.getJSON("data.json", function(data) {
+    // now you can do something with this data. 
+    // remember you can only work with the data in this callback
+    // data.title has the title
+    // maybe you want to loop through data.questions? 
+  });
+```
+
+💰 Most likely you'll want to take your already working hardcoded HTML, abstract out some section, and output it from a javascript loop that constructs a big string of all the html you need and then append it to some element in the page. You may find it irritating to do: `"<div>"+question.title+"</div>"`... as such if you don't care about backwards compatibility (Internet Explorer) you may find [template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) useful. 
+
+
+## Styling Focus (Option 2)
+
+You second option is make your quiz site as beautiful as possible with as much fancy CSS as you can muster. 
+
+Minimum Styling Requirements: 
+* No radio buttons here folks.
+* Hovers and clicks have animation/transition effects.
+* Your output is a modal, or a new page, or a scroll, it is not a alert, and it is animated.
+* and finally, your page works in mobile! 
+
+This will push your CSS skills and will be super helpful later as you become the style wizard for your team.  You will make your product look amazing, and honestly isn't that the part that everybody appreciates the most? 
+
+[![modal animations](img/cool-modal-animations.gif){: .fancy .medium}](https://codemyui.com/cool-modal-animations/) 
+
+[![expanding](img/fullscreen-expanding-div.gif){: .fancy .medium}](https://codemyui.com/div-fullscreen-click/) 
+
+[![zoom expanding](img/pure-css-zoom-in-blocks-on-hover.gif){: .fancy .medium}](https://codemyui.com/pure-css-zoom-blocks-hover/) <br>*might be overkill*
+
+[![light sweep button](img/light-sweep-button.gif){: .fancy .medium}](https://codemyui.com/light-sweep-effect-on-button-hover/) <br>*sweet button*
+
+Lots of inspiration at [codemyui.com](https://codemyui.com).
+
+Some more resources: 
+* [Kevin's CSS Styles](https://thekevhu.github.io/Styles/)
+* [https://css-tricks.com](https://css-tricks.com)
+
+
+
+## Host It and You Are Done!
 
 You should host this on github pages as you have in the past.  Remember to have fun with this.  We'll share the quizzes in class!
 
@@ -228,9 +323,8 @@ You should host this on github pages as you have in the past.  Remember to have 
 
 
 ## Extra Credit
+*feel free to suggest other possibilities*
 
-* Fancy CSS transitions/animations
-* Generalized quiz framework reading in quiz from a [JSON file](http://api.jquery.com/jquery.getjson/)
 * More complex quiz scoring
 * Multiple quizzes / pages
 
