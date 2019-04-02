@@ -40,7 +40,33 @@ name: CS52
   * on the order of a million slides to get through
   * and games,  don't worry if it all seems overwhelming - plenty of time to practice and don't need to memorize it all
 * tomorrow DESIGN workshop during x-hour, will help with extra credit - not mandatory but you'll learn some stuff
-*
+
+
+---
+name: 19S Table Questions
+
+.large[![](img/tq-local-dns.jpg)]
+.large[![](img/tq-waitlist.jpg)]
+
+???
+* yes local dns server is basically just a program running in your operating system
+
+
+---
+name: 19S Table Questions
+
+.small[![](img/tq-hop.jpg)]
+.small[![](img/table-questions-banana.jpg)]
+
+1. Does git text match or line match? And why does git use >> to show conflicts?
+
+
+???
+* git is a lot of things to a lot of people, but not sure it provides potassium
+* all of the text per line. empty space is a change
+* no idea! 
+* ok the following are questions from last term,  many more of them, so either i'm doing better explaining, or you all are too shy
+
 
 
 ---
@@ -67,17 +93,14 @@ name: Table Questions
 * https://githubengineering.com/rearchitecting-github-pages/
 
 
----
+<!-- ---
 name: Table Questions
 
 .medium_small[![](img/table-mean-languages.jpg)]
 
-* what do `<head>` and `<body>` do?
-* what makes ⚓ tags special?
-
 ???
-* they connect us together?
-
+* 
+ -->
 
 
 ---
@@ -98,6 +121,7 @@ name: CSS — Cascading Style Sheets
 ???
 * we'll dive deeper into the CSS render tree next class when we learn how the browser thinks about the document interally
 * this is a video of the layout reflow render passes the browser makes just to display google
+* basically as your browser processes the render tree (html+css) this is it drawing things. more on this later
 
 
 ---
@@ -110,14 +134,14 @@ name: CSS — Cascading Style Sheets
 * CSS v2 1998
 * ...
 * CSS v3 ~2014
-* ...2018
+* ...2019 (snapshots/modules)
 
 ???
 * this image is what cssv1 supported - all the functionality in one test frame
 * we're a new era now boys and girls, finally things are evolving, new things being rolled out
 * long period of time when people had **all sorts of workarounds for things, like using tables** for everything
 * css is faster than js for animations
-* netscape used javascript at first for css (super slow and still is)
+* netscape used javascript at first for css (super slow and still is not the best styling tool)
 * [full history](https://eager.io/blog/the-languages-which-almost-were-css/)
 
 
@@ -139,7 +163,6 @@ name: Semantics vs. Style
 * relied on the default display styles provided by the browser
 * set the `h1` tag the font size increased
 * What we were defining was a section of content that was intended to be a header of level 1.
-* In Word,  one of the ways to style things is by directly changing the font size, or make it bold.  The problem with this is that it unmaintainable in the long term.  Want to change all your headings?  Good luck — should have set up some styles.
 * **specify the intended use of the content**,  whether it is a header or a paragraph etc,  and then you **define the look and feel of these blocks separately**.
 
 
@@ -299,6 +322,7 @@ input[type=checkbox]:checked ~ #hiddenmenu {
 
 ???
 * **gets even better**, some selectors can select for a **particular state** of an element
+* link is unvisited link
 * these are super useful,  checkboxes can be used to record some state in CSS for instance
 * plus things like **:first-child**, or **:not**
 * ok that last one might be giving away too much... more complicated even:
@@ -320,6 +344,7 @@ ul > li {  } /* child */
 
 ```html
 <article>
+  <ul id="list 0"></ul>
   <div id="title">Title</title>
   <ul id="list 1">
     <li>1</li>
@@ -338,7 +363,7 @@ ul > li {  } /* child */
 * descendent would include any nested li's: 1,2,nested1, 3
 * child would only include direct children, so say a nested `ol`'s children would be left untouched: 1,2,3
 * adjacent sibling, directly adjacent with no elemnts in between: list1
-* general sibling any matching as long as parent is same: list1, list2
+* general sibling any matching as long as parent is same: list1, list2. but can't be before
 
 
 
@@ -377,7 +402,7 @@ name: Colors
 ???
 * which of these is most legible -- stick with one
 * don't use color names
-* **atom color picker and pigments plugins**
+* **vscode and atom "color picker" and pigments plugins**
 
 
 ---
@@ -459,7 +484,7 @@ name: Size Units Tangent
 <iframe src="//giphy.com/embed/3ornjZLITGcFQVRbxK?hideSocial=true" width="480" height="237.12" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 * many css properties take size/length values:
-  * font-size, width, height, margin, padding
+  * `font-size`, `width`, `height`, `margin`, `padding`
   * many units to choose from
   * absolute units
   * relative units
@@ -479,7 +504,7 @@ name: absolute units
 * `pc`: *pica (12 pt)* ❌
 * `in`: *inches (96px)* ❌
 * `cm`: *centimeters (37.8px)* ❌
-* `mm`: *pixel (3.78px)* ❌
+* `mm`: *millimeter (3.78px)* ❌
 
 <iframe src="//giphy.com/embed/xT0Gqcy5YrVjXdkZgs?hideSocial=true" width="220" height="220" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -536,16 +561,17 @@ name: Relative Units
 * `vmin`:	*1% of viewport's smaller dimension*
 * `vmax`:	*1% of viewport's larger dimension*
 
-.left[<iframe src="//giphy.com/embed/k46bzmbLhKJwc?hideSocial=true" width="320" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]<br>
-.right.small[![metal type](https://upload.wikimedia.org/wikipedia/commons/e/e9/Metal_type.svg)]
+<!-- .left[<iframe src="//giphy.com/embed/k46bzmbLhKJwc?hideSocial=true" width="320" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]<br> -->
+.left.medium[![metal type](img/movable-type.jpg)]
+.right.medium_small[![metal type](https://upload.wikimedia.org/wikipedia/commons/e/e9/Metal_type.svg)]
 
 ???
 
 * relative units are what you'll often be using.
 * 1 rem is 16px by default
 * also today is jane goodall's birthday
-* **em originally** was the lineheight *C* when metal type was a thing and was also the same as the width of the letter m - hence em dash vs en dash
-* older browsers don't support `vh`/`vw` units, but they can be very useful if you don't mind losing some compatibility.
+* **em originally** was the lineheight *C* when metal type was a thing and was also the same as the width of the letter m - hence **em dash** vs **en dash**
+* older browsers don't support `vh`/`vw` units, but they can be very useful if you don't mind losing some compatibility - these days probably pretty safe to use
 
 
 ---
@@ -556,7 +582,7 @@ name: reasonable practice
 * [css-tricks rems-ems](https://css-tricks.com/rems-ems/)
 
 ???
-* body set pixels (16px is default em)
+* body/html overall set pixels (16px is default em)
 * main sections are in `rem`
 * contents of each section are in `em`
 * independent control of scaling for the main sections
@@ -632,6 +658,7 @@ There are 3 ways to include CSS styles in your page.
 * External style sheet: separate file included in head section. BEST.
 * CSS Preprocessor Magics:  is actually best, we'll look into this more later. See: [SASS](http://sass-lang.com/)
 * why is inline worst?
+* we won't be individually adding in styles for every single html file - in fact we won't even be creating individual html pages! gasp!
 
 
 
@@ -650,7 +677,7 @@ name: CSS limitations
   * math:   `5px + 10px`
 
 ???
-* ascending: no way to select a parent of something
+* ascending: no way to select a parent of something (when render tree is walked there is no backing up)
 * z-index has a scope and looks for nearest absolute or relative parent
 * nesting: can nest rules so each rule doesn't ahve to have the whole selector
 * mixins:  like functions -- especially useful for vendor prefixes
@@ -687,7 +714,7 @@ div {
 ---
 name: position: static;
 
-.fancy.tiny[![](img/position/static.gif)]
+.tiny[![](img/position/static.gif)]
 
 Default. Elements take up space within the document flow. No properties like `top`, `right`, `bottom`, `left` take effect.
 
@@ -701,7 +728,7 @@ Default. Elements take up space within the document flow. No properties like `to
 ---
 name: position: relative;
 
-.fancy.tiny[![](img/position/relative.gif)]
+.tiny[![](img/position/relative.gif)]
 
 Position is relative to default (ie. parent within document flow) via `top`, `right`, `bottom`, `left` properties.
 
@@ -713,13 +740,13 @@ Position is relative to default (ie. parent within document flow) via `top`, `ri
 name: position: absolute;
 
 
-.fancy.tiny[![](img/position/absolute.gif)]
+.tiny[![](img/position/absolute.gif)]
 
 Position is **relative** to the **nearest absolute parent** element via `top`, `right`, `bottom`, `left` properties. Element is removed from flow so other elements ignore it.
 
 ???
 * tricky to remember that the nearest absolute parent
-* have to go and set absolute on some parent as is not default
+* have to go and set absolute on some parent as is not default, or uses doc body
 
 
 
@@ -727,7 +754,7 @@ Position is **relative** to the **nearest absolute parent** element via `top`, `
 name: position: fixed;
 
 
-.fancy.tiny[![](img/position/fixed.gif)]
+.tiny[![](img/position/fixed.gif)]
 
 Position is relative to the screen via `top`, `right`, `bottom`, `left` properties. Otherwise similar to absolute. Position 0,0 is the top left corner.  
 
@@ -739,9 +766,9 @@ Position is relative to the screen via `top`, `right`, `bottom`, `left` properti
 ---
 name: z-index: 10;
 
-.fancy.tiny[![](img/position/z-index.gif)]
+.tiny[![](img/position/z-index.gif)]
 
-Similar to layers and allows elements (absolute and fixed) to be ordered. Parameter: signed integer
+Similar to layers and allows elements (absolute and fixed) to be ordered. Parameter: signed integer. [stacking contexts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context#The_stacking_context)
 
 ???
 * helps layer absolute and fixed elements
@@ -753,6 +780,7 @@ Similar to layers and allows elements (absolute and fixed) to be ordered. Parame
   * new context for each parent that is positioned or opacity less than 1
   * [FROONT](http://blog.froont.com/positioning-in-web-design/)
   * For more detailed examples: [css-tricks](https://css-tricks.com/almanac/properties/p/position/)
+  * draw parent with boxes inside, then one outside, can't layer it in between
 
 
 
@@ -793,7 +821,7 @@ name: More positioning and aligning, the old way
 
 
 ---
-name: Flexbox, the new way
+name: Flexbox, the new/right way
 
 Alignment used to be miserable.
 
@@ -1020,6 +1048,14 @@ name: Flexbox resources
 
 
 
+---
+name: "Cascading"?
+
+.medium[![css cascade](img/skogafoss.gif)]
+
+???
+what is the cascading part of css?
+
 
 
 ---
@@ -1080,7 +1116,7 @@ name: CSS Box Model `content-box`
 * totals =  content width/height + padding + borders + margins
 
 ???
-* oh no not more about sizing things?!?!
+* oh no not more about sizing things?!?! using text to describe how to display stuff is hard
 * bunch of things go into the size that something appears on screen
 * default is content-box
 * `margin:` defines the spacing **around** the element
@@ -1191,13 +1227,17 @@ div {
 ---
 name: Transition Properties
 
+.medium[![timing functions](img/timing-functions.png)]
+
+
 * `property:`  (required) of the element to apply to.  can be specific property like background-color, a list, or `all`.
 * `duration:`  (required) timespan in milliseconds or seconds units that the effect lasts.
-* `timing-function:` (optional) animation interpolation type: `linear`, `ease` (default), `ease-in`, `ease-out`, and `ease-in-out`.
+* `timing-function:` (optional) animation interpolation type: `linear`, `ease` (default), `ease-in`, `ease-out`, `ease-in-out`, even `cubic-bezier`.
 * `delay:` (optional) delay before the start of the animation in milliseconds or seconds units.
 
 ???
-
+* you can define your own timing functions if you really want
+* ease is faster in the middle
 
 
 ---
@@ -1282,7 +1322,7 @@ Ok, that might be enough of 3D for one day! More demos can be found here:
 
 
 ???
-
+* try the carousel
 
 
 
@@ -1333,6 +1373,8 @@ name: Select Elements
 
 .medium[![](img/select_elements.gif)]
 
+???
+* inspect border box model!
 
 ---
 name: Change Text
@@ -1375,14 +1417,16 @@ name: Today's activity
 
 * Pair up with a neighbor
 * get their domain name and open it up in inspector
+  * or together edit some random webpage
 * play around with it
-* take a screenshot and post it in [#18s](https://cs52-dartmouth.slack.com/messages/C9XBP87PX)
+* take a screenshot and post it in [#19s](https://cs52-dartmouth.slack.com/messages/CH67XKQT0)
 
-
+???
+* hacking 101
 
 
 ---
-name: Intermission
+name: The End
 
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
