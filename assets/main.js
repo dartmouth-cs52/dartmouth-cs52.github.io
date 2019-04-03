@@ -38,7 +38,10 @@ function onSlideToggle(event) {
     $mainContent.hide();
     remark.create({
       source: $('.slide').text(),
-      highlightStyle: 'tomorrow'
+      highlightStyle: 'tomorrow',
+      navigation: {
+        scroll: false
+      }
     });
     fixToggle();
     // looks like needs to be reattached

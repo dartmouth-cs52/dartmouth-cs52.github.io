@@ -19,8 +19,8 @@ comment_term: lectures
 <!-- * 4/2 CSS -->
 <!-- * 4/2 CSS -->
 * [4/2 CSS ](03_css/)
-* 4/3 Some Design Things
-<!-- * [4/4 Some Design Things](03_design/) -->
+<!-- * 4/3 Some Design Things -->
+* [4/3 Some Design Things](03_design/)
 * 4/4 JS and DOM
 <!-- * [4/5 JS and DOM](04_js1) -->
 * 4/9 JS P2
