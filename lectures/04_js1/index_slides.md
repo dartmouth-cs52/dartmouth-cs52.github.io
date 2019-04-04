@@ -1418,6 +1418,7 @@ name: resources
 ---
 name:  Lab1 + Lab2! 
 
+* Workshops!
 * Lab1 due Saturday
 * Lab2 out and due Tuesday
   * [http://cs52.me/assignments/lab/quizzical/](http://cs52.me/assignments/lab/quizzical/)
