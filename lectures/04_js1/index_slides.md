@@ -934,7 +934,7 @@ name: event handling
 
 
 ---
-name:
+name: Event Listeners
 
 DOM level 0 events:
 ```html
@@ -1070,6 +1070,7 @@ Don't submit the page plz
 * by default submit buttons reload page
 * or hover effects
 * make sure browser doesn't execute default action
+* if you are using JS for actions - this will often be something you need to do!
 
 
 
@@ -1164,6 +1165,7 @@ console.log(x);  // → inside f2
 * if declared
 * in second example just refers to global
 * shadowing is bad (redeclaring locally on purpose)
+* we'll explore this in more detail next class
 
 
 
@@ -1269,9 +1271,10 @@ console.log(double(5));     // → 10
 * function “closes over” some local variables
 * A good mental model is to think of the function keyword as “freezing”
   * the code in its body and wrapping it into a package (the function value).
-* can be very cool, enables callbacks
+* can be very cool, enables callbacks, where whole functions are closed over
 * functions passed into other functions to call when they are done
 * much more on this next time
+* worth learning how this can be cool
 
 
 ---
@@ -1373,7 +1376,9 @@ try {
 ```
 
 ???
-
+* how many people use this regularly? 
+* do not fail silently on the web...
+* expose errors that user need to know about
 
 
 
