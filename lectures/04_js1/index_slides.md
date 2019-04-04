@@ -32,8 +32,8 @@ name: CS52
   * basic javascript
   * the DOM
 * Next:
-  * [lab1-landingpage](http://cs52.me/assignments/lab/landing-page/) due Friday night
-  * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due Monday night
+  * [lab1-landingpage](http://cs52.me/assignments/lab/landing-page/) due Saturday
+  * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due Tuesday
   * next week quiz and 2 shorts
 * Table Questions
   * can you do flex boxes within flex boxes?
@@ -1044,11 +1044,16 @@ $('.console-intro').on('click', function(e) {
 // game;
 
 game.resPool.resources // change some up
+//change titles
+// get some unicorns!
 
 game.tick();
 
 //max resources
 game.resPool.resources.forEach(function(resource) { resource.value = 100000000; })
+
+
+
 ```
 
 
@@ -1329,6 +1334,10 @@ name: resources
 * http://www.learn-js.org/
 
 ---
-name:  intermission
+name:  Lab1 + Lab2! 
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+* Lab1 due Sat
+* BUT Lab2 out and due 
+
+<!-- <iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->
