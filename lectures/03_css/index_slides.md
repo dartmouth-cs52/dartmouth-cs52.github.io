@@ -345,7 +345,7 @@ ul > li {  } /* child */
 ```html
 <article>
   <ul id="list 0"></ul>
-  <div id="title">Title</title>
+  <div id="title">Title</div>
   <ul id="list 1">
     <li>1</li>
     <li>2</li>

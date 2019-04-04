@@ -48,6 +48,7 @@ name: CS52
 
 
 
+
 ---
 name: Table Questions?
 
@@ -56,12 +57,44 @@ name: Table Questions?
 .large[![](img/tq-sources.jpg)]
 
 
+???
+* solid bug nice
+
+
+---
+name: Citation Format
+
+Make your in-code citations look something like this:
+
+```js
+// adapted from: http://stackoverflow.com/someurl
+// this method does x and y
+
+or
+
+// copied off of Cameron Howe's code for this assignment
+// this method does x and y
+```
+
 
 ---
 name: Table Questions?
 
 .medium[![](img/tq-precendence.jpg)]
 
+
+---
+name: JS Deluge
+
+.large[![](img/deluge2.gif)]
+
+
+???
+* don't want to devolve into a syntax class
+* but ask questions
+* let it all wash over you, a meditative javascript rain
+* for some reason i remembered this one as being more fun that it looks
+* later in the class, if you are asking for help and we ask soemthing like, what does this code do?  we most likely want a step through of,  this is a variable with the value x and we are passing that into a function etc. understanding what you think the code is doing is key to us helping
 
 
 ---
@@ -143,6 +176,9 @@ name: ECMAScript
 * first-class function: functions are objects
 * * ECMA (standards organization) was originally **European Computer Manufacturers Association**, but then decided to just stop being an acronym for anything. Still in **Geneva**. Meet periodically to p lan how to make things better.
 * some things i like about js:  **functional paradigm, first class functions, everything is a dictionary**
+* what is a first class function? 
+  * no different from a variable, you can pass a function as an argument
+  * can return a function, and can assign a function to a variable.
 
 
 
@@ -158,6 +194,7 @@ name: mixed reviews
 * no relation to java (named that way by netscape as a marketing move because sun's java was popular)
 * love it, hate it
 * sure is popular though
+* 2019 results out in a couple of weeks, but unlikely to be different
 
 
 
@@ -180,8 +217,10 @@ name:
 ???
 * ha don't worry we'll dig into this
 * i tried to find some fun learn js game but not much out there, most of them seem overly complicated, if anybody knows of one though!
+* OR final project idea!
 * lets channel some sergey bratus and hack game instead,  he would not hack this game as it is javascript which is insecure and he disables on all computers
-
+* event loop to handle asynchronous actions - we'll dig into that a lot
+* basically events come in and go into a queue to be processed
 
 
 ---
@@ -266,7 +305,7 @@ console.log(false == 0) // → true
 ???
 * will convert things for fun and profit
 * sometimes useful, generally though.. not so  much
-* anything funny with the string and number examples?
+* anything funny with the string and number examples? concatenation
 * can this cause problems? yes
 * more on false shortly
 * `console.log([] == "")` is true
@@ -397,12 +436,34 @@ typeof useless == 'function'
 ```
 
 ???
+* something for eveyrone in these slides - some weeks its all gifs, some its all code...
 * `arguments[0]` (weird and bad)
 * also actually is an object will dig in a bit later
 * in function declaration you name the argument
 * can have default value
 
 
+
+---
+name:  functions as arguments
+
+.small[![](img/thepath.jpg)]
+
+
+```js
+//default values
+var foo = function(x="hi") { console.log(x);}
+
+//passing function as argument
+setTimeout(foo, 1000);
+
+//anonymous function
+setTimeout(function() {console.log("hello")}, 1000);
+
+```
+
+???
+* if there is anything you remember today, its that you can pass functions around, that that is the js way
 
 
 ---
@@ -434,6 +495,7 @@ bar.name === bar['name']
 * note es6 template string builder
 * this will be explained
 * also functions -- everything is really just a dictionary
+* this is very beautiful if you think about it
 
 
 
@@ -481,7 +543,7 @@ list.myownthing = 'why is this here';
 
 ???
 * list[4] // returns undefined and prints hi
-
+* powerful but also confusing
 
 
 
@@ -668,6 +730,8 @@ name: Layout -> BOX MODEL
 
 ---
 name: `document`
+
+.medium[![](img/html-dom.jpg)]
 
 * DOM is available in global variable `document`
 * JS can query or modify the DOM and CSSOM
@@ -1350,6 +1414,10 @@ name: resources
 name:  Lab1 + Lab2! 
 
 * Lab1 due Saturday
-* Lab2 out and due Tuesday 
+* Lab2 out and due Tuesday
+  * [http://cs52.me/assignments/lab/quizzical/](http://cs52.me/assignments/lab/quizzical/)
+
+
+
 
 <!-- <iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->
