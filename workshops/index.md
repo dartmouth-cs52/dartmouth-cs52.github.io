@@ -43,11 +43,9 @@ Each workshop session will be ~60 minutes on a web technology, tool, framework, 
 
 We'll be using **github classroom** to autoprovision repositories and set up teams.
 
-Every member on your team **must** use github classroom to set up the teams correctly and automatically.  Choose your term and section below:
+Every member on your team **must** use github classroom to set up the teams correctly and automatically.  Find the link for github classroom on the Canvas assignment.
 
-* setup and clone a github repo using github classroom here: [https://classroom.github.com/g/6woYybH6](https://classroom.github.com/g/6woYybH6)
-
-The first person on your team will name the repo and the team. Each consecutive person will click on the same github classroom link above and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place. Remember, use the github classroom to create **and join** the repository. Everybody on your team must click this link. Do not add team members as collaborators manually.
+The first person on your team will name the repo and the team. Each consecutive person will click on the same github classroom link and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place. Remember, use the github classroom to create **and join** the repository. Everybody on your team must click this link. Do not add team members as collaborators manually.
 
 ## Workshop Overview
 
@@ -74,7 +72,7 @@ If your tutorial requires any lengthy download or install procedures please let 
 * show some use cases
 * discuss pros/cons
 
-Motivating the technology is import.  This should start with an [ELI5](https://www.reddit.com/r/explainlikeimfive/) and then you can expand to how it fits in with what we've learned so far and use cases.
+Motivating the technology is import.  This should start with an [ELI5](https://www.reddit.com/r/explainlikeimfive/) and then you can expand to how it fits in with what we've learned so far and use cases. What is the big deal about this thing you are presenting, why should I care? 
 
 ### Tutorial Section
 
@@ -90,12 +88,14 @@ It should include:
 * Explanations of the what **and** the why behind each step. Try to include:
   * higher level concepts
   * best practices
+* 2 reflection questions
 
 End the tutorial with a "what you should have at this point" section which includes a **short** listing of features. This is the minimal set of things you think they should accomplished/learned during the course of the tutorial and will be used in grading. Format this as a checklist:
 
 - [x] created navbar
 - [ ] styled body
 - [ ] clickable buttons
+
 
 ### Wrap-Up Discussion Section
 
@@ -104,6 +104,7 @@ End the tutorial with a "what you should have at this point" section which inclu
 * lead short discussion
 * answer questions
 * individual teams share results
+
 
 ## To Turn In (due after workshop):
 
