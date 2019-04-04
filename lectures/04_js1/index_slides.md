@@ -20,9 +20,8 @@ name: base
 ---
 name: CS52
 
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fnatgeo%2Fvideos%2F10154506688308951%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
-
+.large[![](img/tq-border-box.jpg)]
 
 
 ---
@@ -35,11 +34,6 @@ name: CS52
   * [lab1-landingpage](http://cs52.me/assignments/lab/landing-page/) due Saturday
   * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due Tuesday
   * next week quiz and 2 shorts
-* Table Questions
-  * can you do flex boxes within flex boxes?
-
-.medium[![](img/table-face-removed.jpg)]
-
 
 ???
 * can do better on Questions
@@ -50,6 +44,25 @@ name: CS52
 * lab2 - building your own buzzfeed style quizz - 30 lines of js or less
 * lots to cover today but more fun if you doodle or ask questions
 * quizzes generally unannounced as studying for them doesn't necessarily help - just pay attention to assignments - maybe study up on git branches and merges and pulls
+
+
+
+
+---
+name: Table Questions?
+
+.large[![](img/tq-css-vs-js.jpg)]
+<br>
+.large[![](img/tq-sources.jpg)]
+
+
+
+---
+name: Table Questions?
+
+.medium[![](img/tq-precendence.jpg)]
+
+
 
 ---
 name: Where in the Stack?
@@ -1336,8 +1349,7 @@ name: resources
 ---
 name:  Lab1 + Lab2! 
 
-
-* Lab1 due Sat
-* BUT Lab2 out and due 
+* Lab1 due Saturday
+* Lab2 out and due Tuesday 
 
 <!-- <iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->
