@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Intro React — Short Assignment
-published: false
+published: true
 comment_term: sa-react-videos
 ---
 
@@ -16,11 +16,11 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 🚀 : a step to not forget
 
 
-🚀 To start grab the github classroom link to start a new repository.  Then you'll pull in your webpack+babel+eslint starter code like so:
+🚀 To start grab the github classroom link to start a new repository.  **Then** you'll pull in your webpack+babel+eslint starter code like so:
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-18s/starterpack-your-gitub-username.git
+git remote add starter git@github.com:dartmouth-cs52-19s/starterpack-your-gitub-username.git
 git pull starter master
 ```
 
@@ -38,7 +38,7 @@ We're going to need to add a few things to our project to get it ready for React
 ```bash
 # just make sure you're in the root of your project
 
-yarn add --dev @babel/preset-react babel-plugin-transform-class-properties
+yarn add --dev @babel/preset-react @babel/plugin-proposal-class-properties
 # installs a react babel preset and really helpful plugin
 ```
 
@@ -46,19 +46,17 @@ yarn add --dev @babel/preset-react babel-plugin-transform-class-properties
 
 ```json
 {
-  "plugins": ["transform-class-properties"],
+  "plugins": ["@babel/plugin-proposal-class-properties"],
   "presets": [
     ["@babel/react"],
     ["@babel/preset-env", {
-      "targets": {
-        "browsers": ["last 2 versions"]
-      }
+      "targets": "> 0.25%, not dead"
     }]
   ]
 }
 ```
 
-Note: we also added in [transform-class-properties](https://babeljs.io/docs/plugins/transform-class-properties) to plugins as well.  This gives us some more cool notation including using arrow functions when defining class methods.
+Note: we also added in [transform-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) to plugins as well.  This gives us some more cool notation including using arrow functions when defining class methods.
 
 
 ### eslint
@@ -74,10 +72,12 @@ Let's modify your `.eslintrc` to add in some React support.
         "react/jsx-uses-vars": 2,
         "react/react-in-jsx-scope": 2,
         "react/prop-types": 0,
+        "react/destructuring-assignment": 0,
         "react/jsx-first-prop-new-line": 0,
         "react/jsx-filename-extension": 0,
         "jsx-a11y/click-events-have-key-events": 0,
-        "jsx-a11y/no-noninteractive-element-interactions": 0
+        "jsx-a11y/no-noninteractive-element-interactions": 0,
+        "react/jsx-one-expression-per-line":0
     },
     "plugins": [
         "react"
@@ -90,6 +90,7 @@ Let's modify your `.eslintrc` to add in some React support.
     }
 }
 ```
+
 
 
 ### Dependencies
@@ -124,23 +125,21 @@ yarn upgrade-interactive --latest #this is new so your mileage may vary
 
 Let's make our first React view.  React operates on a concept of components -- there are a few different kinds of components with the most simple being just a function (sometimes called a function or dumb component).  Lets start with that.
 
-🚀Edit your `index.js` file:
-
+🚀 Edit your `src/index.js` file:
 
 ```javascript
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './style.scss';
 
-const App = () => {
-  return <div className="test">All the React are belong to us!</div>;
-};
+const App = () => <div className="test">All the REACT are belong to us!</div>;
 
 ReactDOM.render(<App />, document.getElementById('main'));
 ```
 
 Now check your page: http://localhost:8080
 
-Our first React app!  Ok we're done. Kidding!
+Our first React app!  Ok we're done. Kidding! 
 
 
 ## StarterPack
@@ -156,7 +155,6 @@ git push starter master
 Since we added your starterpack repo as a remote named `starter` you can push to it even though after this point we'll diverge.
 
 ⚠️ **Careful!  Don't push anything else to starter for this assignment**, you want your starterpack to only contain starter configurations, not the rest of your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
-
 
 ## [JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
 

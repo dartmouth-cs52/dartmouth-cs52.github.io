@@ -29,7 +29,7 @@ Then we will add in Firebase for persistent storage. Firebase is a backend as a 
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-18s/starterpack-your-gitub-username.git
+git remote add starter git@github.com:dartmouth-cs52-19s/starterpack-your-gitub-username.git
 git pull starter master  # you may need --allow-unrelated-histories
 ```
 

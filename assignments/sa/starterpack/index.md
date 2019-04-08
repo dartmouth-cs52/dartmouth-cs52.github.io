@@ -600,9 +600,19 @@ body, html {
 
 Wait, we were promised hot-reloading, whatever that means!
 
+Ok, ok. Add this in to your `webpack.config.js` file along with the `module.exports`:
+
+```js
+  devServer: {
+    hot: true,
+  },
+```
+
 You got it!  Try changing your `style.scss` file – you should see changes but your counter doesn't restart!
 
-On the terminal you'll see anytime you change your project files that webpack recompiles automatically - and in your browser console log as well.  Right now if you edit `index.js` you might be a full reload - that is because that file is everything so any changes in it will trigger a full reload.
+On the terminal you'll see anytime you change your project files that webpack recompiles automatically - and in your browser console log as well. 
+
+For now we'll stick with hot-reloading only css changes though, we'll explore more once we get to react.
 
 ## MiniCssExtractPlugin
 

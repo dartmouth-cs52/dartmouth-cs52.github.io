@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Routing — Short Assignment
-published: false
+published: true
 comment_term: sa-routing
 ---
 
@@ -37,7 +37,7 @@ git push origin --tags
 
 ```bash
 #make sure you are in your sa3 starterpack repo
-yarn add react-router-dom react-router
+yarn add react-router-dom
 
 ```
 
@@ -186,51 +186,31 @@ const FallBack = (props) => {
 };
 ```
 
-## Commit!
+Wait, but this doesn't quite work right, as we've been playing with this for some reason we keep getting a `Cannot GET /test/id1` message, but it works if we just go back to [http://localhost:8080/](http://localhost:8080/)...
 
-Don't forget to commit and push your code so that your starterpack now has routing support and an example!
+## FallBack Server Support
+
+Turns out we need to tell `webpack-dev-server` that if you load a frontend route directly (not through javascript) — rather than refusing to find that file, it should always return `index.html`.  This is an SPA after all. 
+
+🚀 In your `webpack.config.js` file merge in with the other `module.exports`:
+
+```js
+  devServer: {
+    hot: true,
+    historyApiFallback: true,
+  },
+```
 
 ## Deployment
 
-There is one tricky bit with deployment now that we have frontend routes.  The problem is that say you go to your yoursitename.surge.sh/posts/id page. If you ask the server for this page the server will tell you it doesn't exist. Because in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-serve` happens to have a configuration option `historyApiFallback` which makes it serve up the base index.html file for every resource URL that it can't find, but hosting services don't do this by default.
+There is one tricky bit with deployment now that we have frontend routes.  The problem is that say you go to your yoursitename.surge.sh/posts/id page. If you ask the server for this page the server will tell you it doesn't exist. Because in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-dev-server` happens to have a configuration option `historyApiFallback` which makes it serve up the base index.html file for every resource URL that it can't find, but hosting services don't do this by default. So we're going to alter our webpack a bit to be more robust.
 
-🚀 So we're going to alter our webpack a bit to be more robust.
-
-```bash
-yarn add --dev connect-history-api-fallback koa-connect
-```
-
-🚀 Then add to the top of your `webpack.config.js` file:
-
-```js
-const history = require('connect-history-api-fallback');
-const convert = require('koa-connect');
-```
-
-🚀 Now we have to make sure that we are telling webpack to output our files to the root '/' rather than using relative links. Add the following
+🚀 Now we have to make sure that we are telling webpack to output our files to the root '/' rather than using relative links. Add the following to your `webpack.config.js` file:
 
 ```javascript
 mode: env, // right after:
 output: { publicPath: '/' },
 ```
-
-and to the bottom add:
-
-```js
-if (env === 'development') {
-  module.exports.serve = {
-    content: [__dirname],
-    add: (app, middleware, options) => {
-      const historyOptions = {
-        index: '/index.html',
-      };
-      app.use(convert(history(historyOptions)));
-    },
-  };
-}
-```
-
-This tells `webpack-serve` to serve up the `index.html` file always, otherwise if it would reload on any url that wasn't `/` it would return page not found.
 
 Now we're going to do something odd. We're going to make a copy of `index.html` to `200.html`.  What will happen is when you hit a route that *surge* doesn't know about, it will serve up the contents of the `200.html` file. Since this file is your app, it will load up, read the current route, and change the page appropriately. This is *surge* specific but will make our SPA setup pretty robust.
 
@@ -241,6 +221,11 @@ Now we're going to do something odd. We're going to make a copy of `index.html` 
 `yarn deploy`
 
 Check it out in your browser.  Try changing the url to `/badlink`,  it should load your test app and hit the fallback route!
+
+
+## Commit!
+
+Don't forget to commit and push your code so that your starterpack now has routing support and an example!
 
 ## Release V3!
 
