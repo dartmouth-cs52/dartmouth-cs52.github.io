@@ -116,7 +116,7 @@ If there are no errors we can move on!  Leave the server running as now we have 
 One common cause of errors can be dependency version mismatches in the various npm packages.  This is because by default when you `yarn add` something it will attempt to install the most recent thing. One way to attempt to fix this is to update all the versions to the most recent, like so:
 
 ```bash
-# if you have weird version errors
+# IF you have weird version errors
 yarn upgrade-interactive --latest #this is new so your mileage may vary
 ```
 
@@ -309,7 +309,7 @@ Great, now we have a fancy class component but what does it do?  The same thing 
 
 ![](img/component-prefer-stateless.jpg){: .fancy .medium }
 
-Question: do we think that the eslint airbnb rules insist that since the component currently is stateless we should change it?  Or do we disable the rule because we feel that generally we'd like to flexibility to not be yelled at about this?  If you click the [link next to the error](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md) you can see the justification. You should feel free to disable certain rules if you disagree with them. In this particular case we're going to add in some class specific things soon enough.
+Question: do we think that the eslint airbnb rules insist that since the component currently is stateless we should change it?  Or do we disable the rule because we feel that generally we'd like to flexibility to not be yelled at about this?  If you click the [link next to the error](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md) you can see the justification. You should feel free to disable certain rules if you disagree with them. In this particular case we're going to add in some class specific things soon enough, so let's keep going first.
 
 ## Events in React
 
@@ -378,13 +378,15 @@ Ok, so now we should probably update the state as we type into the input.
 this.setState({ searchterm: event.target.value });
 ```
 
-Now, because `onInputChange` needs access to `this` we need to also bind it so that it can find it.  Multiple ways of making that work, we could either call `this.onInputChange` in a fat arrow function callback that we pass to `onChange` like so: `onChange={event => {this.onInputChange(event);}}` or we can bind it.  In the binding option we'll just assign a bound version of the function to that variable like so:
+Now, because `onInputChange` needs access to the `this` that is the `SearchBar` with it's `this.state.searchterm`, we need to also bind it so that it can find it. If we did not then when the `input` component would run the function it would fail due to `input` not have any react state. 
+
+There are multiple ways of fixing this, we could either call `this.onInputChange` in a fat arrow function callback that we pass to `onChange` like so: `onChange={event => {this.onInputChange(event);}}` or we can bind it.  In the binding option we'll just assign a bound version of the function to that variable like so:
 
 ```javascript
 // add to the bottom of your constructor
 this.onInputChange = this.onInputChange.bind(this);
 ```
-This means whenever we reference `onInputChange` now within the class it will refer to a version of that function that is bound to the instance of the object. That is we make sure `onInputChange` runs inside of `SearchBar` rather than inside of `input`. Does that make sense?  Binding in the constructor has the nice property of alerting anybody reading your code that you have certain functions that are called from within other scope.
+This means whenever we reference `onInputChange` now within the class it will refer to a version of that function that is bound to the instance of the object. That is we make sure `onInputChange` runs inside of `SearchBar` rather than inside of `input`. Does that make sense?  Binding in the constructor has the nice property of alerting anybody reading your code that you have certain functions that are called from within other scope, but you should determine what style you like best.  There are a few other ways to do this including [class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) which we will play around with more later. For now let's stick with the normal binding for demonstration purposes. 
 
 🚀 And we should add some way to visualize this so let's add an element to your `render` method:
 
@@ -424,7 +426,7 @@ Now when you try the page, weird stuff happens.  The field is now driven by the 
 <input onChange={this.onInputChange} value={this.state.searchterm} />
 ```
 
-Now when you type the value displayed by the field is actually what is currently in the state.  This is useful for a number of reasons, but primarily it means that the user sees exactly what the state is and React knows exactly what the input is at any point.  You never have to search the DOM for the input field and yank the value, it is always in the state.  In a more complicated example, say we forgot to `setState` in our `onChange` callback on a particular form field. If the field wasn't driven then you might not notice that your state wasn't recording that field and later on would have to debug missing values.  This way the state of the component is authoritative and visible.  Driven components are good - always drive input fields unless you have a good reason not too (no idea what that would be).
+Now when you type the value displayed by the field is actually what is currently in the state.  This is useful for a number of reasons, but primarily it means that the user sees exactly what the state is and React knows exactly what the input is at any point.  You never have to search the DOM for the input field and yank the value, it is always in the state.  In a more complicated example, say we forgot to `setState` in our `onChange` callback on a particular form field. If the field wasn't driven then you might not notice that your state wasn't recording that field and later on would have to debug missing values.  This way the state of the component is authoritative and visible.  **Driven components are good - always drive input fields** unless you have a good reason not too (no idea what that would be).
 
 🚀 Go ahead and delete the `<p> State value: {this.state.searchterm} </p>` line completely, we don't need it.
 
@@ -808,13 +810,15 @@ this.search('pixar');
 Note: because we defined search as an arrow function to begin with we don't need `bind` because arrow notation.
 
 
-🚀 In *SearchBar*  let's call this new callback! Add the following to your `onInputChange` method.
+🚀 In *SearchBar*  let's call this new callback! Add the following to your `onInputChange` method before **or** after the `setState`:
 
 ```javascript
 this.props.onSearchChange(event.target.value);
 ```
 
-Try it out!  You should now be able to type into the search bar and get the results to change. Note that we couldn't use `this.state.searchterm` right after having on the previous line just run `setState`.  The reason for this is that `setState` is not guaranteed to be synchronous, in fact usually it is not as it tries to batch state changes for efficiency. Something to keep an eye out for if you are having bugs where your state seems to be lagging behind.
+Try it out!  You should now be able to type into the search bar and get the results to change.
+
+*Note: that we couldn't use `this.state.searchterm` right after having on the previous line just run `setState`.  The reason for this is that `setState` is not guaranteed to be synchronous, in fact usually it is not as it tries to batch state changes for efficiency. Something to keep an eye out for if you are having bugs where your state seems to be lagging one step behind.*
 
 
 ## Debouncing
@@ -824,11 +828,11 @@ You may notice that it searches immediately when you type.  This both desired, b
 `lodash.debounce` is a higher order function.  It takes as an argument a function and a timeout and returns a new function that is debounced.
 
 ```javascript
-// import at top
+// import to be used in your App component
 import debounce from 'lodash.debounce';
 
 
-// in constructor:
+// in App constructor before you use this.search
 this.search = debounce(this.search, 300);
 ```
 
