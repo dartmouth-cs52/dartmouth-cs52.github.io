@@ -23,7 +23,7 @@ We'll build a starter package that will use:
 * sass
 * babel
 * eslint
-* as well as a suite of cool tools: node, npm, yarn, Atom
+* as well as a suite of cool tools: node, npm, yarn, VSCode
 
 Don't worry we'll learn allllll about it.
 
@@ -100,7 +100,7 @@ mkdir src #create directory
 touch src/index.js   #creates an empty file
 ```
 
-🚀 Now in **Atom** lets give our app something to do.
+🚀 Now in **VSCode** lets give our app something to do.
 
 ```javascript
 console.log('starting up!');
@@ -431,11 +431,11 @@ Excellent, now your page is keeping count of how long its been since you loaded 
 
 ![](img/eslint.png){: .fancy .small}
 
-Ok, how about we add in linting. Linters are code parsers that check your code for syntax errors, common style mistakes, and makes sure that your code is clean and follows some best practices. Linters help save time, detect bugs, and improve code quality. Linters exist for all types of languages and even markdown such as HTML, CSS, and JSON. Linters are especially helpful for detecting syntax errors while using dynamically typed languages in lightweight editors such as Atom and Sublime.
+Ok, how about we add in linting. Linters are code parsers that check your code for syntax errors, common style mistakes, and makes sure that your code is clean and follows some best practices. Linters help save time, detect bugs, and improve code quality. Linters exist for all types of languages and even markdown such as HTML, CSS, and JSON. Linters are especially helpful for detecting syntax errors while using dynamically typed languages in lightweight editors such as VSCode and Atom.
 
-In *Atom* install the `linter-eslint` plugin.
+In *VSCode* install the `eslint` plugin.
 
-![](img/atom-eslint.png){: .fancy .small}
+![](img/vscode-eslint.png){: .fancy .small}
 
 
 The recommended linter plugin for javascript is [Eslint](http://eslint.org/).
@@ -484,7 +484,7 @@ yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y 
 
 If you find a rule you want to modify, or ignore — you can add it in above.  `0` means turn off, `1` means warning, `2` means throw an error, with additional options available per each rule's description page.
 
-🚀 Now go to Atom -> Preferences -> Packages -> linter-eslint -> Settings, and check "Fix Errors on Save". Super useful. This will fix indentation problems and some other things automatically whenever you save. Now restart Atom.
+🚀 Now go to VSCode -> Preferences -> Settings -> Search 'eslint' -> and check "Auto Fix on Save". Super useful. This will fix indentation problems and some other things automatically whenever you save. Now restart VSCode.
 
 When you see errors such as below:
 
@@ -494,7 +494,7 @@ You can click on the definition of the error to learn more.  Note: many of these
 
 🚀  Now let webpack include eslint! In your `webpack.config.js` file, add `{ loader: 'eslint-loader' }` to the loaders section for `test: /\.js$/`.
 
-This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise. Not only will Atom show the errors - but the browser console will as well.
+This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise. Not only will VSCode show the errors - but the browser console will as well.
 
 From here on your assignments will all use an `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
