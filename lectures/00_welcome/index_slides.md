@@ -1,6 +1,6 @@
 layout: true
 class: center, middle
-name: MORON
+name: pic
 background-size: contain
 
 ---
@@ -10,7 +10,6 @@ class: center, top
 name: fragment
 
 .title[{{name}}]
-published: false
 
 ---
 layout: true
@@ -19,8 +18,6 @@ name: base
 
 .title[{{name}}]
 
-
-published: false
 
 ---
 name: CS52
@@ -31,14 +28,21 @@ name: CS52
 
 [Tim Tregubov](http://zingweb.com)
 
+???
+* you are the lucky "few" - waitlist stretches pretty long still, have already started the 21s waitlist
 
 ---
 name: What is?
 
-<iframe width="600" height="400" src="https://www.youtube.com/embed/82DNYqurkxo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="600" height="400" src="https://www.youtube.com/embed/82DNYqurkxo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+.medium[![](img/cupstacking2.gif)]
+.small[![](img/cupstacking.gif)]
+
+
 
 ???
-* last year I taught cupstacking - but afterwards was told that wasn't full-stack...
+* when i first was asking to teach this class i thought i was teaching this
+* but afterwards was told that wasn't full-stack...  not great course reviews that year especially since we lost regionals
 
 
 
@@ -49,22 +53,24 @@ name: What is?
 
 
 ???
-* this year i thought i had it right and ordered a bunch of pancakes but procurement told me that its very unlikely that the class is about making pancakes...
+* the following year i thought i had it right and ordered a bunch of pancakes but procurement told me that its very unlikely that the class is about making pancakes...
 * sorry they cancelled the order - maybe later in the term once final projects start
 * so help me out - what is this thing?
 
 ---
 name: Survey Results
-
-* I want .orange[**coding to feel fun and fulfilling**], and to gain experience for future internships and jobs.
-* I am really excited to take this course! I do not know much about webdev but it seems extremely .blue[**relevant and useful for real world applications**].
-* I'd like to become more .orange[**comfortable building real-time applications**] with web technologies. I find myself getting lost in the array of available frameworks
-* I would like to be able to .blue[**design beautiful, interactive websites**] so that I can start working on some ideas for companies
-* Learning useful coding skills for .orange[**creating back end apis and elegant front end ui**].
-* hope to be comfortable enough to take on more .blue[**substantial projects**]
-* I'm .orange[**excited to learn**] how to .orange[**connect front and backends.**]
-* give me .blue[**exposure to the tools and techniques used by developers in the real world**] so that I can apply my ideas and coding ability to .orange[**real projects/applications**] throughout my life
-* I want to learn modern web technologies and build websites and apps using .blue[**best practices**].
+* Learn best practices/standards in webdev; Learn state-of-the-art webdev tools, technologies, and techniques.
+* Excited to challenge myself, and hope that I will be .orange[**proud of my final project**].
+* Have a greater appreciation for frontend so that .orange[**my code can be implemented as well as possible**]
+* have the tools to .orange[**build real working web apps**]!
+* web dev is most important types of development because it .orange[**interacts with the user most often and most directly**]
+* have a small .orange[**collection of really neat projects**].
+* Get a feeling of the group-working environment for software engineerss
+* I'd like to be a .orange[**pro web developer by the end**] of this course!
+* want to .orange[**build something that is my own**], not something dictated by a strict assignment.
+* build something I am proud of, host it, and .orange[**leave it up for all the world to marvel at!**]
+* like to .orange[**build some sick websites/APIs**],feel proud of what we have created
+* be able to do a web-based project from .orange[**start to finish**].
 
 ???
 
@@ -102,8 +108,8 @@ client ⇔ server ⇔ database
 .large[![](img/sampleweb.gif)]
 
 ???
-* full-stack implies working knowledge of all the components
-* my favorite classes have always been those that empower
+* a full-stack dev implies working knowledge of all the components
+* my favorite classes have always been those that empower - this will hopefully make you all magicians
 
 ---
 name: CS52 Tech Stack
@@ -125,11 +131,11 @@ name: CS52 Tech Stack
 * going to be **latest and greatest**
 * no rails or django or php, none of that first or second gen tech here
 * some of this stuff in actively changing
-* surprisingly the web as a platform is still rapidly evolving - after being around for 20 years now
+* surprisingly the web as a platform is **still rapidly evolving** - after being around for 20 years now
 * desktop technology is much more stable/stodgy.
-* background and concepts behind the best practices and tool design
+* **background and concepts behind the best practices and tool design**
 * static vs server side rendered vs clientside
-* don't worry we'll mostly just be building all term long!
+* don't worry we'll mostly just be **building all term long**!
 
 
 ---
@@ -140,13 +146,13 @@ name: Sample Weekly Projects
 * build a beautiful static landing page
 * build a buzzfeed style quizz site
 * build a realtime collaborative note-taking app
-* classy blogging app
+* classy CRUD app with all the bells and whistles
 * api backend and databases
 
 
 ???
 
-* classy blogging like medium
+* think medium or pintrest or twitter CREATE RETRIEVE UPDATE DELETE
 * shorter assignments will include building a bot and a mobile app
 * someone has **said that course is like a firehose**, fine maybe it is a little intense but builds character
 * **if you are a senior looking for an easy spring class, we might not work out, its not you its me, i just want you to love learning.**
@@ -158,7 +164,7 @@ name: Online @
 
 
 * web: [http://cs52.me](http://cs52.me)
-* github: [http://github.com/dartmouth-cs52-18s](http://github.com/dartmouth-cs52-18s)
+* github: [http://github.com/dartmouth-cs52-19s](http://github.com/dartmouth-cs52-19s)
 
 ???
 
@@ -168,69 +174,15 @@ name: Online @
 ---
 name: Staff
 
-<div class="rtable rtable--7cols">
+.large[![](img/staff.jpg)]
 
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/jiachen.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:jiachen.jiang.20@dartmouth.edu">Jiachen Jiang</a></div>
-  <div style="order:3;" class="rtable-cell"></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:TBA">TBA</a></div>
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/yeonjae.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:yeonjae.park.19@dartmouth.edu">Yeonjae Park</a></div>
-  <div style="order:3;" class="rtable-cell"></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kfarmer.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:kevin.r.farmer.18@dartmouth.edu">Kevin Farmer</a></div>
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/sia.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:shiyao.peng.20@dartmouth.edu">Sia Peng</a></div>
-  <div style="order:3;" class="rtable-cell"></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/alma.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:alma.wang.18@dartmouth.edu">Alma Wang</a></div>
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/luisa.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:luisa.n.vasquez.gutierrez.18@dartmouth.edu">Luisa Vasquez</a></div>
-  <div style="order:3;" class="rtable-cell"></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/bencooper.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:benjamin.k.cooper.18@dartmouth.edu">Benjamin Cooper</a></div>
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/jon.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:jonathan.d.gonzalez.18@dartmouth.edu">Jon Gonzalez</a></div>
-  <div style="order:3;" class="rtable-cell"></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/mauPR.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:mauricio.esquivel.rogel.18@dartmouth.edu">Mauricio Esquivel Rogel</a></div>
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/annie.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:yichen.ke.19@dartmouth.edu">Annie Ke</a></div>
-  <div style="order:3;" class="rtable-cell"></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/barry.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:barry.a.yang.18@dartmouth.edu">Barry Yang</a></div>
-
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="/assets/imgs/kitten.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:TBA">TBA</a></div>
-  <div style="order:3;" class="rtable-cell"></div>
-
-  <div style="order:4;" class="rtable-cell"></div>
-  <div style="order:5;" class="rtable-cell"></a></div>
-
-
-
-
-
-</div>
 
 ???
 * brilliant course staff
 * ask us all the questions
 * i'm excited to be working with them!
 * we're all excited to be working with you!
+* lots of help hours
 
 ---
 name: etc
@@ -262,10 +214,10 @@ name: Wait List?!?
 * from blank terminal to full project
 
 ???
-* 120 people tried to get into this course
+* 130 people tried to get into this course
 * you are the few the proud
 * still an experiment
-* not going to dumb things down so you'll be doing industry standard stuff, no web ide's or lots of starter code.
+* **not going to dumb things down** so you'll be doing industry standard stuff, no web ide's or lots of starter code.
 * the goal to get you to be comfortable going from an blank terminal to a full projecct
 * open syllabus more later
 
@@ -281,7 +233,7 @@ name: Slack
 * mobile, desktop, web apps
   * (all web technologies actually)
   * get used to it
-  * you'll be writing a chat bot for Slack soon!
+  * you can write a chat bot for Slack as a short assignment
 
 ???
 * i don't do email well...
@@ -312,6 +264,7 @@ name: Grading
 * **re-submits (must have submitted something)**
 * late is letter grade per day basically
 * hopefully class isn't super boring - at least your workshops will be interesting
+* **attendance** sheets on table
 
 ---
 name: Extra Credit is Real
@@ -321,6 +274,7 @@ name: Extra Credit is Real
 
 ???
 * up to 110% per each assignment
+* tough quizzes and quality of work expectations
 
 ---
 name: Workshop?
@@ -354,7 +308,7 @@ name: Project Demos
 ???
 * together with cs98 and dali and others
 * 500+ people
-* not presentations (science fair style)
+* not presentations (expo style)
 * some amazing projects like yipyip: https://projects.invisionapp.com/share/HABOKZQRZ
 
 
@@ -421,6 +375,7 @@ name: Open Syllabus Contribution
 
 ???
 * mentor Don Sheehan - best way to learn something is to teach it
+* come back as a TA, we have a lot of fun
 
 
 ---
@@ -454,11 +409,11 @@ name: Code
 ---
 name: Survey Results
 
-.fancy.medium[![](img/easy-peasy.jpg)]
-.fancy.medium[![](img/easypeasy.png)]
+<!-- .fancy.medium[![](img/easy-peasy.jpg)] -->
+<!-- .fancy.medium[![](img/easypeasy.png)] -->
+.fancy.medium[![](img/easy-peasy-3.jpg)]
 
-
-.fancy.small[![](img/awesomestuff.jpg)]
+.fancy.small[![](img/ready-3.jpg)]
 
 ???
 * good mix of backgrounds and desires
@@ -476,9 +431,13 @@ name: Note on Slides
 * [h] for help
 * [p] for presenter mode with full notes
 
+??? 
+* there are more notes if you go into presenter mode, for most lectures there stuff in there
+* mostly for me, and lectures will be mostly conceptual and then you learn by doing
 
 
 ---
 name: onwards
 
 [the internet](../01_interwebs)
+

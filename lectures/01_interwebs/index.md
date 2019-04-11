@@ -1,10 +1,17 @@
 ---
 layout: page_with_slides
 title: The Interwebs
-published: false
+published: true
 comment_term: lecture-interwebs
 ---
 
+
+{% include slides-toggle.html %}
+
+
+<hr>
+
+<h2>deprecated notes:</h2>
 
 
 "A series of tubes" — [Senator Ted Stevens (R-Alaska)](https://en.wikipedia.org/wiki/Series_of_tubes)

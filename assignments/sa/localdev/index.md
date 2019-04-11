@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Local Dev Environment — Short Assignment
-published: false
+published: true
 comment_term: sa-localdev
 ---
 
@@ -12,15 +12,13 @@ First things first.  You need a local development environment.
 
 ## Tools! ##
 
-![](https://github-atom-io-herokuapp-com.global.ssl.fastly.net/assets/logo@2x-a922b71bfaf4cdc1dcf7a5ea29b92a91.png)
-
-🚀Install [atom](http://atom.io).  Atom is a code editor.  Atom is an open source, made by Github
-web technology written in html+css+javascript using a platform called [Electron](http://electron.atom.io/). Using Electron to create a desktop app is an option for the final project.  We'll be using Atom for coding and utilizing a lot of its plugins. After installing and starting up Atom, run: *Atom -> Install Shell Commands* to be able to run `atom` from the commandline.
+🚀Install [VSCode](https://code.visualstudio.com/download). VSCode is a code editor. VSCode is an open source, made by Microsoft
+web technology written in html+css+javascript using a platform called [Electron](https://electronjs.org/). Using Electron to create a desktop app is an option for the final project.  We'll be using VSCode for coding and utilizing a lot of its plugins. After installing and starting up VSCode, run: *cmd + shift + p -> Shell Command: Install 'code' command in PATH* to be able to run `code` from the command line. *You are welcome to use another editor like [Atom](http://atom.io) instead, but we'll be adding various plugins and you'll need to make sure the equivalent functionality such as eslinting is available.*
 
 🚀If you don't have it, install [Google Chrome](https://www.google.com/chrome/browser/desktop/).  Why?
-Because we'll be using [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) for debugging — more on that later.  Also because all the other browsers support slightly different standards, and Chrome just displays pages more correctly and sticks to the actual standards so we can all be on the same page.  To re-iterate: you are required to use Chrome.
+Because we'll be using [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) for debugging — more on that later.  Also because all the other browsers support slightly different standards, and Chrome simply displays pages more correctly and sticks to the actual standards so we can all be on the same page.  To re-iterate: you are required to use Chrome for this class.
 
-🚀 If you don't have git set up on your machine: Install [GitHub Desktop](http://desktop.github.com).  We will be mostly using `git` from the commandline but installing the App gives you a nice tree visualization and setups up your local git environment.
+🚀 If you don't have git set up on your machine: Install [GitHub Desktop](http://desktop.github.com).  We will be mostly using `git` from the command line but installing the App gives you a nice tree visualization and setups up your local git environment.
 
 
 ### OS X ###
@@ -122,9 +120,9 @@ Checking connectivity... done.
 ### Create some HTML
 
 ```bash
-💻 atom index.html
+💻 code index.html
 ```
-🚀basically just start Atom and create a file called `index.html` in your cloned workspace.
+🚀basically just start VSCode and create a file called `index.html` in your cloned workspace.
 
 ![](img//index_html.png){: .fancy .small }
 
@@ -235,27 +233,30 @@ As soon as you `git push` your site should become available at your URL!  *Note:
 
 ![](img//done.png){: .fancy .small }
 
+Well, almost, it might not quite be working yet.
 
 ### What About DNS?!?!
 
 You didn't actually have to do any DNS setup,  what happened?
 
-NameCheap set up all the right Domain Name Service Records automatically for you. In NameCheap you can inspect what it did:
+NameCheap should have set up the right Domain Name Service Records automatically for you. In NameCheap you can inspect what it did:
 
-![](img//github_dns_already_setup.png){: .fancy .large }
+![](img/a-records.jpg){: .fancy .large }
 
 Take a look at your settings in your Namecheap Dashboard.
 
-Note the 2 IP addresses in the `A Record` fields,  those are github servers ([apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider))
+Note the several IP addresses in the `A Record` fields,  those are github servers ([apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider))
+
+⚠️ If you have a *URL Redirect Record / CNAME Record* then the github setup failed. You should delete both the *URL Redirect Record* and the *CNAME Record* in NameCheap and add in the *A Record* per the [github apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider). Here's [more on adding in *A Records*.](https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain). Basically just make it match the above screenshot, you may have to wait a little while for the changes to work.  
 
 🚀 Try doing a reverse DNS lookup (IP address to name):
 
 ```bash
-💻 host 192.30.252.153
-153.252.30.192.in-addr.arpa domain name pointer pages.github.com.
+💻 host 185.199.108.153
+Host 153.108.199.185.in-addr.arpa. not found: 3(NXDOMAIN)
 ```
 
-Wait,  but how does pages.github.com know? Does that machine serve lots of addresses?
+Wait, so it doesn't even have a DNS entry? But how does github know what page to show? Does that machine serve lots of addresses?
 
 Yes, those IPs point to load balancers that direct requests based on the transport packet which happens to have the domain name requested in it.  This is where that magical `CNAME` file comes in.  That tells GitHub Pages that your repository should be served when requests come in for that domain. :cool:
 

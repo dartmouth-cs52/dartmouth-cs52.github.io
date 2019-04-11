@@ -44,6 +44,7 @@ Your browser does not support the audio element.
 * CS60
 * an internets was sent by my staff!
 * we'll be sending each other lots of internets this term
+* so we'll learn today what happens from your browser on out
 * not wrong though
 
 ---
@@ -246,6 +247,7 @@ name: Application Layer
 ???
 
 * we'll all be running this web server thing by thursday
+* browser and web server - client - server
 
 
 ---
@@ -312,6 +314,7 @@ name: Internet Data Flow
 * two computers (referred to as hosts) that need to communicate
 * your laptop is Host A and Google is Host B
 * The router is the network hardware similar to an airline controller
+* anybody ever listened to an air traffic controller?
 
 ---
 name: Encapsulation and Packets
@@ -362,8 +365,8 @@ name: Private Addresses
 * `10.*.*.*` and `192.168.*.*` addresses are reserved for private networks.
 * Dartmouth Secure is a `10.` network.
 * significant bits notation:
-  * `10.0.0.0/8` (1 byte masked)
-  * `192.168.0.0/16` (2 bytes masked)
+  * `10.0.0.0/8` (1 byte masked) `10.0.0.*`
+  * `192.168.0.0/16` (2 bytes masked) `192.168.*.*`
   * subnets use bitmasks
 
 
@@ -385,7 +388,7 @@ name: Localhost
   * all point to the machine you are on
 
 
-.fancy.medium[![](img/noplacelikehome.jpg)]
+.medium[![](img/noplacelikehome.jpg)]
 
 
 ???
@@ -419,7 +422,7 @@ http://127.0.0.1:8000
 
 ???
 * what do ports identify again?
-* each computer has 2^16-1  65535
+* each operating system on computer has 2^16-1  65535
 * identifies know apps as ports
 * specific services can run on ports
 * btw don't worry about memorizing any of the little details
@@ -439,7 +442,7 @@ name: More Ports
 
 ???
 * allows many services to run on a single machine
-* part of transport layer and TCP!
+* part of transport layer (getting to) and TCP protocol (identifying application)!
 
 
 
@@ -514,6 +517,7 @@ name: Lookup
 * bottom lines with server tell you which local server was used
 * not necessarily the authoritative ones
 * if we were in sudi it would be a 10 year old PC running DNS in the basement machine room
+* is a bit complicated but you'll be setting up domains as your first assignment so its good to know why it takes time.
 
 
 
@@ -554,7 +558,6 @@ How does a packet find its way around all those tubes!?
 * your computer, dartmouth, some machine in boston, etc
 * forwards the packet on based on a set of rules
 * routing tables that tell it where to send packets.
-* bit similar to DNS
 * packets are forwarded along to routers that should know more about where to send them
 
 
@@ -884,8 +887,8 @@ background-image: url(http://i.giphy.com/k8kG3Plo87Aqs.gif)
 background-position: center
 background-repeat: no-repeat
 background-size: cover
-name: 18S Let's go!
+name: 19S Let's go!
 
 
-.white-foreground[short assignment 1 out: due Thursday 29th 🕛]
+.white-foreground[short assignment 1 out: due Thursday  🕛]
 

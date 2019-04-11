@@ -20,9 +20,8 @@ name: base
 ---
 name: CS52
 
-<iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fnatgeo%2Fvideos%2F10154506688308951%2F&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
 
-
+.large[![](img/tq-border-box.jpg)]
 
 
 ---
@@ -32,14 +31,9 @@ name: CS52
   * basic javascript
   * the DOM
 * Next:
-  * [lab1-landingpage](http://cs52.me/assignments/lab/landing-page/) due Friday night
-  * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due Monday night
+  * [lab1-landingpage](http://cs52.me/assignments/lab/landing-page/) due Saturday
+  * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due Tuesday
   * next week quiz and 2 shorts
-* Table Questions
-  * can you do flex boxes within flex boxes?
-
-.medium[![](img/table-face-removed.jpg)]
-
 
 ???
 * can do better on Questions
@@ -50,6 +44,58 @@ name: CS52
 * lab2 - building your own buzzfeed style quizz - 30 lines of js or less
 * lots to cover today but more fun if you doodle or ask questions
 * quizzes generally unannounced as studying for them doesn't necessarily help - just pay attention to assignments - maybe study up on git branches and merges and pulls
+
+
+
+
+
+---
+name: Table Questions?
+
+.large[![](img/tq-css-vs-js.jpg)]
+<br>
+.large[![](img/tq-sources.jpg)]
+
+
+???
+* solid bug nice
+
+
+---
+name: Citation Format
+
+Make your in-code citations look something like this:
+
+```js
+// adapted from: http://stackoverflow.com/someurl
+// this method does x and y
+
+or
+
+// copied off of Cameron Howe's code for this assignment
+// this method does x and y
+```
+
+
+---
+name: Table Questions?
+
+.medium[![](img/tq-precendence.jpg)]
+
+
+---
+name: JS Deluge
+
+.large[![](img/deluge2.gif)]
+
+
+???
+* don't want to devolve into a syntax class
+* but ask questions
+* let it all wash over you, a meditative javascript rain
+* for some reason i remembered this one as being more fun that it looks
+* later in the class, if you are asking for help and we ask soemthing like, what does this code do?  we most likely want a step through of,  this is a variable with the value x and we are passing that into a function etc. understanding what you think the code is doing is key to us helping
+
 
 ---
 name: Where in the Stack?
@@ -130,6 +176,9 @@ name: ECMAScript
 * first-class function: functions are objects
 * * ECMA (standards organization) was originally **European Computer Manufacturers Association**, but then decided to just stop being an acronym for anything. Still in **Geneva**. Meet periodically to p lan how to make things better.
 * some things i like about js:  **functional paradigm, first class functions, everything is a dictionary**
+* what is a first class function? 
+  * no different from a variable, you can pass a function as an argument
+  * can return a function, and can assign a function to a variable.
 
 
 
@@ -145,6 +194,7 @@ name: mixed reviews
 * no relation to java (named that way by netscape as a marketing move because sun's java was popular)
 * love it, hate it
 * sure is popular though
+* 2019 results out in a couple of weeks, but unlikely to be different
 
 
 
@@ -167,8 +217,10 @@ name:
 ???
 * ha don't worry we'll dig into this
 * i tried to find some fun learn js game but not much out there, most of them seem overly complicated, if anybody knows of one though!
+* OR final project idea!
 * lets channel some sergey bratus and hack game instead,  he would not hack this game as it is javascript which is insecure and he disables on all computers
-
+* event loop to handle asynchronous actions - we'll dig into that a lot
+* basically events come in and go into a queue to be processed
 
 
 ---
@@ -253,7 +305,7 @@ console.log(false == 0) // → true
 ???
 * will convert things for fun and profit
 * sometimes useful, generally though.. not so  much
-* anything funny with the string and number examples?
+* anything funny with the string and number examples? concatenation
 * can this cause problems? yes
 * more on false shortly
 * `console.log([] == "")` is true
@@ -384,12 +436,34 @@ typeof useless == 'function'
 ```
 
 ???
+* something for eveyrone in these slides - some weeks its all gifs, some its all code...
 * `arguments[0]` (weird and bad)
 * also actually is an object will dig in a bit later
 * in function declaration you name the argument
 * can have default value
 
 
+
+---
+name:  functions as arguments
+
+.small[![](img/thepath.jpg)]
+
+
+```js
+//default values
+var foo = function(x="hi") { console.log(x);}
+
+//passing function as argument
+setTimeout(foo, 1000);
+
+//anonymous function
+setTimeout(function() {console.log("hello")}, 1000);
+
+```
+
+???
+* if there is anything you remember today, its that you can pass functions around, that that is the js way
 
 
 ---
@@ -421,6 +495,7 @@ bar.name === bar['name']
 * note es6 template string builder
 * this will be explained
 * also functions -- everything is really just a dictionary
+* this is very beautiful if you think about it
 
 
 
@@ -468,7 +543,7 @@ list.myownthing = 'why is this here';
 
 ???
 * list[4] // returns undefined and prints hi
-
+* powerful but also confusing
 
 
 
@@ -655,6 +730,8 @@ name: Layout -> BOX MODEL
 
 ---
 name: `document`
+
+.medium[![](img/html-dom.jpg)]
 
 * DOM is available in global variable `document`
 * JS can query or modify the DOM and CSSOM
@@ -857,7 +934,7 @@ name: event handling
 
 
 ---
-name:
+name: Event Listeners
 
 DOM level 0 events:
 ```html
@@ -993,6 +1070,7 @@ Don't submit the page plz
 * by default submit buttons reload page
 * or hover effects
 * make sure browser doesn't execute default action
+* if you are using JS for actions - this will often be something you need to do!
 
 
 
@@ -1044,11 +1122,16 @@ $('.console-intro').on('click', function(e) {
 // game;
 
 game.resPool.resources // change some up
+//change titles
+// get some unicorns!
 
 game.tick();
 
 //max resources
 game.resPool.resources.forEach(function(resource) { resource.value = 100000000; })
+
+
+
 ```
 
 
@@ -1082,6 +1165,7 @@ console.log(x);  // → inside f2
 * if declared
 * in second example just refers to global
 * shadowing is bad (redeclaring locally on purpose)
+* we'll explore this in more detail next class
 
 
 
@@ -1187,9 +1271,10 @@ console.log(double(5));     // → 10
 * function “closes over” some local variables
 * A good mental model is to think of the function keyword as “freezing”
   * the code in its body and wrapping it into a package (the function value).
-* can be very cool, enables callbacks
+* can be very cool, enables callbacks, where whole functions are closed over
 * functions passed into other functions to call when they are done
 * much more on this next time
+* worth learning how this can be cool
 
 
 ---
@@ -1291,7 +1376,9 @@ try {
 ```
 
 ???
-
+* how many people use this regularly? 
+* do not fail silently on the web...
+* expose errors that user need to know about
 
 
 
@@ -1329,6 +1416,14 @@ name: resources
 * http://www.learn-js.org/
 
 ---
-name:  intermission
+name:  Lab1 + Lab2! 
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+* Workshops!
+* Lab1 due Saturday
+* Lab2 out and due Tuesday
+  * [http://cs52.me/assignments/lab/quizzical/](http://cs52.me/assignments/lab/quizzical/)
+
+
+
+
+<!-- <iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->

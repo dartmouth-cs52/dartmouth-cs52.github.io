@@ -1,8 +1,7 @@
 ---
 layout: page_with_slides
-title: CSS
-published: false
-comment_term: lecture-design
+title: Some Design Stuff From Not-A-Designer
+published: true
 ---
 
 {% include slides-toggle.html %}

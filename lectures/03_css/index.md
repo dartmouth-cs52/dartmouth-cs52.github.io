@@ -1,11 +1,20 @@
 ---
 layout: page_with_slides
 title: CSS
-published: false
+published: true
 comment_term: lecture-css
 ---
 
-## <span style="color: #F27D00">*see slides for updated version*</span> ##
+
+{% include slides-toggle.html %}
+
+<br>
+<hr>
+<br>
+<h2>deprecated notes:</h2>
+
+
+
 
 ## Cascading Style Sheets
 

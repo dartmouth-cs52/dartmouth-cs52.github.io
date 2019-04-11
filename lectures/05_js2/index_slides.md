@@ -29,36 +29,16 @@ name: CS52
   * our first team workshop!
   * our first quiz!
 
-???
-
----
-name: table questions
-
-* if `===` checks for type, why does `NaN===NaN` evaluate to false?
-
-.medium[![](img/table-html-is-joke.jpg)]
-
 
 ???
-* because NaN is the only thing that doesn't equal itself in any way in js. by design?  thats one way of checking if a value is NaN in fact.
-
-
-
----
-name: table questions
-
-.medium[![](img/table-games-question.jpg)]
-
-.medium[![](img/table-nested-flexbox.jpg)]
-
-
-???
-* there havent' been any that I thought were any good...
-* until today!  we'll play one later when we talk about callbacks
-* hoist is when you raise something up, so in JS it means that the parser raises up the functions to the top of the file basically
-* its cool but not necessary to remember on the daily
-
-
+* goals of workshop
+  * present breadth of material - not just what i like
+  * have a bit of hack fun during class - had a geog class that was like this and i really enjoyed it
+  * show that you worked on it, but doesn't have to be perfect
+  * answer some reflection questions
+  * pass on your knowledge - team will walk around and answer questions - henceforth to be known as experts
+  * signup sheet out today, been revising it with new cool stuff. 
+  * will have some mandatory xhours since the class is so big
 
 ---
 name: table questions
@@ -73,56 +53,29 @@ name: table questions
 * in [chrome devtools](https://developer.chrome.com/devtools)
 
 
----
-name: table questions
-
-* can a buzzfeed quiz be made only in html/css
-
-.small[![](img/table-jquery-weary.jpg)]
-
-
-???
-* theoretically with real tricky css - long rules where everything is a sibling so everything can be selected and possibly duplicates
-* how did it go?  we'll look at them next time as we have a lot to do today.
-
 
 ---
 name: table questions
 
 
-.medium_small.left[![](img/table-js-precision.jpg)]
+.small[![](img/tq-butimright.jpg)]
+.small[![](img/tq-flexbox.jpg)]
 
-[floating point arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
 
 ???
-* because it is stored in binary there's always some imprecision given the bit storage limit
-* proof in the link
-* most languages shield you from it a bit better by rounding earlier when printing
-* https://www.reddit.com/r/javascript/comments/2scikz/eli5_why_is_this_true_01_02_030000000000000004/
-
+* 
 
 ---
 name: table questions
 
-* can we use both js and jquery for the assignment?
 
-```js
-function html(value) {
-  if (value === undefined && elem.nodeType === 1) {
-      return elem.innerHTML;
-  }
-  // See if we can take a shortcut and just use innerHTML
-  try { elem.innerHTML = value; } catch(e) {}
+.large[![](img/tq-css.jpg)]
 
-  //clean first then append new
-  if (elem) {
-      this.empty().append(value);
-  }
-}
-```
 
 ???
-* jquery is largely just a wrapper for various plain js stuff
+* 
+
+
 
 
 ---
@@ -138,7 +91,6 @@ name: various administrative
 
 
 ???
-* giving warning but from here on will be weekly after assignments are due
 * nothing to worry about, if you understood what you did in the assignment (ie read it and coded it) should be fine
 * 2 short assignments out at the same time, both should be doable in one sit down
 * js asynch game will hopefully be out thursday!
@@ -306,7 +258,6 @@ name: this failures
 ```javascript
 function foo() { console.log(this); }
 
-// normal function call
 foo(); // `this` will refer to parent `window`
 
 // as object method
@@ -322,6 +273,7 @@ obj.bar(); // `this` will refer to `object`
 * some examples, confusing yes
 * difference in object vs function
 * this will come back and haunt you sometimes
+* who (which object) is the runner of the function
 
 
 
@@ -436,7 +388,7 @@ name: inheritance
 * more questions for you!  how is inheritance done in java?
 * properties of an object are its own property in addition to all the properties up the prototype chain
 * more simply:  searches up the chain,  has the property no, ok lets check your prototype.
-* multiple can be done with mixins (copying over properties from one object to another...)
+* multiple can be done with mixins (copying over properties from one object to another...) using `Object.assign`!
 * img from http://yycjs.com/the-weird-parts/#slide19
 
 
@@ -587,7 +539,6 @@ class BelgianHare extends Bunny {
 ???
 * as you would expect `extends`
 * super to invoke base class constructor *required*
-* why do belgian hares drink?
 
 
 
@@ -750,6 +701,8 @@ name: filter, map, reduce
 * things to try:
   * change height (turns out we don't really know height that well)
   * p.mass over 100
+  * p.eye_color == "yellow"
+  * also try watching episodes 4,5,6... 
 
 
 

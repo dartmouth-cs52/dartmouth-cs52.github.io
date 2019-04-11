@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Frontend Starterpack — Short Assignment
-published: false
+published: true
 comment_term: sa-starterpack
 ---
 
@@ -9,6 +9,7 @@ comment_term: sa-starterpack
 ## Overview
 
 Today we'll be learning about a set of tools for making your code compact and pretty.  So far you've been using html and css in separate files and the sites have been fairly compact — but as your sites grow more complex and include more and more libraries there has to be a way to manage it all.  We'll introduce a set of tools to help you build complex sites with many module dependencies easily.
+
 
 💻 : run in Terminal<br>
 🚀 : a step to not forget
@@ -23,11 +24,13 @@ We'll build a starter package that will use:
 * sass
 * babel
 * eslint
-* as well as a suite of cool tools: node, npm, yarn, VSCode
+* as well as a suite of cool tools: node, npm, yarn
 
 Don't worry we'll learn allllll about it.
 
 🌵 Note: This *short* is a little on the long side, but it's important. Try to read the explanations so you understand what is happening — you will be using and building up from this starterpack for the next month.
+
+*There is an way to generate a similar starterpack that some of you may have played around with: `create-react-app`.  This is generally a fine way to do a quick start react project. However, it hides all the magic it does in a complex set of hidden config files, and is difficult to extend.  We want to have the confidence to do that and to understand what is actually happening — so we're going to start from scratch.* ✊
 
 
 ## [yarn](https://yarnpkg.com/en/) and [NPM](https://www.npmjs.com/)
@@ -37,12 +40,12 @@ Don't worry we'll learn allllll about it.
 ![](img/yarn.jpg){: .fancy .tiny }
 
 
-[NPM](https://www.npmjs.com/) is the dependency package manager for Node.js and the javascript ecosystem in general.  While we won't exactly be using node just yet today, we will be using the package manager to install various javascript tools. Node.js is a javascript platform for running javascript outside of a browser for developing server side applications and we will be using it extensively later on. You can do things like `npm install somepackage` and it will download that package and add it to your project. Great. WTF is [yarn](https://yarnpkg.com/en/)?  Yarn is a faster/better npm.  It uses the same repository of packages.  You can use it practically interchangeably - just decide which you will use and try to stick to it. Yarn is newer and we're going to try it out for 18S and see how it goes.
+[NPM](https://www.npmjs.com/) is the dependency package manager for Node.js and the javascript ecosystem in general.  While we won't exactly be using node just yet today, we will be using the package manager to install various javascript tools. Node.js is a javascript platform for running javascript outside of a browser for developing server side applications and we will be using it extensively later on. You can do things like `npm install somepackage` and it will download that package and add it to your project. Great. WTF is [yarn](https://yarnpkg.com/en/)?  Yarn is a faster/better npm.  It uses the same repository of packages.  You can use it practically interchangeably - but don't mix them, that can cause issues as they store files slightly differently. Yarn is mostly what we are going to use. 
 
 
 ### Installation
 
-🚀 NPM comes with Nodejs so we'll first install that.
+🚀 Let's install some Nodejs!
 
 #### os x:
 
@@ -53,15 +56,15 @@ brew install node
 brew install yarn
 ```
 
-Make sure you have the right versions of node/npm/yarn:
+Make sure you have reasonably up to date versions of node/npm/yarn:
 
 ```bash
 node --version
-#v9.8.0
+#v11.x.x
 npm --version
-#5.6.0
+#6.7.0
 yarn --version
-#1.5.1
+#1.15.x
 ```
 
 Newer than these is fine, but if you have older ones you might need to force uninstall/reinstall:
@@ -89,11 +92,11 @@ brew install node
 yarn init #accept all the default answers if you want
 ```
 
-All this did was create a barebones `package.json`  file.  This file defines a node.js based project and is required.  It will primarily list all of the dependencies of our project.  It will also define some convenient scripts for us.
+All this did was create a barebones `package.json`  file.  This file defines a node.js based project and is required.  It will primarily list all of the dependencies of our project.  It will also define some convenient scripts for us.  Take a look at it, mostly it has a name and some other metadata about your project.
 
 ### Index file
 
-🚀 Lets create a simple javascript file to get us started. It is good practice to keep your app in a subdirectory of the project so lets create that and call it `src`.
+🚀 Let's create a simple javascript file to get us started. It is good practice to keep your app in a subdirectory of the project so lets create that and call it `src`.
 
 ```bash
 mkdir src #create directory
@@ -122,7 +125,7 @@ Now in 💻 you can:
 ```bash
 💻 yarn start
 
-yarn run v1.5.1
+yarn run
 $ node src/index.js
 starting up!
 ✨  Done in 0.16s.
@@ -136,7 +139,7 @@ But, we want to actually make a webpage right?
 
 Let's set up a simple `index.html` to act as our main html page.
 
-🚀 Create an `index.html` in in the `src/` folder:
+🚀 Create an `index.html` in the `src/` folder:
 
 ```html
 <!DOCTYPE html>
@@ -153,7 +156,7 @@ Let's set up a simple `index.html` to act as our main html page.
 </html>
 ```
 
-Sweet, a page that says "loading". You rock.
+Sweet, a page that probably says "loading". We rock. But you probably want to be able to view it, and maybe we can do it better than with that python module we used last week.
 
 
 ## Webpack
@@ -164,7 +167,7 @@ Sweet, a page that says "loading". You rock.
 
 ![](img/cart-sm.gif){: .profile}
 
-Webpack is the shopping cart; `package.json` is the shopping list; and your browser is um, the frying pan that cooks a delicious web meal for you?
+Webpack is the shopping cart; `package.json` is the shopping list; and your browser is um, the frying pan that cooks a delicious web meal for you? 
 
 ### Install Webpack for the project
 
@@ -172,14 +175,16 @@ Webpack is the shopping cart; `package.json` is the shopping list; and your brow
 🚀 Lets add webpack to our 🚼 project:
 
 ```bash
-yarn add webpack webpack-serve webpack-cli --dev
+yarn add webpack webpack-dev-server webpack-cli --dev
 ```
 
 `yarn add` is how you add most any javascript library to your project.  It will install in a directory `node_modules` in your project.  Note: `yarn install` would install it but not add it to your `project.json`.  Generally you want to add it to your project so that later if others were to download the project they could install the same packages.
 
 Note: when you give `--dev` as an argument it will add those modules to your `package.json` in a `devDependencies` section.  In this case we are saying these are *development* only dependencies. So you will now notice new lines declaring those dependencies in `package.json` as `"devDependencies"`. Leave off the `--dev` flag if you are adding in a library you want to package up for the browser.
 
-⚠️ `node_modules` is **not** something you need to commit to git.  These are libraries that you can assume will be available and so as long as you have saved the dependencies to the `package.json` file anybody can later install all of the required packages by simply running `yarn install`.
+#### .gitignore
+
+⚠️ `node_modules` is **not** something you need to commit to git.  These are libraries that you can assume will be available and so as long as you have saved the dependencies to the `package.json` file anybody can later install all of the required packages by simply running `yarn install`. There will always be points off if your github repo contains `node_modules`. 
 
 🚀 Let's make sure we don't do that now.  Create a file called `.gitignore` and add the following:
 
@@ -214,7 +219,7 @@ $('#main').html('Here we go!');
 
 All this will do is find the element with the `id` of `main` and change the content to 'Here we go!'.
 
-At this point, you could try opening this page in a browser, but it won't work! The browser has no idea how to find jquery and this it all crashes and burns 🔥.
+At this point, you could try opening this page in a browser, but it won't work! The browser has no idea how to find jquery and it all crashes and burns 🔥.  Luckily webpack allows us to run a development mode server.
 
 ### Configure webpack
 
@@ -251,16 +256,16 @@ dist/  #autogenerated directory where webpack will put your bundle files
 
 ```bash
 💻 ./node_modules/.bin/webpack
-Hash: 1ab8c0f7ebef096a6462
-Version: webpack 4.2.0
-Time: 484ms
-Built at: 3/22/2018 6:14:54 PM
+Hash: 6aaf58a8b41bf159a9eb
+Version: webpack 4.29.6
+Time: 377ms
+Built at: 04/06/2019 8:02:20 PM
       Asset     Size  Chunks             Chunk Names
     main.js  270 KiB    main  [emitted]  main
-main.js.map  351 KiB    main  [emitted]  main
+main.js.map  352 KiB    main  [emitted]  main
 Entrypoint main = main.js main.js.map
-[./src/index.js] 448 bytes {main} [built]
-   [0] multi ./src 28 bytes {main} [built]
+[0] multi ./src 28 bytes {main} [built]
+[./src/index.js] 62 bytes {main} [built]
     + 1 hidden module
 ```
 {: .example}
@@ -269,22 +274,22 @@ Entrypoint main = main.js main.js.map
 
 Great! It is building our `index.js` file and packaging it up into a new bundle called `main.js`. There is also one hidden module which isn't ours. In this case this is jquery! How'd it know?  Well it analyzed our `index.js` and saw our `require` statement, then it located the module in `node_modules` and included it. 😎
 
-Ok, but like, there is no `.html` file and how is this useful, you can't even see the page.
+Ok, but like, there is no `.html` file and how is this even useful, you can't even see the page!?!
 
 🚀 Let's delete dist for now. `rm -rf dist`
 
-### webpack-serve
+### webpack-dev-server
 
 ![](img/js-engine.gif){: .fancy .tiny}
 
 
-This is where webpack-serve comes in. It is a development server setup that will help us run our web app.
+This is where webpack-dev-server comes in. It is a development server setup that will help us run our web app.
 
 We could start up a python webserver to load the files, but webpack comes with a dev server built in and it is much better.
 
-🚀 Edit your `package.json` again and change the `start` line to: `"start": "NODE_ENV=development webpack-serve ./webpack.config.js",`
+🚀 Edit your `package.json` again and change the `start` line to: `"start": "NODE_ENV=development webpack-dev-server",`
 
-*Note: on windows the syntax may be a tiny bit different `SET NODE_ENV=development& webpack-serve ./webpack.config.js`*
+*Note: on windows the syntax may be a tiny bit different `SET NODE_ENV=development& webpack-dev-server`*
 
 🚀 Now you can simply run `yarn start`:
 
@@ -311,13 +316,13 @@ Entrypoint main = main.js main.js.map
 ```
 {: .example}
 
-![](img/not-found.jpg){: .fancy .tiny}
+![](img/not-working-listing.jpg){: .small}
 
 Ok,  we're now *supposedly* showing our page through webpack-serve, but why isn't it working??!?!  
 
 ### HtmlWebpackPlugin
 
-Well... by default webpack understands javascript, but honestly has no idea what to do with our `index.html` file. That is the file we need the browser to see. So we have to tell webpack about html. To do this we're going to add a webpack plugin.
+Well... by default webpack understands javascript, but has no idea what to do with our `index.html` file. **That** is the file we need the browser to see. So we have to teach webpack about html. To do this we're going to add a webpack plugin.
 
 🚀 The plugin we are looking for now is the `html-webpack-plugin`.  Go ahead `yarn add --dev` that and add
 `const HtmlWebpackPlugin = require('html-webpack-plugin');` to the top of your `webpack.config.js` file.
@@ -325,10 +330,10 @@ Well... by default webpack understands javascript, but honestly has no idea what
 🚀 And in the `plugins: []`array add in:
 
 ```js
-new HtmlWebpackPlugin({
-  template: './src/index.html',
-  filename: './index.html',
-}),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
+    }),
 ```
 
 This just tells webpack that we want it to know that we have a `src/index.html` file and we want it to be available as just `index.html` in our final product.
@@ -378,9 +383,7 @@ Babel needs to be configured for the particulars of what feature set of ECMAScri
 {
   "presets": [
     ["@babel/preset-env", {
-      "targets": {
-        "browsers": ["last 2 versions"]
-      }
+      "targets": "> 0.25%, not dead"
     }]
   ]
 }
@@ -404,7 +407,7 @@ module: {
 ```
 
 🚀 and change your `entry` to be `entry: [ 'babel-polyfill', './src' ],`
-this loads in some nice extra babel functions before we get into our app so we can use them.
+this loads in some nice extra babel functions before we get into our app so we can use them. In essence, if there are any javascript features that a particular browser might lack, this fills them in.
 
 🚀 `ctrl + c` out of your webpack server and run `yarn start` again to pick up the changes to the config files.
 
@@ -433,12 +436,11 @@ Excellent, now your page is keeping count of how long its been since you loaded 
 
 Ok, how about we add in linting. Linters are code parsers that check your code for syntax errors, common style mistakes, and makes sure that your code is clean and follows some best practices. Linters help save time, detect bugs, and improve code quality. Linters exist for all types of languages and even markdown such as HTML, CSS, and JSON. Linters are especially helpful for detecting syntax errors while using dynamically typed languages in lightweight editors such as VSCode and Atom.
 
-In *VSCode* install the `eslint` plugin.
+In VSCode install the [ESLint](https://github.com/Microsoft/vscode-eslint) extension or in *Atom* install the `linter-eslint` plugin.
 
-![](img/vscode-eslint.png){: .fancy .small}
+![](img/vscode-eslint.jpg){: .small}
 
-
-The recommended linter plugin for javascript is [Eslint](http://eslint.org/).
+We'll be using [Eslint](http://eslint.org/) in every assignment.
 
 🚀 Install `eslint`:
 
@@ -484,7 +486,9 @@ yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y 
 
 If you find a rule you want to modify, or ignore — you can add it in above.  `0` means turn off, `1` means warning, `2` means throw an error, with additional options available per each rule's description page.
 
-🚀 Now go to VSCode -> Preferences -> Settings -> Search 'eslint' -> and check "Auto Fix on Save". Super useful. This will fix indentation problems and some other things automatically whenever you save. Now restart VSCode.
+🚀 Now in VSCode -> Preferences -> Settings -> search: eslint -> and check "Eslint: Auto Fix On Save" or in Atom -> Preferences -> Packages -> linter-eslint -> Settings, and check "Fix Errors on Save".
+
+Super useful. This will fix indentation problems and some other things automatically whenever you save. Now restart your editor.
 
 When you see errors such as below:
 
@@ -492,11 +496,13 @@ When you see errors such as below:
 
 You can click on the definition of the error to learn more.  Note: many of these show up as errors but are not compiler errors like you are used to in Eclipse.  The browser or node may still run the code fine — however it is recommended that you fix these errors or learn about what the errors mean and disable them only if you disagree with that particular rule stylistically.
 
+![linter error](img/eslint-learn-more.jpg){: .fancy .medium_small}
+
 🚀  Now let webpack include eslint! In your `webpack.config.js` file, add `{ loader: 'eslint-loader' }` to the loaders section for `test: /\.js$/`.
 
-This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise. Not only will VSCode show the errors - but the browser console will as well.
+This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise. Not only will your editor show the errors - but the browser console will as well.
 
-From here on your assignments will all use an `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
+From here on **all assignments** will all use an `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
 
 ## SASS Webpack loader
@@ -594,9 +600,19 @@ body, html {
 
 Wait, we were promised hot-reloading, whatever that means!
 
+Ok, ok. Add this in to your `webpack.config.js` file along with the `module.exports`:
+
+```js
+  devServer: {
+    hot: true,
+  },
+```
+
 You got it!  Try changing your `style.scss` file – you should see changes but your counter doesn't restart!
 
-On the terminal you'll see anytime you change your project files that webpack recompiles automatically - and in your browser console log as well.  Right now if you edit `index.js` you might be a full reload - that is because that file is everything so any changes in it will trigger a full reload.
+On the terminal you'll see anytime you change your project files that webpack recompiles automatically - and in your browser console log as well. 
+
+For now we'll stick with hot-reloading only css changes though, we'll explore more once we get to react.
 
 ## MiniCssExtractPlugin
 
@@ -733,17 +749,19 @@ yarn add --dev surge #both command and in dependencies
 🚀 Add the following to your `package.json` `scripts` section:
 
 ```javascript
-"build": "yarn clean; NODE_ENV=production webpack --colors",
-"clean": "rimraf dist",
-"deploy": "yarn build; surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh; yarn clean"
+    "test": "eslint src/**.js",
+    "build": "yarn clean; NODE_ENV=production webpack --colors",
+    "clean": "rimraf dist",
+    "deploy": "yarn build; surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh; yarn clean"
 ```
 
 For Windows:
 
 ```javascript
-"build": "yarn clean & SET WEBPACK_ENV=production& webpack --colors",
-"clean": "rimraf dist",
-"deploy": "yarn build & surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh & yarn clean"
+    "test": "eslint src/**.js",
+    "winbuild": "yarn clean & SET WEBPACK_ENV=production& webpack --colors",
+    "clean": "rimraf dist",
+    "windeploy": "yarn build & surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh & yarn clean"
 ```
 
 Go ahead.  Change the `MYCOOLSTARTERPACKNAME` to be a domain unique for you - say `yourname-cs52-starter.surge.sh`. `yarn deploy`.  
@@ -811,12 +829,12 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 1. url to your github repository
 1. url to deployed surge url
 1. Checklist:
-  * webpack-serve starts and serves pages
+  * webpack-dev-server starts and serves pages
   * babel is configured
   * eslint is configured
   * webpage displays and counts seconds
   * image displays and is loaded via webpack
-  * js is es6 and linted without errors
+  * js is es6 and linted without errors!
 1. A short answer response on canvas to:
   * describe the environment you set up.
   * any questions about what/why/how that you feel are unresolved?
@@ -828,8 +846,6 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 
 ## Resources:
 
-* [getting started with webpack2](https://blog.madewithenvy.com/getting-started-with-webpack-2-ed2b86c68783)
 * [webpack docs](https://webpack.js.org/)
 * [babeljs](https://babeljs.io/)
-* [State of the Art Javascript 2016](https://medium.com/javascript-and-opinions/state-of-the-art-javascript-in-2016-ab67fc68eb0b#.26xksjxvt)
 * [Survive Webpack](https://survivejs.com/webpack/foreword/)

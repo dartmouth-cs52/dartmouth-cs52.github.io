@@ -1,7 +1,7 @@
 ---
 layout: page_with_slides
 title: CS52 Welcome
-published: false
+published: true
 comment_term: lecture-welcome
 ---
 

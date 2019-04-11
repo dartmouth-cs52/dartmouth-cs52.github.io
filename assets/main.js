@@ -38,7 +38,10 @@ function onSlideToggle(event) {
     $mainContent.hide();
     remark.create({
       source: $('.slide').text(),
-      highlightStyle: 'tomorrow'
+      highlightStyle: 'tomorrow',
+      navigation: {
+        scroll: false
+      }
     });
     fixToggle();
     // looks like needs to be reattached
@@ -120,31 +123,41 @@ $('document').ready(function() {
 
   $('body').append('<div class="slide" markdown="0"></div>');
 
-  // pull in slides from separate file
-  $.get('index_slides.md').done(function(result){
-    $('.slide').text(result);
-    reloadScript(codepenScript);
+  var slideSource=$("#slide-source").text();
 
-    if (window.location.hash) {
-      console.log('slides mode detected');
-      onSlideToggle();
-    }
-  }).fail(function(error) {
-    console.log(error);
-  }).always(function(result) {
-    // render the math
-    var mathAreas = $('.math');
-    if (mathAreas.length > 0) {
-      mathAreas.each(function(index, area) {
-        renderMathInElement(area, {delimiters: [
-          {left: "$$", right: "$$", display: true},
-          {left: "$", right: "$", display: false},
-          {left: "\\[", right: "\\]", display: true},
-          {left: "\\(", right: "\\)", display: false},
-        ]});
-      })
-    }
-  });
+  if (slideSource) {
+    console.log(slideSource);
+    $('.slide').text(slideSource);
+    reloadScript(codepenScript);
+    console.log('slides mode detected');
+    onSlideToggle();
+  } else {
+    // pull in slides from separate file
+    $.get('index_slides.md').done(function(result){
+      $('.slide').text(result);
+      reloadScript(codepenScript);
+
+      if (window.location.hash) {
+        console.log('slides mode detected');
+        onSlideToggle();
+      }
+    }).fail(function(error) {
+      console.log(error);
+    }).always(function(result) {
+      // render the math
+      var mathAreas = $('.math');
+      if (mathAreas.length > 0) {
+        mathAreas.each(function(index, area) {
+          renderMathInElement(area, {delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false},
+            {left: "\\[", right: "\\]", display: true},
+            {left: "\\(", right: "\\)", display: false},
+          ]});
+        })
+      }
+    });
+  }
 
   // failed attempt at duplicate content
   // var md = window.markitdown();
