@@ -32,7 +32,7 @@ name: CS52
 ---
 name: Sharing is Caring
 
-* multiple:  https://dartmouth-cs52-18s.github.io/lab2-Teddarific/
+<!-- * multiple:  https://dartmouth-cs52-18s.github.io/lab2-Teddarific/
 * animal: https://dartmouth-cs52-18s.github.io/lab2-weilingx46/
 * dartmouth:https://dartmouth-cs52-18s.github.io/lab2-thekevhu/
 * calories: https://dartmouth-cs52-18s.github.io/lab2-amy-guan/
@@ -45,7 +45,25 @@ name: Sharing is Caring
 * snek: https://dartmouth-cs52-18s.github.io/lab2-j-mai/
 * extra effects: https://dartmouth-cs52-18s.github.io/lab2-Moyo97/
 * more puppies: https://dartmouth-cs52-18s.github.io/lab2-alexpetros/
-* because tswift: https://dartmouth-cs52-18s.github.io/lab2-stopic13/
+* because tswift: https://dartmouth-cs52-18s.github.io/lab2-stopic13/ -->
+
+* [video ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-CharlotteChui/)
+* [jelly donut ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-zacgottschall/) 
+* [shipping product ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-ziruihao/)
+* [middleschool ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-iyervarsha/)
+* [journalism ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-danah-han/)
+* [potato ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-justinbaltazar/)
+* [columns ](http://maddies-coffee-site.surge.sh)
+* [lambos ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-robert-he/)
+* [zen ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-ashleychari1234/ )
+* [carousel ](https://beneisner.surge.sh )
+* [footer ](https://dartmouth-cs52-19s.github.io/lab1-lyft-copy/ )
+* [effects! ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-GillianYue/)
+* [ratemytas ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-jschlachtenhaufen/)
+* [kats ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-Yakoob-Khan/)
+* [more bold ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-emmalangfitt/)
+* [tinder for puppies ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-axli20/)
+* [gradients ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-mihovilm/)
 
 ???
 
@@ -54,7 +72,6 @@ name: Sharing is Caring
 ---
 name: table questions
 
-* Is materialUI the same as bootstrap?
 * can you go over @media query and how it works
 
 .medium[![](img/definingmobile-mediaquery.jpg)]
@@ -76,21 +93,9 @@ name: SA3 StartPack
 
 
 ---
-name: quiz
-
-
-![](img/no-table.jpg)
-
-???
-* how did it go?
-
-
-
----
 name: where in the stack
 
 ![](img/whereinthestack_webpack.png)
-
 
 
 
@@ -225,7 +230,7 @@ name:
 
 
 ---
-name: webpack-serve
+name: webpack-dev-server
 
 .medium[![](img/webpack-dev-server.gif)]
 
@@ -259,9 +264,9 @@ name: Deployment
 * for production
   * need to build outputs to files
   * host static output files
-  * would not be running webpack-serve
+  * would not be running webpack-dev-server
 
-* ghpage and surge for static files
+* ghpages, surge, netlify for static files
 
 
 .small[![](img/collabocats.jpg)]
@@ -299,8 +304,8 @@ name: node.js
 
 * Node.js is javascript interpreter without a browser
 * used for server side processing
-* used for desktop js apps like Atom
-* webpack-serve is a Node app
+* used for desktop js apps like Atom/VSCode
+* webpack-dev-server is a Node app
 
 
 .tiny[![](img/nodejs-dribbble_1.gif)]
@@ -318,7 +323,8 @@ name: More event loop
 .medium[![](img/node-loop.png)]
 
 ???
-
+* a queue of tasks to complete/check in with
+* depending on javascript engine can either be threaded of single
 
 ---
 name: asynchronous js
@@ -388,6 +394,10 @@ name: Event Loop
 * we register an event listener
 * so that on a particular event a function gets executed
 * in a particular context (remember this)
+* how might setTimeout actually be implemented in this system? 
+  * while loop checking timestamp.
+  * so setTimeout technically is MIN time, not guaranteed time
+
 
 
 
@@ -415,17 +425,15 @@ name: ajax
 name: Why is this tricky?
 
 ```javascript
-var data;       
-$.ajax({
-    url: 'http://api.something.com/all-datas',
-    success: function( result ) {
-        data = results;
-        console.log( data );
-    }
-})
+var data;
+
+$.getJSON("http://data/data.json", function(results) {
+  data=results;
+  console.log(data);
+});
+
 console.log( data );
 //
-
 ```
 
 ???
@@ -523,6 +531,8 @@ name:
   * loads all content asynchronously and inserts into page
   * DOM manipulation + frontend framework
   * largely the architecture we'll be using
+* is more like an application than a series of pages -> loads app into browser
+* from then on does not reload that page - app runs and gets any further data it needs
 
 
 
@@ -661,7 +671,7 @@ name: 2nd gen serverside frameworks
 * Model-View-Controller:
   * abstracted structure
 * Object Relational Mapping (ORM):
-  * simply database use
+  * simplify database use
   * use objects instead of SQL
 
 ```ruby
@@ -727,6 +737,8 @@ var AppView = Backbone.View.extend({
 
 
 ???
+* the idea was to provide more interaction and functionality on the clientside
+* easier to handle data parsing and display - abstracting out because otherwise a mess of jquery
 * some of these have gone through multiple generations themselves
 * and then there is REACT!   4th gen!
 
@@ -815,6 +827,7 @@ name:
 * smart and dumb components
 
 ???
+* at this point most of the internet
 * facebook created
 * Facebook (Partially)
 * Instagram (Completely)
@@ -822,7 +835,6 @@ name:
 * Codecademy (Partially)
 * New York Times (Partially)
 * Yahoo Mail (Completely)
-* Dropbox's Carousel (Completely)
 
 
 
@@ -848,8 +860,8 @@ name: Virtual DOM?
 
 
 * isn't one DOM already enough?!?!
-* DOM is slow
-* Virtual DOM allows for faster DOM manipulation
+* DOM is bulky and slow
+* Virtual DOM allows for faster/batched DOM manipulation
 * Virtual DOM simpler and faster
   * React diffs Virtual DOM and DOM
   * only updates what is changed
@@ -869,10 +881,12 @@ name: tree diffs
   * $O(n^{3})$ yes
   * but React does it in $O(n)$
 * [reconciliation](https://reactjs.org/docs/reconciliation.html) heuristic
+* assumption 1: if elements are of different types, subtrees likely different
+* assumption 2: plus `key` on each node (like a hashvalue) as stability hint/identifier
 
 ???
 * heuristic O(n) algorithm
-* assumption1: Two elements of different types will produce different trees.
+* assumption1: Two elements of different types will produce different trees. thus subtrees will differ
 * 2: developer can hint at which child elements may be stable across different renders with a key prop.
 * https://reactjs.org/docs/reconciliation.html
 
@@ -888,7 +902,7 @@ name: dirty state
 ???
 * when a components state changes via setState.
 * when you run `setstate` it markes a node as dirty
-* potentially rerendering the entire subtree but in practice is performant
+* potentially rerendering the entire subtree but in practice is performant and tricks to make it rerender less
 
 *(img from [perfplanet](http://calendar.perfplanet.com/2013/diff/))*
 
@@ -911,13 +925,16 @@ name: rerendering
 ---
 name: components
 
+.medium[![](img/components.png)]
+
+
 * React is component based:
   * encapsulated reusable containers
   * logic + rendering
   * no state in the DOM
 * components:
   * have `state`
-  * take in `props` as args
+  * take in `props` (ie. arguments or 'properties')
   * nested
   * can `render`
 
@@ -979,12 +996,13 @@ name: state new way
 name: JSX
 
 ```javascript
-const aDivElement = <div className="foo" />;
+const aDivElement = <div className="foo"></div>;
 
 const aComponent = <MyComponent someProperty={true} />;
 ```
 
 * JSX is html-like syntax for defining react tree nodes
+* stands for javascript xml
 * create JS objects
 
 
@@ -1003,13 +1021,16 @@ name: component lifecycle
 
 .medium[![](img/component-lifecycle.png)]
 
-* `setState` and `setProps` are key
+* change in `state` and `props`
 * methods that get called at different times during the life of the page
 
 
 
 ???
 * components have lifecycle methods
+* this is important and we'll go over it again
+* these are methods that you implement that are called at different times
+* and can be used for different purposes
 
 
 
@@ -1020,7 +1041,7 @@ name: down data flow
 .medium_small[![](img/data-event-flow.png)]
 
 * parent components send data down as `props`
-* children pass up actions in callbacks
+* children pass up events in callbacks
 
 ???
 * this can get a little tricky as you'll see
