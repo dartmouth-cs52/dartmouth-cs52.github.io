@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab 3
-published: false
+published: true
 comment_term: lab-react-notes
 ---
 
@@ -116,8 +116,8 @@ For this assignment we're going to play with a library for making our state immu
 There are several reasons for this:
 
 * in Part 2 we'll be handing over state to Firebase
-  * so we are going to structure our data to make that easier
-* if you don't make sure it is immutable, you might accidentally mutate it — `this.setState({foo: this.state.foo++})` for a tiny moment,  the old state was modified before it was reassigned which can cause all sorts of bugs.
+  * so we are going to structure our data to make that easier / more similar to how firebase works.
+* if you don't make sure it is immutable, you might accidentally mutate it — `this.setState({foo: this.state.foo++})` even for a tiny moment,  the old state was modified before it was reassigned which can cause all sorts of bugs.
 * cleaner api
 
 Feel free to peruse the Immutable.js [docs](https://facebook.github.io/immutable-js/) for more info on how and why it is cool.
@@ -127,7 +127,8 @@ Feel free to peruse the Immutable.js [docs](https://facebook.github.io/immutable
 ```javascript
 yarn add immutable
 
-// import Immutable from 'immutable';
+// import { Map } from 'immutable';
+// remember ^ is deconstrution - importing 1 key from a dictionary
 ```
 
 Here is what I recommend you do for your *App* component state initialization:
@@ -135,12 +136,10 @@ Here is what I recommend you do for your *App* component state initialization:
 ```javascript
 // in App constructor
   this.state = {
-    notes: Immutable.Map(),
+    notes: Map(),
     //...
   };
 ```
-
-Note: your linter is going to complain about this. It won't like that the immutable library uses `Map` as a function name rather than `map`.  You can disable this error with: `"new-cap": 0` in your `.eslintrc`.
 
 You might ask, why not make notes a list?
 
@@ -149,6 +148,7 @@ Good question! We are going to use an immutable map for a couple of reasons:
 * this will make deletion and updating quicker as *O(1)* hashmap lookups rather than linear list traversal
 * a dictionary/hashmap/object is the format that Firebase will give us later so it will make refactoring our code in Part 2 much easier
 * the API for Immutable.js is a pleasure to work with and will make our code cleaner!
+* later when we start really using a lot of app state, we'll need immutable to save us from making mistakes
 
 
 ## Notes State
@@ -184,17 +184,17 @@ Wait, but where do the unique note `id`s come from?  Eventually they'll be gener
 
 Here's some tips about dealing with a few different cases and how Immutable.js is going to help us.
 
-We'll be using the Map type, which gives us a hashmap as you would expect, except that all the functions on it return a new cloned Map with the changes rather than mutating the original. The docs for this are [here](https://facebook.github.io/immutable-js/docs/#/Map)
+We'll be using the Map type, which gives us a hashmap as you would expect, except that all the functions on it return a new cloned Map with the changes rather than mutating the original. The docs for this are [here](https://immutable-js.github.io/immutable-js/docs/#/Map)
 
 
 **Deletions**:
 
-Immutable.js provides a [`delete`](https://facebook.github.io/immutable-js/docs/#/Map/delete) method that takes an ID and spits back a new Map. Here's an example of using it for setting a new notes state on deletion of a note.
+Immutable.js provides a [`delete`](https://immutable-js.github.io/immutable-js/docs/#/Map/delete) method that takes an ID and spits back a new Map. Here's an example of using it for setting a new notes state on deletion of a note.
 
 ```javascript
-this.setState({
-  notes: this.state.notes.delete(id),
-});
+this.setState(prevState => ({
+  notes: prevState.notes.delete(id),
+}));
 ```
 
 If we were to do this with a plain array we might do `find` or a loop, or best case a `filter` like so: `this.states.notes.filter( note => { note.id !== id })`, please use Immutable.js.
@@ -202,23 +202,24 @@ If we were to do this with a plain array we might do `find` or a loop, or best c
 
 **Additions**:
 
-Immutable.js provides a nice [`set`](https://facebook.github.io/immutable-js/docs/#/Map/set) method that returns a new Map with the new key inserted / set (can override existing keys).
+Immutable.js provides a nice [`set`](https://immutable-js.github.io/immutable-js/docs/#/Map/set) method that returns a new Map with the new key inserted / set (can override existing keys).
 
 ```javascript
-this.setState({
-  notes: this.state.notes.set(id, note),
-});
+this.setState(prevState => ({
+  notes: prevState.notes.set(id, note),
+}));
 ```
 
 If we were to do this with a plain array it wouldn't be too bad, something like `[...this.state.notes, newNote]`, but if we were to do this with a javascript object, we'd first need to clone the object, that gets tricky.
 
-BTW: here is how you would shallow clone an object in es6:
+Here is how you could shallow clone an object:
 
 ```javascript
+// newNote = { key: value, key: value }
 const newNotes = Object.assign({}, this.state.notes, newNote);
 ```
 
-Confused?  This takes an empty object `{}` assigns the properties from `this.states.notes` to it, and also merges in the properties from `newNote`.  However it only does the top level properties, so each nested object is still a reference rather than clone.  Deep cloning is hard and slow if you are doing it manually.  Immutable.js makes it speedy and clean!
+Confused?  This takes an empty object `{}` assigns each of the properties from `this.states.notes` to it, and also merges in the properties from `newNote`.  However it only does the top level properties, so each nested object is still a reference rather than clone.  Deep cloning is hard and slow if you are doing it manually.  Immutable.js makes it speedy and clean!
 
 Great, now that you know how to clone an object we'll do that for updating a note!
 
@@ -227,16 +228,16 @@ Great, now that you know how to clone an object we'll do that for updating a not
 Immutable.js provides an [`update`](https://facebook.github.io/immutable-js/docs/#/Map/update) method, but there is a slight trick to it.  It expects a function that will update the passed in value.  Now that we know how to take an object and merge properties on it we can use that as our update function:
 
 ```javascript
-this.setState({
-  notes: this.state.notes.update(id, (n) => { return Object.assign({}, n, fields); }),
-});
+this.setState(prevState => ({
+  notes: prevState.notes.update(id, (n) => { return Object.assign({}, n, fields); }),
+}));
 ```
 
 ### More Immutable
 
 If you are iterating through your Map (yup it is iterable), you might find that you need to extract both the key (the id) and the value (the note).  
 
-Immutable.js has a nice [`entrySeq()`](https://facebook.github.io/immutable-js/docs/#/Map/entrySeq) method that allows you to do just that. It returns a list of tuples `[id, note]` so you can map over that and return the instantiation of a note component for instance.
+Immutable.js has a nice [`entrySeq()`](https://facebook.github.io/immutable-js/docs/#/Map/entrySeq) method that allows you to do just that. It returns a list of tuples `[id, note]` so you can use the array function [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) over that and return the instantiation of a note component for instance.
 
 ```javascript
 notes.entrySeq().map(([id, note]) => {
@@ -249,7 +250,7 @@ notes.entrySeq().map(([id, note]) => {
 
 ## Note Component
 
-You will probably need a *Note* component.  What does a *Note* do?
+You will probably need a *Note* component.  What might a *Note* do?
 
 * A Note:
   * displays title
@@ -276,10 +277,10 @@ Here is an example:
 
 ```html
   <Draggable
-    handle=".note-mover"
+    handle=".class-of-note-mover-element"
     grid={[25, 25]}
     defaultPosition={ {x: 20, y: 20} }
-    position={position} {/*looks like {x, y, width, height*/}
+    position={position} {/* should look like {x, y, width, height} */}
     onStart={this.onStartDrag}
     onDrag={this.onDrag}
     onStop={this.onStopDrag}
@@ -325,11 +326,11 @@ Delete is fairly straightforward, you would have some clickable element assigned
 ## Edit
 
 
-There are several ways to implement this.   You could have a button that opens up a modal, or you could do in-place editing,  switching out the display JSX for an editing box.
+There are several ways to implement this.  You could have a button that opens up a modal, or you could do in-place editing, switching out the display JSX for an editing box.
 
 Here's some tips!  For in-place, I would recommend having a boolean in your local component state, something like `isEditing` and then in your render function simply switch out which you are displaying based on that state.  
 
-Since login inside of the render function directly can be messy here is a common pattern:
+Here is a common pattern for having clean and readable `render()` functions:
 
 ```javascript
 renderSomeSection() {
@@ -410,7 +411,6 @@ One way to add persistent storage is to use a backend as a service (BAAS) platfo
 *Note: we'll be using Firebase Realtime Database for this rather than the newer Cloud Firestore Beta, although both would work for our purposes.*
 
 
-
 ### Reminder of specs
 
 
@@ -465,7 +465,6 @@ Note: `-g` installs globally rather than in your project, so we're installing a 
 yarn add firebase
 ```
 
-
 🚀 Now go to your *Project Overview* page -> *Add Firebase To Your App*
 
 You'll need to grab the `config` part that looks something like (grab the whole object):
@@ -493,12 +492,15 @@ Now the question is where shall we put all the various firebase related stuff?  
 My recommendation is to put all your firebase functions in this file and export them.  We briefly talked about ES6 modules.  Easiest way to make this module is to simply export every public function:
 
 ```javascript
-export function fetchNotes(callback) { /* ... */ }
+export function fetchNotes(callback) { 
+  //do something here
+  //callback() when done
+}
 ```
 
 Hey, what's this `fetchNotes` function?!  Just something that might help!
 
-You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal, however!  Our app is a frontend only app, we may be starting `webpack-serve` with `yarn start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!  However, note that the key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data.
+You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal.  However, our app is a frontend only app, we may be starting `webpack-dev-server` with `yarn start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!  Also, note that the key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data if you did that.
 
 Once you are ready to use these new functions you can just import it wherever you need it. In particular you would want to import these functions in your top level component where you have your note state related callbacks.
 
@@ -541,7 +543,7 @@ In our React App where is the right place to initiate retrieving values?
 
 If you thought `componentDidMount()` you are exactly right!
 
-🚀 Add a call from your App's `componentDidMount` method to a method in your firebasedb module. This method should take a callback as an argument!  This callback is critical as it is where you will take the results (the `snapshot`) and run `setState` in *App* with the results!
+🚀 Add a call from your `App` `componentDidMount` method to a method in your datastore module. This method should take a callback as an argument!  This callback is critical as it is where you will take the results (the `snapshot`) and run `setState` in *App* with the results!
 
 Your `componentDidMount()` function might look something like this:
 
@@ -552,18 +554,16 @@ firebasedb.fetchNotes(notes => {
 ```
 
 
-To summarize,  your *App* will subscribe to `value` events on a Firebase database reference (`ref`). Whenever a note is updated in Firebase it will trigger the callback you provided.  Your callback will take this `snapshot` of data and set your normal React `notes` state to the new notes object!   Nice, immutable, and should just be a seamless retrofit.
+To summarize,  your *App* will subscribe to `value` events on a Firebase database reference (`ref`). Whenever a note is updated in Firebase it will trigger the callback you provided.  Your callback will take this `snapshot` of data and set your React `notes` state to the new notes object!  Nice, immutable, and should just be a seamless retrofit.
 
 
 ## Writing Data To Firebase
-
 
 We have a few methods so far that set state:
 
 * create new note
 * update note
 * delete note
-
 
 We've been using Immutable.js methods for our state changes, but now we need to push our note state up to Firebase rather than dealing with it locally.   What we are going to do is instead of running `setState` on our local App component `notes` state,  we are instead going to just push our changes up to Firebase!  Then Firebase will essentially return a new notes state for us via the stuff we did above.
 
@@ -579,7 +579,6 @@ Since we already have access to the `id` which is the `key` for each object in o
 firebase.database().ref('notes').child(id).remove(); // update similarly
 // ref('notes').push(newNote) doesn't take an id, but returns a new auto-generated one
 ```
-
 
 ## That's Pretty Much It
 
