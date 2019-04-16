@@ -103,7 +103,7 @@ mkdir src #create directory
 touch src/index.js   #creates an empty file
 ```
 
-🚀 Now in **Atom** lets give our app something to do.
+🚀 Now in **VSCode** lets give our app something to do.
 
 ```javascript
 console.log('starting up!');
