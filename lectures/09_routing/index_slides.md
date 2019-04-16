@@ -181,7 +181,7 @@ name:
 * lives in the browser  - javascript application basically
 * what are some pros/cons:
   * serverside cons: page reloads, background flash, slow
-  * serverside pros: no js needed (sergey would love), directory structure?
+  * serverside pros: no js needed, directory structure?
   * clientside cons: not sure how it would work not builtin, js needed
   * clientside pros: fast, no page reload, only fetching data needed
 

@@ -26,8 +26,8 @@ comment_term: lectures
 * [4/9 JS P2](05_js2)
 <!-- * 4/11 Frameworks Intro -->
 * [4/11 Frameworks Intro](06_react1)
-* 4/16 React
-<!-- * [4/17 React](07_react2) -->
+<!-- * 4/16 React -->
+* [4/17 React](07_react2)
 * 4/18 Advanced JS
 <!-- * [4/19 Advanced JS](08_advanced_js) -->
 <!-- * 4/17 Projects -->

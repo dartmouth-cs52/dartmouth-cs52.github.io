@@ -43,8 +43,8 @@ comment_term: assignments
 * [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/6
 <!-- * Lab 2: Build a Buzzfeed Quiz -->
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/9
-* Lab 3: React Notes
-<!-- * [Lab 3: React Notes](lab/react-notes) - DUE 4/23 -->
+<!-- * Lab 3: React Notes -->
+* [Lab 3: React Notes](lab/react-notes) - DUE 4/23
 * Lab 4: Redux Blog Frontend
 <!-- * [Lab 4: Redux Blog Frontend](lab/redux-blog) - DUE 5/1 -->
 * Lab 5 Part 1: Redux Blog + API

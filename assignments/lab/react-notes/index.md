@@ -408,6 +408,9 @@ Ok, at this point you should have an app where you can add notes, move them arou
 
 # Part 2
 
+![](img/react-notes-architecture.jpg){:  .large}
+
+
 Now that we have a working stand-alone app, we should connect it to backend to make it cool and collaborative. We need persistent storage to enable our notes to not go away on reload and to synchronize the notes across different instances of the app.
 
 One way to add persistent storage is to use a backend as a service (BAAS) platform. Firebase is one such platform that provides a JSON based database ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. For instance you can subscribe to change events on collections of objects. Can we use Firebase with our React app?  You bet!

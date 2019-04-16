@@ -218,7 +218,6 @@ name:
 * ha don't worry we'll dig into this
 * i tried to find some fun learn js game but not much out there, most of them seem overly complicated, if anybody knows of one though!
 * OR final project idea!
-* lets channel some sergey bratus and hack game instead,  he would not hack this game as it is javascript which is insecure and he disables on all computers
 * event loop to handle asynchronous actions - we'll dig into that a lot
 * basically events come in and go into a queue to be processed
 

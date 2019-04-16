@@ -22,15 +22,17 @@ class: center, middle
 name: CS52 Today's Menu
 
 
-* Site Architecture Basics
 * All the React
 
 
 .medium[![](img/table-git.jpg)]
 
+* tomorrow weds x-hour is workshop
+
 ???
 * heading into week 4 yaaay
 * questioons commments concerns?
+* workshop attendance taken
 
 
 ---
@@ -56,120 +58,17 @@ name: Sharing is Caring
 ???
 
 
----
-name: static sites
-
-![](../06_react1/img/static-sites.png)
-
-???
-* an overview of different web architectures
-* we'll go over these more in depth also
-* static sites
-  * just files, transmitted on the network
-  * what we've been doing so far
-
-
-
-
 
 ---
-name: server side rendered
-
-![](../06_react1/img/server-side-rendering.png)
-
-???
-* server side rendering
-  * server is running code
-  * server constructs custom response for every page
-  * uses template and results from database
+name: Table Questions
 
 
-
-
-
----
-name: spa
-
-![](../06_react1/img/single-page-app.png)
+.medium[![](img/tq-virtual-real.jpg)]
 
 
 ???
-* single page app
-  * 1 index html file that loads javascript
-  * javascript then handles all content and urls
-  * loads all content asynchronously and inserts into page
-  * DOM manipulation + frontend framework
-  * largely the architecture we'll be using
-
-
-
-
-
----
-name: isomorphic
-
-![](../06_react1/img/isomorphic-app.png)
-
-
-???
-* isomorphic app
-  * does both server side rendering
-  * AND javascript client side content fetching and display
-  * this is useful in a few cases where say you want bots to read your page better or for SEO, so we'll learn about it but not have to inmplement it.
-
-
-
-
-
----
-name:
-
-.small[![](../06_react1/img/ajax.png)]
-
-.medium[![](../06_react1/img/django-ajax.png)]
-
-
-???
-* ajax is the concept of how we talk to api's
-* process by which a page loads new data via javascript rather than html
-
-<!--http://stackoverflow.com/questions/25336156/how-to-immediately-invoke-jquery-upon-clicking-remote-link-in-rails-->
-<!--https://realpython.com/blog/python/django-and-ajax-form-submissions-more-practice/-->
-
-
-
----
-name:
-
-.medium[![](../06_react1/img/JWMB2.png)]
-
-???
-* javascript modifying the page is powerful
-* more ajax
-  * page updates happen in background separate from full page loads
-  * we will use JSON isntead of XML, but note that new html only happens once the data is fetched
-
-
-
----
-name: apis
-
-* http/s requests
-  * GET, POST, etc
-* return JSON format data
-* [https://insomnia.rest/](https://insomnia.rest/)
-
-.medium[![](../06_react1/img/insomnia.png)]
-
-
-???
-* what does api mean?  application programming interface
-* when people say apis'
-* what they mean is:
-  * a server that returns/mutates data
-  * based on http get/post requests
-* often companies have public apis - allowing developers to interact with their datas
-* but also private apis whereby their own data is available to an ecosystem of own apps etc
+* questions comments concerns?
+* we're finishing grading labs and shorts tnight so those will be out
 
 
 
@@ -189,18 +88,6 @@ name: React.js
 * large open source community
 
 
----
-name: why react?
-
-
-.medium[![](img/stackoverflow-2018-react.jpg)]
-
-
-* https://insights.stackoverflow.com/survey/2018/
-
-
-
-
 
 ---
 name: why react?
@@ -217,7 +104,7 @@ name: why react?
 name: why react?
 
 
-.medium[![](img/stateofjs-2017-react.jpg)]
+.medium[![](img/stateofjs-2018-react.jpg)]
 
 
 * https://stateofjs.com/
@@ -248,59 +135,11 @@ name: React Onwards and Upwards
 
 
 
----
-name: old way
-
-```javascript
-$("button").on("click", function(button) {
-  if(button.value=="OFF") {
-      button.value="ON";
-  } else {
-      button.value="OFF";
-  }
-});
-```
-
-gross
-
-???
-* gross and a gross exaggeration
-* storing state in the DOM
-* or a slew of global variables
-* have to query for it if we want to know anything
-* super gross
-
-
 
 
 
 ---
-name: new way
-
-.small[![](img/mind.gif)]
-
-
-```js
-<button enabled={this.state.button} onClick={
-  () => this.setState({ button: !button })
-} />
-```
-
-* prettier?
-
-???
-* ok not yet mind blowing - bad example
-* fp principles
-* each component has local state which is an object (dictionary/hashmap)
-* has method `setState` to change it
-* never mutate state directly without `setState`
-
-
-
-
-
----
-name: More React
+name: Questions about JSX? 
 
 ```html
 <div className="red">let's talk SA4 and React!</div>
@@ -357,9 +196,9 @@ name:
 * lab2 vs lab3
 * react simplifies things
 * we'll build like 5 react apps in the coming weeks so don't worry if its all a bit confusing
-* state isn't hidden in many components requiring you to read state and then change stuff
+* rather than looking up and poking, is more clearly state driven
 * change state -> render, repeat
-* not a render loop
+* *not a render loop btw* - only on state change
 
 
 
@@ -387,7 +226,8 @@ var username = '';
 * you have some data - and you have some display - how to make it easier to work together
 * idea was what if a UI display could be directly tied to the persistent value in your code
 * if one changes so does the other
-* at least two types
+* **what might be the problem here?**
+  * what if when the username changed you wanted to do something like check it on the server? 
 
 
 
@@ -418,6 +258,7 @@ name: One Way
 * driven by state
 * an event updates the state
 * not automatic
+* seems similar except there is a function that is explicitly executed
 
 
 
@@ -429,6 +270,7 @@ name: Nope
 
 ???
 * ok maybe not
+* did you know he lives 20 minutes from here in vt?
 
 
 ---
@@ -439,10 +281,10 @@ name: Bindings
 
 ???
 * here's another view of this
-* critical difference is that with two-way - there is no explicit event, it just updates the value
+* critical difference is that with two-way - there is no explicit event, it just updates the value, you don't know how the watchers work
 * boom value is different, did you happen to notice? no? ok bye.
-* theoretically you could code the 'watchers' to trigger events, but it does add complexity
-* since each variable that is bound is independent, then have to manually remember to update dependent stuff if necessary
+* theoretically you could code the 'watchers' to trigger events, but most frameworks don't do that 
+* **biggest issues is** that since each variable that is bound is independent, then have to manually remember to update dependent stuff if necessary
 
 
 
@@ -517,12 +359,11 @@ name: Some React Postulates
 1. Two-way bindings are evil
 1. Data mutations can be tricky
 
-
 ???
 * state:
-  * what radio button was clicked
+  * what button was clicked
   * what is being displayed etc
-* transparency: effects of a code change should be limited/local
+* transparency: effects of a value change should be limited/local
   * or at least **easy to reason about**
   * Also a useful concept regarding state change
   * Two-way bindings open Pandora’s box:
@@ -558,73 +399,6 @@ name:
 * so drink the koolaid that is react and know that the river of data is clean
 
 
----
-name: What is this I hear about Virtual DOM?
-
-.medium_small.fancy[![](../06_react1/img/reactjs-virtual-dom-real-dom.png)]
-
-
-* isn't one DOM already enough?!?!
-* normal DOM traversal is slow
-* Virtual DOM allows for faster DOM manipulation
-* Virtual DOM simpler and faster
-  * React diffs Virtual DOM and DOM
-  * only updates what is changed
-
-
-???
-* what is the DOM again? document object model - a tree of html elements
-* to be able to efficiently manage the display of your complex view
-* react builds up a virtual DOM tree
-* dom trees are large, react component virtual tree is smaller
-* saved unneccessary dom manipulation (state changes but don't need to rerender a lot of stuff)
-
-
-
-
----
-name: tree diffs
-
-* wouldn't comparing trees be expensive?
-  * $O(n^{3})$ yes
-  * but React does it in $O(n)$
-* [reconciliation](https://reactjs.org/docs/reconciliation.html) heuristic
-
-???
-* heuristic O(n) algorithm
-* assumption1: Two elements of different types will produce different trees.
-* 2: developer can hint at which child elements may be stable across different renders with a key prop.
-* https://reactjs.org/docs/reconciliation.html
-
-
-
-
----
-name: dirty state
-
-.medium[![](../06_react1/img/setstate-dirty.png)]
-
-
-???
-* when a components state changes via setState.
-* when you run `setstate` it markes a node as dirty
-* potentially rerendering the entire subtree but in practice is performant
-
-*(img from [perfplanet](http://calendar.perfplanet.com/2013/diff/))*
-
-
-
-
-
----
-name: rerendering
-
-.medium[![](../06_react1/img/dirty-rerendered.png)]
-
-
-???
-* actually a bit better than shown here
-* you can indicate that nodes are stable and unchanged via the codes
 
 
 ---
@@ -722,7 +496,7 @@ name: local state
 ![](img/component-tree-setstate.png)
 
 ???
-* we had local state somewhere else in sa4?
+* we also had state somewhere else in sa4?
 * yeah top level app component
 
 
@@ -762,9 +536,10 @@ name: state summary
 
 ???
 * props
+  * properties or function arguments if you prefer
   * are passed in
   * defined on initialization
-  * immutable inside component
+  * read-only inside component
 * state
   * internal to component
   * modified only through setState
@@ -796,7 +571,7 @@ class ParentComponent extends Component {
     return <SmallComponent person={person} onClick={this.handleClick}/>
   });
 
-  render() {\
+  render() {
     return <ul> {list} </ul>;
   }
 };
@@ -804,24 +579,26 @@ class ParentComponent extends Component {
 
 
 ???
+* note the class property arrow function - automatically bound
 * simplified example, why is parentComponent a bad example?
 * doesnt' do anything useful with click event
 * should run setState
-
-
+* lot of good stuff going on here
+* **where does people come from?**
 
 
 
 ---
 name: component lifecycle
 
-.medium[![](img/component-lifecycle.png)]
+.large[![](img/simple-lifecycles.jpg)]
 
 
 
 ???
 
-* *from: http://code.tutsplus.com/tutorials/intro-to-the-react-framework--net-35660*
+* *from: https://medium.com/@nancydo7/understanding-react-16-4-component-lifecycle-methods-e376710e5157*
+* http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 
 
@@ -873,22 +650,92 @@ render() {
 * should be modified only through setState
 * where modified is really set to new state
 * we'll see later why this is important
-* but generally if you modify it otherwise react won't know about it and won't update
+* but generally if you modify directly react won't know about it and won't update
+* also note the flow here - first time component is rendered... video key is null!
+
+
+---
+name: Functional setState "one step behind"
+
+```javascript
+//initialize State
+this.state = {counter: 0}
+```
+
+```javascript
+this.setState({count: this.state.count+1});
+console.log(this.state.count) // 0
+this.setState({count: this.state.count+1});
+// batch update merging objects
+// then end result is 1
+
+```
+
+```javascript
+this.setState(prevState => ({count: count+1}));
+console.log(this.state.count) //0
+this.setState(prevState => ({count: count+1}));
+// batch update queues function calls in order
+// end result is 2
+```
 
 
 
+???
+* setstate as asynchronous - we'll do lots more with asynch of thurs
+* you may run into issues like this, you try to use the state right after setting it to a new thing - but it'll be one step behind
 
 
 ---
 name: expanded component lifecycle
 
 
-.medium[![](img/react-diagram.png)]
-
+.medium[![](img/react-lifecycle.png)]
 
 
 ???
-* you'll find this helpful later i promise
+
+* *from: https://medium.com/@nancydo7/understanding-react-16-4-component-lifecycle-methods-e376710e5157*
+* forceUpdate bad
+* shouldComponentUpdate rarely used
+* snapshot can read the dom for instance to get scroll position if you need it
+* getDerivedState includes prevState and nextProps in case, you won't need this generally unless you are doing something bad
+* don't shadow state <- props
+
+
+---
+name: Do Not Shadow
+
+```javascript
+const Parent = (props) => {
+  return (
+    <BadShadow unread={props.realUnreadCount} />
+  );
+};
+```
+
+```javascript
+class BadShadow extends Component {
+  constructor(props) {
+    this.state.unread = props.unread;
+  }
+
+  handleClick = () => {this.setState(prevState=>({unread: prevState.unread-1});}
+
+  render() {
+    <div>
+      <div>`unread: ${this.state.unread}`</div>
+      <div onClick={this.handleClick}> message </div>
+    </div>
+  }
+};
+```
+
+
+???
+* what could go dreadfully wrong here?
+* silly example but see it a lot
+
 
 
 ---
@@ -930,3 +777,18 @@ name: tiny todo
 
 ???
 * putting it all together
+
+
+
+
+---
+name: Lab3 
+
+.medium_small[![](img/collabnote.gif)]
+* out today - due night Monday 22nd
+* part 2 is uses firebase which we'll go over thurs
+
+???
+* putting it all together
+
+
