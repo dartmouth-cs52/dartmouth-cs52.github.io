@@ -611,7 +611,7 @@ Test it out!  Open multiple browsers and see how adding and moving notes in one 
 
 ### Extra Credit
 
-* Snap to grid / organize
+* Some method of note organization such as show-all.
 * Come up with a way to deal with zIndex sorting:
   * when you drag your note does it go above or behind?
   * can you pop your note to the front when it is dragged?

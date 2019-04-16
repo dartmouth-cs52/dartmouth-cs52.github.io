@@ -33,6 +33,28 @@ name: CS52 Today's Menu
 * questioons commments concerns?
 
 
+---
+name: Sharing is Caring
+
+* [got](https://dartmouth-cs52-19s.github.io/lab2-prosper007/)
+* [hip css](https://dartmouth-cs52-19s.github.io/lab2-baileyburke/)
+* [which rose](https://dartmouth-cs52-19s.github.io/lab2-saburack/)
+* [vine and scroll](https://dartmouth-cs52-19s.github.io/lab2-tmonfre/)
+* [progress bar](https://dartmouth-cs52-19s.github.io/lab2-ziruihao/)
+* [kaf order](https://dartmouth-cs52-19s.github.io/lab2-zacgottschall/)
+* [language?](https://dartmouth-cs52-19s.github.io/lab2-SyedHTanveer/)
+* [dart dorm](https://dartmouth-cs52-19s.github.io/lab2-faustino99/)
+* [motorcycle](https://dartmouth-cs52-19s.github.io/lab2-overlake333/)
+* [how generic](https://dartmouth-cs52-19s.github.io/lab2-dhungjookim/)
+* [sitcom picker](https://dartmouth-cs52-19s.github.io/lab2-emmalangfitt/)
+* [autoscroll](https://dartmouth-cs52-19s.github.io/lab2-CharlotteChui/)
+* [blinding](https://dartmouth-cs52-19s.github.io/lab2-gracedorgan/)
+* [beautiful color math](https://dartmouth-cs52-19s.github.io/lab2-regina-yan/)
+
+
+
+???
+
 
 ---
 name: static sites
