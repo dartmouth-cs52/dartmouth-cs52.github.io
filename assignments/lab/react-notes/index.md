@@ -22,6 +22,7 @@ We will start with a version of the app that does not have a backend,  it'll use
 
 Then we will add in Firebase for persistent storage. Firebase is a backend as a service (BAAS). It provides a simple JSON data store ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. You can subscribe to change events on collections of objects, this is perfect to use with React!
 
+This will involve a small bit of refactoring, but will demonstrate how you can prototype frontend and then add in server side later. 
 
 ## Let's Start
 
@@ -192,10 +193,13 @@ We'll be using the Map type, which gives us a hashmap as you would expect, excep
 Immutable.js provides a [`delete`](https://immutable-js.github.io/immutable-js/docs/#/Map/delete) method that takes an ID and spits back a new Map. Here's an example of using it for setting a new notes state on deletion of a note.
 
 ```javascript
+//note the parens which are shorthand for return
 this.setState(prevState => ({
   notes: prevState.notes.delete(id),
 }));
 ```
+
+*Note: in the above we are using function setState rather than object setState. We are passing in an arrow notation function which is called with previous state and it returns new state. This is [often preferred](https://medium.freecodecamp.org/functional-setstate-is-the-future-of-react-374f30401b6b) for clarity and consistency.*
 
 If we were to do this with a plain array we might do `find` or a loop, or best case a `filter` like so: `this.states.notes.filter( note => { note.id !== id })`, please use Immutable.js.
 
