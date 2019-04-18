@@ -57,19 +57,8 @@ name: Javascript Fatigue
 
 
 
-
 ---
-name: Too much?
-
-
-![](img/table-too-fast.jpg)
-
-
-???
-* learning is good for you - builds character
-
----
-name: Not enough!
+name: Too Much?
 
 
 .large[![](img/evil.jpg)]
@@ -81,34 +70,38 @@ name: Not enough!
 
 
 ---
-name: Table Questions
+name: Used To Be Worse!
 
-* can you use a static site generator with react to provide a static site that can do some dynamic stuff?   Yes: https://www.gatsbyjs.org/ and...
 
-.left[![](img/table-comparing-trees.jpg)]
-
-.right[![](img/table-webpack-100.jpg)]
-
+![](img/table-too-fast.jpg)
 
 
 ???
-* yes - there's even a concept: jamstack
-* javascript, apis, and markdown
-* mostly static - but also using various apis to put together pages, for dynamic content.
-
-
+* learning is good for you - builds character
 
 
 
 ---
 name: Table Questions
 
+* is shadowing saving a variable passed in through props in a local variable copy? 
+* can you explain binding a bit more
 
-.large[![](img/table-js-tim-vs-sergey.jpg)]
-
+.medium[![](img/tq-state-money.jpg)]
 
 
 ???
+* yes pretty much
+* yes, but first i'mma gonna introduce minions
+
+
+
+<!-- 
+name: Table Questions
+
+
+.large[![](img/table-js-tim-vs-sergey.jpg)]
+
 * engineering - knowing the properties of your materials
 * in software - how do you test other peoples code / know its properties
 * does it scale?  does it work in older browsers?
@@ -117,7 +110,7 @@ name: Table Questions
 * [apollo moon code](https://qz.com/726338/the-code-that-took-america-to-the-moon-was-just-published-to-github-and-its-like-a-1960s-time-capsule/)
 * [nasa rules](http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf)
 
-
+ -->
 
 
 
@@ -179,7 +172,7 @@ kevin = (error, results) => {
     //Do something with Results here
   });
 }
-someTask(kevin);
+someLongTask(kevin);
 
 ```
 
@@ -188,13 +181,38 @@ someTask(kevin);
 * here we have a named minion and an anonymous minion
 * where are error and results coming from?
 
+
+
+---
+name: (error, results)
+
+.super-tiny[![](img/minion-no.gif)]
+
+```js
+const someLongTask = async (callback) => {
+  try {
+    await console.log('fetch me some beer');
+    callback(null, 'success');
+  } catch(error) {
+    callback('error', null);
+  }
+};
+
+someLongTask((error,result) => console.log(error,result));
+// either null, stuff or 'error', null
+```
+
+???
+* don't worry about the async await - getting there
+
+
 ---
 name: Tasks that only a minion can do
 
 <iframe src="//giphy.com/embed/13FznCEnWSiUfK?hideSocial=true" width="480" height="259.9384615384615" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ```js
-fetch(beer).then( beer => {
+fetch('beer').then( beer => {
   handleDrink(null, beer)
 }).catch(error => {
   handleDrink(`sorry boss, ${error}`, null)
@@ -230,7 +248,8 @@ name: Callback Hell!
 * lots of nested callbacks
 * unwieldy
 ]
-.right[<iframe src="//giphy.com/embed/mGTI0rm6QpyQE?hideSocial=true" width="320" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>]
+.right[![](img/minion-chain.gif)
+]
 
 ???
 * callback hell is when you have lots of nested callbacks
@@ -252,7 +271,7 @@ name: How to Fix?
 ]
 
 .right[
-<iframe src="//giphy.com/embed/DfzVdbj45WcU0?hideSocial=true" width="380" height="169.76" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+![](img/banana.gif)
 ]
 
 ???
@@ -278,7 +297,7 @@ doSomething(args).then(doneStuff);
 ```
 
 ???
-*
+* basically a slightly different notation for running a callback
 
 
 
@@ -387,7 +406,7 @@ name: Callback and Promises
 name: Promises
 
 
-.medium[![](img/promises.png)]
+.large[![](img/promises.png)]
 
 
 ???
@@ -473,9 +492,19 @@ f();
 * i honestly prefer the promise then notation
 
 ---
+name: Async/Await Simulation
+
+<p data-height="403" data-theme-id="24117" data-slug-hash="2fe5da65f15718b584079a55ee4fd4f9" data-default-tab="js,result" data-user="timofei" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/2fe5da65f15718b584079a55ee4fd4f9/">async playground</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+???
+
+
+
+
+---
 name: Game
 
-Practice your asynch:
+Practice your asynch (chrome only):
 
 .medium[![](img/boomsync.png)]
 
@@ -644,13 +673,14 @@ this.state.setState(newState);
 * trick to state:
   * render is pure function
   * state is updated to new state not mutated
+* state is an object so generally mutable so lets be careful here
 
 
 
 
 
 ---
-name: String
+name: Strings Are Interesting
 
 * strings are typically immutable in most languages!
 
@@ -824,8 +854,9 @@ name: React and Immutable
 this.state.notes = Immutable.Map();
 
 //add something in
-this.setState(this.state.notes.push({title: 'new note'}));
-
+this.setState(prevState => (
+  prevState.notes.push({title: 'new note'})
+));
 ```
 
 
@@ -850,7 +881,7 @@ name:
   * scalability
 
 ???
-* and it isn't even made by facebook?!
+* and it isn't even made by facebook?! but google
 * backend as a service
 * json storage -- who remembers JSON?
 
@@ -1004,6 +1035,7 @@ export default coolCode;
 ```javascript
 // import
 import coolCode from 'myModule';
+coolCode.someCoolFunction();
 ```
 
 
