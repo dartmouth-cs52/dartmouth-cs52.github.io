@@ -85,14 +85,12 @@ name: Used To Be Worse!
 name: Table Questions
 
 * is shadowing saving a variable passed in through props in a local variable copy? 
-* can you explain binding a bit more
 
 .medium[![](img/tq-state-money.jpg)]
 
 
 ???
 * yes pretty much
-* yes, but first i'mma gonna introduce minions
 
 
 
