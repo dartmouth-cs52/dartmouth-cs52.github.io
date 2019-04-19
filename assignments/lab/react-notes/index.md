@@ -273,7 +273,7 @@ Is left as an exercise for the reader. 😄
 
 ### Dragging
 
-Dragging is a bit tricky, but you can simplify your life by using a component from the onlines.  I recommend [react-draggable](https://github.com/mzabriskie/react-draggable).   
+Dragging is a bit tricky, but you can simplify your life by using a component from the onlines.  I recommend [react-draggable](https://github.com/mzabriskie/react-draggable). *(remember we are using `yarn` for package dependencies)*
 
 The basic idea is that you would import this new component just like you have been with your own components and then it has some props that you pass into it for configuration.
 
