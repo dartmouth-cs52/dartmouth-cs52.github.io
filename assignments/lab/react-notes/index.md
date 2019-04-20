@@ -269,7 +269,7 @@ You will probably need a *Note* component.  What might a *Note* do?
 
 ## Displaying Title and Content
 
-Is left as an exercise for the reader.
+Is left as an exercise for the reader. 😡
 
 ### Dragging
 
