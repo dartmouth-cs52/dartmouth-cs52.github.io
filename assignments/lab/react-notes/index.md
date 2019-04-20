@@ -269,7 +269,7 @@ You will probably need a *Note* component.  What might a *Note* do?
 
 ## Displaying Title and Content
 
-Is left as an exercise for the reader. 😄
+Is left as an exercise for the reader.
 
 ### Dragging
 
@@ -284,10 +284,10 @@ Here is an example:
     handle=".class-of-note-mover-element"
     grid={[25, 25]}
     defaultPosition={ {x: 20, y: 20} }
-    position={position} {/* should look like {x, y, width, height} */}
-    onStart={this.onStartDrag}
-    onDrag={this.onDrag}
-    onStop={this.onStopDrag}
+    position={ {x: onYou_X, y: onYou_Y, width: onYou_width, height: onYou_height} } 
+    onStart={this.handleStartDrag}
+    onDrag={this.handleDrag}
+    onStop={this.handleStopDrag}
   >
     <div>
       YOUR ACTUAL NOTE HERE
@@ -298,9 +298,9 @@ Here is an example:
 
 The way to use this component is to wrap whatever JSX you want in your *Note* render method in `<Draggable>`.
 
-Note the 3 callbacks.  `onStart`, `onDrag`, `onStop`.   You would use these to drive the position of the note.  You'll want the position to be part of the note object as eventually we will synchronize using a cloud component.  You may find that you only need to implement `onDrag`.
+Note the 3 callbacks.  `handleStart`, `handleDrag`, `handleStop`.   You would use these to drive the position of the note.  You'll want the position to be part of the note object as eventually we will synchronize using a cloud component.  You may find that you only need to implement `handleDrag`.
 
-In particular, Draggable will call `onDrag` with two arguments, let's call them `(e, ui)`.  Just to save you some digging, `ui` will have x and y components so you can extract them and use them for your `note.position` state.
+In particular, Draggable will call the function **you** provide to `onDrag` with two arguments, let's call them `(e, data)`.  Just to save you some digging, `data` will have x and y components so you can extract them and use them for your `note.position` state.
 
 Here's a potential component hierarchy you could end up with:
 
@@ -321,10 +321,10 @@ Note:  this is not how any of your render methods would be, this is just an illu
 
 ## Delete
 
-Delete is fairly straightforward, you would have some clickable element assigned a callback that would be passed up to trigger a delete. I used some font-awesome icons:
+Delete is fairly straightforward, you would have some clickable element assigned a callback that would be passed up to trigger a delete. I used some [font-awesome free webfont css](https://fontawesome.com/start) icons. *Note: alternatively you can use [react-fontawesome](https://github.com/FortAwesome/react-fontawesome)*
 
 ```html
-<i onClick={this.onDeleteClick} className="fa fa-trash-o" />
+<i onClick={this.handleDeleteClick} className="fa fa-trash-o" />
 ```
 
 ## Edit
