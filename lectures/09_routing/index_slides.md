@@ -25,7 +25,10 @@ name: base
 name: CS52 Art
 
 
-.large[![](img/nature-table.jpg)]
+* routing
+* projects
+
+<!-- .large[![](img/nature-table.jpg)] -->
 
 
 ???
@@ -65,8 +68,7 @@ name: CS52 Art
 
 
 
----
-name: React Notes
+<!-- name: React Notes
 
 * [create modal](http://dartmouthnotes.surge.sh/)
 * [multiple boards](http://kevinhu-cs52-notes.surge.sh/)
@@ -84,15 +86,16 @@ name: React Notes
 * [github auth and zindex](http://ted-react-notes.surge.sh/)
 * [colors](http://benjihannam-cs52-lab3.surge.sh/)
 
-???
 * some examples
-* will try to speed up our grading to get you feedback quicker
+* will try to speed up our grading to get you feedback quicker 
+-->
 
 ---
 name: CS52 Art
 
 
-.large[![](img/callbackhell-table.jpg)]
+.right.large[![](img/callbackhell-table.jpg)]
+.left.large[![](img/promises.jpg)]
 
 
 ???
@@ -104,16 +107,14 @@ name: CS52 Art
 ---
 name: Announcements
 
-.small[![](img/fuq-table.jpg)]
+<!-- .small[![](img/fuq-table.jpg)] -->
 
 * Project Pitching Next Week!
 * SA5: Routing (super short)
 * SA6: Redux (extra short)
 
 ???
-* people were way grumpier last time - you are all so sunny!
 * we should start talking about final project ideas!
-* thursday we'll discuss in more detail - but get excited!
 * there will be another short for redux going out soon.
 * these are all super short just to get your starterpacks up and ready
 
@@ -122,7 +123,8 @@ name: Announcements
 ---
 name: Quiz
 
-<iframe src="//giphy.com/embed/BnlSxZ1nJy9C8" width=700" height="422" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.large[![](img/chase.gif)] 
+
 
 ???
 
@@ -144,6 +146,8 @@ name: Routing Frontend
 * what if you want to pass some state into the url
 * or have a url that is meaningful to the user to help indicate where they are
 * what the what, who keeps track of all that junk
+* tracking where a link was clicked and who shared for instance
+* what news article to show
 * https://ed.fnal.gov/lincon/tech_web_links_types.shtml
 * https://www.slideshare.net/rfreebern/the-ux-of-urls
 
@@ -243,6 +247,8 @@ name: enter frontend routing
 ---
 name: Basic Browser
 
+.small[![](img/basic.gif)]
+
 * maintains a history of URLs visited
   * back
   * forward
@@ -263,13 +269,17 @@ name: Basic Browser
 ---
 name: reloads on
 
+
+.small[![](img/reload.gif)]
+
 * location bar typing
 * forward/back buttons
 * page refresh operation
 * javascript assignments to `window.location`
+* form submission
 
 ???
-* what we want is to change url without refresh
+* BUT what we want is to change url *without* refresh
 
 
 
@@ -281,7 +291,7 @@ name: Attempt 1: Hash History
 
 * http://example.com
 * http://example.com#fragment
-*
+
 * http://example.com?id=3535
 * http://example.com?id=3535#fragment
 
@@ -307,7 +317,8 @@ window.onbeforeunload = function(e) {
 ```
 
 ???
-* loss of state on navigation away from page
+* another reason why we want this
+* the problem of loss of state on navigation away from page
 
 
 
@@ -405,7 +416,7 @@ http://html5demos.com/history
 name:
 
 
-.medium[![](img/router4.png)]
+.medium[![](img/router5.jpg)]
 
 [https://reacttraining.com/react-router](https://reacttraining.com/react-router)
 
@@ -502,6 +513,7 @@ name: Manual Labor
 ```javascript
 renderInner() {
   if (this.state.showUsers) {
+  // or if(window.location.search.indexOf("users") > -1))
     return <ShowUsers />;
   } else {
     return <ShowWidgets />;
@@ -509,9 +521,9 @@ renderInner() {
 }
 
 render() {
-  <div>
+  <div id="main">
     <Nav />
-      {renderInner()}
+    {renderInner()}
     <Footer />
   </div>
 }
@@ -578,14 +590,14 @@ name: Nesting
 
 
 ```html
-const Posts = (props) => {
+const Posts = (props) => (
   <div>
     <Route path={`${props.match.url}/:postid`} component={Post}/>
     <Route exact path={props.match.url} render={() => (
       <h1>select a post</h1>
     )} />
   </div>
-}
+)
 <Route path="/posts" component={Posts} />
 ```
 
@@ -608,7 +620,7 @@ const Posts = (props) => {
 
 
 ---
-name: your components can be parents
+name: react components can be parents
 
 ```html
 // App
@@ -746,8 +758,14 @@ my-project.surge.sh/
 * will cover more on this later
 
 
+---
+name: also...
+
+* [animating urls?!?](http://matthewrayfield.com/articles/animating-urls-with-javascript-and-emojis)
 
 
+???
+* extra credit if you implement this in the short
 
 ---
 name: panda time

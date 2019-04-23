@@ -728,7 +728,7 @@ if (!video) {
 
 Now, when the page reloads you will very briefly see loading and then the component will fill in.
 
-Note: I know right now the pages are looking pretty grim.  We'll do a little bit of styling at the end just to clean it up some, but you are welcome to style things as you see fit.  EC for styling!
+Note: I know right now the pages are looking pretty grim.  We'll do a little bit of styling at the end just to clean it up some, but you are welcome to style things as you see fit!
 
 
 
