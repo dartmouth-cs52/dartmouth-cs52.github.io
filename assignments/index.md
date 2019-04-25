@@ -45,8 +45,8 @@ comment_term: assignments
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/9
 <!-- * Lab 3: React Notes -->
 * [Lab 3: React Notes](lab/react-notes) - DUE 4/22
-* Lab 4: Redux Blog Frontend
-<!-- * [Lab 4: Redux Blog Frontend](lab/redux-blog) - DUE 5/1 -->
+<!-- * Lab 4: Redux Blog Frontend -->
+* [Lab 4: Redux CRUD Frontend](lab/redux-blog) - DUE 5/1
 * Lab 5 Part 1: Redux Blog + API
 <!-- * [Lab 5 Part 1: Redux Blog + API](lab/redux-blog+server) - DUE 5/7 -->
 * Lab 5 Part 2: Redux Blog + Auth 

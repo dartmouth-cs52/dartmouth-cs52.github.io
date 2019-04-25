@@ -1,16 +1,16 @@
 ---
 layout: page
 title: Lab 4
-published: false
+published: true
 comment_term: lab-redux-blog
 ---
 
 
-## Redux Blog: Client
+## Redux CRUD Platform: Client
 
 ![](img/redux.png)
 
-We'll build a React+Redux Blog Platform.  It doesn't even necessarily have to be a blog could be anything you want. As long as there are individual post items that have some content that need to be saved to a database! Aside from the core functionality of creating a post with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.  It will basically be a CRUD platform — create, read, update, delete, storing data on a server with best practices user authentication and security — those features encompass a world of possibilities.
+We'll build a React+Redux Blog Platform.  It doesn't have to be a blog could be anything you want. As long as there are individual post items that have some content that need to be saved to a database! Aside from the core functionality of creating a post with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.  It will basically be a CRUD platform — create, read, update, delete, storing data on a server with best practices, user authentication, and security — those features encompass a world of possibilities.
 
 
 <iframe width="800" height="591" src="https://www.youtube.com/embed/MtZQlDwH4cs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
@@ -32,7 +32,7 @@ We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-18s/starterpack-your-gitub-username.git
+git remote add starter git@github.com:dartmouth-cs52-19s/starterpack-your-gitub-username.git
 git pull starter master  # you may need --allow-unrelated-histories
 ```
 
@@ -64,7 +64,7 @@ The API has the following endpoints:
 For each of these you need to append an api key.  This key can just be your `firstinitial_lastname`.   You can test the api using [insomnia](https://insomnia.rest/) or curl.
 
 ### Testing APIs from CLI with curl
-There is a command that you can run in Terminal called `curl` that can fetch remote data.  Here's how you would use it for testing the api server.  This will also come in handy when you have to create the api server next week!
+There is a command that you can run in Terminal called `curl` that can fetch remote data.  Here's how you would use it for testing the api server.  This will also come in handy when you have to create the api server next week! 
 
 ```bash
 # all posts get:
@@ -162,6 +162,39 @@ Min specs at a glance:
 
 This is a connected component that can both trigger actions and is connected to the global redux state.
 
+<details markdown="block">
+<summary>❓What is this connected thing you keep talking about?!
+</summary>
+
+It is a react-redux `connect` function that makes your component connected to the redux store.  It takes 2 arguments:
+
+1. `mapStateToProps`: like what is says, take in redux state, outputs a dictionary mapping only the keys we are interested in.
+2. `mapDispatchToProps`: takes in dispatch returns mapping of ActionCreators we want to be able to use in this component. Can just take all actions if we want, or provide just the ones we are interested in. 
+3. ^ all of the above end up in `props`, remember that. 
+
+And here's some giveaway code for your `Post` component: 
+
+```javascript
+// some imports
+import { connect } from 'react-redux';
+import { fetchPost, deletePost, updatePost } from '../actions/index';
+
+
+function mapStateToProps(reduxState) {
+  return { 
+    currentPost: reduxState.posts.current
+  };
+}
+
+// enables this.props.currentPost
+// and this.props.fetchPost, this.props.deletePost, and this.props.updatePost
+export default connect(mapStateToProps, { fetchPost, deletePost, updatePost })(Post);
+```
+
+*What other components will need to be connected like this?*
+
+</details>
+
 ## Redux
 
 We will be using [redux](http://redux.js.org/) for our application state.  We're going to just have 1 reducer to start with: `postsReducer`.   This reducer will be associated with the key `posts` in our `combineReducers` and will return the global state as an object that looks something like this initially:
@@ -169,7 +202,7 @@ We will be using [redux](http://redux.js.org/) for our application state.  We're
 ```javascript
 posts: {
   all: [],
-  post: {},
+  current: {},
 }
 ```
 
@@ -178,7 +211,7 @@ The state within the `postsReducer` looks like this:
 ```javascript
 {
   all: [],
-  post: {},
+  current: {},
 }
 ```
 
@@ -261,13 +294,13 @@ Redux middleware wraps the dispatch function, allowing our `redux-thunk` middlew
 
 ![](img/reduxwithmiddleware.gif){: .small}
 
-Remember how ActionCreators just return an Action?  Well, what if you want the ActionCreator to first do something, perhaps fetch something from the internet?  Thunks allow this functionality.  Instead of immediately returning an Action object and flowing into the Reducer, we return a function that gets executed and can go off and do some stuff before dispatching the Action.
+Remember how *ActionCreators* just return an *Action*?  Well, what if you want the *ActionCreator* to first do something, perhaps fetch something from the internet?  Thunks allow this functionality.  Instead of immediately returning an *Action* object and flowing into the Reducer, we return a function that gets executed and can go off and do some stuff before dispatching the Action.
 
-A redux thunk allows your ActionCreators to return functions that can then dispatch actions.  Quite literally giving them access to a `dispatch` method.
+A redux thunk allows your *ActionCreators* to return functions that can then dispatch actions.  Quite literally giving them access to a `dispatch` method.
 
 ```javascript
 export function anAction() {
-  // ActionCreator returns a function
+  // ActionCreator returns a *function*
   // that gets called by the middleware passing in dispatch to it as an argument
   return (dispatch) => {
       // here is where you would do your asynch axios calls
@@ -306,9 +339,9 @@ export function deletePost(id, history) {/* axios delete */}
 
 Each of these methods will return a function that takes dispatch as its argument, runs some axios call, and then dispatches some action. In the above that ActionType actions are named the same as the functions, however it might help to think of them as FETCH_POSTS_SUCCEEDED for instance.  It is the action that is dispatched to the reducers with the payload results of the asynchronous call.
 
-In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Post* page you would want to be taken back to the `Posts` page.  Simple add `history.push('/')` to navigate to another page from within your ActionCreator function. But where does history come from?  Unfortunately, only routed components have access to history (not our actions module), so we will have to pass that in to our ActionCreators when they are called.  Add a parameter to any actionCreator that needs to call history like so `this.props.createPost(post, this.props.history)`.
+In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Post* page you would want to be taken back to the `Posts` page.  Simply add `history.push('/')` to navigate to another page from within your ActionCreator function. But where does history come from?  Unfortunately, only routed components have access to history (not our actions module), so we will have to pass that in to our *ActionCreators* when they are called.  Add a parameter to any actionCreator that needs to call history like so `this.props.createPost(post, this.props.history)`.
 
-⚠️ If you run into a problem where for some reason your ActionCreator seems to run but never dispatches an action, that might be because you are running the unconnected version that you imported rather than the connected version of the function that you get from mapDispatchToProps.  So always remember to run ActionCreators as their `this.props` version because that is what `connect()` does, it gives us a modified version of the function that is run inside of `dispatch`.
+⚠️ If you run into a problem where for some reason your *ActionCreator* seems to run but never dispatches an action, that might be because you are running the unconnected version that you imported rather than the connected version of the function that you get from `mapDispatchToProps`.  So always remember to run *ActionCreators* as their `this.props` version because that is what `connect()` does, it gives us a modified version of the function that is run inside of `dispatch`.
 
 ## Reducers
 
@@ -327,11 +360,11 @@ We want our state to look like this:
 ```javascript
 const initialState = {
   all: [],
-  post: {},
+  current: {},
 };
 ```
 
-Where `all` would contain an array of all posts, and `post` would be the current individually displaying post (for *Post*).
+Where `all` would contain an array of all posts, and `current` would be the current individually displaying post (for *Post*).
 
 For FETCH_POSTS you would return the state object with the `all` property set to the new posts.  For FETCH_POST return that single post.  
 
@@ -357,7 +390,7 @@ If you don't know where to start, remember the steps in creating an React applic
 1. Ship it
 
 
-It might help for the ActionCreator -> Dispatch -> Reducer -> State flow, to try getting one working first.  For instance maybe get the *Post* component working first, the others will come more easily once you have the full path tested with one of them.
+It might help for the *ActionCreator* -> *Dispatch* -> *Reducer* -> *State* flow, to try getting one working first.  For instance maybe get the *Post* component working first, the others will come more easily once you have the full path tested with one of them.
 
 Don't forget to use the [lab 4 slack channel](https://cs52-dartmouth.slack.com/messages/lab4-blog/).
 
