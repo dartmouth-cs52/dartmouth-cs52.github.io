@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Redux — Short Assignment
-published: false
+published: true
 comment_term: sa-redux
 ---
 
@@ -21,7 +21,7 @@ Redux is a fancy state management system that we'll be using to build our blog p
 
 🚀 We're going to keep working on your starterpack for this assignment. So just dig up that repo and work there!  At this point you should have a starterpack that has webpack+babel+eslint+sass+react+reactrouter.  Remember to just push your new stuff to this. For grading we'll know which commits to look at.  You want to keep building this up.
 
-For this workshop we're just going to add Redux to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter+redux! Wow.
+Now we're going to add in Redux to your personal starter repository so now you'll have webpack+babel+eslint+sass+react+reactrouter+redux! Wow.
 
 
 ## Double check your tags:
@@ -117,7 +117,7 @@ export default function(state = null, action) {
 }
 ```
 
-Note the switch statement.  Actions are global and every reducer gets called with every action. It is up to the reducer to act on the action or not.
+Note the switch statement.  Actions are global and **every reducer** gets called with every action. It is up to the reducer to act on the action or not.
 
 ### Store
 
@@ -186,6 +186,8 @@ We are going to split up our reducers into a top level root reducer and smaller 
 
 
 ```javascript
+// the starting point for your redux store
+// this defines what your store state will look like
 import { combineReducers } from 'redux';
 
 import CountReducer from './count-reducer';
@@ -300,7 +302,7 @@ const mapStateToProps = state => (
 );
 
 // react-redux glue -- outputs Container that know state in props
-// new way to connect with react router 4
+// also with an optional HOC withRouter
 export default withRouter(connect(mapStateToProps, null)(Counter));
 ```
 
@@ -310,7 +312,7 @@ Some things to note about the this component:
 1. `mapStateToProps`.  This is a simple function that takes the full global state as an argument and maps some part or parts of it this components props.  The mapping is a simple object with key: value pairs. As is everything!
 1. `connect`.  This is the magic that connects the component to Redux.  It takes 2 arguments: mapStateToProps and mapDispatchToProps and returns a new version of the component.
 1. `props.count`.  Check it, passed into props from Redux.
-1. `withRouter`. Gives you access to history and match in your component, not required for Route components but is for (i.e. `<Route component={SomeConnectedThing}/>`) `connect`ed redux components. An unfortunate part of react-router4.
+1. `withRouter`. Gives you access to history and match in your component, not required for Route components but is for (i.e. `<Route component={SomeConnectedThing}/>`) `connect`ed redux components. An unfortunate part of react-router - as of 4/24/19 not yet converted into a hook.
 
 
 🚀 Add `<Counter />` to the render method of one of the components that are currently displaying like *Welcome*
@@ -334,14 +336,12 @@ import { increment, decrement } from '../actions';
 const Controls = (props) => {
   return (
     <div>
-      <button onClick={props.increment} >+</button>
-      <button onClick={props.decrement} >-</button>
+      <button type="button" onClick={props.increment}>+</button>
+      <button type="button" onClick={props.decrement}>-</button>
     </div>
   );
 };
 
-// react-redux glue -- outputs Container that knows how to call actions
-  // new way to connect with react router 4
 export default withRouter(connect(null, { increment, decrement })(Controls));
 ```
 
