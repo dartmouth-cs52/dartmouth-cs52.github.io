@@ -47,122 +47,63 @@ name: CS52 Art
 ???
 *
 
----
-name: CS52 Art
+<!-- name: CS52 Art
 
 .medium[![](img/table-all-the-react.jpg)]
+// add the above to react intro yes please
 
 
 * what are benefits of firebase over other stuff like amazon aws?
 * what is robots.txt for?
-* can JS push fake history to user's browser?
-
-
-???
-* robots.txt is for robots!
-* pushState url needs to be same origin (same protocol+domain+port) according to the docs
-* pretty much yup
-
+* can JS push fake history to user's browser? -->
 
 
 ---
 name: CS52 Art
 
-.tiny[![](img/table-all-the-assignments.jpg)]
 .tiny[![](img/table-quiz-lab.jpg)]
-.tiny[![](img/table-gpa-forgive-me.jpg)]
 .tiny[![](img/table-dont-call-me.jpg)]
 
 
 ???
-* finally some tears
+* let's go over a couple of parts of the quiz.
+* also took a quick look at the survey results and sounds like it is going a bit fast for about half the class - i'll post more results from the survey next week but for now, i'll simplify the labs a little bit. last year the labs seemed to go a little bit smoother
+* can add in another TA time - would a morning work? 
 
 
 ---
-name: course survey so far
+name: survey
 
-<iframe src="https://dalilab.typeform.com/report/m0bPyl/D5ZFUjWpn0sOT64K" style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" frameBorder="0" ></iframe>
-
-
-???
-* more ta hours or different times?
-* enjoying hmws and learnign from them
-* and good understand
-* majority of class is understanding majority of material - perfect
+<iframe src="https://dalilab.typeform.com/report/tWt8bt/iFs2XhQ2owcDkj5D" style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" frameBorder="0" ></iframe>
 
 
 ---
-name: things to like
+name: React Notes
 
-* Super fun projects, learning a lot, TA's and prof super helpful
-* The feeling of finishing a lab; The learning is visible–I can make things that I couldn't before
-* Everything we learn in class is directly applicable. I feel like I can go build something on my own after this class.
-* Work load is pretty good; I feel like I am BUILDING stuff; I love the labs
-* making pretty/useful sites; the fun assignments! I like that creativity and humor are encouraged.
-* The hands-on parts of the class are really fun.
-* The material is really great -- enjoy building front-end stuff that I can show my parents or friends!
-* Lots of assignments to get the hang of things
-* That it’s not all lecture; I think the workshops are nice. I had no idea these frameworks existed.
-* Fun classes and labs, great ideas with the workshops.
-* Workshops in class!
-* Lectures are good and easy to follow. The interactive games and activities built into lectures!
-* The short assignments are very helpful - probably more helpful than the lectures in learning the material.
-
-???
-* situation is more complex - people both love and hate various parts, so its a balancing act
-
----
-name: things to improve
-
-* There is so much material that is being thrown very quickly and I am absorbing only a part of it. As fun as the labs and short assignments are, having a slightly slower pace would be great!
-* Although I definitely think the late policy is very fair, even just one late day pass would be really helpful
-* I'm not sure. Being able to start labs in class. The hardest part for me is just starting the lab...
-* I think less workshops would be good; More time walking through code examples
-* Reduce number of workshops. I feel like I don’t learn much from them.  Would prefer if we could expand the list of technologies we learned in class
-* Quizzes are too hard; feel like they don't reflect the stated goal of just checking if you did the assignments.
-* Nothing off the top of my head! I've really enjoyed it so far.; I love the labs
-* More interactive breaks or parts of lecture; Maybe we could work on the lecture notes
-* lectures feel a little tangential
-* Small coding sessions with TAs to get used to syntax etc
-* Some parts of the shorts are't explained as well/deep as I would prefer.
-* What's yarn?? Do I need to know all of JavaScript?? What are all the node modules and how does the starter pack work(!!!!)?
-
-
-???
-* 1 free 12hrs day pass is now available but must be arranged in advance. - have given a couple out for extenuating circumstances, assignments are just close together so want to make sure people don't cascade
-* too late to change how workshops work - generally i like them because they give you a breadth that we couldn't cover otherwise.  don't feel like you have to finish them or work on them outside of class though!
-* i know I'm trying to do both a survey of everything - plus a deep dive on one stack
-* but honestly which of those would you prefer to forgo?
-* tips: start labs early and ask questions - some ta hours have nobody and then last day is swamped. xhours have few people but i'm happy to work through stuff then
-* lecture notes are somewhat available by hitting 'p' on the slides to go into presenter mode
-
-
----
-name: other comments/concerns/etc
-
-* Can we learn about Django
-* do we have quizzes after every lab?
-* I like your gifs!!
-* More time plz
-* Socket.io and Slackbots!
-* Can we go over the starter pack? Also my computer is rapidly running out of space. Is that a me problem? I wish I understood the basic tools we use better so I could use them myself in the future. I get the projects and the coding, but not how all the dependencies work and what they mean I can do.
-* nope! it's a great class
-* Really enjoying the class so far!
-* I really enjoy all of the tutorials in the group presentations. Just copying and pasting code with only a small amount of thought allows for a surprising amount of learning and familiarization.
+* [low poly](http://taylorolson-cs52-lab3.surge.sh/)
+* [minimizing notes](http://emma-cs52-notes.surge.sh/)
+* [google and boards](http://react-notes-board.surge.sh/)
+* [colors](http://regina-yan-cs52-lab3.surge.sh/)
+* [zIndex](http://mihovilm-cs52-lab3.surge.sh/)
+* [piggies!](http://welcometomyfarm.surge.sh/)
+* [background](http://danah-cs52-notes-app.surge.sh/)
+* [hi tas](http://zacgottschall-cs52-react-notes.surge.sh/)
+* [classy](http://sheppard-cs52-lab3-react-notes.surge.sh/)
+* [favicon award](http://angi-cs52-lab3.surge.sh/)
+* [domain name award](https://reactnotes.surge.sh/)
+* [auth](https://jot-cs52.surge.sh/)
 
 
 
 ???
-* i too wish for more time! :-)
-* something like django with alternative server side workshop a bit later
-* but we'll do server side ddon't worry
-* sockets coming soon
+
+* some examples
 
 
 ---
 name: What do we know about React so far?
 
-* components - smart and dumb
+* components
 * unidirectional data flow
 * events and callbacks
 * state and props
@@ -170,7 +111,6 @@ name: What do we know about React so far?
 
 
 ???
-
 
 
 
@@ -292,13 +232,10 @@ name: Chat
 * here's what the basic logic looked like
 * handler had too much to do
 * large amount of centralized logic is one solution but have to code for consistency problems
-*
 * chat tabs is easy - get a new message - append it
 * less clear about unseen
 * perhaps storing unseen as a list by threadID would be better
-*
-* use explicit data - actual unseen threads, not just counter
-*
+* use *explicit data* - actual unseen threads, not just counter
 * moving display logic to each component so it can decide based on data how to render (sound familiar)
 * separating data from view
 * wanted to move these decisions closer to the actual views.
@@ -372,7 +309,6 @@ name: Flow Based Programming
 ![](img/full-system.png)
 
 ???
-* no backwards arrows
 * can imagine testing is easy
 
 
@@ -413,13 +349,16 @@ name:
 ---
 name:
 
-![Redux](img/redux-logo.png)
+.small[![Redux](img/redux-logo.png)]
 
 .small[![805k downloads](img/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f72656475782e7376673f7374796c653d666c61742d737175617265.svg)] 7/2016
 
 .small[![2m downloads](img/downloads.svg)] 4/2017
 
 .small[![6m downloads](img/redux-downloads.svg)] 4/2018
+
+.small[![12m downloads](img/downloads-3.jpg)] 4/2019
+
 
 
 ???
@@ -443,7 +382,7 @@ name: Application Level State
 
 ???
 * so far we'd done,  component level state vs application level state
-* we've hacked components to allow us to pass down component level state
+* we've used components to allow us to pass down component level state in props
 * but not ideal solution
 
 
@@ -690,13 +629,12 @@ name:  react-redux
 
 
 ---
-name:  who needs upgrades?
+name:  who needs upgrades? not all!
 
-* not everyone
-  * components that control data
-  * need to trigger actions (could use props though)
-  * need access to global state
-  * may pass data to presentational children components
+* components that control data
+* need to trigger actions (could use props though)
+* need access to global state
+* may pass data to presentational children components
 
 
 ???
@@ -724,6 +662,7 @@ export default connect(mapStateToProps,
 ```
 
 * higher order component!
+* is a function that returns a function that we run on the component to return a new and improved component
 * returns a component that is connected to redux
 
 
@@ -744,9 +683,9 @@ name: mapStateToProps
   }
 }
 
-const mapStateToProps = (state) => (
+const mapStateToProps = (reduxState) => (
   {
-    video: state.selectedVideo
+    video: reduxState.selectedVideo
   }
 );
 
@@ -771,9 +710,14 @@ name: mapDispatchToProps
 ```javascript
 import * as actions from './actions';
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({selectVideo: actions.selectVideo}, dispatch);
-}
+// ends up with this.props.selectVideo()
+const mapDispatchToProps = dispatch => {
+  return {
+    selectVideo: item => {
+      dispatch(actions.selectVideo(item));
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(MyComponent);
 //or shorthand
@@ -907,13 +851,11 @@ name: devtools
 
 
 
-
-
-
 ---
-name: Question Time
+name: next
 
 
-<iframe src="//giphy.com/embed/jTZVegIrdLCCY" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+* sa6 is 15 minutes to add in redux to our starter pack
+* lab4 - redux blog/crud frontend - ask questions in #lab4 on slack and don't forget your lovely tas. simplified and added in more examples.
 
 ???

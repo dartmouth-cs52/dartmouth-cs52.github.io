@@ -35,8 +35,8 @@ comment_term: lectures
 * [4/24 Routing](09_routing)
 <!-- * [4/24 Projects](07_project_intro) -->
 * [4/25 Projects Intro](../projects/)
-* 4/25 Redux
-<!-- * [4/26 Redux](10_redux) -->
+<!-- * 4/25 Redux -->
+* [4/25 Redux](10_redux)
 * 4/31 Databases
 <!-- * [5/1 Databases](12_intro_to_databases) -->
 * 5/2 Pitches
