@@ -37,15 +37,12 @@ name: CS52 Art
 *
 
 
----
-name: CS52 Art
+
+<!-- name: CS52 Art
 
 
-.medium[![](img/firebasemontster-table.jpg)]
+.medium[![](img/firebasemontster-table.jpg)] -->
 
-
-???
-*
 
 <!-- name: CS52 Art
 
@@ -76,6 +73,9 @@ name: survey
 
 <iframe src="https://dalilab.typeform.com/report/tWt8bt/iFs2XhQ2owcDkj5D" style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" frameBorder="0" ></iframe>
 
+???
+* i hear you
+* if you are stuck - just reach out please, i don't bite
 
 ---
 name: React Notes
