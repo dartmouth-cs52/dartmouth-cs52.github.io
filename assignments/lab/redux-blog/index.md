@@ -93,6 +93,13 @@ curl -X DELETE -H "Content-Type: application/json" "https://cs52-blog.herokuapp.
 
 Try these out.  Run the create new post one a couple of times to populate your database!
 
+This will work a bit different from the react-notes, and in a way will be much simpler.  Every time you want to update, create, delete, retrieve, you will use http calls like the above to interact with the server. 
+
+Remember our SPA architecture:
+
+![](img/single-page-app.png){: .medium}
+
+The above are the data requests we'll be making. They all return *JSON*. 
 
 
 ## Routes
@@ -116,7 +123,7 @@ This is just the basics, feel free to expand on this. For reference it might hel
 
 ### App
 
-Is a simple component that simply renders a *NavBar* component and the main route components. You can think of this as your main layout — you can rename it to that if you prefer!
+Is a simple component that simply renders a *NavBar* component and the route components. You can think of this as your main layout!
 
 ### NavBar
 
@@ -129,9 +136,9 @@ A simple component that renders a nav with two `<NavLink>` `react-router-dom` co
 
 ### Posts
 
-This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`. In your listing you should utilize each posts *cover_url*, *title*, and *tags*. Note: the video demo does not show *cover_url*'s but you should. 😄
+This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`. In your listing you should utilize each posts *cover_url*, *title*, and *tags*.
 
-Try the curl commands above,  you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `NavLink` elements to `posts/:postid` when you render the posts. Each post should be clickable to open it full page using the router.
+Try the curl commands above, you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `NavLink` elements to `posts/:postID` when you render the posts. Each post should be clickable to open it full page using this route. `<Link to={`posts/${post.id}`}>...`
 
 Min specs at a glance:
 
@@ -139,19 +146,19 @@ Min specs at a glance:
 * use post id to link to full view
 * show *cover_url*, *title*, *tags* in some form - can be a list, can be tiles, whatever you want!
 
-Hint: As this is a connected component that relies on the list of posts, you'll want to run your `fetchPosts()` ActionCreator from `componentDidMount`.
+Hint: As this is a connected component that relies on the list of posts, you'll want to run your `props.fetchPosts()` *ActionCreator* from `componentDidMount`.
 
 ### NewPost
 
-Component to create a new blog post. Should be a connected component that can trigger actions (ActionCreators). You could have one component that is used for create, show, and update. Personal preference on this, but it might be easier at first to have a simple new post component and then refactor later to have one full featured component.
+This is a component to create a new blog post. Should be a connected component that can trigger actions via *ActionCreators*. You could have one component that is used for create, show, and update. Personal preference on this, but it might be easier at first to have a simple new post component and then refactor later to have one full featured component.
 
 ### Post (display and edit)
 
 This is the component that gets loaded when you want to see the full rendered contents of a single post.  *Post* should display the full content of the post (selected by the ID that is passed in through `this.props.match.params.postID`.  This post id parameter will come from the react-router when you navigate to:  `/posts/:postID`.  Where does postID come from in general?  It is automatically assigned to your post by the API when you create the post (similarly to how firebase assigned automatic keys).
 
-Your *Post* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:postID/edit` for instance.  Personal preference here.
+Your *Post* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:postID/edit` for instance.  Personal preference here, lots of different design choices you can make. 
 
-Note for now the API server only supports title, tags, content as fields.  In part 2 you will implement your own server and can add or change fields then.
+*Note: for now the shared API server only supports title, tags, content, cover_url as fields.  In part 2 you will implement your own server and can add or change fields then.*
 
 Min specs at a glance:
 
@@ -217,7 +224,7 @@ The state within the `postsReducer` looks like this:
 
 ## Actions
 
-Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer currently. This is because we are just updating and reloading all notes after a delete say, rather than manually editing the list. If you had millions of posts you might want to not have to do a full fetch of all posts on a delete, but in our case it doesn't matter.  However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place. IE. Don't do any api calls from anywhere else in the app, only in ActionCreators.
+Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer currently. This is because we are just updating and reloading all notes after a delete say, rather than manually editing the list. If you had millions of posts you might want to not have to do a full fetch of all posts on a delete, but in our case it doesn't matter.  However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place. *Don't do any api calls from anywhere else in the app, only in ActionCreators.*
 
 ```javascript
 export const ActionTypes = {
@@ -228,7 +235,8 @@ export const ActionTypes = {
   // DELETE_POST: 'DELETE_POST',
 };
 ```
-Wait, what about UPDATE_POST, surely that has to exist... technically yes you do want to update, but it is basically an exact duplicate of FETCH_POST.
+
+Wait, what about UPDATE_POST, surely that has to exist... technically yes, you do want to update, but it is basically an exact duplicate of FETCH_POST.
 
 Now you might ask, how the heck do we fetch from an API using actions!?
 
@@ -261,18 +269,19 @@ axios.get(`${ROOT_URL}/posts${API_KEY}`).then(response => {
 });
 ```
 
+*Note: this is an promisified asych function! results are only available in the `.then`.*
 
 Axios supports *GET*, *POST*, *PUT*, *DELETE*, and other *HTTP* verbs.
 
 With *POST* and *PUT* you need to supply an object with key,value data.  Something like the following would work:
 
 ```javascript
-const fields = {title: '', contents:'', tags: ''}
+const fields = {title: '', contents:'', cover_url: '', tags: ''}
 axios.post(`${ROOT_URL}/posts${API_KEY}`, fields)
 ```
 
 
-#### [Thunks](https://github.com/gaearon/redux-thunk)
+#### [Thunks](https://github.com/reduxjs/redux-thunk)
 
 The big question on your mind is how you would put this into an action I bet.  Right?  No?
 
@@ -290,13 +299,13 @@ applyMiddleware(thunk),
 
 We'll dig more into what middleware is later, but for now what you need to know is that middleware are basically functions that run between other stuff. They can be very powerful.  
 
-Redux middleware wraps the dispatch function, allowing our `redux-thunk` middleware to process not just actions but also functions.  ActionCreators can now return thunks rather than just actions.  These thunks are functions that are created on the fly to run something later.  Whaaaat?
+Redux middleware wraps the `dispatch` function, allowing our `redux-thunk` middleware to process not just actions but also functions.  *ActionCreators* can now return thunks rather than just actions.  These thunks are functions that are created on the fly to run something later.  Whaaaat?
 
 ![](img/reduxwithmiddleware.gif){: .small}
 
-Remember how *ActionCreators* just return an *Action*?  Well, what if you want the *ActionCreator* to first do something, perhaps fetch something from the internet?  Thunks allow this functionality.  Instead of immediately returning an *Action* object and flowing into the Reducer, we return a function that gets executed and can go off and do some stuff before dispatching the Action.
+Remember how *ActionCreators* just return an *Action*?  Well, what if you want the *ActionCreator* to first do something, perhaps fetch something from the internet?  Thunks allow this functionality.  Instead of immediately returning an *Action* object and getting dispatched to the reducers, we return a function that gets executed and can go off and do some stuff before dispatching any Actions to the reducers.
 
-A redux thunk allows your *ActionCreators* to return functions that can then dispatch actions.  Quite literally giving them access to a `dispatch` method.
+A redux thunk allows your *ActionCreators* to return functions that can then dispatch actions. This is done by simply returning a function that takes 1 argument, and that function will be automatically called and passed in a reference to the `dispatch` function so we can call it directly once we are done.
 
 ```javascript
 export function anAction() {
@@ -343,6 +352,36 @@ In the `.then` success call on create and delete you may find it useful to simpl
 
 ⚠️ If you run into a problem where for some reason your *ActionCreator* seems to run but never dispatches an action, that might be because you are running the unconnected version that you imported rather than the connected version of the function that you get from `mapDispatchToProps`.  So always remember to run *ActionCreators* as their `this.props` version because that is what `connect()` does, it gives us a modified version of the function that is run inside of `dispatch`.
 
+<details markdown="block">
+<summary> 🤦‍Want an copy/paste example❓
+</summary>
+
+🆗 here you go.
+
+```js
+export function fetchPosts() {
+  // ActionCreator returns a function
+  // that gets called with dispatch
+  // remember (arg) => { } is a function
+  return (dispatch) => {
+    axios.get(`${ROOT_URL}/posts${API_KEY}`)
+      .then((response) => {
+        // once we are done fetching we can dispatch a redux action with the response data
+        dispatch({ type: ActionTypes.FETCH_POSTS, payload: response.data });
+      })
+      .catch((error) => {
+        // whaaat? 
+        // dispatch an error, use it in a separate error reducer. this is the beauty of redux.
+        // have an error component somewhere show it
+        dispatch({ type: ActionTypes.ERROR_SET, error});
+        // might you also want an ERROR_CLEAR action?
+      });
+  };
+}
+```
+</details>
+
+
 ## Reducers
 
 To start with we'll only need 1 reducer in `reducers/index.js`.  Something like this:
@@ -377,8 +416,8 @@ That should be all you need to build a simple blog platform (we'll add more feat
 
 If you don't know where to start, remember the steps in creating an React application (modified here to include redux considerations):
 
-1. Start with a mock
-1. Break the UI into a component hierarchy
+1. Start with a mock❗️
+1. Break the UI into a component hierarchy❗️
 1. Build the Presentational Components for a static version without any state
 1. Identify what the local vs redux "global" state should be
 1. Implement local UI state in Presentational components
