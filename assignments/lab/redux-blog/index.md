@@ -433,6 +433,17 @@ It might help for the *ActionCreator* -> *Dispatch* -> *Reducer* -> *State* flow
 
 Don't forget to use the [lab 4 slack channel](https://cs52-dartmouth.slack.com/messages/lab4-blog/).
 
+## Style It!
+
+Make it look pretty. Remember you are free to make this whatever you want. It does NOT have to be blog posts. Right now there are a few required fields, but how you display them is up to you. 
+
+🍰You are allowed and encouraged to use various CSS/Styling/Component libraries for this assignment:
+* [React-bootstrap](https://react-bootstrap.github.io/) is an easy one. 
+* [Material-UI](https://material-ui.com/) has that google material look.
+* [Blueprint.JS](https://blueprintjs.com/) is popular.
+* [Semantic-UI](https://react.semantic-ui.com) is pretty full featured.
+* check the workshops for more about react component libraries as well as css-in-js!
+
 
 ## Release it!
 
