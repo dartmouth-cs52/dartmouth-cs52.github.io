@@ -101,6 +101,7 @@ Remember our SPA architecture:
 
 The above are the data requests we'll be making. They all return *JSON*. 
 
+This site will *not* update live in the sense that if someone else on another browser added a post, you would not see it pop up automatically, but would need to reload.  This is fairly common of most platforms like this, your feed does't change as you look at it, you need to refresh to see new articles.  Once Redux is in place it'll be really easy to trigger a refresh with a button or pull down though if you want. 
 
 ## Routes
 
