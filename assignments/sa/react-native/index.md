@@ -1,7 +1,7 @@
 ---
 layout: page
 title: React-Native — Short Assignment
-published: false
+published: true
 comment_term: sa-react-native
 ---
 

@@ -37,10 +37,11 @@ comment_term: lectures
 * [4/25 Projects Intro](../projects/)
 <!-- * 4/25 Redux -->
 * [4/25 Redux](10_redux)
-* 4/31 Databases
-<!-- * [5/1 Databases](12_intro_to_databases) -->
-* 5/2 Pitches
-<!-- * [5/3 Pitches](11_pitches) -->
+<!-- * 4/31 Databases -->
+* [4/30 Databases](12_intro_to_databases)
+* 5/1 Pitches
+<!-- * [5/1 Pitches](11_pitches) -->
+<!-- or 07_project_intro -->
 * 5/7 Sessions & Auth
 <!-- * [5/8 Sessions & Auth](13_sessions_auth) -->
 * 5/8 Teams

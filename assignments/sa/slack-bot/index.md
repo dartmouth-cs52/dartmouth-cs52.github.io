@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Slack Bot — Short Assignment
-published: false
+published: true
 comment_term: sa-slack-bot
 ---
 

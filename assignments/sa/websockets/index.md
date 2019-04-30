@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Websockets — Short Assignment
-published: false
+published: true
 comment_term: sa-websockets
 ---
 
@@ -18,7 +18,7 @@ We're going to build a [websocket](https://en.wikipedia.org/wiki/WebSocket) base
 🚀 Clone your **Lab3 with firebase**.  Create a new branch with `git checkout -b websockets`. We'll need to refactor this very slightly to not use firebase but use our new backend instead, and using a branch seems reasonable for this.
 
 
-🚀 Clone [express-babel-starter](https://github.com/dartmouth-cs52-18s/express-babel-starter) for our new server component.  When you clone remember you can rename the directory: so `git clone https://github.com/dartmouth-cs52/express-babel-starter.git notes-websocket-server`  would checkout the starter into a differently named directory.  
+🚀 Clone [express-babel-starter](https://github.com/dartmouth-cs52-19s/express-babel-starter) for our new server component.  When you clone remember you can rename the directory: so `git clone https://github.com/dartmouth-cs52-19ss/express-babel-starter.git notes-websocket-server`  would checkout the starter into a differently named directory.  
 
 
 In the following at times we'll do stuff to both client (Lab3) and server (the new notes-websocket-server). This will be highlighted with **SERVER** vs **CLIENT**.

@@ -21,7 +21,7 @@ name: base
 ---
 name: Today and Stuff
 
-* REST apis
+* REST apis - serverside finally!
 * Databases
 * SA7
 
@@ -32,16 +32,15 @@ name: Today and Stuff
 
 
 
----
-name: CS52 Art
+<!-- name: CS52 Art
 
 
 
 ![](img/functions-table.jpg)
 
 
-???
-* quiz grading tonight, do people want a quick review?
+
+* quiz grading tonight, do people want a quick review? -->
 
 
 
@@ -75,6 +74,121 @@ name: CS52 Art
 
 
 
+
+
+---
+name: Survey
+
+.medium[![](surv/pace.jpg)]
+.medium[![](surv/hwks.jpg)]
+
+
+---
+name: Pacing
+
+.large[![](surv/infographic.jpg)]
+
+???
+* made a stacked graph
+* so good thing is, lab3/4 were the hard part
+* doing the server side will be much easier more clear
+* and then its all final project all the time! get excite!
+* this is not survey data - would like to collect some real data on how long / hard each assignment is, would you all help? 
+
+---
+name: Survey
+
+.medium[![](surv/help.jpg)]
+.medium[![](surv/shortslabs.jpg)]
+
+???
+* please let me know if more ta hours or more slack help etc
+* i'm pretty responsive so just ask me for help
+* i also don't bite
+
+---
+name: Survey
+
+.medium[![](surv/percent.jpg)]
+
+???
+* this is about right for this time in the class
+* once we implement back end and add in a few small features to the blog it'll all start coming together and for final project you'll be surprised
+
+
+---
+name: Liked
+
+* I really like the labs - they are fun!
+* the labs are very cool
+* The course unpacks a lot of the software and systems that happen behind the scenes, which I appreciate.
+* The projects are pretty cool even though they are hard.
+* The workshops are a great way to get your feet wet with different topics.
+* The over all structure of the course is great. The languages/technologies covered are interesting and relevant.
+* I like how relevant the labs and SAs are to the coursework. I think the best way to teach CS is to have the homework be the studying so this is perfect.
+* Love the labs. I like being able to be creative
+* the people! the prof! engaging class!
+* Love the TA's, they seem to know a solution to every problem!
+* Well made short assignments and labs, helpful lectures on key information about web technologies
+* I love how well structured the course is and the support available.
+* The amount of time Tim/TAs are willing to spend helping us is actually incredible cannot emphasize this enough
+* class vibes are cool
+
+???
+* ok well this seems good - whew they love the class
+
+---
+name: Do Better
+
+* need concepts reiterated more. go slower
+* **Projected dates and deadlines** would be really nice.
+* Unfortunately, I don't think the lectures adequately convey what is necessary to be able to do the labs on our own. Without the TAs, the labs would be impossible. sometimes the lab instructions don't make sense, like **small typos or vague language** where it's assumed we know what he meant when writing it.
+* Slow it down
+* every ~25 mins or so I think we should do a **group 15 second stretch** in class because I think we all zone out.
+* The gifs and background music during workshops are really distracting.
+* Is it possible for the **lectures to be recorded**?
+* torn because I love the material and want to be able to take the time to really master it, but also **feel rushed** to just get my projects functional in time for the due date
+* I wish the **workshops would show how they could be compatible** with each other or the labs a little more.
+* Lecture slides need way more in depth notes.
+
+
+???
+* whoop not so fast
+* for the typos - there is extra credit given for spotting them and more for making pull requests to fix them. also a few of what seem to be bugs in the code given are on purpose.  `var` vs `const` example. 
+* i've released recordings in canvas - was keeping them mostly to remember and learn from myself - but if its helpful they are there
+* 80% resubmit, but yeah we do cover a lot - have thought of reducing the labs, but just can't bring myself to do it when people tell me after the class how helpful the assignments were.  i will move up the html/css stuff though to focus relieve the middle
+* good point on the workshop topics - i am rethinking them a little and next year will choose topics that directly help
+* agreed about the lecture notes - have tried to not write a bible because things keep changing and have to revise a lot over year. 
+* will release future canvas assignments, usually i move the dates around some and change assignments but at this point they won't move around more
+
+---
+name: Your Tips
+
+* I can use the presentation setting of the lecture slides to think about the lecture as it is going.
+* Start working earlier so I know when to get help.
+* Keep going to TA hours, Tim's office hours, and continue going to class
+* **Start the labs early** and go to office hours with pertinent questions instead of barely starting the labs and then going to office hours
+* take better notes in class to help me pay attention
+* I'm going to start asking for help more and doing extra credit when I can, going to keep **making short lists of things to remember them better**, and try to stop feeling overwhelmed as my first reaction to assignments and dive in.
+* **Feel more confident asking TAs / ask more questions**
+* I just need to spend more time and **not be too scared** to go to TAs
+* Personally, I should **start working on the labs the day they are released**. That stress is my fault. I look over the slides after class multiple times and take notes but I still feel lost for many parts of it.
+* Work harder
+* Paying attention during lectures definitely pays off, starting the assignments early has also been a good habit
+
+???
+* some helpful tips from yourselves!
+
+
+---
+name:  whew, well that was fun
+
+* no quiz today, you're welcome
+* up next: sa7, lab5p1 - will discuss
+* tomorrow and thursday project ideas
+
+???
+* how teams are formed
 
 ---
 name: Final Project Ideas
@@ -114,10 +228,8 @@ name: Ok but like, why?
 * go on a date
 * get a job
 * anytime present what you care about
+* we'll start tomorrow!  I'
 
-* last term we had a pitching activity
-* where people pitched their favorite food and then we got that food later in term
-* we can do that or move on to an ideation workshop?
 
 ---
 name: Ideas
@@ -137,19 +249,24 @@ name: Ideas
 ---
 name: Some Inspiration Sources
 
-
+* https://80000hours.org/career-guide/world-problems/
+* https://80000hours.org/problem-profiles/#potentially_promising
 * http://www.ycombinator.com/resources/
-* https://www.startupschool.org/
+* https://www.startupschool.org/library
 * http://www.paulgraham.com/startupideas.html
+* https://www.producthunt.com
 * https://www.ycombinator.com/rfs/
 * https://www.npr.org/podcasts/510313/how-i-built-this
 * https://dribbble.com/
 * http://abc.go.com/shows/shark-tank
 
 
-
 ???
 * how i built this is a cool interview series
+* anybody listen to it?
+* world problems
+* how to think about problems and scale
+
 
 
 ---
@@ -160,7 +277,7 @@ name: Your Pitch
     * OR pose a problem you want to attempt to solve without a solution
     * OR a topic that you think might be interesting to brainstorm around
 
-* on thurs will do some more brainstorming
+* tmrw and thurs
 
 
 ???
@@ -183,8 +300,7 @@ name: What Is REST API?
 * what we used for bloggy
 * transfer some state -> from remote server to client
 * where state is data from server
-* some conflicting opinions
-* api -> on the web
+* api -> application programming interface on the web
 * following some guidlines
 
 
@@ -200,12 +316,11 @@ name:  RESTful API
   * http://api.domain.com/photo/48s9c8s83j is a resource
 * Server supports a set of HTTP verb mapping to CRUD
 
-
 ???
 * resources avaible via http
 * in file like paths
-* helps to organize and think in terms of paths to resources rather than actions or functions
-
+* helps to organize and think in terms of **paths to resources** rather than actions or functions
+* why is this bad?
 
 
 
@@ -222,7 +337,9 @@ name:  RESTful API
   * *PUT* method - Update resource
   * *POST* method - Create resource
   * *DELETE* method - Delete resource
-* NOT: http://domain.com/delete_photo?id=23lkj3
+* **do**: PUT `api.com/posts/:id`
+* **don't**: POST `api.com/updatePostByID`
+
 
 ???
 * endpoints are resources not actions
@@ -274,6 +391,7 @@ name: Standard
 
 * proposed in phd thesis circa 2000
 * been standard for years
+* used everywhere
 
 ???
 * gotta know it
@@ -304,11 +422,14 @@ name: Complications
 * complicated data requires multiple round trips to server
 * versioning with old clients breaking
 * variability in REST design
-* data returned may not be what is needed
+* data returned may not be what exactly what is needed
 * realtime?
 
 ???
-* user firstname+lastname = fullname
+* content not returned for posts? 
+* image size? 
+* posts have a userid - but don't know who that is?
+* have to think about versioning
 
 
 
@@ -316,7 +437,7 @@ name: Complications
 
 
 ---
-name: The Future
+name: One Solution
 
 .medium[![](img/graphql.png)]
 
@@ -327,7 +448,7 @@ name: The Future
 
 ???
 * is out now
-* could do a short on it if people were interested but not really enough time
+* one of the workshops coming up is on this
 
 
 
@@ -370,14 +491,14 @@ name: GraphQL
 * function like query part
 * very cool
 * helps with getting the data you need
-* btws, if you read that redux is dead - don't worry it isnt
-* lots of different ideas about redux and graphql - but you still want to manage your state in a smart way
+* btws, if you read that redux is dead - it isn't, you still have the same frontend how to deal with complex data problem
+* you still want to manage your state in a smart way
 
 
 
 
 ---
-name: Other alternatives
+name: Websockets!
 
 <iframe src="//giphy.com/embed/12bUwjHIJghgmk?hideSocial=true" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -387,7 +508,7 @@ name: Other alternatives
 
 ???
 * less structured
-* we'll use websockets in SA8
+* we'll use websockets in EC: SA8
 * more on this later
 
 
@@ -403,8 +524,8 @@ name: Lab 5
 * JSON responses
 
 ???
-* expressjs is a lightweigth web framework on the server-side
-* webpack-serve is actually built on express
+* expressjs is a lightweight web framework on the server-side
+* webpack-dev-server is actually built on express
 
 
 
@@ -541,7 +662,7 @@ name: Schema
 
 ???
 * describes the structure of the db
-* some cognition theories think our brain stores objects as schemas
+* some cognition theories think our brain stores objects with schemas for recognition
 
 
 
@@ -605,8 +726,9 @@ ON Employee.DeptName=dept.DeptName;
 ???
 * set operations, unions, intersections etc
 * right out join, left inner join
-* won't be needing this in this class
+* won't be needing this in this class, but it'll be on the quiz!  KIDDING
 * natural join - all columns are kept from both but only where matching key
+* btw - when i first proposed this course had a full week on databases and curriculum committee laughed
 
 ---
 name: JOINS
@@ -643,6 +765,7 @@ SELECT * FROM Users WHERE id = 2
 * hashmap
 * secondary keys *can* be set on other columns
 * foreign keys are for relationship lookups
+* each row/object has at least 1 unique identifier
 
 
 ---
@@ -749,6 +872,7 @@ name: MongoDB
 * largely just need to understand limitations
 * and use appropriately
 * when first came out people misused and misunderstood leading to data loss and hate
+* tassel used postgres for 2 terms but this term rewrote entire backend back to mongo. 
 
 
 
@@ -811,7 +935,7 @@ name: Eventually Consistent
 ```js
 post: {
   PostID,
-  FullName,
+  FullName, //duplicated
   AuthorID,
   Title,
   Content
@@ -819,7 +943,8 @@ post: {
 author: {
   AuthorID,
   FullName,
-  Email
+  Email,
+  Birthday
 }
 ```
 
@@ -896,7 +1021,7 @@ date: {type: Date, default: Date.now }
 
 ```js
 personSchema.virtual('fullName').get(function () {
-  return this.name.first + ' ' + this.name.last;
+  return this.first_name + ' ' + this.last_name;
 });
 ```
 
@@ -920,7 +1045,7 @@ name:
   * no scanning
 * cons:
   * mutating ops like update, add, delete slightly slower
-  * storage space
+  * storage space (need to fit into RAM)
 * use indexes for common queries
 
 
@@ -965,7 +1090,9 @@ name: SA7
 * use mongoose for *ORM*
 
 ???
-
+* we'll take a short break from redux and react!
+* build a server side rendered app
+* anyone remember what server rendered is?
 
 
 
@@ -974,5 +1101,7 @@ name: SA7
 name: be fierce
 
 <iframe src="//giphy.com/embed/M8QcfdiOCZoCQ" width="680" height="469" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+* don't forget xhour tomorrow - come with ideas to share with class!
 
 ???
