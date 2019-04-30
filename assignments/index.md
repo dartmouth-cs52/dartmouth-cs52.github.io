@@ -22,8 +22,8 @@ comment_term: assignments
 * [Short Assignment 5: Frontend Routing](sa/routing) — DUE 4/25
 <!-- * Short Assignment 6: Redux -->
 * [Short Assignment 6: Redux](sa/redux) - DUE 4/26
-* Short Assignment 7: Express and Mongo
-<!-- * [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/3 -->
+<!-- * Short Assignment 7: Express and Mongo -->
+* [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/3
 * EC Short Assignment 8: WebSockets
 <!-- * [EC Short Assignment 8: WebSockets](sa/websockets) - DUE 6/1 -->
 * EC Short Assignment 9: Photo Uploading S3

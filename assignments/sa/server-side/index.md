@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Server-side Rendering — Short Assignment
-published: false
+published: true
 comment_term: sa-server-side
 ---
 ![](img/enm.jpg){: .small }
@@ -22,13 +22,13 @@ brew install mongodb
 
 More Mongo [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
 
-We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52-18s/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
+We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52-19s/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
 
 🚀 Do what you did in [lab4](../../lab/redux-blog) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-18S/express-babel-starter.git
+git remote add starter git@github.com:dartmouth-cs52-19s/express-babel-starter.git
 git pull starter master
 ```
 
@@ -39,13 +39,13 @@ yarn install
 yarn dev
 ```
 
-❓ EC: What is `yarn dev` doing here?
 
-Take a look around the project now.  There is a `src` folder similar to our react project.  There is a `package.json` and the usual `.eslintrc`, `.babelrc`. Poke around the `scripts` part of the `package.json` file.  Note that it is a little different.
+Take a look around the project now.  There is a `src` folder similar to our react project.  There is a `package.json` and the usual `.eslintrc`, `.babelrc`. Poke around the `scripts` part of the `package.json` file.  Note that it is a little different from our react package file. EC: What is `yarn dev` doing here?
+
 
 ## Intro Express
 
-[Express](https://expressjs.com/) is a web framework for Node.js.  What it does for us is provide a way to listen for and respond to incoming web requests. Today, we will be creating API endpoints to respond to certain CRUD-style requests.
+[Express](https://expressjs.com/) is a **server side** web framework for Node.js.  What it does for us is provide a way to listen for and respond to incoming web requests. Today, we will be creating API endpoints to respond to certain CRUD-style requests.
 
 Take a look through the current `src/server.js` file. This is the entry point for the app. Just like `index.js` has been in our frontend app (the names of these are arbitrary). Note how we are setting the route:
 
@@ -59,15 +59,17 @@ The 2nd parameter to `.get()` is a function that takes 2 arguments:  request and
 
 Request is an express object that contains, among other things, any data that was part of the request. For instance, the JSON parameters we would POST or PUT in our asynchronous `axios` calls would be available as `req.body.parameterName`.
 
-Response is another special express object that contains, among other things, a method named `send` that allows us a send back a response to the client.  When your api call gets back JSON data this is how it is returned.  Consider `res.send()` the equivalent of a network based `return` statement.
+Response is another special express object that contains, among other things, a method named `send` that allows us a send back a response to the client.  When your api call gets back JSON data this is how it is returned.  Consider `res.send()` the equivalent of a network based `return` statement. This is important. You can only have **1** `res.send()`. 
 
 We'll add more routing in shortly, but first let's set up our database!
 
 ## Mongo Database Server
 
-Mongo is the database that we are going to use.  We've already installed `mongodb` using Homebrew.  Follow further [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
+Mongo is the database that we are going to use.  We've already installed `mongodb` using Homebrew.  *If that didn't work for you there are more [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition) if you need.*
 
- 🚀 You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process. ⚠️ On OSX if you get a permissions error you need to make sure that the database dir is writable `sudo chown $USER /data/db`. If you get an error about `/data/db` not existing you can run: `sudo mkdir -p /data/db`.
+ 🚀 You may need to run the `mongod &` process, which your node app will connect to.  This is a background server process. 
+ 
+ ⚠️ On OSX if you get a permissions error you may need to make sure that the database dir is writable `sudo chown $USER /data/db`. If you get an error about `/data/db` not existing you can run: `sudo mkdir -p /data/db`. Pay attention to the error message to determine what what directory it is complaining about.
 
 There is a commmandline client we'll use to connect to the database: `mongo`. You can also play around with a more graphical client [mongodb compass community](https://www.mongodb.com/download-center?jmp=nav#compass) (just make sure to download the *community* version).
 
@@ -281,7 +283,7 @@ Great, so now when we hit `http://localhost:9090`, we see the nav bar. Cooool.
 
 There is a bunch of stuff going on there. In short we sort the polls by some `score`,  loop over the polls, and render some materializecss cards.
 
-EJS is helping us by working its rendering magic. When we pass in an object to ejs, in this case, `polls`, to render `index.ejs`.  We don't have to write separate templates for every new poll added to `polls`.
+EJS is helping us by working its rendering magic. When we pass in an object to ejs, in this case, `polls`, to render `index.ejs`.  We don't have to write separate files for every new poll added to `polls`.
 
 There are even more neat things ejs can help us with: we can use the control flow operator `%` for for loops, boolean logic, and even creating variables, and we can display variables with the `<%= %>` operator, such as `<%= polls.title %>`. In a nutshell, ejs makes our static html template dynamic.
 
@@ -392,7 +394,7 @@ Polls.getPolls().then((polls) => {
 });
 ```
 
-*Note: in case of error we're just sending back a single string with the error. Not very robust.*
+*Note: in case of error right now we're just sending back a single string with the error. Not very robust!*
 
 * GET `/new`:  render the `new` page in the callback.
 
@@ -518,13 +520,13 @@ In the above we make an ajax call to the server to update the fields, and then w
 Great! We have everything working now. We will need to host this new server component!
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
-2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
+2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is **free** so it won't be charged.
 3. Once you've connected your database, go to *Deploy* and select "Heroku Git" as your Deployment Method. Download and install the Heroku CLI using `brew install heroku/brew/heroku`. Given that you're already working in a git repository, use `heroku git:clone -a YOUR_HEROKU_APP` to add a new git remote (use `git remote -v` to see). If you haven't done so already, add and commit your changes.
 4. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
 
 You can also set up the "Deploy Using GitHub" if you prefer - I'm old fashioned so I like the explicit push to heroku but up to you.
 
-Note: Don't forget to push master to **both** heroku and origin.
+*Note: Don't forget to push master to **both** heroku and origin.*
 
 ## To Turn In
 
