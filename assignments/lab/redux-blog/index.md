@@ -478,6 +478,7 @@ git push origin --tags
 
 
 ## Extra Credit
+*always mention your extra credit in the README.md file*
 
 * make it into something other than a blog platform as long as it has the CRUD functionality
 * handle `axios` errors in a graceful way, showing users a nice message rather than just console logging. (hint: new action and error state)

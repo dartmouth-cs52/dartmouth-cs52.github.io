@@ -24,14 +24,14 @@ comment_term: assignments
 * [Short Assignment 6: Redux](sa/redux) - DUE 4/26
 <!-- * Short Assignment 7: Express and Mongo -->
 * [Short Assignment 7: Express and Mongo](sa/server-side) - DUE 5/2
-* EC Short Assignment 8: WebSockets
-<!-- * [EC Short Assignment 8: WebSockets](sa/websockets) - DUE 6/1 -->
-* EC Short Assignment 9: Photo Uploading S3
-<!-- * [EC Short Assignment 9: Photo Uploading S3](sa/s3-upload) - DUE 6/1 -->
-* EC Short Assignment 10: ChatBot
-<!-- * [EC Short Assignment 10: ChatBot](sa/slack-bot) - DUE 6/1 -->
-* EC Short Assignment 11: ReactNative
-<!-- * [EC Short Assignment 11: ReactNative](sa/react-native) - DUE 6/1 -->
+<!-- * EC Short Assignment 8: WebSockets -->
+* [ExtraCredit Short Assignment 8: WebSockets](sa/websockets)
+<!-- * EC Short Assignment 9: Photo Uploading S3 -->
+* [ExtraCredit Short Assignment 9: Photo Uploading S3](sa/s3-upload)
+<!-- * EC Short Assignment 10: ChatBot -->
+* [ExtraCredit Short Assignment 10: ChatBot](sa/slack-bot)
+<!-- * EC Short Assignment 11: ReactNative -->
+* [ExtraCredit Short Assignment 11: ReactNative](sa/react-native)
 
 
 
@@ -47,10 +47,10 @@ comment_term: assignments
 * [Lab 3: React Notes](lab/react-notes) - DUE 4/22
 <!-- * Lab 4: Redux Blog Frontend -->
 * [Lab 4: Redux CRUD Frontend](lab/redux-blog) - DUE 4/30
-* Lab 5 Part 1: Redux Blog + API
-<!-- * [Lab 5 Part 1: Redux Blog + API](lab/redux-blog+server) - DUE 5/7 -->
-* Lab 5 Part 2: Redux Blog + Auth 
-<!-- * [Lab 5 Part 2: Redux Blog + Auth](lab/redux-blog+auth) - DUE 5/14 -->
+<!-- * Lab 5 Part 1: Redux Blog + API -->
+* [Lab 5 Part 1: Redux Blog + API](lab/redux-blog+server) - DUE 5/6
+<!-- * Lab 5 Part 2: Redux Blog + Auth  -->
+* [Lab 5 Part 2: Redux Blog + Auth](lab/redux-blog+auth) - DUE 5/11
 
 
 ### 4-ish Short in-class quizzes:  10%

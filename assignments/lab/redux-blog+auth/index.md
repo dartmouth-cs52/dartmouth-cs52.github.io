@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab5 +Auth
-published: false
+published: true
 comment_term: lab-redux-blog+auth
 ---
 
@@ -44,7 +44,7 @@ git push origin --tags
 
 Great, now you can always remember where you veered off course and made this terrible decision to add authentication to your lovely blog.
 
-You will end up with 3 server urls at the end of this: A surge url for loading the frontend, a herokuapp url for the api server, and a mLabs mongo databaase url (which we won't need to actually know but heroku will automatically help connect to).  
+You will end up with 3 server urls at the end of this: A surge url for loading the frontend, a herokuapp url for the api server, and a mLabs mongo database url (which we won't need to actually know but *heroku* will automatically help connect to).  
 
 We'll be working on both the api server and frontend app.
 
@@ -54,7 +54,9 @@ For signing our JWT's on the **server side** we'll need a secret key.  Might as 
 
 We'll need to create an `AUTH_SECRET` environment variable with some long random string (any characters).
 
-Use the [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code. IE. Save `AUTH_SECRET="somerweklhjhdf9879av8v928cjka asdflkaj889"` into a `.env` file that you do not add to git (add .env to your .gitignore file).
+Use the [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it into your code. IE. Save `AUTH_SECRET="somerandomstringthiscanbeanythingyoushouldmakeityourown"` into a `.env` file that you do not add to git.
+
+🚀 Add .env to your .gitignore file.
 
 Then in your code wherever you need the secret you can use:
 
@@ -66,7 +68,7 @@ dotenv.config({ silent: true });
 process.env.AUTH_SECRET
 ```
 
-Note: during deployment for Heroku you'll need to add `AUTH_SECRET` to your config variables in Settings!
+⚠️ During deployment for Heroku you'll need to add `AUTH_SECRET` to your config variables in Settings!
 
 ## API Server Auth support
 
@@ -121,7 +123,7 @@ yourModelSchema.pre('save', function beforeyYourModelSave(next) {
 
   //TODO: do stuff here
 
-  // when done run the next callback with no arguments
+  // when done run the **next** callback with no arguments
   // call next with an error if you encounter one
   // return next();
 
@@ -132,10 +134,9 @@ For the [`bcryptjs`](https://github.com/dcodeIO/bcrypt.js) part what we'll want 
 
 🚀 use the above to parts to construct a method for:  `userSchema.pre('save', function beforeUserSave(next) {`.  Don't forget that you'll need to set `user` to `this` at the top.
 
+🚀 Generate a salt as they do in the docs and then hash `user.password` with the salt. Tip: in the docs the first argument to hash is the password, in our case you have it in a variable `user.password` - in case that was confusing documentation.
 
-🚀 Generate a salt and then hash `user.password` with the salt.
-
-🚀 Set the user.password to the hash and `return next()` which will allow the hook to proceed.
+🚀 Set the `user.password` to the hash and `return next()` which will allow the hook to proceed.
 
 ```js
 // overwrite plain text password with encrypted password
@@ -157,7 +158,7 @@ Great, now we've got the first part down, how about comparing.
 
 This will be a little different. We want to add a method to our model to support comparing.  It is possible to [add methods to a schema](http://mongoosejs.com/docs/guide.html#methods) in Mongoose.
 
-🚀 We need to add a method that takes a `candidatePassword` and a callback.  The callback arguments are `(error, result)` so you just have to make sure to return `(null, result)`.
+🚀 We need to add a method that takes a `candidatePassword` and a callback.  The callback arguments are `(error, result)` so you just have to make sure to return `(null, result)` if there is no error.
 
 ```javascript
 //  note use of named function rather than arrow notation
@@ -181,7 +182,7 @@ Let's add an new User controller!
 
 To encode and decode our JWT's we're going to use the [`jwt-simple`](https://github.com/hokaccha/node-jwt-simple). Go ahead and yarn add it and import it: `import jwt from 'jwt-simple';`
 
-🚀 Also import our new User model and dotenv!
+🚀 Also import our new User model and init `dotenv` same as you did before!
 
 The controller has functions that we call for express routes. We are going to add 2 new routes `/signin` and `/signup`, so lets create function headers for those:
 
@@ -195,7 +196,7 @@ export const signup = (req, res, next) => {
 }
 ```
 
-When we generate a new JWT we need to simply encode a particular bit of json.  This json has particular recommended fields which we'll use. We'll use `sub` for the userid and `iat` for the issued at timestamp.  We'll just create a helper function for this:
+When we generate a new JWT we need to simply encode a particular bit of json.  This json has particular recommended fields which we'll use. We'll use `sub` for the userid and `iat` for the *issued at timestamp*.  We'll just create a helper function for this:
 
 ```javascript
 // encodes a new token for a user object
@@ -250,7 +251,9 @@ We're going to use more npm modules! Yay!
 yarn add passport passport-local passport-jwt
 ```
 
-We'll be using [Passport.js](http://passportjs.org/) to provide authentication services.  Passport gives us multiple authentication "strategies".  We'll use `passport-local` for authenticating with username and password, and `passport-jwt` for using JWT's.
+We'll be using [Passport.js](http://passportjs.org/) to provide authentication services.  Passport gives us multiple authentication "strategies".  We'll use `passport-local` for authenticating with username and password, and `passport-jwt` for using JWT's. 
+
+Passport is a middleware in our routes, and it will analyze requests that need to be protected and deal with validating our JWT. 
 
 
 ![](img/passport_strategies.png){: .small .fancy }
@@ -278,11 +281,12 @@ const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
   secretOrKey: process.env.AUTH_SECRET,
 };
+// NOTE: we are not using a bearer token, disregard information about bearer tokens on the internet.
 
 
 // username + password authentication strategy
 const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
-  // should find user by email and check password
+  //should find user by email and check password
 });
 
 const jwtLogin = new JwtStrategy(jwtOptions, (payload, done) => {
@@ -327,7 +331,6 @@ const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
 
 Read through the above, make sense?
 
-
 For `jwtLogin`, we are given the payload of the passed in JWT. We need to check the userid and return the found user.  Want to give this one a shot?
 
 ```javascript
@@ -347,7 +350,7 @@ const jwtLogin = new JwtStrategy(jwtOptions, (payload, done) => {
 });
 ```
 
-Note, that many mongoose functions return a null object rather than an error — hence we have to check that.  `done` is the callback and has the form `done(error, value)` as is fairly common with some JS libraries.
+⚠️ Many mongoose functions return a null object rather than an error — hence we have to check that. `done` is the callback and has the form `done(error, value)` as is fairly common with some JS libraries.
 
 How does this all fit together?
 
@@ -375,7 +378,7 @@ router.post('/signin', requireSignin, UserController.signin);
 router.post('/signup', UserController.signup);
 ```
 
-Both of these are POSTs so from our frontend we will need to pass them data.
+Both of these are POSTs, so from our frontend we will need to pass them data.
 
 🚀 What other routes should be we protect?  For now let's use `requireAuth` to protect `createPost`, `updatePost`, and `deletePost`. As easy as:  `.post(requireAuth, Posts.createPost)`
 
@@ -392,7 +395,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"email": "test@test.com","
 curl -X POST -H "Content-Type: application/json" -d '{"email": "test@test.com","password": "password"}' "http://localhost:9090/api/signin"
 
 # try posting!
-curl -X POST -H "Content-Type: application/json" -H "Authorization: JUST_THE_LONG_TOKEN_STRING" -d '{"title": "test","tags": "sometag","content": "this is a test post"}' "http://localhost:9090/api/posts"
+curl -X POST -H "Content-Type: application/json" -H "authorization: JUST_THE_LONG_TOKEN_STRING" -d '{"title": "test","tags": "sometag","content": "this is a test post"}' "http://localhost:9090/api/posts"
 
 ```
 
@@ -484,7 +487,7 @@ export function authError(error) {
 
 ```
 
-Most important difference in the above `signupUser` and `signinUser` ActionCreators is that they take the token that is in the response and put it in `localStorage`.  We'll be able to access this whenever we load up our site, so we'll remain logged in without having to reauthenticate every time.
+Most important difference in the above `signupUser` and `signinUser` ActionCreators is that they take the token that is in the response and put it in `localStorage`.  We'll be able to access this whenever we load up our site, so we'll remain logged in without having to re-authenticate every time.
 
 ### Authorization Header
 
@@ -507,7 +510,7 @@ if (token) {
 }
 ```
 
-This will set our state as authenticated if there is a token available that was previously saved.  You can debug this in your *Application* -> *Local Storage* Chrome inspector tab.
+This will set our state as authenticated if there is a token available that was previously saved.  You can debug this in your *Application* -> *Local Storage* Chrome inspector tab. 
 
 
 ### Reducer
@@ -523,12 +526,16 @@ Given the three actions we might get:
 * AUTH_ERROR: authenticated: false
 
 
+Why are we just setting a boolean you ask?  Good question. You may want to store something else, like the username which is a bit more useful.
+
+The security here is provided by the server, which if you don't have a valid token won't allow you to do certain operations. The frontend just needs to know whether it has a valid token or not so a boolean will suffice here.
+
 ### Components
 
 Ok, finally we're ready for the `SignIn` and `SignUp` components.
 
-* SignIn — A Redux connected component that has access to the `signinUser` ActionCreator.  Simple form with username and password.
-* SignUp — A Redux connected component that has access to the `signupUser` ActionCreator.  Simple form with whatever fields you want a user to have.
+* **SignIn** — A Redux connected component that has access to the `signinUser` ActionCreator.  Simple form with username and password.
+* **SignUp** — A Redux connected component that has access to the `signupUser` ActionCreator.  Simple form with whatever fields you want a user to have.
 
 
 🚀 Create these components. You can base them off of your New component pretty easily. Feel free to create one single component for this with different buttons triggering the signup / signin if you prefer that UX.
@@ -589,9 +596,11 @@ Done! Now in your `routes.js` you can import `RequireAuth` and for instance prot
 
 ## Lastly
 
-Extend the User Model to store the username in addition to email, and add in support for that everywhere.  Display the Author Name along with every post. You are welcome to either duplicate the name and store it directly as a field in the Post model, or look it up by reference.  Note: `name` is a reserved word in JS and can cause problems if you reassign object.name, so call your field something other than name.
+🚀 Extend the User Model to store the username in addition to email, and add in support for that everywhere.  
 
-The best time/place to have access to the User object is actually right when you create the post on the api side.  Since that route is an authenticated route, passport adds the user object to the request.  So in your create post method in your post controller you would have access to: `req.user`.   If the user object has a name field that should be available there.
+🚀 Display the Author Name along with every post. You are welcome to either duplicate the name and store it directly as a field in the Post model, or look it up by reference.  Note: `name` is a reserved word in JS and can cause problems if you reassign object.name, so call your field something other than name.
+
+🍹The best time/place to have access to the User object is actually right when you create the post on the api side.  Since that route is an authenticated route, passport adds the user object to the request for you!  In your createPost method in your post controller you would have access to: `req.user`.  If the user object has a username field, then that would be available there for you to then save along with the post.
 
 There are 2 ways to associate the user with the post.  You can save a `ref` to the whole user object (which you started to set up when you added author as an ObjectID type field). If you do that, then later when you retrieve the user you need to use [`populate`](http://mongoosejs.com/docs/populate.html) to fill in the object. Or you could add a `username` field to post and assign that.  Using a reference and populating on retrieval is the better way,  you can even select which field specifically to populate so you aren't sending the whole user object if you don't want to.
 
@@ -619,6 +628,7 @@ Commit, tag both your Lab5 and Lab4 repos with `v2`, and push your tags! Deploy 
 
 
 ## Extra Credit
+*always mention your extra credit in the README.md file*
 
 * so you now have users, what can you do with users? so many things!
 * if you didn't add error message handling before you should do it now (error state in store, error reducer, error action, error component)

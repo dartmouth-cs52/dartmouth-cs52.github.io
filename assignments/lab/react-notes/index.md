@@ -613,6 +613,7 @@ Test it out!  Open multiple browsers and see how adding and moving notes in one 
 
 
 ### Extra Credit
+*always mention your extra credit in the README.md file*
 
 * Some method of note organization such as show-all.
 * Come up with a way to deal with zIndex sorting:

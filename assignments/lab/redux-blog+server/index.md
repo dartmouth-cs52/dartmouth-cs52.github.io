@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Lab5 p1
-published: false
+published: true
 comment_term: lab-redux-blog+server
 ---
 
@@ -34,11 +34,13 @@ First we should do some basic setup steps.
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-18s/express-babel-starter.git
+git remote add starter git@github.com:dartmouth-cs52-19s/express-babel-starter.git
 git pull starter master
 ```
 
-Ok, now that we got that out of the way. Let's dig in!  
+During SA7 we inspected the starterpack, it isn't very complicated - mostly just express+babel+eslint. 
+
+Ok, now that we got that out of the way. Let's dig in! 
 
 
 ### React App Debugging
@@ -86,11 +88,11 @@ app.get('/', (req, res) => {
 });
 ```
 
-This routing concept is identical to the routing we used in our react app.  It maps URL paths to functions.  These functions take 2 arguments:  request and response.  
+This routing concept is identical to the routing we used in our react app.  It maps URL paths to functions.  These functions take 2 arguments:  `request` and `response`.  
 
-Request is an express object that contains, among other things, any data that was part of the request. For instance, the JSON parameters we would POST or PUT in our asynchronous `axios` calls would be available as `req.body.title`, etc.  
+**Request** is an express object that contains, among other things, any data that was part of the request. For instance, the JSON parameters we would POST or PUT in our asynchronous `axios` calls would be available as `req.body.title`, etc.  
 
-Response is another special express object that contains, among other things, a method named `send` that allows us to send back a response to the client.  When your api call gets back JSON data this is how it is returned.  Consider `res.send()` the equivalent of a network based `return` statement.
+**Response** is another special express object that contains, among other things, a method named `send` that allows us to send back a response to the client.  When your api call gets back JSON data this is how it is returned.  Consider `res.send()` the equivalent of a network based `return` statement.
 
 We'll add more routing in shortly, but first let's set up our database!
 
@@ -181,7 +183,7 @@ Well it should have methods that perform all the main functionality of our API. 
 import Post from '../models/post_model';
 
 export const createPost = (req, res) => {
-  res.send('post should be created here');
+  res.send('post should be created and returned');
 };
 export const getPosts = (req, res) => {
   res.send('posts should be returned');
@@ -241,7 +243,6 @@ router.route('/someroute/:someID')
 
 Note `/*someMethod*/` is just a comment, you would call a method there in a module that we will call the controller — more on that shortly!
 
-
 Ok, remember how we defined all our API endpoints?   Let's map them in our router.
 
 🚀 Use the syntax above to make routes to map the following:
@@ -260,7 +261,7 @@ You will have 2 `router.route()` definitions with separate chains of HTTP verb m
 
 ### Import New Routes
 
-🚀 Now in your `src/server.js` file import our new routes and assign them to handle all `/api/*` routes!
+🚀 Now in your `src/server.js` file import our new routes and assign them to handle all `/api/*` routes!  Nicely organized. 
 
 ```javascript
 //at top of server.js
@@ -274,7 +275,7 @@ app.use('/api', apiRouter);
 
 Neat!
 
-Note: the `app.use('api` line should go towards the bottom of the file, in particular after bodyparser.  The `server.js` file is read top to bottom every connection request, so when it hits the route definition if the body of the request hasn't been parsed you will get errors when you try to use  `req.body`.
+Note: the `app.use('api` line should go towards the bottom of the file, in particular after `bodyparser`.  The `server.js` file is **read top to bottom every connection request**, so when it hits the route definition if the body of the request hasn't been parsed you will get errors when you try to use  `req.body`.
 
 ### First Pass Test
 
@@ -308,7 +309,7 @@ curl -X DELETE -H "Content-Type: application/json" "http://localhost:9090/api/po
 
 ## Controller Continued
 
-Ok but our controller `controllers/post_controller.js` is fairly useless.  We have everything wired, but we need to actually store stuff.
+Ok, but our controller `controllers/post_controller.js` is fairly useless.  We have everything wired, but we need to actually store stuff.
 
 Let's walk through making one of those endpoints not useless!
 
@@ -358,13 +359,13 @@ db.posts.find()
 
 Your mission is to now implement the rest of the endpoints!  You have the wiring ready, all you need is to use the [mongoose docs](http://mongoosejs.com/docs/queries.html) to implement `getPost`, `getPosts`, `updatePost`, and `deletePost`.  You may find mongoose methods such as: `.find()`, `.findById()`, `.remove()` helpful.  You might want to look into sorting the results for `getPosts` by `created_at`.
 
-Note!  In the above we only saved `title`, none of the other fields were defined in our Post Schema!  You should now go back and add the other fields we need to the model as well as to the all the controller methods.
+⚠️ In the above we only saved `title`, none of the other fields were defined in our Post Schema!  You should now go back and add the other fields we need to the model as well as to the all the controller methods.
 
 And finally, you'll need to get the router id that is passed in when we hit `/posts/:id`.  This is accessible as `req.params.id` inside each of our controller functions that had this `:id` path variable.
 
 ## What about APIKEY
 
-Note, unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in each document and then query on it.
+Unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in each document and then query on it.
 
 ## Deploy
 
@@ -378,7 +379,7 @@ Great! We have everything working now. We will need to host this new server comp
 1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
 1. Once it is deployed you can get your new heroku URL by clicking 'open app' on heroku.
 
-Note: Don't forget to push master to **both** heroku and origin.
+⚠️ Don't forget to push master to **both** *heroku* and *origin*.
 
 
 ## P1 Complete
@@ -393,6 +394,7 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 1. working url for Lab4 on surge that points to your new API server. You should change it to post to the new heroku url that you get by clicking 'open app' on heroku.
 
 ## Extra Credit
+*always mention your extra credit in the README.md file*
 
 * change your tags store to be an array rather than a string, can just split by whitespace
 * add commenting to posts (either an array or another model) / change both api and frontend to support this.

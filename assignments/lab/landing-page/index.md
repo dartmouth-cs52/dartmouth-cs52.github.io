@@ -281,6 +281,7 @@ You should host this on github pages as you have in the past with the `gh-pages`
 
 
 ## Extra Credit
+*always mention your extra credit in the README.md file*
 
 * Fancy CSS transitions
 * CSS Checkbox Hack for the mobile version Menu
