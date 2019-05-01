@@ -25,7 +25,7 @@ name: Final Projects!
 
 .medium_small[![](img/finalproject-table.jpg)]
 
-* last 3 weeks of class
+* last month of class
 * projects from scratch
   * libraries, frameworks, apis of course
 * required components
@@ -38,6 +38,7 @@ name: Final Projects!
   * client and server
   * data persistence - basic create retrieve update delete
   * some reasonable complexity
+
 
 
 ---
@@ -59,6 +60,24 @@ name: Final Projects!
 
 ???
 * a couple groups went all out and build both a react-native app and a web app
+
+
+---
+name: left on read
+
+<iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="http://leftonread.me" frameborder="0" allowfullscreen></iframe>
+
+
+---
+name: left on read
+
+![](img/projects/leftonread.jpg)
+
+???
+* 1 reddit post
+* 20k upvotes
+* 80million text messages uploaded
+* 2000 users
 
 
 ---
@@ -133,8 +152,7 @@ name: munch buddy
 name: mafia
 
 
-<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://mafia.surge.sh/" frameborder="0" allowfullscreen></iframe>
-
+.large[![](img/projects_17s/mafia.gif)]
 
 
 ---
@@ -169,18 +187,18 @@ name: off the green
 <iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://offthegreen.surge.sh/" frameborder="0" allowfullscreen></iframe>
 
 
----
-name: Ideas
+
+<!-- name: Ideas
 
 
 .fancy.medium[![](https://media.giphy.com/media/PIYuiILBo5OnK/giphy.gif)]
 
 
-???
-* hard to generate
 
----
-name: Some Inspiration Sources
+* hard to generate -->
+
+
+<!-- name: Some Inspiration Sources
 
 * https://80000hours.org/career-guide/world-problems/
 * https://80000hours.org/problem-profiles/#potentially_promising
@@ -194,16 +212,15 @@ name: Some Inspiration Sources
 * http://abc.go.com/shows/shark-tank
 
 
-???
+
 * how i built this is a cool interview series
 * anybody listen to it?
 * world problems
-* how to think about problems and scale
+* how to think about problems and scale -->
 
 
 
----
-name: Some Broad Topics
+<!-- name: Some Broad Topics
 
 .fancy.small[![](img/flyaway.gif)]
 
@@ -213,15 +230,15 @@ name: Some Broad Topics
 * mobile sensors
 
 
-???
 * do we think education is optimal?
 * queue soap box - turns out giving students a giant textbook to read and talking at them for an hour isn't the way the brain works.  we are amazing learners - you learn language mostly just by listening - an infants brain learns phonemes and words by analyzing the distribution of sounds. probabilistic statistical learning
 * pre-tty _ ba-by (transitional probabilities, that a syllable will occur given a previous) oral speach has no real boundaries
 * we do this automatically.
-* at 11 months old babies can distinguish grammatical from non-grammatical sentences
+* at 11 months old babies can distinguish grammatical from non-grammatical sentences -->
 
----
-name: Share Topics
+
+
+<!-- name: Share Topics
 
 .small[![](img/sharing.gif)]
 
@@ -229,41 +246,35 @@ name: Share Topics
 * can be about tech or problems in the world
 * post in slack `#pitch-ideas` with comment about why it is interesting to you
 
-???
 * this is just a little starter
-* find more and post them
+* find more and post them -->
 
 
 ---
-name: Dates:
+name: Process:
 
 * Pitches (next week!)
-* Groups Formed (5/1)
-* Feature Spec + Mockups (5/8)
+* Groups Formed (5/3)
+* Feature Spec + Mockups (5/9)
 * Scaffolding (5/14)
 * Dev Site Up (client+server) (5/16)
 * Pre-demo Bug Hug (5/23)
-* Final Project Demos (5/30)
-* Final Submission (6/5)
+* Final Project Demos (5/29)
+* Final Submission (6/3)
 
 
 ???
 * trying so that we have plenty of time for This
-* start thinking about ideas,  talk to me about scope
 
 
-
-
----
-name: Pitches
+<!-- name: Pitches
 
  .fancy.medium[![](http://i.giphy.com/IH3ZwYeR9AlP2.gif)]
 
 * submit idea to pitch, individually or in pairs
 
-???
 * This will be your chance to submit an idea that you would like to pitch.  As the person submitting the idea you'll need to think a little bit about scope and feasibility.
-* just need to know how many so we can have enough time for it
+* just need to know how many so we can have enough time for it -->
 
 
 
@@ -276,8 +287,8 @@ name: Pitch Presentations
 
 * 2 minute MAX presentation with 2 minutes Q&A
 * can do in pairs if you want
-* groups (of 5) formed by ranking favorite ideas
-* also who you prefer working with
+* groups (of 5) formed by bidding on favorite ideas
+* also who you prefer working with/not
 
 ???
 * A 2 minute presentation with 2 minutes of Q&A to pitch your idea to the class
@@ -298,7 +309,7 @@ name: Feature Spec + Mockups
 * from users perspective
 * terse listing of features
 * terse+memorable user personas
-* mockups/sketches
+* **Figma mockups and sketches**!
 
 ???
 * A walk-though of your project from the users perspective listing out every feature that it should have
@@ -376,3 +387,9 @@ name: Final Project Demos
 * Final presentation of project. Open to public.
 * Motivate the idea, show it in action, discuss challenges
 * will be in hanover inn ballroom!
+
+
+---
+name: And Now...
+
+[https://tinyurl.com/cs52-19s-pitches](https://tinyurl.com/cs52-19s-pitches)

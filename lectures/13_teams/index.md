@@ -1,7 +1,7 @@
 ---
 layout: page_with_slides
 title: Teams
-published: false
+published: true
 comment_term: lecture-teams
 ---
 
