@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Uploading images to S3 — Short Assignment
-published: false
+published: true
 comment_term: sa-s3-upload
 ---
 
