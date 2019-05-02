@@ -266,7 +266,7 @@ Great, so now when we hit `http://localhost:9090`, we see the nav bar. Cooool.
       <% polls.forEach(function(poll) { %>
 
         <div class="card">
-          <div class="card-image" style="background-image: url(<%= poll.imageURL %>)">
+          <div class="card-image" style="background-image: url(<%=poll.imageURL%>)">
           </div>
           <div class="card-content">
             <p><%= poll.text %></p>

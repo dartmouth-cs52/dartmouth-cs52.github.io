@@ -23,16 +23,44 @@ name: base
 ---
 name: Today
 
+
+.medium[![](img/tq-restful-api.jpg)]
+
 * Sessions
 * Authentication
-* X-hour tomorrow!
-* Teams released, milestones discussed during xhour!
+* [https://tinyurl.com/cs52-19s-pitches](https://tinyurl.com/cs52-19s-pitches)
 
 ???
-* quiz tomorrow
 * adjusting milestones and will publish dates on canvas
 * going to move quickly to get the projects started
-* lab5.p2 is pretty short more liek a short
+* lab5.p2 is pretty short more like a short
+* QUESTIONS ABOUT SA7?!?!?
+
+
+
+---
+name: Bloggggyy
+
+
+* [wow](http://airwaves-sports.surge.sh/)
+* [graphs](http://joe-connolly-lab4.surge.sh/)
+* [with auth!](https://blogger-cs52.surge.sh/)
+* [filtering](http://averyv-cs52-lab4.surge.sh/)
+* [more filtering](http://book-reviews.surge.sh/)
+* [free food](http://freefoodatnow.surge.sh/)
+* [memes](http://cs52-community-meme-page.surge.sh/)
+* [meal hacks - css](http://shep-cs52-lab4.surge.sh/)
+* [virtual closet](http://charlotteclab4.surge.sh/)
+* [more recipes](http://taylorolson-cs52-lab4.surge.sh/)
+* [volunteering](http://alexis-cs52-volunteer-postings.surge.sh/)
+* [why auth is important](http://mmhazard-reduxblog.surge.sh/)
+* [css from scratch](http://nourbenmohamed-cs52-starter.surge.sh/)
+* [travel](https://sulljohn-cs52-blog.surge.sh/)
+* [dank style](http://mini-blog.surge.sh/)
+* [#tobeme](http://grace-cs52-blog-frontend.surge.sh/)
+* [typography](https://bensblog.surge.sh/)
+
+
 
 ---
 name: Sessions
@@ -69,13 +97,16 @@ name: Browser State Persistence
 ---
 name: Session State
 
-<iframe src="//giphy.com/embed/3hmmVGaDaFMdy" width="480" height="202" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.medium[![](img/memento.gif)]
 
 * keep some state in active browser
 * and between browser sessions
 
 ???
 * what we want to do
+* if you haven't seen memento... 
+* what might we want to store in between requests to connect them together? 
+
 
 
 
@@ -90,6 +121,7 @@ name: More State Storage
 
 ???
 * where to store some session data?
+* we've done in memory - and now posts and stuff on the server
 
 
 
@@ -169,11 +201,13 @@ Cookie: cookie_name1=cookie_value1; cookie_name=cookie_value2;
 ---
 name: Just a file
 
-* View cookies
-* Modify/corrupt cookies
-* Delete cookies
-* Create cookies
-* Can be stolen
+* just a file on your computer that your browser reads/writes automatically
+* you can:
+  * View cookies
+  * Modify/corrupt cookies
+  * Delete cookies
+  * Create cookies
+  * Allow them to be stolen
 
 ???
 * user id in cookie
@@ -200,6 +234,9 @@ name: Variety of Types
 
 ???
 * zombie cookie is stored in a variety of different ways,  cached image in your browser, session storage, flash, etc, ip addr etc.
+* 3rd party are dropped by iframes from ads for instance
+* httponly don't allow js access from browser - so only via auto requests
+* secure - only work over https
 
 ---
 name: Tracked and Stolen
@@ -237,7 +274,7 @@ sessionStorage.removeItem('key')
 * so maybe cookies have problems
 * and we don't have enough control
 * but we like javascript everything now right?
-* accessed only thorugh javascripty
+* accessed only through javascripty goodness
 * still per origin - can't read another domains storage
 
 
@@ -328,7 +365,7 @@ Cookie: user.password='this is my plain text password'
 // still problematic
 Cookie: connect.sid=2398sf98792874hk2kjh23iu
 ```
-* security through obscurity
+* 🔓 security through obscurity ⚠️
 
 ???
 * what should we store in a cookie?
@@ -387,6 +424,7 @@ name: CSRF
 * these days such an attack is rarer but still needs to be protected against
 * cookies... are problematic because of the automatic include
 * secret form fields with extra data for validation
+* cross origin resource sharing protections help with js but not with form elements
 
 
 
@@ -411,6 +449,7 @@ name: username and passwords
 
 * passwords still pretty much defacto
 * 2 factor authentication on the rise
+  * phone or email validation 
 
 ???
 * 2 factor typically now is key sent to phone
@@ -428,7 +467,7 @@ name: How to store password
 * computer should do better
 * generate random salt
 * hash the password (where a hash is a one way crytographic function)
-* store salt + hash
+* store salt + hash (cat them together basically)
 * no way to decrypt password
 * on login compare hashes
 * salt helps add some randomness so that an attacker couldn't do an easier lookup of hash to password -  would have to try all possibilities for the salt.
@@ -451,6 +490,8 @@ name: But browser
 
 ---
 name: What to send back?
+
+.medium[![](img/proveit.gif)]
 
 * but stateless?
 * once auth'd
@@ -477,6 +518,8 @@ name: Tokens Over Cookies
 * and we are all js anyway
 * separate servers for static and api
 * multiple domains responsible for site
+  * api1.domain
+  * api2.domain etc
 
 
 

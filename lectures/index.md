@@ -42,8 +42,8 @@ comment_term: lectures
 * 5/1 Pitches
 <!-- * [5/1 Pitches](11_pitches) -->
 <!-- or 07_project_intro -->
-* 5/7 Sessions & Auth
-<!-- * [5/8 Sessions & Auth](13_sessions_auth) -->
+<!-- * 5/7 Sessions & Auth -->
+* [5/2 Sessions & Auth](13_sessions_auth)
 * 5/8 Teams
 <!-- * [5/9 Teams](13_teams) -->
 * 5/9 Websockets, S3, ReactNative
