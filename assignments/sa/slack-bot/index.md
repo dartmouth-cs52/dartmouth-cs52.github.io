@@ -182,11 +182,7 @@ export YELP_CLIENT_ID="YOUR_CLIENT_ID"
 
 You can grab the yelp client like this
 ```javascript
-  let yelpClient;
-  yelp.accessToken(process.env.YELP_CLIENT_ID, process.env.YELP_CLIENT_SECRET)
-    .then((res) => {
-      yelpClient = yelp.client(res.jsonBody.access_token);
-    });
+const yelpClient = yelp.client(process.env.YELP_API_KEY);
 ```
 
 Our client gives us a convenient search api. We can use the following to make a
@@ -206,35 +202,33 @@ query
 Tip: Yelp results come back looking something like:
 
 ```js
-{ region:
-   { span:
-      { latitude_delta: 0.718768709999992,
-        longitude_delta: 1.2334175700000003 },
-     center: { latitude: 43.667689249999995, longitude: -72.23498615 } },
-  total: 293,
-  businesses:
-   [ { is_claimed: true,
-       rating: 3.5,
-       mobile_url: 'http://m.yelp.com/biz/lui-lui-west-lebanon?utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=SP9uRBTuVFlkyH53y2dRbw',
-       rating_img_url: 'https://s3-media1.fl.yelpcdn.com/assets/2/www/img/5ef3eb3cb162/ico/stars/v1/stars_3_half.png',
-       review_count: 107,
-       name: 'Lui Lui',
-       rating_img_url_small: 'https://s3-media1.fl.yelpcdn.com/assets/2/www/img/2e909d5d3536/ico/stars/v1/stars_small_3_half.png',
-       url: 'http://www.yelp.com/biz/lui-lui-west-lebanon?utm_campaign=yelp_api&utm_medium=api_v2_search&utm_source=SP9uRBTuVFlkyH53y2dRbw',
-       categories: [Object],
-       phone: '6032987070',
-       snippet_text: 'Still in heaven over how good the food was. We stopped in Lui Lui while looking for a quick dinner spot. While we couldn\'t sit due to the wait, I ordered...',
-       image_url: 'https://s3-media2.fl.yelpcdn.com/bphoto/-yb1mjp8cvQwXqCnUUUNrw/ms.jpg',
-       snippet_image_url: 'http://s3-media3.fl.yelpcdn.com/photo/m6vlPsVGi9ln0hQM0LGylw/ms.jpg',
-       display_phone: '+1-603-298-7070',
-       rating_img_url_large: 'https://s3-media3.fl.yelpcdn.com/assets/2/www/img/bd9b7a815d1b/ico/stars/v1/stars_large_3_half.png',
-       id: 'lui-lui-west-lebanon',
-       is_closed: false,
-       location: [Object] },
-     }
-   },
- ...]
-}
+[{ id: 'GXX6xbCK1EBH9X6zJf3wVA',
+    alias: 'sushiya-hanover-2',
+    name: 'Sushiya',
+    image_url:
+     'https://s3-media2.fl.yelpcdn.com/bphoto/IeGQHPRAhXUlU9p_2omi-w/o.jpg',
+    is_closed: false,
+    url:
+     'https://www.yelp.com/biz/sushiya-hanover-2?adjust_creative=AbS0KeC0gXt5NvEk3AEUeg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=AbS0KeC0gXt5NvEk3AEUeg',
+    review_count: 61,
+    categories: [ [Object], [Object], [Object] ],
+    rating: 3.5,
+    coordinates: { latitude: 43.699705710707, longitude: -72.2894281825115 },
+    transactions: [],
+    price: '$$',
+    location:
+     { address1: '72 S Main St',
+       address2: '',
+       address3: '',
+       city: 'Hanover',
+       zip_code: '03755',
+       country: 'US',
+       state: 'NH',
+       display_address: [Array] },
+    phone: '+16036434000',
+    display_phone: '(603) 643-4000',
+    distance: 7525.2386648073125 },
+},]
 ```
 
 So you'll need to process those to filter out results you find useful.
@@ -242,7 +236,7 @@ So you'll need to process those to filter out results you find useful.
 Try something like:
 
 ```js
-data.businesses.forEach(business => {
+response.jsonBody.businesses.forEach(business => {
   // do something with business
 });
 ```
