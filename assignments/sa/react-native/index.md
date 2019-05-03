@@ -38,7 +38,9 @@ Watchman is a file watching service that records when files change, and triggers
 
 🚀 Alright, now we're ready to use react-native! We'll be using `exp` the expo command line to init our project. *There exists Expo XDE also, but for our purposes we will stick with the command line stuff for now.*
 
-`$ npm install -g exp`
+```bash
+npm install expo-cli --global
+```
 
 Great! Now we're ready to create our repo.
 

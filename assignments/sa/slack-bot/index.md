@@ -176,7 +176,7 @@ $ yarn add yelp-fusion
 
 Once You have your keys add them to your .env file
 ```bash
-export YELP_CLIENT_SECRET="YOUR_CLIENT_SECRET"
+export YELP_API_KEY="YOUR_API_KEY"
 export YELP_CLIENT_ID="YOUR_CLIENT_ID"
 ```
 
