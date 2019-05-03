@@ -304,4 +304,3 @@ controller.on('outgoing_webhook', (bot, message) => {
 * Driving directions?
 * [MongoDB Botkit Storage](https://github.com/howdyai/botkit-storage-mongo) setup on Heroku.
 * have your bot talk with another bot in #bot (requires collaboration but only on discussing how the bot conversation would go — this is still an individual assignment).  For instance, if I ask your bot for a recipe (in a DM), your bot could then use #bot to ask another bot for a suggested recipe and then return the results in the DM. This might be tricky to get right, document your "bot2bot chat api" and submit that in addition to screenshots showing the functionality.
-* play with es6 promises
