@@ -89,7 +89,7 @@ We can't live without this:
 💻 yarn add --dev eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint
 ```
 
-🚀 Create a `.eslintrc` file from [this gist](https://gist.github.com/timofei7/c8df5cc69f44127afb48f5d1dffb6c84) and restart Atom to pick up changes.
+🚀 Create a `.eslintrc` file from [this gist](https://gist.github.com/timofei7/c8df5cc69f44127afb48f5d1dffb6c84) and restart your code editor to pick up changes.
 
 ## Basic Navigation
 One of the classic navigation components in iOS is the Tab Bar. We'll be using the [React Navigation](https://reactnavigation.org/docs/en/getting-started.html) plugin to help with this. You may encounter many conficting packages for doing this,  TabBarIOS, NavigatorIOS, etc, but React Navigation's Stack Navigator is currently the best option for this.  It navigates using string *Screen* identifiers. There is lots of documentation available.
@@ -104,7 +104,7 @@ Tabs are a pretty common feature of apps, let's set up some using [Tab Navigatio
 
 ```js
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import { View, Text } from 'react-native';
 
 const AboutTab = (props) => {
@@ -124,7 +124,7 @@ const MainTabBar = createBottomTabNavigator({
 });
 
 
-export default MainTabBar;
+export default createAppContainer(MainTabBar);
 ```
 
 🚀  Now lets load this in the main `App.js`. Change `App.js` to be:

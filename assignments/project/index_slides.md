@@ -305,7 +305,7 @@ name: Feature Spec + Mockups
 
  .fancy.medium[![](http://i.giphy.com/13NR9a0aYuYMy4.gif)]
 
-* terse walk-though of project
+* terse walk-through of project
 * from users perspective
 * terse listing of features
 * terse+memorable user personas
