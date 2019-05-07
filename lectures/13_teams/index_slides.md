@@ -20,18 +20,6 @@ name: base
 
 
 ---
-name: today
-
-* quiz 3
-* final project milestones
-* meet your team
-
-???
-* questions? last lab due
-* will publish extra credit shorts which will help with final projects tomorrow - just need to do a test pass on them make sure they are updated
-* 
-
----
 name: Current Final Project Milestone
 
 
@@ -86,7 +74,6 @@ name: Mockups/Sketches
 * [Design Tips/Workshop](../03_design)
 * Tools:
   * [Figma](https://www.figma.com/) Collaborative design
-  * [Invisionapp](https://www.invisionapp.com/) Workflow prototyping
   * [Pop](https://marvelapp.com/pop/) Prototyping on paper
 
 ???
@@ -111,8 +98,8 @@ name: User Personas
 like real humans
 
 
----
-name: Scaffolding
+
+<!-- name: Scaffolding
 
  .fancy.medium[![](http://i.giphy.com/GWbMbUysgsIda.gif)]
 
@@ -120,17 +107,16 @@ name: Scaffolding
 * tools and frameworks chosen
 * team has local dev environment set up
 
-???
+
 * Initial code scaffolding started
 * component plan
 * tools and frameworks chosen
-* everybody has local dev environment set up
+* everybody has local dev environment set up -->
 
 
 
 
-
----
+<!-- 
 name: Dev Site Up (client+server)
 
  .fancy.medium[![](http://i.giphy.com/IU9JNuUSmxZTy.gif)]
@@ -139,16 +125,15 @@ name: Dev Site Up (client+server)
 * basic flow in place:
   * db ⇆ server api ⇆ frontend
 
-???
 * Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
-* initial wiring is in place so things are talking to each other
+* initial wiring is in place so things are talking to each other -->
 
 
 
 
 
----
-name: Pre-Demo Bug Hunt
+
+<!-- name: Pre-Demo Bug Hunt
 
 <iframe src="//giphy.com/embed/VBVY9IJKDxwHK?hideSocial=true" width="242.8571428571429" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -157,15 +142,15 @@ name: Pre-Demo Bug Hunt
 * git issues
 * PRs
 
-???
+
 * In class session of breaking each others projects to reveal bugs and give last minute feedback.
 *  We'll offer bug rewards in the form of snacks!
 * Bugs will need to be submitted in the form of git issues on each others repositories
-* PR's are extra credit!
+* PR's are extra credit! -->
 
 
 
----
+<!-- 
 name: Final Project Demos
 
  .fancy.medium[![](http://i.giphy.com/p9O75RBS946He.gif)]
@@ -174,11 +159,11 @@ name: Final Project Demos
 * motivate idea, show in action, discuss challenges
 * user testing
 
-???
+
 * Final presentation of project. Open to public.
 * Motivate the idea, show it in action, discuss challenges
 * will be in hanover inn ballroom!
-
+ -->
 
 
 

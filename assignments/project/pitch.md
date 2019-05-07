@@ -1,7 +1,7 @@
 ---
 layout: page
 title: pitch ideas
-published: false
+published: true
 comment_term: project-pitch
 ---
 

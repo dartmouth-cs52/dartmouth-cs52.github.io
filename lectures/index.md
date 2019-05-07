@@ -44,10 +44,10 @@ comment_term: lectures
 <!-- or 07_project_intro -->
 <!-- * 5/7 Sessions & Auth -->
 * [5/2 Sessions & Auth](13_sessions_auth)
-* 5/8 Teams
-<!-- * [5/9 Teams](13_teams) -->
-* 5/9 Websockets, S3, ReactNative
-<!-- * [5/10 Websockets, S3, ReactNative (ec shorts)](15_ec_shorts) -->
+<!-- * 5/9 Websockets, S3, ReactNative -->
+* [5/7 Websockets, S3, ReactNative (ec shorts)](15_ec_shorts)
+<!-- * 5/8 Teams -->
+* [5/7 Teams](13_teams)
 * 5/14 Mockup Sharing
 * 5/16 In Class TeamWork Time
 * 5/21 In Class TeamWork Time

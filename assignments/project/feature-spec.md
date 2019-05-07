@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Feature Spec
-published: false
+published: true
 comment_term: project-feature-spec
 ---
 
@@ -66,11 +66,15 @@ You can put all your sketches together using [Pop](https://marvelapp.com/pop/) â
 
 ### Step 2: Make Prettier
 
-Once you are ready to make it prettier just go straight into a tool like [Figma](https://www.figma.com/) (free for students) or Sketch (I recommend Figma though). [Invisionapp](https://www.invisionapp.com/) is a nice way to put your designs together.
+#### Figma
 
-There are many good design resources out there. Here's [one](http://cdn.ustwo.com/PPP/PP3.pdf) about pixel perfect design.
 
-[Here's an beautiful example](https://projects.invisionapp.com/share/HABOKZQRZ#/) of an invision walkthough for a smaller scope 2 week project from CS52 and [a tutorial for figma](http://cs52.me/workshops/design).
+Once you are ready to make it prettier just go straight to[Figma](https://www.figma.com/). You'll need to [verify your student account status](https://www.figma.com/student/apply) to verify your .edu email.
+
+ðŸš€ Create a new [Team Project in Figma under the CS52 Org](https://www.figma.com/files/team/695309768358025992/CS52).  You should have all received an invite at the beginning of term to your @dartmouth.edu emails.
+
+There's a short [tutorial for figma](http://cs52.me/workshops/design) available as well. 
+
 
 ## Site Map / Flow Diagram
 
@@ -87,4 +91,4 @@ Checkout what [polished versions](https://speckyboy.com/collection-inspiring-sit
 * Sketches of each view of your product (photos of paper)
 * Super short bulleted list that is a step by step walk through of your app
 * At least 3 short AND fun user stories - can be in google doc or [userforge.com](http://userforge.com)
-* Mockups submitted in google doc or [invisionapp](https://www.invisionapp.com/) or [figma](https://www.figma.com)
+* Mockups submitted as[figma](https://www.figma.com)

@@ -25,7 +25,8 @@ name: Websockets, S3, ReactNative
 
 
 * concepts for the extra credit shorts
-* team time
+
+.medium_small[![](img/internet.gif)]
 
 
 ???
@@ -476,6 +477,6 @@ name: Expo.io
 
 
 ---
-name: TeamWorkTime!
+name: TEAMS!
 
 .medium[![](img/teamwork.gif)]
