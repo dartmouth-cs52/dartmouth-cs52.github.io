@@ -31,15 +31,14 @@ Time to take the abstract to concrete. Sketch rough layouts of screens focused o
 
 You can [download all sorts of device paper](http://sneakpeekit.com/) to help.
 
-You can put all your sketches together using [Pop](https://marvelapp.com/pop/) — Prototyping on Paper, is a good way to get started without doing high quality designs and get something that you can click through.
+For higher quality mockups we'll be doing that in [Figma](https://www.figma.com/), more about that below, but once you are done with the paper sketches, take pictures of them and also upload them to Figma so that they all live in one place.
 
-![](img/popapp-prototype-animation.gif){: .fancy .tiny}
 
 ## Step 2: Make Prettier
 
 ### Figma
 
-Once you are ready to make it prettier just go straight to[Figma](https://www.figma.com/). You'll need to [verify your student account status](https://www.figma.com/student/apply) to verify your .edu email. 
+Once you are ready to make it prettier just go straight to [Figma](https://www.figma.com/). You'll need to [verify your student account status](https://www.figma.com/student/apply) to verify your .edu email. 
 
 🚀 Create a new [Team Project in Figma under the CS52 Org](https://www.figma.com/files/team/695309768358025992/CS52).  You should have all received an invite at the beginning of term to your @dartmouth.edu emails. *Note: Make sure to create your project in the team - and don't create multiple projects — just one project and one page so you can link your various designs together.*
 
@@ -56,5 +55,5 @@ As you are working on your designs you should [create a clickable prototype in F
 
 ## To Turn In:
 
-* Sketches of each view of your product (photos of paper)
-* Mockups submitted as [figma](https://www.figma.com) links, with working linked prototype mode.
+* High-Fi Mockups submitted as [figma](https://www.figma.com) links, with working linked prototype mode.
+* Sketches of each view of your product (photos of paper). Please upload these to Figma to a separate page in your project.
