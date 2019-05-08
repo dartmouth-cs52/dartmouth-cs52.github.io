@@ -25,13 +25,13 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Feature Spec](feature-spec)** (5/10):<br><!--8/9/2016-->
   A walk-though of your project from the users perspective listing out every feature that it should have with a few user stories attached and mockups of user experience.
 
-* **[Mockups](mockups)** (5/16):<br><!--8/9/2016-->
-  Designs and Mockups for what you are planning on building!
-
-* **[Scaffolding](scaffolding)** (5/15):<br><!--8/11/2016-->
+* **[Scaffolding](scaffolding)** (5/14):<br><!--8/11/2016-->
   Initial code scaffolding started with a component plan and tools and frameworks chosen.
 
-* **[Dev Site Up (client+server)](dev-site)** (5/17):<br><!--8/16/2016-->
+* **[Mockups](mockups)** (5/15):<br><!--8/9/2016-->
+  Designs and Mockups for what you are planning on building!
+
+* **[Dev Site Up (client+server)](dev-site)** (5/16):<br><!--8/16/2016-->
   Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
 
 <!-- * **[Progress Pull Request](progress-pr)** (5/22):<br>

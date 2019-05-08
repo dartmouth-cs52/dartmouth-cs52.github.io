@@ -28,13 +28,15 @@ Use the canvas github classroom links to get your repos set up. As usual - first
   * should have several views
   * should have styling!
 
-
 In your project's main README.md file (you may have multiple repos, but for now just use the repo you'll be using for the frontend) start to outline the tech stack you will using. As you work on the project your README.md file will be a record of the tools you are using and how to get your dev environment running.
 
-Start this doc now:
+Start/edit this doc now:
 
 ```
 # Project Name
+
+![Team Photo](Insert a Team Photo URL here)
+[*how?*](https://help.github.com/articles/about-readmes/#relative-links-and-image-paths-in-readme-files)
 
 TODO: short project description, some sample screenshots or mockups
 
@@ -56,7 +58,6 @@ TODO: list of authors
 
 ## Acknowledgments
 
-
 ```
 
 You don't have to fill in the whole document for this milestone, but do start on it and fill in what you can. You should get some basics of your project up and running. If you are using starter code from the course, pull it into your repo.  Try do to a little layout so that you have a main component and a hello world for the frontend and a hello world from the backend.  If you have an idea of any modules and libraries you are planning on using, document them and or get them installed in your repos.
@@ -74,7 +75,7 @@ git log
 will show you recent commits and you should check to make sure your email is one that works and is listed as one of your emails in your github settings: https://help.github.com/articles/setting-your-email-in-git/
 so that your commits are recognized as belonging to you.  Make sure you have at least 2 commits connected to your github email on this.
 
-🚀 Make sure each team member has made a github pull request to contribute to this as we want to make sure that at this point everybody is comfortable running the starter code and contributing via git.  Remember the map workshop, here's a [reminder about how we used Pull Requests then](https://github.com/dartmouth-cs52-18S/git-map#proper-git-flow).
+🚀 Make sure each team member has made a github pull request to contribute to this as we want to make sure that at this point everybody is comfortable running the starter code and contributing via git.  Remember the map workshop, here's a [reminder about how we used Pull Requests then](https://github.com/dartmouth-cs52-19s/git-map#proper-git-flow).
 
 
 ## To Turn In:
