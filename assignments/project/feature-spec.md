@@ -16,26 +16,25 @@ To help us think through features, it is useful to start with the users.
 
 ## To Get Started - Our First Team Project Repo
 
-We'll use this opportunity to get your first project repo started!  We'll be using github classroom to autoprovision repositories and set up teams.
+We'll use this opportunity to get your **first** project repo started!  We'll be using github classroom to autoprovision repositories and set up teams. *Later we'll set up repos for api or mobile as needed, this will be the frontend repo and where we will keep most docs.*
 
 *Every member* on your team **must** use github classroom (found on canvas) to set up the teams correctly and automatically.
 
 The first person on your team will name the repo and the team name. Each consecutive person will click on the same github classroom link and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place and sets up a github team automatically.
 
 
-## Stakeholders
-
-![](img/stakeholders-meeting.gif){: .medium_small}
-
-Stakeholders are anybody who gives a damn about what you are building. These can be your end users, founding team, investors, clients, customers, parents, and professor.  Regardless of what you are building, there are most likely humans involved. Actually, stakeholders can also be non-humans in the case where you are building something for animals or aliens. 
 
 ## Feature list
 
 You're going to need a list of features that you will work off of. To get to this list of features — we're going to first make up some users. Their needs and desires will drive our features — so they need to exist first. *Expecto Patronum.*
 
+![](img/stakeholders-meeting.gif){: .medium_small}
+
+More broadly speaking, stakeholders are anybody who gives a damn about what you are building. These can be your end users, founding team, investors, clients, customers, parents, and professor. Regardless of what you are building, there are most likely humans involved. Stakeholders can even be non-humans in the case where you are building something for animals or aliens. Regardless, identifying who they are and what they want will help you figure out what to build.
+
 ## User Stories and Personas
 
-User stories are short scenarios about how your product is used.  User personas are the fictional individuals who comprise your product's users.  Your personas should have names and believable backgrounds.  They should have specific demonstrative use cases for your product.  You will refer to them as you work on the product and you'll find they will be quite useful!  The aim of user stories is to codify specific use cases for your product and allow them to be easily communicated as you build the product.  They help keep the team focused on the functionality of the product for specific people rather than getting sidetracked by features that seem "cool" or "look good".  For every feature in your spec you should have a user persona that would find it useful or compelling.
+User stories are short scenarios about how your product is used.  User personas are the fictional individuals who comprise your product's users.  Your personas should have names and believable backgrounds.  They should have specific demonstrated use cases for your product.  You will refer to them as you work on the product and you'll find they will be quite useful!  The aim of user stories is to codify specific use cases for your product and allow them to be easily communicated as you build the product.  They help keep the team focused on the functionality of the product for specific people rather than getting sidetracked by features that seem "cool" or "look good".  For every feature in your spec you should have a user persona that would find it useful or compelling.
 
 We'll store our Personas as [Issues in our github repos](https://help.github.com/articles/creating-an-issue/). We'll dig into that more later but for now - go to your newly created project repository on github. 
 
@@ -76,7 +75,7 @@ Once you have the user personas they will help a great deal in figuring out your
 
 🚀 Create a GitHub Wiki page title `Feature Spec` in your project repo and in a very short bulleted list summarize your main features.
 
-This does not need to be exhaustive by any means, but will be a place for you to start prioritizing and choosing how and what to work on.
+This does not need to be exhaustive by any means, but will be a place for you to start prioritizing and choosing how and what to work on. In fact, please keep it short and to the point - we don't need every button listed, just the very primary features that are important to your users.
 
 ```markdown
 # Feature Spec
