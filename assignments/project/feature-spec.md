@@ -6,89 +6,111 @@ comment_term: project-feature-spec
 ---
 
 
-
 ![](img/feature_spec.gif){: .fancy .medium}
+
 
 The feature spec is a document that is a walk-though of your project from the users perspective. It provides a listing of all the features you are envisioning for the product. The feature spec functions as your overall plan for the project. Rather than thinking about it as locking you in, use this as an opportunity to think through your product in detail.
 
+To help us think through features, it is useful to start with the users.
+
+
+## To Get Started - Our First Team Project Repo
+
+We'll use this opportunity to get your first project repo started!  We'll be using github classroom to autoprovision repositories and set up teams.
+
+*Every member* on your team **must** use github classroom (found on canvas) to set up the teams correctly and automatically.
+
+The first person on your team will name the repo and the team name. Each consecutive person will click on the same github classroom link and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place and sets up a github team automatically.
+
+
+## Stakeholders
+
+![](img/stakeholders-meeting.gif){: .medium_small}
+
+Stakeholders are anybody who gives a damn about what you are building. These can be your end users, founding team, investors, clients, customers, parents, and professor.  Regardless of what you are building, there are most likely humans involved. Actually, stakeholders can also be non-humans in the case where you are building something for animals or aliens. 
+
+## Feature list
+
+You're going to need a list of features that you will work off of. To get to this list of features — we're going to first make up some users. Their needs and desires will drive our features — so they need to exist first. *Expecto Patronum.*
+
 ## User Stories and Personas
 
-User stories are short scenarios about how your product is used.  User personas are the fictional individuals who comprise your product's users.  Your personas should have names and believable backgrounds.  They should have specific demonstrative use cases for your product.  You will refer to them as you work on the product and you'll find they will be quite useful!  The aim of user stories is to codify specific use cases for your product and allow them to be easily communicated as you build the product.  They help keep the team focused on the functionality of the product for specific people rather than getting sidetracked by features that seem "cool" or "look good".  For every feature in your spec you should have a user persona that would find it useful or compelling. You can use [userforge.com](http://userforge.com) if you want to as it provides a nice interface for creating them.
+User stories are short scenarios about how your product is used.  User personas are the fictional individuals who comprise your product's users.  Your personas should have names and believable backgrounds.  They should have specific demonstrative use cases for your product.  You will refer to them as you work on the product and you'll find they will be quite useful!  The aim of user stories is to codify specific use cases for your product and allow them to be easily communicated as you build the product.  They help keep the team focused on the functionality of the product for specific people rather than getting sidetracked by features that seem "cool" or "look good".  For every feature in your spec you should have a user persona that would find it useful or compelling.
 
-__Structure your user persona something like so:__
+We'll store our Personas as [Issues in our github repos](https://help.github.com/articles/creating-an-issue/). We'll dig into that more later but for now - go to your newly created project repository on github. 
 
-* Background and Demographic Information
-  * __Name__
-  * __Sketch/Picture__
-  * __Demographic info__ (short)
-  * __Overheard quote__
-  * __Short narrative__ or description about the user and why they're using your product/service.
-    <br>*(try to capture their attitudes, needs, problems/concerns, and experience)*
-* Behavioral and Dimensional Information
-  * __Goals and Motivations__
-    <br>*(goals should directly relate to product/service)*
-  * __Tasks__
-    <br>*(break goals down into tasks — what does the user need to do to accomplish a particular goal)*
-  * __Pain Points__, Concerns, and challenges
-    <br>*(what are they worried about? what do they have trouble with?)*
-  * __User Flow__
-    <br>*(describe a typical scenario of the user interacting with your product – this is a short ordered list of actions)*
+🚀 Create a new issue and new label `user-personas`.  This way you'll be able to reference them later!
 
+![](img/user-personas.jpg)
 
-## Mockups/Sketches
+__Structure your user persona like so:__
 
-### Step 1: Paper Sketch
-Based on the various features and pages you described in the feature spec, draw up sketches of each view.  Napkin style quick sketches are a good place to start. Focus more on thinking through the common actions that the users will be making rather than how and where the buttons go.  As you draw our these sketches with your team several things will come to light, features you might have missed or interactions that need to be changed.  Make your sketches comprehensive, they should cover all the views and functionality that your apps needs. Additionally you should make a site map style overview showing how the views are connected. It's more important to think through layout and functionality than making sure your color scheme or logo are perfect as you can continue to iterate on those.  Do not use wireframing software, for wireframing you might as well just sketch on paper, waste of time to learn a separate program.
+```markdown
+# UserPersonaName
 
-Time to take the abstract to concrete. Sketch rough layouts of screens focused on **features**.
+![sketch/picture](http://url/to/image)
 
-#### Generate options as a group
-* Determine which **(2-5) main features** you will sketch that are essential to your product (e.g. the feed, leaderboard, comments, etc)
-* Get thick markers, printer paper, and designate a timekeeper
-* Allow for **5 minutes of individual sketching per feature**, working on as many unfiltered iterations as possible in that time limit. Treat this much like improv - try not to self-edit or rule out anything just yet.
-* After each round, compare sketches and create a few group versions that incorporates the best of all the ideas. Actively agree/disagree with specific elements. Aim for **2-3 versions per feature**.
+## Background and Demographic Information
+  * _Fictional Name_:
+  * _Demographics_: (short)
+  * _Overheard quote_:
 
-#### Rules
-* Use the “thick marker trick” - the thicker the marker, the more you force yourself to keep the designs at a conceptual level (it’s difficult to add in details when the marker tip is so large!). Whiteboard markers are great here too, just take photos!
-* Include little or no specific content
-* Drop any worries about scale, straight lines, grids, etc.
-* Think in flows whenever possible (what pages come after?)
-* Match your sketches with your flow diagram - what part of the flow is not yet in the sketch?
-* Never settle for your first idea!
+## Narrative
 
-![](img/papersketch.png){: .fancy .medium}
+*Short narrative or description about the user and why they're using your product/service (try to capture their attitudes, needs, problems/concerns, and experience)*
 
-You can [download all sorts of device paper](http://sneakpeekit.com/) to help.
+## Behavioral and Dimensional Information
+  * __Goals and Motivations:__
+    *(goals should directly relate to product/service)*
+  * __Tasks:__
+    *(break goals down into tasks — what does the user need to do to accomplish a particular goal)*
+  * __Pain Points, Concerns, and Challenges:__
+    *(what are they worried about? what do they have trouble with?)*
+  * _User Flow_
+    *(describe a typical scenario of the user interacting with your product – this is a short ordered list of actions)*
+```
 
-You can put all your sketches together using [Pop](https://marvelapp.com/pop/) — Prototyping on Paper, is a good way to get started without doing high quality designs and get something that you can click through.
+Once you have the user personas they will help a great deal in figuring out your essential features and thinking more deeply about what you are building.
 
-![](img/popapp-prototype-animation.gif){: .fancy .tiny}
+# Feature List 
 
-### Step 2: Make Prettier
+🚀 Create a GitHub Wiki page title `Feature Spec` in your project repo and in a very short bulleted list summarize your main features.
 
-#### Figma
+This does not need to be exhaustive by any means, but will be a place for you to start prioritizing and choosing how and what to work on.
 
+```markdown
+# Feature Spec
 
-Once you are ready to make it prettier just go straight to[Figma](https://www.figma.com/). You'll need to [verify your student account status](https://www.figma.com/student/apply) to verify your .edu email.
+## User Personas
+*links to persona issues*
 
-🚀 Create a new [Team Project in Figma under the CS52 Org](https://www.figma.com/files/team/695309768358025992/CS52).  You should have all received an invite at the beginning of term to your @dartmouth.edu emails.
+* [the thinker](github/link/to/person)
+* [the walker](github/link/to/person)
 
-There's a short [tutorial for figma](http://cs52.me/workshops/design) available as well. 
+## Feature List
 
+* list of features
+  * <font style="color:red">[ 🔥 primary feature]</font>
+* some more
+  * <font style="color:orange">[ 💼 secondary feature]</font>
+* maybe even some stretch goals here
+  * <font style="color:lightblue">[ 🏹 stretch feature]</font>
 
-## Site Map / Flow Diagram
+```
 
-A flow diagram documents the tasks the user will perform, in relation to each other and over time. Create flows for the primary tasks, but keep this in sketch or text form (best to not dwell on how it looks at this stage but rather how these elements connect to each other).
+## GitHub wiki
 
-![](img/flowdiagram.png)
+We'll be using github wikis to keep track of some project documentation. If you haven't used it before [here's how](https://help.github.com/articles/about-github-wikis/). And some tips on using [markdown](https://guides.github.com/features/mastering-markdown/).
 
-Checkout what [polished versions](https://speckyboy.com/collection-inspiring-sitemaps-user-flow-maps/) looks like for some inspiration.  You can have your flow diagram be your Invision or Pop Paper connections.
+🚀 [Initialize your wiki now](https://help.github.com/articles/about-github-wikis/).
 
+And then use the template above to start a page!
+
+## Realtime Wiki Collaboration? 
+
+If you want to collaborate together on markdown files in realtime — rather than having one person type everything in, here's a cool free tool: [HackMD](https://hackmd.io).   Just copy/paste from here into github wiki when you are done. 
 
 
 ## To Turn In:
 
-* Sketches of each view of your product (photos of paper)
-* Super short bulleted list that is a step by step walk through of your app
-* At least 3 short AND fun user stories - can be in google doc or [userforge.com](http://userforge.com)
-* Mockups submitted as[figma](https://www.figma.com)
+* link to github feature spec wiki page
