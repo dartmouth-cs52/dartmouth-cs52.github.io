@@ -540,7 +540,7 @@ Ok, finally we're ready for the `SignIn` and `SignUp` components.
 
 🚀 Create these components. You can base them off of your New component pretty easily. Feel free to create one single component for this with different buttons triggering the signup / signin if you prefer that UX.
 
-🚀 Add Routes to these components in your `routes.js` file.
+🚀 Add Routes to these components wherever you have created your react-router-dom Router.
 
 
 ### NavBar
