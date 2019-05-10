@@ -545,9 +545,9 @@ Ok, finally we're ready for the `SignIn` and `SignUp` components.
 
 ### NavBar
 
-For SignOut simply make NavBar a connected component that has access to the `signoutUser` ActionCreator.  That ActionCreator can do a `history.push` to '/' on signout. You can just have a signout button that triggers this ActionCreator. Additionally add Links to `/signin` and `/signout`.
+For SignOut simply make NavBar a connected component that has access to the `signoutUser` ActionCreator.  That ActionCreator can do a `history.push` to '/' on signout. You can just have a signout button that triggers this ActionCreator. Then `mapStateToProps` and use the `state.auth.authenticated` to only show the signout button if a user is logged in, and signup/signout otherwise.
 
-`mapStateToProps` and use the `state.auth.authenticated` to only show the signout button if a user is logged in, and signup/signout otherwise.
+Additionally add Links to `/signin` and `/signup`.
 
 
 ### Authorized Component
