@@ -70,6 +70,8 @@ process.env.AUTH_SECRET
 
 ⚠️ During deployment for Heroku you'll need to add `AUTH_SECRET` to your config variables in Settings!
 
+![](img/heroku.jpg){: .medium .fancy }
+
 ## API Server Auth support
 
 Let's start adding authentication support to the api server.
