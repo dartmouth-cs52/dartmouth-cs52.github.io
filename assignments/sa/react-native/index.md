@@ -45,14 +45,14 @@ npm install expo-cli --global
 Great! Now we're ready to create our repo.
 
 ```sh
-💻 exp init my-new-project
+💻 expo init my-new-project
 # choose blank as the template
 # although at another time you can play with the more complicated one
 💻 cd my-new-project
-💻 exp start
+💻 expo start
 ```
 
-This will run a server than you can then either connect to with then Expo app on your phone or launch a simulator via the directions (open another terminal and run `exp ios`).
+This will run a server than you can then either connect to with then Expo app on your phone or launch a simulator via the directions (open another terminal and run `expo ios`, or select that option in browser).
 
 When the app loads you should be seeing a basic template for a mobile app.
 
