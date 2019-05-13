@@ -53,7 +53,7 @@ Ok so now you have a little server running, but how does it talk to Slack?
 1. 🚀Let's add a library to do just that.
 
     ```bash
-    yarn add botkit
+    yarn add botkit@0.7.4
     ```
 
     We are going to use [botkit](https://github.com/howdyai/botkit), which is a library that helps create conversational bots.  
