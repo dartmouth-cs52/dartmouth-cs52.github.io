@@ -48,9 +48,11 @@ comment_term: lectures
 * [5/7 Websockets, S3, ReactNative (ec shorts)](15_ec_shorts)
 <!-- * 5/8 Teams -->
 * [5/7 Teams](13_teams)
-* 5/14 Mockup Sharing
-* 5/16 In Class TeamWork Time
+* 5/14 In Class TeamWork Time
+* 5/15 In Class TeamWork Time
+* 5/16 Mockup Sharing
 * 5/21 In Class TeamWork Time
+* 5/21 In Class TeamWork Time (location Fairchild 101 instead)
 * 5/23 In Class Bug Hunt
 * 5/28 Wrapup
 <!-- * [5/29 Wrapup](16_wrapup) -->
