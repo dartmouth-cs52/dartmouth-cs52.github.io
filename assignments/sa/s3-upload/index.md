@@ -87,7 +87,7 @@ This tells S3 to allow any domain access to the bucket and that requests can con
 ```bash
 AWS_ACCESS_KEY_ID=YOUR_KEY_HERE
 AWS_SECRET_ACCESS_KEY=YOUR_KEY_HERE
-S3_BUCKET=YOUR_BUCKET_NAME_HERE
+S3_BUCKET_NAME=YOUR_BUCKET_NAME_HERE
 ```
 
 🚀 Remember to add the `.env` file to your `.gitignore`, since this file should only be used for local testing.
@@ -200,7 +200,7 @@ We need some new packages to communicate with s3. `aws-sdk` is used to communica
 yarn add aws-sdk dotenv
 ```
 
-To setup `dotenv`, we want to call `dotenv.config({ silent: true });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET`.
+To setup `dotenv`, we want to call `dotenv.config({ silent: true });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET_NAME`.
 
 We also need a new route on our server to return our signedRequest. Make a new folder under app called `services`, and add a new `s3.js` file.
 
@@ -210,7 +210,7 @@ const signS3 = (req, res) => {
   const fileName = req.query['file-name'];
   const fileType = req.query['file-type'];
   const s3Params = {
-    Bucket: process.env.S3_BUCKET,
+    Bucket: process.env.S3_BUCKET_NAME,
     Key: fileName,
     Expires: 60,
     ContentType: fileType,
@@ -221,7 +221,7 @@ const signS3 = (req, res) => {
 
     const returnData = {
       signedRequest: data,
-      url: `https://${process.env.S3_BUCKET}.s3.amazonaws.com/${fileName}`,
+      url: `https://${process.env.S3_BUCKET_NAME}.s3.amazonaws.com/${fileName}`,
     };
     return (res.send(JSON.stringify(returnData)));
   });
