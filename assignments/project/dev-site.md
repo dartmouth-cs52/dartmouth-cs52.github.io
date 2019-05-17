@@ -66,7 +66,7 @@ Your file might end up looking like:
 ```
 language: node_js
 node_js:
-  - "10"
+  - "12"
 install:
   - yarn --ignore-engines
 script:
@@ -88,4 +88,5 @@ Now, you can work in your local environment on your feature branch and when you 
   * url of frontend
   * url for api server
 * demonstrated fetching of data from frontend ↔️ api.
-* screenshots of Travis CI running on pull requests with short short comment on what worked and what didn't
+* screenshots of Travis CI running on pull requests
+* short short comment on what worked and what didn't
