@@ -52,7 +52,7 @@ comment_term: lectures
 * 5/15 In Class TeamWork Time
 * 5/16 Mockup Sharing
 * 5/21 In Class TeamWork Time
-* 5/21 In Class TeamWork Time (location Fairchild 101 instead)
+* 5/22 In Class TeamWork Time (location Fairchild 101 instead)
 * 5/23 In Class Bug Hunt
 * 5/28 Wrapup
 <!-- * [5/29 Wrapup](16_wrapup) -->
