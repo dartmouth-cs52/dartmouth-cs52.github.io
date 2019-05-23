@@ -7,11 +7,11 @@ comment_term: project-final-demos
 
 
 
-![](img/technigala18S.jpg){: .fancy .medium}
+![](img/Technigala_19S.png){: .fancy .medium}
 
 Final presentations and demos of the projects. Will be open to public!
 
-Demos are **Wednesday, May 30th, First Floor Berry 6-8pm**. Please show up at **5:45pm** to set up your table (remember we could have had a final instead!).  The event will be science fair style - you will have a table with your project name and either a screen or a stand for a laptop to better demo your awesome projects.
+Demos are **Wednesday, May 29th, Hanover Inn Ballroom! 6-8pm**. Please show up at **5:45pm** to set up your table (remember we could have had a final giant quiz instead!).  The event will be expo style - you will have a table with your project name and either a screen or a stand for a laptop to better demo your awesome projects.
 
 ## Invite your friends, your enemies, everyone!
 
