@@ -8,7 +8,7 @@ comment_term: project-bughunt
 
 
 
-![](http://i.giphy.com/gPLD7lIdSo3Pq.gif){: .fancy .small}
+![](img/buggs.gif){: .fancy .super-tiny}
 
 
 Each team should be prepared to demo what they have currently and to discuss their progress. We'll offer bug rewards in the form of snacks! 
