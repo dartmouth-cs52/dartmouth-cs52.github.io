@@ -23,11 +23,33 @@ name: base
 
 
 ---
-name: Final Countdown
+name: CS52 It's Been Real
 
-.large.fancy[![](img/table-almost-there.jpg)]
+<!-- .large.fancy[![](img/table-almost-there.jpg)] -->
 
-* [final drawings pdf](img/cs52-final-drawings-18s.pdf)
+.large.fancy[![](img/tq-howmuchiknow.jpg)]
+
+
+<!-- * [final drawings pdf](img/cs52-final-drawings-18s.pdf) -->
+
+
+
+---
+name: At times
+
+.medium.fancy[![](img/tq-neverover.jpg)]
+
+???
+
+
+
+---
+name: Maybe Even a Little
+
+.large.fancy[![](img/tq-littlebitof.jpg)]
+
+???
+* don't worry i had a few moments like this too
 
 
 
@@ -46,10 +68,22 @@ name: What you've accomplished
 
 
 
+
 ---
 name: Conquered
 
 .medium_small.fancy[![](img/table-cs52monster.jpg)]
+
+???
+* all the webbev
+
+
+
+
+---
+name: Conquered
+
+.medium_small.fancy[![](img/tq-dragons.jpg)]
 
 ???
 * all the webbev
@@ -74,6 +108,28 @@ name: Conquered
 
 ???
 * quizzes
+
+
+
+---
+name: Did Some Workshops
+
+.medium_small.fancy[![](img/tq-workshop.jpg)]
+
+
+
+???
+* git flow
+
+
+
+---
+name: Conquered
+
+.medium_small.fancy[![](img/tq-skillz.jpg)]
+
+???
+* all the webbev
 
 
 
@@ -109,6 +165,14 @@ name: You've Earned It
 
 ???
 * you are all rockstarssss
+
+
+---
+name: Poetry
+
+.medium_small.fancy[![](img/tq-heart52.jpg)]
+
+
 
 
 ---
@@ -244,6 +308,7 @@ name: Problems Of Webdev
 
 ???
 * What are some complaints about webdev?
+* you all? 
 
 
 
@@ -252,8 +317,7 @@ name: Problems Of Webdev
 name:  The future!
 
 * language and framework improvements
-* es7
-* es8
+* javascript constantly evolving
 * taking over the world (desktop and mobile)
 * progressive web apps
   * offline
@@ -261,12 +325,11 @@ name:  The future!
   * add to home screen
 * big data cloud
 * instant apps (streaming mobile apps)
-* constantly evolving tools
+* tooling improvements
 * react-native for web/desktop!
 
 ???
-* in the stanford webdev class currently being taught react is "the future"
-* you guys learned the latest and greatest.  fun right?
+* you guys learned the latest and greatest - but
 * constantly evolving tools - getting easier every day :)
 
 
@@ -291,7 +354,8 @@ name: You Invent The Future
 name: Full Stack
 
 
-<iframe src="https://giphy.com/embed/3js0YStjZMYZq" width="271" height="380" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.tiny[![](img/stacksonstacks.gif)]
+
 
 * lots to it
   * make pretty things
@@ -299,8 +363,19 @@ name: Full Stack
   * storage
 
 ???
+
+---
+name:
+
+
+.medium[![](img/cs52venn.jpg)]
+
+
+???
 * in practice devs focus on particular parts of the stack
 * we covered a lot and you all rock
+* is there more we could have covered, always!
+
 
 
 
@@ -325,7 +400,6 @@ name: Moving Fast
 name: Last Words
 
 <iframe src="https://giphy.com/embed/IcGkqdUmYLFGE" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-
 
 ???
 * thank you
@@ -362,16 +436,16 @@ name: Last Words
 
 .medium.fancy[![](img/1433166770-wtc-1.gif)]
 
-
-* DALI!
+* Keep Building!
 * Potential Future Courses:
   * Cloud Computing Course (big data/scalability)
-  * Game Dev (game from ground up)
-* Keep building!
+  * Game Dev (games from ground up)
+* DALI!
+
 
 ???
 * future courses pending
-* course assesments
+* my job - your course assessments
 
 
 
@@ -404,7 +478,19 @@ name: Project Demos!
 * SUCH EXCITE!
 
 ???
-* tomorrow 6-8pm in First Floor Berry
-* i'll walk around and will want to see demos :-)
-* grilled cheese, beer, and lots of people excited to see your work - some vps from amazon i heard were even coming
+* tomorrow 6-8pm in Hanover BallRoom
+* 2 TA's per team will walk around and will want to see demos :-)
+* give them a quick 30 second pitch, then let them try out your stuff
+* i'll be there too, but have to see 98 projects as well, so i may not get to your demo - but don't worry i'll be trying out each and every project meticulously for the final submission
+* food and lots of people excited to see your work - some vps from amazon 
 * rest of today just works
+
+---
+name: Conquered
+
+.medium_small.fancy[![](img/tq-peaceout.jpg)]
+
+???
+* all the webbev
+
+
