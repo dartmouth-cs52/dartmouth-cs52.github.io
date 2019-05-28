@@ -40,6 +40,7 @@ name: At times
 .medium.fancy[![](img/tq-neverover.jpg)]
 
 ???
+* probably felt like the barrage would never end
 
 
 
@@ -64,13 +65,14 @@ name: What you've accomplished
 * some code patterns
 * some tools
 * some languages
+* final projects tie it all together
 
 
 
 
 
 ---
-name: Conquered
+name: Faced Monsters
 
 .medium_small.fancy[![](img/table-cs52monster.jpg)]
 
@@ -81,28 +83,29 @@ name: Conquered
 
 
 ---
-name: Conquered
+name: Conquered Dragons
 
 .medium_small.fancy[![](img/tq-dragons.jpg)]
 
 ???
-* all the webbev
+* faced off with dragons
 
 
 
 ---
-name: Conquered
+name: Client and Server
 
 .medium_small.fancy[![](img/table-frontend-backend.jpg)]
 
 ???
-* client and server!
+* seen things you can't unsee
+* even survived my gifs
 
 
 
 
 ---
-name: Conquered
+name: Done all the EC? 
 
 .medium_small.fancy[![](img/table-labs-vs-quizzes.jpg)]
 
@@ -112,49 +115,63 @@ name: Conquered
 
 
 ---
-name: Did Some Workshops
+name: Lots of Workshops
 
 .medium_small.fancy[![](img/tq-workshop.jpg)]
 
 
 
 ???
-* git flow
+* you know all the webdev lingo now
+* someone says, jekyll you say? 
+* someone says, mocha you say? 
+* someone says, chai you say?
+* styled-components?
+* flask? 
+* someone says rm -rf /, you say?
 
 
 
 ---
-name: Conquered
+name: Applied Your Knowledge
 
 .medium_small.fancy[![](img/tq-skillz.jpg)]
 
 ???
-* all the webbev
+* hopefully had the chance to apply your knowledge 
+* to building cool products that you enjoyed
 
 
 
 ---
-name: Conquered
+name: Rebase Squash Commit That Internship
 
 .medium.fancy[![](img/table-git-flow.jpg)]
 
 
 
 ???
-* git flow
+* know enough git to school others at your current/future jobs
 
 
 
 ---
-name: Conquered
+name: Copy/Pasted a bunch
 
 .medium.fancy[![](img/table-feedback.jpg)]
 
 
 
 ???
-* building lots of cool projects
+* but built lots of cool projects
 * and given feedback and improved the class for future generations
+
+
+---
+name: And Waxed Poetic
+
+.medium_small.fancy[![](img/tq-heart52.jpg)]
+
 
 
 ---
@@ -167,16 +184,10 @@ name: You've Earned It
 * you are all rockstarssss
 
 
----
-name: Poetry
-
-.medium_small.fancy[![](img/tq-heart52.jpg)]
-
-
 
 
 ---
-name: Datacenters Tangent
+name: Scaling and Datacenters
 
 
 <iframe src="//giphy.com/embed/l39727g11ikHsDzKE" width="780" height="568" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
@@ -196,12 +207,16 @@ name: Datacenters Tangent
 
 
 ---
-name: 1 Datacenter
+name: Datacenters
 
-* 15-40 megawatts power
-* 50,000-200,000 servers
-* 24/7 staff: 15
-* $1B construction
+* 1 datacenter:
+  * 15-40 megawatts power
+  * 50,000-200,000 servers
+  * 24/7 staff: 15
+  * $1B construction
+* in world:
+  * 7.2mil
+
 
 ???
 * hardware failures alone...
@@ -210,7 +225,7 @@ name: 1 Datacenter
 * network
 * cooling
 * failures
-* some numbers thrown around for cost per search in terms of electricity ends up being 1$ cent to 1$ depending on how much of the infrastructure you include. if only google then 1c if you include your computer, all the internet from your computer to google, all the routers used while google crawls pages and then the number goes up.
+* some numbers thrown around for cost per search in terms of electricity ends up being between 1cent to 1$ depending on how much of the infrastructure you include. if only google then 1c if you include your computer, all the internet from your computer to google, all the routers used while google crawls pages and then the number goes up.s
 
 
 
@@ -218,9 +233,9 @@ name: 1 Datacenter
 name:
 
 
-.fancy[![](img/google211.jpg)]
+.medium.fancy[![](img/google211.jpg)]
 
-
+* 2016, global IP traffic was 1.2 ZB per year or 96 exabytes (one billion gigabytes) per month
 
 ???
 
@@ -231,11 +246,15 @@ name:
 name:
 
 
-.fancy[![](img/stormtrooper.jpg)]
+.medium.fancy[![](img/stormtrooper.jpg)]
+
+* mining bitcoin between 2.55-7.7 gigawatts (0.5 of total energy market)
 
 
 ???
-
+* between ireland and austria
+* but becoming more efficient 
+* regardless, is it ethical to convert energy directly into wealth?
 
 
 
@@ -311,8 +330,6 @@ name: Problems Of Webdev
 * you all? 
 
 
-
-
 ---
 name:  The future!
 
@@ -327,6 +344,7 @@ name:  The future!
 * instant apps (streaming mobile apps)
 * tooling improvements
 * react-native for web/desktop!
+* react for VR!
 
 ???
 * you guys learned the latest and greatest - but
@@ -344,9 +362,8 @@ name: You Invent The Future
 * tips for life, not that i'm any good at it mind you:
 * but ask questions - be engaged in your craft
 * be curious about the whys not just copy/paste from stackoverflow
-
-
-
+* contribute to software development  - build libraries, open source
+* 
 
 
 
@@ -420,31 +437,104 @@ name: Pass On What You have Learned
 * don't worry if you keep building more and more of it will make sense
 * you have the foundation to do great things
 
+---
+name: Interact With The Community
+
+.left.fancy[![](img/thingsidontknow0.jpg)]
+.right.fancy[![](img/thingsidontknow.jpg)]
+
+* https://overreacted.io/things-i-dont-know-as-of-2018/
+
+???
+* dan abramov 
+* the guy behind redux and now lots of react improvements
+* admits to not knowing python, flexbox, algorithms, node, bash
+* honestly inspiring to read - you don't need to know everything to be a contributor
+
 
 ---
 name: Keep Building Stuff
 
 .medium.fancy[![](img/table-best-quote.jpg)]
 
+???
+
+
+---
+name: Invest In Your Life
+
+.small.fancy[![](img/Weeks.png)]
+
+* https://waitbutwhy.com/2014/05/life-weeks.html
 
 ???
+* this is your life in weeks
+* and how much of your life was CS52, worth every second!
+
+
+---
+name: Build Things That Matter
+
+.small.fancy[![](img/WeeksMatter.png)]
+
+
+???
+* You have time, use it to make a better world
+* use the timeline project if you need ideas for life paths
 
 
 
 ---
-name: Last Words
+name: Build Things That Matter
 
-.medium.fancy[![](img/1433166770-wtc-1.gif)]
-
-* Keep Building!
-* Potential Future Courses:
-  * Cloud Computing Course (big data/scalability)
-  * Game Dev (games from ground up)
-* DALI!
+.medium[![](img/Venn1.png)]
 
 
 ???
-* future courses pending
+* use the timeline project if you need ideas for life paths
+* in spite of this class - you have the tools to make an impact
+
+
+---
+name: Web Dev Solutions @scale
+
+* Challenges:
+  * WhatsApp: "irresponsible and explosive messages"
+  * Facebook: “By updating the rules for the Internet, we can preserve what’s best about it — the freedom for people to express themselves and for entrepreneurs to build new things — while also protecting society from broader harms”
+  * Slack: noise over knowledge
+* Many Opportunities:
+  * resource sharing
+  * health
+  * education
+  * society
+
+???
+* whatsapp - theoretically brings people together - but also mob lynchings.
+* slack: productivity tool but also makes people feel productive when they are asking and answering questions that should have been documented better - millions of hours of productivity lost - people spending online instead of with their families
+* be mindful 
+* lots of industries where scale will bring change
+* health - small monitoring and motivation improvements can extend lifespans, increase happiness
+* society - bringing people actually closer rather than dividing them - may be VR
+* as soon as you start thinking in terms of scale - everything gets more interesting
+* and you've just learned the tools that enable solutions @scale
+
+
+
+
+
+
+
+---
+name: still Last Words
+
+.medium.fancy[![](img/1433166770-wtc-1.gif)]
+
+* Keep Building!:
+* New Game Dev Course (winter or summer)
+* DALI
+
+
+???
 * my job - your course assessments
 
 
@@ -474,8 +564,15 @@ name: Project Demos!
 
 .medium.fancy[![](img/table-finals.jpg)]
 
+???
+* almost done
 
-* SUCH EXCITE!
+
+---
+name: Technigala
+
+.small.fancy[![](img/Technigala_19S.jpg)]
+.small.fancy[![](img/afterparty.png)]
 
 ???
 * tomorrow 6-8pm in Hanover BallRoom
@@ -485,12 +582,12 @@ name: Project Demos!
 * food and lots of people excited to see your work - some vps from amazon 
 * rest of today just works
 
----
-name: Conquered
 
-.medium_small.fancy[![](img/tq-peaceout.jpg)]
+---
+name:
+
+.small.fancy[![](img/tq-peaceout.jpg)]
 
 ???
-* all the webbev
 
 
