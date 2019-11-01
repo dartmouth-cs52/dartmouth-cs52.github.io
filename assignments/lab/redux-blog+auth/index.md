@@ -238,7 +238,7 @@ if (!email || !password) {
 // and then return a token same as you did in in signin
 ```
 
-We're doing an early return here with an error status and an error message.  You don't have to implement displaying these now, but this is one way to implement server side validation. Note the 422 is a status code, there are [lots of different status codes](http://www.restpatterns.org/HTTP_Status_Codes) to choose from, but is usually up to your client to interpret anyway.
+We're doing an early return here with an error status and an error message.  You don't have to implement displaying these now, but this is one way to implement server side validation. Note the 422 is a status code, there are [lots of different status codes](https://http.cat/) to choose from, but is usually up to your client to interpret anyway.
 
 Ok, now we have our controller and model done.  We need one more module. A module that will provide passport authentication services to the rest of the app.
 
