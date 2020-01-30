@@ -6,7 +6,7 @@ comment_term: main
 
 # Course Overview
 
-The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art (2017) of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
+The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
 
 By the end of term, you will:
 
@@ -39,14 +39,14 @@ See [assignments](/assignments).
 * We'll be using [Slack](https://cs52-dartmouth.slack.com) for most communication. Find us there!
 
 * Open Help Hours in Sudikoff: <br>
-  Mon 4-6pm: Sudikoff 213<br>
-  Mon 8-10pm: Carson 61<br>
+  <!-- Mon 4-6pm: Sudikoff 213<br>
+  Mon 8-10pm: Carson 61<br> -->
   Weds 4:35-5:25 (when there is no official x-hour): LSC 200<br>
-  Thurs 7:30-9:30 pm: Carson 61<br>
-  Sun 6-9 pm: Carson 61<br>
+  <!-- Thurs 7:30-9:30 pm: Carson 61<br>
+  Sun 6-9 pm: Carson 61<br> -->
 
 * Instructor:<br>
-  Fri 11am-12:30pm; or by appointment in Sudikoff 219/007
+  Fri 11am-1pm; or by appointment in Sudikoff 219/007
 
 <table>
   <tr>
@@ -170,7 +170,7 @@ See [logistics](/logistics)
 
 ## The Archives 
 
-Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/)
+Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/), [19s](https://dartmouth-cs52-19s.github.io/)
 
 Also check out [previous projects](assignments/project).
 
