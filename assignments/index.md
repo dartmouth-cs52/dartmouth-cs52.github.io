@@ -6,7 +6,6 @@ comment_term: assignments
 
 *assignments posted as they are released — check canvas*{: .warning}
 
-
 ### *N* In-class short assignments: 10%
 *These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
