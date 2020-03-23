@@ -4,4 +4,5 @@ title: Resources
 permalink: /resources/
 ---
 
-coming soon
+## Working Remotely
+- [VS Code Live Share Guide](liveshare) - Collaborative coding
