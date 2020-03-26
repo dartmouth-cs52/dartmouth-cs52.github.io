@@ -4,6 +4,11 @@ title: ""
 comment_term: main
 ---
 
+
+<div markdown="1" style="text-align:center">
+![cs52 logo](assets/imgs/cs52logo.png){: .medium}
+</div>
+
 # Course Overview
 
 The Web is a powerful delivery tool for complex real-time applications. This is a new hands-on course that will introduce the state of the art of full-stack web development. You will learn to build not only interactive web applications, but also chatbots, and mobile apps. This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
@@ -28,25 +33,29 @@ See [assignments](/assignments).
 
 ### Class:
 
-* 2A Classes will meet Tuesday and Thursday (2:25-4:15pm).<br>
+<!-- * 2A Classes will meet Tuesday and Thursday (2:25-4:15pm).<br> -->
+* 2A Classes will meet via Zoom Tuesday and Thursday (2:25-4:15pm). Zoom recordings will be available for those with timezone differences.<br>
 * X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and some Workshops.<br>
-* Location: LSC 200
+<!-- * Location: LSC 200 -->
+* Location: ZOOM permalink on canvas.
 
-![](assets/imgs/lsc200.jpg){: .fancy }
+![](assets/imgs/zoom.gif){: .fancy .small}
 
 ### Office Hours and Contact:
 
-* We'll be using [Slack](https://cs52-dartmouth.slack.com) for most communication. Find us there!
+* We'll be using [Slack](https://cs52-dartmouth.slack.com) for course communication. Find us there!
 
-* Open Help Hours in Sudikoff: <br>
+* Open Help Hours via Zoom: <br>
+  TBD, coming soon
   <!-- Mon 4-6pm: Sudikoff 213<br>
   Mon 8-10pm: Carson 61<br> -->
-  Weds 4:35-5:25 (when there is no official x-hour): LSC 200<br>
+  <!-- Weds 4:35-5:25 (when there is no official x-hour): LSC 200<br> -->
   <!-- Thurs 7:30-9:30 pm: Carson 61<br>
   Sun 6-9 pm: Carson 61<br> -->
 
 * Instructor:<br>
-  Fri 11am-1pm; or by appointment in Sudikoff 219/007
+  Fri 11am-1pm, (zoom link on canvas)
+  <!-- Fri 11am-1pm; or by appointment in Sudikoff 219/007 -->
 
 <table>
   <tr>
@@ -159,7 +168,7 @@ Half of each class will be hands-on demonstrations, code and project discussions
 
 Will be hands-on and interactive. See [lectures](/lectures).
 
-Unfortunately due to the nature of the class and our classroom size, auditing the class will not be permitted. All class material will be posted here online though!
+Unfortunately due to the projects based nature of the class, auditing the class will not be permitted. All class slides, notes, and assignments will be posted here online though!
 
 <!-- Additionally [DALI Lab Open Lab Nights](http://dali.dartmouth.edu/news-posts/dali-open-lab-hours) are a good time to get help with webdev from myself and DALI mentors. -->
 

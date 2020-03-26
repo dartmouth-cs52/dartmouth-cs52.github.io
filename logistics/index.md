@@ -83,7 +83,7 @@ If you are stuck: ask for an extension, come to office hours, email or slack you
 
 Please do not create a horrible situation for all of us by copying code without citing the source. Our job is to help you learn. You will not be penalized for asking.
 
-## Special Accommodations##
+## Special Accommodations
 
 Students with disabilities who may need disability-related academic adjustments and services for this course are encouraged to meet with the instructor privately as early in the term as possible. Students requiring disability-related academic adjustments and services must consult the Student Accessibility Services office (205 Collis Student Center, 646-9900, Student.Accessibility.Services@Dartmouth.edu). Once SAS has authorized services, students must show the originally signed SAS Services and Consent
  
@@ -95,3 +95,21 @@ We recognize that the academic environment at Dartmouth is challenging, that our
 
 ## Religious Observances
 Some students may wish to take part in religious observances that occur during this academic term. If you have a religious observance that conflicts with your participation in the course, please meet with me before the end of the second week of the term to discuss appropriate accommodations.
+
+
+## Video Recording (New for Spring 2020)
+
+### Consent to recording of course and group office hours 
+a) I affirm my understanding that this course and any associated group meetings involving students and the instructor, including but not limited to scheduled and ad hoc office hours and other consultations, may be recorded within any digital platform used to offer remote instruction for this course; 
+<br>b) I further affirm that the instructor owns the copyright to their instructional materials, of which these recordings constitute a part, and distribution of any of these recordings in whole or in part without prior written consent of the instructor may be subject to discipline by Dartmouth up to and including expulsion;
+<br>c) I authorize Dartmouth and anyone acting on behalf of Dartmouth to record my participation and appearance in any medium, and to use my name, likeness, and voice in connection with such recording; and 
+<br>d) I authorize Dartmouth and anyone acting on behalf of Dartmouth to use, reproduce, or distribute such recording without restrictions or limitation for any educational purpose deemed appropriate by Dartmouth and anyone acting on behalf of Dartmouth.
+
+###  Requirement of consent to one-on-one recordings 
+By enrolling in this course, I hereby affirm that I will not under any circumstance make a recording in any medium of any one-on-one meeting with the instructor without obtaining the prior written consent of all those participating, and I understand that if I violate this prohibition, I will be subject to discipline by Dartmouth up to and including expulsion, as well as any other civil or criminal penalties under applicable law.
+
+Proposed notification to faculty [from Dean’s Office and/or Department Chair] 
+Please be aware that any recording you make within any digital platform used to offer remote course instruction may be regarded as an education record within the meaning of the Family Educational Rights and Privacy Act, which prohibits the disclosure to a third party of any student’s personally identifiable information from such records, in the absence of that student’s prior written consent, unless a specified exception to prior written consent applies. 
+Please also be aware that you are prohibited from making a recording in any medium of any one-on-one meeting with a student without obtaining that student’s prior written consent.  If you violate that prohibition, please understand that you will be subject to discipline by Dartmouth up to and including dismissal, as well as any other civil or criminal penalties under applicable law.  This prohibition does not apply to recordings of the course and any associated group meetings, to which students are being asked to consent via their enrollment in this course.
+Finally, please be reminded that the instructor owns the copyright to their instructional materials, of which these recordings constitute a part.  Distribution of another instructor’s recordings in whole or in part without prior written consent of that instructor may be subject to discipline by Dartmouth up to and including dismissal.
+If you have any questions about any of these prohibitions or instructions, please consult your Dean’s Office. 
