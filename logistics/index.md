@@ -85,9 +85,7 @@ Please do not create a horrible situation for all of us by copying code without 
 
 ## Special Accommodations
 
-Students with disabilities who may need disability-related academic adjustments and services for this course are encouraged to meet with the instructor privately as early in the term as possible. Students requiring disability-related academic adjustments and services must consult the Student Accessibility Services office (205 Collis Student Center, 646-9900, Student.Accessibility.Services@Dartmouth.edu). Once SAS has authorized services, students must show the originally signed SAS Services and Consent
- 
-Form and/or a letter on SAS letterhead to the instructor. As a first step, if you have questions about whether you qualify to receive academic adjustments and services, you should contact the SAS office. All inquiries and discussions will remain confidential.
+Students requesting disability-related accommodations and services for this course are encouraged to schedule a phone/video meeting with me as early in the term as possible. This conversation will help to establish what supports are built into my online course. In order for accommodations to be authorized, students are required to consult with Student Accessibility Services (SAS; student.accessibility.services@dartmouth.edu; SAS website; 603-646-9900) and to email me their SAS accommodation form. We will then work together with SAS if accommodations need to be modified based on the online learning environment. If students have questions about whether they are eligible for accommodations, they should contact the SAS office. All inquiries and discussions will remain confidential.
 
 ## Wellness
 
@@ -96,8 +94,15 @@ We recognize that the academic environment at Dartmouth is challenging, that our
 ## Religious Observances
 Some students may wish to take part in religious observances that occur during this academic term. If you have a religious observance that conflicts with your participation in the course, please meet with me before the end of the second week of the term to discuss appropriate accommodations.
 
+# COVID-19 Addendum
 
-## Video Recording (New for Spring 2020)
+While the COVID-19 pandemic has already changed how this course is structured, it has the potential to result in further personal impact which may prevent you from continuing engagement in the class. This may be due to contraction of the disease by you or a loved one, increased familial responsibilities, financial difficulties, or impacts on your mental/emotional health.
+
+We have structured the course so that these disruptions will not necessarily prevent you from successfully completing this course. First, lectures while conducted via Zoom will also be available for watching later. This will enable flexible viewing of the course content. Second, we will schedule opportunities for live interaction with the Professor and the TAs during diverse times throughout the week. Third, the workshops and labs are all structured to be done on your own time from home. And finally, the group project is designed to be facilitate remote work using industry standard collaboration tools.
+
+In the event that you are directly or indirectly impacted by COVID-19 in such a way that will affect your performance in the course, it is imperative that you reach out to the instructor as soon as possible.  You may also reach out to your undergraduate Dean if that would make you more comfortable. We cannot assist you if we don’t know there is a problem. Our first priority is your health and security. We will work to put you in touch with appropriate resources to assist you. In addition, appropriate accommodations (for example: deadline extensions and/or extra office hours) will be implemented.
+
+## Video Recording
 
 ### Consent to recording of course and group office hours 
 a) I affirm my understanding that this course and any associated group meetings involving students and the instructor, including but not limited to scheduled and ad hoc office hours and other consultations, may be recorded within any digital platform used to offer remote instruction for this course; 
