@@ -37,7 +37,12 @@ comment_term: workshops
 
 ![](http://i.giphy.com/eUh8NINbZf9Ys.gif)
 
-Each workshop session will be ~60 minutes on a web technology, tool, framework, or concept. It will consist of both a short presentation as well as a tutorial. The tutorial will be a written online document in the form of a [markdown](https://guides.github.com/features/mastering-markdown/) readme file in a git repo. During the tutorial section the class will work in teams of 3 following along with the instructions in the document. The team presenting will answer questions and help the individual teams along.
+Each workshop session will consist of two parts: a zoom slide presentation to the class and a do-at-your-own-pace tutorial on a web technology, tool, framework, or concept. 
+
+The presentation will be 20 minutes to motivate the technology, show its use cases and 
+
+The tutorial will be a written online document in the form of a [markdown](https://guides.github.com/features/mastering-markdown/) readme file in a git repo.
+
 
 ## To Start
 
