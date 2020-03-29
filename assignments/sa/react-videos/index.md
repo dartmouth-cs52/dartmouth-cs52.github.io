@@ -959,3 +959,10 @@ And don't forget to deploy. However!  First change your `package.json` and chang
 
 * add in other video / media sources such as vimeo, giphy, etc
 * pull in the weather or other data sources
+
+## Resources
+
+* React's guide to [thinking in react](https://reactjs.org/docs/thinking-in-react.html)
+* React's docs at [https://reactjs.org/docs/getting-started.html](https://reactjs.org/docs/getting-started.html)
+* A [React cheatsheet](https://reactcheatsheet.com/)
+
