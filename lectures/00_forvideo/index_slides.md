@@ -20,9 +20,7 @@ name: base
 
 
 ---
-name:
-
-.medium_small[![](img/cs52logo.png)]
+name: CS52
 
 ### full-stack web development.
 ## be the webdev.
@@ -30,32 +28,28 @@ name:
 [Tim Tregubov](http://zingweb.com)
 
 ???
-* you are the lucky "few" - waitlist stretches pretty long still, have already started the 21s waitlist
+* hi, my name is Tim Tregubov
+* and I'm here to talk about CS52 full stack web development
+* as you probably have experienced, the Web is a powerful delivery tool for complex real-time applications for important things like gifs and advertisements
+* to less important things like productivity tools, data analysis, and governance.  
+
 
 ---
-name: Survey Results of Goals
-* Learn best practices/standards in webdev; Learn state-of-the-art webdev tools, technologies, and techniques.
-* Excited to challenge myself, and hope that I will be .orange[**proud of my final project**].
-* Have a greater appreciation for frontend so that .orange[**my code can be implemented as well as possible**]
-* have the tools to .orange[**build real working web apps**]!
-* web dev is most important types of development because it .orange[**interacts with the user most often and most directly**]
-* have a small .orange[**collection of really neat projects**].
-* Get a feeling of the group-working environment for software engineerss
-* I'd like to be a .orange[**pro web developer by the end**] of this course!
-* want to .orange[**build something that is my own**], not something dictated by a strict assignment.
-* build something I am proud of, host it, and .orange[**leave it up for all the world to marvel at!**]
-* like to .orange[**build some sick websites/APIs**],feel proud of what we have created
-* be able to do a web-based project from .orange[**start to finish**].
+name: Overview
+
+.medium[![](img/cs52logo.png)]
+
 
 ???
+* This is a  hands-on course that will introduce the state of the art of full-stack web development.
+* You will learn to build not only interactive web applications, but also chatbots, and mobile apps. 
+* This class will be an adventure and requires active participation both inside and outside of class. There will be lab projects, exercises in class, and a collaborative final project.
+* 
+* goals of the class: 
+* use your knowledge of the fundamental concepts and best practices to design web systems from the ground up
+* utilize state of the art tools and frameworks to build web technologies
+* and build a bunch of your own web applications with front-end UIs and server-side APIs
 
-* some requests for learning included:
-  * more frontend
-  * what is the DOM
-  * how to make pretty things on the web
-  * a few mentions of design (should we have a design workshop?)
-  * "designing / working with design for the web"
-  * best practices
 
 
 
@@ -72,8 +66,8 @@ name: full-stack
   involved in building a modern client-server application
   (in particular on the web)
 * how data is stored
-* how it is communicated/transferred
-* how it is displayed
+* how data is communicated and transferred
+* and finally how it is displayed and interacted with
 
 ---
 name: Magicians Of The Web
@@ -83,34 +77,35 @@ client ⇔ server ⇔ database
 .large[![](img/sampleweb.gif)]
 
 ???
-* a full-stack dev implies working knowledge of all the components
-* my favorite classes have always been those that empower - this will hopefully make you all magicians
+* a full-stack dev is someone who has full working knowledge of all the components
+* my favorite classes have always been those that empower me, after which i feel like i can conquer the world - this class will hopefully make you all magicians
 
 ---
-name: CS52 Tech Stack
+name: CS52 Tech Stack and Concepts
 
 * client-side:
   * HTML5/CSS3(SASS)/ES6:
-    * ui/ux, design, Document Object Model
+      * ui/ux, design, Document Object Model, layout, markup, transpilers
   * React+Redux:
-    * state, sessions
+      * state, sessions, data driven interfaces, event-driven asynchronous programming
+* the in-between:
+  * internet protocols, security, application program interfaces
 * server-side:
   * Heroku, GitHub pages, AWS:
-    * static pages, hosting, deployment, scalability
+      * static pages, hosting, deployment, scalability
   * MongoDB, sqlite:
-    * models, queries, schema, objects, CRUD
+      * databases, models, queries, schema, objects, CRUD
   * Nodejs, Expressjs:
-    * REST APIs, sessions, MVC, auth
+      * REST APIs, sessions, MVC, authentication, concurrency
 
 ???
-* going to be **latest and greatest**
-* no rails or django or php, none of that first or second gen tech here
-* some of this stuff in actively changing
-* surprisingly the web as a platform is **still rapidly evolving** - after being around for 20 years now
-* desktop technology is much more stable/stodgy.
-* **background and concepts behind the best practices and tool design**
-* static vs server side rendered vs clientside
-* don't worry we'll mostly just be **building all term long**!
+* here's some words on a page - but the point is you'll learn the 
+* **background and concepts behind best practices and scalable software design**
+* we'll learn the **latest and greatest** tools and why they are the way they are
+* but more importantly we'll **build lots of projects along the way**!
+* we're **not going to dumb things down** so you'll be doing industry standard stuff, no starter code
+* the goal is to get you to be comfortable going from an blank terminal to a full project
+
 
 
 ---
@@ -127,10 +122,8 @@ name: Sample Weekly Projects
 
 ???
 
-* think medium or pintrest or twitter CREATE RETRIEVE UPDATE DELETE
-* shorter assignments will include building a bot and a mobile app
-* someone has **said that course is like a firehose**, fine maybe it is a little intense but builds character
-* **if you are a senior looking for an easy spring class, we might not work out, its not you its me, i just want you to love learning.**
+* students have **said that course is like a firehose**, it's nonstop work, but that builds character
+* in anycase **if you are looking for an easy spring class, we might not work out, its not you its me, i just want you to love learning and building cool products.**
 
 ---
 name: Final Project
@@ -138,33 +131,24 @@ name: Final Project
 <iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="http://cs52.me/assignments/project/19s" frameborder="0" allowfullscreen></iframe>
 
 ???
+* there is a 3 week group final project, for which we will use collaborative coding and agile project management to help us do it remotely.  we'll use zoom and github and slack.
+* this is where everything you've learned comes together and every year the projects dazzle and impress - you'll be surprised by what you can build in 3 weeks. 
 
 ---
-name: Online @
+name: Online @ cs52.me
 
 .small[![](img/cat-coding.gif)]
 
 
 * web: [http://cs52.me](http://cs52.me)
-* github: [http://github.com/dartmouth-cs52-19s](http://github.com/dartmouth-cs52-19s)
+* Slack: [https://cs52-dartmouth.slack.com](https://cs52-dartmouth.slack.com)
+* github: [http://github.com/dartmouth-cs52-20s](http://github.com/dartmouth-cs52-20s)
 
 ???
-
+* ok, lastly some administrative details
 * using github extensively, get comfortable
+* we'll communicate on slack - and zoom too
 * BTW, science has shown that watching kitten gifs improves health - so, i'm making you all healthier
-
----
-name: Staff
-
-.large[![](img/staffdirectory.jpg)]
-
-
-???
-* brilliant world class course staff
-* ask us all the questions
-* i'm excited to be working with them!
-* we're all excited to be working with you!
-* lots of help hours
 
 ---
 name: etc
@@ -189,69 +173,25 @@ name: Wait List?!?
 
 .fancy.medium_small[![](img/giphy21.gif)]
 
-* experimental structure
+* projects based
 * interactive
 * open syllabus
 * <strike>auditing</strike>
 * from blank terminal to full project
 
 ???
-* 130 people tried to get into this course
-* you are the few the proud
-* still an experiment
-* **not going to dumb things down** so you'll be doing industry standard stuff, no web ide's or lots of starter code.
-* the goal to get you to be comfortable going from an blank terminal to a full projecct
-* open syllabus more later
+* since this course is projects based we can only scale it so far and still provide meaningful mentorship and teaching, hence the cap
+* there is a large waitlist for the course and so it is not available for shopping
 
 
 ---
-name: Slack
-
-.small[![](img/giphy_slack.gif)]
-
-* <strike>Piazza</strike>
-* [Slack](https://cs52-dartmouth.slack.com)!
-
-* mobile, desktop, web apps
-  * (all web technologies actually)
-  * get used to it
-  * you can write a chat bot for Slack as a short assignment
-
-???
-* i don't do email well...
-* assignments will have due dates on canvas
-* will send out invites later today
-
-
-
----
-name: Drawings?!
+name:
 
 .medium[![](img/routeoflife-table.jpg)]
 
 
 
 ???
-* you get points for making illustrations for the class
-* some have been philosophical
-
----
-name: Drawings?!
-
-.medium[![](img/server-table.jpg)]
-
-
-???
-* others poignant
-
----
-name: Drawings?!
-
-.medium[![](img/index_vs_linear-table.jpg)]
-
-
-???
-* others perfectly describe the concept
-
-
+* i'll leave you with a drawing that a student made illustrating the class
+* thank you and hope to see you in CS52!
 

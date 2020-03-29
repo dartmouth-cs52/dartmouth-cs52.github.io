@@ -23,6 +23,9 @@ Topics include: static pages, Internet protocols, layout, markup, event-driven a
 
 Prerequisites: CS10 or permission of [instructor](mailto:tim@cs.dartmouth.edu)
 
+Here's a silly video of me introducing the class (wait for it):
+<iframe scrolling='no' frameborder='0' style='width: 800px; height: 525px; border:0;' src='https://dartmouth.techsmithrelay.com/connector/embed/index/tqVy' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 ## Coursework:
 
 Will be challenging and rewarding.
