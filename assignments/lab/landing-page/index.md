@@ -292,5 +292,7 @@ You should host this on github pages as you have in the past with the `gh-pages`
 ## Resources:
 
 * [https://css-tricks.com](https://css-tricks.com)
-* [http://www.w3schools.com](http://www.w3schools.com)
 * [https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)
+* [https://www.flexboxpatterns.com/](https://www.flexboxpatterns.com/)
+* Tutorials on HTML, CSS and more from [http://www.w3schools.com](http://www.w3schools.com)
+
