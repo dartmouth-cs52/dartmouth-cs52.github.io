@@ -191,7 +191,7 @@ name: Airline Routing
 * want to fly.
 * lots of layered systems involved
 * what are some of the things required to fly?
-* write down?
+* put your ideas in the chat
 
 ---
 name: Airline Routing
@@ -239,6 +239,9 @@ name: Internet Protocol Suite
 ---
 name: Application Layer
 
+
+.fancy.medium[![](img/brave.jpg)]
+
 * Application Layer: HTTP (web), SMTP(email), FTP(files)
   * pass messages between specific applications
   * web browser and a program running on a web server
@@ -248,6 +251,7 @@ name: Application Layer
 
 * we'll all be running this web server thing by thursday
 * browser and web server - client - server
+* this is just an image of brave - my web browser of choice - has built in ad block but sometimes breaks pages - built on chrome - so for this class you could use either
 
 
 ---
@@ -255,10 +259,14 @@ name: Transport Layer
 
 <iframe src="//giphy.com/embed/ByhlGtyxMR6Mg" width="480" height="270" frameBorder="0" class="giphy-embed"></iframe>
 
+URL=protocol+IP+<b>port</b><br>
+http://127.0.0.1:<b>8000</b>
+
 * establishes a connection to the correct application on another host
 * delivery of applications messages
 * TCP (transmission control protocol) usually
 * TCP port numbers to identify applications
+
 
 ???
 * TCP only handles the transfer of application data
@@ -266,22 +274,29 @@ name: Transport Layer
   * network layer does the routing
   * makes sure all application data gets to the right application
   * breaks application data into packets - makes sure they all arrive / get resent if necessary
+* like a series of letters each letter has a number 
+
 
 ---
 name: Network Layer
 
 <iframe src="//giphy.com/embed/WWfOzRDQS20ZG" width="480" height="270" frameBorder="0" class="giphy-embed"></iframe>
 
+URL=protocol+<b>IP</b>+port<br>
+http://<b>127.0.0.1</b>:8000
+
+
 * machine to machine addressing
-* usually IP protocol
+* usually IP (Internet Protocol)
 * IP sends and routes packets between hosts
-* IP protocol required for any network connected device
+* IP is required for any network connected device
 * TCP passes the target destination in the form of the IP address
 
 ???
 * network layer doesn't know low level hardware details
 * but it knows addresses - like street addresses
 * IP is the mailperson / postoffice
+* delivers the numbered letters
 
 ---
 name: Link Layer
@@ -349,13 +364,17 @@ name: IP Protocol Addresses
   * 32 bit number (4 bytes)
   * 4,294,967,296 (2^32) addresses
   * *dotted decimal notation*: **nnn.nnn.nnn.nnn**
-    * byte holds: 0-255 integer
+    * byte represents: 0-255 integer
 * IPV6 eventually
-  * private networks save the day for now
+  * 128 bit number
+  * 2^128 addresses
+  * ugly - eight four hexadecimal digits: 2001:0db8:0000:0000:0000:8a2e:0370:7334
+* **private networks save the day for IPV4 for now**
 
 
 ???
 * unsigned byte sized integer: 2^8 − 1
+* ipv4 longer live due to private addresses
 
 
 
@@ -363,7 +382,7 @@ name: IP Protocol Addresses
 name: Private Addresses
 
 * `10.*.*.*` and `192.168.*.*` addresses are reserved for private networks.
-* Dartmouth Secure is a `10.` network.
+* Dartmouth eduroam is a `10.` network.
 * significant bits notation:
   * `10.0.0.0/8` (1 byte masked) `10.0.0.*`
   * `192.168.0.0/16` (2 bytes masked) `192.168.*.*`
@@ -373,6 +392,7 @@ name: Private Addresses
 ???
 * bit masks just mean those bits can be anything
 * ie /8 means the last 0-255 can be anything
+* 32/64 would be all of it
 * private addresses are not publicly routable
 * routers across the internet will not know how to direct traffic to them
 
@@ -503,6 +523,7 @@ host dartmouth.edu
 
 ???
 * but internet is distributed system  - where does this lookup live?
+* lots of different ways to register a name - how do you look that up? no central place.
 * DHCP == Dynamic Host Configuration Protocol
 * every time your computer needs to lookup a name to tell IP where to go it asks a number of servers
 
@@ -554,11 +575,12 @@ How does a packet find its way around all those tubes!?
 
 ???
 * wait packet?
+* what about the air traffic radar stations
 * packet travels from one host to another it crosses through a series routers.
 * your computer, dartmouth, some machine in boston, etc
-* forwards the packet on based on a set of rules
+* forwards the packet on **based on a set of rules**
 * routing tables that tell it where to send packets.
-* packets are forwarded along to routers that should know more about where to send them
+* **packets are forwarded along to routers that should know more about where to send them**
 
 
 ---
@@ -639,8 +661,27 @@ Routers use a protocol called BGP to exchange routing information with each othe
 * nearby routers will each record that they are 0 hops away from that particular internet prefix block and will tell others about it
 *  Their neighbors will also record their distance and so on and so forth.  
 * Each router stores a routing table with entries about which of their neighbors knows about which routes and also the distance (simplest metric is just hop count).
+* you end up with a graph of nodes which know their distances to a variety of networks
+* a node in boston could know about dartmouth but also reports being congested so traffic routes to burlington instead
 
 * This is what enables the internet to be robust, if a link goes down, then there are usually alternate/longer routes available.
+
+---
+name: Backbone Graph
+template: base
+
+.fancy.medium[![bgp graph](img/bgp-graph.jpg)]
+
+???
+* like wavefront planning, you can find the shortest distances
+
+---
+name: IP Topology
+template: base
+
+.fancy.medium[![ip topology](img/topology.png)]
+
+???
 
 
 ---
@@ -709,6 +750,7 @@ name: More HTTP
 
 ???
 * stateless - this is important
+* important will be on a test
 * every time you click a button on a page it makeds a new request
 * the server has no idea who you are
 * workaround:  session and cookies!
@@ -724,7 +766,7 @@ name: HTTP Data
 * ... arbitrary data actually
 
 ???
-
+* a format of data called html hypertext markup language
 
 
 ---
@@ -738,6 +780,8 @@ name: HTTP Methods
 </div>
 
 ???
+* methods or verbs
+* also will be on quiz
 * GET:  retrieves a particular resource. This is the default method when you first go to a webpage in your browser.
 * POST:  sends a dictionary of key,value pairs as data to the server. Typically used for submitting forms.
 * DELETE:  requests that the server delete the specified resource.
@@ -752,11 +796,12 @@ name:
 💻 Want to try it?
 
 ```bash
-telnet www.cs.dartmouth.edu 80
+telnet home.dartmouth.edu 80
 
-GET /~testuser/ HTML/1.1
+GET / HTML/1.0
+Host: dartmouth.edu
 
-
+// hit enter twice
 ```
 ???
 * hit enter twice
@@ -773,14 +818,14 @@ name:
 
 
 
----
-name: somato-sensory Internet protocols
+
+<!-- name: somato-sensory Internet protocols
 
 <iframe width="753" height="380" src="https://www.youtube.com/embed/fd_9qwpzVBQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-???
-hand out roles and explain process
 
+hand out roles and explain process
+ -->
 
 ---
 name: The Interwebs
@@ -790,6 +835,8 @@ name: The Interwebs
 [simulationroles.pdf](img/CS52networksimulationroles.pdf)
 
 ???
+* what we used to do here is actually play out a single request - through routers and dns queries and such - but online it'll be too much chaos - you can read through the play version of it here and if you want to play this with your family as a not so fun nerdy game you are welcome to!
+
 _Human:_
 
  > Hey *Browser*, go to http://news.ycombinator.com
@@ -887,7 +934,7 @@ background-image: url(http://i.giphy.com/k8kG3Plo87Aqs.gif)
 background-position: center
 background-repeat: no-repeat
 background-size: cover
-name: 19S Let's go!
+name: 20S Let's go!
 
 
 .white-foreground[short assignment 1 out: due Thursday  🕛]

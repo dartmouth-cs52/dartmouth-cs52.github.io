@@ -38,9 +38,10 @@ See [assignments](/assignments).
 
 <!-- * 2A Classes will meet Tuesday and Thursday (2:25-4:15pm).<br> -->
 * 2A Classes will meet via Zoom Tuesday and Thursday (2:25-4:15pm). Zoom recordings will be available for those with timezone differences.<br>
-* X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and some Workshops.<br>
+* X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and some Workshops. Only class sessions will be recorded, see [logistics for recording consent information](http://localhost:4000/logistics/#video-recording). <br>
 <!-- * Location: LSC 200 -->
 * Location: ZOOM permalink on canvas.
+
 
 ![](assets/imgs/zoom.gif){: .fancy .small}
 
@@ -178,7 +179,6 @@ Unfortunately due to the projects based nature of the class, auditing the class 
 ## Logistics:
 
 See [logistics](/logistics)
-
 
 ## The Archives 
 

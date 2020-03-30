@@ -11,7 +11,9 @@ A collection of online resources will be used, but no textbook will be required.
 
 ## Auditing ##
 
-Unfortunately due to the nature of the class and our classroom size, auditing the class will not be permitted. All class material will be posted here online though! If are following along and need help you are welcome to come to [DALI Open Lab Hours](http://dali.dartmouth.edu/dali-open-lab-nights/).
+Unfortunately due to the nature of the class and our classroom size, auditing the class will not be permitted. All class material will be posted here online though! 
+
+<!-- If are following along and need help you are welcome to come to [DALI Open Lab Hours](http://dali.dartmouth.edu/dali-open-lab-nights/). -->
 
 ## Slack ##
 
@@ -35,6 +37,7 @@ Grading of some collaborative team based work will be done based on GitHub pull 
     * 1 x 12 hour extension, asked for in advance
     * -2% for submission fails (unshared links, empty repos, wrong urls)
 
+**COVID-19 update** the overall course will be Credit/No-Credit - however individual assignments will still be graded with feedback provided, you can expect <=60 to be a NC situation. 
 
 ## Software ##
 
@@ -103,6 +106,8 @@ We have structured the course so that these disruptions will not necessarily pre
 In the event that you are directly or indirectly impacted by COVID-19 in such a way that will affect your performance in the course, it is imperative that you reach out to the instructor as soon as possible.  You may also reach out to your undergraduate Dean if that would make you more comfortable. We cannot assist you if we don’t know there is a problem. Our first priority is your health and security. We will work to put you in touch with appropriate resources to assist you. In addition, appropriate accommodations (for example: deadline extensions and/or extra office hours) will be implemented.
 
 ## Video Recording
+
+From the Dean of the Faculty to students regarding recording of class sessions:
 
 ### Consent to recording of course and group office hours 
 a) I affirm my understanding that this course and any associated group meetings involving students and the instructor, including but not limited to scheduled and ad hoc office hours and other consultations, may be recorded within any digital platform used to offer remote instruction for this course; 
