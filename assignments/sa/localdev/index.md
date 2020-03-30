@@ -40,7 +40,7 @@ You can also try out the newish [ubuntu in windows](https://www.howtogeek.com/24
 
 You could also run a [linux virtual machine](https://www.lifewire.com/run-ubuntu-within-windows-virtualbox-2202098) if you don't have windows 10 / the above didn't work out for you.  This runs a self-contained linux OS on your windows box.
 
-*see the `#windows` Slack channel for emotional support*
+*see the `#windows` Slack channel for support*
 
 ## Command Line ##
 
@@ -78,7 +78,7 @@ We'll use NameCheap as our registrar.  Namecheap is a good [net citizen](https:/
 🚀go to: [https://nc.me/](https://nc.me/)
 and lets register you a domain!
 
-![](img/check.png){: .fancy }
+![](img/namecheap.jpg){: .fancy }
 
 🚀I'm going to grab one for cs52 now too!
 
@@ -88,9 +88,9 @@ and lets register you a domain!
 
 ![](img//choose_github_pages.png){: .fancy .small }
 
-🚀Great, now we'll do the rest of the setup manually so when prompted to setup github — instead to do advance setup.
+🚀Now, the automatic Github Setup in the next screen may do some of the steps below for you. It has a tendency to fail for a variety of reasons (don't worry if that happens to you) so the below are the full directions in case.
 
-![](img//justclickhere.png){: .fancy .small }
+<!-- ![](img//setup.jpg){: .fancy .small } -->
 
 ## Create a GitHub Repo
 
@@ -247,7 +247,8 @@ Take a look at your settings in your Namecheap Dashboard.
 
 Note the several IP addresses in the `A Record` fields,  those are github servers ([apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider))
 
-⚠️ If you have a *URL Redirect Record / CNAME Record* then the github setup failed. You should delete both the *URL Redirect Record* and the *CNAME Record* in NameCheap and add in the *A Record* per the [github apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider). Here's [more on adding in *A Records*.](https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain). Basically just make it match the above screenshot, you may have to wait a little while for the changes to work.  
+⚠️__WARNING__⚠️
+If you have a *URL Redirect Record / CNAME Record* then the github setup failed. You should delete both the *URL Redirect Record* and the *CNAME Record* in NameCheap and add in the *A Record* per the [github apex domain setup](https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider). Here's [more on adding in *A Records*.](https://www.namecheap.com/support/knowledgebase/article.aspx/319/2237/how-can-i-set-up-an-a-address-record-for-my-domain). Basically just make it match the above screenshot, you may have to wait a little while for the changes to work.  
 
 🚀 Try doing a reverse DNS lookup (IP address to name):
 
