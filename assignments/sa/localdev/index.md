@@ -271,5 +271,5 @@ Yes, those IPs point to load balancers that direct requests based on the transpo
 
 * Checkout how to set up [VSCode Live Share](http://cs52.me/resources/liveshare) which will come in handy for office hours!
 * Refresh your command line skills by playing this [visual adventure game](https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html) or with help from [this zoo themed tutorial](https://linuxsurvival.com/linux-tutorial-introduction/).
-* Here's a [basic git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf) which explains some of the most important commands to get you started.
+* Here's a [basic git cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf) that explains some of the most important commands to get you started.
 
