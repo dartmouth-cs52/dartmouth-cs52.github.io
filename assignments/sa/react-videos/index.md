@@ -186,7 +186,7 @@ Let's break up our app into some components.
 
 Here we have identified a few components:
 
-* Main App: this is the top level component. In the future we might call components that only have children in their **containers**.
+* Main App: this is the top level component. In the future we might call such a component a **container**, as it only has custom child components in it, not html components.
 * Search Bar: this is the search bar at the top
 * Video Detail:  the highlight larger video display
 * Video List:  the list of videos found
@@ -396,9 +396,9 @@ onInputChange = (event) => {
 }
 ```
 
-Arrow fuctions are often preferred since they are more succinct, readable, and easier to refactor down the line. Unless you are building an app that needs to be run on older browsers, arrows are the way to go! [More Info](https://frontarm.com/james-k-nelson/when-to-use-arrow-functions/)
+Arrow functions are often preferred since they are more succinct and easier to refactor. [More Info](https://frontarm.com/james-k-nelson/when-to-use-arrow-functions/)
 
-In either case, whenever we now reference `onInputChange` within the class it will refer to a version of that function that is bound to the instance of the object. That is we make sure `onInputChange` runs inside of `SearchBar` rather than inside of `input`. Does that make sense?  Binding in the constructor has the nice property of alerting anybody reading your code that you have certain functions that are called from within other scope, but you should determine what style you like best.  There are a few other ways to do this including [class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) which we will play around with more later. For now let's stick with the normal binding for demonstration purposes. 
+In either case, whenever we now reference `onInputChange` within the class it will refer to a version of that function that is bound to the instance of the object. That is we make sure `onInputChange` runs inside of `SearchBar` rather than inside of `input`. Binding in the constructor has the nice property of alerting anybody reading your code that you have certain functions that are called from within other scope, but you should determine what style you like best. There are a few other ways to do this including [class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) which we will play around with more later. For now let's stick with the normal binding for demonstration purposes. 
 
 🚀 And we should add some way to visualize this so let's add an element to your `render` method:
 
@@ -528,10 +528,8 @@ export default youtubeSearch;
 
 In the above, [axios](https://github.com/mzabriskie/axios) is a module to simplify making http api requests (GET, POST, etc).  We are wrapping it in a Promise so that using our module is really easy from our `index.js`.
 
-
-🔥🔥🔥 __WARNING__ 🔥🔥🔥
-In this example you are asked to push your YouTube API key to GitHub. While this is not a major concern in today's SA, it is a bad habit to get into, especially if you find yourself in a job where you handle other people's data. EC: employ a security strategy to protect your API key and tell us about it in your short answer reponse! (Don't worry about protecting your token in the browser, unless you want the challenge) [Here's a great place to start](https://www.freecodecamp.org/news/how-to-securely-store-api-keys-4ff3ea19ebda/)
-
+🔥__WARNING__ 🔥
+In this example you are asked to push your YouTube API key to GitHub. While this is not a major concern in today's SA as this is a readonly key. Later, when we use private keys server side, you'll learn how to keep them out of your code. Since there is not much you can do to protect a key on the frontend once it is in memory on the webpage, the only secure way to deal with private keys is to proxy any requests through your own server. 
 
 🚀 Now import our new module in `index.js`:
 
@@ -977,4 +975,3 @@ And don't forget to deploy. However!  First change your `package.json` and chang
 
 * add in other video / media sources such as vimeo, giphy, etc
 * pull in the weather or other data sources
-* API key security
