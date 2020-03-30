@@ -186,7 +186,7 @@ Let's break up our app into some components.
 
 Here we have identified a few components:
 
-* Main App: this is the top level component. In the future we might call components that only have children in them **containers**.
+* Main App: this is the top level component. In the future we might call components that only have children in their **containers**.
 * Search Bar: this is the search bar at the top
 * Video Detail:  the highlight larger video display
 * Video List:  the list of videos found
@@ -338,7 +338,7 @@ Oh no, not eslint again!
 
 This is telling us that the method we just wrote `onInputChange` doesn't need to be a class method (instance method) since it doesn't access any instance variables.  It is a fair point, however this is a little annoying because we do eventually want this to be a class method so let's turn this rule off.  
 
-🚀 Add `"class-methods-use-this": 0` to your `.eslintrc` file to just turn it off. You may need to restart webpack to pick up the new changes.
+🚀 Add `// eslint-disable-next-line class-methods-use-this` to the line above your `onInputChange` method to silence the error for this instance. This can also be done by hovering over the error and selecting the first option in the *Quick fix...* menu
 
 ![](img/oninput.png){: .fancy .small}
 
@@ -362,7 +362,7 @@ ES6 classes have constructors.  This is where we would do setup stuff, in partic
   }
 ```
 
-* First thing we do is call the parent classes constructor as any class that extends another should do.
+* First thing we do is call the parent class' constructor as any class that extends another should do.
 * Then we initialize a state object with one field `searchterm`.  This will be for our search term.
 
 Note: The constructor is the **ONLY** place you will ever set `this.state` directly like this. 🐘 Remember this. We will see how to do this later, but in general, you initialize it once and then you use a method `setState` on it from then on. This is critical, if you skip using `setState` then React doesn't know that anything happened.  
@@ -380,13 +380,25 @@ this.setState({ searchterm: event.target.value });
 
 Now, because `onInputChange` needs access to the `this` that is the `SearchBar` with it's `this.state.searchterm`, we need to also bind it so that it can find it. If we did not then when the `input` component would run the function it would fail due to `input` not have any react state. 
 
-There are multiple ways of fixing this, we could either call `this.onInputChange` in a fat arrow function callback that we pass to `onChange` like so: `onChange={event => {this.onInputChange(event);}}` or we can bind it.  In the binding option we'll just assign a bound version of the function to that variable like so:
+There are multiple ways of fixing this, we could either bind it by assigning a bound version of the function to that variable like so:
 
 ```javascript
 // add to the bottom of your constructor
 this.onInputChange = this.onInputChange.bind(this);
 ```
-This means whenever we reference `onInputChange` now within the class it will refer to a version of that function that is bound to the instance of the object. That is we make sure `onInputChange` runs inside of `SearchBar` rather than inside of `input`. Does that make sense?  Binding in the constructor has the nice property of alerting anybody reading your code that you have certain functions that are called from within other scope, but you should determine what style you like best.  There are a few other ways to do this including [class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) which we will play around with more later. For now let's stick with the normal binding for demonstration purposes. 
+
+🚀 __Or__ we could simply change `onInputChange` to be an arrow function:
+
+```javascript
+onInputChange = (event) => {
+	this.setState({ searchterm: event.target.value });
+	console.log(event.target.value);
+}
+```
+
+Arrow fuctions are often preferred since they are more succinct, readable, and easier to refactor down the line. Unless you are building an app that needs to be run on older browsers, arrows are the way to go! [More Info](https://frontarm.com/james-k-nelson/when-to-use-arrow-functions/)
+
+In either case, whenever we now reference `onInputChange` within the class it will refer to a version of that function that is bound to the instance of the object. That is we make sure `onInputChange` runs inside of `SearchBar` rather than inside of `input`. Does that make sense?  Binding in the constructor has the nice property of alerting anybody reading your code that you have certain functions that are called from within other scope, but you should determine what style you like best.  There are a few other ways to do this including [class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) which we will play around with more later. For now let's stick with the normal binding for demonstration purposes. 
 
 🚀 And we should add some way to visualize this so let's add an element to your `render` method:
 
@@ -437,7 +449,8 @@ Ok, at this point you have an app that displays a search bar, it is a driven fie
 
 🚀 Want to go ahead and give it a shot to upgrade `index.js` to a class base component?  Take a few minutes and give that a shot.
 
-Here is what you should end up with:
+<details>
+<summary>Here is what you should end up with:</summary>
 
 ```javascript
 class App extends Component {
@@ -455,6 +468,7 @@ class App extends Component {
   }
 }
 ```
+</details>
 
 We'll probably need to add some state here, but for now this is good. Make sure everything still works as expected. And we have an empty constructor ready to do stuff.
 
@@ -513,6 +527,10 @@ export default youtubeSearch;
 ```
 
 In the above, [axios](https://github.com/mzabriskie/axios) is a module to simplify making http api requests (GET, POST, etc).  We are wrapping it in a Promise so that using our module is really easy from our `index.js`.
+
+
+🔥🔥🔥 __WARNING__ 🔥🔥🔥
+In this example you are asked to push your YouTube API key to GitHub. While this is not a major concern in today's SA, it is a bad habit to get into, especially if you find yourself in a job where you handle other people's data. EC: employ a security strategy to protect your API key and tell us about it in your short answer reponse! (Don't worry about protecting your token in the browser, unless you want the challenge) [Here's a great place to start](https://www.freecodecamp.org/news/how-to-securely-store-api-keys-4ff3ea19ebda/)
 
 
 🚀 Now import our new module in `index.js`:
@@ -749,10 +767,10 @@ Well, so far what we've been doing is implementing downwards data flow.   Our to
 
 Solution!  We create a callback function in the parent and pass it down to the children in `props`!  We're just passing a function around, we know how to do that.
 
-🚀 Let's change where we instantiate *VideoList* in `index.js` and pass in a callback function. It can even be an anonymous function.
+🚀 Let's change where we instantiate *VideoList* in `index.js` and pass in a callback function. It can even be an anonymous function. Another great use for arrow functions!
 
 ```javascript
-<VideoList onVideoSelect={selectedVideo => this.setState({ selectedVideo })} videos={this.state.videos} />
+<VideoList onVideoSelect={(selectedVideo) => this.setState({ selectedVideo })} videos={this.state.videos} />
 ```
 
 Note how we are using es6 shorthand here. `selectedVideo` the key for `setState` is the same as the variable name so we don't have to do `{ selectedVideo: selectedVideo }`
@@ -784,7 +802,7 @@ You can see a pattern here, *SearchBar* is in a similar position where it has da
 
 ```javascript
 search = (text) => {
-  youtubeSearch(text).then(videos => {
+  youtubeSearch(text).then((videos) => {
     this.setState({
       videos,
       selectedVideo: videos[0],
@@ -807,7 +825,7 @@ this.search('pixar');
 <SearchBar onSearchChange={this.search} />
 ```
 
-Note: because we defined search as an arrow function to begin with we don't need `bind` because arrow notation.
+Note: because we defined search as an arrow function to begin with we don't need `bind`.
 
 
 🚀 In *SearchBar*  let's call this new callback! Add the following to your `onInputChange` method before **or** after the `setState`:
@@ -959,3 +977,4 @@ And don't forget to deploy. However!  First change your `package.json` and chang
 
 * add in other video / media sources such as vimeo, giphy, etc
 * pull in the weather or other data sources
+* API key security
