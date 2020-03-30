@@ -9,8 +9,8 @@ comment_term: assignments
 ### *N* In-class short assignments: 10%
 *These will introduce collaborative coding and tools such as deployment and setting up local development environment as well as basics of designing and developing for the web.*
 
-* Short Assignment 1: Local Dev Environment + Domain
-<!-- * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev) — DUE 3/28 -->
+<!-- * Short Assignment 1: Local Dev Environment + Domain -->
+* [Short Assignment 1: Local Dev Environment + Domain](sa/localdev)
 * Short Assignment 2: Git Map (in-class)
 <!-- * [Short Assignment 2: Git Map](sa/git-map) — DUE 3/29 -->
 * Short Assignment 3: Webpack+Babel+Eslint starterpack
