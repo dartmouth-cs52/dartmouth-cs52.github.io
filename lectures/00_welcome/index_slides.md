@@ -18,17 +18,27 @@ name: base
 
 .title[{{name}}]
 
+---
+name: CS52: full-stack web development
+
+<video loop autoplay mute controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_283,h_512/v1546203223/cs52/zoomawkward.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_283,h_512/v1546203223/cs52/zoomawkward.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_283,h_512/v1546203223/cs52/zoomawkward.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
+
+
 
 ---
-name: CS52
+name: full-stack web development
 
-### full-stack web development.
-
-## be the webdev.
+.medium[![](img/cs52logo.png)]
 
 [Tim Tregubov](http://zingweb.com)
 
 ???
+* hope you and yours are well and staying safe
 * you are the lucky "few" - waitlist stretches pretty long still, have already started the 21s waitlist
 
 ---
@@ -37,8 +47,6 @@ name: What is?
 <!-- <iframe width="600" height="400" src="https://www.youtube.com/embed/82DNYqurkxo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe> -->
 .medium[![](img/cupstacking2.gif)]
 .small[![](img/cupstacking.gif)]
-
-
 
 ???
 * when i first was asking to teach this class i thought i was teaching this
@@ -54,35 +62,78 @@ name: What is?
 
 ???
 * the following year i thought i had it right and ordered a bunch of pancakes but procurement told me that its very unlikely that the class is about making pancakes...
-* sorry they cancelled the order - maybe later in the term once final projects start
 * so help me out - what is this thing?
 
 ---
 name: Survey Results
-* Learn best practices/standards in webdev; Learn state-of-the-art webdev tools, technologies, and techniques.
-* Excited to challenge myself, and hope that I will be .orange[**proud of my final project**].
-* Have a greater appreciation for frontend so that .orange[**my code can be implemented as well as possible**]
-* have the tools to .orange[**build real working web apps**]!
-* web dev is most important types of development because it .orange[**interacts with the user most often and most directly**]
-* have a small .orange[**collection of really neat projects**].
-* Get a feeling of the group-working environment for software engineerss
-* I'd like to be a .orange[**pro web developer by the end**] of this course!
-* want to .orange[**build something that is my own**], not something dictated by a strict assignment.
-* build something I am proud of, host it, and .orange[**leave it up for all the world to marvel at!**]
-* like to .orange[**build some sick websites/APIs**],feel proud of what we have created
-* be able to do a web-based project from .orange[**start to finish**].
+* Learn **best practices/standards** in webdev; Learn **state-of-the-art** webdev tools, technologies, and techniques.
+* I want to be able to **have an outlet** (especially during this quarantine) to put time into to making and building websites and really **refining my coding skills**.
+*  **apply some of the coding concepts** I've learned in other courses to something more **real-world applicable**!
+* want to be more creative in school projects, experiment with visual design.
+* learn how to **build entire websites on my own** backend/fronted
+* excited by the course's style of **hands on project and group based learning**.
+* The ability to make **pretty, impressive websites**!
 
 ???
-
-* some requests for learning included:
-  * more frontend
-  * what is the DOM
-  * how to make pretty things on the web
-  * a few mentions of design (should we have a design workshop?)
-  * "designing / working with design for the web"
-  * best practices
+* let's pull in the survey most of you took
+* if there are things you are excited about learning - you can also put them in the chat now
 
 
+---
+name: Survey Results
+* test if web dev is a **possible career path**
+* Hoping for a lot of **group projects and tons of learning**!
+* I would like to have a **project at the end that I can be proud of**
+* The ability of building a **fully functional website from scratch**
+* get an understanding of the way we interact with web products on every layer of the stack
+* develop skills to enable me to **build products that are interesting**
+* get a foundation for learning more frameworks and toolsets
+* ability to **bring any website idea to life in a few weeks**
+* Code some cool projects!
+* **experience collaborating in group coding projects.**
+* Not sure! I’ve heard great things about this course, and am looking forward to the final project.
+
+
+
+---
+name: Zoomtiquette
+
+.medium_small[![](img/teachwithzoom.jpg)]<br>
+
+* auto-muted - `[hold space to talk]`
+* video on
+* open `Chat` and `Participants`
+* use reactions in the participants list
+* chat for questions
+
+
+???
+* they say video on promotes visual communication - i can pause if you look sad etc
+  * at minimum set a profile picture
+* also suffice to say you should probably get dressed for class
+* finding a separate work space from sleep space is also basic psychology - you associate spaces with tasks
+
+
+---
+name: Zoomettiquete
+
+
+<video loop controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
+
+<video loop controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
+
+???
+* trying to convince the TAs to start a cs52 tiktok - who's with me?
 
 ---
 name: full-stack
@@ -96,9 +147,9 @@ name: full-stack
 * the stack is the set of tools/concepts/steps
   involved in building a modern client-server application
   (in particular on the web)
-* how data is stored
-* how it is communicated/transferred
-* how it is displayed
+* how **data is stored**
+* how **data is communicated and transferred**
+* and finally how it is **displayed and interacted with**
 
 ---
 name: Magicians Of The Web
@@ -108,34 +159,38 @@ client ⇔ server ⇔ database
 .large[![](img/sampleweb.gif)]
 
 ???
-* a full-stack dev implies working knowledge of all the components
-* my favorite classes have always been those that empower - this will hopefully make you all magicians
+* as you probably have experienced, the Web is a ***powerful delivery tool*** for complex real-time applications for important things like gifs and advertisements
+* to less important things like productivity tools, data analysis, and governance.  
+* in this class you learn how to **build important scaleable applications**
+* a full-stack dev is someone who has **full working knowledge of all the components**
+* my favorite classes have always been those that empower me, after which i feel like i can conquer the world - this class will hopefully make you all magicians
 
 ---
-name: CS52 Tech Stack
+name: CS52 Tech Stack and Concepts
 
 * client-side:
   * HTML5/CSS3(SASS)/ES6:
-    * ui/ux, design, Document Object Model
+      * ui/ux, design, Document Object Model, layout, markup, transpilers
   * React+Redux:
-    * state, sessions
+      * state, sessions, data driven interfaces, event-driven asynchronous programming
+* the in-between:
+  * internet protocols, security, application program interfaces
 * server-side:
   * Heroku, GitHub pages, AWS:
-    * static pages, hosting, deployment, scalability
+      * static pages, hosting, deployment, scalability
   * MongoDB, sqlite:
-    * models, queries, schema, objects, CRUD
+      * databases, models, queries, schema, objects, CRUD
   * Nodejs, Expressjs:
-    * REST APIs, sessions, MVC, auth
+      * REST APIs, sessions, MVC, authentication, concurrency
 
 ???
-* going to be **latest and greatest**
-* no rails or django or php, none of that first or second gen tech here
-* some of this stuff in actively changing
-* surprisingly the web as a platform is **still rapidly evolving** - after being around for 20 years now
-* desktop technology is much more stable/stodgy.
-* **background and concepts behind the best practices and tool design**
-* static vs server side rendered vs clientside
-* don't worry we'll mostly just be **building all term long**!
+* here's some words on a page - but the point is you'll learn the 
+* **background and concepts behind best practices and scalable software design**
+* we'll learn the **latest and greatest** tools and why they are the way they are
+* but more importantly we'll **build lots of projects along the way**!
+* we're **not going to dumb things down** so you'll be doing industry standard stuff, no starter code
+* the goal is to get you to be comfortable going from an blank terminal to a full project
+* we're learning some of **latest and greatest**, no php or django here
 
 
 ---
@@ -144,37 +199,48 @@ name: Sample Weekly Projects
 * get a domain and make some pages
 * put yourself on a class map
 * build a beautiful static landing page
-* build a buzzfeed style quizz site
+* build a buzzfeed style quiz site
 * build a realtime collaborative note-taking app
-* classy CRUD app with all the bells and whistles
+* classy content platform with all the bells and whistles
 * api backend and databases
 
 
 ???
 
-* think medium or pintrest or twitter CREATE RETRIEVE UPDATE DELETE
-* shorter assignments will include building a bot and a mobile app
-* someone has **said that course is like a firehose**, fine maybe it is a little intense but builds character
-* **if you are a senior looking for an easy spring class, we might not work out, its not you its me, i just want you to love learning.**
+* students have **said that course is like a firehose**, it's nonstop work, but that builds character
+* in anycase **if you are looking for an easy spring class, we might not work out, its not you its me, i just want you to love learning and building cool products.**
+
 
 ---
-name: Online @
+name: Final Project
+
+<iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="http://cs52.me/assignments/project/19s" frameborder="0" allowfullscreen></iframe>
+
+???
+* there is a 3 week group final project, for which we will use collaborative coding and agile project management to help us do it remotely.  we'll use zoom and github and slack.
+* this is where everything you've learned comes together and every year the projects dazzle and impress - you'll be surprised by what you can build in 3 weeks. 
+
+
+---
+name: Online @ cs52.me
 
 .small[![](img/cat-coding.gif)]
 
 
 * web: [http://cs52.me](http://cs52.me)
-* github: [http://github.com/dartmouth-cs52-19s](http://github.com/dartmouth-cs52-19s)
+* Slack: [https://cs52-dartmouth.slack.com](https://cs52-dartmouth.slack.com)
+* github: [http://github.com/dartmouth-cs52-20s](http://github.com/dartmouth-cs52-20s)
 
 ???
-
+* ok, lastly some administrative details
 * using github extensively, get comfortable
+* we'll communicate on slack - and zoom too
 * BTW, science has shown that watching kitten gifs improves health - so, i'm making you all healthier
 
 ---
 name: Staff
 
-.large[![](img/staff.jpg)]
+.large[![](img/staffdirectory.jpg)]
 
 
 ???
@@ -189,11 +255,12 @@ name: etc
 
 .medium_small[![](http://i.giphy.com/tn8zWeNYA73G0.gif)]
 
-* class time 2A — 2:25-4:15pm:
-  * half lecture / half workshop / demos / code and project discussions
+* class time 2A — 2:25-4:15pm — zoom and recorded
+  <!-- * half lecture / half workshop / demos / code and project discussions -->
 * x-hours — 4:35-5:25pm every Weds
-  * me + tas + students @here to help
-  * some xhours will be workshops
+  * will use some xhours as additional material or workshops
+* office hours
+  * tas @here to help
 * coding time (>= CS50)
 
 ???
@@ -206,19 +273,17 @@ name: Wait List?!?
 
 .fancy.medium_small[![](img/giphy21.gif)]
 
-* experimental structure
+* projects based
 * interactive
 * open syllabus
 * <strike>auditing</strike>
-* oh and bring laptops to every class
 * from blank terminal to full project
 
 ???
+* since this course is projects based we can only scale it so far and still provide meaningful mentorship and teaching, hence the cap
+* there is a large waitlist for the course and so it is not available for shopping
 * 130 people tried to get into this course
-* you are the few the proud
-* still an experiment
-* **not going to dumb things down** so you'll be doing industry standard stuff, no web ide's or lots of starter code.
-* the goal to get you to be comfortable going from an blank terminal to a full projecct
+* the goal to get you to be comfortable going from an blank terminal to a full project
 * open syllabus more later
 
 
@@ -231,7 +296,7 @@ name: Slack
 * [Slack](https://cs52-dartmouth.slack.com)!
 
 * mobile, desktop, web apps
-  * (all web technologies actually)
+  * (all web technologies)
   * get used to it
   * you can write a chat bot for Slack as a short assignment
 
@@ -242,7 +307,7 @@ name: Slack
 
 ---
 name: Grading
-
+- New Grading Scale : 🔥👍👎
 - In-class short assignments: 10%
 - 5ish week-long labs:  25%
 - Short In-class quizzes:  10%
@@ -273,7 +338,7 @@ name: Extra Credit is Real
 <iframe src="//giphy.com/embed/wapSaE3rNQoZa" width="271" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
-* up to 110% per each assignment
+* up to 110% per each assignment, **this is how you get fuego on assignments**
 * tough quizzes and quality of work expectations
 
 ---
@@ -282,7 +347,7 @@ name: Workshop?
 .medium[![](img/leviosa.gif)]
 
 * Workshop: sign up to present some cool tech as a team
-  * present how its used / motivate it
+  * present how it is used / motivate it
   * write up a tutorial on it, teach us!
   * you'll be the experts!
 
@@ -293,32 +358,32 @@ name: Workshop?
 * and become a resource for it
 * everybody gets exposed to many technologies
 * workshops will be graded (in the past they weren't)
+* 20 min presentation - create a tutorial do at your own pace later
 
 
----
-name: Project Demos
+<!-- name: Project Demos
 
 
 .medium[![](img/hanoverinn.jpg)]
 
+* 
 * what to work towards
 * show off your work!
 * invite your friends!
 
-???
 * together with cs98 and dali and others
 * 500+ people
 * not presentations (expo style)
 * some amazing projects like yipyip: https://projects.invisionapp.com/share/HABOKZQRZ
-
+ -->
 
 ---
 name: Quizzes?!?!
 
-
 .small[![](img/whyquiz-table.jpg)]
 
 * after each assignment
+* or 1 per class
 * if you did the assignment, you can do the quiz
 * short
 * fun?
@@ -411,9 +476,9 @@ name: Survey Results
 
 <!-- .fancy.medium[![](img/easy-peasy.jpg)] -->
 <!-- .fancy.medium[![](img/easypeasy.png)] -->
-.fancy.medium[![](img/easy-peasy-3.jpg)]
+.medium[![](img/survey2020-1.jpg)]
 
-.fancy.small[![](img/ready-3.jpg)]
+.small[![](img/survey2020-2.jpg)]
 
 ???
 * good mix of backgrounds and desires
@@ -431,9 +496,11 @@ name: Note on Slides
 * [h] for help
 * [p] for presenter mode with full notes
 
-??? 
-* there are more notes if you go into presenter mode, for most lectures there stuff in there
+???
+* there are more notes if you go into presenter mode, for most lectures the stuff in there is 
 * mostly for me, and lectures will be mostly conceptual and then you learn by doing
+
+
 
 
 ---

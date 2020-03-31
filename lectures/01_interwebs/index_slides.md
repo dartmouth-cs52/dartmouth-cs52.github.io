@@ -51,12 +51,21 @@ Your browser does not support the audio element.
 template: base
 name: Submarine Cables
 
+.fancy.small[![](img/undersea-cables.jpg)]
+
+???
+* literally tubes under the ocean
+
+---
+template: base
+name: Submarine Cables
+
 .fancy[![](img/submarine_cables.jpg)]
 
 *(from [submarinecablemap.com](http://www.submarinecablemap.com/))*
 
 ???
-* literally tubes under the ocean
+* here's a map of all the tubes
 
 ---
 name: City To City
@@ -173,7 +182,7 @@ name: Human Protocol Layers
 
 ???
 * humans have layers of protocols, we have verbal protocols (how order food, or say hi) but also and body language protocols for instance.
-* I'm pacing around with my hands in my pockets, is it because I'm super comfortable up here or is it a defense?
+* normally I'd be pacing around in front of class with my hands in my pockets, now I'm just fidgeting in this chair, is it because I'm super comfortable or is it a defense?
 * better example
 
 
@@ -206,7 +215,6 @@ name: Airline Routing
 * Any given system **adds information and provides a service**.
 * baggage layer provides the service of transferring baggage
 * gives you a **baggage tracking code** that you carry with you.
-
 
 
 ---
@@ -667,6 +675,16 @@ Routers use a protocol called BGP to exchange routing information with each othe
 * This is what enables the internet to be robust, if a link goes down, then there are usually alternate/longer routes available.
 
 ---
+name: Airline Routing
+
+
+.fancy.large[![](img/planeplotter.gif)]
+
+???
+* airline routing - when flying every plane has to file flight plans before you set out - but theoretically if a plane maybe had unlimited fuel and each traffic controller knew just a little about their neighborhood - you could just ask for directions along the way
+
+
+---
 name: Backbone Graph
 template: base
 
@@ -679,9 +697,18 @@ template: base
 name: IP Topology
 template: base
 
-.fancy.medium[![ip topology](img/topology.png)]
+.fancy.medium_small[![ip topology](img/topology.png)]
 
 ???
+
+---
+name: Router Hardware
+template: base
+
+.fancy.medium_small[![routers](img/routers.jpg)]
+
+???
+* i keep talking about routers -what do they look like?
 
 
 ---
