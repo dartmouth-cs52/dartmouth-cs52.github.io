@@ -39,7 +39,50 @@ name: full-stack web development
 
 ???
 * hope you and yours are well and staying safe
-* you are the lucky "few" - waitlist stretches pretty long still, have already started the 21s waitlist
+* waitlist stretches pretty long still, have already started the 21/22s waitlists
+* if you're here and not yet registered email at me after class please and I'll see what i can do
+
+---
+name: Zoomtiquette
+
+.medium_small[![](img/teachwithzoom.jpg)]<br>
+
+* auto-muted - `[hold space to talk]`
+* video on
+* open `Chat` and `Participants`
+* use reactions in the participants list
+* chat for questions
+
+
+???
+* they say video on promotes visual communication - i can pause if you look sad etc
+  * at minimum set a profile picture
+* also suffice to say you should probably get dressed for class
+* finding a separate work space from sleep space is also basic psychology - you associate spaces with tasks
+* open chat and participants and leave those open for any interactive stuff
+
+
+---
+name: Zoomtiquette
+
+
+<video loop controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
+
+<video loop controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
+
+???
+* trying to convince the TAs to start a cs52 tiktok - who's with me?
+
 
 ---
 name: What is?
@@ -49,7 +92,7 @@ name: What is?
 .small[![](img/cupstacking.gif)]
 
 ???
-* when i first was asking to teach this class i thought i was teaching this
+* when i was first asked to teach this class, i thought i was teaching this kind of stacking
 * but afterwards was told that wasn't full-stack...  not great course reviews that year especially since we lost regionals
 
 
@@ -94,46 +137,6 @@ name: Survey Results
 * Not sure! I’ve heard great things about this course, and am looking forward to the final project.
 
 
-
----
-name: Zoomtiquette
-
-.medium_small[![](img/teachwithzoom.jpg)]<br>
-
-* auto-muted - `[hold space to talk]`
-* video on
-* open `Chat` and `Participants`
-* use reactions in the participants list
-* chat for questions
-
-
-???
-* they say video on promotes visual communication - i can pause if you look sad etc
-  * at minimum set a profile picture
-* also suffice to say you should probably get dressed for class
-* finding a separate work space from sleep space is also basic psychology - you associate spaces with tasks
-
-
----
-name: Zoomettiquete
-
-
-<video loop controls>
-  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.webm" type="video/webm"/>
-  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.mp4" type="video/mp4"/>
-  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/walkforme.ogv" type="video/ogg"/>
-  Your browser does not support HTML5 video tags
-</video>
-
-<video loop controls>
-  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.webm" type="video/webm"/>
-  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.mp4" type="video/mp4"/>
-  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/badboy.ogv" type="video/ogg"/>
-  Your browser does not support HTML5 video tags
-</video>
-
-???
-* trying to convince the TAs to start a cs52 tiktok - who's with me?
 
 ---
 name: full-stack
@@ -242,11 +245,12 @@ name: Staff
 
 .large[![](img/staffdirectory.jpg)]
 
+* will have sections on Slack, stay tuned
 
 ???
 * brilliant course staff
 * ask us all the questions
-* i'm excited to be working with them!
+* i'm **excited and lucky to be working with them**!
 * we're all excited to be working with you!
 * lots of help hours
 
@@ -288,7 +292,7 @@ name: Wait List?!?
 
 
 ---
-name: Slack
+name: Slacktiquette
 
 .small[![](img/giphy_slack.gif)]
 
@@ -297,13 +301,17 @@ name: Slack
 
 * mobile, desktop, web apps
   * (all web technologies)
-  * get used to it
+  * use it for all course communications
+  * channels for each short and lab assignment as well as teams
+  * section channels
+  * **use your real name and upload photo**
   * you can write a chat bot for Slack as a short assignment
 
 ???
 * i don't do email well...
 * assignments will have due dates on canvas
 * will send out invites later today
+* will talk more about sections
 
 ---
 name: Grading

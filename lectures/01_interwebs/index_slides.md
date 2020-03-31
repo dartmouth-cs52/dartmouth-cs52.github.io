@@ -862,7 +862,7 @@ name: The Interwebs
 [simulationroles.pdf](img/CS52networksimulationroles.pdf)
 
 ???
-* what we used to do here is actually play out a single request - through routers and dns queries and such - but online it'll be too much chaos - you can read through the play version of it here and if you want to play this with your family as a not so fun nerdy game you are welcome to!
+* what we used to do here is actually play out a single request - through routers and dns queries and such - but online it'll be too much chaos - you can read through the play version of it and if you want to play this with your family as a not so fun nerdy game you are welcome to!
 
 _Human:_
 
@@ -963,6 +963,10 @@ background-repeat: no-repeat
 background-size: cover
 name: 20S Let's go!
 
-
+.white-foreground[XHOUR TOMORROW HTML 4:35-5:25pm ET  🚀]
 .white-foreground[short assignment 1 out: due Thursday  🕛]
+.white-foreground[will be on Tandem after class for any questions]
+.white-foreground[email me if you were in class today and are still waiting to register]
 
+
+???

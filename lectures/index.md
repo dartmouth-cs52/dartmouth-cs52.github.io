@@ -35,12 +35,12 @@ fetch(proxyUrl + targetUrl, {
  
 </script> -->
 
-* 3/31 Welcome
-<!-- * [3/31 Welcome](00_welcome/) -->
-* 3/31 Structure of the Internet
-<!-- * [3/31 Structure of the Internet](01_interwebs/) -->
-* 4/2 HTML
-<!-- * [4/2 HTML](02_html/) -->
+<!-- * 3/31 Welcome -->
+* [3/31 Welcome](00_welcome/)
+<!-- * 3/31 Structure of the Internet -->
+* [3/31 Structure of the Internet](01_interwebs/)
+* 4/1 HTML
+<!-- * [4/1 HTML](02_html/) -->
 * 4/2 Git
 <!-- * [4/2 Git](02_git/) -->
 * 4/7 CSS
