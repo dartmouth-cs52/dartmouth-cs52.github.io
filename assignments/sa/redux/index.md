@@ -12,12 +12,12 @@ comment_term: sa-redux
 
 React + Routing + [Redux](http://redux.js.org/)
 
-For this workshop we're just going to add redux to our starter pack!
+For this workshop we're just going to add redux to our starter pack and our YouTube video Short Assignment!
 
 Redux is a fancy state management system that we'll be using to build our blog platform.  It will allow us to simplify our code and have a global state in our app with fewer callbacks!
 
 
-## Let's Start
+## Let's Start Part 1
 
 🚀 We're going to keep working on your starterpack for this assignment. So just dig up that repo and work there!  At this point you should have a starterpack that has webpack+babel+eslint+sass+react+reactrouter.  Remember to just push your new stuff to this. For grading we'll know which commits to look at.  You want to keep building this up.
 
@@ -379,16 +379,286 @@ git tag v4
 git push origin --tags
 ```
 
+## Part 2: YouTube!
+
+Currently our React YouTube search app works great, but could be improved by use of Redux. If you recall from the Short Assignment or from the hint above, we can use Redux to select the video to show in Detail View without passing properties multiple levels!
+
+### Prepare the Repo
+
+🚀 To begin, create a new branch `redux-sa` in your SA4 repo: https://github.com/dartmouth-cs52-19S/sa4-YOUR_USERNAME
+
+Then navigate to your repository on the command line and pull in the updates you've just made to your starterpack:
+
+``` bash
+cd sa4-YOUR_USERNAME
+git pull
+git checkout redux-sa
+git pull starter master
+```
+Hopefully, you should only have major conflicts in your `src/index.js` file. Let's handle them now!
+
+🚀 First, copy all the code from the HEAD (Current Change) of `src/index.js` and paste it into its own new file `src/components/youtube.js`. Now go ahead and accept the incoming change.
+
+<details>
+<summary>Don't worry if you lost your HEAD, it's right here!</summary>
+
+```javascript
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import './style.scss';
+import debounce from 'lodash.debounce';
+import SearchBar from './components/search_bar';
+import youtubeSearch from './youtube-api';
+import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      videos: [],
+      selectedVideo: null,
+    };
+
+    this.search = debounce(this.search, 300);
+    this.search('pixar');
+  }
+
+  search = (text) => {
+    youtubeSearch(text).then((videos) => {
+      this.setState({
+        videos,
+        selectedVideo: videos[0],
+      });
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <SearchBar onSearchChange={this.search} />
+        <div id="video-section">
+          <VideoDetail video={this.state.selectedVideo} />
+          <VideoList onVideoSelect={(selectedVideo) => this.setState({ selectedVideo })} videos={this.state.videos} />
+        </div>
+      </div>
+    );
+  }
+}
+```
+</details>
+
+🚀 To finish off our merge, let's create a new endpoint in `components/app.js` for YouTube:
+
+```javascript
+// Add this import somewhere at the top
+import YouTube from './youtube';
+
+// Add a new NavLink to your Nav constant
+<li><NavLink to="/youtube" exact>YouTube</NavLink></li>
+
+// And add a new Route to the Switch in App
+<Route exact path="/youtube" component={YouTube} />
+```
+
+🚀 Once you have finished handling the conflicts, go ahead and add, commit, and push the changes.
+
+To update our code, we will follow largely the same process as above, but with more complicated functionality.
+
+### Actions
+
+Since selecting a video is a new action handled by our redux store, we will need to create a new function in `actions/index.js` to go along with it.
+
+🚀 First let's expand our `ActionTypes`:
+
+```javascript
+// keys for actiontypes
+export const ActionTypes = {
+  INCREMENT: 'INCREMENT',
+  DECREMENT: 'DECREMENT',
+  SELECT: 'SELECT',
+};
+```
+
+🚀 Next, we add a new function to use our SELECT type. Notice that this function, unlike before, is passed a variable to be used as a payload.
+
+```javascript
+export function selectVideo(video) {
+  return {
+    type: ActionTypes.SELECT,
+    payload: video,
+  };
+}
+```
+
+### Reducers
+🚀 Create `reducers/select_reducer.js`
+
+```javascript
+import { ActionTypes } from '../actions';
+
+const SelectReducer = (state = null, action) => {
+  switch (action.type) {
+    case ActionTypes.SELECT:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export default SelectReducer;
+```
+
+It is nearly the same as our previous reducer with two key differences:
+
+1. Our initial state is now `null` to reflect the new type.
+2. We update the state by returning `action.payload` instead of manipulating the state directly. Remember that we defined the payload as `video` in our actions file.
+
+🚀 Add our new reducer to `reducers/index.js` so that the store knows to keep track of an additional state variable.
+
+```javascript
+// the starting point for your redux store
+// this defines what your store state will look like
+import { combineReducers } from 'redux';
+import CountReducer from './count-reducer';
+import SelectReducer from './select_reducer';
+
+const rootReducer = combineReducers({
+  count: CountReducer,
+  video: SelectReducer,
+});
+
+export default rootReducer;
+```
+
+### Connected Components
+Let's see what you remember!
+
+🚀 In `components/video_list_item.js` connect `VideoListItem` to the redux store and change the react parent function `props.onVideoSelect(props.video)`to the new redux function `props.selectVideo(props.video)`. 
+
+__HINT:__ if you're stuck, use `containers/controls.js` as an example
+
+<details>
+<summary>If you're *really* stuck, take a look here</summary>
+
+```javascript
+import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { selectVideo } from '../actions';
+
+const VideoListItem = (props) => {
+  const imgUrl = props.video.snippet.thumbnails.default.url;
+
+  return (
+    <li onClick={() => props.selectVideo(props.video)}>
+      <img src={imgUrl} alt="video" />
+      <div>{props.video.snippet.title}</div>
+    </li>
+  );
+};
+
+export default withRouter(connect(null, { selectVideo })(VideoListItem));
+```
+</details>
+
+🚀 In `components/video_list.js` remove `onVideoSelect={props.onVideoSelect} ` from `VideoListItem` 
+
+🚀 Last but not least, we need to connect `components/youtube.js`
+
+1. Let's connect `YouTube` to our redux store. Note that in this example, we need to include `mapStateToProps` as well as our actioncreator!
+2. Remove `video` from our state. It isn't necessary to keep the variable in both the react state and the redux store in this situation, though there are times where you would want to leave it in.
+3. Add `this.props.selectVideo(videos[0])` to our search method.
+4. Pass `video` to VideoDetail from our redux store: ` <VideoDetail video={this.props.video} />`
+5. Remove `onVideoSelect` from `VideoList`
+
+<details>
+<summary>Give it a try on your own first!</summary>
+
+```javascript
+import React, { Component } from 'react';
+import debounce from 'lodash.debounce';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import SearchBar from './search_bar';
+import youtubeSearch from '../youtube-api';
+import VideoList from './video_list';
+import VideoDetail from './video_detail';
+import { selectVideo } from '../actions';
+
+class YouTube extends Component {
+  constructor(props) {
+    super(props);
+
+	// 2
+    this.state = {
+      videos: [],
+    };
+
+    this.search = debounce(this.search, 300);
+    this.search('pixar');
+  }
+
+        search = (text) => {
+          youtubeSearch(text).then((videos) => {
+            // 2
+            this.setState({
+              videos,
+            });
+            // 3
+            this.props.selectVideo(videos[0]);
+          });
+        }
+
+        render() {
+          return (
+            <div>
+              <SearchBar onSearchChange={this.search} />
+              <div id="video-section">
+                // 4
+                <VideoDetail video={this.props.video} />
+                // 5
+                <VideoList videos={this.state.videos} />
+              </div>
+            </div>
+          );
+        }
+}
+
+// 1
+const mapStateToProps = (state) => (
+  {
+    video: state.video,
+  }
+);
+
+export default withRouter(connect(mapStateToProps, { selectVideo })(YouTube));
+
+```
+</details>
+
+## Debugging
+
+Last thing!  Try opening up the Redux Chrome DevTools and play with the timeline to move the state forward and back.
+
+Play with the *slider* and note how you can export and import state. Imagine how powerful that would be if we could just save the whole state of a very complex app!
+
+
+## Release it!
+
+Commit and push your changes to your new redux branch. No need to merge into master!
+
 ## To Turn In (Canvas)
 
-* url to github repo (makes grading a whole lot easier and friendlier)
-* url to surge.sh
+* url to starterpack github repo (makes grading a whole lot easier and friendlier)
+* url to redux branch of SA4 github repo
+* url to starterpack surge.sh
 * your starter pack should now
     * have a working redux counter!
     * be deployed to surge
     * lint correctly
-
-
+* your youtube searcher should have the same functionality as before, but now with redux!
 
 
 
