@@ -26,14 +26,32 @@ name:  CS52 HTML
 ---
 name: TA Hours
 
-* Mon 4-6pm: Sudikoff 213
+<!-- * Mon 4-6pm: Sudikoff 213
 * Mon 8-10pm: Carson 61
 * Weds 4:35-5:25: LSC 200
 * Thurs 7:30-9:30 pm: Carson 61
 * Sun 6-9 pm: Carson 61
+ -->
 
+.large[![](img/tahours.jpg)]
+
+---
+name: TA Hours HowTo
+
+.medium[![](img/tahowto.jpg)]
+
+* Use Slack with specific #sa #lab channels and
+* Tandem for video discussion style help
 
 ???
+* For help over video to debug or ask conceptual questions use Tandem:
+* add your name on the sheet below + brief description of what you need help with 
+* try to describe the problem/question without code, but feel free to paste in short error messages.
+* Log into Tandem
+* Wait for a TA (don’t barge into a Tandem room! A TA will reach out when it’s your turn!)
+* In some cases a TA may group questions together and start a Tandem Room to address the question.  In that case we’ll comment as such.
+* For help over messaging any time of day/night use Slack and find the channel associated with the short or lab you are working on.
+* we'll see how this works or doesn't - might switch to zoom with waiting rooms
 
 ---
 name: HyperText Markup Language
@@ -43,7 +61,7 @@ HTML != programming
 <iframe src="http://giphy.com/embed/cJ0X2Xudyecw0" width="480" height="288" frameBorder="0" class="giphy-embed"></iframe>
 
 ???
-* today HTML only - next weeek CSS - there's a difference
+* today HTML only - next class is CSS - there's a difference
 * html not like python and Java - no logic
 * just like this cat is not really a panda
 * It is a descriptor language.
@@ -77,7 +95,7 @@ vs
 * can't compute with it
 * but you can define structure.  
 * When someone says they can program in HTML, look at them funny. 😑
-* WORD analogy - in word you typically just say, italize this, change the font here - thats not scalable
+* WORD analogy - in word you typically just say, italize this, change the font here - thats not scalable - if you do redefine styles in word kudos
 
 ---
 name: Skeleton
@@ -146,6 +164,7 @@ name: semantic structure
 ???
 * what you want to do is **annotate your content**
 * with **syntactically identifiable notation/descriptions** in your document that can dictate presentation or describe what it is.
+* all these are builtin html5 semantic tags
 
 
 ---
@@ -233,17 +252,18 @@ name: Microfilm/Microfiche aside
 ---
 name: HyperText
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yJDv-zdhzMY?start=238" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="640" height="395" src="https://www.youtube.com/embed/yJDv-zdhzMY?start=238" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ???
 * theoretical demo mouse and videoconfercing and hypertext idea
 * wasn't quite all implementable, but showed all the basic features of modern computing, mouse, browser,video
 * and somehow 50 years later videoconferencing is still shit
+* skip to 30
 
 ---
 name: Structural tags and links!
 
-Unchanged basic premise of **document**
+Unchanged basic premise of **document** with **links**
 
 ???
 * The basic idea of **structural tags** with **links between documents** has remained the same since then.
@@ -263,7 +283,7 @@ varying compatibilities
 * Due to some original problems with various implementations of the HTML standard in browsers
 * allowing missing closing tags
 * XHTML standard developed (2000) mucho stricter and yay
-* back then everybody coded html manually - now we have better tools
+* back then everybody coded html manually, so browsers were forgiving - now we have better tools
 
 
 
@@ -400,6 +420,7 @@ name: Comment and Cite
 * method header should make sense in its naming
 * you don't need to say readFromDisk // reads from disk
 * please name variables and functions well - if you end up changing what a variable is - rename it!
+* don't store shit in a variable that doesn't describe it accurately.
 * i've seen code like `string kittenname; //actually string id of user object`
 
 
@@ -485,7 +506,7 @@ name: headings
 
 
 ???
-
+* i'm now going to go through a bunch of element types - sit back, relax, absorb it, mediate on it, listen to the sound of my voice.
 
 
 
@@ -501,7 +522,18 @@ name: paragraph
 ???
 * what is white space?  spaces/newlines/tabs/etc multiple spaces become 1 space
 * html is generally white-space collapsing (multiple spaces and new lines are ignored)
+* spaces aren't structure - if you want to know what something is - mark it
 * parser needs to know what is paragraphs
+
+---
+name: paragraph
+
+<video loop controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/alloneline.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/alloneline.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/alloneline.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
 
 
 
@@ -517,6 +549,7 @@ name: lists
 
 ???
 * lists are often used by convention for things like nav bars - in places where you logically think, oh its a list of links etc.
+* lis are nested inside of ul/ols
 
 
 
@@ -911,7 +944,7 @@ name: google after backrub 1997
 
 
 ???
-
+microsoft paint masterpiece there
 
 
 
@@ -1067,9 +1100,8 @@ name: tools
 
 ???
 
-
 ---
-name: Git
+name: Tomorrow
 
-
-[on to git](../02_git)
+* CSS, and how to "steal" from pages online
+* Lab1 Landing Page out later tonight
