@@ -292,5 +292,8 @@ You should host this on github pages as you have in the past with the `gh-pages`
 ## Resources:
 
 * [https://css-tricks.com](https://css-tricks.com)
+* [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [http://www.w3schools.com](http://www.w3schools.com)
 * [https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)
+* [CSS Animation Help](https://thoughtbot.com/blog/css-animation-for-beginners)
+* Some style resources: [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) and [Color Scheme Help](https://mycolor.space/)
