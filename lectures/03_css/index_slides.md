@@ -27,7 +27,6 @@ name: CS52: CSS
 
 .medium[![](img/tabledrawing1.jpg)]
 
-<!-- * [http://map.cs52.me/](http://map.cs52.me/) -->
 
 
 ???
@@ -35,31 +34,8 @@ name: CS52: CSS
   * on the order of a million slides to get through
   * and games,  don't worry if it all seems overwhelming - plenty of time to practice and don't need to memorize it all
 
-<!-- * tomorrow DESIGN workshop during x-hour, will help with extra credit - not mandatory but you'll learn some stuff -->
-
-<!-- 
-name: 19S Table Questions
-
-.large[![](img/tq-local-dns.jpg)]
-.large[![](img/tq-waitlist.jpg)]
-
-???
-* yes local dns server is basically just a program running in your operating system -->
 
 
-<!-- name: 19S Table Questions
-
-.small[![](img/tq-hop.jpg)]
-.small[![](img/table-questions-banana.jpg)]
-
-1. Does git text match or line match? And why does git use >> to show conflicts?
-
-
-???
-* git is a lot of things to a lot of people, but not sure it provides potassium
-* all of the text per line. empty space is a change
-* no idea! 
-* ok the following are questions from last term,  many more of them, so either i'm doing better explaining, or you all are too shy -->
 
 
 
@@ -86,14 +62,6 @@ name: Github Pages??
 * https://githubengineering.com/rearchitecting-github-pages/
 
 
-<!-- ---
-name: Table Questions
-
-.medium_small[![](img/table-mean-languages.jpg)]
-
-???
-* 
- -->
 
 
 ---
