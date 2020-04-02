@@ -20,6 +20,12 @@ A landing page you say?  Yes, you will be making a landing page based on an real
 
 ## Getting Started
 
+
+🚀 Please use the github classroom link provided in the Canvas assignment to create the repo automatically.  This will create a github repository for you under the dartmouth-cs25-20s github organization and give us and ta's access to it.  Please use this repo for this assignment!
+
+![accept the assignment](img/accept.jpg){: .small}
+
+
 🚀 We'll be choosing a landing page website to flatter. And by flatter I mean rip-off. But by rip-off, I mean reconstruct a clean version using our own content.  You'll be looking at some webpages, and then inspecting them and seeing how much of the look and feel you can copy onto your own page. 
 
 Here, I chose slack.com (it no longer looks like this and is now surprisingly even uglier, so don't choose that one). 
