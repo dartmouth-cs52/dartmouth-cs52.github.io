@@ -42,16 +42,21 @@ Some examples (in approx order of difficulty, from easier to harder):
 * [flourbakery.com](https://flourbakery.com/)
 * [github.com](https://github.com/) *(incognito mode)*
 * [starbucks.com](https://www.starbucks.com/) *(add a fullwidth image)*
+* [otherland.com/](https://www.otherland.com/)
 * [stripe.com](https://stripe.com/)
 * [daily-harvest.com/](https://www.daily-harvest.com/)
 * [collegepulse](https://collegepulse.com/) *(words changing using css animations, EC)* [freckle.com/](https://www.freckle.com/)
+* [cooking.nytimes.com/]*(https://cooking.nytimes.com/)
 <!-- * [tesla.com](https://www.tesla.com) -->
 * [figma.com](https://www.figma.com) *(moving pointers on media size css animations are pretty sweet, EC)*
 * [mixpanel.com](https://mixpanel.com)
 * [wistia.com](http://wistia.com)
+* [losangelesapparel.net/](https://losangelesapparel.net/)
+* [https://www.superdown.com/](https://www.superdown.com/)
 * [lujoliving.com/](https://www.lujoliving.com/)
 * [notion.so](https://www.notion.so/)
 * [simpleanalytics.io](https://simpleanalytics.io/) *(can you do the typewriter effect using css animations? EC)*
+* [monday.com/](https://monday.com/)
 * [patagonia.com](http://patagonia.com) *(with [carousel in pure css](https://codeburst.io/how-to-pure-css-carousel-ce1a8cb231c8) challenge)*
 * [patagonia.com](http://patagonia.com) *(with [carousel in pure css](https://codeburst.io/how-to-pure-css-carousel-ce1a8cb231c8) challenge)*
 * [strangeworks.com/](https://strangeworks.com/) *(some scrolling effects can't be done with css)*
