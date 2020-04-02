@@ -38,8 +38,8 @@ comment_term: assignments
 ### 5-ish week-long labs:  25%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
-* Lab 1: Build a Landing Page
-<!-- * [Lab 1: Build a Landing Page](lab/landing-page) — DUE 4/6 -->
+<!-- * Lab 1: Build a Landing Page -->
+* [Lab 1: Build a Landing Page](lab/landing-page)
 * Lab 2: Build a Buzzfeed Quiz
 <!-- * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) - DUE 4/9 -->
 * Lab 3: React Notes

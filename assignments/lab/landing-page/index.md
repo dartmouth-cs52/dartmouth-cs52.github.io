@@ -30,7 +30,7 @@ And if you narrow your browser you'll see some responsive design and it looks li
 
 ![](img/slack-mobile0.jpg){: .fancy .tiny}
 
-You should choose another landing page to base your page off of, as long as it has the following features:
+You **should choose another landing page to base your page off of**, as long as it has the following features:
 
 * responsive navigation menu - one that collapses from columns into rows when in mobile.
 * expanding image(s) - either as a background or central element
@@ -38,22 +38,23 @@ You should choose another landing page to base your page off of, as long as it h
 * text input bar for signup or search (will be non-functional)
 * a footer with links that are responsive (change from side by side to vertical in smaller sizes)
 
-Some examples (in very approx order of difficulty):
+Some examples (in approx order of difficulty, from easier to harder):
 * [flourbakery.com](https://flourbakery.com/)
 * [github.com](https://github.com/) *(incognito mode)*
 * [starbucks.com](https://www.starbucks.com/) *(add a fullwidth image)*
 * [stripe.com](https://stripe.com/)
-* [collegepulse](https://collegepulse.com/)
+* [daily-harvest.com/](https://www.daily-harvest.com/)
+* [collegepulse](https://collegepulse.com/) *(words changing using css animations, EC)* [freckle.com/](https://www.freckle.com/)
 <!-- * [tesla.com](https://www.tesla.com) -->
-<!-- * [apple.com](https://www.apple.com) -->
-* [figma.com](https://www.figma.com)
+* [figma.com](https://www.figma.com) *(moving pointers on media size css animations are pretty sweet, EC)*
 * [mixpanel.com](https://mixpanel.com)
 * [wistia.com](http://wistia.com)
+* [lujoliving.com/](https://www.lujoliving.com/)
 * [notion.so](https://www.notion.so/)
-<!-- * [hubspot.com](https://www.hubspot.com/) -->
-* [simpleanalytics.io](https://simpleanalytics.io/)
-* [sunbasket.com](https://sunbasket.com/) 
+* [simpleanalytics.io](https://simpleanalytics.io/) *(can you do the typewriter effect using css animations? EC)*
 * [patagonia.com](http://patagonia.com) *(with [carousel in pure css](https://codeburst.io/how-to-pure-css-carousel-ce1a8cb231c8) challenge)*
+* [patagonia.com](http://patagonia.com) *(with [carousel in pure css](https://codeburst.io/how-to-pure-css-carousel-ce1a8cb231c8) challenge)*
+* [strangeworks.com/](https://strangeworks.com/) *(some scrolling effects can't be done with css)*
 
 You can also browse for inspiration here: [landingfolio.com](https://www.landingfolio.com/).  You can also choose multiple pages to pick and choose things from. 
 
@@ -202,7 +203,7 @@ Now get it looking good!
 
 I recommend working on the full width version, and don't worry about how it resizes till you are moderately happy with it.
 
-It should start looking something like this at this point.
+Getting there!
 
 ![](img/full_width.jpg){: .fancy .small}
 
@@ -236,7 +237,7 @@ display: none;
 
 🚀Toggle the display property on completely different sections of the site.  You might have a completely different set of elements for the links section for instance.  Toggle one off and the other on.
 
-You should end up with something akin to:
+At this point it might look something akin to:
 
 ![](img/responsive.jpg){: .fancy .tiny}
 
@@ -249,7 +250,7 @@ Notice that on most of these pages when you're in the narrow responsive site if 
 
 This is called the [CSS Checkbox Hack](https://css-tricks.com/the-checkbox-hack/), very clever.  
 
-If you choose to, you may implement this functionality in pure CSS. This part is extra credit, but easy and worth doing! You can also play with CSS transitions for this to make the menu appear to slide or fade in.  **Caveat:** CSS transitions don't work if the element has `display: none` on it, but there are other ways to hide an element, `opacity` + `height: 0px` come to mind.
+If you choose to, you may implement this functionality in pure CSS. This part is extra credit, but **easy and worth doing**! You can also play with CSS transitions for this to make the menu appear to slide or fade in.  **Caveat:** CSS transitions don't work if the element has `display: none` on it, but there are other ways to hide an element, `opacity` + `height: 0px` come to mind.
 
 Here's what it could look like:
 
@@ -273,7 +274,7 @@ You should host this on github pages as you have in the past with the `gh-pages`
   * include some details such as hover effects and border-radius
   * have clear document structure with proper semantic naming
   * look reasonable :-)
-* your repo should include a README.md file with:
+* your repo **should include a README.md** file with:
   * a couple sentence description of what you did and what worked / didn't work.
   * screen caps of your layout stage
   * screen caps with anything special you want to point out
@@ -283,7 +284,7 @@ You should host this on github pages as you have in the past with the `gh-pages`
 ## Extra Credit
 *always mention your extra credit in the README.md file*
 
-* Fancy CSS transitions
+* Fancy CSS transitions and animations!
 * CSS Checkbox Hack for the mobile version Menu
 * Link Headers utilizing the CSS Checkbox hack to expand!
 
