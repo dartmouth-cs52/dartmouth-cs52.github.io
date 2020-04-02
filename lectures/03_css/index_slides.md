@@ -19,41 +19,35 @@ name: base
 .title[{{name}}]
 
 
----
-name: CS52
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/6cFefl69Q_A?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 
 ---
-name: CS52
+name: CS52: CSS
 
 
-.fancy.medium[![](img/tabledrawing1.jpg)]
+.medium[![](img/tabledrawing1.jpg)]
 
-* [http://map.cs52.me/](http://map.cs52.me/)
+<!-- * [http://map.cs52.me/](http://map.cs52.me/) -->
 
 
 ???
 * today:
-  * map map!
   * on the order of a million slides to get through
   * and games,  don't worry if it all seems overwhelming - plenty of time to practice and don't need to memorize it all
-* tomorrow DESIGN workshop during x-hour, will help with extra credit - not mandatory but you'll learn some stuff
 
+<!-- * tomorrow DESIGN workshop during x-hour, will help with extra credit - not mandatory but you'll learn some stuff -->
 
----
+<!-- 
 name: 19S Table Questions
 
 .large[![](img/tq-local-dns.jpg)]
 .large[![](img/tq-waitlist.jpg)]
 
 ???
-* yes local dns server is basically just a program running in your operating system
+* yes local dns server is basically just a program running in your operating system -->
 
 
----
-name: 19S Table Questions
+<!-- name: 19S Table Questions
 
 .small[![](img/tq-hop.jpg)]
 .small[![](img/table-questions-banana.jpg)]
@@ -65,21 +59,20 @@ name: 19S Table Questions
 * git is a lot of things to a lot of people, but not sure it provides potassium
 * all of the text per line. empty space is a change
 * no idea! 
-* ok the following are questions from last term,  many more of them, so either i'm doing better explaining, or you all are too shy
+* ok the following are questions from last term,  many more of them, so either i'm doing better explaining, or you all are too shy -->
 
 
 
 ---
-name: Table Questions
+name: Github Pages??
 
 <iframe src="//giphy.com/embed/q0FBs96PQmjDi?hideSocial=true" width="480" height="269.76" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 * how does github pages hosting work? that all seemed magical
 
 
-
 ---
-name: Table Questions
+name: Github Pages??
 
 .small[![](img/ghpages.png)]
 
@@ -141,7 +134,7 @@ name: CSS — Cascading Style Sheets
 * we're a new era now boys and girls, finally things are evolving, new things being rolled out
 * long period of time when people had **all sorts of workarounds for things, like using tables** for everything
 * css is faster than js for animations
-* netscape used javascript at first for css (super slow and still is not the best styling tool)
+* netscape used javascript at first for styling (super slow and still is not the best styling tool)
 * [full history](https://eager.io/blog/the-languages-which-almost-were-css/)
 
 
@@ -159,7 +152,7 @@ name: Semantics vs. Style
 
 ???
 * in early days was all **browser defined style**
-* defining structure but display up to browser
+* defining structure but display up to browser, all just scientific docs
 * relied on the default display styles provided by the browser
 * set the `h1` tag the font size increased
 * What we were defining was a section of content that was intended to be a header of level 1.
@@ -218,7 +211,7 @@ name: CSS Rules
 ---
 name: CSS Rules
 
-.fancy.medium[![anatomy of css rule](img/anatomy_of_css_rule.jpg)]
+.medium[![anatomy of css rule](img/anatomy_of_css_rule.jpg)]
 
 ???
 * ok and now you know css. ship it, send it.\
@@ -293,7 +286,7 @@ a, input, .classy {...} /* multiple selectors */
 ```
 
 ???
-* what would happen if I clicked 'lets go'?
+* what would happen if I clicked 'lets go'? nothing - in the lab do that.
 * what kind of element is span in terms of display?
 
 
@@ -569,7 +562,6 @@ name: Relative Units
 
 * relative units are what you'll often be using.
 * 1 rem is 16px by default
-* also today is jane goodall's birthday
 * **em originally** was the lineheight *C* when metal type was a thing and was also the same as the width of the letter m - hence **em dash** vs **en dash**
 * older browsers don't support `vh`/`vw` units, but they can be very useful if you don't mind losing some compatibility - these days probably pretty safe to use
 
@@ -880,7 +872,7 @@ name: Flexbox model
 ---
 name: Flex Parent Properties
 
-.fancy.medium[![flex-direction](img/flex-direction1.svg)]
+.medium[![flex-direction](img/flex-direction1.svg)]
 
 ```css
 .container {
@@ -896,7 +888,7 @@ name: Flex Parent Properties
 ---
 name: Flex Parent Properties
 
-.fancy.medium_small[![flex-wrap](img/flex-wrap.svg)]
+.medium_small[![flex-wrap](img/flex-wrap.svg)]
 
 ```css
 .container{
@@ -913,7 +905,7 @@ name: Flex Parent Properties
 ---
 name: Flex Parent Properties
 
-.fancy.small[![justify-content](img/justify-content.svg)]
+.small[![justify-content](img/justify-content.svg)]
 
 ```css
 .container {
@@ -929,7 +921,7 @@ name: Flex Parent Properties
 ---
 name: Flex Parent Properties
 
-.fancy.small[![align-items](img/align-items.svg)]
+.small[![align-items](img/align-items.svg)]
 
 ```css
 .container {
@@ -946,7 +938,7 @@ name: Flex Parent Properties
 ---
 name: Flex Parent Properties
 
-.fancy.small[![align-content](img/align-content.svg)]
+.small[![align-content](img/align-content.svg)]
 
 ```css
 .container {
@@ -966,7 +958,7 @@ name: Flex Parent Properties
 ---
 name: Flex Child Properties
 
-.fancy.medium_small[![order](img/order-2.svg)]
+.medium_small[![order](img/order-2.svg)]
 
 
 ```css
@@ -984,7 +976,7 @@ name: Flex Child Properties
 ---
 name: Flex Child Properties
 
-.fancy.medium_small[![flex-grow](img/flex-grow.svg)]
+.medium_small[![flex-grow](img/flex-grow.svg)]
 
 ```css
 .item {
@@ -1007,7 +999,7 @@ name: Flex Child Properties
 name: Flex Child Properties
 
 
-.fancy.medium_small[![align-self](img/align-self.svg)]
+.medium_small[![align-self](img/align-self.svg)]
 
 ```css
 .item {
@@ -1029,7 +1021,8 @@ Want to learn more?
 <br>[http://flexboxdefense.com](http://flexboxdefense.com/)
 
 ???
-
+* let's take 5, stretch, play some of these games, i'll stop recording
+* you may not get though them now but please do play them all the way through after class and before you do the lab,  you'll need to understand flexboxes to do the lab. 
 
 
 
@@ -1083,7 +1076,7 @@ p {
 * wait whats that whole cascading thing about?
 * can have multiple rules that match an element
 * and multiple stylesheets with overlapping rules
-* enter precedence
+* enter precedence - basically how do you handle multiple inheritance safely and in a deterministic fashion
 
 
 
@@ -1419,7 +1412,7 @@ name: Today's activity
 * get their domain name and open it up in inspector
   * or together edit some random webpage
 * play around with it
-* take a screenshot and post it in [#19s](https://cs52-dartmouth.slack.com/messages/CH67XKQT0)
+* if you make something funny, take a screenshot and post it in Slack #20s
 
 ???
 * hacking 101
@@ -1428,5 +1421,17 @@ name: Today's activity
 ---
 name: The End
 
+* Lab1 out today! Due Thursday early morning!
+* Goal is to find a landing page you like - and then adopt it to your own liking. 
+
+???
+* Don't make it look like mine - be creative
+* could be for a fake or real company
+* could be for your family
+* could be a joke site
+
+
+---
+name: The Real End
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/LWGJA9i18Co?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>

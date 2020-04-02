@@ -43,8 +43,8 @@ fetch(proxyUrl + targetUrl, {
 * [4/1 HTML](02_html/)
 * 4/2 Git
 <!-- * [4/2 Git](02_git/) -->
-* 4/7 CSS
-<!-- * [4/7 CSS ](03_css/) -->
+<!-- * 4/2 CSS -->
+* [4/2 CSS ](03_css/)
 * 4/8 Some Design Things
 <!-- * [4/8 Some Design Things](03_design/) -->
 * 4/9 JS and DOM
