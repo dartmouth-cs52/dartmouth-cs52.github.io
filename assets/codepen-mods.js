@@ -11,6 +11,10 @@
 // }();
 /// https://stackoverflow.com/questions/20256760/javascript-console-log-to-html
 
+
+
+document.body.insertAdjacentHTML('afterend','<div id="log-container"><div id="log"></div></div>');
+
 rewireLoggingToElement(
   () => document.getElementById("log"),
   () => document.getElementById("log-container"), true);
