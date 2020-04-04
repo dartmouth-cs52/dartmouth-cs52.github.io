@@ -1,5 +1,5 @@
 
-var codepenScript='//codepen.io/assets/embed/ei.js';
+var codepenScript = '//codepen.io/assets/embed/ei.js';
 
 function tearDownRemark() {
   $("div[class^='remark-'],div[class*=' remark-']").remove();
@@ -27,11 +27,11 @@ function onSlideToggle(event) {
   var $pageHeader = $('.page-header');
   if ($mainContent.is(":visible")) {
     // on r - reload codepen
-    $(document).on('keypress.codepen', function(event) {
-          if (event.charCode === 114) {
-            console.log('reloading codepen');
-            reloadScript(codepenScript);
-          }
+    $(document).on('keypress.codepen', function (event) {
+      if (event.charCode === 114) {
+        console.log('reloading codepen');
+        reloadScript(codepenScript);
+      }
     });
 
     $pageHeader.hide();
@@ -54,13 +54,15 @@ function onSlideToggle(event) {
     // render the math
     var slideAreas = $('.remark-slides-area');
     if (slideAreas.length > 0) {
-      slideAreas.each(function(index, area) {
-        renderMathInElement(area, {delimiters: [
-          {left: "$$", right: "$$", display: true},
-          {left: "$", right: "$", display: false},
-          {left: "\\[", right: "\\]", display: true},
-          {left: "\\(", right: "\\)", display: false},
-        ]});
+      slideAreas.each(function (index, area) {
+        renderMathInElement(area, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false },
+            { left: "\\[", right: "\\]", display: true },
+            { left: "\\(", right: "\\)", display: false },
+          ]
+        });
       })
     }
 
@@ -80,60 +82,61 @@ function setSlideToggle() {
 }
 
 function reloadScript(src) {
-    $('script[src="' + src + '"]').remove();
-    $('<script>').attr('src', src).appendTo('head');
+  $('script[src="' + src + '"]').remove();
+  $('<script>').attr('src', src).appendTo('head');
 }
 
 
-$(document).keyup(function(e) {
-     var $mainContent = $('.main-content');
-     if (e.keyCode == 27) { // escape key maps to keycode `27`
-       if ($mainContent.is(":hidden")) {
-         onSlideToggle();
-      }
+$(document).keyup(function (e) {
+  var $mainContent = $('.main-content');
+  if (e.keyCode == 27) { // escape key maps to keycode `27`
+    if ($mainContent.is(":hidden")) {
+      onSlideToggle();
     }
+  }
 });
 
 // setup toggle and convert any slide markdown left over
 // this is to workaround having markdown content specficially for slides
 // but wanting the slides to render regularly on the page also
-$('document').ready(function() {
+$('document').ready(function () {
 
   // this is a hack to capture all globally added events into a list and remove them at will
   var eventList = [];
   var bodyAddEventListener = document.body.addEventListener;
   var windowAddEventListener = window.addEventListener;
 
-  document.body.addEventListener = function() {
-      eventList.push([document.body, ...arguments])
-      bodyAddEventListener.apply(this, arguments);
+  document.body.addEventListener = function () {
+    eventList.push([document.body, ...arguments])
+    bodyAddEventListener.apply(this, arguments);
   };
-  window.addEventListener = function() {
-      eventList.push([window, ...arguments])
-      windowAddEventListener.apply(this, arguments);
+  window.addEventListener = function () {
+    eventList.push([window, ...arguments])
+    windowAddEventListener.apply(this, arguments);
   };
-  window.listEvents = function() {
+  window.listEvents = function () {
     console.log(eventList);
   }
-  window.removeEvents = function() {
-    eventList.forEach(function(e) {
-      e[0].removeEventListener(e[1],e[2]);
+  window.removeEvents = function () {
+    eventList.forEach(function (e) {
+      e[0].removeEventListener(e[1], e[2]);
     })
   }
 
   $('body').append('<div class="slide" markdown="0"></div>');
 
-  var slideSource=$("#slide-source").text();
+  var slideSource = $("#slide-source").text();
 
   if (slideSource) {
     console.log(slideSource);
     $('.slide').text(slideSource);
     reloadScript(codepenScript);
+    reloadScript(klipseScript);
     console.log('slides mode detected');
     onSlideToggle();
   } else {
     // pull in slides from separate file
-    $.get('index_slides.md').done(function(result){
+    $.get('index_slides.md').done(function (result) {
       $('.slide').text(result);
       reloadScript(codepenScript);
 
@@ -141,19 +144,21 @@ $('document').ready(function() {
         console.log('slides mode detected');
         onSlideToggle();
       }
-    }).fail(function(error) {
+    }).fail(function (error) {
       console.log(error);
-    }).always(function(result) {
+    }).always(function (result) {
       // render the math
       var mathAreas = $('.math');
       if (mathAreas.length > 0) {
-        mathAreas.each(function(index, area) {
-          renderMathInElement(area, {delimiters: [
-            {left: "$$", right: "$$", display: true},
-            {left: "$", right: "$", display: false},
-            {left: "\\[", right: "\\]", display: true},
-            {left: "\\(", right: "\\)", display: false},
-          ]});
+        mathAreas.each(function (index, area) {
+          renderMathInElement(area, {
+            delimiters: [
+              { left: "$$", right: "$$", display: true },
+              { left: "$", right: "$", display: false },
+              { left: "\\[", right: "\\]", display: true },
+              { left: "\\(", right: "\\)", display: false },
+            ]
+          });
         })
       }
     });
