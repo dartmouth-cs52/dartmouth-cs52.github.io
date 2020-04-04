@@ -1,19 +1,20 @@
-// var c = function() {
-//   return({
-//       log: function(msg) {
-//         consoleDiv = document.getElementById('console');
-//         para = document.createElement('p');
-//         text = document.createTextNode(msg);
-//         para.appendChild(text);
-//         consoleDiv.appendChild(para);
-//       }
-//   });
-// }();
-/// https://stackoverflow.com/questions/20256760/javascript-console-log-to-html
-
-
+console.log("loading codepen cs52 plugins...");
 
 document.body.insertAdjacentHTML('afterend','<div id="log-container"><div id="log"></div></div>');
+
+
+var c = function() {
+  return({
+      log: function(msg) {
+        consoleDiv = document.getElementById('console');
+        para = document.createElement('p');
+        text = document.createTextNode(msg);
+        para.appendChild(text);
+        consoleDiv.appendChild(para);
+      }
+  });
+}();
+
 
 rewireLoggingToElement(
   () => document.getElementById("log"),
