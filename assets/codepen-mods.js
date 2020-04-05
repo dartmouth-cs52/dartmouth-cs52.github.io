@@ -6,10 +6,6 @@ function toggleConsole(element) {
   element.parentElement.classList.toggle("expanded");
 }
 
-$('#log-title').on('click', function(e) {
-
-} );
-
 var c = function() {
   return({
       log: function(msg) {
