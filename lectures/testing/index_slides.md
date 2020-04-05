@@ -45,18 +45,13 @@ name: dynamic typing
 >
 <pre data-lang="babel">
 var i;
-console.log(i, typeof(i));
+// console.log(i, typeof(i));
 i = 32;
-console.log(i, typeof(i));
+// console.log(i, typeof(i));
 i = 'foobar';
-console.log(i, typeof(i));
+// console.log(i, typeof(i));
 i = true; 
-console.log(i, typeof(i));
-</pre>
-
-<pre data-lang="css">
-#log-container #log-title {
-}
+// console.log(i, typeof(i));
 </pre>
 
 </div>
