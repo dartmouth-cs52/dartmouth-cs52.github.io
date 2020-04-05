@@ -1,4 +1,4 @@
-document.body.insertAdjacentHTML('afterend','<div id="log-container" class="expanded"><div id="log-title" onclick="toggleConsole(this)">console</div><div id="log"></div></div>');
+document.body.insertAdjacentHTML('afterend','<div id="log-container" class=""><div id="log-title" onclick="toggleConsole(this)">console</div><div id="log"></div></div>');
 
 function toggleConsole(element) {
   element.parentElement.classList.toggle("expanded");
@@ -36,6 +36,7 @@ function rewireLoggingToElement(eleLocator, eleOverflowLocator, autoScroll) {
 
       if (autoScroll) {
         const eleContainerLog = eleOverflowLocator();
+        eleContainerLog.classList.add("expanded");
         const isScrolledToBottom = eleContainerLog.scrollHeight - eleContainerLog.clientHeight <= eleContainerLog.scrollTop + 1;
         eleLog.innerHTML += output + "<br>";
         if (isScrolledToBottom) {
