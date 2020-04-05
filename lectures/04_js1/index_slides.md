@@ -266,13 +266,31 @@ for (i = 0; i < 10; i++)  {
 ---
 name: dynamic typing
 
-```javascript
-var i;         // typeof i == undefined
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+var i;
+console.log(i, typeof(i));
+i = 32;
+console.log(i, typeof(i));
+i = 'foobar';
+console.log(i, typeof(i));
+i = true; 
+console.log(i, typeof(i));
+</pre>
 
-i = 32;        // typeof i == typeof 32 == 'number'
-i = 'foobar1'; // typeof i == typeof 'foobar' == 'string'
-i = true;      // typeof i == 'boolean'
-```
+</div>
 
 * have type of the last thing assigned
 * primitive types: `undefined`, `number`, `string`, `boolean`, `function`, `object`
@@ -289,7 +307,20 @@ name: type coercion
 
 * will automatically convert types!
 
-```js
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 console.log(5 * null)   // → 0
 
 console.log("5" - 1)    // → 4
@@ -299,7 +330,10 @@ console.log("5" + 1)    // → 51
 console.log("five" * 2) // → NaN
 
 console.log(false == 0) // → true
-```
+</pre>
+
+</div>
+
 
 ???
 * will convert things for fun and profit
@@ -307,6 +341,11 @@ console.log(false == 0) // → true
 * anything funny with the string and number examples? concatenation
 * can this cause problems? yes
 * more on false shortly
+* 5 * null = 0
+* "5" -1 = 4
+* "5" + 1 = 51
+* "five" * 2 = NaN
+* false == true = true
 * `console.log([] == "")` is true
 * `console.log(false == "")` is true etc
 
