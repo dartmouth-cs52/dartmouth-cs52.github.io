@@ -1,4 +1,4 @@
-#log-container:before {
+#log-container #log-title {
   display: block;
   height: 16px;
   content: "console";

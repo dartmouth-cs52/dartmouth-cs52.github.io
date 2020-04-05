@@ -1,6 +1,6 @@
 console.log("loading codepen cs52 plugins...");
 
-document.body.insertAdjacentHTML('afterend','<div id="log-container"><div id="log"></div></div>');
+document.body.insertAdjacentHTML('afterend','<div id="log-container"><div id="log-title"></div><div id="log"></div></div>');
 
 
 var c = function() {
