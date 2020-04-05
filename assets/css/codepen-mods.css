@@ -1,0 +1,15 @@
+#log-container { 
+  overflow: auto;
+  height: 150px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
+.log-warn { color: rgb(138, 64, 0)}
+.log-error { color: rgb(138, 0, 0) }
+.log-info { color: rgb(0, 119, 128) }
+.log-log { color: rgb(41, 41, 41) }
+
+.log-warn, .log-error { font-weight: bold; }
+
