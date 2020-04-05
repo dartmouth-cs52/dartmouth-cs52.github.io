@@ -15,6 +15,13 @@ $spacing-unit:     30px;
         "syntax-highlighting"
 ;
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .orange {
   color: #FF9C33;
 }

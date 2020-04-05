@@ -1,15 +1,31 @@
+#log-container:before {
+  display: block;
+  height: 16px;
+  content: "console";
+  font-size: 12px;
+  text-shadow: none;
+  background-color: lightgrey;
+  width: 140px;
+  position: fixed;
+  width: 95%;
+}
+
+
 #log-container { 
+  background-color: darkgrey;
   overflow: auto;
-  height: 150px;
+  height: 125px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1.5rem;
-  margin: 10px;
+  margin: 0px 10px 0px 10px;
+  position: fixed;
+  bottom: 0px;
+  width: 95%;
 }
 
 .log-warn { color: rgb(138, 64, 0)}
 .log-error { color: rgb(138, 0, 0) }
 .log-info { color: rgb(0, 119, 128) }
-.log-log { color: rgb(41, 41, 41) }
+.log-log { color: rgb(0, 0, 0) }
 
 .log-warn, .log-error { font-weight: bold; }
 
