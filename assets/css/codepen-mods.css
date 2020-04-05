@@ -1,7 +1,6 @@
 #log-container #log-title {
   display: block;
   height: 16px;
-  content: "console";
   font-size: 12px;
   text-shadow: none;
   background-color: lightgrey;
@@ -10,11 +9,14 @@
   width: 95%;
 }
 
+#log-container.expanded {
+  height: 125px !important;
+}
 
 #log-container { 
   background-color: darkgrey;
   overflow: auto;
-  height: 125px;
+  height: 16px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0px 10px 0px 10px;
   position: fixed;

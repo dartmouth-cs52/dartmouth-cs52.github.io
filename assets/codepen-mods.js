@@ -1,7 +1,14 @@
 console.log("loading codepen cs52 plugins...");
 
-document.body.insertAdjacentHTML('afterend','<div id="log-container"><div id="log-title"></div><div id="log"></div></div>');
+document.body.insertAdjacentHTML('afterend','<div id="log-container" class="expanded"><div id="log-title" onclick="toggleConsole(this)"></div><div id="log"></div></div>');
 
+function toggleConsole(element) {
+  element.parentElement.classList.toggle("expanded");
+}
+
+$('#log-title').on('click', function(e) {
+
+} );
 
 var c = function() {
   return({
