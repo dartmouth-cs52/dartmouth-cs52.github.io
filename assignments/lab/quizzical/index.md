@@ -337,4 +337,7 @@ You should host this on github pages as you have in the past.  Remember to have 
 * [http://www.w3schools.com](http://www.w3schools.com)
 * [https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)
 * [http://learn.shayhowe.com/html-css/building-forms/#radio-buttons](http://learn.shayhowe.com/html-css/building-forms/#radio-buttons)
+* [css-animation-for-beginners](https://thoughtbot.com/blog/css-animation-for-beginners)
 * [Chrome Devtools](https://developer.chrome.com/devtools)
+* [mycolor.space/](https://mycolor.space/)
+* [color.adobe.com/create/color-wheel](https://color.adobe.com/create/color-wheel)
