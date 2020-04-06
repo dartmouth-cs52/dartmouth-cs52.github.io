@@ -326,8 +326,9 @@ You should host this on github pages as you have in the past.  Remember to have 
 *feel free to suggest other possibilities*
 *always mention your extra credit in the README.md file*
 
-* More complex quiz scoring
+* More complex quiz scoring (weighted options, real science, probabilities)
 * Multiple quizzes / pages
+* ? (propose something)
 
 
 ## Resources:
