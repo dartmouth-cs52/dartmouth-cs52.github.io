@@ -11,17 +11,7 @@ layout: slides
   </header>
 
   <div class="post-content">
-    {{ content | replace: '<li>[ ]', '<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox">' | replace: '<li>[x]', '<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="" >'  }}
+    {{ content | replace: '<li>[ ]', '<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox">' | replace: '<li>[x]', '<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" checked="" >' }}
   </div>
 
 </article>
-
-{% if page.comment_term != nil %}
-<br>
-<hr>
-<script src="https://utteranc.es/client.js"
-        repo="dartmouth-cs52/dartmouth-cs52.github.io"
-        issue-term="comments-{{ page.comment_term }}"
-        async>
-</script>
-{% endif %}

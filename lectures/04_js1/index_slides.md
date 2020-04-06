@@ -267,7 +267,7 @@ for (i = 0; i < 10; i++)  {
 name: dynamic typing
 
 <div 
-  class="codepen hidden" 
+  class="codepen hidden" markdown="0"
   data-prefill='{
     "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
     "scripts": ["//cs52.me/assets/codepen-mods.js"]
