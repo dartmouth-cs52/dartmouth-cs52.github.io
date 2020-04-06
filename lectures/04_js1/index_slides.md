@@ -31,7 +31,6 @@ name: CS52
   * basic javascript
   * the DOM
 * Next:
-  * [lab1-landingpage](http://cs52.me/assignments/lab/landing-page/) due Saturday
   * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due Tuesday
   * next week quiz and 2 shorts
 
