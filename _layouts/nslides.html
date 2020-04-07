@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% include head.html %}
+
+<body>
+
+  <textarea id="source">
+    {{ content }}
+  </textarea>
+
+</body>
+
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script type="text/javascript">
+  var slideshow = remark.create({ navigation: { scroll: false, } });
+</script>
+
+</html>

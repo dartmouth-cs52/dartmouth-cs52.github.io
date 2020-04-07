@@ -1018,6 +1018,12 @@ name: "Cascading"?
 what is the cascading part of css?
 
 
+---
+name: Precedence
+
+.medium[![](img/tq-precendence.jpg)]
+
+
 
 ---
 name: Precedence and Cascading
@@ -1104,6 +1110,12 @@ name: CSS Box Model `border-box`
 * much more straightforward
 
 ???
+
+---
+name: CSS Box Model 
+
+.large[![](img/tq-border-box.jpg)]
+
 
 ---
 name: Content-Box Best Practice

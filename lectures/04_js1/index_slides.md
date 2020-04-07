@@ -17,12 +17,25 @@ name: base
 
 .title[{{name}}]
 
+
 ---
 name: CS52
 
+.medium[![](img/jabba_with_text.png)]
 
-.large[![](img/tq-border-box.jpg)]
 
+???
+* custom designed jabbascript for cs52 by a friend of mine
+
+
+---
+name: CS52
+
+.large[![](img/tq-drawings-ec.jpeg)]
+
+???
+* only 1 drawing so far, but one of the best!
+* ex for doodling - doesn't get much better than this
 
 ---
 name: CS52
@@ -31,33 +44,21 @@ name: CS52
   * basic javascript
   * the DOM
 * Next:
-  * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due Tuesday
-  * next week quiz and 2 shorts
+  * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due next week
+  * next week we dive into react and 2 shorts
+  * workshop groups to start soon
 
 ???
-* can do better on Questions
+* how are office hours - labs going?  any questions?
 * i know i'm an amazing lecturer, everything just makes sense whenever i speak
-* but lets do put down questions on the sheets
-* lab2 should be pretty quick for all, ya'all - its a half lab
 * we'll cover some stuff today that will be helpful.
+* workshops - tiny bit of EC for going next week
 * lab2 - building your own buzzfeed style quizz - 30 lines of js or less
+* lab2 should be pretty quick for all, ya'all - its a half lab
 * lots to cover today but more fun if you doodle or ask questions
 * quizzes generally unannounced as studying for them doesn't necessarily help - just pay attention to assignments - maybe study up on git branches and merges and pulls
 
 
-
-
-
----
-name: Table Questions?
-
-.large[![](img/tq-css-vs-js.jpg)]
-<br>
-.large[![](img/tq-sources.jpg)]
-
-
-???
-* solid bug nice
 
 
 ---
@@ -75,11 +76,7 @@ or
 // this method does x and y
 ```
 
-
----
-name: Table Questions?
-
-.medium[![](img/tq-precendence.jpg)]
+* if more than a function - mention in `README.md`
 
 
 ---
@@ -93,7 +90,8 @@ name: JS Deluge
 * but ask questions
 * let it all wash over you, a meditative javascript rain
 * for some reason i remembered this one as being more fun that it looks
-* later in the class, if you are asking for help and we ask soemthing like, what does this code do?  we most likely want a step through of,  this is a variable with the value x and we are passing that into a function etc. understanding what you think the code is doing is key to us helping
+* later in the class, if you are asking for help and we ask soemthing like, what does this code do?  we most likely want a step through of,  this is a variable with the value x and we are passing the variable reference to function b. 
+* understanding what you think the code is doing is key to us helping, but is also the key to being a coder - be the machine
 
 
 ---
@@ -127,11 +125,11 @@ name: Where in the Browser?
 ---
 name: What is JS?
 
-.medium[![](img/jabba_with_text.png)]
+.medium[![](img/big-picture.png)]
 
 
 ???
-* custom designed jabbascript for cs52 by a friend of mine
+* **structure - style/display - behavior**
 * we'll be doing sooo much javascript
 * good parts and bad parts (books written)
 * a **scripting language for coding inside of the browser** - the browser has a JS interpreter and runtime
@@ -184,16 +182,16 @@ name: ECMAScript
 ---
 name: mixed reviews
 
-[2018 stackoverflow developer survey](https://insights.stackoverflow.com/survey/2018/):
+[2019 stackoverflow developer survey](https://insights.stackoverflow.com/survey/2019/):
 
 
-.fancy.medium[![](img/stackoverflow/js-popularity.jpg)]
+.medium[![](img/stackoverflow/js.jpg)]
 
 ???
 * no relation to java (named that way by netscape as a marketing move because sun's java was popular)
 * love it, hate it
 * sure is popular though
-* 2019 results out in a couple of weeks, but unlikely to be different
+* 2020 results out in a couple of weeks, but unlikely to be different
 
 
 
@@ -281,12 +279,11 @@ name: dynamic typing
 <pre data-lang="babel">
 var i;
 console.log(i, typeof(i));
+
 i = 32;
 console.log(i, typeof(i));
-i = 'foobar';
-console.log(i, typeof(i));
-i = true; 
-console.log(i, typeof(i));
+
+//try 'string' or true etc; 
 </pre>
 
 </div>
@@ -347,6 +344,7 @@ console.log(false == 0) // → true
 * false == true = true
 * `console.log([] == "")` is true
 * `console.log(false == "")` is true etc
+*  for the == comparison is there a way to not have this happen?
 
 
 
@@ -377,16 +375,32 @@ name: string type
 
 * string is variable length char arrayish
 
-```js
-
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 var foo = 'bar'; // single quotes preferred but can use double
-foo.length // 3
+console.log(foo.length)
 
-var a = 'The ' + foo + ' is high.'; // es5 'foobar'
+var a = 'The ' + foo + ' is high.'; // es5
+
+console.log(a)
 
 // lots of useful string methods:
 // match, search, replace, toUpperCase, toLowerCase, slice, substr
-```
+</pre>
+
+</div>
 
 
 ???
@@ -479,6 +493,40 @@ typeof useless == 'function'
 * in function declaration you name the argument
 * can have default value
 
+---
+name: positional arguments
+
+<div 
+  class="codepen hidden" markdown="0"
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+
+function useless(x, y) { 
+  console.log(x, y);
+  console.log(arguments[0], arguments[1], arguments[2]);
+}
+
+console.log(useless("a", "b"));
+
+</pre>
+
+</div>
+
+???
+* change x,y order in arguments
+* take out y
+* point out arguments[2]
+* what is the last console.log doing? undefined?
 
 
 ---
@@ -491,7 +539,7 @@ name:  functions as arguments
 //default values
 var foo = function(x="hi") { console.log(x);}
 
-//passing function as argument
+//passing function reference as argument
 setTimeout(foo, 1000);
 
 //anonymous function
@@ -502,30 +550,81 @@ setTimeout(function() {console.log("hello")}, 1000);
 ???
 * if there is anything you remember today, its that you can pass functions around, that that is the js way
 
+---
+name: reference vs return value
+
+<div 
+  class="codepen hidden" markdown="0"
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+
+var foo = function() { console.log("i'm alive") };
+
+var bar = function() {
+  return function() { console.log("yup, still here") };
+}
+
+//why doesn't this wait?!
+setTimeout(foo(), 4000);
+
+</pre>
+
+</div>
+
+???
+* 
 
 ---
-name: object type
+name: object type (ie. everything is a dictionary)
 
 * is a .orange[hashmap] aka a .blue[dictionary] of:
   * name-value pairs called properties
 * global scope is just an object (in browser `window`)
 * can have functions as properties (called methods)
 
-```js
 
+<div 
+  class="codepen hidden" markdown="0"
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 var foo = {};  //empty object
 
 var bar = {
   name: 'Anna', //no need to quotes for key
   'state': 'nh',
   age: 23,
-  sayHi: () => {
-    alert(`my name is ${this.name}`);
+  sayHi: function() {
+    console.log(`my name is ${this.name}`);
   }
 }
 
-bar.name === bar['name']
-```
+console.log(bar.name === bar['name']);
+bar.sayHi();
+</pre>
+
+</div>
+
+
 ???
 * what it all boils down to though is objects and what they are
 * note es6 arrow function
@@ -538,6 +637,7 @@ bar.name === bar['name']
 
 ---
 name: more properties
+
 
 ```js
 // adding
@@ -564,22 +664,36 @@ name: Arrays
 * polymorphic and sparse
 * oddity: can have properties ?!
 
-```js
-
+<div 
+  class="codepen hidden" markdown="0"
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 var list = [1, 2, 'three', null, () => { console.log('hi'); } ];
 
 list[2]; // returns 'three'
 list[4]; // returns function
-list[4](); // ?
 
 list[500] = 'sparse array';
 // useful methods: push(), pop(), sort(), reverse(), splice()
 // and properties: length
 list.myownthing = 'why is this here';
-```
+</pre>
+
+</div>
+
 
 ???
-* list[4] // returns undefined and prints hi
+* console.log(list[4]) // returns undefined and prints hi - whyfor?
 * powerful but also confusing
 
 
@@ -610,7 +724,21 @@ date.toLocaleString() = '1/9/2016, 9:08:36 AM'
 ---
 name: Logical operators
 
-```js
+
+<div 
+  class="codepen hidden" markdown="0"
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 // and &&
 console.log(true && false)   // → false
 console.log(true && true)    // → true
@@ -623,9 +751,12 @@ console.log(false || false)  // → false
 console.log(!true)           // false
 
 // ternary or conditional operator
-console.log(true ? 1 : 2);   // → 1
-console.log(false ? 1 : 2);  // → 2
-```
+console.log(true ? 1 : 2);
+console.log(false ? 1 : 2);
+</pre>
+
+</div>
+
 
 ???
 * i'm a fan of ternary -- dumb python
@@ -686,7 +817,7 @@ name: short-circuiting
 ---
 name: DOM essentials
 
-.fancy.medium_small[![](img/dom-tree.png)]
+.medium_small[![](img/dom-tree.png)]
 
 * Document Object Model
 
@@ -793,7 +924,7 @@ name: tree graph
 ---
 name: traversal
 
-.fancy.medium_small[![](img/dom-links.png)]
+.medium_small[![](img/dom-links.png)]
 
 ```javascript
 element = document.body.firstChild.nextSibling.firstChild;
@@ -957,7 +1088,10 @@ name: Events
 ---
 name: event handling
 
-<iframe src="//giphy.com/embed/DDyJmi8wFJuP6?hideSocial=true" width="380" height="164" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
+.small[![](img/eventhandler.png)]
+
+<!-- <iframe src="//giphy.com/embed/DDyJmi8wFJuP6?hideSocial=true" width="380" height="164" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
 
 * to handle an event one needs:
   * .orange[target element]
@@ -1044,33 +1178,66 @@ name:
 
 ---
 name: Event Propagation
+<div 
+  class="codepen hidden" markdown="0"
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="css">
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-```html
-<body>
-  <article onClick=...>
-    <section>
-      <button onClick=...>
-        <img src="foo">
-      </button>
+*:focus {
+  outline: 0;
+}
 
-  </article>
-</body>
-```
+#container {
+	display: grid;
+	min-height: 100vh;
+}
 
-```javascript
-
-$('button').on('click', function(event){
-  event.stopPropagation();
-  alert(event.target.name); }
+.box {
+	box-shadow: 0 0 0 1px #1c1c1c;
+	margin: auto;
+	padding: 2em;
+}
+</pre>
+<pre data-lang="html">
+<div id="container">
+  <div id="div-one" class="box">
+    <div id="div-two" class="box">
+      <div id="div-three" class="box">
+        Click
+      </div>
+    </div>
+  </div>
+</div>
+</pre>
+<pre data-lang="babel">
+$('.box').on('click', function(event){
+  //event.stopPropagation();
+  console.log(event.currentTarget.id); }
 );
-```
+</pre>
 
+</div>
 
 ???
-* what happens when someone clicks on the img?
+* what happens when someone clicks on the center?
 * ALL will fire unless the event is stopped.
-* currentTarget will be button
-* what will be target?  img
+* currentTarget will be the one with the event
+* what will be target?  the innermost actual clicked
 * but this depends on which direction the event was set to trigger at at?
 * direction!?!?
 
@@ -1086,7 +1253,8 @@ name: Bubbling & Capturing
 (from [w3c](https://www.w3.org/TR/DOM-Level-3-Events/#h3_event-flow))
 
 ???
-* on events (onclick, onmouseover, etc) are typically *bubbling* phase event triggering by default
+* given a tree of rectangles, how would you capture an event if you had x,y coordinates?
+* on events (onclick, onmouseover, etc) are typically **bubbling** phase event triggering by default
 * with `addEventListener` can set which direction bubbling or capture
 * have to be careful sometimes as `stopPropagation` on a capture event might mean you are blocking all of that event from getting to their destination
 
@@ -1120,6 +1288,18 @@ name: Tired?
 
 ???
 * questions
+* ok take a quick stretch break - 4 min as you stare at this
+
+
+---
+name: jquery magic
+
+<video loop controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/catappear.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/catappear.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/catappear.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
 
 
 ---
@@ -1175,7 +1355,8 @@ game.resPool.resources.forEach(function(resource) { resource.value = 100000000; 
 ---
 name: Variable Scoping
 
-Two scopes: Global and function local
+* Scope is the visibility of a variable - where it lives
+* Two scopes: global and function local
 
 ```javascript
 var x = "outside";
@@ -1196,9 +1377,9 @@ console.log(x);  // → inside f2
 ```
 
 ???
-* scope is the visibility of a variable, etc
+* **scope is the visibility of a variable**, etc
 * everything outside of function is global
-* inside of function is function scope
+* inside of function is **function scope**
 * if declared
 * in second example just refers to global
 * shadowing is bad (redeclaring locally on purpose)
@@ -1210,9 +1391,9 @@ console.log(x);  // → inside f2
 ---
 name: Variable Hoisting
 
-* `var` statements hoisted to top of scope:
+* `var` declarations hoisted to top of scope:
 
-.right[
+.left[
 ```js
 function foo() {
   var x;
@@ -1227,7 +1408,7 @@ function foo() {
 }
 ```
 ]
-.left[
+.right[
 ```js
 function foo() {
   console.log(x); // → undefined
@@ -1256,10 +1437,26 @@ function foo() {
 ---
 name: Function hoisting
 
-```js
-
-showState1();  // output: Ready
-showState2();  // undefined
+<div 
+  class="codepen hidden" markdown="0"
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+try {
+  showState1();
+  showState2();
+} catch(e) {
+  console.log(e.message)
+}
 
 // is variable
 var showState2 = function() {
@@ -1270,13 +1467,15 @@ var showState2 = function() {
 function showState1() {
   console.log("Ready");
 }
+</pre>
 
-```
+</div>
+
 
 
 ???
 * all functions are hoisted to the top of their scope
-* not just declaration actual stuff
+* not just declaration but actual function
 * remember js can be an imperative scripting language
 * generally otherwise you have to define functions in order of use unless you were in a class (later)
 
@@ -1453,10 +1652,10 @@ name: resources
 * http://www.learn-js.org/
 
 ---
-name:  Lab1 + Lab2! 
+name: Lab2! 
 
 * Workshops!
-* Lab1 due Saturday
+* Lab1 due Thurs
 * Lab2 out and due Tuesday
   * [http://cs52.me/assignments/lab/quizzical/](http://cs52.me/assignments/lab/quizzical/)
 

@@ -41,20 +41,20 @@ fetch(proxyUrl + targetUrl, {
 * [3/31 Structure of the Internet](01_interwebs/)
 <!-- * 4/1 HTML -->
 * [4/1 HTML](02_html/)
-* 4/2 Git
-<!-- * [4/2 Git](02_git/) -->
 <!-- * 4/2 CSS -->
 * [4/2 CSS ](03_css/)
+<!-- * 4/7 JS and DOM -->
+* [4/7 JS and DOM](04_js1)
 * 4/8 Some Design Things
 <!-- * [4/8 Some Design Things](03_design/) -->
-* 4/9 JS and DOM
-<!-- * [4/9 JS and DOM](04_js1) -->
-* 4/14 JS P2
-<!-- * [4/14 JS P2](05_js2) -->
-* 4/16 Frameworks Intro
-<!-- * [4/16 Frameworks Intro](06_react1) -->
-* 4/21 React
-<!-- * [4/21 React](07_react2) -->
+* 4/8 Git
+<!-- * [4/8 Git](02_git/) -->
+* 4/9 JS P2
+<!-- * [4/9 JS P2](05_js2) -->
+* 4/14 Frameworks Intro
+<!-- * [4/14 Frameworks Intro](06_react1) -->
+* 4/16 React
+<!-- * [4/16 React](07_react2) -->
 * 4/22 Project Intro
 <!-- * [4/24 Projects](07_project_intro) -->
 <!-- * [4/25 Projects Intro](../projects/) -->
