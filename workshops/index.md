@@ -5,7 +5,7 @@ permalink: /workshops/
 comment_term: workshops
 ---
 
-## Listing
+<!-- ## Listing -->
 
 *Workshops will be published here as they happen.*{: .warning}
 
@@ -39,24 +39,32 @@ comment_term: workshops
 
 Each workshop session will consist of two parts: a zoom slide presentation to the class and a do-at-your-own-pace tutorial on a web technology, tool, framework, or concept. 
 
-The presentation will be 20 minutes to motivate the technology, show its use cases and 
+**The presentation** will be 20 minutes to motivate the technology, demo its use cases, and discuss challenges and opportunities.
 
-The tutorial will be a written online document in the form of a [markdown](https://guides.github.com/features/mastering-markdown/) readme file in a git repo.
+**The tutorial** will be a written online document in the form of a [markdown](https://guides.github.com/features/mastering-markdown/) readme file in a git repo.
 
+🚧 In the past we did this as a workshop session in class. This term we'll try out something new.  The presentation will be over Zoom and the tutorial will be do-at-your-own-pace instead of in class. Some of our classes will be shorter to allow us to do these.
+
+
+## Participant:
+
+You will be required to attempt 6 of the 12 workshops.  These can be of your choosing.  They will be graded but on effort not final product.  
+
+
+# Presentation:
 
 ## To Start
 
-We'll be using **github classroom** to autoprovision repositories and set up teams.
+We'll be using **github classroom** to autoprovision repositories and set up teams. You will set up 2 repositories, one for the tutorial and any starter code, and another one with your solution.
 
-Every member on your team **must** use github classroom to set up the teams correctly and automatically.  Find the link for github classroom on the Canvas assignment.
+Every member on your team **must** use github classroom to set up the teams correctly and automatically.  Find the links for github classroom on the Canvas assignment.
 
-The first person on your team will name the repo and the team. Each consecutive person will click on the same github classroom link and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place. Remember, use the github classroom to create **and join** the repository. Everybody on your team must click this link. Do not add team members as collaborators manually.
+The first person on your team will name the repo and the team. Each consecutive person will click on the same github classroom link and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place. Remember, use the github classroom to create **and join** the repository. Everybody on your team must click this link. **Do not add team members as collaborators manually**.
 
 ## Workshop Overview
 
-* [10-15 Minute Intro Presentation](#presentation-section)
-* [30 Minute Tutorial](#tutorial-section)
-* [5-10 Minute Wrap-Up Discussion](#wrap-up-discussion-section)
+* [20 Minute Intro Presentation](#presentation-section)
+* [30-60 Minute Written Tutorial](#tutorial-section)
 
 ## Teams
 
@@ -64,24 +72,27 @@ Teams of ~5 will be formed around dates and a set of potential topics. Your and 
 
 ## Setup
 
-If your tutorial requires any lengthy download or install procedures please let the class know at least 2 days in advance.
+If your tutorial requires any lengthy download or install procedures please label this clearly at the top of your workshop. 
 
 ## Details
 
 ### Presentation Section
 
-~(10-15 minutes)
+~(20 minutes)
 
+* [ELI5](https://www.reddit.com/r/explainlikeimfive/)
 * motivate the technology
-* show where the technology fits into the web dev process (dev tool, frontend framework, preprocessor, language etc)
+* where in the stack — show where the technology fits into the web dev process (dev tool, frontend framework, preprocessor, language etc)
 * show some use cases
-* discuss pros/cons
+* discuss challenges and opportunities
+* demo your tutorial
+* summarize
 
 Motivating the technology is import.  This should start with an [ELI5](https://www.reddit.com/r/explainlikeimfive/) and then you can expand to how it fits in with what we've learned so far and use cases. What is the big deal about this thing you are presenting, why should I care? 
 
 ### Tutorial Section
 
-(~30-40 minutes)
+(~60 minutes)
 
 Your written tutorial document will be a walkthrough of building something using the specific web technologies.
 
@@ -95,27 +106,36 @@ It should include:
   * best practices
 * 2 reflection questions
 
-End the tutorial with a "what you should have at this point" section which includes a **short** listing of features. This is the minimal set of things you think they should accomplished/learned during the course of the tutorial and will be used in grading. Format this as a checklist:
+End the tutorial with a "what you should have at this point" section which includes a **short** listing of features. This is the minimal set of things you think they should accomplished/learned during the course of the tutorial. Format this as a checklist:
 
 - [x] created navbar
 - [ ] styled body
 - [ ] clickable buttons
 
 
-### Wrap-Up Discussion Section
+### Process
 
-(~5-10 minutes)
+To prepare I recommend the following steps:
 
-* lead short discussion
-* answer questions
-* individual teams share results
+For tutorial:
+
+  1. Research the technology individually (keep notes)
+  1. Come together and discuss and plan idea for a tutorial
+  1. Individually or in pairs implement some of the parts of the tutorial (keep notes)
+  1. Then write up tutorial based on notes
+  1. Crucial: follow the tutorial to implement again - this is how you catch bugs - and there will be some.
+
+*^ you can recreate or combine from other tutorials — but the best liked tutorials have an original/Dartmouth bit to them.*
+
+For the presentation:
+
+  1. Using research gathered collaboratively create presentation in google docs
+  1. Practice in Zoom together - if there are any technological issues let me know. 
+  1. For the actual presentation we'll start with scheduled lecture and then in the second half of class will do the presentation and people can work on the tutorial after.
+  1. We'll record the Zoom presentation and make it available similar to class.
 
 
 ## To Turn In (due after workshop):
 
-* link to github repo for tutorial
+* link to github repo for tutorial and sample solution if necessary
 * link or file upload of presentation slides
-* a brief (3 short paragraphs) summary of the workshop itself (just in canvas):
-  * what went well
-  * what didn't
-  * what you would do differently "next time"
