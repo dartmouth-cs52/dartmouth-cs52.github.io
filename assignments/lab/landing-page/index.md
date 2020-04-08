@@ -234,6 +234,8 @@ Most likely it did not resize well. We'll deal with this using a single media qu
 
 Anything in this media query will only apply if the screen is fairly narrow.  Don't worry about it working on every single device - rather focus on it working in a more general fashion in a "mobile" width vs "desktop".  Flex-boxes will take care of things being responsive in most widths but you want to make sure that there is a mobile version where a few bigger site wide changes happen: rows into columns, nav links into hamburger menu.
 
+⚠️ Add ```<meta name="viewport" content="width=device-width, initial-scale=1">``` to the head section of your html. This tells the mobile browser to not pretend to be a real browser and use actual device pixels for width and allows you to test on mobile / in the Chrome mobile device mode.
+
 Techniques to try:
 
 ```css
