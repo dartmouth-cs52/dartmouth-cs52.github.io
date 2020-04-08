@@ -12,6 +12,8 @@ Did you accept the invitation to the https://github.com/dartmouth-cs52-20S organ
 Start here:
 [20S-git-map](https://github.com/dartmouth-cs52-20S/git-map)
 
+If you need help, post in the #sa2-git-map Slack channel. 
+
 ### To Turn In
 
 1. URLs to your successfully closed pull requests (you can find your pull requests [here](https://github.com/dartmouth-cs52-20S/git-map/pulls?q=is%3Apr+is%3Aclosed)). Its ok and normal to have several of these, you don't have to have gotten it right the first time. Requirements:
@@ -23,7 +25,3 @@ Start here:
   * How comfortable do you feel you are with git?
   * Is there anything about git flow you'd like covered in more detail?
 
-### Extra Credit
-
-* You could play around with adding more things to the map or improving how things are scaled or displayed on the map (difficult).
-* Help fix someone else's merge conflicts or json bugs in the file.

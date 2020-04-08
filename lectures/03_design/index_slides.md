@@ -55,7 +55,7 @@ name: But I just want to code!!
 
 
 ---
-name: Step 1: Inspiration Board
+name: Step 0a: Inspiration Board
 
 * find examples of similar products
 * take screenshots / save urls
@@ -71,7 +71,21 @@ name: Step 1: Inspiration Board
 
 
 ---
-name: Step 2: Sketches
+name: Step 0b: Imitate / Steal / Use DesignKits
+
+<!-- .fancy.medium[![good vs bad design](img/goodvsbad.png)] -->
+.fancy.medium[![design kits](img/components.gif)]
+* https://dribbble.com/
+* https://blog.prototypr.io/design-for-programmers-d38c56982cd0
+* https://www.awwwards.com/web-design-trends-for-2017.html
+* https://www.figma.com/resources/assets/
+
+???
+* best form of flattery is imitation
+* design kits are the best
+
+---
+name: Step 1: Sketches
 
 * paper is best
 * quickly jot down views and functionalities
@@ -85,7 +99,7 @@ name: Step 2: Sketches
 * we'll try to get to that today
 
 ---
-name: Step 3: Mockups
+name: Step 2: Mockups
 
 * with inspiration and sketches
 * start on mockups ([Figma](http://figma.com))
@@ -115,11 +129,10 @@ name: Importance of User Flow
 
 
 ---
-name: Step 4: Functional Mockups
+name: Step 3: Functional Mockups
 
 * put mockups together
 * build with [Figma](https://help.figma.com/article/199-getting-started-with-prototyping)
-* for paper sketches use: [MarvelApp PopPaper](https://marvelapp.com/pop/)
 
 .fancy.medium[[![figma prototyping](img/proto-figma-2.gif)](https://help.figma.com/article/199-getting-started-with-prototyping)]
 
@@ -128,7 +141,6 @@ name: Step 4: Functional Mockups
 * woop forgot some logic path from one view to another
 * can run it by users and see if they can figure it out
 * again for the AR or robot projects - can use sketches or shapes and words
-
 
 
 
@@ -167,7 +179,7 @@ name: Hierarchy
 
 
 ---
-name: More Principles
+name: More Visual Design Principles
 
 
 <div id="" style="overflow:scroll; height:400px;">
@@ -224,6 +236,25 @@ name: Flux Express
 * but blue isn't appetizing - they rebranded multiple times
 * it looks clean - until you realize you're supposed to order food
 
+
+---
+name:  Mockups: Figma
+
+
+.fancy.medium_small[![](img/figma.gif)]
+
+* vector drawing
+* design kits
+* prototyping
+* animation
+* collaboration
+* engineering blog
+
+
+???
+* upload sketches here
+* create designs here
+* read their engineering blog
 
 
 
@@ -283,6 +314,7 @@ name: Let's play!
 
 
 [cs52.me/workshops/design](/workshops/design)
+
 
 ???
 * the next lab is to build a buzzfeed quiz

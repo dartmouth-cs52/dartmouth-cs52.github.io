@@ -42,11 +42,23 @@ name: social coding
 
 
 ---
+name: why git? source version control
+
+<iframe width="660" height="415" src="https://www.youtube.com/embed/cNBtDstOTmA?start=6" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
+
+???
+* there were other source version control systems
+* git was distributed - all versions of everything live on your computer
+* invented by linus torvalds to help work on linux, the thing that basically popularized the open source movement.
+
+---
 name: transports
 
 .medium_small[![](img/git_data_transport.png)]
 
 ???
+
+
 
 
 ---
@@ -110,13 +122,3 @@ name: Git Short Assignment!
 
 ???
 
-
-
----
-name: Next Time
-
-* CSS: Everything you wanted to know about making things look pretty.
-* SA2 Due Friday
-* LAB1 Out Today (can get started but due next week since you need CSS first)
-
-???
