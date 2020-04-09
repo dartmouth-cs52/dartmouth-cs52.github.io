@@ -49,8 +49,8 @@ fetch(proxyUrl + targetUrl, {
 * [4/8 Some Design Things](03_design/)
 <!-- * 4/8 Git -->
 * [4/8 Git](02_git/)
-* 4/9 JS P2
-<!-- * [4/9 JS P2](05_js2) -->
+<!-- * 4/9 JS P2 -->
+* [4/9 JS P2](05_js2)
 * 4/14 Frameworks Intro
 <!-- * [4/14 Frameworks Intro](06_react1) -->
 * 4/16 React

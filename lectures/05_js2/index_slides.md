@@ -23,14 +23,17 @@ name: base
 name: CS52
 
 * Today:
+  * lab1 show
   * more javascript!
   * newer javascript!
   * tricky javascript!
-  * our first team workshop!
-  * our first quiz!
+  * team workshop
+  * sections
+  <!-- * our first quiz! -->
 
 
 ???
+* SECTIONS?!
 * goals of workshop
   * present breadth of material - not just what i like
   * have a bit of hack fun during class - had a geog class that was like this and i really enjoyed it
@@ -41,7 +44,40 @@ name: CS52
   * will have some mandatory xhours since the class is so big
 
 ---
-name: table questions
+name: oh the css
+
+
+.large[![](img/tq-css.jpg)]
+
+
+???
+* 
+
+
+---
+name: some labs1 to explore
+
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-chanchavac2022/" target="_blank">[content]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-Meriem-Fouad/" target="_blank">[chocolate]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-iankhou/" target="_blank">[css typewriter]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-dmw21/#" target="_blank">[coffee]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-katrinayu1213/" target="_blank">[classy]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-BCritchfield/" target="_blank">[checkbox hack]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-hack-heart/#" target="_blank">[company and color scheme]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-rohithm1/" target="_blank">[css animation]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-catherinedparnell/" target="_blank">[css animation + parallax +]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-musabshak/" target="_blank">[buttons]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-srishtibagchi/" target="_blank">[magazine]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-rcaverob/" target="_blank">[restaurant]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-grantrdumanian/" target="_blank">[climbing]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-georgina-davis/" target="_blank">[clean living]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-nicBerg/" target="_blank">[?]</a>
+
+
+
+
+---
+name: reminder for frontend console
 
 
 ![](img/inspector.jpg)
@@ -54,46 +90,15 @@ name: table questions
 
 
 
----
-name: table questions
-
+<!-- name: re
+ 
+ MOVE BACK
 
 .small[![](img/tq-butimright.jpg)]
-.small[![](img/tq-flexbox.jpg)]
+.small[![](img/tq-flexbox.jpg)] 
+-->
 
 
-???
-* 
-
----
-name: table questions
-
-
-.large[![](img/tq-css.jpg)]
-
-
-???
-* 
-
-
-
-
----
-name: various administrative
-
-
-.left[
-* short assignment 3 out today! due Friday
-* short assignment 4 out Thursday! due Monday
-]
-
-.right.small[![](img/table4-balloon.jpeg)]
-
-
-???
-* nothing to worry about, if you understood what you did in the assignment (ie read it and coded it) should be fine
-* 2 short assignments out at the same time, both should be doable in one sit down
-* js asynch game will hopefully be out thursday!
 
 
 
@@ -134,14 +139,33 @@ name: what is es6/es7?!?!
 ---
 name: es6 template string
 
-```js
 
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 const foo = 'bar'; // single quotes preferred but can use double
 
-let a = 'The ' + foo + ' is high.'; // es5 'foobar'
+// es5
+let a = 'The ' + foo + ' is high.'; 
+
 //prefer es6:
-let a = `The ${foo} is high.`;
-```
+a = `The ${foo} is high.`;
+
+console.log(a);
+</pre>
+
+</div>
 
 
 ???
@@ -149,14 +173,11 @@ let a = `The ${foo} is high.`;
 * why is string concatenation bad? (array concatenation - each plus allocates a new array and copies each element in)
 
 
-
-
-
 ---
 name: closure and scope trickiness
 
 <div 
-  class="codepen" markdown="0"
+  class="codepen hidden" 
   data-prefill='{
     "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
     "scripts": ["//cs52.me/assets/codepen-mods.js", "https://code.jquery.com/jquery-2.2.4.min.js"]
@@ -198,7 +219,7 @@ blockquote {
   border: 2px solid #c8c8c8;
   border-radius: 1em;
   height: 1.5em;
-  width: 22em;
+  width: 250px;
   text-align: center;
   padding: 20px;
   position: relative;
@@ -236,7 +257,6 @@ function go() {
     }, i * 1500);
   }
   
-  // alias i or
   // use let or
 
   /*
@@ -249,7 +269,6 @@ function go() {
 
 }
 
-// from: https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/
 
 let cat = {
   speech: $("#speech"),
@@ -265,10 +284,12 @@ let cat = {
 };
 
 $("#go").on("click", function () { go(); });</pre>
+// from: https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/
 
 </div>
 
 ???
+* btw where you see "babel" that means we are using the latest features of javascript  - we'll learn what babel does next week/ in the next short assignment
 * reference retained to a variable that changes!
 * note: easy way to fix this in es6, use let, or don't use for loops
 * DON"T USE var:
@@ -276,18 +297,34 @@ $("#go").on("click", function () { go(); });</pre>
   * i is available after for loop
 
 
+
+
+---
+name: programming practices
+
+
+<video loop controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/programmingpractices.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/programmingpractices.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/programmingpractices.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
+
+???
+* template strings might not qualify as dangerous - mostly stylistic but some things we talk about can cause hard to find bugs- like shadowing variables, using var
+
+
 ---
 name:  let
 
-* let variables are block-scoped (not whole function)
+* let variables are block-scoped (not just function -> while, if, for)
 * still hoisted
 * global let variables are not properties on `window`
 * `for (let x...)` create a fresh binding for x in each iteration
-* error to use a let variable before its declaration is reached
+* error to use a let variable before declaration is reached
 * redeclaring a variable with let is a SyntaxError
 * use for variables that need reassigning
 
-<!-- from https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/ -->
 ???
 * all good things
 * use let instead of var, kids
@@ -300,9 +337,8 @@ name:  const
 * simple:
   * variables declared with const are just like let
   * except that you can only assign to them when you declare them
-  * ie. no reassignment
+  * ie. no reassignment allowed
 
-<!-- from https://hacks.mozilla.org/2015/07/es6-in-depth-let-and-const/ -->
 ???
 
 
@@ -314,7 +350,21 @@ name: OOP try 1
   * property of an object can be a function
   * instance variables
 
-```javascript
+
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 var o = {
   count: 0,
   increment: function(amount) {
@@ -323,10 +373,12 @@ var o = {
   }
 }
 
-console.log(o.increment());  // 1
-console.log(o.increment(2)); // 3
-console.log(o.increment(2)); // 5
-```
+console.log(o.increment());
+console.log(o.increment(2));
+console.log(o.increment(2));
+</pre>
+
+</div>
 
 
 ???
@@ -337,7 +389,20 @@ console.log(o.increment(2)); // 5
 ---
 name: functions are objects
 
-```javascript
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 function plus1(value) {
   if (!plus1.invocations) {
     plus1.invocations = 0;
@@ -346,11 +411,16 @@ function plus1(value) {
   return value + 1;
  }
 
- console.log(plus1(10));   // → 11
- console.log(plus1(20));   // → 21
+ console.log(plus1(10));  
+ console.log(plus1(20)); 
 
- console.log(plus1.invocations); // → 2
-```
+ console.log(plus1.invocations);
+
+</pre>
+
+</div>
+
+
 ???
 * tracks how many times it was called
 * does this make sense? How does this work?
@@ -385,19 +455,54 @@ obj.bar(); // `this` will refer to `object`
 * difference in object vs function
 * this will come back and haunt you sometimes
 * who (which object) is the runner of the function
+* couldn't run these in the interactive mode because there are
 
 
 
 ---
 name: this
 
-<p data-height="435" data-theme-id="24117" data-slug-hash="d79000007acee9162b42e3ce4b915f0e" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/f2e5b9149a019b953859e6de0af83f54/">talking cat var scoping problem</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+let flower = {
+  petalCount: 10,
+  bloom: function(){
+  	$('#out').text(`I have ${this.petalCount} petals!`);
+  },
+  //option 1
+  lateBloom: function(){ setTimeout(this.bloom,1000) },
+  //option 2
+  lateBloomBound: function(){ setTimeout(this.bloom.bind(this),1000) },
+  // option 3
+  lateBloomArrow: function(){
+    setTimeout(()=> {this.bloom()},1000);
+  }
+}
 
+flower.lateBloom(); 
+</pre>
+<pre data-lang="html">
+<div id="out"></div>
+</pre>
+
+</div>
 
 ???
 * why do we care about `this`?
 * this won't run
-* setTimeout always runs in the context of window
+* setTimeout always runs in the context of window - just as an illustration - this could have been a button instead
 * window does not have a petalCount!
 
 
@@ -449,7 +554,50 @@ setTimeout( function() {
 ---
 name: that = this
 
-<p data-height="300" data-theme-id="24117" data-slug-hash="9b0e116d14ee8078c8b86066f0d2ab5f" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/9b0e116d14ee8078c8b86066f0d2ab5f/">9b0e116d14ee8078c8b86066f0d2ab5f</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+var button = $('#greeting');
+var double = function () {
+  // that trick?
+  setTimeout(function() {
+    try{
+      $(this).clone().appendTo('#output');
+    }catch(err){
+      console.log(err.message);
+    }
+  }, 1000);
+  // or bind?
+};
+
+button.on("click", double);
+</pre>
+<pre data-lang="html">
+<button id="greeting">HELLO</button>
+<div id="output"></div></pre>
+<pre data-lang="css">
+button {
+  background: #0a0;
+  color: white;
+  margin: 10px;
+  border-radius: 0.2em;
+  border-width: 0.0em;
+  padding: 0.2em 3em;
+  font-size: 2em;
+}
+</pre>
+</div>
 
 ???
 * this is button -- but setTimeout scope is window
@@ -466,7 +614,20 @@ name: classes (old way)
   * use the new keyword
   * functions used this way are constructors
 
-```javascript
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 function Rectangle(width, height) {
   this.width = width;
   this.height = height;
@@ -474,8 +635,10 @@ function Rectangle(width, height) {
 }
 var r = new Rectangle(26, 14);
 console.log(r)
-// Rectangle { width: 26, height: 14, area: [Function] }
-```
+</pre>
+
+</div>
+
 
 ???
 * anybody remember constructors in java? what do they do?  (function that returns an instance of the class -> an object)
@@ -508,27 +671,46 @@ name: inheritance
 ---
 name: adding to prototype
 
-```javascript
+
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 function Rectangle(width, height) {
   this.width = width;
   this.height = height;
 }
 
-let r = new Rectangle(26, 14);  // {width: 26, height: 14}
+let r = new Rectangle(26, 14);
 
 Rectangle.prototype.area = function() {
    return this.width*this.height;
 }
 
-r.area();  // 364
-Object.keys(r) == [ 'width', 'height' ] // own properties
-```
+console.log(r.area());
+console.log(Object.keys(r)); //only own props
+</pre>
+
+</div>
 
 
 ???
 * changing prototype will cause all instances to change
 * this is similar to just adding a property to a function buuut
 * adding to prototype will change all instances
+* `String.prototype.isPalindrome = function() {
+    return this == this.split('').reverse().join('');
+} // radar, "live on time emit no evil"`
 
 
 
@@ -605,7 +787,20 @@ name: BUT WAIT!
 ---
 name: es6 class syntax
 
-```javascript
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
 class Bunny {
   constructor(name, favoriteFood){
     this.name = name;
@@ -618,8 +813,10 @@ class Bunny {
 
 let es6Bunny = new Bunny('Brigadier Fluffkins', 'Raspberry Leaves');
 es6Bunny.eatFavFood();
-// Raspberry Leaves, yum!
-```
+</pre>
+
+</div>
+
 
 <!-- from: https://medium.freecodecamp.com/learn-es6-the-dope-way-part-v-classes-browser-compatibility-transpiling-es6-code-47f62267661#.g5wa16op9 -->
 
@@ -634,10 +831,32 @@ es6Bunny.eatFavFood();
 
 ---
 name: es6 inheritance
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+class Bunny {
+  constructor(name, favoriteFood){
+    this.name = name;
+    this.favoriteFood = favoriteFood;
+  }
+  eatFavFood() {
+    console.log(`${this.favoriteFood}, yum!`);
+  };
+}
 
-```javascript
 class BelgianHare extends Bunny {
-  constructor(favDrink, favoriteFood, name) {
+  constructor(name, favoriteFood, favDrink) {
     super(name, favoriteFood);
     this.favDrink = favDrink;
   }
@@ -646,7 +865,13 @@ class BelgianHare extends Bunny {
     console.log(`glug glug ${this.favDrink}`)
   }
 }
-```
+
+let es6Bunny = new BelgianHare('Brigadier Fluffkins', 'Raspberry Leaves', "New England IPA");
+es6Bunny.drinkFavDrink();
+</pre>
+
+</div>
+
 ???
 * as you would expect `extends`
 * super to invoke base class constructor *required*
@@ -674,6 +899,7 @@ name: Functional Programming
 * everything is a function
 * no/minimal mutable objects
 * state is in stack vs heap
+* easier to: test, parallelize, debug
 
 .fancy.small[![](img/lovefunctional.jpg)]
 
@@ -718,7 +944,9 @@ let results = anArray.map( (value, i) => {
 * pass functions as arguments is key
   * is possible because functions are first-class
 * note the array does not have to be mutable
-* fp premise 1:  immutable is better
+  * has anyone tried to change an array while inside of a for loop? 
+* fp premise:
+  * immutable is better
   * functions take in arguments
   * spit out new results
   * no modification of things in place
@@ -771,7 +999,7 @@ console.log(sum(range(1, 10)));
 ```
 
 ???
-* fp is elegant
+* fp can be elegant
 
 
 
@@ -806,7 +1034,72 @@ inFive( ()=> {console.log('hi'); } );
 ---
 name: filter, map, reduce
 
-<p data-height="400" data-theme-id="24117" data-slug-hash="74f50559357975493892499683747702" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/74f50559357975493892499683747702/">higher order examples</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+// using https://swapi.co/ 
+
+$.ajax({
+  url: 'https://cs52-swapi.herokuapp.com/api/people/',
+  method: 'GET'
+}).then(function(data) {
+
+  let filtered = data.results.filter( p => {
+    return p.height > 172; //lukes height
+  });
+    
+  let names = filtered.map( p => {
+      return p.name;
+  });
+  
+  names.forEach( name => println(`\n ${name}`));
+});
+
+
+$.ajax({
+  url: 'https://cs52-swapi.herokuapp.com/api/planets/',
+  method: 'GET'
+}).then(function(data) {
+    
+  let population = data.results.map( x => x.population).reduce( (a, b) => {
+    return (parseInt(a)||0) + (parseInt(b)||0);
+  }, 0);
+  
+  println(`Population: ${population}`);
+});
+
+
+
+
+function print(stuff) {
+  stuff.forEach(println);
+}
+function println(line) {
+  $('body').append(`<br><div>${line}</div><br>`);
+}
+</pre>
+
+<pre data-lang="css">
+body {
+  padding: 10px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/667559/Star-Wars-Jakku.jpg);
+  background-size: auto 500px;
+  background-attachment: fixed;
+  font-size: 16px;
+}</pre>
+</div>
+
 
 ???
 * things to try:
@@ -823,7 +1116,65 @@ name: filter, map, reduce
 ---
 name: chaining
 
-<p data-height="400" data-theme-id="24117" data-slug-hash="070c691851aba008158126f4ff77556b" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/070c691851aba008158126f4ff77556b/">toTitlecase</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+String.prototype.toTitleCase = function() {
+  return this.toLowerCase()
+  .split(' ')
+  .map(i => i[0].toUpperCase() + i.substring(1))
+  .join(' ');
+}
+
+
+// using https://jsonplaceholder.typicode.com/posts
+
+$.ajax({
+  url: 'https://jsonplaceholder.typicode.com/posts',
+  method: 'GET'
+}).then(function(data) {
+  
+  let titles = data.map( post => {
+    return post.title.toTitleCase();
+  });
+  
+  print(titles);
+  
+});
+
+
+
+
+function print(stuff) {
+  stuff.forEach(println);
+}
+function println(line) {
+  $('body').append(`<div>${line}</div><br>`);
+}
+</pre>
+
+<pre data-lang="css">
+body {
+  padding: 10px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/667559/Star-Wars-Jakku.jpg);
+  background-size: auto 500px;
+  background-attachment: fixed;
+  font-size: 16px;
+}
+}</pre>
+</div>
+
 
 
 ???
@@ -832,17 +1183,65 @@ name: chaining
 
 
 
----
+<!-- 
 name: flatten, etc
 
-<p data-height="400" data-theme-id="24117" data-slug-hash="af79914b72dfd8e302c52c3f0a96452e" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/af79914b72dfd8e302c52c3f0a96452e/">flattening</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<div 
+  class="codepen hidden" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js", "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"]
+  }'
+  data-preview="true"
+  data-height="400" 
+  data-theme-id="24117"
+  data-default-tab="js,result"
+  data-user="timofei"
+  data-editable="true"
+>
+<pre data-lang="babel">
+// using https://swapi.co/ 
+Array.prototype.flatten = function() {
+  return this.reduce( (a,b) => { return a.concat(b) }, []);
+}
+Array.prototype.uniq = function() {
+  return Array.from(new Set(this))
+}
 
-???
+
+$.ajax({
+  url: 'https://cs52-swapi.herokuapp.com/api/species',
+  method: 'GET'
+}).then(function(data) {
+
+  let eyeColors = data.results.map( p => {
+    return p.eye_colors.split(', '); 
+  });
+  
+  // flatten uniq;
+    
+ 
+  eyeColors.forEach( name => console.log(`${name}`));
+});
+
+</pre>
+
+<pre data-lang="css">
+body {
+  padding: 10px;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/667559/Star-Wars-Jakku.jpg);
+  background-size: auto 500px;
+  background-attachment: fixed;
+  font-size: 16px;
+}
+}</pre>
+</div>
+
 * flattening and extending prototype
 * sometimes frowned on to extend native types
   * mostly cause you can wreak havoc if you redefine something
   * just do so thoughtfully
-
+ -->
 
 
 
@@ -851,7 +1250,7 @@ name: flatten, etc
 ---
 name: pure functions
 
-.fancy.medium_small[![](img/purefunction.jpg)]
+.medium[![](img/purefunction.jpg)]
 
 
 * pure functions:
@@ -870,7 +1269,7 @@ name: pure functions
 ---
 name: Side Effects
 
-.fancy.medium_small[![](img/sideeffects.jpg)]
+.medium_small[![](img/sideeffects.jpg)]
 
 * side effects:
   * when a function changes some state (instance / global var)
