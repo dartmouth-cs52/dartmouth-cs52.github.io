@@ -445,38 +445,12 @@ We'll be using [Eslint](http://eslint.org/) in every assignment.
 
 ```bash
 yarn add --dev eslint babel-eslint eslint-loader
+yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 ```
 
-`eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **strongly** requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).
+`eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **strongly** requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).  
 
-🚀 To install these rules run the following:
-
-```
-./node_modules/.bin/eslint --init
-# or on windows
-.\node_modules\.bin\eslint --init
-```
-And then answer the questions asked like so:
-
-* `? How would you like to use ESLint?` <span style="color:red">To check syntax, find problems, and enforce code style</span>
-* `? What type of modules does your project use?` <span style="color:red">JavaScript modules (import/export)</span>
-* `? Which framework does your project use?` <span style="color:red">React</span>
-* `? Does your project use TypeScript?` <span style="color:red">No</span>
-* `? Where does your code run?` <span style="color:red">Browser</span>
-* `? How would you like to define a style for your project?` <span style="color:red">Use a popular style guide</span>
-* `? Which style guide do you want to follow?` <span style="color:red">Airbnb: https://github.com/airbnb/javascript</span>
-* `? What format do you want your config file to be in?` <span style="color:red">JSON</span>
-
-It will run for a little and then ask if you want to install with `npm`; 
-
-⚠️ ⚠️ say `n`! We're using `yarn`!
-
-🚀 Now copy/paste in your Terminal the line that looks like: 
-
-![](img/eslint-init.jpg){: .fancy .large}
-
-
-🚀 This will create a file for you `.eslintrc.json` with something like the following. This file instructs eslint to use the airbnb rules and overrides some of the common rules that I found particularly obtrusive. You are allowed to turn off certain rules if you prefer but take a look at the documentation and read about why the rule was implemented first.
+🚀 After installing `eslint`, create an eslint configuration file `.eslintrc.json` with something like the following. This file instructs eslint to use the airbnb rules and overrides some of the common rules that I found particularly obtrusive. You are allowed to turn off certain rules if you prefer but take a look at the documentation and read about why the rule was implemented first.
 
 ```json
 {
@@ -527,7 +501,7 @@ You can click on the definition of the error to learn more.  Note: many of these
 
 This will run your code through eslint before compiling it – thus making sure it is all good and giving you warnings and errors otherwise. Not only will your editor show the errors - but the browser console will as well.
 
-From here on **all assignments** will all use an `.eslintrc` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
+From here on **all assignments** will all use an `.eslintrc.json` file as well as a `.babelrc` file.  Adhering to a code style and ES6 will at first seem annoying but you'll find ES6 to be a much more beautiful version of the language and over time will grow to appreciate the linting rules as well. This is also pretty much industry standard.
 
 
 ## SASS Webpack loader
@@ -564,7 +538,7 @@ const finalCSSLoader = (env === 'production') ? MiniCssExtractPlugin.loader : { 
 
 module.exports = {
   mode: env,
-  entry: ['babel-polyfill', './src'], // this is where our app lives
+  entry: ['./src'], // this is where our app lives
   devtool: 'source-map', // this enables debugging with source in chrome devtools
   module: {
     rules: [
@@ -625,7 +599,7 @@ body, html {
 
 Wait, we were promised hot-reloading, whatever that means!
 
-Ok, ok. Add this in to your `webpack.config.js` file along with the `module.exports`:
+Ok, ok. Add this in to your `webpack.config.js` file along side the other keys in the `module.exports` section:
 
 ```js
   devServer: {
