@@ -21,7 +21,7 @@ name: base
 
 
 ---
-name: Design
+name: Today: Design + GIT!
 
 .fancy.medium_small[![](https://media.giphy.com/media/povenlBAIz14s/giphy.gif)]
 
@@ -310,8 +310,10 @@ lots of resources out there
 
 
 ---
-name: Let's play!
+name:
 
+
+[git](/lectures/02_git/#p1)
 
 [cs52.me/workshops/design](/workshops/design)
 

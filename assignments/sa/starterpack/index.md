@@ -60,16 +60,15 @@ Make sure you have reasonably up to date versions of node/npm/yarn:
 
 ```bash
 node --version
-#v11.x.x
+#v12.x.x
 npm --version
-#6.7.0
+#6.x.x
 yarn --version
-#1.15.x
+#1.22.x
 ```
-
 Newer than these is fine, but if you have older ones you might need to force uninstall/reinstall:
 
-If you run into problems here you can try forcing a reinstall:
+If you run into problems here (such as permissions issues) you can try forcing a reinstall:
 
 ```bash
 sudo chown -R $USER /usr/local  #in case you had ever run brew with sudo
@@ -287,7 +286,7 @@ This is where webpack-dev-server comes in. It is a development server setup that
 
 We could start up a python webserver to load the files, but webpack comes with a dev server built in and it is much better.
 
-🚀 Edit your `package.json` again and change the `start` line to: `"start": "NODE_ENV=development webpack-dev-server",`
+🚀 Edit your `package.json` again and change the `start` line to: `"start": "NODE_ENV=development webpack-dev-server"`
 
 *Note: on windows the syntax may be a tiny bit different `SET NODE_ENV=development& webpack-dev-server`*
 
@@ -372,10 +371,10 @@ We've talked a little bit about various JS versions.  Babel is a transpiler that
 🚀 Let's install babel and the webpack babel-loader.
 
 ```bash
-yarn add @babel/core @babel/preset-env babel-loader babel-polyfill --dev
+yarn add @babel/core @babel/preset-env babel-loader --dev
 ```
 
-Babel needs to be configured for the particulars of what feature set of ECMAScript you want.
+Babel needs to be configured for the particulars of what feature set of ECMAScript you want. Babel allows us to use the latest and greatest javascript features while generating output javascript that is compatible with older browsers.
 
 🚀 Create a file called `.babelrc` in your project:
 
@@ -406,8 +405,8 @@ module: {
 },
 ```
 
-🚀 and change your `entry` to be `entry: [ 'babel-polyfill', './src' ],`
-this loads in some nice extra babel functions before we get into our app so we can use them. In essence, if there are any javascript features that a particular browser might lack, this fills them in.
+<!-- 🚀 and change your `entry` to be `entry: [ 'babel-polyfill', './src' ],`
+this loads in some nice extra babel functions before we get into our app so we can use them. In essence, if there are any javascript features that a particular browser might lack, this fills them in. -->
 
 🚀 `ctrl + c` out of your webpack server and run `yarn start` again to pick up the changes to the config files.
 
@@ -446,12 +445,38 @@ We'll be using [Eslint](http://eslint.org/) in every assignment.
 
 ```bash
 yarn add --dev eslint babel-eslint eslint-loader
-yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
 ```
 
-`eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **strongly** requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).  
+`eslint` comes with a series of plugins for various javascript packages.  In particular Airbnb's style guide is one that we will be **strongly** requiring:  [eslint-config-airbnb](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). We'll be changing some of the rules and the rules are flexible (you may disable some of the more annoying ones).
 
-🚀 After installing `eslint`, create an eslint configuration file `.eslintrc` with something like the following. This file instructs eslint to use the airbnb rules and overrides some of the common rules that I found particularly obtrusive. You are allowed to turn off certain rules if you prefer but take a look at the documentation and read about why the rule was implemented first.
+🚀 To install these rules run the following:
+
+```
+./node_modules/.bin/eslint --init
+# or on windows
+.\node_modules\.bin\eslint --init
+```
+And then answer the questions asked like so:
+
+* `? How would you like to use ESLint?` <span style="color:red">To check syntax, find problems, and enforce code style</span>
+* `? What type of modules does your project use?` <span style="color:red">JavaScript modules (import/export)</span>
+* `? Which framework does your project use?` <span style="color:red">React</span>
+* `? Does your project use TypeScript?` <span style="color:red">No</span>
+* `? Where does your code run?` <span style="color:red">Browser</span>
+* `? How would you like to define a style for your project?` <span style="color:red">Use a popular style guide</span>
+* `? Which style guide do you want to follow?` <span style="color:red">Airbnb: https://github.com/airbnb/javascript</span>
+* `? What format do you want your config file to be in?` <span style="color:red">JSON</span>
+
+It will run for a little and then ask if you want to install with `npm`; 
+
+⚠️ ⚠️ say `n`! We're using `yarn`!
+
+🚀 Now copy/paste in your Terminal the line that looks like: 
+
+![](img/eslint-init.jpg){: .fancy .large}
+
+
+🚀 This will create a file for you `.eslintrc.json` with something like the following. This file instructs eslint to use the airbnb rules and overrides some of the common rules that I found particularly obtrusive. You are allowed to turn off certain rules if you prefer but take a look at the documentation and read about why the rule was implemented first.
 
 ```json
 {
