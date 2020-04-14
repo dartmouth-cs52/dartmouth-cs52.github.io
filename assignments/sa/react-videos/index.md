@@ -977,3 +977,9 @@ And don't forget to deploy. However!  First change your `package.json` and chang
 
 * add in other video / media sources such as vimeo, giphy, etc
 * pull in the weather or other data sources
+
+## Resources
+
+* [Help with Chrome Developer Tools](https://reactjs.org/blog/2014/01/02/react-chrome-developer-tools.html)
+* [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
+* https://reactjs.org/docs/components-and-props.html
