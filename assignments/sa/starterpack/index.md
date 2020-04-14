@@ -735,7 +735,7 @@ How would you deploy a webpack setup such as this?
 
 We're prepping this to be our SPA (single-page-app) starter pack and unfortunately github-pages doesn't have SPA support.  So we're going to be using another service to host our pages. Super easy though.
 
-So what we're going to do is add a new deployment method.  We'll use [surge.sh](surge.sh) for this.  Surge is a fast static file hosting service similar to gh-pages but it has a couple of extra features.
+So what we're going to do is add a new deployment method.  We'll use [surge.sh](http://surge.sh) for this.  Surge is a fast static file hosting service similar to gh-pages but it has a couple of extra features.
 
 ![](img/surge.png){: .fancy .small}
 
@@ -845,6 +845,9 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 
 ## Resources:
 
+* [Ijemma Onwuzulike '19: Pack It Up With WebPack](https://www.youtube.com/watch?v=hzIzwmy3sas)
+* [Ijemma Onwuzulike '19: Core Features of ESLint](https://www.youtube.com/watch?v=6yf90kEJLh0)
+* [Ijemma Onwuzulike '19: Modernize Your JavaScript with Babel!](https://www.youtube.com/watch?v=IZQhKi8oQl8)
 * [webpack docs](https://webpack.js.org/)
 * [babeljs](https://babeljs.io/)
 * [Survive Webpack](https://survivejs.com/webpack/foreword/)

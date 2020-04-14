@@ -23,6 +23,7 @@ name: CS52 Today's Menu
 
 
 * All the React
+* TODO: Talk about Why Not Create React App - add slides
 
 
 .medium[![](img/table-git.jpg)]

@@ -23,14 +23,13 @@ name: CS52
 
 * Today:
   * less javascript!
-  * what was this starterpack thing?!
+  * what is this starterpack thing?!
   * intro to react!
+  * first workshop
 
 ???
 
 
----
-name: Sharing is Caring
 
 <!-- * multiple:  https://dartmouth-cs52-18s.github.io/lab2-Teddarific/
 * animal: https://dartmouth-cs52-18s.github.io/lab2-weilingx46/
@@ -47,7 +46,7 @@ name: Sharing is Caring
 * more puppies: https://dartmouth-cs52-18s.github.io/lab2-alexpetros/
 * because tswift: https://dartmouth-cs52-18s.github.io/lab2-stopic13/ -->
 
-* [video ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-CharlotteChui/)
+<!-- * [video ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-CharlotteChui/)
 * [jelly donut ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-zacgottschall/) 
 * [shipping product ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-ziruihao/)
 * [middleschool ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-iyervarsha/)
@@ -63,33 +62,35 @@ name: Sharing is Caring
 * [kats ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-Yakoob-Khan/)
 * [more bold ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-emmalangfitt/)
 * [tinder for puppies ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-axli20/)
-* [gradients ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-mihovilm/)
-
-???
+* [gradients ](https://dartmouth-cs52-19s.github.io/lab1-landingpage-mihovilm/) -->
 
 
 
----
-name: table questions
 
-* can you go over @media query and how it works
+
+<!-- * can you go over @media query and how it works
 
 .medium[![](img/definingmobile-mediaquery.jpg)]
 
-???
 * device: print, screen, speech
 * too many features to list
-* can be very specific but generally best not over do it
+* can be very specific but generally best not over do it -->
 
 
 ---
 name: SA3 StartPack
 
-
-<iframe src='https://gfycat.com/ifr/DearestIllinformedBlackbird' frameborder='0' scrolling='no' width='440' height='520' allowfullscreen></iframe>
+<video loop autoplay mute controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_420,h_510/v1546203223/cs52/redpanda.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_420,h_510/v1546203223/cs52/redpanda.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_420,h_510/v1546203223/cs52/redpanda.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
 
 ???
-* questions?
+* what is this startpack thing and why do i want it?
+* the idea is provide some tooling to help with the dev process
+* AND enable us to use react next class
 
 
 ---
@@ -97,6 +98,8 @@ name: where in the stack
 
 ![](img/whereinthestack_webpack.png)
 
+???
+* important distinction here about static files - just reading files from disk over the network - vs a webserver that computes and runs a process
 
 
 ---
@@ -150,6 +153,7 @@ name: babel
 
 * transpiles latest and greatest js into compatible old code
 * also enables this thing called jsx which we'll be learning soon
+* show tab wtih babeljs.com example of react class
 
 
 
@@ -157,7 +161,7 @@ name: babel
 ---
 name: eslint with airbnb style guide
 
-.fancy[![](img/airbnb.png)]
+![](img/airbnb.png)
 
 .fancy[![](img/eslint.gif)]
 
@@ -209,7 +213,8 @@ name:
 ???
 * analyzes all import statements
 * follows them and includes everything that is actually linked
-* can do other stuff like delete unused code - tree shaking
+* can do other stuff like delete unused code - tree shaking 
+* akin to the linker step when compiling a c program
 
 
 
@@ -217,7 +222,7 @@ name:
 ---
 name:
 
-.left.fancy[![](img/webpack-dependencies.png)]
+.left[![](img/webpack-dependencies.png)]
 
 .right.fancy[![](http://i.imgur.com/1pbWWPD.gif)]
 
@@ -238,6 +243,7 @@ name: webpack-dev-server
   * picks up changes and builds
   * with magic reload-only-certain-modules powers
   * injects modules and css into page
+  * for **development mode** only
 
 ???
 * what is a potential downside of injecting css with javascript?
@@ -292,8 +298,6 @@ name: Node NPM/yarn
 ???
 * package.json file allows other devs or Heroku to load your project
 * no need to include the giant amounts of dependencies in your actual project git
-
-
 
 
 ---
@@ -362,13 +366,40 @@ name: non-blocking
 * how can you make that work fast?
 * non-blocking - majority of functions that take time are asynch
 
+---
+name: non-blocking
 
 
+<div 
+  class="codepen" 
+  data-prefill='{
+    "stylesheets": ["//cs52.me/assets/css/codepen-mods.css"],
+    "scripts": ["//cs52.me/assets/codepen-mods.js"]
+  }'
+  data-preview="true"
+  data-height="400"
+  data-default-tab="html,result"
+  data-theme-id="24117"
+  data-user="timofei"
+  data-editable="true"
+>
+to load hit: r
+<pre data-lang="html">
+  <script>
+    <!-- alert("stop"); -->
+  </script>
+  <h1> hi </h1>
+</pre>
+
+</div>
+
+???
+* alert is an exception and is blocking - why might it be bad to litter your code with alerts?
 
 ---
 name: Event Driven Programming
 
-.fancy.medium[![](../05_js2/img/event-gui.png)]
+.medium[![](../05_js2/img/event-gui.png)]
 
 
 * application flow control driven by events/changes in state
@@ -413,7 +444,7 @@ name: ajax
 .right[![](../05_js2/img/infinite-scroll-mobile.gif)]
 
 ???
-* can't load all data in world
+* example for asynch loading: can't load all data in world
 * load js and then fetch data asynchronously into the page
 * you click a button to "show more"
 * you scroll and more data is loaded
@@ -429,17 +460,20 @@ var data;
 
 $.getJSON("http://data/data.json", function(results) {
   data=results;
+  console.log(1);
   console.log(data);
 });
 
+console.log(2);
 console.log( data );
 //
 ```
 
 ???
 * this uses jquery ajax for readability
-* this is super common mistakes
-* what is happening here?  
+* this is super common mistakes!
+* what is happening here?
+* what is going to be printed out?
 
 
 
@@ -488,7 +522,7 @@ name: questions?
 
 
 ---
-name:
+name: Web Architectures
 
 ![](img/static-sites.png)
 
@@ -504,7 +538,7 @@ name:
 
 
 ---
-name:
+name:  Web Architectures
 
 ![](img/server-side-rendering.png)
 
@@ -519,7 +553,7 @@ name:
 
 
 ---
-name:
+name:   Web Architectures
 
 ![](img/single-page-app.png)
 
@@ -531,8 +565,8 @@ name:
   * loads all content asynchronously and inserts into page
   * DOM manipulation + frontend framework
   * largely the architecture we'll be using
-* is more like an application than a series of pages -> loads app into browser
-* from then on does not reload that page - app runs and gets any further data it needs
+* is **more like an application** than a series of pages -> loads app into browser
+* from then on does not reload that page - app runs and gets any further data it needs. no contact.html, blogpost1.html etc
 
 
 
@@ -565,6 +599,7 @@ name:
 ???
 * ajax is how we talk to api's
 * process by which a page loads new data via javascript rather than html
+* if we're talking abstaction - this allows the server to only worry about data - not about display
 
 <!--http://stackoverflow.com/questions/25336156/how-to-immediately-invoke-jquery-upon-clicking-remote-link-in-rails-->
 <!--https://realpython.com/blog/python/django-and-ajax-form-submissions-more-practice/-->
@@ -584,12 +619,14 @@ name:
 * more ajax
   * page updates happen in background separate from full page loads
   * we will use JSON isntead of XML, but note that new html only happens once the data is fetched
+  * different pics of the same thing
 
 
 
 ---
 name: apis
 
+* data only server
 * http/s requests
   * GET, POST, etc
 * return JSON format data
@@ -599,10 +636,12 @@ name: apis
 
 
 ???
-* when people say apis'
-* what they mean is:
+* what might we call this DATA ONLY server?
+* when people say apis - application program interface
+* what they mean is often:
   * a server that returns/mutates data
   * based on http get/post requests
+* we'll be playing lots with apis - and defining and building them
 
 
 
@@ -643,6 +682,7 @@ name: 1st gen web frameworks
 
 .tiny[![](img/lamp.png)]
 
+* **"Help me generate my html and talk to db!"**
 * php, asp.net, java
 * template: mix code and HTML
 * web specific libraries:
@@ -657,6 +697,7 @@ name: 1st gen web frameworks
 
 ???
 * server side rendering
+* basically  utility libraries for formating and generating html
 * language runtime directly in web server (faster)
 
 
@@ -667,6 +708,7 @@ name: 2nd gen serverside frameworks
 
 .tiny[![](img/dj_vs_ror.jpeg)]
 
+* **"We need more abstraction - tell us exactly what to do!"**
 * Ruby on Rails, Django
 * Model-View-Controller:
   * abstracted structure
@@ -682,6 +724,7 @@ end
 
 ???
 * note these all fit in to Server Side Rendering
+* fairly heavyweight and opinionated - do lots of magic for you
 
 
 
@@ -692,6 +735,7 @@ name: 3rd gen serverside frameworks
 
 .tiny[![](img/express-js-node-js.png)]
 
+* **"Too much magic, I want to be in control!"**
 * Express, Flask, Sinatra
 * lightweight
 * optional mvc but less rigid
@@ -714,13 +758,13 @@ app.get('/', (req, res) => {
 
 
 ---
-name: 3rd gen frontend frameworks
+name: rise of frontend frameworks
 
-.tiny[![](img/backbone-logo.png)]
+.tiny[![](img/angularbackbone.jpg)]
 
-
+* **"I want framework on frontend TOO!"**
 * AngularJS, Backbone
-* clientside javascript frameworks
+* clientside javascript frameworks, more than jquery
 * handle dynamic data on frontend
 * templates
 * optional mvc
@@ -737,7 +781,7 @@ var AppView = Backbone.View.extend({
 
 
 ???
-* the idea was to provide more interaction and functionality on the clientside
+* the idea was to provide more interaction and functionality on the clientside, more structure than jquery
 * easier to handle data parsing and display - abstracting out because otherwise a mess of jquery
 * some of these have gone through multiple generations themselves
 * and then there is REACT!   4th gen!
@@ -751,7 +795,7 @@ name: MVC
 
 
 ???
-* mvc is common code architecture pattern - specifically for uis
+* mvc is common code architecture pattern - specifically for UIs
 * model stores your datas, objects
 * controller operates on the datas, the logic
 * view presents it, webpage
@@ -760,7 +804,7 @@ name: MVC
   * frontend for managing data objects loaded in browsers
   * server for database
   * servers views are JSON api (but very minimal mostly just controller)
-* lots of alternatives mvvc mcp etc etc.  
+* lots of variants mvvc mcp etc etc, but the core idea is pretty similar. an abstraction to help deal with data, display, functionality 
 
 
 
@@ -777,6 +821,7 @@ name: Templating for Views
 
 
 ???
+* code/data
 * benefits of templates
 * designer friendly
 * easy to test
@@ -791,21 +836,19 @@ name: mvc popular but
 * invented in the 70s
 * helps organize architecture
 * modern applications need more scalability
-* mvc can be heavy, too much data loaded, too many views
+* traditional mvc can be heavy, too much data loaded, too many views
 
 
 ???
-* we'll keep talking about mvc, more next week!
-* BUT we're also going to move on to 4rth more modern tooling!
-
-
+* we'll keep talking about mvc and using it, more next week!
+* BUT we're also going to talk about some simplifications and scaleability concerns and the react way
 
 
 
 ---
 name:
 
-![](img/history-of-web-frameworks-timeline.png)
+![](img/timeline.jpg)
 
 
 ???
@@ -870,6 +913,7 @@ name: Virtual DOM?
 ???
 * dom trees are large, react component virtual tree is smaller
 * saved unneccessary dom manipulation (state changes but don't need to rerender a lot of stuff)
+* https://github.com/acdlite/react-fiber-architecture
 
 
 
@@ -900,7 +944,7 @@ name: dirty state
 
 
 ???
-* when a components state changes via setState.
+* when a components state changes via setState. think of components as nodes
 * when you run `setstate` it markes a node as dirty
 * potentially rerendering the entire subtree but in practice is performant and tricks to make it rerender less
 
@@ -931,7 +975,7 @@ name: components
 * React is component based:
   * encapsulated reusable containers
   * logic + rendering
-  * no state in the DOM
+  * no state in the DOM (no querying hidden radio buttons!)
 * components:
   * have `state`
   * take in `props` (ie. arguments or 'properties')
@@ -943,6 +987,7 @@ name: components
 * everything is a component in react
 * each node in virtual DOM is component
 * trees on trees on trees
+* import takeways: components have data stored in state -> render based on state
 
 
 
@@ -1069,6 +1114,8 @@ name: dumb component
 
 ---
 name: smart component
+
+
 
 <p data-height="400" data-theme-id="24117" data-slug-hash="9cdfb283082fadae6152944f1f3ac506" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/9cdfb283082fadae6152944f1f3ac506/">9cdfb283082fadae6152944f1f3ac506</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
