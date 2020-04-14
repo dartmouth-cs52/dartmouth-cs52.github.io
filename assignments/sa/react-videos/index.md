@@ -20,7 +20,7 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-19s/starterpack-your-gitub-username.git
+git remote add starter git@github.com:dartmouth-cs52-20s/starterpack-your-gitub-username.git
 git pull starter master
 ```
 
@@ -61,9 +61,9 @@ Note: we also added in [transform-class-properties](https://babeljs.io/docs/en/b
 
 ### eslint
 
-Let's modify your `.eslintrc` to add in some React support.
+Let's modify your `.eslintrc.json` to add in some React support.
 
-🚀 Change your `.eslintrc` file. Here we only show the things to **add** or **update**. Do not delete any existing lines just add the following in the right locations:
+🚀 Change your `.eslintrc.json` file. Here we only show the things to **add** or **update**. Do not delete any existing lines just add the following in the right locations:
 
 ```json
 {
@@ -489,6 +489,8 @@ We'll be using YouTube's api for finding videos. So we need to sign up and get a
 1. Choose **Api Key**
   <br>![](img/google-create-apikey.jpg){: .fancy .small}
 1. Save the **API Key** for you will need it!
+1. **Restrict the key** to only the youtube api
+  <br>![](img/restrict.jpg){: .fancy .tiny}
 
 
 ## YouTube Search
@@ -526,7 +528,9 @@ const youtubeSearch = (term) => {
 export default youtubeSearch;
 ```
 
-In the above, [axios](https://github.com/mzabriskie/axios) is a module to simplify making http api requests (GET, POST, etc).  We are wrapping it in a Promise so that using our module is really easy from our `index.js`.
+In the above, [axios](https://github.com/mzabriskie/axios) is a module to simplify making http api requests (GET, POST, etc).  We are wrapping it in a Promise so that using our module is really easy from our `index.js`. 
+
+*However, there is a bit of a caveat here. `axios.get` is already returns a promise. The only reason we are wrapping it in another promise is to abstract out the response.data.items portion and to show how promises work.  You could easily instead do `return axios.get(API_URL), {params})` and then in your app remember to use videos.data.items.* 
 
 🔥__WARNING__ 🔥
 In this example you are asked to push your YouTube API key to GitHub. While this is not a major concern in today's SA as this is a readonly key. Later, when we use private keys server side, you'll learn how to keep them out of your code. Since there is not much you can do to protect a key on the frontend once it is in memory on the webpage, the only secure way to deal with private keys is to proxy any requests through your own server. 
@@ -759,9 +763,7 @@ This is where a tricky part of React comes in.  It is a tiny bit tricky to pass 
 
 Well, so far what we've been doing is implementing downwards data flow.   Our toplevel component is the one that knows about videos and passes that data onto its children.  What we want to do now is pass events or actions back up the chain.  When there is an event in one of the child components that other components need to be aware of we would pass that event upwards to the parent, and then back downwards to any component that 'needs to know'.
 
-![](img/down-data.png){: .fancy .small}
-<!-- TODO: redo this graphic -->
-
+![](img/down-data.png){:  .medium}
 
 Solution!  We create a callback function in the parent and pass it down to the children in `props`!  We're just passing a function around, we know how to do that.
 
@@ -927,10 +929,10 @@ This css could still use a lot of love. Feel free to make this look better!
 
 Turns out response iframe embeds are actually pretty difficult to achieve.  We're going to cheat a little and include bootstrap only for the responsive video.
 
-🚀 In `index.html` add bootstrap4-dev css only:
+🚀 In `index.html` add bootstrap4 css only:
 
 ```html
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 ```
 
 🚀 Change your video iframe code in *VideoDetail*
