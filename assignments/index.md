@@ -13,8 +13,8 @@ comment_term: assignments
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev)
 <!-- * Short Assignment 2: Git Map (in-class) -->
 * [Short Assignment 2: Git Map](sa/git-map)
-* Short Assignment 3: Webpack+Babel+Eslint starterpack
-<!-- * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) — DUE 4/12 -->
+<!-- * Short Assignment 3: Webpack+Babel+Eslint starterpack -->
+* [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack)
 * Short Assignment 4: React Intro
 <!-- * [Short Assignment 4: React Intro](sa/react-videos) — DUE 4/15 -->
 * Short Assignment 5: Frontend Routing
