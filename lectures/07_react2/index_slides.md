@@ -22,24 +22,59 @@ class: center, middle
 name: CS52 Today's Menu
 
 
-* All the React
-* TODO: Talk about Why Not Create React App - add slides
-
+* More React
+* Alum Panel
 
 .medium[![](img/table-git.jpg)]
 
-* tomorrow weds x-hour is workshop
-
 ???
-* heading into week 4 yaaay
+* Week 3 am i right?
 * questioons commments concerns?
-* workshop attendance taken
+
+---
+name: CS52 First TikTok
+
+
+<video loop controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/cs52-forget-how-to-git.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/cs52-forget-how-to-git.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/w_283,h_512/v1546203223/cs52/cs52-forget-how-to-git.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
 
 
 ---
-name: Sharing is Caring
+name: #sharingiscaring
 
-* [got](https://dartmouth-cs52-19s.github.io/lab2-prosper007/)
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-georgina-davis/" target="_blank">[chocolate]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-Emzyx/" target="_blank">[puppers paginated]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-michaelzhou01/" target="_blank">[personal]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-rohithm1/" target="_blank">[rapper]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-ManziBryan/" target="_blank">[hamilton song]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-jnotis99/" target="_blank">[remote learner]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-catherinedparnell/" target="_blank">[hendrix experience]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-juliettepchl/" target="_blank">[q squad]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-krkim565/" target="_blank">[financial literacy]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-abailey19/" target="_blank">[shakespeare]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-aarish407/" target="_blank">[sciencer]</a>
+* <a href="https://musabshak.github.io/lab2-quizzical-musabshak-json/" target="_blank">[suits character]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-kattaylor22/" target="_blank">[crime predictor]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-tvergho/" target="_blank">[actual quiz]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-hershel10/" target="_blank">[tiger king]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-ssskay/" target="_blank">[animal crossing]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-nicBerg/" target="_blank">[i just wanna graduate]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-davidkantor2000/" target="_blank">[zoom effects]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-selim5/" target="_blank">[planet]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-peter1357908/index_json.html" target="_blank">[math]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-whb21/" target="_blank">[tree]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-hack-heart/" target="_blank">[game character]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-bryanshin1997/" target="_blank">[survivor]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-akchikkula111/" target="_blank">[zoomer]</a>
+
+
+
+
+<!-- * [got](https://dartmouth-cs52-19s.github.io/lab2-prosper007/)
 * [hip css](https://dartmouth-cs52-19s.github.io/lab2-baileyburke/)
 * [which rose](https://dartmouth-cs52-19s.github.io/lab2-saburack/)
 * [vine and scroll](https://dartmouth-cs52-19s.github.io/lab2-tmonfre/)
@@ -52,25 +87,24 @@ name: Sharing is Caring
 * [sitcom picker](https://dartmouth-cs52-19s.github.io/lab2-emmalangfitt/)
 * [autoscroll](https://dartmouth-cs52-19s.github.io/lab2-CharlotteChui/)
 * [blinding](https://dartmouth-cs52-19s.github.io/lab2-gracedorgan/)
-* [beautiful color math](https://dartmouth-cs52-19s.github.io/lab2-regina-yan/)
+* [beautiful color math](https://dartmouth-cs52-19s.github.io/lab2-regina-yan/) -->
 
 
 
 ???
-
+* just a reminder - i have 30 min in the morning to choose these, if yours hasn't made it but you really want to share it, post it in sharingiscaring on slack.
 
 
 ---
-name: Table Questions
+name: workshops
 
-
-.medium[![](img/tq-virtual-real.jpg)]
-
+.medium[![](/assets/drawings/tq-workshop.jpg)]
 
 ???
-* questions comments concerns?
-* we're finishing grading labs and shorts tnight so those will be out
-
+* short attempts
+* a little bit of breadth
+* don't have to finish if there are issues unless you really want to
+* keep me posted on workload - people seem more overloaded at this point in term than in the past. talk to me. 
 
 
 ---
@@ -94,10 +128,11 @@ name: React.js
 name: why react?
 
 
-.medium[![](img/stackoverflow-2018-react.jpg)]
+.left[![](img/loved.jpg)]
+.right[![](img/wanted.jpg)]
 
 
-* https://insights.stackoverflow.com/survey/2018/
+https://insights.stackoverflow.com
 
 
 
@@ -108,7 +143,7 @@ name: why react?
 .medium[![](img/stateofjs-2018-react.jpg)]
 
 
-* https://stateofjs.com/
+https://stateofjs.com/
 
 
 
@@ -128,10 +163,10 @@ name: React Onwards and Upwards
 ???
 * why revolutionary?
 * view as a pure function of data
+* in buzzfeed quiz you very likely ran into issues with things maybe not updating, or being dependent on checking the state of other things.  imagine a site that is much more complex. 
 * we'll be talking a lot about component this component that
 * everything is a component in react
 * each node in virtual DOM is component
-* trees on trees on trees
 
 
 
@@ -140,7 +175,7 @@ name: React Onwards and Upwards
 
 
 ---
-name: Questions about JSX? 
+name: JSX? 
 
 ```html
 <div className="red">let's talk SA4 and React!</div>
@@ -151,11 +186,11 @@ React.createElement("div", { className: "red" },
 );
 ```
 
-.tiny[![](img/react-table.png)]
+.small[![](img/react-table.png)]
 
 
 ???
-* confused is good, we're going to go over everything
+* we're a couple of days behind on the shorts, so lets get cranking through those, next lab is out tomorrow
 * this can be react - well jsx
 * who's confused about JSX?
 * javascript XML
@@ -198,6 +233,7 @@ name:
 * react simplifies things
 * we'll build like 5 react apps in the coming weeks so don't worry if its all a bit confusing
 * rather than looking up and poking, is more clearly state driven
+* on click of one choice in quizz did you have look up and de-select all the other ones?  - imagine on click all you have to do is change data - and then the view automatically matches it.
 * change state -> render, repeat
 * *not a render loop btw* - only on state change
 
@@ -477,6 +513,7 @@ name:
 * searchbar is smart because its driven, doesn't have to be but better when it is
 * data flows down
 * events are passed up
+* remember the term `driven component` and look for it in the short assignment.
 
 
 ---
@@ -488,6 +525,7 @@ name: local state
 ???
 * state internal to a component
 * can be passed down to children as props
+* used to render or passed to children
 
 
 ---
@@ -521,6 +559,7 @@ name: parent state
 
 ???
 * create function that runs setState in parent smart container
+* why might we want to keep state up in this parent component?
 * pass function down to children who can run it
 
 
@@ -558,7 +597,7 @@ name:
 const SmallComponent = (props) => {
   return (
     <li onClick={props.onClick}>
-      <div>{props.person.display_name}</div>
+      <div>{props.person.name}</div>
     </li>
   );
 };
@@ -566,14 +605,18 @@ const SmallComponent = (props) => {
 
 ```javascript
 class ParentComponent extends Component {
-  handleClick = () => {console.log('clicked')}
+  /// constructor etc... 
+  this.state.people = [{name: 'betty'}, {name: 'bob'}];
+  handleClick = () => {console.log('something was clicked')}
 
-  const list = this.props.people.map( person => {
-    return <SmallComponent person={person} onClick={this.handleClick}/>
+  renderList = () => { 
+    return this.state.people.map( person => {
+      return <SmallComponent person={person} onClick={this.handleClick}/>
+    });
   });
 
   render() {
-    return <ul> {list} </ul>;
+    return <ul> {renderList()} </ul>;
   }
 };
 ```
@@ -585,8 +628,6 @@ class ParentComponent extends Component {
 * doesnt' do anything useful with click event
 * should run setState
 * lot of good stuff going on here
-* **where does people come from?**
-
 
 
 ---
@@ -595,11 +636,12 @@ name: component lifecycle
 .large[![](img/simple-lifecycles.jpg)]
 
 
-
 ???
 
-* *from: https://medium.com/@nancydo7/understanding-react-16-4-component-lifecycle-methods-e376710e5157*
 * http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+* componentDidMount()  can call setState here if you need again - render may be called twice
+* componentDidUpdate(prevProps, prevState)- can call setstate, but wrap in conditional to not cause loop
+* componentWillUnmount() - use this to clean up any listeners or timers
 
 
 
@@ -660,7 +702,7 @@ name: Functional setState "one step behind"
 
 ```javascript
 //initialize State
-this.state = {counter: 0}
+this.state = {count: 0}
 ```
 
 ```javascript
@@ -673,9 +715,9 @@ this.setState({count: this.state.count+1});
 ```
 
 ```javascript
-this.setState(prevState => ({count: count+1}));
+this.setState(prevState => ({count: prevState.count+1}));
 console.log(this.state.count) //0
-this.setState(prevState => ({count: count+1}));
+this.setState(prevState => ({count: prevState.count+1}));
 // batch update queues function calls in order
 // end result is 2
 ```
@@ -696,12 +738,13 @@ name: expanded component lifecycle
 
 ???
 
-* *from: https://medium.com/@nancydo7/understanding-react-16-4-component-lifecycle-methods-e376710e5157*
 * forceUpdate bad
 * shouldComponentUpdate rarely used
 * snapshot can read the dom for instance to get scroll position if you need it
 * getDerivedState includes prevState and nextProps in case, you won't need this generally unless you are doing something bad
+* could use it change state in a particular way based on nextProps
 * don't shadow state <- props
+* https://reactjs.org/docs/state-and-lifecycle.html
 
 
 ---
@@ -749,14 +792,17 @@ name: dumb component
 * also called functional
 * just a function, takes props, spits back JSX
 
+---
+name: dumb component
 
-
+.small[![](/assets/drawings/table-dumb-component-jpg.jpg)]
 
 
 ---
 name: smart component
 
 <p data-height="400" data-theme-id="24117" data-slug-hash="9cdfb283082fadae6152944f1f3ac506" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/9cdfb283082fadae6152944f1f3ac506/">9cdfb283082fadae6152944f1f3ac506</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
 
 ???
 * es6 class based (doesn't have to be but better this way)
@@ -778,18 +824,34 @@ name: tiny todo
 
 ???
 * putting it all together
-
-
+* change order in array?
 
 
 ---
-name: Lab3 
+name: SA3 why not CRA?
 
-.medium_small[![](img/collabnote.gif)]
-* out today - due night Monday 22nd
-* part 2 is uses firebase which we'll go over thurs
+* some of you have seen create-react-app online
+* why make our own starterpack?
+* but [reactjs.org](https://reactjs.org/) does have good learning resources
+
+.left[![](img/cra-bloat.jpg)]
+.right[![](img/morecra.jpg)]
 
 ???
-* putting it all together
+* cra is a way to start up a react project easily
+* but does a lot for you that you don't need
+* / don't know how to modify later
+* in our simple webpack+babel+eslint config you know exactly what the tools do. 
+
+---
+name: shorts -> labs
+
+.medium_small[![](img/collabnote.gif)]
+* react short prepares you for lab3 so pay attention to it
+* lab 3 out tomorrow - due end of next week
+* second part of lab uses firebase which we'll cover on tues
+
+???
+* the next shorts prep for the labs
 
 

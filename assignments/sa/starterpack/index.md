@@ -177,7 +177,7 @@ Webpack is the shopping cart; `package.json` is the shopping list; and your brow
 yarn add webpack webpack-dev-server webpack-cli --dev
 ```
 
-`yarn add` is how you add most any javascript library to your project.  It will install in a directory `node_modules` in your project.  Note: `yarn install` would install it but not add it to your `project.json`.  Generally you want to add it to your project so that later if others were to download the project they could install the same packages.
+`yarn add` is how you add most any javascript library to your project.  It will install in a directory `node_modules` in your project.  Note: `yarn install` would install it but not add it to your `package.json`.  Generally you want to add it to your project so that later if others were to download the project they could install the same packages.
 
 Note: when you give `--dev` as an argument it will add those modules to your `package.json` in a `devDependencies` section.  In this case we are saying these are *development* only dependencies. So you will now notice new lines declaring those dependencies in `package.json` as `"devDependencies"`. Leave off the `--dev` flag if you are adding in a library you want to package up for the browser.
 
