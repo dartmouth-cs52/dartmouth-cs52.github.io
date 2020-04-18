@@ -452,9 +452,16 @@ One way to add persistent storage is to use a backend as a service (BAAS) platfo
 
 🚀 Create an account and new project at [firebase.google.com](https://firebase.google.com/).
 
+![](img/firebase+project.jpg){: .fancy .medium}
+
+![](img/firebase-name.jpg){: .fancy .medium}
+
+
 🚀 Enable Realtime Database with public access
 
-![](img/realtime-rules.jpg){: .fancy .medium}
+![](img/choose-realtime.jpg){: .medium}
+
+![](img/testmode.jpg){:  .medium}
 
 By default Firebase only allows authenticated users access to the realtime database, so if we tried to read or write anything right now it would fail!
 
@@ -602,7 +609,7 @@ Test it out!  Open multiple browsers and see how adding and moving notes in one 
 
 ### To Turn In
 
-1. Canvas submission of GitHub repository URL and your deployed url (this makes us happier when grading).
+1. Canvas submission of GitHub repository URL **and** your deployed url (this makes us happier when grading).
 1. App should have all the [minimal functional specs](#minimal-functional-specs)
   * have at least an App and Note component
   * ability to add notes to board
