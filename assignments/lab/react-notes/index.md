@@ -11,7 +11,7 @@ comment_term: lab-react-notes
 
 Where we dive deeper into React and construct a realtime collaborative post-it note app with React!
 
-<video loop autoplay mute>
+<video loop autoplay mute controls>
   <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_800,h_510/v1546203223/cs52/live-notes-1080p.webm" type="video/webm"/>
   <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_800,h_510/v1546203223/cs52/live-notes-1080p.mp4" type="video/mp4"/>
   <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_800,h_510/v1546203223/cs52/live-notes-1080p.ogv" type="video/ogg"/>
