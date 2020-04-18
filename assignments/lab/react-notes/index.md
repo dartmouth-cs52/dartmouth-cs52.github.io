@@ -11,18 +11,25 @@ comment_term: lab-react-notes
 
 Where we dive deeper into React and construct a realtime collaborative post-it note app with React!
 
-![](img/collabnote.gif){: .fancy .tiny}
+<video loop autoplay mute>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_800,h_510/v1546203223/cs52/live-notes-1080p.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_800,h_510/v1546203223/cs52/live-notes-1080p.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_800,h_510/v1546203223/cs52/live-notes-1080p.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
 
 
 ### Part 1
 
-We will start with a version of the app that does not have a backend,  it'll use state for notes but if you refresh the page all your hard work will disappear.
+We will start with a version of the app that does not have a backend,  it'll use state for notes but if you refresh the page all your hard work will disappear — and it'll only work in one browser window.
 
 ### Part 2
 
 Then we will add in Firebase for persistent storage. Firebase is a backend as a service (BAAS). It provides a simple JSON data store ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. You can subscribe to change events on collections of objects, this is perfect to use with React!
 
 This will involve a small bit of refactoring, but will demonstrate how you can prototype frontend and then add in server side later. 
+
+In this version your notes will persist and will synchronize in real-time so multiple people can collaborate.
 
 ## Let's Start
 
@@ -174,7 +181,7 @@ An object with unique note `id`s for the keys and note objects as values.  Since
 
 In Part 2 we will be getting something like this from Firebase:
 
-![](img/firebase-object.png){: .fancy .tiny }
+![](img/firebase-object.png){:  .tiny }
 
 But for now let's worry about our own state — We'll do Firebase later.
 
@@ -415,7 +422,7 @@ Now that we have a working stand-alone app, we should connect it to backend to m
 
 One way to add persistent storage is to use a backend as a service (BAAS) platform. Firebase is one such platform that provides a JSON based database ([Firebase Realtime Database](https://firebase.google.com/docs/database/)) that has some nice realtime properties. For instance you can subscribe to change events on collections of objects. Can we use Firebase with our React app?  You bet!
 
-*Note: we'll be using Firebase Realtime Database for this rather than the newer Cloud Firestore Beta, although both would work for our purposes.*
+*Note: we'll be using Firebase Realtime Database for this rather than the newer Cloud Firestore, although both would work for our purposes.*
 
 
 ### Reminder of specs
