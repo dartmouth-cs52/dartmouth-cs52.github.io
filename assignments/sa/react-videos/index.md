@@ -469,6 +469,7 @@ class App extends Component {
   }
 }
 ```
+
 </details>
 
 We'll probably need to add some state here, but for now this is good. Make sure everything still works as expected. And we have an empty constructor ready to do stuff.
