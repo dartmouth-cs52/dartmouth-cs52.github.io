@@ -208,7 +208,7 @@ There is one tricky bit with deployment now that we have frontend routes.  The p
 🚀 Now we have to make sure that we are telling webpack to output our files to the root '/' rather than using relative links. Add the following to your `webpack.config.js` file:
 
 ```javascript
-mode: env, // right after:
+mode: env,
 output: { publicPath: '/' },
 ```
 
