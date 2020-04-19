@@ -35,7 +35,9 @@ Frontend:  we will utilize our realtime react notes app and refactor slightly.
 
 **SERVER**
 
-🚀 Remember how to make a mongoose model?   Sure, create a Note model in your models directory and give it the following fields (you may need to adjust the names of these later based on how you coded your Lab3):
+🚀 Let's set up a few directories first. Create a `src/models` and a `src/controllers` directory.
+
+🚀 Remember how to make a mongoose model? Sure you do! Create a Note model `note.js` in your models directory and give it the following fields (you may need to adjust the names of these later based on how you coded your Lab3):
 
 ```javascript
   title: String,
@@ -45,11 +47,38 @@ Frontend:  we will utilize our realtime react notes app and refactor slightly.
   text: String,
 ```
 
-yarn add `mongoose`.
+<details>
+<summary>Don't remember how to make a model? Look here!</summary>
+
+```javascript
+import mongoose, { Schema } from 'mongoose';
+
+const NoteSchema = new Schema({
+    title: String,
+    x: Number,
+    y: Number,
+    zIndex: Number,
+    text: String,
+}, {
+  toJSON: {
+    virtuals: true,
+  },
+});
+
+// create model class
+const NoteModel = mongoose.model('Note', NoteSchema);
+
+export default NoteModel;
+```
+</details>
+
+🚀 `yarn add mongoose`.
 
 In your `server.js` set up your mongo connection:
 
 ```javascript
+import mongoose from 'mongoose';
+
 // DB Setup
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/notes';
 mongoose.connect(mongoURI);
@@ -58,7 +87,7 @@ mongoose.Promise = global.Promise;
 ```
 
 
-🚀 And let's make a controller while we are at it!
+🚀 And let's make a controller, `note_controller.js`, while we are at it!
 
 It'll be a bit simpler than the post controller.  We'll also do something similar to SA7 where we returned promises from our controller rather than operating on request and response objects.
 
@@ -69,9 +98,7 @@ It'll be a bit simpler than the post controller.  We'll also do something simila
 
 
 ```javascript
-import Note from '../models/note_model';
-
-
+import Note from '../models/note';
 
 export const getNotes = () => {
   return Note.find({}).then(notes => {
@@ -267,14 +294,14 @@ this.socket.emit('createNote', note);
 
 ```
 
-And, that's it for the frontend!  Comment out your `import * as firebasedb` you won't need it no mo!
+And, that's it for the frontend!  Comment out your `import * as firebasedb` you won't be needing it!
 
 Try creating a note!
 
 
 ## SERVER Part Deux
 
-Ok, let's add back in some more functionality on the server side.
+Ok, let's add back in some more functionality on the server side in `server.js`.
 
 ```javascript
 
