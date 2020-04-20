@@ -145,7 +145,6 @@ Here is what I recommend you do for your *App* component state initialization:
 // in App constructor
   this.state = {
     notes: Map(),
-    //...
   };
 ```
 
