@@ -55,11 +55,11 @@ fetch(proxyUrl + targetUrl, {
 * [4/14 Frameworks Intro](06_react1)
 <!-- * 4/16 React -->
 * [4/16 React](07_react2)
-* 4/22 Project Intro
+<!-- * 4/22 Project Intro -->
 <!-- * [4/24 Projects](07_project_intro) -->
 <!-- * [4/25 Projects Intro](../projects/) -->
-* 4/23 Advanced JS
-<!-- * [4/23 Advanced JS](08_advanced_js) -->
+<!-- * 4/23 Advanced JS -->
+* [4/23 Asynch JS](08_asynch_js)
 * 4/28 Routing
 <!-- * [4/28 Routing](09_routing) -->
 * 4/30 Redux
