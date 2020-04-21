@@ -949,7 +949,7 @@ let note = Immutable.Map({
 
 // updating note
 history.push(note);
-note = note.update({content: 'real import stuff'});
+note = note.set({content: 'real import stuff'});
 
 // voila you has undo!
 ```
@@ -969,7 +969,6 @@ note = note.update({content: 'real import stuff'});
 name: React and Immutable
 
 * made for each other
-* no need for cloning objects or copying arrays
 * Immutable has simple nice api
 
 ```javascript
@@ -980,6 +979,7 @@ this.state.notes = Immutable.Map();
 this.setState(prevState => (
   prevState.notes.push({title: 'new note'})
 ));
+
 ```
 
 
@@ -1025,8 +1025,8 @@ name: json data structures
 ```json
 {
   "noteboard list": {
-    "1": { "id":"notes from cs52", "author": "Ada Lovelace" },
-    "2": { "id": "travel ideas", "author": "tim" }
+    "1": { "title":"notes from cs52", "author": "Ada Lovelace" },
+    "2": { "title": "travel ideas", "author": "tim" }
   },
   "notes from cs52": {
     "1": {
@@ -1078,23 +1078,25 @@ fb.ref('users').child(id).remove();
 
 
 
----
-name: writing
-
-
-<p data-height="450" data-theme-id="24117" data-slug-hash="bfb7e2fcd1f8f4d3816e20160faf8648" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="https://codepen.io/timofei/pen/bfb7e2fcd1f8f4d3816e20160faf8648/">React Comment Box with Firebase</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-???
-
-
-
 
 ---
 name: reading
 
-<p data-height="450" data-theme-id="24117" data-slug-hash="bab1c926da57c4136b409b49ec364c8d" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">See the Pen <a href="http://codepen.io/timofei/pen/bab1c926da57c4136b409b49ec364c8d/">React Firebase Comments Only</a> by Tim Tregubov (<a href="http://codepen.io/timofei">@timofei</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="450" data-theme-id="24117" data-slug-hash="bab1c926da57c4136b409b49ec364c8d" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">hit r to reload</p>
 
 ???
+
+
+
+---
+name: writing
+
+
+<p data-height="450" data-theme-id="24117" data-slug-hash="bfb7e2fcd1f8f4d3816e20160faf8648" data-default-tab="js,result" data-user="timofei" data-embed-version="2" data-editable="true" class="codepen">hit r to reload</p>
+
+???
+
+
 
 
 
@@ -1135,6 +1137,10 @@ someCoolFunction();
 // or
 import * as cool from "myModule";
 cool.someCoolFunction();
+//or
+import {someCoolFunction as newName} from "myModule";
+newName();
+
 ```
 
 ???
@@ -1196,12 +1202,11 @@ name: Firebase React Notes Architecture
 
 
 
-
 ---
 name: Next Time
 
 
-![](/assets/drawings/firebasemontster-table.jpg)
+.medium[![](/assets/drawings/firebasemontster-table.jpg)]
 
 
 * Work on Lab3 - start now!
