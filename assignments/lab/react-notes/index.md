@@ -37,7 +37,7 @@ In this version your notes will persist and will synchronize in real-time so mul
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-19s/starterpack-your-gitub-username.git
+git remote add starter git@github.com:dartmouth-cs52-20s/starterpack-your-gitub-username.git
 git pull starter master  # you may need --allow-unrelated-histories
 ```
 
