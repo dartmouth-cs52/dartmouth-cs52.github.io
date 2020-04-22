@@ -58,7 +58,7 @@ See [assignments](/assignments).
   Sun 6-9 pm: Carson 61<br> -->
 
 * Instructor:<br>
-  Fri 11am-1pm, (zoom link on canvas)
+  Fri 2:30pm-4pm or by appointment, (zoom link on canvas)
   <!-- Fri 11am-1pm; or by appointment in Sudikoff 219/007 -->
 
 <table>
