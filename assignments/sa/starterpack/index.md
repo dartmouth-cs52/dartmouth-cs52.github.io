@@ -485,7 +485,9 @@ yarn add --dev eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y 
 
 If you find a rule you want to modify, or ignore — you can add it in above.  `0` means turn off, `1` means warning, `2` means throw an error, with additional options available per each rule's description page.
 
-🚀 Now in VSCode -> Preferences -> Settings -> search: eslint -> and check "Eslint: Auto Fix On Save" or in Atom -> Preferences -> Packages -> linter-eslint -> Settings, and check "Fix Errors on Save".
+🚀 Now in VSCode -> Preferences -> Settings -> search: `editor.codeActionsOnSave` -> and click Edit in settings.json -> add this line to the JSON file: `"editor.codeActionsOnSave": { "source.fixAll.eslint": true },` -> save the file.
+
+🚀 Now in Atom -> Preferences -> Packages -> linter-eslint -> Settings, and check "Fix Errors on Save".
 
 Super useful. This will fix indentation problems and some other things automatically whenever you save. Now restart your editor.
 
