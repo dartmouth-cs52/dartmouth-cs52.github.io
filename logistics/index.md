@@ -34,7 +34,7 @@ Grading of some collaborative team based work will be done based on GitHub pull 
   * late penalty:
     * -1% of assignment per hour
     * 2 allowed re-submits (capped at 80%, only available before the final projects start)
-    * 1 x 12 hour extension, asked for in advance
+    * 2 x 24 hour extension, asked for in advance
     * -2% for submission fails (unshared links, empty repos, wrong urls)
 
 **COVID-19 update** the overall course will be Credit/No-Credit - however individual assignments will still be graded with feedback provided, you can expect <=60 to be a NC situation. 
