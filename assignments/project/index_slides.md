@@ -56,7 +56,7 @@ name: Final Projects!
   * airbnb for parking spaces
   * hackathon communication and planning platform
 
-* [18s](18s), [17s](17s), [16x](16x) 
+* [19s](19s), [18s](18s), [17s](17s), [16x](16x) 
 
 ???
 * a couple groups went all out and build both a react-native app and a web app
@@ -80,6 +80,14 @@ name: left on read
 * 2000 users
 
 
+
+---
+name: PassOn
+
+<iframe style="border: none;" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FevCqUdYj0hNBA5YvPTaKHs%2FPassOn%3Fnode-id%3D107%253A6162%26scaling%3Dscale-down" allowfullscreen></iframe>
+
+
+
 ---
 name: YipYip
 
@@ -95,10 +103,18 @@ name: full stack music
 
 
 ---
-name: mychef
+name: your-perfect-concert
 
 
-<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://mychef.surge.sh/" frameborder="0" allowfullscreen></iframe>
+<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="https://your-perfect-concert.surge.sh/" frameborder="0" allowfullscreen></iframe>
+
+
+---
+name: react-game
+
+
+<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="https://react-game-cs52-19s.surge.sh/" frameborder="0" allowfullscreen></iframe>
+
 
 ---
 name: dart courses
@@ -149,10 +165,10 @@ name: munch buddy
 
 
 ---
-name: mafia
+name: Gut Busters
 
 
-.large[![](img/projects_17s/mafia.gif)]
+.large[![](/assignments/project/img/projects_19s/gutbusters.gif)]
 
 
 ---
@@ -176,10 +192,9 @@ name: RealTalk
 
 
 ---
-name: roommate finder
+name: timeline
 
-<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://roommate-finder.surge.sh/" frameborder="0" allowfullscreen></iframe>
-
+.large[![](/assignments/project/img/projects_19s/timeline.gif)]
 
 ---
 name: off the green
@@ -187,18 +202,18 @@ name: off the green
 <iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://offthegreen.surge.sh/" frameborder="0" allowfullscreen></iframe>
 
 
-
-<!-- name: Ideas
-
-
-.fancy.medium[![](https://media.giphy.com/media/PIYuiILBo5OnK/giphy.gif)]
+---
+name: Ideas
 
 
+.medium[![](https://media.giphy.com/media/PIYuiILBo5OnK/giphy.gif)]
 
-* hard to generate -->
+???
 
+* hard to generate
 
-<!-- name: Some Inspiration Sources
+---
+name: Some Inspiration Sources
 
 * https://80000hours.org/career-guide/world-problems/
 * https://80000hours.org/problem-profiles/#potentially_promising
@@ -211,83 +226,63 @@ name: off the green
 * https://dribbble.com/
 * http://abc.go.com/shows/shark-tank
 
-
-
+???
 * how i built this is a cool interview series
 * anybody listen to it?
 * world problems
-* how to think about problems and scale -->
+* how to think about problems and scale
 
 
+---
+name: Some Broad Topics
 
-<!-- name: Some Broad Topics
-
-.fancy.small[![](img/flyaway.gif)]
+.small[![](img/sharing.gif)]
 
 * education
 * games
 * behavior change (health, happiness, security)
 * mobile sensors
+* post ideas in slack `#pitch-ideas`
 
 
+???
 * do we think education is optimal?
 * queue soap box - turns out giving students a giant textbook to read and talking at them for an hour isn't the way the brain works.  we are amazing learners - you learn language mostly just by listening - an infants brain learns phonemes and words by analyzing the distribution of sounds. probabilistic statistical learning
 * pre-tty _ ba-by (transitional probabilities, that a syllable will occur given a previous) oral speach has no real boundaries
 * we do this automatically.
-* at 11 months old babies can distinguish grammatical from non-grammatical sentences -->
+* at 11 months old babies can distinguish grammatical from non-grammatical sentences
 
-
-
-<!-- name: Share Topics
-
-.small[![](img/sharing.gif)]
-
-* Next assignment: find and share an interesting paper or article
-* can be about tech or problems in the world
-* post in slack `#pitch-ideas` with comment about why it is interesting to you
-
-* this is just a little starter
-* find more and post them -->
 
 
 ---
 name: Process:
 
-* Pitches (next week!)
+* Pitches (starting next week)
 * Groups Formed (5/3)
-* Feature Spec + Mockups (5/9)
+* Feature Spec + Mockups (5/12)
 * Scaffolding (5/14)
-* Dev Site Up (client+server) (5/16)
-* Pre-demo Bug Hug (5/23)
-* Final Project Demos (5/29)
-* Final Submission (6/3)
+* Dev Site Up (client+server) (5/19)
+* Pre-demo Bug Hug (5/26?)
+* Final Project Demos (6/8?)
+* Final Submission (6/9?)
 
 
 ???
-* trying so that we have plenty of time for This
-
-
-<!-- name: Pitches
-
- .fancy.medium[![](http://i.giphy.com/IH3ZwYeR9AlP2.gif)]
-
-* submit idea to pitch, individually or in pairs
-
-* This will be your chance to submit an idea that you would like to pitch.  As the person submitting the idea you'll need to think a little bit about scope and feasibility.
-* just need to know how many so we can have enough time for it -->
-
-
+* trying so that we have plenty of time for this
+* usually demos are last day of class - now that it is online thinking last day of finals - would ease up our timeline a little bit.  quick poll - who would not be available evening of say june 8th?
 
 
 
 ---
 name: Pitch Presentations
 
- .fancy.medium[![](http://i.giphy.com/nldqZAXfXH6I8.gif)]
+ .fancy.small[![](http://i.giphy.com/nldqZAXfXH6I8.gif)]
+<br><br><br>
 
 * 2 minute MAX presentation with 2 minutes Q&A
+* add slides to a shared google slide deck (on canvas)
 * can do in pairs if you want
-* groups (of 5) formed by bidding on favorite ideas
+* groups (of 5-6) formed by bidding on favorite ideas
 * also who you prefer working with/not
 
 ???
@@ -298,12 +293,11 @@ name: Pitch Presentations
 
 
 
-
-
 ---
 name: Feature Spec + Mockups
 
- .fancy.medium[![](http://i.giphy.com/13NR9a0aYuYMy4.gif)]
+ .fancy.small[![](http://i.giphy.com/13NR9a0aYuYMy4.gif)]
+<br><br><br>
 
 * terse walk-through of project
 * from users perspective
@@ -323,7 +317,8 @@ name: Feature Spec + Mockups
 ---
 name: Scaffolding
 
- .fancy.medium[![](img/bamboo.gif)]
+ .fancy.small[![](img/bamboo.gif)]
+<br><br><br>
 
 * initial code scaffolding
 * tools and frameworks chosen
@@ -337,12 +332,11 @@ name: Scaffolding
 
 
 
-
-
 ---
 name: Dev Site Up (client+server)
 
- .fancy.medium[![](http://i.giphy.com/IU9JNuUSmxZTy.gif)]
+ .fancy.small[![](http://i.giphy.com/IU9JNuUSmxZTy.gif)]
+<br><br><br>
 
 * dev site up
 * basic flow in place:
@@ -351,8 +345,6 @@ name: Dev Site Up (client+server)
 ???
 * Dev site goes live allowing people to see basic flow (components hitting api endpoints pulling data from database).
 * initial wiring is in place so things are talking to each other
-
-
 
 
 
@@ -377,9 +369,13 @@ name: Pre-Demo Bug Hunt
 ---
 name: Final Project Demos
 
- .fancy.medium[![](http://i.giphy.com/p9O75RBS946He.gif)]
+ <!-- .fancy.medium[![](http://i.giphy.com/p9O75RBS946He.gif)] -->
+ < image removed due to social distancing guidelines >
+<br>
+<br>
 
-* open to public!
+* format is TBD - likely a hosted streaming+zoom rooms event
+* open to public
 * motivate idea, show in action, discuss challenges
 * user testing
 
@@ -388,8 +384,3 @@ name: Final Project Demos
 * Motivate the idea, show it in action, discuss challenges
 * will be in hanover inn ballroom!
 
-
----
-name: And Now...
-
-[https://tinyurl.com/cs52-19s-pitches](https://tinyurl.com/cs52-19s-pitches)

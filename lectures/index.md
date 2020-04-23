@@ -60,14 +60,14 @@ fetch(proxyUrl + targetUrl, {
 <!-- * [4/25 Projects Intro](../projects/) -->
 <!-- * 4/23 Advanced JS -->
 * [4/21 Asynch JS](08_asynch_js)
-* 4/28 Routing
-<!-- * [4/28 Routing](09_routing) -->
-* 4/30 Redux
-<!-- * [4/30 Redux](10_redux) -->
-* 5/5 Databases
+<!-- * 4/23 Routing and Project Intro -->
+* [4/23 Routing and Project Intro](09_routing)
+* 4/28 Redux
+<!-- * [4/28 Redux](10_redux) -->
+* 4/30 Databases
 <!-- * [4/30 Databases](12_intro_to_databases) -->
-* 5/6 Pitches
-<!-- * [5/6 Pitches](11_pitches) -->
+* 5/5 Pitches
+<!-- * [5/5 Pitches](11_pitches) -->
 * 5/7 Sessions & Auth
 <!-- * [5/7 Sessions & Auth](13_sessions_auth) -->
 * 5/7 Teams
@@ -78,7 +78,6 @@ fetch(proxyUrl + targetUrl, {
 * 5/19 In Class TeamWork Time
 * 5/21 Mockup Sharing
 * 5/26 In Class TeamWork Time
-* 5/28 In Class TeamWork Time (location Fairchild 101 instead)
+* 5/28 In Class TeamWork Time
 * 6/02 Wrapup
-<!-- * [5/28 Wrapup](16_wrapup) -->
-* 6/03 Demos
+* 6/(03|08) TBD Demos
