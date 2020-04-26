@@ -17,8 +17,8 @@ comment_term: assignments
 * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack)
 <!-- * Short Assignment 4: React Intro -->
 * [Short Assignment 4: React Intro](sa/react-videos)
-* Short Assignment 5: Frontend Routing
-<!-- * [Short Assignment 5: Frontend Routing](sa/routing)  -->
+<!-- * Short Assignment 5: Frontend Routing -->
+* [Short Assignment 5: Frontend Routing](sa/routing) 
 * Short Assignment 6: Redux
 <!-- * [Short Assignment 6: Redux](sa/redux)  -->
 * Short Assignment 7: Express and Mongo
