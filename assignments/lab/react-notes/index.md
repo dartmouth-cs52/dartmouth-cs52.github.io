@@ -507,7 +507,7 @@ const database = firebase.database();
 
 Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods - fact we'll just abstract it out into something we'll consider our datastore.
 
-🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `yarn` to fetch the firebase SDK for us, just do `import Firebase from 'firebase';` and you're all set to go!
+🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `yarn` to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
 
 My recommendation is to put all your firebase functions in this file and export them.  We briefly talked about ES6 modules.  Easiest way to make this module is to simply export every public function:
 
