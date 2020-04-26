@@ -186,6 +186,14 @@ Prior archived versions of this course website are available: [16x](https://dart
 
 Also check out [previous projects](assignments/project).
 
+## Contributing
+
+Interested in contributing to the course?  There are several opportunites:
+
+*  Want to file a bug report?  All the presentations, and assignments on this website are on [github](https://github.com/dartmouth-cs52/dartmouth-cs52.github.io).
+* Want to pass on your knowledge, and help the next generation of webdevs? Future TA's <a href="http://cs52.me/ta/" target="_blank">apply here!</a>.  You don't really know something until you've tried explaining it to others. [Ask me](https://cs52-dartmouth.slack.com/messages/@tim/) about the opportunity if you want to learn more. 
+* Want to build cool interactive webdev learning games like [boomsync](http://boomsync.me)? There's some funding available to help with that, [slack me about it](https://cs52-dartmouth.slack.com/messages/@tim/).
+
 <!-- <script>
 var proxyUrl = 'https://glacial-fjord-69804.herokuapp.com/',
     targetUrl = 'https://www.notion.so/api/v3/queryCollection'
