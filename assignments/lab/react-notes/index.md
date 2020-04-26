@@ -471,15 +471,7 @@ You can see other [sample rules](https://firebase.google.com/docs/database/secur
 Note: it is extra credit to add authentication for users to your app and not just allow anybody to post notes.
 
 
-You'll need to install firebase command line tools also:
-
-```bash
-npm install -g firebase-tools
-```
-
-Note: `-g` installs globally rather than in your project, so we're installing a command `firebase` to be available in your shell at anytime.
-
-🚀 While we are at it let's add the firebase js library to your project:
+🚀 Let's add the firebase js library to your project:
 
 ```bash
 yarn add firebase
