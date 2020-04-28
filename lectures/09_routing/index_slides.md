@@ -22,33 +22,19 @@ name: base
 
 
 ---
-name: CS52 Art
+name: CS52 Today
 
 
 * routing
 * projects
 
-<!-- .large[![](img/nature-table.jpg)] -->
+.medium[![](/assets/drawings/tq-state-money.jpg)]
 
 
 ???
 * how's lab?
 * js stuff?
 * firebase module?
-
-
-
-
----
-name: Firebase React Notes Architecture
-
-
-![](img/firebase-architecture.jpg)
-
-
-???
-* wrapper module
-* there will be a websockets intro were we can replace what firebase is to us fairly quickly with websockets
 
 
 
@@ -64,6 +50,7 @@ name: CS52 Art
 * from last year, no drawings like this this year
 * hopefully JS is starting to make a little bit of sense
 * anything we should go over?
+* lab3 coming along, sounds like a lot of you have started it
 
 
 
@@ -90,18 +77,6 @@ name: CS52 Art
 * will try to speed up our grading to get you feedback quicker 
 -->
 
----
-name: CS52 Art
-
-
-.right.large[![](img/callbackhell-table.jpg)]
-.left.large[![](img/promises.jpg)]
-
-
-???
-*
-
-
 
 
 ---
@@ -110,8 +85,7 @@ name: Announcements
 <!-- .small[![](img/fuq-table.jpg)] -->
 
 * Project Pitching Next Week!
-* SA5: Routing (super short)
-* SA6: Redux (extra short)
+* coming up: SA5: Routing (super extra short)
 
 ???
 * we should start talking about final project ideas!
@@ -120,15 +94,12 @@ name: Announcements
 
 
 
----
-name: Quiz
+<!-- name: Quiz
 
 .large[![](img/chase.gif)] 
 
 
-???
-
-
+ -->
 
 
 
@@ -143,10 +114,11 @@ name: Routing Frontend
 
 
 ???
-* what if you want to pass some state into the url
-* or have a url that is meaningful to the user to help indicate where they are
-* what the what, who keeps track of all that junk
-* tracking where a link was clicked and who shared for instance
+* originally - routes were just file resources in folders
+* what if you want to **pass some state via the url**
+* or **have a url that is meaningful** to the user to help indicate where they are
+* who keeps track of all that junk
+* tracking where a link was clicked and who shared it for instance
 * what news article to show
 * https://ed.fnal.gov/lincon/tech_web_links_types.shtml
 * https://www.slideshare.net/rfreebern/the-ux-of-urls
@@ -172,7 +144,7 @@ name: The UX of Routes
 
 
 ---
-name:
+name: SPA problem?
 
 
 .medium[![](img/single-page-app.png)]
@@ -252,14 +224,13 @@ name: Basic Browser
 * maintains a history of URLs visited
   * back
   * forward
-* reloads page on navigation
+* loads/reloads page on navigation/submission
   * killing js
-  * cookies stay
 
 ???
 * stepping back a sec to basic browser functionality
 * default browser actions
-* loading pages from scratch
+* loading pages/resources from scratch
 * cookies we'll dive into later
 
 
@@ -272,11 +243,12 @@ name: reloads on
 
 .small[![](img/reload.gif)]
 
-* location bar typing
-* forward/back buttons
-* page refresh operation
-* javascript assignments to `window.location`
-* form submission
+* loading/reloading triggered by:
+    * location bar typing
+    * forward/back buttons
+    * page refresh operation
+    * javascript assignments to `window.location`
+    * form submission
 
 ???
 * BUT what we want is to change url *without* refresh
@@ -306,12 +278,12 @@ name: Attempt 1: Hash History
 
 
 ---
-name: Navigation Away
+name: Navigation Away -> loss of state
 
 ```javascript
 
 window.onbeforeunload = function(e) {
-  return 'are you sure you want to leave this page?';
+  alert('are you sure you want to leave this page?');
 }
 
 ```
@@ -374,12 +346,13 @@ name: Deep Linking
 ---
 name: App Init from URL
 
-* old ugly way: http://www.example.org/?show=posts?id=s987s9d&type=today&user=320s9s8
-* new clean urls: http://www.example.org/posts/07-22-16
+* **ugly url: http://www.example.org/?show=posts?id=s987s9d&type=today&user=320s9s8**
+
+* **clean url: http://www.example.org/posts/07-22-16**
 
 ???
 * clean urls better!
-
+* maybe less encoded but user shouldn't be in the url!
 
 
 
@@ -416,7 +389,7 @@ http://html5demos.com/history
 name:
 
 
-.medium[![](img/router5.jpg)]
+.medium[![](img/react-router.jpg)]
 
 [https://reacttraining.com/react-router](https://reacttraining.com/react-router)
 
@@ -590,15 +563,15 @@ name: Nesting
 
 
 ```html
-const Posts = (props) => (
+const Users = (props) => (
   <div>
-    <Route path={`${props.match.url}/:postid`} component={Post}/>
+    <Route path={`${props.match.url}/:userid`} component={User}/>
     <Route exact path={props.match.url} render={() => (
-      <h1>select a post</h1>
+      <h1>search by name</h1>
     )} />
   </div>
 )
-<Route path="/posts" component={Posts} />
+<Route path="/users" component={Users} />
 ```
 
 `props.match`
@@ -647,7 +620,7 @@ render() {
 ???
 * your components too can have children! tanget
 * all there is to it. this.props.children will contain all the componets that are nested.
-* Routes do something similar in that they wrap a component
+* Route components do something similar in that they wrap a component and add some functionality - higher order component
 * you can do this with other components also if you want to add functionality for instance
 
 
@@ -681,6 +654,8 @@ name: Linking and Pushing
   <li><NavLink to="/users">Users</NavLink></li>
   <li><NavLink to="/widgets">Widgets</NavLink></li>
 </ul>
+
+{/* do this instead of <a href="/">! */}
 ```
 
 ```javascript
@@ -701,7 +676,10 @@ handleClick() {
 name: Route matching and Params
 
 ```html
+// :paramName pattern matches and extracts into props.match.params.paramName
+
 <Route path="users/:userId" component={UserProfile} />
+
 ```
 
 ```javascript
@@ -724,6 +702,8 @@ fetch(url, { method: 'get'})
 
 ---
 name: 404!
+
+* but we have a problem, these aren't real files!
 
 .medium[![](img/server-fail-route.jpg)]
 
@@ -759,20 +739,9 @@ my-project.surge.sh/
 
 
 ---
-name: also...
+name:
 
 * [animating urls?!?](http://matthewrayfield.com/articles/animating-urls-with-javascript-and-emojis)
 
+* [let's talk final projects](/assignments/project/#1)
 
-???
-* extra credit if you implement this in the short
-
----
-name: panda time
-
-
-.tiny[![](http://i.imgur.com/UDXsrxj.gif)]
-
-???
-* panda time
-* is question time

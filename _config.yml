@@ -23,6 +23,9 @@ github_username:  timofei7
 # Build settings
 markdown: kramdown
 
+#kramdown:
+#  parse_block_html: true
+
 exclude: ["slide_template.md"]
 # keep_files: ["**/index_slides.md"]
 

@@ -37,7 +37,7 @@ In this version your notes will persist and will synchronize in real-time so mul
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-19s/starterpack-your-gitub-username.git
+git remote add starter git@github.com:dartmouth-cs52-20s/starterpack-your-gitub-username.git
 git pull starter master  # you may need --allow-unrelated-histories
 ```
 
@@ -145,7 +145,6 @@ Here is what I recommend you do for your *App* component state initialization:
 // in App constructor
   this.state = {
     notes: Map(),
-    //...
   };
 ```
 
@@ -472,15 +471,7 @@ You can see other [sample rules](https://firebase.google.com/docs/database/secur
 Note: it is extra credit to add authentication for users to your app and not just allow anybody to post notes.
 
 
-You'll need to install firebase command line tools also:
-
-```bash
-npm install -g firebase-tools
-```
-
-Note: `-g` installs globally rather than in your project, so we're installing a command `firebase` to be available in your shell at anytime.
-
-🚀 While we are at it let's add the firebase js library to your project:
+🚀 Let's add the firebase js library to your project:
 
 ```bash
 yarn add firebase
@@ -508,7 +499,7 @@ const database = firebase.database();
 
 Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods - fact we'll just abstract it out into something we'll consider our datastore.
 
-🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `yarn` to fetch the firebase SDK for us, just do `import Firebase from 'firebase';` and you're all set to go!
+🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `yarn` to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
 
 My recommendation is to put all your firebase functions in this file and export them.  We briefly talked about ES6 modules.  Easiest way to make this module is to simply export every public function:
 

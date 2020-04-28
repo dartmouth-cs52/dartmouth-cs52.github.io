@@ -450,10 +450,11 @@ Ok, at this point you have an app that displays a search bar, it is a driven fie
 
 🚀 Want to go ahead and give it a shot to upgrade `index.js` to a class base component?  Take a few minutes and give that a shot.
 
-<details>
-<summary>Here is what you should end up with:</summary>
+<br>
+<hr>
+<br>
 
-```javascript
+```js
 class App extends Component {
   constructor(props) {
     super(props);
@@ -462,14 +463,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <SearchBar />
-      </div>
+      	<div>
+         <SearchBar />
+      	</div>
     );
   }
 }
 ```
-</details>
 
 We'll probably need to add some state here, but for now this is good. Make sure everything still works as expected. And we have an empty constructor ready to do stuff.
 

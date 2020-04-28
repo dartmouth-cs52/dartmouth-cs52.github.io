@@ -17,10 +17,10 @@ comment_term: assignments
 * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack)
 <!-- * Short Assignment 4: React Intro -->
 * [Short Assignment 4: React Intro](sa/react-videos)
-* Short Assignment 5: Frontend Routing
-<!-- * [Short Assignment 5: Frontend Routing](sa/routing)  -->
-* Short Assignment 6: Redux
-<!-- * [Short Assignment 6: Redux](sa/redux)  -->
+<!-- * Short Assignment 5: Frontend Routing -->
+* [Short Assignment 5: Frontend Routing](sa/routing) 
+<!-- * Short Assignment 6: Redux -->
+* [Short Assignment 6: Redux](sa/redux) 
 * Short Assignment 7: Express and Mongo
 <!-- * [Short Assignment 7: Express and Mongo](sa/server-side)  -->
 * EC Short Assignment 8: WebSockets
@@ -29,8 +29,8 @@ comment_term: assignments
 <!-- * [ExtraCredit Short Assignment 9: Photo Uploading S3](sa/s3-upload) -->
 * EC Short Assignment 10: ChatBot
 <!-- * [ExtraCredit Short Assignment 10: ChatBot](sa/slack-bot) -->
-* EC Short Assignment 11: ReactNative
-<!-- * [ExtraCredit Short Assignment 11: ReactNative](sa/react-native) -->
+<!-- * EC Short Assignment 11: ReactNative -->
+* [ExtraCredit Short Assignment 11: ReactNative](sa/react-native)
 
 
 
@@ -44,12 +44,12 @@ comment_term: assignments
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical)
 <!-- * Lab 3: React Notes -->
 * [Lab 3: React Notes](lab/react-notes)
-* Lab 4: Redux Blog Frontend
-<!-- * [Lab 4: Redux CRUD Frontend](lab/redux-blog) - DUE 4/30 -->
-* Lab 5 Part 1: Redux Blog + API
-<!-- * [Lab 5 Part 1: Redux Blog + API](lab/redux-blog+server) - DUE 5/6 -->
-* Lab 5 Part 2: Redux Blog + Auth 
-<!-- * [Lab 5 Part 2: Redux Blog + Auth](lab/redux-blog+auth) - DUE 5/11 -->
+* Lab 4: Redux Platform Frontend
+<!-- * [Lab 4: Redux Platform Frontend](lab/redux-platform) - DUE 4/30 -->
+* Lab 5 Part 1: Redux Platform + API
+<!-- * [Lab 5 Part 1: Redux Platform + API](lab/redux-platform+server) - DUE 5/6 -->
+* Lab 5 Part 2: Redux Platform + Auth 
+<!-- * [Lab 5 Part 2: Redux Platform + Auth](lab/redux-platform+auth) - DUE 5/11 -->
 
 
 ### 4-ish Short in-class quizzes:  10%

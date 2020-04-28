@@ -66,39 +66,6 @@ name: Ok but like, why?
 * where people pitched their favorite food and then we got that food later in term
 * we can do that or move on to an ideation workshop?
 
----
-name: Ideas
-
-
-.fancy.medium[![](https://media.giphy.com/media/PIYuiILBo5OnK/giphy.gif)]
-
-
-???
-* hard to generate
-* today we'll do some brainstorming
-* today will be different
-* queue smoke machine
-
-
-
----
-name: Some Inspiration Sources
-
-
-* http://www.ycombinator.com/resources/
-* https://www.startupschool.org/
-* http://www.paulgraham.com/startupideas.html
-* https://www.ycombinator.com/rfs/
-* https://www.npr.org/podcasts/510313/how-i-built-this
-* https://dribbble.com/
-* http://abc.go.com/shows/shark-tank
-
-
-
-???
-* how i built this is a cool interview series
-* if at the end of class you in a place where you want to apply to ycombinator - that is ultimate stretch goal
-
 
 
 ---

@@ -45,10 +45,10 @@ npm install expo-cli --global
 Great! Now we're ready to create our repo.
 
 ```sh
-💻 expo init my-new-project
+💻 expo init youtube-search-app
 # choose blank as the template
 # although at another time you can play with the more complicated one
-💻 cd my-new-project
+💻 cd youtube-search-app
 💻 expo start
 ```
 
@@ -103,6 +103,12 @@ One of the classic navigation components in iOS is the Tab Bar. We'll be using t
 
 🚀 Create a new directory in the top level of the project folder called `navigation`.
 
+🚀 Now let's install some of the React Navigation dependencies.
+
+```
+💻 yarn add @react-navigation/native @react-navigation/bottom-tabs react-native-gesture-handler@~1.5.0 react-native-reanimated@~1.4.0 react-native-screens@2.0.0-alpha.12 react-native-safe-area-context@0.6.0 @react-native-community/masked-view@0.1.5
+```
+
 ### Tabs
 
 Tabs are a pretty common feature of apps, let's set up some using [Tab Navigation](https://reactnavigation.org/docs/en/tab-based-navigation.html).
@@ -111,8 +117,9 @@ Tabs are a pretty common feature of apps, let's set up some using [Tab Navigatio
 
 ```js
 import React from 'react';
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation';
-import { View, Text } from 'react-native';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const AboutTab = (props) => {
   return <View style={{ flex: 1, justifyContent: 'center' }}><Text>about</Text></View>;
@@ -122,16 +129,21 @@ const SearchTab = (props) => {
   return <View style={{ flex: 1, justifyContent: 'center' }}><Text>Search</Text></View>;
 };
 
+const Tab = createBottomTabNavigator();
 
-const MainTabBar = createBottomTabNavigator({
-  SearchTab,
-  AboutTab,
-}, {
-  initialRouteName: 'SearchTab',
-});
+const MainTabBar = () => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Search" component={SearchTab} />
+        <Tab.Screen name="About" component={AboutTab} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
 
+export default MainTabBar;
 
-export default createAppContainer(MainTabBar);
 ```
 
 🚀  Now lets load this in the main `App.js`. Change `App.js` to be:
@@ -212,6 +224,11 @@ export default About;
 
 Let's load this new *About* component and make out TabBar better looking at the same time.
 
+🚀 Let's add a package for icons:
+```
+💻 yarn add react-native-vector-icons
+```
+
 🚀 In your `navigation/main_tab_bar.js` file add some imports:
 
 ```js
@@ -219,30 +236,32 @@ import Ionicons from 'react-native-vector-icons/FontAwesome';
 import About from '../components/about';
 ```
 
-🚀 And replace the createBottomTabNavigator function with:
+🚀 And replace the `MainTabBar` component with:
 
 ```js
-const MainTabBar = createBottomTabNavigator(
-  {
-    SearchTab,
-    AboutTab: {
-      screen: About,
-      navigationOptions: ({ navigation }) => ({
-        tabBarLabel: 'About',
-        tabBarIcon: ({ focused }) => (
-          <Ionicons
-            name="info-circle"
-            size={26}
-            color={focused ? '#58AADA' : 'grey'}
-          />
-        ),
-      }),
-    },
-  },
-  {
-    initialRouteName: 'SearchTab',
-  },
-);
+const MainTabBar = () => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        initialRouteName="Search"
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused }) => {
+            let iconName;
+
+            if (route.name === 'About') {
+              iconName = 'info-circle';
+            }
+
+            return <Ionicons name={iconName} size={26} color={focused ? '#58AADA' : 'grey'} />;
+          },
+        })}
+      >
+        <Tab.Screen name="Search" component={SearchTab} />
+        <Tab.Screen name="About" component={About} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
 ```
 
 📱 Check it out!
@@ -266,46 +285,74 @@ But we already have a TabNavigator?!  Turns out you can nest navigation stacks. 
 
 ### Create SearchTab
 
+🚀 Let's import the stack navigation package:
+```
+💻 yarn add @react-navigation/stack
+```
+
 🚀 Create `navigation/search_tab.js` and populate with:
 
 ```js
 import React from 'react';
-import { createStackNavigator } from 'react-navigation';
-import Ionicons from 'react-native-vector-icons/FontAwesome';
 import { Button } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Ionicons from 'react-native-vector-icons/FontAwesome';
 
 // import VideoList from '../components/video_list';
 // import VideoDetail from '../components/video_detail';
 
-const TempSearch = props => (<Button onPress={() => { props.navigation.navigate('Detail'); }} title="next" />);
-const TempDetail = props => (<Button onPress={() => { props.navigation.pop(); }} title="close" />);
+const TempSearch = (props) => (<Button onPress={() => { props.navigation.navigate('Detail'); }} title="next" />);
+const TempDetail = (props) => (<Button onPress={() => { props.navigation.pop(); }} title="close" />);
+
+const Stack = createStackNavigator();
 
 // nest stack navigator to handle two internal views
-const SearchTab = createStackNavigator({
-  // keys are the names of the "routes"
-  Search: TempSearch,
-  Detail: TempDetail,
-});
-
-// override some navigation options - set a pretty icon
-SearchTab.navigationOptions = ({ navigation }) => ({
-  tabBarLabel: 'Search',
-  tabBarIcon: ({ focused }) => (
-    <Ionicons
-      name="search"
-      size={26}
-      color={focused ? '#58AADA' : 'grey'}
-    />
-  ),
-});
-
+// "name" prop is the name of the route
+const SearchTab = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Search" component={TempSearch} />
+      <Stack.Screen name="Detail" component={TempDetail} />
+    </Stack.Navigator>
+  );
+}
 
 export default SearchTab;
 ```
 
-Here we are using `createStackNavigator` instead but it works very similarly. Additionally, we want a pretty tabBar icon so we do something similar to what we did in for the `about` tab. Note how `navigationOptions` can be set in multiple ways/places.
+Here we are using `createStackNavigator` instead but it works very similarly. 
 
-📱 You should now see how this type of stack navigation works
+### Connect Search Tab
+
+Similar to what we did with the About tab, we want to connect our new Search stack to the main tab bar.
+
+🚀 Delete the old SearchTab component inside `main_tab_bar.js` and import your new one:
+```
+import SearchTab from './search_tab';
+```
+
+🚀 Next, we want to add an icon for the search tab, so edit the screenOptions prop to look like this:
+```js
+screenOptions={({ route }) => ({
+  tabBarIcon: ({ focused }) => {
+    let iconName;
+		
+		// Customize the icon we display based on the tab route
+    if (route.name === 'About') {
+      iconName = 'info-circle';
+    } 
+		// Adding the search icon
+		else if (route.name === 'Search') {
+      iconName = 'search';
+    }
+
+		// Return the respective icon
+    return <Ionicons name={iconName} size={26} color={focused ? '#58AADA' : 'grey'} />;
+  },
+})}
+```
+
+📱 You should now see how stack navigation works inside of a tab navigator system.
 
 ### VideoList
 
@@ -314,111 +361,97 @@ We want to do more.
 🚀 Let's create `components/video_list.js` and fill it in:
 
  ```js
- import React, { Component } from 'react';
+import React, { Component } from 'react';
 import Search from 'react-native-search-box';
-
-
 import {
   ActivityIndicator,
   StyleSheet,
   View,
   Image,
   Text,
-  ListView,
+  FlatList,
   TouchableHighlight,
 } from 'react-native';
 
 import youtubeSearch from '../services/youtube-api';
 
 class VideoList extends Component {
-    static navigationOptions = {
-      title: 'Youtube Search',
-      headerStyle: {
-        backgroundColor: '#f4511e',
-      },
-      headerTintColor: 'white',
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: 'true facts',
+      isLoading: true,
+      dataSource: [],
     };
 
-    constructor(props) {
-      super(props);
-      this.state = {
-        query: 'true facts',
-        isLoading: true,
-        dataSource: new ListView.DataSource({
-          rowHasChanged: (row1, row2) => row1 !== row2,
-        }),
-      };
+    this.renderVideoCell = this.renderVideoCell.bind(this);
+  }
 
-      this.renderVideoCell = this.renderVideoCell.bind(this);
-    }
+  // ---------- componentDidMount here! -----------//
 
-    // ---------- componentDidMount here! -----------//
-
-    // ------------ put fetchData here! -------------//
+  // ------------ put fetchData here! -------------//
 
 
-    showVideoDetail(video) {
-      // pass in video into this.props.navigation.state.params.video in navigated view
-      this.props.navigation.navigate('Detail', { video });
-    }
+  showVideoDetail(video) {
+    // pass in video into this.props.navigation.state.params.video in navigated view
+    this.props.navigation.navigate('Detail', { video });
+  }
 
-    renderLoadingView() {
-      return (
-        <View style={styles.loading}>
-          <ActivityIndicator size="large" color="#0000ff" />
-        </View>
-      );
-    }
+  renderLoadingView() {
+    return (
+      <View style={styles.loading}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  }
 
 
-    renderVideoCell(video) {
-      return (
-        <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="orange">
-          <View>
-            <View style={styles.container}>
-              <Image
-                source={{ uri: video.snippet.thumbnails.default.url }}
-                style={styles.thumbnail}
-              />
-              <View style={styles.rightContainer}>
-                <Text style={styles.title}>{video.snippet.title}</Text>
-                <Text style={styles.subtitle}>{video.snippet.description}</Text>
-              </View>
-            </View>
-            <View style={styles.separator} />
-          </View>
-        </TouchableHighlight>
-      );
-    }
-
-    render() {
-      if (this.state.isLoading) {
-        return this.renderLoadingView();
-      }
-      return (
+  renderVideoCell(video) {
+    return (
+      <TouchableHighlight onPress={() => { this.showVideoDetail(video); }} underlayColor="orange">
         <View>
-          <Search
-            backgroundColor="#c4302b"
-            showsCancelButton={false}
-            textFieldBackgroundColor="#c4302b"
-            onChangeText={(query) => {
-              this.setState({ query });
-              this.fetchData();
-              }
-            }
-          />
-
-          <ListView
-            dataSource={this.state.dataSource}
-            renderRow={this.renderVideoCell}
-            style={styles.listView}
-          />
+          <View style={styles.container}>
+            <Image
+              source={{ uri: video.snippet.thumbnails.default.url }}
+              style={styles.thumbnail}
+            />
+            <View style={styles.rightContainer}>
+              <Text style={styles.title}>{video.snippet.title}</Text>
+              <Text style={styles.subtitle}>{video.snippet.description}</Text>
+            </View>
+          </View>
+          <View style={styles.separator} />
         </View>
-      );
-    }
-}
+      </TouchableHighlight>
+    );
+  }
 
-export default VideoList;
+  render() {
+    if (this.state.isLoading) {
+      return this.renderLoadingView();
+    }
+    return (
+      <View>
+        <Search
+          backgroundColor="#c4302b"
+          showsCancelButton={false}
+          textFieldBackgroundColor="#c4302b"
+          onChangeText={(query) => {
+            this.setState({ query });
+            this.fetchData();
+          }}
+        />
+
+        <FlatList
+          data={this.state.dataSource}
+          renderItem={({ item }) => { return this.renderVideoCell(item); }}
+          keyExtractor={(item) => item.snippet.thumbnails.default.url}
+          style={styles.listView}
+        />
+      </View>
+    );
+  }
+}
  ```
 
 
@@ -468,7 +501,22 @@ const styles = StyleSheet.create({
 🚀 Alright, let's update the `search_tab.js` to show our new VideoList component:
 
 ```js
-Search: VideoList,
+<Stack.Screen name="Search" component={VideoList} />
+```
+
+🚀 While we're here, let's jazz up the style of the youtube search header:
+```js
+<Stack.Screen
+  name="Search"
+  component={VideoList}
+  options={{
+    title: 'Youtube Search',
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+  }}
+/>
 ```
 
 🚀 Take a look at the simulator: Loady-spinny!  This is the default `<ActivityIndicator />` component we're showing if the API call hasn't returned videos yet. Since we haven't made an API call yet, that definitely makes sense.
@@ -482,7 +530,7 @@ fetchData() {
   youtubeSearch(this.state.query)
     .then((responseData) => {
       this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(responseData),
+        dataSource: responseData,
         isLoading: false,
       });
     }).catch((error) => {
@@ -515,20 +563,22 @@ Sound familiar?  We did this in short assignment 4, and we will be using the exa
 
 ## VideoDetail
 
-At list point clicking on a list takes us to a boring screen. Let's make that better.
+At list point clicking on a list item takes us to a boring screen. Let's make that better.
 
-🚀 Create new file called `compnents/video_detail.js` and paste in this code:
+🚀 Create new file called `components/video_detail.js` and paste in this code:
 
 ```js
 import React from 'react';
-import { WebView } from 'react-native';
+import WebView from 'react-native-webview';
 
 const VideoDetail = (props) => {
-  // what an annoyingly long path
-  const { videoId } = props.navigation.state.params.video.id;
+  // example of destructuring, the below is equivalent to props.route.params.video
+  const { route } = props;
+  const { video } = route.params;
+
   return (
     <WebView
-      source={{ uri: `https://www.youtube.com/embed/${videoId}` }}
+      source={{ uri: `https://www.youtube.com/embed/${video.id}` }}
       automaticallyAdjustContentInsets={false}
     />
   );
@@ -537,9 +587,14 @@ const VideoDetail = (props) => {
 export default VideoDetail;
 ```
 
-🚀 Swap out the `TempDetail` view in your `search_tab.js` for this new component.
+🚀 Oops, we forgot to install the Webview component:
+```
+💻 yarn add react-native-webview
+```
 
 :snowflake: The WebView component is a sort of hybrid component that's actually just rendering a webpage. The `source` prop holds a uri that's called as if in a browser and then displayed in our application. Notice how it looks just like watching youtube on a mobile device. Pretty cool that we can do this within our application alongside native components, huh?
+
+🚀 Swap out the `TempDetail` view in your `search_tab.js` for this new component.
 
 🚀 Now that the app is complete, we're using all the styling we pasted in awhile ago. Now it's your turn: play around with the styling in `video_list.js`. If you haven't enabled hot-reloading yet, do that, it'll make it easy to see all your styling changes.
 
@@ -547,22 +602,7 @@ export default VideoDetail;
 ## And We Are Done!
 Look at you! You spend eight weeks in full-stack web dev, but little did you know it was actually smartphone programming in disguise!
 
-There's a lot going on in the VideoList view that we breezed through. [Read through it](#videolist) a bit more carefully. Pay special attention to how we are initializing and updating the listView dataSource:
-
-```js
-dataSource: new ListView.DataSource({
-  rowHasChanged: (row1, row2) => row1 !== row2,
-}),
-```
-
-```js
-this.setState({
-  dataSource: this.state.dataSource.cloneWithRows(responseData),
-  isLoading: false,
-});
-```
-
-Remember that state has be a new object - we can't just add a row and hope react notices - we use `cloneWithRows` to create a new datasource when we update.
+There's a lot going on in the VideoList view that we breezed through. [Read through it](#videolist) a bit more carefully.
 
 Also note how simply the `Search` component updates our query state and triggers a `fetchData`.
 
@@ -579,7 +619,7 @@ To submit, create a new github repo and push your code up to it. On canvas, subm
 * https://github.com/jondot/awesome-react-native
 
 
-*Thanks to: Jane Lee, Sia Peng, Armin Mahban, Adam Rinehouse for the original workshop in 17s. Refactored in 18s for expo.io and reactnavigation.*
+*Thanks to: Jane Lee, Sia Peng, Armin Mahban, Adam Rinehouse for the original workshop in 17s. Refactored in 18s for expo.io and React Navigation. Refactored in 19s by Angela Li for React Navigation 5.x*
 
 
 {% endraw %}

@@ -58,7 +58,7 @@ See [assignments](/assignments).
   Sun 6-9 pm: Carson 61<br> -->
 
 * Instructor:<br>
-  Fri 11am-1pm, (zoom link on canvas)
+  Fri 2:30pm-4pm or by appointment, (zoom link on canvas)
   <!-- Fri 11am-1pm; or by appointment in Sudikoff 219/007 -->
 
 <table>
@@ -185,6 +185,14 @@ See [logistics](/logistics)
 Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/), [19s](https://dartmouth-cs52-19s.github.io/)
 
 Also check out [previous projects](assignments/project).
+
+## Contributing
+
+Interested in contributing to the course?  There are several opportunites:
+
+*  Want to file a bug report?  All the presentations, and assignments on this website are on [github](https://github.com/dartmouth-cs52/dartmouth-cs52.github.io).
+* Want to pass on your knowledge, and help the next generation of webdevs? Future TA's <a href="http://cs52.me/ta/" target="_blank">apply here!</a>.  You don't really know something until you've tried explaining it to others. [Ask me](https://cs52-dartmouth.slack.com/messages/@tim/) about the opportunity if you want to learn more. 
+* Want to build cool interactive webdev learning games like [boomsync](http://boomsync.me)? There's some funding available to help with that, [slack me about it](https://cs52-dartmouth.slack.com/messages/@tim/).
 
 <!-- <script>
 var proxyUrl = 'https://glacial-fjord-69804.herokuapp.com/',
