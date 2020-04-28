@@ -29,8 +29,8 @@ comment_term: assignments
 <!-- * [ExtraCredit Short Assignment 9: Photo Uploading S3](sa/s3-upload) -->
 * EC Short Assignment 10: ChatBot
 <!-- * [ExtraCredit Short Assignment 10: ChatBot](sa/slack-bot) -->
-* EC Short Assignment 11: ReactNative
-<!-- * [ExtraCredit Short Assignment 11: ReactNative](sa/react-native) -->
+<!-- * EC Short Assignment 11: ReactNative -->
+* [ExtraCredit Short Assignment 11: ReactNative](sa/react-native)
 
 
 
