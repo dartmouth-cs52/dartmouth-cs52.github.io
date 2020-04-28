@@ -167,4 +167,10 @@ $('document').ready(function() {
 
   setSlideToggle();
 
+  $( ".accordion-section" ).accordion({
+    collapsible: true,
+    active: false,
+  });
+
+
 });
