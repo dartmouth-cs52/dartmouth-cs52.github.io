@@ -5,7 +5,7 @@ published: true
 comment_term: project-pitch
 ---
 
-![](img/pitch.gif){: .fancy .medium}
+<!-- ![](img/pitch.gif){: .fancy .medium} -->
 
 A <3 minute presentation with a little bit of Q&A to pitch your idea to the class. You can pitch with *at most 1* other person.
 
@@ -33,6 +33,8 @@ Some thoughts:
 * Your ideas can be serious, world changing, or completely silly.  The point is to enjoy building something cool.
 
 Once teams are created around these pitches, you will have an opportunity to brainstorm a bit more as your team so these don't lock you in.
+
+* for fun here are some startup pitch decks: https://www.cirrusinsight.com/blog/startup-pitch-decks 
 
 ## To Turn In:
 
