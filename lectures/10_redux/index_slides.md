@@ -883,6 +883,7 @@ name: next
 .left[![](img/table-redux-is-coming.jpg)]
 
 .right[
+* thursday pitches! (if there are any could do a few tomorrow as well)
 * sa6 - ease you in to frontend state management
 * lab4 - redux platform frontend
 ]
