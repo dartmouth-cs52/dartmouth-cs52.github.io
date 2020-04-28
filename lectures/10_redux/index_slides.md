@@ -71,6 +71,47 @@ name: CS52 Art
 ---
 name: React Notes
 
+https://chibuzo-cs52-notes.surge.sh/  login, undo, delete
+
+http://adityachoudhari-cs52-lab3-reactnotes.surge.sh/ login undo zindex
+
+https://samihadatta-reactnotes.surge.sh/  someones friends got a hold of theirs
+
+style https://cdnb.surge.sh/
+
+pointer change: https://srishti-cs52-notes.surge.sh/
+
+auth: https://annebailey-noteboard.surge.sh/ 
+
+puppy style: https://rodrigo-cs52-notes.surge.sh/
+
+https://georginadavis-cs52-lab3-reactnotes.surge.sh/
+
+
+https://jacksonharris-cs52-reactnotes.surge.sh/
+
+skeumorphic design http://alexfeng-cs52-notes.surge.sh/
+
+material framework: https://selim-cs52-lab4-notes2keep.surge.sh/
+
+content -plz don't delete: https://stickynotes.surge.sh/
+
+edit notification:  https://aarishiyer-cs52-reactnotes.surge.sh/
+
+bright: https://tonymilne1-cs52-lab3.surge.sh/
+
+setting colors: https://josephnotis-cs52-reactnotes.surge.sh/
+
+space: https://juliettepouchol-cs52-reactnotes.surge.sh/
+
+font colors: https://katherinetaylor-cs52-react.surge.sh./
+
+https://tvergho-cs52-reactnotes.surge.sh/  undo and new boards
+
+theme: https://leaflets.surge.sh/
+
+
+
 * [low poly](http://taylorolson-cs52-lab3.surge.sh/)
 * [minimizing notes](http://emma-cs52-notes.surge.sh/)
 * [google and boards](http://react-notes-board.surge.sh/)
