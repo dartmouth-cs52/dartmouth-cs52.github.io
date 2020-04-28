@@ -18,13 +18,13 @@ A <3 minute presentation with a little bit of Q&A to pitch your idea to the clas
   * OR even just a topic that you think might be interesting to brainstorm around
 * Discuss any insights you might have into the problem
 
-You can use a short slide deck but keep it very visual with *at most 10 words* on any individual slide!
+Add your slides to the shared google presentation on canvas!  Follow the template, but feel free to add graphics/customize look and feel of your slides.
 
-Please, don't be shy, your idea is great!  It is an extra credit assignment so there is some small point value attached to it.  Pitch cause you care. Pitch for the practice. Pitch to make a difference. Pitch to inspire!
+Please, don't be shy, your idea is great! Pitch cause you care. Pitch for the practice. Pitch to make a difference. Pitch to inspire!
 
 Not everybody needs to pitch — but the more the better!
 
-To give you a sense of some scope and possibilities [here are some projects](17s) from last year. Let's push the boundaries even more this year!
+To give you a sense of some scope and possibilities [here are some projects](19s) from last year. Let's push the boundaries even more this year!
 
 Some thoughts:
 * There are [lots of fascinating apis](https://www.programmableweb.com/) out there: from beer reviews to machine learning, and vision apis, to fictional datasets. Could you integrate some of these to enhance your idea?
@@ -36,7 +36,6 @@ Once teams are created around these pitches, you will have an opportunity to bra
 
 ## To Turn In:
 
-* link to pitch deck
 * name of your pitch partner if you have one
 * working title
 * max 8 word tagline
