@@ -803,7 +803,8 @@ Commit and push your changes to your new redux branch of SA4 `git push origin re
 
 ## Resources
 
-* [http://redux.js.org/index.html](http://redux.js.org/index.html)
-* [https://css-tricks.com/learning-react-redux/](https://css-tricks.com/learning-react-redux/)
+* [redux.js.org](http://redux.js.org/index.html)
+* [Learning resources](https://redux.js.org/introduction/learning-resources)
+* [css-tricks.com/learning-react-redux/](https://css-tricks.com/learning-react-redux/)
 * [Redux integration with React Router](https://reacttraining.com/react-router/web/guides/redux-integration)
 * [React Router Redux Docs](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux)

@@ -25,105 +25,28 @@ name: Redux
 .medium[![](img/reduxgif.gif)]
 
 
----
-name: CS52 Art
-
-.left[![](img/table-redux-is-coming.jpg)]
-
-.right[![](img/table-readucks.jpg)]
-
-
-???
-*
-
-
-
-<!-- name: CS52 Art
-
-
-.medium[![](img/firebasemontster-table.jpg)] -->
-
-
-<!-- name: CS52 Art
-
-.medium[![](img/table-all-the-react.jpg)]
-// add the above to react intro yes please
-
-
-* what are benefits of firebase over other stuff like amazon aws?
-* what is robots.txt for?
-* can JS push fake history to user's browser? -->
-
-
----
-name: CS52 Art
-
-.tiny[![](img/table-quiz-lab.jpg)]
-.tiny[![](img/table-dont-call-me.jpg)]
-
-
-???
-* let's go over a couple of parts of the quiz.
-* also took a quick look at the survey results and sounds like it is going a bit fast for about half the class - i'll post more results from the survey next week but for now, i'll simplify the labs a little bit. last year the labs seemed to go a little bit smoother
-* can add in another TA time - would a morning work? 
 
 
 ---
 name: React Notes
 
-https://chibuzo-cs52-notes.surge.sh/  login, undo, delete
 
-http://adityachoudhari-cs52-lab3-reactnotes.surge.sh/ login undo zindex
-
-https://samihadatta-reactnotes.surge.sh/  someones friends got a hold of theirs
-
-style https://cdnb.surge.sh/
-
-pointer change: https://srishti-cs52-notes.surge.sh/
-
-auth: https://annebailey-noteboard.surge.sh/ 
-
-puppy style: https://rodrigo-cs52-notes.surge.sh/
-
-https://georginadavis-cs52-lab3-reactnotes.surge.sh/
-
-
-https://jacksonharris-cs52-reactnotes.surge.sh/
-
-skeumorphic design http://alexfeng-cs52-notes.surge.sh/
-
-material framework: https://selim-cs52-lab4-notes2keep.surge.sh/
-
-content -plz don't delete: https://stickynotes.surge.sh/
-
-edit notification:  https://aarishiyer-cs52-reactnotes.surge.sh/
-
-bright: https://tonymilne1-cs52-lab3.surge.sh/
-
-setting colors: https://josephnotis-cs52-reactnotes.surge.sh/
-
-space: https://juliettepouchol-cs52-reactnotes.surge.sh/
-
-font colors: https://katherinetaylor-cs52-react.surge.sh./
-
-https://tvergho-cs52-reactnotes.surge.sh/  undo and new boards
-
-theme: https://leaflets.surge.sh/
-
-
-
-* [low poly](http://taylorolson-cs52-lab3.surge.sh/)
-* [minimizing notes](http://emma-cs52-notes.surge.sh/)
-* [google and boards](http://react-notes-board.surge.sh/)
-* [colors](http://regina-yan-cs52-lab3.surge.sh/)
-* [zIndex](http://mihovilm-cs52-lab3.surge.sh/)
-* [piggies!](http://welcometomyfarm.surge.sh/)
-* [background](http://danah-cs52-notes-app.surge.sh/)
-* [hi tas](http://zacgottschall-cs52-react-notes.surge.sh/)
-* [classy](http://sheppard-cs52-lab3-react-notes.surge.sh/)
-* [favicon award](http://angi-cs52-lab3.surge.sh/)
-* [domain name award](https://reactnotes.surge.sh/)
-* [auth](https://jot-cs52.surge.sh/)
+* <a href="https://chibuzo-cs52-notes.surge.sh/" target="_blank">[login,recycle, and more]</a>
+* <a href="https://samihadatta-reactnotes.surge.sh/" target="_blank">[friends support friends]</a>
+* <a href="https://cdnb.surge.sh" target="_blank">[some style]</a>
+* <a href="https://srishti-cs52-notes.surge.sh" target="_blank">[hover control]</a>
+* <a href="https://annebailey-noteboard.surge.sh" target="_blank">[more auth]</a>
+* <a href="https://rodrigo-cs52-notes.surge.sh" target="_blank">[puppy]</a>
+* <a href="https://jacksonharris-cs52-reactnotes.surge.sh" target="_blank">[bold]</a>
+* <a href="http://alexfeng-cs52-notes.surge.sh" target="_blank">[skeumorphic]</a>
+* <a href="https://selim-cs52-lab4-notes2keep.surge.sh" target="_blank">[materialui]</a>
+* <a href="https://stickynotes.surge.sh" target="_blank">[content!-don't delete]</a>
+* <a href="https://aarishiyer-cs52-reactnotes.surge.sh" target="_blank">[editing update]</a>
+* <a href="https://tonymilne1-cs52-lab3.surge.sh" target="_blank">[bootstrap]</a>
+* <a href="http://adityachoudhari-cs52-lab3-reactnotes.surge.sh" target="_blank">[login,undo,zindex]</a>
+* <a href="https://josephnotis-cs52-reactnotes.surge.sh" target="_blank">[note colors]</a>
+* <a href="https://tvergho-cs52-reactnotes.surge.sh" target="_blank">[new boards, undo]</a>
+* <a href="https://leaflets.surge.sh/" target="_blank">[fall colors]</a>
 
 
 
@@ -133,6 +56,9 @@ theme: https://leaflets.surge.sh/
 
 
 ---
+name: What do we know about React so far?
+
+--
 name: What do we know about React so far?
 
 * components
@@ -154,6 +80,7 @@ name: Problems
 
 ???
 * look familiar? we will fix it
+* props all over the place, sometimes you rename them as you pass them down, super hard to track
 
 
 
@@ -175,22 +102,23 @@ name: Smart and Dumb components
 ---
 name: Presentational and Container Components
 
-* ***presentational***
+* ***presentational component*** (may just be a function)
   * concerned with how things look
   * have state for ui things but not data
   * generally get data as props
   * real view
   * reusable (your mini bootstrap)
-* ***container***
+* ***container component*** (class with state)
   * concerned with data
   * pass data to presentational components
   * binds callbacks to self
-  * can be *connected*
+  * and now can be *redux connected*
 
 ???
 * so far we'd had both
 * we've not really talked about this abstraction
 * but will have a bit more of it soon with redux!
+* btw, if you've played with react hooks we'll talk about them in a bit, but for now sticking with classes as they are easier to learn
 
 
 
@@ -249,7 +177,7 @@ name: Chat
 * if open append message in messages Views
 * if chat tab is focused or messages is open - decrement unseen
 * complex login living in multiple places
-* imperative lots of steps with checks
+* imperative code with lots of steps with checks
 
 
 
@@ -260,17 +188,19 @@ name: Chat
 
 
 ???
-* problem kept coming back as they fixed things due to complexity
-* here's what the basic logic looked like
-* handler had too much to do
-* large amount of centralized logic is one solution but have to code for consistency problems
-* chat tabs is easy - get a new message - append it
-* less clear about unseen
-* perhaps storing unseen as a list by threadID would be better
-* use *explicit data* - actual unseen threads, not just counter
-* moving display logic to each component so it can decide based on data how to render (sound familiar)
-* separating data from view
-* wanted to move these decisions closer to the actual views.
+* attempt 1:
+  * problem kept coming back as they fixed things due to complexity
+  * here's what the basic logic looked like
+  * handler had too much to do
+  * large amount of centralized logic is one solution but have to code for consistency problems
+  * chat tabs is easy - get a new message - append it
+  * less clear about unseen count logic
+* realizations:
+  * **perhaps storing unseen as a list by threadID would be better**
+  * use **explicit data** - actual unseen threads, not just counter
+  * moving display logic to each component so it can decide based on data how to render (sound familiar)
+  * separating data from view
+  * wanted to move these decisions closer to the actual views.
 
 
 
@@ -282,6 +212,8 @@ name: MVC
 
 
 ???
+* taking a step back to look at mvc and data binding
+* perhaps this was of thinking was part of the problem
 * two way binding here
 
 
@@ -322,12 +254,13 @@ name: Enter Flux
 
 
 ---
-name: unidirectional data flow
+name: unidirectional data flow: actions
 
 ![](img/unidirection-control.png)
 
 
 ???
+* not the full system - but the actions required
 * track an action through the system
 * easy consistency
 
@@ -341,6 +274,8 @@ name: Flow Based Programming
 ![](img/full-system.png)
 
 ???
+* the dark grey models are the actual data
+* so unseen count is list size rather than a counter
 * can imagine testing is easy
 
 
@@ -368,7 +303,7 @@ name: MVC -> Flux
 ---
 name:
 
-![](img/wtf.png)
+.medium[![](img/wtf.png)]
 
 ???
 * flux was a bit tricky
@@ -389,8 +324,9 @@ name:
 
 .small[![6m downloads](img/redux-downloads.svg)] 4/2018
 
-.small[![12m downloads](img/downloads-3.jpg)] 4/2019
+.small[![12m downloads](img/downloads-2019.svg)] 4/2019
 
+.small[![12m downloads](img/downloads-2020.svg)] 4/2020
 
 
 ???
@@ -404,6 +340,32 @@ name:
 
 ---
 name: Application Level State
+
+
+.large[![application state](img/01-app-state.jpg)]
+
+???
+* backing up a sec - whats the issue again?
+* having consistent state which drives everything
+* take this OS screenshot
+
+---
+name: Application Level State
+
+
+.large[![application state](img/01-data-layer.jpg)]
+
+???
+* could store in one place
+* or multiple places
+* most likely a combo. 
+* which of these seems more like UI state vs Business Logic state?
+
+---
+name: Application Level State
+
+
+.medium[![application state](img/application-state.png)]
 
 * react is great
 * but could use better data management
@@ -419,6 +381,26 @@ name: Application Level State
 
 
 
+
+
+
+---
+name: Redux Principles
+
+```js
+// what is react
+react(state) => {return UI}
+
+//what is redux
+(state, action) => { return newstate }
+```
+
+1. **Single source of truth**<br>
+    One tree of state for entire application - not spread out over variables all over the place
+1. **State is read-only**<br>
+    To change state emit an action, which are centrally processed, generating new state.
+1. **Changes are made with pure functions**<br>
+    No side effects or mutations. Reducers take existing state+action emit new state.
 
 
 
@@ -518,7 +500,7 @@ name: example+redux
 ???
 * heres a version with redux
 * seemed like too much to ask you all to rewrite the videos so the redux short is much simpler
-* this drawing
+* this drawing is pretty much what you'll be doing is SA4 - refer back to this - not all things are named the same, this has 2 reducers but you'll be combining the state into 1 - this is purposeful, understand the concepts not the specifics.
 
 
 
@@ -558,6 +540,9 @@ export function selectVideo(video) {
     selected: video };
   }
 }
+
+// must be `connect`ed to redux or dispatched
+// basically does dispatch( {type: _, etc:_ } )
 ```
 
 * is called in an event
@@ -565,8 +550,8 @@ export function selectVideo(video) {
 * is a function that returns an action object
 * action is sent to all reducers
 
-
 ???
+* CAVEAT + MUST CONNECT TO REDUX
 
 
 
@@ -577,17 +562,19 @@ name:  Reducer
 
 
 ```javascript
-export default function (state = [], action) {
+const initialState = { selected: null, all: [] }
+
+export default function (state = initialState, action) {
   switch (action.type) {
     case 'VIDEO_SELECTED':
-      return action.video;
+      return { all: state.all, selected: action.video };
     default:
       return state;
   }
 }
 ```
 * reducer produces new state
-* based on currernt state + action
+* based on current state + action
 * return is assigned to key in main state
 
 
@@ -604,6 +591,9 @@ export default function (state = [], action) {
 ---
 name: Reducers
 
+.left[![](img/cheeky.png)]
+
+.right[
 * must be a pure function!
 * receive:
   * current state
@@ -611,6 +601,8 @@ name: Reducers
 * return:
   * new state
 * do not have access to anything else
+* shape MUST stay consistent
+]
 
 ???
 
@@ -620,10 +612,14 @@ name: Reducers
 ---
 name:  Reducers
 
+.left[![](img/NH.gif)]
+
+.right[
 * all reducers get called hence `switch` on action
 * return state for particular key
 * must return some state, always merged
 * default action return existing state
+]
 
 ???
 * REMEMBER  component state is different and can and should still be used
@@ -650,11 +646,10 @@ But how do our components know about any of this?
 name:  react-redux
 
 
-<iframe src="//giphy.com/embed/O5XX68H6WfAlO" width="580" height="299" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="//giphy.com/embed/O5XX68H6WfAlO" width="480" height="199" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 * no intrinsic connection
-* upgrade smart objects to connected containers!
-
+* **upgrade smart objects to connected containers!**
 ???
 
 
@@ -663,16 +658,22 @@ name:  react-redux
 ---
 name:  who needs upgrades? not all!
 
+
+.left[![](img/container-and-presentational.jpg)]
+
+.right[
 * components that control data
 * need to trigger actions (could use props though)
 * need access to global state
 * may pass data to presentational children components
-
+* don't overuse
+]
 
 ???
 * some components, presentational ones don't need it
 * just props based
 * no need to overuse
+
 
 
 
@@ -689,8 +690,7 @@ import { connect } from 'react-redux';
 
 class MyComponent extends Component { /* stuff */ }
 
-export default connect(mapStateToProps,
-  mapDispatchToProps)(MyComponent)
+export default connect(mapStateToProps,mapDispatchToProps)(MyComponent)
 ```
 
 * higher order component!
@@ -699,7 +699,7 @@ export default connect(mapStateToProps,
 
 
 ???
-
+* some funky notation eh?
 
 
 
@@ -708,19 +708,18 @@ export default connect(mapStateToProps,
 ---
 name: mapStateToProps
 
-```javascript
-  /* ... */
+```js
   render() {
     <div>{this.props.video}</div>
   }
-}
+```
 
+```js
 const mapStateToProps = (reduxState) => (
   {
-    video: reduxState.selectedVideo
+    video: reduxState.videoReducerOutput.selectedVideo
   }
 );
-
 ```
 * global state -> props
 * takes state as argument
@@ -740,12 +739,15 @@ const mapStateToProps = (reduxState) => (
 name: mapDispatchToProps
 
 ```javascript
+// import 1 action
+import {selectVideo} from './actions';
+// or import all
 import * as actions from './actions';
 
 // ends up with this.props.selectVideo()
 const mapDispatchToProps = dispatch => {
   return {
-    selectVideo: item => {
+    selectVideo: (item) => {
       dispatch(actions.selectVideo(item));
     },
   };
@@ -754,8 +756,8 @@ const mapDispatchToProps = dispatch => {
 export default connect(mapStateToProps, mapDispatchToProps)(MyComponent);
 //or shorthand
 export default connect(mapStateToProps, {selectVideo: actions.selectVideo})(MyComponent);
-// or even shorter:
-export default connect(mapStateToProps, actions)(MyComponent);
+//or
+export default connect(mapStateToProps, {selectVideo})(MyComponent);
 ```
 
 * component must be connected to ActionCreator functions
@@ -800,14 +802,23 @@ name: Redux Map
 .medium[![](img/redux-map.jpg)]
 
 ???
+* memorize this - be able to draw it
+* or forever will redux confuse you
 
+
+---
+name: What about async? 
+
+.tiny[![](img/thunk.png)]
+
+* what about asynch stuff like api calls?!?!
+* can an action deal with that? 
 
 ---
 name: Thunks
 
 .medium[![](img/ARCH-Redux2-extended-real-declerative.gif)]
 
-* what about asynch stuff like api calls?!?!
 
 ???
 * in CS a thunk is a method that is created, often automatically, to assist a call to another method.
@@ -817,41 +828,24 @@ name: Thunks
 
 
 
-
----
+<!-- 
 name: React-Videos with Thunks
 
-.medium[![](img/redux-videos-with-middlewares.jpg)]
+.medium_large[![](img/redux-videos-with-middlewares.jpg)]
 
-
-???
+ -->
 
 
 
 ---
-name: Redux Cheat Sheet
+name: Redux Cheat Sheet + thunks
 
 .medium[![](img/full-redux-cheat-sheet.jpg)]
-
-???
-
-
-
----
-name:
-
-
-<iframe src="//giphy.com/embed/JjKYrKa8UVTNe" width="480" height="466" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 ???
 * ok that was a lot of codes
 * but once you've set it up once it'll all start making sense
 * remember we're learning how to build large-scale web apps
-
-
-
-
-
 
 
 
@@ -886,8 +880,11 @@ name: devtools
 ---
 name: next
 
+.left[![](img/table-redux-is-coming.jpg)]
 
-* sa6 is 15 minutes to add in redux to our starter pack
-* lab4 - redux blog/crud frontend - ask questions in #lab4 on slack and don't forget your lovely tas. simplified and added in more examples.
+.right[
+* sa6 - ease you in to frontend state management
+* lab4 - redux platform frontend
+]
 
 ???

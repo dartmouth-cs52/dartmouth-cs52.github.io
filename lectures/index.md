@@ -62,8 +62,8 @@ fetch(proxyUrl + targetUrl, {
 * [4/21 Asynch JS](08_asynch_js)
 <!-- * 4/23 Routing and Project Intro -->
 * [4/23 Routing and Project Intro](09_routing)
-* 4/28 Redux
-<!-- * [4/28 Redux](10_redux) -->
+<!-- * 4/28 Redux -->
+* [4/28 Redux](10_redux)
 * 4/30 Databases
 <!-- * [4/30 Databases](12_intro_to_databases) -->
 * 5/5 Pitches
