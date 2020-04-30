@@ -676,7 +676,7 @@ export default connect(mapStateToProps, null)(VideoList);
 
 🚀 Now, we need to connect `components/youtube.js`
 
-1. Let's connect `YouTube` to our redux store. The only thing this top component now needs is to be able to run the `searchVideos` ActionCreator.
+1. Let's connect `YouTube` to our redux store. The only thing this top component now needs is to be able to run the `setVideos` ActionCreator.
 2. Remove ALL state! It isn't necessary to keep the variables in both the react state and the redux store in this situation.
 3. Remove ALL props from `<VideoDetail />` and `<VideoList />`, just render them as is.
 4. Change the search function to simply pass the videos list to `this.props.setVideos(videos)` rather than running setState. We'll stick with using the youtubeSearch api promise like we've been doing.
