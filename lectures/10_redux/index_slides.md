@@ -51,9 +51,10 @@ name: React Notes
 
 
 ???
-
 * some examples
-
+* i did pick ones that did EC in this case
+* if you struggled, don't worry you aren't alone, this was a tough one lot of new stuff
+* we're hard at work already going through and giving feedback so you'll learn by practicing - we'll keep pumping out more
 
 ---
 name: What do we know about React so far?
