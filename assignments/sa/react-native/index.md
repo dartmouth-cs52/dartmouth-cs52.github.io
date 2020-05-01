@@ -578,7 +578,7 @@ const VideoDetail = (props) => {
 
   return (
     <WebView
-      source={{ uri: `https://www.youtube.com/embed/${video.id}` }}
+      source={{ uri: `https://www.youtube.com/embed/${video.id.videoId}` }}
       automaticallyAdjustContentInsets={false}
     />
   );
