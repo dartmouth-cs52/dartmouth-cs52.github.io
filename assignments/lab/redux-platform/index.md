@@ -10,25 +10,35 @@ comment_term: lab-redux-blog
 
 ![](img/redux.png)
 
-We'll build a React+Redux Blog Platform.  It doesn't have to be a blog could be anything you want. As long as there are individual post items that have some content that need to be saved to a database! Aside from the core functionality of creating a post with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.  It will basically be a CRUD platform — create, read, update, delete, storing data on a server with best practices, user authentication, and security — those features encompass a world of possibilities.
+We'll build a React+Redux Conent Platform.  It can be a platform for any type of content you desire. As long as there are individual content items that have some content that need to be saved to a database! Aside from the core functionality of creating an item with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.  It will basically be a CRUD platform — create, read, update, delete, storing data on a server with best practices, user authentication, and security — those features encompass a world of possibilities.
 
 
-<iframe width="800" height="591" src="https://www.youtube.com/embed/MtZQlDwH4cs?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<video loop autoplay mute controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_840,h_643/v1546203223/cs52/platform-client.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_840,h_643/v1546203223/cs52/platform-client.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_840,h_643/v1546203223/cs52/platform-client.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
+
 
 ### Part 1 Lab 4
 
-We'll build out a Create+Update+Delete (CRUD) style blogging app using React and Redux and React-Router.  We will use an API server hosted at: `cs52-blog.herokuapp.com`.   
+We'll build out a Create+Update+Delete (CRUD) style content app using React and Redux and React-Router.  We will use an API server hosted at: `https://platform.cs52.me/api`.   
 
 For now the API only supports 'title', 'content', 'tags', 'cover_url', but even with just those fields (especially if content supports markdown) you could think  of other things that you could display. Menu Items for a restaurant. Or even quiz answers (you'll be able to add fields in Lab 5).
 
+Be creative and make this your own.
+
+🍰 Feel free to use any CSS or React Component Libraries that you want.
+
 ### Part 2 Lab 5
 
-We will rip out `cs52-blog.herokuapp.com` and build our own Nodejs+Express+Mongo based API server.  Finally FULL-STACK!  You'll be able to modify the data model at this point and really make your platform do anything.
+We will rip out `platform.cs52.me/api` and build our own Nodejs+Express+Mongo based API server.  Finally FULL-STACK!  You'll be able to modify the data model at this point and really make your platform do anything. We'll also add authentication and image uploading!
 
 
 ## Let's Start
 
-🚀 To start grab the github classroom link from canvas to start a new repository.  Then you'll pull in your webpack+babel+eslint+react+routing+redux starter code like so:
+🚀 To start grab the github classroom link from canvas to clone the repository.  Then you'll pull in your webpack+babel+eslint+react+routing+redux starter code like so:
 
 ```bash
 #make sure you are in your project directory
@@ -38,13 +48,13 @@ git pull starter master  # you may need --allow-unrelated-histories
 
 ```bash
 # also don't forget to run:
-yarn #to fetch all your webpack dependencies
+yarn install #to fetch all your webpack dependencies
 ```
 
 
 ## CRUD API
 
-We'll be using an API server running at http://cs52-blog.herokuapp.com/api
+We'll be using an API server running at https://platform.cs52.me/api
 
 The API has the following endpoints:
 
@@ -68,7 +78,7 @@ There is a command that you can run in Terminal called `curl` that can fetch rem
 
 ```bash
 # all posts get:
-curl -X GET "https://cs52-blog.herokuapp.com/api/posts?key=YOURKEY"
+curl -X GET "https://platform.cs52.me/api/posts?key=YOURKEY"
 
 # create new post
 curl -X POST -H "Content-Type: application/json" -d '{
@@ -76,18 +86,18 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "tags": "words",
     "content":  "this is a test post",
     "cover_url": "https://media.giphy.com/media/gyRWkLSQVqlPi/giphy.gif"
-}' "https://cs52-blog.herokuapp.com/api/posts/?key=YOURKEY"
+}' "https://platform.cs52.me/api/posts/?key=YOURKEY"
 
 # update by POSTID
 curl -X PUT -H "Content-Type: application/json" -d '{
     "title": "new title"
-}' "https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY"
+}' "https://platform.cs52.me/api/posts/POSTID?key=YOURKEY"
 
 # fetch 1 by POSTID
-curl -X GET "https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY"
+curl -X GET "https://platform.cs52.me/api/posts/POSTID?key=YOURKEY"
 
 # delete by POSTID
-curl -X DELETE -H "Content-Type: application/json" "https://cs52-blog.herokuapp.com/api/posts/POSTID?key=YOURKEY"
+curl -X DELETE -H "Content-Type: application/json" "https://platform.cs52.me/api/posts/POSTID?key=YOURKEY"
 
 ```
 
@@ -139,7 +149,7 @@ A simple component that renders a nav with two `<NavLink>` `react-router-dom` co
 
 This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`. In your listing you should utilize each posts *cover_url*, *title*, and *tags*.
 
-Try the curl commands above, you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `NavLink` elements to `posts/:postID` when you render the posts. Each post should be clickable to open it full page using this route. `<Link to={`posts/${post.id}`}>...`
+Try the curl commands above, you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `NavLink` elements to `posts/:postID` when you render the posts. Each post should be clickable to open it full page using this route. `<Link to={`posts/${post.id}`}>...`.  Where `:postID` is provided the router, refer back to the routing short to see how we did that there.
 
 Min specs at a glance:
 
@@ -151,7 +161,7 @@ Hint: As this is a connected component that relies on the list of posts, you'll 
 
 ### NewPost
 
-This is a component to create a new blog post. Should be a connected component that can trigger actions via *ActionCreators*. You could have one component that is used for create, show, and update. Personal preference on this, but it might be easier at first to have a simple new post component and then refactor later to have one full featured component.
+This is a component to create a new blog post. Should be a connected component that can trigger actions via *ActionCreators*. You *could* have one component that is used for create, show, and update. Personal preference on this, but it might be easier at first to have a simple new post component and then refactor later to have one component that does double duty.
 
 ### Post (display and edit)
 
@@ -260,7 +270,7 @@ yarn add axios
 Axios gives us a promise based interface to make API requests.   Here is an example of a get:
 
 ```javascript
-const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+const ROOT_URL = 'https://platform.cs52.me/api';
 const API_KEY = '?key=yourfirstname_yourlastname';
 
 axios.get(`${ROOT_URL}/posts${API_KEY}`).then(response => {
@@ -408,7 +418,7 @@ Where `all` would contain an array of all posts, and `current` would be the curr
 
 For FETCH_POSTS you would return the state object with the `all` property set to the new posts.  For FETCH_POST return that single post.  
 
-Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html). The spread operator requires an additional [babel plugin](https://babeljs.io/docs/plugins/transform-object-rest-spread/), but it is easy to add to your project. You are also welcome to implement it with multiple reducers if that is easier to reason about.
+Note, since we are structuring things so that the reducer returns an object, for each of the actions you'll need to return the existing state of the other fields.  You can use the `Object.assign` method we have used before, or the es6 [object spread operator](http://redux.js.org/docs/recipes/UsingObjectSpreadOperator.html). You are also welcome to implement it with multiple reducers if that is easier to reason about.
 
 
 ## And you are on your way!
@@ -432,7 +442,7 @@ If you don't know where to start, remember the steps in creating an React applic
 
 It might help for the *ActionCreator* -> *Dispatch* -> *Reducer* -> *State* flow, to try getting one working first.  For instance maybe get the *Post* component working first, the others will come more easily once you have the full path tested with one of them.
 
-Don't forget to use the [lab 4 slack channel](https://cs52-dartmouth.slack.com/messages/lab4-blog/).
+Don't forget to use the #lab4 slack channel.
 
 ## Style It!
 
@@ -443,7 +453,7 @@ Make it look pretty. Remember you are free to make this whatever you want. It do
 * [Material-UI](https://material-ui.com/) has that google material look.
 * [Blueprint.JS](https://blueprintjs.com/) is popular.
 * [Semantic-UI](https://react.semantic-ui.com) is pretty full featured.
-* check the workshops for more about react component libraries as well as css-in-js!
+* check the workshops for more about react component libraries!
 
 
 ## Release it!
@@ -458,7 +468,7 @@ git push origin --tags
 ## To Turn In
 
 1. GitHub classroom repository URL
-1. your working domain name URL on surge.sh
+1. a new deployed working domain name URL on surge.sh
 1. App should have individual routes for:
   * new (unless you make this a modal)
   * list view (default view)
@@ -476,12 +486,11 @@ git push origin --tags
   * any extra credit attempted
 
 
-
 ## Extra Credit
 *always mention your extra credit in the README.md file*
 
 * make it into something other than a blog platform as long as it has the CRUD functionality
-* handle `axios` errors in a graceful way, showing users a nice message rather than just console logging. (hint: new action and error state)
+* handle `axios` errors in a graceful REDUX way, showing users a nice message. (hint: new action and error state)
 * input validation — check that all fields have required values when creating new form for instance.
 * add a filter posts functionality, filter by tags initially.
   * for now our api is limited so additional search will come in part 2
