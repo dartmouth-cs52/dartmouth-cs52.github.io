@@ -23,8 +23,8 @@ comment_term: assignments
 * [Short Assignment 6: Redux](sa/redux) 
 * Short Assignment 7: Express and Mongo
 <!-- * [Short Assignment 7: Express and Mongo](sa/server-side)  -->
-* EC Short Assignment 8: WebSockets
-<!-- * [ExtraCredit Short Assignment 8: WebSockets](sa/websockets) -->
+<!-- * EC Short Assignment 8: WebSockets -->
+* [ExtraCredit Short Assignment 8: WebSockets](sa/websockets)
 * EC Short Assignment 9: Photo Uploading S3
 <!-- * [ExtraCredit Short Assignment 9: Photo Uploading S3](sa/s3-upload) -->
 * EC Short Assignment 10: ChatBot
