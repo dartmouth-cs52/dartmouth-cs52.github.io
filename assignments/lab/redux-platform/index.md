@@ -25,7 +25,7 @@ We'll build a React+Redux Conent Platform.  It can be a platform for any type of
 
 We'll build out a Create+Update+Delete (CRUD) style content app using React and Redux and React-Router.  We will use an API server hosted at: `https://platform.cs52.me/api`.   
 
-For now the API only supports 'title', 'content', 'tags', 'cover_url', but even with just those fields (especially if content supports markdown) you could think  of other things that you could display. Menu Items for a restaurant. Or even quiz answers (you'll be able to add fields in Lab 5).
+For now the API only supports 'title', 'content', 'tags', 'coverUrl', but even with just those fields (especially if content supports markdown) you could think  of other things that you could display. Menu Items for a restaurant. Or even quiz answers (you'll be able to add fields in Lab 5).
 
 Be creative and make this your own.
 
@@ -60,10 +60,10 @@ The API has the following endpoints:
 
 * GET  `/api/posts/`
   returns **only** title, tags, and id for all posts
-  `[[{"id":"",title":"","tags":"", "cover_url":""},...]`
-* POST `/api/posts/` with post parameters `{'title', 'tags', 'content', 'cover_url'}`
+  `[[{"id":"",title":"","tags":"", "coverUrl":""},...]`
+* POST `/api/posts/` with post parameters `{'title', 'tags', 'content', 'coverUrl'}`
   creates a new post
-* PUT `/api/posts/:postID` with parameters `{'title', 'tags', 'content', 'cover_url'}`
+* PUT `/api/posts/:postID` with parameters `{'title', 'tags', 'content', 'coverUrl'}`
   will update an entry
 * GET `/api/posts/:postID`
   returns the full post data found at `postID`, including `content`
@@ -85,7 +85,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "title": "first post",
     "tags": "words",
     "content":  "this is a test post",
-    "cover_url": "https://media.giphy.com/media/gyRWkLSQVqlPi/giphy.gif"
+    "coverUrl": "https://media.giphy.com/media/gyRWkLSQVqlPi/giphy.gif"
 }' "https://platform.cs52.me/api/posts/?key=YOURKEY"
 
 # update by POSTID
@@ -147,7 +147,7 @@ A simple component that renders a nav with two `<NavLink>` `react-router-dom` co
 
 ### Posts
 
-This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`. In your listing you should utilize each posts *cover_url*, *title*, and *tags*.
+This will be the default page.  It will display a list of posts.  These posts can look like whatever you want.  The posts will be stored in the redux state rather than any single component so this will need to be a connected component that connects to `state.posts.all`. In your listing you should utilize each posts *coverUrl*, *title*, and *tags*.
 
 Try the curl commands above, you'll see that one of the fields you get back in the JSON is `id`.  You'll use that construct `NavLink` elements to `posts/:postID` when you render the posts. Each post should be clickable to open it full page using this route. `<Link to={`posts/${post.id}`}>...`.  Where `:postID` is provided the router, refer back to the routing short to see how we did that there.
 
@@ -155,7 +155,7 @@ Min specs at a glance:
 
 * default page listing all posts
 * use post id to link to full view
-* show *cover_url*, *title*, *tags* in some form - can be a list, can be tiles, whatever you want!
+* show *coverUrl*, *title*, *tags* in some form - can be a list, can be tiles, whatever you want!
 
 Hint: As this is a connected component that relies on the list of posts, you'll want to run your `props.fetchPosts()` *ActionCreator* from `componentDidMount`.
 
@@ -169,7 +169,7 @@ This is the component that gets loaded when you want to see the full rendered co
 
 Your *Post* component should provide a way to edit the post.  You can either have an edit button that makes the whole post editable, or you could have in place editing for each field as in the gif.  Another option is to have an edit route:  `/posts/:postID/edit` for instance.  Personal preference here, lots of different design choices you can make. 
 
-*Note: for now the shared API server only supports title, tags, content, cover_url as fields.  In part 2 you will implement your own server and can add or change fields then.*
+*Note: for now the shared API server only supports title, tags, content, coverUrl as fields.  In part 2 you will implement your own server and can add or change fields then.*
 
 Min specs at a glance:
 
@@ -287,7 +287,7 @@ Axios supports *GET*, *POST*, *PUT*, *DELETE*, and other *HTTP* verbs.
 With *POST* and *PUT* you need to supply an object with key,value data.  Something like the following would work:
 
 ```javascript
-const fields = {title: '', contents:'', cover_url: '', tags: ''}
+const fields = {title: '', contents:'', coverUrl: '', tags: ''}
 axios.post(`${ROOT_URL}/posts${API_KEY}`, fields)
 ```
 
