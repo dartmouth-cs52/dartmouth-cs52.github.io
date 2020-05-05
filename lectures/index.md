@@ -64,9 +64,11 @@ fetch(proxyUrl + targetUrl, {
 * [4/23 Routing and Project Intro](09_routing)
 <!-- * 4/28 Redux -->
 * [4/28 Redux](10_redux)
-* 4/30 Databases
-<!-- * [4/30 Databases](12_intro_to_databases) -->
-* 5/5 Pitches
+<!-- * 5/05 Teams -->
+* [5/05 Teams](12_teams-intro)
+* 5/07 Databases
+<!-- * [5/07 Databases](12_intro_to_databases) -->
+<!-- * 5/5 Pitches -->
 <!-- * [5/5 Pitches](11_pitches) -->
 * 5/7 Sessions & Auth
 <!-- * [5/7 Sessions & Auth](13_sessions_auth) -->
