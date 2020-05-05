@@ -14,14 +14,9 @@ The feature spec is a document that is a walk-though of your project from the us
 To help us think through features, it is useful to start with the users.
 
 
-## To Get Started - Our First Team Project Repo
+## To Get Started
 
-We'll use this opportunity to get your **first** project repo started!  We'll be using github classroom to autoprovision repositories and set up teams. *Later we'll set up repos for api or mobile as needed, this will be the frontend repo and where we will keep most docs.*
-
-*Every member* on your team **must** use github classroom (found on canvas) to set up the teams correctly and automatically.
-
-The first person on your team will name the repo and the team name. Each consecutive person will click on the same github classroom link and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place and sets up a github team automatically.
-
+You should have your teams and first repo already set up, if not see [first-meeting](first-meeting).
 
 
 ## Feature list

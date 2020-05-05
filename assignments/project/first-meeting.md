@@ -139,6 +139,8 @@ We'll use this opportunity to get your first project repo started!  We'll be usi
 
 The first person on your team will name the repo and the team name. Each consecutive person will click on the same github classroom link above and simply choose the repo and team to be granted permissions. Please use this as it keeps everything organized and in one place.  Once your team is created and you have all gone through the classroom link you will be able to create additional repositories as necessary later.
 
+*Later we'll set up repos for api or mobile as needed, this will be the frontend repo and where we will keep most docs.*
+
 ## GitHub wiki
 
 We'll be using github wikis to keep track of some project documentation. If you haven't used it before [here's how](https://help.github.com/articles/about-github-wikis/). And some tips on using [markdown](https://guides.github.com/features/mastering-markdown/).
