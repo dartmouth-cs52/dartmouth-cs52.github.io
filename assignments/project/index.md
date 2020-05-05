@@ -23,6 +23,9 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Pitch Presentation](pitch)** (5/1, 5/2, 5/3):<br><!--7/28/2016-->
   Pitch your problem/solution/topic to the class. Everybody will rank their top choices and groups will be formed that way.
 
+* **[First Team Meeting](first-meeting)** (5/5):<br><!--7/28/2016-->
+  Meet your team and work on dynamics, solidifying and consolidating an idea.  
+
 * **[Feature Spec](feature-spec)** (5/10):<br><!--8/9/2016-->
   A walk-though of your project from the users perspective listing out every feature that it should have with a few user stories attached and mockups of user experience.
 
