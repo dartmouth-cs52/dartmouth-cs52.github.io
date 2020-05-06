@@ -70,6 +70,17 @@ Mongo is the database that we are going to use.  We've already installed `mongod
  🚀 You may need to run the `mongod &` process, which your node app will connect to.  This is a background server process. 
  
  ⚠️ On OSX if you get a permissions error you may need to make sure that the database dir is writable `sudo chown $USER /data/db`. If you get an error about `/data/db` not existing you can run: `sudo mkdir -p /data/db`. Pay attention to the error message to determine what what directory it is complaining about.
+ 
+ ⚠️ If you have Mac and updated to Catalina than the root folder is no longer [writable](https://stackoverflow.com/questions/58034955/read-only-file-system-when-attempting-mkdir-data-db-on-mac). You will receive the error `mkdir: /data/db: Read-only file system` when trying to create `/data/db`. This means we need to change mongo's db directory to be elsewhere:
+ 
+ ```bash
+ sudo mkdir -p /Users/$USER/data/db
+ sudo chown $USER /Users/$USER/data/db
+ ```
+ 
+ Now whenever asked to use the commannd `mongod &` use instead `mongod --dbpath=/Users/user/data/db &`
+ 
+ To avoid the extra typing follow the instructions [HERE](https://stackoverflow.com/questions/58034955/read-only-file-system-when-attempting-mkdir-data-db-on-mac/#answer-60299088) to change mongo's configuration.
 
 There is a commmandline client we'll use to connect to the database: `mongo`. You can also play around with a more graphical client [mongodb compass community](https://www.mongodb.com/download-center?jmp=nav#compass) (just make sure to download the *community* version).
 
@@ -258,7 +269,7 @@ Great, so now when we hit `http://localhost:9090`, we see the nav bar. Cooool.
 
 ### Main List View
 
-🚀  Now let's make the rest of the index page inside of `body`. We want to display all of the polls, and information about them. Here is how we do it:
+🚀  Now let's make the rest of the index page inside of `body`. We want to display all of the polls, and information about them. Replace "Hello" in `src/views/index.ejs` with:
 ```html
 <div class="card-flex container section">
    <% if (polls.length > 0) { %>
@@ -303,7 +314,7 @@ There are even more neat things ejs can help us with: we can use the control flo
 
 Now, we can design how the poll information will be displayed.  We can insert the same html we did to display the `poll.imageURL`, `poll.text`, etc. as we did in the index.
 
-🚀 Here's some basic html for using a materializecss styled form. Note that the form method is `post` and that the action is `/new`.  This means that when we click the submit button we will submit an http post request to the server, hitting the `/new` route.
+🚀 Here's some basic html for using a materializecss styled form. Note that the form method is `post` and that the action is `/new`.  This means that when we click the submit button we will submit an http post request to the server, hitting the `/new` route. Add this to the `body` in `new.ejs`.
 
 ```html
 <div class="section container">
@@ -382,7 +393,7 @@ Note `/*someMethod*/` is just a comment, you would call a method there that call
 
 Ok, remember how we defined all our API endpoints in our controller?  Let's map them in our router. You have access to methods on app `.get()`, `.post()`, and others that we won't be using.  
 
-🚀 Use syntax similar to the above to make routes to map to the following:
+🚀 Use syntax similar to the above to make routes to map to the following to `src/server.js`:
 
 * GET `/`: Call polls.getPolls and render `index` in the callback:
 
@@ -496,7 +507,7 @@ This one is a bit more complicated, we have to find the specific vote and set so
 
 We now have all the server endpoints in place to add upvote/downvote capability, we just need to call our `vote/:id` endpoint from the frontend.
 
-🚀 Let's add the following at the bottom of our `index.ejs` file.  It will enable our upvote / downvote buttons to actually work.
+🚀 Let's add the following to the very bottom of our `index.ejs` file.  It will enable our upvote / downvote buttons to actually work.
 
 ```js
 <script>
