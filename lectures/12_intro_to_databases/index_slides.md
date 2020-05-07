@@ -940,6 +940,15 @@ User.remove({first_name: 'Remus', last_name: 'Lupin'});
 
 ???
 
+---
+name: SA7
+
+<video loop autoplay mute controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_804,h_383/v1546203223/cs52/cs52_polling_SA.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_804,h_383/v1546203223/cs52/cs52_polling_SA.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_804,h_383/v1546203223/cs52/cs52_polling_SA.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
 
 
 ---
@@ -959,8 +968,51 @@ name: SA7
 
 
 ---
-name: SA7
+name: server-side rendering
 
 ![](../06_react1/img/server-side-rendering.png)
 
+---
+name: powered by Heroku
 
+.medium[![](img/heroku-1.gif)]
+
+* server hosting
+  * small virtual machines (containers)
+  * dynos == processes
+  * git push and it is all deployed for you
+  * provides computation - not ideal for static file hosting
+
+
+---
+name: server side routes with templating
+
+* populate some html with database content 
+
+```js
+app.get('/', (req, res) => {
+  DBContent.find().then((content) => {
+    res.render('index', { content });
+  })
+});
+```
+
+* take in form submissions
+
+```js
+app.post('/submitform', (req, res) => {
+  DBContent.create({content: req.body.content}).then((result) => {
+    res.render('thankyou');
+  });
+});
+```
+
+* listen for ajax post calls and return json
+
+```js
+app.post('/ajaxcall/:id', (req, res) => {
+  DBContent.findOneAndUpdate({_id: req.params.id}, req.body.fields).then((result) => {
+    res.json(result);
+  });
+});
+```

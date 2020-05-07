@@ -10,7 +10,12 @@ comment_term: sa-server-side
 
 Today we'll be learning how to create a server side rendered polling webapp: it will be an [express](https://expressjs.com/) server that displays some data which is stored using [mongodb](https://www.mongodb.com/). We'll get a taste of how to use simple server side routes for displaying some html built up from data we will store in a database, and we will gain some knowledge about [express](https://expressjs.com/) — which we will be using in Lab 5!  We'll also use some [materializecss](http://materializecss.com/) for some basic styling.
 
-<iframe width="800" height="374" src="https://www.youtube.com/embed/LjrdiK94FyU?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<video loop autoplay mute controls>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_804,h_383/v1546203223/cs52/cs52_polling_SA.webm" type="video/webm"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_804,h_383/v1546203223/cs52/cs52_polling_SA.mp4" type="video/mp4"/>
+  <source src="http://res.cloudinary.com/dali-lab/video/upload/ac_none,w_804,h_383/v1546203223/cs52/cs52_polling_SA.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
 
 ## Some Setup
 
