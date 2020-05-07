@@ -28,6 +28,7 @@ name: This Week
   * Workshop on how to do messaging
 * Thursday:
   * Databases and Servers Into
+  * Workshop on testing frameworks
 
 
 ???
