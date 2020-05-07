@@ -21,86 +21,46 @@ name: base
 ---
 name: Today and Stuff
 
-* REST apis - serverside finally!
+.left[
+![](/assets/drawings/table-cs52-table.jpg)]
+
+.right[
+* Serverside finally!
 * Databases
 * SA7
-
+]
 
 ???
 * take or taking cs61
 
 
 
-
 <!-- name: CS52 Art
 
 
-
 ![](img/functions-table.jpg)
+ -->
 
 
 
-* quiz grading tonight, do people want a quick review? -->
+<!-- ![](img/table-redux-takeover.jpg) -->
 
 
+<!-- name:  whew, well that was fun
 
+* no quizes ever, already too much
+* up next: sa7, lab5p1 - will discuss -->
 
-
-
----
-name: CS52 Art
-
-
-
-![](img/table-dash-redux.jpg)
-
-
-???
-* redux review
-
-
-
-
----
-name: CS52 Art
-
-
-
-![](img/table-redux-takeover.jpg)
-
-
-???
-* redux review
-
-
-
----
-name:  whew, well that was fun
-
-* no quiz today, you're welcome
-* up next: sa7, lab5p1 - will discuss
-* tomorrow and thursday project ideas
-
-???
-* how teams are formed
-
----
-name: Final Project Ideas
-
+<!-- name: Final Project Ideas
 
 <iframe width="600" height="400" src="https://www.youtube.com/embed/J-GVd_HLlps?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 * Thoughts on pitching
-* Ideas+
-
-???
-* today talk about pitching ideas and do a idea workshop thing
-* I generally dislike formal brainstorming
-  - but hopefully this will be fun and fruitful
+* Ideas+ -->
 
 
----
-name: Story
+
+<!-- name: Story
 
 <iframe src="https://giphy.com/embed/IoQETeY2ue5bi" width="308" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -108,12 +68,10 @@ name: Story
   * Story hook / why it matters?
 * What are you doing / your solution?
 * How are you special?
-* Next step?
+* Next step? -->
 
 
-???
----
-name: Ok but like, why?
+<!-- name: Ok but like, why?
 
 <iframe src="https://giphy.com/embed/113udJYmASs3qE" width="480" height="282" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
@@ -123,48 +81,10 @@ name: Ok but like, why?
 * get a job
 * anytime present what you care about
 * we'll start tomorrow!  I'
+ -->
 
 
----
-name: Ideas
-
-
-.fancy.medium[![](https://media.giphy.com/media/PIYuiILBo5OnK/giphy.gif)]
-
-
-???
-* hard to generate
-* today we'll do some brainstorming
-* today will be different
-* queue smoke machine
-
-
-
----
-name: Some Inspiration Sources
-
-* https://80000hours.org/career-guide/world-problems/
-* https://80000hours.org/problem-profiles/#potentially_promising
-* http://www.ycombinator.com/resources/
-* https://www.startupschool.org/library
-* http://www.paulgraham.com/startupideas.html
-* https://www.producthunt.com
-* https://www.ycombinator.com/rfs/
-* https://www.npr.org/podcasts/510313/how-i-built-this
-* https://dribbble.com/
-* http://abc.go.com/shows/shark-tank
-
-
-???
-* how i built this is a cool interview series
-* anybody listen to it?
-* world problems
-* how to think about problems and scale
-
-
-
----
-name: Your Pitch
+<!-- name: Your Pitch
 
 * Propose either:
     * problem with a potential solution
@@ -174,9 +94,8 @@ name: Your Pitch
 * tmrw and thurs
 
 
-???
 * dont' overdefine
-* but also who wouldn't want to be on a project with someone passionate?
+* but also who wouldn't want to be on a project with someone passionate? -->
 
 
 
@@ -382,8 +301,8 @@ name: GraphQL
 
 
 ???
+* cool, but still a bit complicated to design and use - 99% of apis are REST
 * function like query part
-* very cool
 * helps with getting the data you need
 * btws, if you read that redux is dead - it isn't, you still have the same frontend how to deal with complex data problem
 * you still want to manage your state in a smart way
@@ -394,9 +313,9 @@ name: GraphQL
 ---
 name: Websockets!
 
-<iframe src="//giphy.com/embed/12bUwjHIJghgmk?hideSocial=true" width="280" height="280" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.medium[![](img/chat-websockets.gif)]
 
-* firebase like subscriptions to data (websockets - SA8)
+* firebase like subscriptions to data (websockets EC SA)
 * good for realtime
 * not so good for complicated data
 
@@ -473,12 +392,13 @@ name: Database Systems
 * run on server (or dev machine)
 * connect to database via library
 * queries are code -> fetch or change data
-* no direct connections from client side code
+* **no direct connections from client side code**
 
 ???
 * are a process typically that runs on some machine
 * queries to ask the system specific questions
 * server talks to database not client
+* let's talk briefly about some options so you can choose db systems that fit your need
 
 
 
@@ -534,7 +454,7 @@ name: ACID
 ???
 * atomicity:  each transaction is all or nothing. (update both inventory and available credit)
 * consistency:  valid states of database by some rules. (non-negative inventory)
-* isolation:  steps in transactions don't affect each other. (can't interleave transaction components).
+* isolation:  steps in transactions don't affect other transactions. (can't interleave transaction components).
 * durability:  committed data never lost
 * also this is vitamin c
 
@@ -556,7 +476,7 @@ name: Schema
 
 ???
 * describes the structure of the db
-* some cognition theories think our brain stores objects with schemas for recognition
+* this image is of a mental schema not a database schema. some cognition theories think our brain stores objects with schemas for recognition
 
 
 
@@ -585,8 +505,19 @@ name: Example Schema
 ---
 name: SQL
 
-.medium[![](img/squirrel.gif)]
+.small[![](img/squirrel.gif)]
 
+```python
+connection_string = ('SERVER=localhost;','DATABASE=mydb;')
+connection = pyodbc.connect(connection_string)
+cursor = connection.cursor()
+
+cmd = 'select * from tbl where name={name}'.format(name)
+cursor.execute(cmd)
+
+for result in cursor.fetchAll():
+   print(result)
+```
 
 * Structured Query Language
   * relational algebra
@@ -620,8 +551,8 @@ ON Employee.DeptName=dept.DeptName;
 ???
 * set operations, unions, intersections etc
 * right out join, left inner join
-* won't be needing this in this class, but it'll be on the quiz!  KIDDING
-* natural join - all columns are kept from both but only where matching key
+* won't be needing this in this class
+* **natural join - all columns are kept from both but only where matching key**
 * btw - when i first proposed this course had a full week on databases and curriculum committee laughed
 
 ---
@@ -643,15 +574,15 @@ name: Keys and Indexes
 SELECT * FROM Users WHERE id = 2
 ```
 
-* scan through rows
+* scan through rows if not keys (inefficient!)
 * lookup result from index instead
 * index maps:
   * value as hashkey to row
   * lookup table $O(1)$
   * or $O(log(n))$
-* primary key: unique row ID
-* secondary keys: other columns
-* foreign keys: refer to unique ids of other tables
+* **primary key**: unique row ID
+* **secondary keys**: other columns
+* **foreign keys**: refer to unique ids of other tables
 
 
 ???
@@ -676,11 +607,11 @@ name: Object vs Table
 
 
 
+
 ---
 name: In practice: ORM
 
-.medium[![](img/littlebobbytables.png)]
-
+.fancy.small[![](img/orm.png)]
 
 * Object Relational Mapping
   * Objects map to database records
@@ -697,19 +628,37 @@ name: In practice: ORM
 
 
 
-
 ---
-name: Objects in Mirror
+name: Objects Queries vs SQL
 
-<iframe src="//giphy.com/embed/Gn6FwqRBMPYJy" width="480" height="375" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+```python
+cmd = 'select * from User where name={name}'.format(name)
+cursor.execute(cmd)
+```
+
+* vs
+
+```js
+User.find({name})
+```
+
+* what if?
+  * `name = '; update User set role="admin" where name="tim"'`
+  * sql injection for lunch anyone?
 
 ???
 * ORM's greatly simplified dealing with sql
 * ActiveRecord was Ruby On Rails big win
 * what if we just stored objects in the database like we want
 * make live easier for developers
+* AND more secure
+* ; ends line
 
 
+---
+name: Little Bobby Tables
+
+.large[![](img/littlebobbytables.png)]
 
 
 
@@ -768,13 +717,26 @@ name: MongoDB
 * when first came out people misused and misunderstood leading to data loss and hate
 * tassel used postgres for 2 terms but this term rewrote entire backend back to mongo. 
 
+---
+name: mongodb
 
+.small[![](/assets/drawings/table-mongodb-drink.jpg)]
 
+???
+* more coolaid - mongo is cool
+* sure it doesn't provide as many guarantees, but you may not need them
 
 ---
 name: Freeform JSON
 
-<iframe src="//giphy.com/embed/zMDQIudRLFKco?hideSocial=true" width="480" height="331.2" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.small[![](img/withgreatpower.gif)]
+
+```js
+users = [
+  {id:1, name: 'Captain Marvel', posts: [3,4]},
+  {id:2, full_name: 'Jeannie Leavitt', callsign: 'Tally', posts: [1,2], birthday: '1967', },
+]
+```
 
 * with great flexibility comes great responsibility
 * unstructured data up to dev to enforce structure
@@ -906,14 +868,21 @@ const userSchema = new mongoose.Schema({
 name: Index and More
 
 ```js
+// secondary indices
+// in field definition
 email: {type: 'String', index: {unique: true}}
+
+//or schema
+userSchema.index({ name: 1, birthday: -1 });
 ```
 
 ```js
+// date type
 date: {type: Date, default: Date.now }
 ```
 
 ```js
+// virtuals are computed fields
 personSchema.virtual('fullName').get(function () {
   return this.first_name + ' ' + this.last_name;
 });
@@ -989,13 +958,9 @@ name: SA7
 * anyone remember what server rendered is?
 
 
-
-
 ---
-name: be fierce
+name: SA7
 
-<iframe src="//giphy.com/embed/M8QcfdiOCZoCQ" width="680" height="469" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+![](../06_react1/img/server-side-rendering.png)
 
-* don't forget xhour tomorrow - come with ideas to share with class!
 
-???

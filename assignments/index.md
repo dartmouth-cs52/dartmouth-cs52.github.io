@@ -21,13 +21,13 @@ comment_term: assignments
 * [Short Assignment 5: Frontend Routing](sa/routing) 
 <!-- * Short Assignment 6: Redux -->
 * [Short Assignment 6: Redux](sa/redux) 
-* Short Assignment 7: Express and Mongo
-<!-- * [Short Assignment 7: Express and Mongo](sa/server-side)  -->
-* Short Assignment 8: Photo Uploading S3
-<!-- * [Short Assignment 8: Photo Uploading S3](sa/s3-upload) -->
+<!-- * Short Assignment 7: Express and Mongo -->
+* [Short Assignment 7: Express and Mongo](sa/server-side) 
+* ExtraCredit Short Assignment: Photo Uploading S3
+<!-- * [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload) -->
 <!-- * EC Short Assignment 8: WebSockets -->
 * [ExtraCredit Short Assignment: WebSockets](sa/websockets)
-* EC Short Assignment: ChatBot
+<!-- * EC Short Assignment: ChatBot -->
 <!-- * [ExtraCredit Short Assignment: ChatBot](sa/slack-bot) -->
 <!-- * EC Short Assignment: ReactNative -->
 * [ExtraCredit Short Assignment: ReactNative](sa/react-native)

@@ -66,13 +66,12 @@ fetch(proxyUrl + targetUrl, {
 * [4/28 Redux](10_redux)
 <!-- * 5/05 Teams -->
 * [5/05 Teams](12_teams-intro)
-* 5/07 Databases
-<!-- * [5/07 Databases](12_intro_to_databases) -->
+<!-- * 5/07 Databases -->
+* [5/07 Databases](12_intro_to_databases)
 <!-- * 5/5 Pitches -->
 <!-- * [5/5 Pitches](11_pitches) -->
-* 5/7 Sessions & Auth
-<!-- * [5/7 Sessions & Auth](13_sessions_auth) -->
-* 5/7 Teams
+* 5/12 Sessions & Auth
+<!-- * [5/12 Sessions & Auth](13_sessions_auth) -->
 <!-- * [5/7 Teams](13_teams) -->
 * 5/12 Websockets, S3, ReactNative
 <!-- * [5/12 Websockets, S3, ReactNative (ec shorts)](15_ec_shorts) -->

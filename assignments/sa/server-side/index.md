@@ -14,13 +14,21 @@ Today we'll be learning how to create a server side rendered polling webapp: it 
 
 ## Some Setup
 
-You already have `node` installed but let's install our database:
+### Database Server
+
+You already have `node` installed but let's install our database server [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
+
+On OSX something like this should work:
 
 ```bash
-brew install mongodb
+brew uninstall --force mongodb
+brew tap mongodb/brew
+brew install mongodb-community
 ```
 
-More Mongo [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
+⚠️ On OSX if you get a permissions error you may need to make sure that the database dir is writable `sudo chown $USER /path/to/datadir`. If you get an error about `/path/to/datadir` not existing you can run: `sudo mkdir -p /path/to/datadir`. Pay attention to the error message to determine what what directory it is complaining about. If you still run into trouble and you are running Catalina [this might help](https://stackoverflow.com/questions/58034955/read-only-file-system-when-attempting-mkdir-data-db-on-mac/#answer-60299088)
+
+### Pull Starter
 
 We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
 
@@ -40,7 +48,7 @@ yarn dev
 ```
 
 
-Take a look around the project now.  There is a `src` folder similar to our react project.  There is a `package.json` and the usual `.eslintrc`, `.babelrc`. Poke around the `scripts` part of the `package.json` file.  Note that it is a little different from our react package file. EC: What is `yarn dev` doing here?
+Take a look around the project now.  There is a `src` folder similar to our react project.  There is a `package.json` and the usual `.eslintrc.json`, `.babelrc`. Poke around the `scripts` part of the `package.json` file.  Note that it is a little different from our react package file. EC: What is `yarn dev` doing here?
 
 
 ## Intro Express
@@ -65,23 +73,10 @@ We'll add more routing in shortly, but first let's set up our database!
 
 ## Mongo Database Server
 
-Mongo is the database that we are going to use.  We've already installed `mongodb` using Homebrew.  *If that didn't work for you there are more [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition) if you need.*
+Mongo is the database that we are going to use.  We've already installed `mongodb` using Homebrew. 
 
  🚀 You may need to run the `mongod &` process, which your node app will connect to.  This is a background server process. 
  
- ⚠️ On OSX if you get a permissions error you may need to make sure that the database dir is writable `sudo chown $USER /data/db`. If you get an error about `/data/db` not existing you can run: `sudo mkdir -p /data/db`. Pay attention to the error message to determine what what directory it is complaining about.
- 
- ⚠️ If you have Mac and updated to Catalina than the root folder is no longer [writable](https://stackoverflow.com/questions/58034955/read-only-file-system-when-attempting-mkdir-data-db-on-mac). You will receive the error `mkdir: /data/db: Read-only file system` when trying to create `/data/db`. This means we need to change mongo's db directory to be elsewhere:
- 
- ```bash
- sudo mkdir -p /Users/$USER/data/db
- sudo chown $USER /Users/$USER/data/db
- ```
- 
- Now whenever asked to use the commannd `mongod &` use instead `mongod --dbpath=/Users/user/data/db &`
- 
- To avoid the extra typing follow the instructions [HERE](https://stackoverflow.com/questions/58034955/read-only-file-system-when-attempting-mkdir-data-db-on-mac/#answer-60299088) to change mongo's configuration.
-
 There is a commmandline client we'll use to connect to the database: `mongo`. You can also play around with a more graphical client [mongodb compass community](https://www.mongodb.com/download-center?jmp=nav#compass) (just make sure to download the *community* version).
 
 🚀  Below are some commands to run in the mongo client to create some polls.
@@ -152,9 +147,8 @@ const PollSchema = new Schema({
   upvotes: { type: Number, default: 0 },
   downvotes: { type: Number, default: 0 },
 }, {
-  toJSON: {
-    virtuals: true,
-  },
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true },
 });
 
 PollSchema.virtual('score').get(function scoreCalc() {
@@ -243,9 +237,9 @@ nav {
 🚀 Now, let's insert the nav bar and the modal into `index.ejs` file, which we create under the `src/views/` directory. This is really easy in ejs:
 ```html
 <html>
-  <% include partials/head %>
+  <%- include('partials/head') %>
 <body>
-  <% include partials/nav %>
+  <%- include('partials/nav') %>
   Hello
 </body>
 </html>
@@ -273,7 +267,7 @@ Great, so now when we hit `http://localhost:9090`, we see the nav bar. Cooool.
 ```html
 <div class="card-flex container section">
    <% if (polls.length > 0) { %>
-      <% polls.sort(function(a,b) {return a.score < b.score}) %>
+      <% polls.sort(function(a,b) {return b.score - a.score}) %>
       <% polls.forEach(function(poll) { %>
 
         <div class="card">
@@ -301,13 +295,13 @@ There are even more neat things ejs can help us with: we can use the control flo
 
 ## Create A New Poll Page
 
-🚀  We will also make a page to create new polls.  Let's create an `src/views/new.ejs` file.   Let's start with including partials as usual.
+🚀  We will also make a page to create new polls.  Let's create `src/views/new.ejs`.   Let's start with including partials as usual.
 
 ```html
 <html>
-<% include partials/head %>
+<%- include('partials/head') %>
 <body>
-  <% include partials/nav %>
+  <%- include('partials/nav') %>
 </body>
 </html>
 ```
@@ -500,7 +494,7 @@ export const vote = (pollID, upvote) => {
 };
 ```
 
-This one is a bit more complicated, we have to find the specific vote and set some fields and then save it.  Note how here we are both returning a promise but also have a `.then`.  Since you can chain them you can return a promise plus a then and that it still a promise.
+This one is a bit more complicated, we have to find the specific vote and set some fields and then save it.  Note how here we are both returning a promise but also have a `.then`.  Since you can chain them you can return a promise plus a then and that is still a promise.
 
 
 ## Upvote / Downvote
@@ -512,14 +506,13 @@ We now have all the server endpoints in place to add upvote/downvote capability,
 ```js
 <script>
 $('.vote').click(function(event) {
-  event.preventDefault();
   var vote=$(event.currentTarget).data('vote');
   var id=$(event.currentTarget).data('id');
   $.ajax({
     type: "POST",
     url: "/vote/"+id,
     data: {vote}
-  }).done(location.reload());
+  }).done(function() {location.reload()});
 });
 </script>
 ```
@@ -532,12 +525,10 @@ Great! We have everything working now. We will need to host this new server comp
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
 2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is **free** so it won't be charged.
-3. Once you've connected your database, go to *Deploy* and select "Heroku Git" as your Deployment Method. Download and install the Heroku CLI using `brew install heroku/brew/heroku`. Given that you're already working in a git repository, use `heroku git:remote -a YOUR_HEROKU_APP` to add a new git remote (use `git remote -v` to see). If you haven't done so already, add and commit your changes.
-4. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
-
-You can also set up the "Deploy Using GitHub" if you prefer - I'm old fashioned so I like the explicit push to heroku but up to you.
-
-*Note: Don't forget to push master to **both** heroku and origin.*
+3. Go to *Deploy* and select either "Github" or "Heroku Git" as your Deployment Method
+    * if you choose GitHub, find and connect to the right repository, then turn on *Automatic Deploys* for the master branch. This will update Heroku whenever you `git push origin master` and restart your heroku server. This way is pretty automatic and you don't have to worry about remembering to push to heroku.
+    * if you are doing "Heroku Git", select Download and install the Heroku CLI using `brew install heroku/brew/heroku`. Given that you're already working in a git repository, use `heroku git:remote -a YOUR_HEROKU_APP` to add a new git remote (use `git remote -v` to see). If you haven't done so already, add and commit your changes. Now when you want to deploy do: `git push heroku master`. *Note: Don't forget to push master to **both** heroku and origin.* This way is more manual if you want greater control.
+4. Either way, once Heroku gets your push then it will run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
 
 ## To Turn In
 
