@@ -287,7 +287,7 @@ Axios supports *GET*, *POST*, *PUT*, *DELETE*, and other *HTTP* verbs.
 With *POST* and *PUT* you need to supply an object with key,value data.  Something like the following would work:
 
 ```javascript
-const fields = {title: '', contents:'', coverUrl: '', tags: ''}
+const fields = {title: '', content:'', coverUrl: '', tags: ''}
 axios.post(`${ROOT_URL}/posts${API_KEY}`, fields)
 ```
 
