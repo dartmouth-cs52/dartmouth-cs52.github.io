@@ -7,7 +7,7 @@ comment_term: lab-redux-blog+server
 
 
 
-## Blog: Server
+## Platform: Server
 
 ![](img/enm.jpg){: .small}
 
@@ -30,15 +30,15 @@ Our server will be a pure api server, returning only JSON format data to our Lab
 
 First we should do some basic setup steps.  
 
-🚀 Do what you did in [lab4](../../lab/redux-blog) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
+🚀 Do what you did in [lab4](../redux-platform) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-19s/express-babel-starter.git
+git remote add starter git@github.com:dartmouth-cs52/express-babel-starter.git
 git pull starter master
 ```
 
-During SA7 we inspected the starterpack, it isn't very complicated - mostly just express+babel+eslint. 
+During SA7 we inspected the starterpack, it isn't very complicated - just express+babel+eslint (no webpack since we are using node).
 
 Ok, now that we got that out of the way. Let's dig in! 
 
@@ -51,7 +51,7 @@ The whole point here is to get your blog app working with this new server, so we
 
 ```javascript
 const ROOT_URL = 'http://localhost:9090/api';
-// const ROOT_URL = 'https://cs52-blog.herokuapp.com/api';
+// const ROOT_URL = 'https://platform.cs52.me/api';
 ```
 
 And start up your react+redux blog app.  It'll be broken for now (should display no blog entries), but hopefully soon we'll have it all working!
@@ -101,18 +101,13 @@ We'll add more routing in shortly, but first let's set up our database!
 
 Mongo is the database that we are going to use.  We will run a local mongo daemon to connect to for testing.
 
-
-🚀 On OSX to install:
-
-```bash
-brew install mongodb
-```
-
-Then follow further [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
-
-You will need to run the `mongod &` process, which your node app will connect to.  This is a background server process.
+🚀 Install MongoDB Server and Client:  you should already have these installed from the [server-side short](../../sa/server-side) assignment [installation instructions here](https://docs.mongodb.com/manual/installation/#mongodb-community-edition).
 
 There is a commmandline client you can use to connect to the database: `mongo`. You can also play around with a more graphical client [mongodb compass community](https://www.mongodb.com/download-center?jmp=nav#compass) (just make sure to download the *community* version).
+
+```bash
+mongo
+```
 
 ```javascript
 // mongoshell is a commandline interface to your local mongo db
@@ -128,7 +123,7 @@ db.posts.insert(
      "title": "first post",
      "tags": "words",
      "content":  "this is a test post",
-     "cover_url": "https://media.giphy.com/media/uscuTAPrWqmqI/giphy.gif"
+     "coverUrl": "https://media.giphy.com/media/uscuTAPrWqmqI/giphy.gif"
    }
 )
 // will insert an object into the database
@@ -290,7 +285,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "title": "first post",
     "tags": "words",
     "content":  "this is a test post",
-    "cover_url": "https://media.giphy.com/media/uscuTAPrWqmqI/giphy.gif"
+    "coverUrl": "https://media.giphy.com/media/uscuTAPrWqmqI/giphy.gif"
 }' "http://localhost:9090/api/posts"
 
 # update by POSTID
@@ -313,7 +308,7 @@ Ok, but our controller `controllers/post_controller.js` is fairly useless.  We h
 
 Let's walk through making one of those endpoints not useless!
 
-The most important might be the `createPost` endpoint.  If you recall from Lab4 this gets called with the fields of our new post `{title: '', tags: '', contents: '', cover_url: ''}`.  These end up in our `req` (request) object, specifically in `req.body`.
+The most important might be the `createPost` endpoint.  If you recall from Lab4 this gets called with the fields of our new post `{title: '', tags: '', contents: '', coverUrl: ''}`.  These end up in our `req` (request) object, specifically in `req.body`.
 
 Let's fill out the contents of the `createPost` method:
 
@@ -348,7 +343,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }' "http://localhost:9090/api/posts"
 ```
 
-And then in mongo shell:  
+And then in mongo shell `mongo`:
 
 ```javascript
 use blog
@@ -357,7 +352,21 @@ db.posts.find()
 
 ## Get All Endpoints Working
 
-Your mission is to now implement the rest of the endpoints!  You have the wiring ready, all you need is to use the [mongoose docs](http://mongoosejs.com/docs/queries.html) to implement `getPost`, `getPosts`, `updatePost`, and `deletePost`.  You may find mongoose methods such as: `.find()`, `.findById()`, `.remove()` helpful.  You might want to look into sorting the results for `getPosts` by `created_at`.
+Your mission is to now implement the rest of the endpoints!  You have the wiring ready, all you need is to use the [mongoose docs](http://mongoosejs.com/docs/queries.html) to implement `getPost`, `getPosts`, `updatePost`, and `deletePost`.  You may find mongoose methods such as: `.find()`, `.findById()`, `.remove()` helpful.  You might want to look into sorting the results for `getPosts` by `createdAt`.
+
+<details markdown="block">
+<summary>Add this to your schema definitaion to make sure the DB has the necessary timestamps to sort by</summary>
+
+
+```js
+{
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true },
+  timestamps: true,
+}
+```
+
+</details>
 
 ⚠️ In the above we only saved `title`, none of the other fields were defined in our Post Schema!  You should now go back and add the other fields we need to the model as well as to the all the controller methods.
 
@@ -365,22 +374,13 @@ And finally, you'll need to get the router id that is passed in when we hit `/po
 
 ## What about APIKEY
 
-Unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in each document and then query on it.
+Unlike the blog api we've been using, nothing in the above relies on the query parameter `?key=foobar`. This is because this is your personal database for which we're shortly going to implement authentication, so you don't really need the APIKEY sandboxing.  If you were curious and wanted to implement it it would be available to you in `req.query.key` and easiest would be to store it in the db as a new field and then query on it.
 
 ## Deploy
 
-We will need to host this new server component so your blog can use it instead of the `cs52-blog.herokuapp.com` one.  
+We will need to host this new server component so your blog can use it instead of the `platform.cs52.me` one.  
 
-Great! We have everything working now. We will need to host this new server component!
-
-1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
-1. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
-1. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/cs52-blog.git`.   
-1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
-1. Once it is deployed you can get your new heroku URL by clicking 'open app' on heroku.
-
-⚠️ Don't forget to push master to **both** *heroku* and *origin*.
-
+🚀 [Same steps as for the short.](../../sa/server-side/#deploy-to-heroku)
 
 ## P1 Complete
 
