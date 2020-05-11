@@ -30,6 +30,8 @@ Our server will be a pure api server, returning only JSON format data to our Lab
 
 First we should do some basic setup steps.  
 
+🚀 Provision a repo for the server using the github classroom link in canvas.
+
 🚀 Do what you did in [lab4](../redux-platform) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
 
 ```bash

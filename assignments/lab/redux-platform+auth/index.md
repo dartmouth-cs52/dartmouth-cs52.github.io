@@ -89,12 +89,14 @@ password: { type: String }
 
 For now we won't store anything else in the User model, but you may eventually want to add to this.
 
-Might as well add in:
+Make sure you have the config object: 
 
 ```javascript
-UserSchema.set('toJSON', {
-  virtuals: true,
-});
+{
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true },
+  timestamps: true,
+}
 ```
 
 This provides a mapping to `id` from `_id`, since you might need that later if you want to link to users.
