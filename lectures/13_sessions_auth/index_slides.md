@@ -28,54 +28,68 @@ name: Today
 
 * Sessions
 * Authentication
-* [https://tinyurl.com/cs52-19s-pitches](https://tinyurl.com/cs52-19s-pitches)
+<!-- * [https://tinyurl.com/cs52-19s-pitches](https://tinyurl.com/cs52-19s-pitches) -->
 
 ???
 * adjusting milestones and will publish dates on canvas
 * going to move quickly to get the projects started
 * lab5.p2 is pretty short more like a short
-* QUESTIONS ABOUT SA7?!?!?
+* QUESTIONS?
 
 
 
 ---
-name: Bloggggyy
+name: Platform
 
 
-* [wow](http://airwaves-sports.surge.sh/)
-* [graphs](http://joe-connolly-lab4.surge.sh/)
-* [with auth!](https://blogger-cs52.surge.sh/)
-* [filtering](http://averyv-cs52-lab4.surge.sh/)
-* [more filtering](http://book-reviews.surge.sh/)
-* [free food](http://freefoodatnow.surge.sh/)
-* [memes](http://cs52-community-meme-page.surge.sh/)
-* [meal hacks - css](http://shep-cs52-lab4.surge.sh/)
-* [virtual closet](http://charlotteclab4.surge.sh/)
-* [more recipes](http://taylorolson-cs52-lab4.surge.sh/)
-* [volunteering](http://alexis-cs52-volunteer-postings.surge.sh/)
-* [why auth is important](http://mmhazard-reduxblog.surge.sh/)
-* [css from scratch](http://nourbenmohamed-cs52-starter.surge.sh/)
-* [travel](https://sulljohn-cs52-blog.surge.sh/)
-* [dank style](http://mini-blog.surge.sh/)
-* [#tobeme](http://grace-cs52-blog-frontend.surge.sh/)
-* [typography](https://bensblog.surge.sh/)
+* <a href="https://catherineparnell-cs52-lab4.surge.sh/" target="_blank">[pet words]</a>
+* <a href="https://srishti-cs52-reduxplatform.surge.sh/" target="_blank">[ui pills]</a>
+* <a href="https://jaltaire-cs52-contact-cards.surge.sh/" target="_blank">[contact cards]</a>
+* <a href="https://chibuzo-cs52-platform.surge.sh/" target="_blank">[nasa api]</a>
+* <a href="https://georginadavis-cs52-food-for-thought.surge.sh/" target="_blank">[food]</a>
+* <a href="https://hershel-cs52-lab4.surge.sh/" target="_blank">[click to filter]</a>
+* <a href="https://mortonlife.surge.sh/" target="_blank">[family blog]</a>
+* <a href="https://aarishiyer-cs52-blog.surge.sh/" target="_blank">[modals all day]</a>
+* <a href="https://yaorui-cs52-plantform-client.surge.sh/" target="_blank">[click to edit]</a>
+* <a href="https://sarahhong-lab4-blog.surge.sh/" target="_blank">[art gallery]</a>
+* <a href="https://manzi-cs52-blog.surge.sh/" target="_blank">[debugging]</a>
+* <a href="https://juliettepouchol-cs52-blog.surge.sh/" target="_blank">[magic gradients]</a>
+* <a href="https://katherinetaylor-cs52-blog.surge.sh./" target="_blank">[wfh life]</a>
 
+
+---
+name: Data Persistence and Sessions
+
+* So far:
+    * in client memory state storage
+        * component state
+        * redux store
+        * routes (a type of state awareness?)
+    * database storage
+        * persist content data
+
+???
+* but this probably isn't all that we might need
+* what is some state storage/awareness that we haven't done yet?
 
 
 ---
 name: Sessions
 
-<iframe src="//giphy.com/embed/ukE9oP3kb7TVu" width="480" height="203" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.small[![](img/idontremember.gif)]
 
 * state between each request to server
 * who is logged in?
 * what have they done?
+* what page are they on?
+* fields they have filled in but not submitted?
+* what else? 
 
 ???
 * stateless http
-* so far we've had in memory storage
-* and we've had database storage
-* but nothing about connecting client-server
+* so far we've had client in-memory storage
+* and and some general database storage
+* but nothing about connecting a specific session or user client-server
 
 
 
@@ -112,7 +126,7 @@ name: Session State
 
 
 ---
-name: More State Storage
+name: But where to store it?
 
 * store data:
   * client
@@ -127,7 +141,7 @@ name: More State Storage
 
 
 ---
-name: Stateless HTTP
+name: Stateless HTTP now a problem?
 
 * HTTP request to server
   * how to identify?
@@ -194,12 +208,14 @@ Cookie: cookie_name1=cookie_value1; cookie_name=cookie_value2;
 ???
 * server sends cookie, client remembers it
 * client sends cookie automatically back with each request
-* browser and server thing - not part of http specifically
-
+* browser and server implementation - not part of http specifically
 
 
 ---
 name: Just a file
+
+.medium[![](img/cookiefile.jpg)]
+
 
 * just a file on your computer that your browser reads/writes automatically
 * you can:
@@ -282,6 +298,8 @@ sessionStorage.removeItem('key')
 ---
 name: HTML5 WebStorage API
 
+.medium[![](img/localstorage.jpg)]
+
 * localStorage
   * longer term per origin storage
   * 10mb
@@ -294,7 +312,7 @@ localStorage.someSetting = 'orange';
 
 
 ???
-
+* if the server needs to know anything in localStorage - we need to manually send it - unlike cookies
 
 
 
@@ -302,8 +320,9 @@ localStorage.someSetting = 'orange';
 
 
 ---
-name: Framework Sessions
+name: Frameworks Can Provide Sessions
 
+* Both client and server are aware of some shared state via cookies
 * Rails:
   * session[:user_id] = "pusheen"
   * cookie exists: get session data
@@ -325,6 +344,7 @@ name: Additional Server Session Storage
   * fast
   * expensive
   * can't load balance
+  * doesn't last
 * database
   * scalable
   * excessive
@@ -333,7 +353,7 @@ name: Additional Server Session Storage
   * fast key:value stores
 
 ???
-* frameworks might employ additinal server session tracking
+* frameworks might employ additional server session tracking
 * server tracking of sessions
 * still requires client data but can extend local session storage
 
@@ -356,7 +376,7 @@ name: Express.js Sessions
 ---
 name: Session Hijacking
 
-<iframe src="https://giphy.com/embed/13w1iy7dhKR40o" width="480" height="249" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.small[![](img/dogsled.gif)]
 
 ```html
 // real bad
@@ -380,7 +400,7 @@ Cookie: connect.sid=2398sf98792874hk2kjh23iu
 ---
 name: HTTPS
 
-<iframe src="https://giphy.com/embed/kTEqpBl5W9X2w" width="480" height="357" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.small[![](img/catcafe.gif)]
 
 * even with good session id
 * traffic can be monitored if not over HTTPS
@@ -403,7 +423,7 @@ name: CSRF
   1. later visit bad site
   1. bad site submits a form on your behalf to bank
   1. since session still valid...
-  1. successful hacker funds transfer
+  1. successful hacker transfers funds
 
 ???
 * these days such an attack is rarer but still needs to be protected against
@@ -434,9 +454,12 @@ name: CSRF
 ---
 name: Authentication
 
-<iframe src="//giphy.com/embed/X68QCGb5qx596" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.medium[![](img/handshake.gif)]
+
+* for sessions, for shared state, for identification, for permissions
 
 ???
+* ok so we know some problems, if any shared state is required how do we guarantee identity? 
 * big topic
 * hw5 is about auth
 * auth isn't just about users but also about roles and permissions
@@ -447,12 +470,16 @@ name: Authentication
 ---
 name: username and passwords
 
+.medium[![](img/passwords.jpg)]
+
+
 * passwords still pretty much defacto
 * 2 factor authentication on the rise
   * phone or email validation 
 
 ???
 * 2 factor typically now is key sent to phone
+* as a user you might store password on **sticky note**
 
 
 
@@ -534,7 +561,7 @@ name: Tokens Over Cookies
 ???
 * token:
   * manual wiring
-  * cross-domain
+  * somewhat cross-domain
 * cookie:
   * automatically included
   * unique per domain
@@ -570,7 +597,6 @@ name: Token
 
 
 
-
 ---
 name: Auth Flow
 
@@ -591,6 +617,7 @@ name: Tokens
 
 ???
 * what should this token thing be?
+* this idea that a token, sometimes called bearer tokens (in that the bearer / person in possession of the token is authorized), requires that token to be somewhat special
 
 
 
@@ -683,12 +710,25 @@ name: Social -> JWT Login
 ---
 name: Tokens -> Access
 
-<iframe src="//giphy.com/embed/Zg4Lf6cO8Cm6A" width="780" height="570" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.medium[![](img/fingerprint.gif)]
 
 ???
-
 
 ---
 name:  
 
-<iframe src="https://giphy.com/embed/12OIWdzFhisgww" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.small[![](img/hedgehog.gif)]
+
+* summary:
+    * tokens help authenticate a user to server
+    * store role / permissions in user object
+    * use localStorage for any clientside across browser window data
+
+---
+name: next up lab5p2
+
+.small[![](/assignments/lab/redux-platform+auth/img/passport_strategies.png)]
+
+* update lab4 and lab5 repositories to support authentication
+* use passport library to handle authenticating server routes
+* store user objects with salted+hashed passwords
