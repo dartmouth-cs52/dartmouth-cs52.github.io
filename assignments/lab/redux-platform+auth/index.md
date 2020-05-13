@@ -12,6 +12,14 @@ comment_term: lab-redux-blog+auth
 
 For this assignment we are going to build an [express](https://expressjs.com/) and [mongodb](https://www.mongodb.com/) CRUD api server for our react+redux blog frontend. This will finally bring our stack all the way down to the database. In this part we're going to be adding in Authentication!
 
+<video loop autoplay mute controls>
+  <source src="https://res.cloudinary.com/dali-lab/video/upload/c_scale,w_800/v1589346003/cs52/withauth-small.webm" type="video/webm"/>
+  <source src="https://res.cloudinary.com/dali-lab/video/upload/c_scale,w_800/v1589346003/cs52/withauth-small.mp4" type="video/mp4"/>
+  <source src="https://res.cloudinary.com/dali-lab/video/upload/c_scale,w_800/v1589346003/cs52/withauth-small.ogv" type="video/ogg"/>
+  Your browser does not support HTML5 video tags
+</video>
+
+
 ## Assignment At a Glance
 
 * Part 2:
@@ -42,7 +50,7 @@ git tag v1
 git push origin --tags
 ```
 
-Great, now you can always remember where you veered off course and made this terrible decision to add authentication to your lovely blog.
+Great, now you can always remember where you veered off course and made this terrible decision to add authentication to your lovely content platform.
 
 You will end up with 3 server urls at the end of this: A surge url for loading the frontend, a herokuapp url for the api server, and a mLabs mongo database url (which we won't need to actually know but *heroku* will automatically help connect to).  
 
@@ -285,7 +293,7 @@ const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
   secretOrKey: process.env.AUTH_SECRET,
 };
-// NOTE: we are not using a bearer token, disregard information about bearer tokens on the internet.
+// NOTE: we are not calling this a bearer token (although it technically is), if you see people use Bearer in front of token on the internet you could either ignore it, use it but then you have to parse it out here as well as prepend it on the frontend.
 
 
 // username + password authentication strategy
@@ -556,47 +564,51 @@ Additionally add Links to `/signin` and `/signup`.
 
 ### Authorized Component
 
-One last thing.  Right now an unauthenticated user can access the Add a post functionality. They will get an error (if you implemented an error action+reducer+component) or just a submit button that doesn't work.  Let's make that page protected so that if the user isn't authenticated they will be prompted to log in. Rather than adding checks into each of our components, we are going to create a higher order component.  How might you go about doing this?
+One last thing.  Right now an unauthenticated user can access the Add a post functionality. They will get an error (if you implemented an error action+reducer+component) or just a submit button that doesn't work.  Let's make that page protected so that if the user isn't authenticated they will be prompted to log in. Rather than adding checks into each of our components, we are going higher order component that wraps Route!  How might you go about doing this?
 
-How about wrapping a component in a wrapper function.  The function would take the component we want to require authentication as an argument, and then simply return a new component with the passed-in component mounted inside it.
+What we can do is create a new component that wraps a Route component and some logic inside it. 
 
-🚀 Create a new container component `requireAuth.js`.
+🚀 Create a new component `privateRoute.js`.
 
-It should be a class based redux connected component.  Make it very bare bones, it will have 3 lifecycle methods:  `componentWillMount`, `componentWillUpdate`, `render`.
+We'll make it a function based component, but also connected to redux, because why not.
 
-🚀 Create the above 3 methods and leave them blank for now with render just returning an empty div.  
+Here's a start:
 
-🚀 Create the `mapStateToProps` function and map `authenticated` to `state.auth.authenticated`. We won't need any actions inside this component so disregard `mapDispatchToProps`.
+```js 
+import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter, Route, Redirect } from 'react-router-dom';
 
+// Router Wrapper
+const PrivateRoute = ({ component: Child, ...props }) => {
+// some stuff goes here
 
-Now we'll wrap it all in a function!
-
-```javascript
-export default function (ComposedComponent) {
-  class RequireAuth extends Component {
-    //your various component lifecycle methods
-  }
-
-  //mapStateToProps
-
-  return connect(mapStateToProps, null)(RequireAuth);
 }
+
+export default withRouter(connect(mapStateToProps, null)(PrivateRoute));
 ```
 
-Note, we've moved the `export default` to the wrapper function instead.
-
-Wait, what is `ComposedComponent`?  That is what we will now add to our render function.
-
-🚀 Your render can simply return: `<ComposedComponent {...this.props} />`
-
-🚀 Now let's fill in `componentWillMount`.  This will be pretty simple, all it needs to do is check if not `this.props.authenticated` and then redirect to `/signin` with: `this.props.history.push('/signin');`.
-
-🚀 `componentWillUpdate` should be pretty similar except that it gets called with the props that will be passed in for the next render like so `componentWillUpdate(nextProps)`, so you just need to check `!nextProps.authenticated` instead.
+Wait, what is the `{ component: Child, ...props }` destructuring assignment doing?  We're pulling out props.component and renaming it to Child, and then naming the rest of the argument props. Cool huh?
 
 
-Done! Now in your `routes.js` you can import `RequireAuth` and for instance protect the `New` path like so:
-`<Route path="posts/new" component={RequireAuth(New)} />`
+🚀 Create the `mapStateToProps` function and map `authenticated` to `reduxState.auth.authenticated`. We won't need any actions inside this component so disregard `mapDispatchToProps` and keep that null.
 
+Now, we'll render a Route component and using [React Router render and Redirect](https://reacttraining.com/react-router/web/example/auth-workflow) to insert a ternary conditional rendering based on whether `props.authenticated` is true or false.
+
+🚀 Return: 
+```js
+    <Route
+      {...props}
+      render={(routeProps) => (props.authenticated ? (
+        <Child {...routeProps} />
+      ) : (
+        <Redirect to="/signin" />
+      ))}
+    />
+```
+
+Done! Now in your `routes.js` you can import `PrivateRoute` and protect the `New` path like so:
+`<PrivateRoute path="/posts/new" component={New} />`
 
 ## Lastly
 
@@ -608,6 +620,25 @@ Done! Now in your `routes.js` you can import `RequireAuth` and for instance prot
 
 There are 2 ways to associate the user with the post.  You can save a `ref` to the whole user object (which you started to set up when you added author as an ObjectID type field). If you do that, then later when you retrieve the user you need to use [`populate`](http://mongoosejs.com/docs/populate.html) to fill in the object. Or you could add a `username` field to post and assign that.  Using a reference and populating on retrieval is the better way,  you can even select which field specifically to populate so you aren't sending the whole user object if you don't want to.
 
+<details markdown="block">
+<summary>
+🚀 You may have noticed that password may be returned along with the entire user object. If that is the case you may change your User Scheme <code>toJSON</code> options to be include a transform that cleans up the user object a little bit when converted to json.
+</summary>
+
+```js
+  toJSON: {
+    virtuals: true,
+    transform(doc, ret, options) {
+      ret.id = ret._id;
+      delete ret._id;
+      delete ret.password;
+      delete ret.__v;
+      return ret;
+    },
+  },
+```
+
+</details>
 
 ## P2 Complete
 
@@ -620,7 +651,7 @@ Commit, tag both your Lab5 and Lab4 repos with `v2`, and push your tags! Deploy 
 
 1. github url to your repo
 1. url to your heroku app instance for testing
-1. surge url for your blog app that uses your new API server and has authentication!
+1. surge url for your content platform app that uses your new API server and has authentication!
 1. your app should:
   * have users sign-in, sign-up, sign-out
   * not allow people to access /posts/new when not logged in
@@ -641,6 +672,6 @@ Commit, tag both your Lab5 and Lab4 repos with `v2`, and push your tags! Deploy 
 * add a live preview to the main content editing (a parallel view that renders the markdown as you edit it).
 * add in commenting system, authenticated users can comment on posts
 * add search functionality (advanced, [tips](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/))
-* add images to posts (advanced, [s3](http://www.benrlodge.com/blog/post/image-uploading-with-reactjs-nodejs-and-aws-s3))
+* add images to posts (advanced, [s3](/assignments/sa/s3-upload/))
 * add auto-complete to tags (advanced, store tags separately, query tags api endpoint as you type)
 * suggest other, this is your time to make this your own.

@@ -48,8 +48,8 @@ comment_term: assignments
 * [Lab 4: Redux Platform Frontend](lab/redux-platform)
 <!-- * Lab 5 Part 1: Redux Platform + API -->
 * [Lab 5 Part 1: Redux Platform + API](lab/redux-platform+server)
-* Lab 5 Part 2: Redux Platform + Auth 
-<!-- * [Lab 5 Part 2: Redux Platform + Auth](lab/redux-platform+auth) - DUE 5/11 -->
+<!-- * Lab 5 Part 2: Redux Platform + Auth  -->
+* [Lab 5 Part 2: Redux Platform + Auth](lab/redux-platform+auth)
 
 
 ### 4-ish Short in-class quizzes:  10%
