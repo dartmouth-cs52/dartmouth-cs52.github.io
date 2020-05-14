@@ -11,7 +11,9 @@ comment_term: project-bughunt
 ![](img/buggs.gif){: .fancy .super-tiny}
 
 
-Each team should be prepared to demo what they have currently and to discuss their progress. We'll offer bug rewards in the form of snacks! 
+Each team should be prepared to demo what they have currently and to discuss their progress. 
+
+<!-- We'll offer bug rewards in the form of snacks!  -->
 
 Bugs will need to be submitted in the form of git issues that you write together.  Each person will submit 2 issues to one of their own team repos and record the name of the person they worked with. 
 
