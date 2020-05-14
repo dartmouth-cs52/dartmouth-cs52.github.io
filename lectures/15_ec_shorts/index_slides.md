@@ -352,11 +352,11 @@ socket.broadcast.emit('user connected', username);
 
 
 ---
-name: Image Upload
+name: Image / Large File Upload
 
 .small[![](img/drag-drop-upload-1.gif)]
 
-* where to store uploaded images?
+* where to store uploaded images or large files?
     * database 🚫
     * server file system 🚫
     * amazon s3? ❤️
@@ -368,12 +368,40 @@ name: Image Upload
 * databases are optimized for not large data blobs
 
 
+
+
+---
+name: Image / Large File Upload
+
+.large[![](img/not-heroku.jpg)]
+
+* heroku doesn't even have a filesystem
+
+
+???
+
+
+---
+name: Image / Large File Upload
+
+.large[![](img/not-database.jpg)]
+
+* database store is super robust and super expensive
+
+
+???
+
+
+
 ---
 name: S3
 
 * [aws s3](https://aws.amazon.com/s3/)?
 
 .medium[![](img/s3.jpg)]
+
+.medium[![](img/s3-pricing.jpg)]
+
 
 
 ???
@@ -459,7 +487,6 @@ name: React Native
 
 
 ???
-* has changed a bit since last year will have update out tonight
 
 
 ---
@@ -476,7 +503,15 @@ name: Expo.io
 
 
 
----
-name: TEAMS!
 
-.medium[![](img/teamwork.gif)]
+
+---
+name: Next up:
+
+.small[![](img/teamwork.gif)]
+
+* <a href="/assignments/lab/redux-platform+auth" target="_blank">lab5p2 (adding auth)</a>
+* <a href="/assignments/project/feature-spec" target="_blank">feature spec tonight</a>
+* <a href="/assignments/project/scaffolding" target="_blank">scaffolding</a>
+* <a href="/assignments/project/mockups" target="_blank">mockups</a>
+

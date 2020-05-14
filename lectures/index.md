@@ -73,9 +73,9 @@ fetch(proxyUrl + targetUrl, {
 <!-- * 5/12 Sessions & Auth -->
 * [5/12 Sessions & Auth](13_sessions_auth)
 <!-- * [5/7 Teams](13_teams) -->
-* 5/12 Websockets, S3, ReactNative
-<!-- * [5/12 Websockets, S3, ReactNative (ec shorts)](15_ec_shorts) -->
-* 5/14 In Class TeamWork Time
+<!-- * 5/12 Websockets, S3, ReactNative -->
+* [5/14 Websockets, Image and File storage, ReactNative, TeamTime](15_ec_shorts)
+<!-- * 5/14 In Class TeamWork Time -->
 * 5/19 In Class TeamWork Time
 * 5/21 Mockup Sharing
 * 5/26 In Class TeamWork Time
