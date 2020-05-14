@@ -66,7 +66,7 @@ Your file might end up looking like:
 ```
 language: node_js
 node_js:
-  - "12"
+  - "13"
 install:
   - yarn --ignore-engines
 script:

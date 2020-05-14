@@ -18,29 +18,29 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
 ### Setup
 
-1. As an admin for your GitHub repo, sign up for a [Travis-CI account](https://travis-ci.org/auth)
+1. As an admin for your GitHub repo, sign up for a [Travis-CI account](https://travis-ci.com)
 
-2. Once you’re signed in, and we’ve synchronized your repositories from GitHub, go to your [profile page](https://travis-ci.org/profile/) and enable Travis CI builds for your repository.
+2. Once you’re signed in, and we’ve synchronized your repositories from GitHub, go to your [profile page](https://travis-ci.com/profile/) and enable Travis CI builds for your repository.
 
       ![profile](/assets/imgs/travis/travis-ci.jpg)
 
-      *Note: for private repositories you need to go to [http://travis-ci.com](http://travis-ci.com) but the same account works in both.*
+      *Note: since we use private repositories you need to go to [http://travis-ci.com](http://travis-ci.com) or [http://travis-ci.org](http://travis-ci.org) for personal public repositories.*
 
 3. Travis configuration
 
-    Create a `.travis.yml` file in your home directory. This is the configuration file that Travis uses. You can read more about detailed configurations [here](https://docs.travis-ci.com/user/customizing-the-build/). Below is a sample configuration file that we are using for a Meteor project. By default, `node_js` configurations will run `npm test` or `yarn test` after the build completes. That is a script you have defined in your `package.json` file named 'test'.
+    Create a `.travis.yml` file in your home directory. This is the configuration file that Travis uses. You can read more about detailed configurations [here](https://docs.travis-ci.com/user/customizing-the-build/). By default, `node_js` configurations will run `npm test` or `yarn test` after the build completes. That is a script you have defined in your `package.json` file named 'test'.
 
         language: node_js
         node_js:
-          - "11"
+          - "13"
 
 4. Push to GitHub
 
     After you are finished setting up your `.travis.yml`, simply push your changes to GitHub
 
-        git add -A
+        git add .travis.yml
         git commit -m 'Travis CI Config'
-        git push
+        git push origin master
 
 5. Turn on GitHub Protected Branch.
 
