@@ -7,7 +7,7 @@ comment_term: sa-s3-upload
 
 ![AWS S3](http://i.imgur.com/FBAnSyZ.png)
 
-### Overview
+## Overview
 
 Today we'll be learning how to directly upload images to Amazon Web Services Simple Storage Service (S3) on our blog application from Lab 4 and 5. We will be implementing an image input for handling image uploads and then these images will directly be uploaded to S3.
 
@@ -15,7 +15,7 @@ Amazon S3 is a popular and reliable storage option for storing files such as ima
 
 
 
-#### Code Flow
+### Code Flow
 
 In general, the method described in this article follows these simple steps:
 
@@ -26,9 +26,9 @@ In general, the method described in this article follows these simple steps:
 ![AWS S3](img/s3_upload.jpg)
 
 
-### Setup
+## Setup
 
-#### Git Tags
+### Git Tags
 
 Before you start make sure to tag your previous Lab4 and Lab5 with v2.
 
@@ -49,7 +49,7 @@ git push origin --tags
 
 Great, now you can add uploading but always know the version that came before.
 
-#### S3 Setup
+### S3 Setup
 
 🚀 Setup S3 with Heroku by following this [guide](https://devcenter.heroku.com/articles/s3#s3-setup).
 
@@ -80,31 +80,11 @@ For this to work in your application, click ‘Add CORS Configuration’ and ent
 This tells S3 to allow any domain access to the bucket and that requests can contain any headers, which is generally fine for testing. When deploying, you should change the 'AllowedOrigin’ to only accept requests from your domain.
 
 
-#### Heroku Setup
 
-🚀 Make a `.env` file in your root directory of your **server**. It should look something like this.
-
-```bash
-AWS_ACCESS_KEY_ID=YOUR_KEY_HERE
-AWS_SECRET_ACCESS_KEY=YOUR_KEY_HERE
-S3_BUCKET_NAME=YOUR_BUCKET_NAME_HERE
-```
-
-🚀 Remember to add the `.env` file to your `.gitignore`, since this file should only be used for local testing.
-
-In order for your application to access the AWS credentials for signing upload requests, they will need to be added as configuration variables in Heroku. You can add these environment variables to Heroku for use on your server by running the following command for each of your variables, or you can log into Heroku dashboard and add them there.
-
-```bash
-$ heroku config:set AWS_ACCESS_KEY_ID=YOUR_KEY_HERE
-```
-
-We set all of these secret keys in a config variable because we don't want to expose these variables directly in code, where they could be potentially stolen.
+## Direct Uploading Client
 
 
-### Direct Uploading
-
-
-#### File input component
+### File input component
 
 We need to add some JSX to our frontend in both the `newPost` component and `post` component that allows us to upload images for our cover image.
 
@@ -133,7 +113,7 @@ Note: in the above we have **2** bits of state. `preview` which is set to an inl
 You can also use external react components such as [react-dropzone](https://react-dropzone.netlify.com/)
 
 
-#### S3 Functions
+### S3 Functions
 
 Since our post creation no longer relies on the `cover_url` input we need to do a bit more work to preview and upload the image, and only upon success get access to the url.
 
@@ -175,7 +155,7 @@ export function uploadImage(file) {
 
 We use promises because we need the image to successfully upload to S3 first, before we can add it to our post - this way we can wait for `uploadImage` and only submit our post after that.
 
-#### Submit Handler
+### Submit Handler
 
 How would use our new `s3.uploadImage` function?   Well something like the following in your *onSubmit* or `onFinishEdit` handlers would work. All you are doing is waiting for the image to upload first and only then creating or updating your post.
 
@@ -192,7 +172,7 @@ if (this.state.file) {
 ```
 
 
-#### Server
+## Server
 
 We need some new packages to communicate with s3. `aws-sdk` is used to communicate with s3  and `dotenv` is used to load environment variables from `.env` for your server.
 
@@ -200,7 +180,30 @@ We need some new packages to communicate with s3. `aws-sdk` is used to communica
 yarn add aws-sdk dotenv
 ```
 
-To setup `dotenv`, we want to call `dotenv.config({ silent: true });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET_NAME`.
+🚀 To setup `dotenv`, we want to call `dotenv.config({ silent: true });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET_NAME`.
+
+
+### Heroku Setup
+
+🚀 Make a `.env` file in your root directory of your **server**. It should look something like this.
+
+```bash
+AWS_ACCESS_KEY_ID=YOUR_KEY_HERE
+AWS_SECRET_ACCESS_KEY=YOUR_KEY_HERE
+S3_BUCKET_NAME=YOUR_BUCKET_NAME_HERE
+```
+
+🚀 Remember to add the `.env` file to your `.gitignore`, since this file should only be used for local testing.
+
+In order for your application to access the AWS credentials for signing upload requests, they will need to be added as configuration variables in Heroku. You can add these environment variables to Heroku for use on your server by running the following command for each of your variables, or you can log into Heroku dashboard and add them there.
+
+```bash
+$ heroku config:set AWS_ACCESS_KEY_ID=YOUR_KEY_HERE
+```
+
+We set all of these secret keys in a config variable because we don't want to expose these variables directly in code, where they could be potentially stolen.
+
+### S3 Service
 
 We also need a new route on our server to return our signedRequest. Make a new folder under app called `services`, and add a new `s3.js` file.
 
@@ -233,7 +236,7 @@ export default signS3;
 Note: if your S3 region got assigned to Ohio rather than the usual `us-east-2`: instead of `const s3 = new aws.S3();`, you'l need to use
 `const s3 = new aws.S3({ signatureVersion: 'v4', region: 'us-east-2' });`
 
-Now in your router, we can add a new route:
+🚀 Now in your router, we can add a new route:
 
 ```javascript
 router.get('/sign-s3', signS3);
@@ -262,5 +265,3 @@ Things should be working now!
 * [Heroku S3 Setup](https://devcenter.heroku.com/articles/s3)
 * [Dotenv Docs](https://github.com/motdotla/dotenv)
 
-###### Footnote
-* Ask Jason Feng on slack with any comments, questions, or suggestions!
