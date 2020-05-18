@@ -81,4 +81,4 @@ fetch(proxyUrl + targetUrl, {
 * 5/26 In Class TeamWork Time
 * 5/28 In Class TeamWork Time
 * 6/02 Wrapup
-* 6/(03|08) TBD Demos
+* 6/09 TBD Final Demo Session

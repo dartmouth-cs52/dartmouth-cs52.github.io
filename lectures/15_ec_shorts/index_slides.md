@@ -510,8 +510,11 @@ name: Next up:
 
 .small[![](img/teamwork.gif)]
 
-* <a href="/assignments/lab/redux-platform+auth" target="_blank">lab5p2 (adding auth)</a>
+* <a href="/assignments/lab/redux-platform+auth" target="_blank">lab5p2 (adding auth) sunday</a>
 * <a href="/assignments/project/feature-spec" target="_blank">feature spec tonight</a>
-* <a href="/assignments/project/scaffolding" target="_blank">scaffolding</a>
-* <a href="/assignments/project/mockups" target="_blank">mockups</a>
+* <a href="/assignments/project/scaffolding" target="_blank">scaffolding (next week)</a>
+* <a href="/assignments/project/mockups" target="_blank">mockups (next week)</a>
+* extra credit shorts
 
+???
+* if we have time after workshop we can break up into teams
