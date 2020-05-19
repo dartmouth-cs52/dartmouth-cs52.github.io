@@ -44,11 +44,10 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 * **[Pre-Demo Bug Hunt](bughunt)** (6/03):<br><!--8/18/2016-->
   In class session of breaking each others projects to reveal bugs and give last minute feedback.
 
-* **[Final Project Demos](final)** (6/09):<br><!--8/24/2016-->
-  Final Demos! Open to public (virtually) event combined with other CS projects, CS98 and DALI Demos! Motivate the idea, show it in action, discuss challenges and any user testing.
-
-* **[Final Project Code Submission](final-submission)** (6/10):<br>
+* **[Final Project Code Submission](final-submission)** (6/08):<br>
   Final code submission with up to date documentation.
 
+* **[Final Project Demos](final)** (6/09):<br><!--8/24/2016-->
+  Final Demos! Open to public (virtually) event combined with other CS projects, CS98 and DALI Demos! Motivate the idea, show it in action, discuss challenges and any user testing.
 
 *Dates approximate and may be adjusted*{: .warning}
