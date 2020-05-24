@@ -30,9 +30,11 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
     Create a `.travis.yml` file in your home directory. This is the configuration file that Travis uses. You can read more about detailed configurations [here](https://docs.travis-ci.com/user/customizing-the-build/). By default, `node_js` configurations will run `npm test` or `yarn test` after the build completes. That is a script you have defined in your `package.json` file named 'test'.
 
-        language: node_js
-        node_js:
-          - "13"
+```yml
+language: node_js
+node_js:
+  - "13"
+```
 
 4. Push to GitHub
 
@@ -95,9 +97,9 @@ Linters are code parsers that check your code for syntax errors, common style mi
 
 7. Connecting Eslint and TravisCI
 
-    By default all Node.js configurations of Travis run `npm test` automatically after the build completes.
+    By default all Node.js configurations of Travis run `npm test` or `yarn test` automatically after the build completes.
 
-    `npm test` can be configured to run a script of your choice, we will be running `eslint`.
+    `yarn test` can be configured to run a script of your choice, we will be running `eslint`.
     Later we can replace this with tests once your project has those.
 
     Below is a sample `package.json` file that runs eslint on all javascript files in your src directory
@@ -107,19 +109,3 @@ Linters are code parsers that check your code for syntax errors, common style mi
             "test": "./node_modules/.bin/eslint src"
           }
         }
-
-8. *Optional* Pre-commit Hooks
-
-    In addition to running server side testing through Travis CI, you can also set up pre-commit hooks locally in your git repository.
-
-    Pre-commit hooks will typically run all of your linters against any files that you are attempting to stage. If there are any linter errors, you must fix errors before successfully committing.
-
-    You can use a simple script and add it to your `.git/hooks/pre-commit` file.
-
-
-    ```bash
-    #!/bin/bash
-    npm test
-    ```
-
-    A sample script for some more advanced configurations for `eslint` can be found [here](https://gist.github.com/linhmtran168/2286aeafe747e78f53bf).
