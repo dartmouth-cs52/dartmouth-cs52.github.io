@@ -14,15 +14,13 @@ TravisCI is a continuous integration system that allows you to easily test and d
 
 #### Linters
 
-Linters are code parsers that check your code for syntax errors, common style mistakes, and makes sure that your code falls under best practices. Linters help save time, detect bugs, and improve code quality. Linters exist for all types of languages and even markdown such as HTML, CSS, and JSON. Linters are especially helpful for detecting syntax errors while using lightweight code editors such as Atom or Sublime Text that doesn't have that built in functionality of IDEs such as IntelliJ or Pycharm.
+Linters are code parsers that check your code for syntax errors, common style mistakes, and makes sure that your code falls under best practices. Linters help save time, detect bugs, and improve code quality. Linters exist for all types of languages and even markdown such as HTML, CSS, and JSON. Linters are especially helpful for detecting syntax errors while using lightweight code editors such as Atom or VSCode that don't have that built in functionality of IDEs such as IntelliJ or Pycharm.
 
 ### Setup
 
 1. As an admin for your GitHub repo, sign up for a [Travis-CI account](https://travis-ci.com)
 
-2. Once you’re signed in, and we’ve synchronized your repositories from GitHub, go to your [profile page](https://travis-ci.com/profile/) and enable Travis CI builds for your repository.
-
-      ![profile](/assets/imgs/travis/travis-ci.jpg)
+2. Once you’re signed in, you'll be prompted to synchronized your repositories from GitHub. If you are in CS52 then this is automatically enabled on all repos and you can skip to step 3.
 
       *Note: since we use private repositories you need to go to [http://travis-ci.com](http://travis-ci.com) or [http://travis-ci.org](http://travis-ci.org) for personal public repositories.*
 
@@ -56,17 +54,17 @@ node_js:
 
 6. Setting up a linter for your project
 
-    It is recommended that you set up a linter plugin for your text editor of choice. One that works well for atom is [Linter](https://atomlinter.github.io/). You can install specific linters for your selected language and the linter will display inline errors.
+    It is recommended that you set up a linter plugin for your text editor of choice. You can install specific linters for your selected language and the linter will display inline errors.
 
     ![linter error](/assets/imgs/travis/linter-error.png)
 
-    The recommended linter plugin for javascript is [Eslint](eslint.org). You can install `eslint` using `yarn add --dev eslint`. The corresponding atom package is the [Eslint Plugin for AtomLinter](https://github.com/AtomLinter/linter-eslint).
+    The recommended linter plugin for javascript is [Eslint](eslint.org). You can install `eslint` using `yarn add --dev eslint`.
 
     The `--dev` flag adds `eslint` as a dev dependency in your `package.json` file. devDependencies are installed on `npm install` on a directory that contains `package.json` but not installed with the `--production` flag. This is used for local development.
 
     `eslint` comes with a series of plugins for various javascript packages. It is also recommended that you install the [react plugin](https://github.com/yannickcr/eslint-plugin-react) and if you would like, you can also follow a style guide, we are a fan of [Airbnb's](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb).
 
-    Below is an example of a potential `eslintrc` file. You probably already have one set up!
+    Below is an example of a potential `eslintrc` file. You probably already have one set up!  If you do, great - no need to modify it if it works as you like it.
 
         ```
         module.exports = {
@@ -109,3 +107,14 @@ node_js:
             "test": "./node_modules/.bin/eslint src"
           }
         }
+
+8. Turn on Auto-Cancel
+
+    Now that you are all set up with Travis, there is a setting that can help keep it running more smoothly for everyone.
+
+    🚀 Go to your specific repository settings page: 
+    https://travis-ci.com/github/(github-organization-name)/(repository-name)
+
+    ![auto-cancel](imgs/auto-cancel.jpg)
+
+    This will clear up the queue by not having older commits also tested.
