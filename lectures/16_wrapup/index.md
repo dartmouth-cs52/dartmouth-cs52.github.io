@@ -1,6 +1,6 @@
 ---
 layout: page_with_slides
-title: JS
+title: Wrapup
 published: true
 comment_term: lecture-wrapup
 ---

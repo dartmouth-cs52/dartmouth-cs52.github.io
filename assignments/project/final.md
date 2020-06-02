@@ -7,7 +7,7 @@ comment_term: project-final-demos
 
 
 
-![](img/Technigala_19S.png){: .fancy .medium}
+![](img/Technigala-20S.jpg){: .fancy .medium}
 
 Final presentations and demos of the projects. Will be open (virtually) to public!
 
@@ -18,6 +18,8 @@ FORMAT TBD - but will be online and open to the public.
 <!-- Please show up at **5:45pm** to set up your table (remember we could have had a final giant quiz instead!).  The event will be expo style - you will have a table with your project name and either a screen or a stand for a laptop to better demo your awesome projects. -->
 
 ## Invite your friends, your enemies, everyone!
+
+Register here: [https://live.remo.co/e/technigala-20s](https://live.remo.co/e/technigala-20s)
 
 <!-- Each team will get a poster to demarcate their table.  -->
 

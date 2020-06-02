@@ -80,5 +80,6 @@ fetch(proxyUrl + targetUrl, {
 * 5/21 Mockup Sharing
 * 5/26 In Class TeamWork Time
 * 5/28 In Class TeamWork Time
-* 6/02 Wrapup
+<!-- * 6/02 Wrapup -->
+* [6/02 Wrapup](16_wrapup)
 * 6/09 TBD Final Demo Session

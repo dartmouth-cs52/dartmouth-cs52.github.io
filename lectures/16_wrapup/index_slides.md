@@ -32,6 +32,12 @@ name: CS52 It's Been Real
 
 <!-- * [final drawings pdf](img/cs52-final-drawings-18s.pdf) -->
 
+???
+* last class - XHOUR tomorrow for bughunt though!
+* been and honor and a pleasure to work with you all, i’m excited for demos to see it all come together
+* hopefully it has been a rewarding experience so far (and if not you have a week left to fix that)!  
+
+
 
 
 ---
@@ -41,6 +47,7 @@ name: At times
 
 ???
 * probably felt like the barrage would never end
+* but here we are
 
 
 
@@ -77,7 +84,7 @@ name: Faced Monsters
 .medium_small.fancy[![](img/table-cs52monster.jpg)]
 
 ???
-* all the webbev
+* maybe some of the labs, certainly some bugs
 
 
 
@@ -99,7 +106,7 @@ name: Client and Server
 
 ???
 * seen things you can't unsee
-* even survived my gifs
+* even survived my gifgame
 
 
 
@@ -110,7 +117,8 @@ name: Done all the EC?
 .medium_small.fancy[![](img/table-labs-vs-quizzes.jpg)]
 
 ???
-* quizzes
+* and thankfully no quizzes!
+* but hopefully memorized the redux data flow anyway
 
 
 
@@ -124,9 +132,9 @@ name: Lots of Workshops
 ???
 * you know all the webdev lingo now
 * someone says, jekyll you say? 
-* someone says, mocha you say? 
-* someone says, chai you say?
-* styled-components?
+* mocha? 
+* chai?
+* material-ui?
 * flask? 
 * someone says rm -rf /, you say?
 
@@ -139,7 +147,8 @@ name: Applied Your Knowledge
 
 ???
 * hopefully had the chance to apply your knowledge 
-* to building cool products that you enjoyed
+* to building cool products that you enjoyed 
+* and had a chance to show off as well
 
 
 
@@ -187,14 +196,16 @@ name: You've Earned It
 
 
 ---
-name: Scaling and Datacenters
+name: Scaling
 
 
-<iframe src="//giphy.com/embed/l39727g11ikHsDzKE" width="780" height="568" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.fancy[![](img/datacenter.gif)]
+
 <br>
 
 
 ???
+* scaling technically and also in users
 * where are these servers?
 * also here's some of the crazy infrastructure
 * that is running all your labs and projects
@@ -207,7 +218,7 @@ name: Scaling and Datacenters
 
 
 ---
-name: Datacenters
+name: Datacenter Infrastructure
 
 * 1 datacenter:
   * 15-40 megawatts power
@@ -255,6 +266,7 @@ name:
 * between ireland and austria
 * but becoming more efficient 
 * regardless, is it ethical to convert energy directly into wealth?
+* and it just became harder with the recent bitcoin halving
 
 
 
@@ -321,7 +333,7 @@ name: Problems Of Webdev
 
 * Software engineering problems programming *at scale*
   * javascript lack of strong type system
-  * browsers
+  * browser support
   * interpreted performance
   * too much tooling
 
@@ -340,7 +352,6 @@ name:  The future!
   * offline
   * web push notifications
   * add to home screen
-* big data cloud
 * instant apps (streaming mobile apps)
 * tooling improvements
 * react-native for web/desktop!
@@ -358,8 +369,8 @@ name: You Invent The Future
 
 
 ???
+* i didn't draw this
 * you invent the future!
-* tips for life, not that i'm any good at it mind you:
 * but ask questions - be engaged in your craft
 * be curious about the whys not just copy/paste from stackoverflow
 * contribute to software development  - build libraries, open source
@@ -378,6 +389,7 @@ name: Full Stack
   * make pretty things
   * architect web services
   * storage
+  * you now have all the tools
 
 ???
 
@@ -422,8 +434,7 @@ name: Last Words
 * thank you
 * learned from you
 * hope you will keep making stuff
-* pass on your knowledge
-
+* just some pre-parting words
 
 
 
@@ -475,12 +486,11 @@ name: Invest In Your Life
 ---
 name: Build Things That Matter
 
-.small.fancy[![](img/WeeksMatter.png)]
+.medium_small.fancy[![](img/WeeksMatter.png)]
 
 
 ???
 * You have time, use it to make a better world
-* use the timeline project if you need ideas for life paths
 
 
 
@@ -491,17 +501,18 @@ name: Build Things That Matter
 
 
 ???
-* use the timeline project if you need ideas for life paths
-* in spite of this class - you have the tools to make an impact
-
+* another image from the same waitbywhy blog - a lot has been written about what makes a good life
+* this guy summarizes it:  working to improve the future or the lives of others is what makes for a good week. 
+*  with or without this class - you have the tools to make an impact
 
 ---
 name: Web Dev Solutions @scale
 
 * Challenges:
   * WhatsApp: "irresponsible and explosive messages"
-  * Facebook: “By updating the rules for the Internet, we can preserve what’s best about it — the freedom for people to express themselves and for entrepreneurs to build new things — while also protecting society from broader harms”
+  * Facebook: please regulate us before we hurt someone
   * Slack: noise over knowledge
+  * Attention Economy: competing for your attention with garbage, selling your time and data for what?
 * Many Opportunities:
   * resource sharing
   * health
@@ -509,34 +520,16 @@ name: Web Dev Solutions @scale
   * society
 
 ???
-* whatsapp - theoretically brings people together - but also mob lynchings.
+* when you set out to build a platform that lets you rate your friends (fb) or send messages to groups (whatsapp)- you think you're doing a good thing, but at scale lots more issues to consider.
+* whatsapp - theoretically brings people together - but also promotes mob killings.
+* facebook - zuckerberg in the congressional hearings last year asked for new laws, but has since dug in on freedom of expression and allowing political advertising on the platform
 * slack: productivity tool but also makes people feel productive when they are asking and answering questions that should have been documented better - millions of hours of productivity lost - people spending online instead of with their families
 * be mindful 
-* lots of industries where scale will bring change
-* health - small monitoring and motivation improvements can extend lifespans, increase happiness
-* society - bringing people actually closer rather than dividing them - may be VR
+    * lots of industries where scale will bring change
+    * health - small monitoring and motivation improvements can extend lifespans, increase happiness
+    * society - bringing people actually closer rather than dividing them - maybe VR
 * as soon as you start thinking in terms of scale - everything gets more interesting
 * and you've just learned the tools that enable solutions @scale
-
-
-
-
-
-
-
----
-name: still Last Words
-
-.medium.fancy[![](img/1433166770-wtc-1.gif)]
-
-* Keep Building!:
-* New Game Dev Course (winter or summer)
-* DALI
-
-
-???
-* my job - your course assessments
-
 
 
 
@@ -557,10 +550,8 @@ name: My turn to draw
 
 
 
-
-
 ---
-name: Project Demos!
+name: Almost done!
 
 .medium.fancy[![](img/table-finals.jpg)]
 
@@ -568,18 +559,48 @@ name: Project Demos!
 * almost done
 
 
+
+---
+name:
+class: black-background 
+
+<!-- .medium.fancy[![](img/george-floyd.jpg)] -->
+
+
+???
+I wanted to say a few words about our where we find ourselves. Not sure there are any words to describe or deal with the strange times (regardless of your political affiliation) that we live in: **coronavirus, endemic racism and prejudice, economic and social inequality, environmental issues, extremist views, and the absence of rational and fact based discourse, among many other problems facing our generations.**
+
+You may think, **what is my individual role, what is the meaning of spending time on cs52 when the world is going to shit**. as i try to figure these things myself have some thoughts.
+
+**Everything you do becomes part of you and helps you grow**, in this course/during these times maybe you learned some code frameworks, maybe how to work better on a team, or how to get along with family, or hate css,  or love react.
+
+**However small some of that might feel**, it still helps you along your path, and it doesn't matter what that path is - if you learned you hate styling, that helps you along your path to something else.  if you learned you love server side coding, may that be something you get to do more of.  In my past I wanted to be, an opera singer, a photographer, a graphic designer, a wood carver, a russian teacher, all of that is part of me. and aside from 52, crisis times build us up as well.
+
+The other thing is that **everything you do, no matter how small it seems has impact**.  every decision you make, creates the world in your image and likeness. it isn't often apparent that we are all part of an interconnected system, not just of human society but of the natural world as well.  what you eat, when you wake up, how you treat your friends and enemies, is all **part of the big data that forms existence** as we know it.   thus what you choose to work on,  the people you keep company with, are all important.  **you are inventing the future with every action**. they don't all have to feel dramatic.
+
+this is turning into some sappy graduation speech.  mostly I just want to say that as we **stumble through history, from the individual breaths we take, to our achievements in affordable space flight, to battling for justice and a better world,  your actions matter and you matter**. 
+
+one last thought,  i had an argument with a couple of friends about politics.  not specific politics but basically of letting ones politics be known as a teacher.  one side of the argument, from theater prof at middlebury was saying that politics is a huge part of theater and that he feels comfortable talking about his politics with his students. the other, his brother, was saying that all politics should stay out of academia, to let students come up with their own beliefs.   
+
+there's a lot to unpack there.  my thought is that we are all people, and that it is ok for students to get to know you as a person, complete with whatever beliefs you might have. regardless, i'm not about to start espousing politics now  
+
+however i think there is a deeper issue here, **politics in general is often a bad word**.  but all it should mean is **how our society is organized**, and we **shouldn't be afraid to talk about issues** of how we want our cities and countries to be organized.  just like everything you do has meaning, **everything is also a political act**.  from buying groceries and going to work, to paying taxes and registering your car. and back to class context: **the tech world is now the forefront of politics**, so you can't get away from it.   see dorseys fight with zuckerberg - it isn't really about trump at all, it is those two tech companies taking different ethical stances. **defining what freedom of speech means, what facts mean, and what civil society means.**  fascinating, and worth thinking about and engaging with. so as a political actor regardless of whether you want to or not, you choose the world when you peruse a social media platform just as much as when you engage in local politics to elect a sherrif. both are things to think about.
+
+anyway, thats that.  **mostly just wanted to say,  we have challenges, and we may feel powerless, but have courage, ask questions, be engaged, and create the world you want to live in with every action and with your cs52 skills.** 
+
+
+
 ---
 name: Technigala
 
-.small.fancy[![](img/Technigala_19S.jpg)]
-.small.fancy[![](img/afterparty.png)]
+.small.fancy[![](img/Technigala-20S.jpg)]
+<!-- .small.fancy[![](img/afterparty.png)] -->
 
 ???
-* tomorrow 6-8pm in Hanover BallRoom
+* tuesday june 9th 6-8pm in Hanover BallRoom
 * 2 TA's per team will walk around and will want to see demos :-)
 * give them a quick 30 second pitch, then let them try out your stuff
 * i'll be there too, but have to see 98 projects as well, so i may not get to your demo - but don't worry i'll be trying out each and every project meticulously for the final submission
-* food and lots of people excited to see your work - some vps from amazon 
 * rest of today just works
 
 
