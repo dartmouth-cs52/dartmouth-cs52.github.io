@@ -11,26 +11,26 @@ comment_term: assignments
 
 <!-- * Short Assignment 1: Local Dev Environment + Domain -->
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev)
-<!-- * Short Assignment 2: Git Map (in-class) -->
-* [Short Assignment 2: Git Map](sa/git-map)
-<!-- * Short Assignment 3: Webpack+Babel+Eslint starterpack -->
-* [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack)
-<!-- * Short Assignment 4: React Intro -->
-* [Short Assignment 4: React Intro](sa/react-videos)
-<!-- * Short Assignment 5: Frontend Routing -->
-* [Short Assignment 5: Frontend Routing](sa/routing) 
-<!-- * Short Assignment 6: Redux -->
-* [Short Assignment 6: Redux](sa/redux) 
-<!-- * Short Assignment 7: Express and Mongo -->
-* [Short Assignment 7: Express and Mongo](sa/server-side) 
-<!-- * ExtraCredit Short Assignment: Photo Uploading S3 -->
-* [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload)
-<!-- * EC Short Assignment 8: WebSockets -->
-* [ExtraCredit Short Assignment: WebSockets](sa/websockets)
+* Short Assignment 2: Git Map (in-class)
+<!-- * [Short Assignment 2: Git Map](sa/git-map) -->
+* Short Assignment 3: Webpack+Babel+Eslint starterpack
+<!-- * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) -->
+* Short Assignment 4: React Intro
+<!-- * [Short Assignment 4: React Intro](sa/react-videos) -->
+* Short Assignment 5: Frontend Routing
+<!-- * [Short Assignment 5: Frontend Routing](sa/routing)  -->
+* Short Assignment 6: Redux
+<!-- * [Short Assignment 6: Redux](sa/redux)  -->
+* Short Assignment 7: Express and Mongo
+<!-- * [Short Assignment 7: Express and Mongo](sa/server-side)  -->
+* ExtraCredit Short Assignment: Photo Uploading S3
+<!-- * [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload) -->
+* ExtraCredit Short Assignment: WebSockets
+<!-- * [ExtraCredit Short Assignment: WebSockets](sa/websockets) -->
 <!-- * EC Short Assignment: ChatBot -->
 <!-- * [ExtraCredit Short Assignment: ChatBot](sa/slack-bot) -->
-<!-- * EC Short Assignment: ReactNative -->
-* [ExtraCredit Short Assignment: ReactNative](sa/react-native)
+* ExtraCredit Short Assignment: ReactNative
+<!-- * [ExtraCredit Short Assignment: ReactNative](sa/react-native) -->
 
 
 
@@ -38,18 +38,18 @@ comment_term: assignments
 ### 5-ish week-long labs:  25%
 *Weekly assignments that will each consist of a mini project involving a particular conceptual framework.*
 
-<!-- * Lab 1: Build a Landing Page -->
-* [Lab 1: Build a Landing Page](lab/landing-page)
-<!-- * Lab 2: Build a Buzzfeed Quiz -->
-* [Lab 2: Build a Buzzfeed Quiz](lab/quizzical)
-<!-- * Lab 3: React Notes -->
-* [Lab 3: React Notes](lab/react-notes)
-<!-- * Lab 4: Redux Platform Frontend -->
-* [Lab 4: Redux Platform Frontend](lab/redux-platform)
-<!-- * Lab 5 Part 1: Redux Platform + API -->
-* [Lab 5 Part 1: Redux Platform + API](lab/redux-platform+server)
-<!-- * Lab 5 Part 2: Redux Platform + Auth  -->
-* [Lab 5 Part 2: Redux Platform + Auth](lab/redux-platform+auth)
+* Lab 1: Build a Landing Page
+<!-- * [Lab 1: Build a Landing Page](lab/landing-page) -->
+* Lab 2: Build a Buzzfeed Quiz
+<!-- * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) -->
+* Lab 3: React Notes
+<!-- * [Lab 3: React Notes](lab/react-notes) -->
+* Lab 4: Redux Platform Frontend
+<!-- * [Lab 4: Redux Platform Frontend](lab/redux-platform) -->
+* Lab 5 Part 1: Redux Platform + API
+<!-- * [Lab 5 Part 1: Redux Platform + API](lab/redux-platform+server) -->
+* Lab 5 Part 2: Redux Platform + Auth 
+<!-- * [Lab 5 Part 2: Redux Platform + Auth](lab/redux-platform+auth) -->
 
 
 ### 4-ish Short in-class quizzes:  10%

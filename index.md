@@ -6,7 +6,7 @@ comment_term: main
 
 
 <div markdown="1" style="text-align:center">
-![cs52 logo](assets/imgs/cs52logo.png){: .medium}
+![cs52 logo](assets/imgs/CS52-logo-official.png){: .medium}
 </div>
 
 # Course Overview
@@ -49,7 +49,7 @@ See [assignments](/assignments).
 
 * We'll be using [Slack](https://cs52-dartmouth.slack.com) for course communication. Find us there!
 
-* Open Help Hours via Zoom: <br>
+* Open Help Hours via Zoom/Remo: <br>
   TBD, coming soon
   <!-- Mon 4-6pm: Sudikoff 213<br>
   Mon 8-10pm: Carson 61<br> -->
@@ -58,7 +58,7 @@ See [assignments](/assignments).
   Sun 6-9 pm: Carson 61<br> -->
 
 * Instructor:<br>
-  Fri 2:30pm-4pm or by appointment, (zoom link on canvas)
+  Fri 2:30pm-4pm or by appointment, (zoom link on slack)
   <!-- Fri 11am-1pm; or by appointment in Sudikoff 219/007 -->
 
 <table>
@@ -79,93 +79,6 @@ See [assignments](/assignments).
 
 <br>
 
-
-<div class="rtable rtable--5cols" style="display:none;">
-
-<!-- <div class="rtable rtable--5cols"> -->
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/jiachen.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:jiachen.jiang.20@dartmouth.edu">Jiachen Jiang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@jcjiang/">@jcjiang</a></div>
-  <div style="order:3;" class="rtable-cell"><br></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:6;" class="rtable-cell"><br></div>
-
-  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:8;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:9;" class="rtable-cell"><br></div>
-
-  <div style="order:10;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/annie.jpg"/></div>
-  <div style="order:11;" class="rtable-cell"><a href="mailto:yichen.ke.19@dartmouth.edu">Annie Ke</a><br><a href="https://cs52-dartmouth.slack.com/messages/@annieke/">@annieke</a></div>
-
-
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:3;" class="rtable-cell"><br></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:6;" class="rtable-cell"><br></div>
-
-  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:8;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:9;" class="rtable-cell"><br></div>
-
-  <div style="order:10;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/barry.jpg"/></div>
-  <div style="order:11;" class="rtable-cell"><a href="mailto:barry.a.yang.18@dartmouth.edu">Barry Yang</a><br><a href="https://cs52-dartmouth.slack.com/messages/@barryyang/">@barryyang</a></div>
-
-
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:3;" class="rtable-cell"><br></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:6;" class="rtable-cell"><br></div>
-
-  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:8;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:9;" class="rtable-cell"><br></div>
-
-  <div style="order:10;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:11;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:3;" class="rtable-cell"><br></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:6;" class="rtable-cell"><br></div>
-
-  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:8;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:9;" class="rtable-cell"><br></div>
-
-  <div style="order:10;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:11;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-
-  <div style="order:1;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:2;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:3;" class="rtable-cell"><br></div>
-
-  <div style="order:4;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:5;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:6;" class="rtable-cell"><br></div>
-
-  <div style="order:7;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:8;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-  <div style="order:9;" class="rtable-cell"><br></div>
-
-  <div style="order:10;" class="rtable-cell"><img class="profile fancy" src="assets/imgs/kitten.jpg"/></div>
-  <div style="order:11;" class="rtable-cell"><a href="mailto:tbd@dartmouth.edu">tbd</a><br><a href="https://cs52-dartmouth.slack.com/messages/@tbd/">@tbd</a></div>
-
-</div>
-
 Half of each class will be hands-on demonstrations, code and project discussions, and exercises. See [schedule](/schedule).
 
 ## Lectures:
@@ -182,7 +95,7 @@ See [logistics](/logistics)
 
 ## The Archives 
 
-Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/), [19s](https://dartmouth-cs52-19s.github.io/)
+Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/), [19s](https://dartmouth-cs52-19s.github.io/), [20s](https://dartmouth-cs52-20s.github.io/)
 
 Also check out [previous projects](assignments/project).
 
@@ -193,25 +106,3 @@ Interested in contributing to the course?  There are several opportunites:
 *  Want to file a bug report?  All the presentations, and assignments on this website are on [github](https://github.com/dartmouth-cs52/dartmouth-cs52.github.io).
 * Want to pass on your knowledge, and help the next generation of webdevs? Future TA's <a href="http://cs52.me/ta/" target="_blank">apply here!</a>.  You don't really know something until you've tried explaining it to others. [Ask me](https://cs52-dartmouth.slack.com/messages/@tim/) about the opportunity if you want to learn more. 
 * Want to build cool interactive webdev learning games like [boomsync](http://boomsync.me)? There's some funding available to help with that, [slack me about it](https://cs52-dartmouth.slack.com/messages/@tim/).
-
-<!-- <script>
-var proxyUrl = 'https://glacial-fjord-69804.herokuapp.com/',
-    targetUrl = 'https://www.notion.so/api/v3/queryCollection'
-
-var data = {"collectionId":"3d23ca2c-401d-4d1b-998b-21287337caa4","collectionViewId":"f655aefd-1842-4e02-91ff-0960fb724696","query":{"aggregate":[{"id":"count","type":"title","view_type":"gallery","aggregation_type":"count"}],"filter":[],"sort":[],"filter_operator":"and"},"loader":{"type":"table","limit":70,"userTimeZone":"America/New_York","userLocale":"en","loadContentCover":true}}
-;
-
-fetch(proxyUrl + targetUrl, {
-  method: 'POST', 
-  body: JSON.stringify(data), 
-  headers:{
-    'Content-Type': 'application/json'
-  }
-})
-.then(res => res.json())
-.then(response => {
-  console.log('Success:', JSON.stringify(response.recordMap.block));
-})
-.catch(error => console.error('Error:', error));
- 
-</script> -->
