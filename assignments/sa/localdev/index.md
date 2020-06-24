@@ -264,5 +264,5 @@ Yes, those IPs point to load balancers that direct requests based on the transpo
 
 ### To Turn In
 
-1. GitHub repository URL (should be public so we can see it)
+1. GitHub repository URL
 1. your working domain name URL
