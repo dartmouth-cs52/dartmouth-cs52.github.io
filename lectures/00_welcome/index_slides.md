@@ -268,6 +268,7 @@ name: etc
 .medium_small[![](http://i.giphy.com/tn8zWeNYA73G0.gif)]
 
 * class time 2A — Tues/Thurs 2:25-4:15pm — zoom/remo and recorded
+    * some pre-recorded videos as well
   <!-- * half lecture / half workshop / demos / code and project discussions -->
 * x-hours — Weds 4:35-5:25pm
   * will use some xhours as additional material or workshops - announced in advance
@@ -276,6 +277,7 @@ name: etc
 * coding time (>= CS50)
 
 ???
+* spent today learning adobe premier for video editing haha
 * due to course size we'll have to use xhours for some stuff
 * as the course goes on i'll talk less you'll talk more
 * but it'll be action packed
