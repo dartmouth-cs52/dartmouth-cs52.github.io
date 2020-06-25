@@ -33,7 +33,7 @@ name: CS52: full-stack web development
 ---
 name: full-stack web development
 
-.medium[![](img/cs52logo.png)]
+.medium[![](/assets/imgs/CS52-logo-official.png)]
 
 [Tim Tregubov](http://zingweb.com)
 
@@ -47,8 +47,8 @@ name: Zoomtiquette
 
 .medium_small[![](img/teachwithzoom.jpg)]<br>
 
-* auto-muted - `[hold space to talk]`
-* video on
+* auto-muted
+* video on plz
 * open `Chat` and `Participants`
 * use reactions in the participants list
 * chat for questions
@@ -63,7 +63,7 @@ name: Zoomtiquette
 
 
 ---
-name: Zoomtiquette
+name: Zoom is going away
 
 
 <video loop controls>
@@ -82,6 +82,9 @@ name: Zoomtiquette
 
 ???
 * trying to convince the TAs to start a cs52 tiktok - who's with me?
+* also we'll be switching to a new platform for when we do have course sessions. you'll see it'll be great.  
+
+
 
 
 ---
@@ -104,18 +107,21 @@ name: What is?
 
 
 ???
-* the following year i thought i had it right and ordered a bunch of pancakes but procurement told me that its very unlikely that the class is about making pancakes...
+* the following year i thought i had it right and ordered a bunch of flour and eggs and butter but procurement told me that its very unlikely that the class is about making pancakes...
 * so help me out - what is this thing?
 
 ---
 name: Survey Results
 * Learn **best practices/standards** in webdev; Learn **state-of-the-art** webdev tools, technologies, and techniques.
+* get a more thorough **big picture understanding of the technologies** available
 * I want to be able to **have an outlet** (especially during this quarantine) to put time into to making and building websites and really **refining my coding skills**.
-*  **apply some of the coding concepts** I've learned in other courses to something more **real-world applicable**!
-* want to be more creative in school projects, experiment with visual design.
+* want to be **more creative in school projects**, experiment with visual design.
+* gain proficiency working on front-end development, and especially good design principles
+* I know some front end stuff but I want to learn about the back end stuff.
 * learn how to **build entire websites on my own** backend/fronted
-* excited by the course's style of **hands on project and group based learning**.
+* **Hands-on experience** with designing and building web-based code
 * The ability to make **pretty, impressive websites**!
+* To be able to build cool websites and maybe .io games
 
 ???
 * let's pull in the survey most of you took
@@ -125,16 +131,18 @@ name: Survey Results
 ---
 name: Survey Results
 * test if web dev is a **possible career path**
+* I want to feel like I'm not lying when I write Full-Stack Developer in LinkedIn bio
+* use the knowledge to **continue to make usable products** after the class
 * Hoping for a lot of **group projects and tons of learning**!
 * I would like to have a **project at the end that I can be proud of**
 * The ability of building a **fully functional website from scratch**
-* get an understanding of the way we interact with web products on every layer of the stack
 * develop skills to enable me to **build products that are interesting**
 * get a foundation for learning more frameworks and toolsets
-* ability to **bring any website idea to life in a few weeks**
-* Code some cool projects!
+* ability to **materialize my independent ideas** and push them to the web
+* have a strong enough understanding to **help others** understand web development as well.* Lots of experience and the ability to **ship a project** with the full stack.
 * **experience collaborating in group coding projects.**
 * Not sure! I’ve heard great things about this course, and am looking forward to the final project.
+* **I want to become a real coder, to feel like I have the potential to be a professional, and to understand how to use the technologies I've been exposed to in order to create meaningful and useful apps.**
 
 
 
@@ -217,11 +225,11 @@ name: Sample Weekly Projects
 ---
 name: Final Project
 
-<iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="http://cs52.me/assignments/project/19s" frameborder="0" allowfullscreen></iframe>
+<iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="http://cs52.me/assignments/project/20s" frameborder="0" allowfullscreen></iframe>
 
 ???
-* there is a 3 week group final project, for which we will use collaborative coding and agile project management to help us do it remotely.  we'll use zoom and github and slack.
-* this is where everything you've learned comes together and every year the projects dazzle and impress - you'll be surprised by what you can build in 3 weeks. 
+* there is a 3-4 week group final project, for which we will use collaborative coding and agile project management to help us do it remotely.  we'll use zoom and github and slack.
+* this is where everything you've learned comes together and every year the projects dazzle and impress - you'll be surprised by what you can build in 3-4 weeks. 
 
 
 ---
@@ -232,7 +240,7 @@ name: Online @ cs52.me
 
 * web: [http://cs52.me](http://cs52.me)
 * Slack: [https://cs52-dartmouth.slack.com](https://cs52-dartmouth.slack.com)
-* github: [http://github.com/dartmouth-cs52-20s](http://github.com/dartmouth-cs52-20s)
+* github: [http://github.com/dartmouth-cs52-20x](http://github.com/dartmouth-cs52-20x)
 
 ???
 * ok, lastly some administrative details
@@ -259,10 +267,10 @@ name: etc
 
 .medium_small[![](http://i.giphy.com/tn8zWeNYA73G0.gif)]
 
-* class time 2A — 2:25-4:15pm — zoom and recorded
+* class time 2A — Tues/Thurs 2:25-4:15pm — zoom/remo and recorded
   <!-- * half lecture / half workshop / demos / code and project discussions -->
-* x-hours — 4:35-5:25pm every Weds
-  * will use some xhours as additional material or workshops
+* x-hours — Weds 4:35-5:25pm
+  * will use some xhours as additional material or workshops - announced in advance
 * office hours
   * tas @here to help
 * coding time (>= CS50)
@@ -280,7 +288,6 @@ name: Wait List?!?
 * projects based
 * interactive
 * open syllabus
-* <strike>auditing</strike>
 * from blank terminal to full project
 
 ???
@@ -315,19 +322,21 @@ name: Slacktiquette
 
 ---
 name: Grading
-- New Grading Scale : 🔥👍👎
-- In-class short assignments: 10%
-- 5ish week-long labs:  25%
-- Short In-class quizzes:  10%
+- Grading Scale : 🔥👍👎
+- Short assignments: 10%
+- 5ish week-long labs:  30%
+- Quizzlets:  5%
 - 1 group presentation and workshop: 10%
 - group workshop participation:  10%
-- 1 final project:  30%
-- class participation/attendance:  5%
+- 1 final project:  35%
+
+<!-- - class participation/attendance:  5% -->
 
 * late penalty:
   * -1% of assignment per hour
   * 2 allowed re-submits (capped at 80%)
-
+  * 2 x 24 hour extension
+  * -2% for submission fails (unshared links, empty repos, wrong urls)
 
 ???
 * may be adjusted slightly
@@ -340,13 +349,22 @@ name: Grading
 * **attendance** sheets on table
 
 ---
-name: Extra Credit is Real
+name: How to be fuego
 
-
-<iframe src="//giphy.com/embed/wapSaE3rNQoZa" width="271" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+.left.medium[![](img/toucan.gif)]
+.right[
+- Grading Scale : 🔥👍👎
+    - 90 is the new 100
+    - \> 90 == 🔥== you went above and beyond
+    - 80-90% == 👍 == you satisfied the requirements
+    - < 80% == 👎== didn't quite work out
+- **do it for the love, not for the points**
+- A- median usually because most people try pretty hard
+]
 
 ???
-* up to 110% per each assignment, **this is how you get fuego on assignments**
+* canvas won't allow me to go over 100%. 
+* do extra credit and really make the assignments your own - **this is how you get fuego on assignments**
 * tough quizzes and quality of work expectations
 
 ---
@@ -392,11 +410,12 @@ name: Quizzes?!?!
 
 * after each assignment
 * or 1 per class
-* if you did the assignment, you can do the quiz
+* if you did the assignment, you can figure these out
 * short
 * fun?
 
 ???
+* didn't have these last term and people actually complained - they were fun. will reinstate in some form. 
 * web is open platform - you can see a lot of the codes
 * unfortunate assessment problem
 * if you did the assignment should understand the concepts behind it
@@ -514,5 +533,11 @@ name: Note on Slides
 ---
 name: onwards
 
-[the internet](../01_interwebs)
+* next up
+    * HTML and CSS lecture videos sent out tonight (will post on website and slack)
+    * Short assignment to get a dev environment and first page set up
+    * use your own personal github account for this one
+    * if you already have one, just do the tool setup and submit your page   
+
+<!-- [the internet](../01_interwebs) -->
 

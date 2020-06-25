@@ -35,51 +35,67 @@ fetch(proxyUrl + targetUrl, {
  
 </script> -->
 
-* 3/31 Welcome
-<!-- * [3/31 Welcome](00_welcome/) -->
-* 3/31 Structure of the Internet
+<!-- * 3/31 Welcome -->
+* [6/25 Welcome](00_welcome/)
+* Structure of the Internet
+<!-- * 3/31 Structure of the Internet -->
 <!-- * [3/31 Structure of the Internet](01_interwebs/) -->
-* 4/1 HTML
+* HTML
+<!-- * 4/1 HTML -->
 <!-- * [4/1 HTML](02_html/) -->
-* 4/2 CSS
+* CSS
+<!-- * 4/2 CSS -->
 <!-- * [4/2 CSS ](03_css/) -->
-* 4/7 JS and DOM
+* JS and DOM
+<!-- * 4/7 JS and DOM -->
 <!-- * [4/7 JS and DOM](04_js1) -->
-* 4/8 Some Design Things
+* Some Design Things
+<!-- * 4/8 Some Design Things -->
 <!-- * [4/8 Some Design Things](03_design/) -->
-* 4/8 Git
+* Git
+<!-- * 4/8 Git -->
 <!-- * [4/8 Git](02_git/) -->
-* 4/9 JS P2
+* JS P2
+<!-- * 4/9 JS P2 -->
 <!-- * [4/9 JS P2](05_js2) -->
-* 4/14 Frameworks Intro
+* Frameworks Intro
+<!-- * 4/14 Frameworks Intro -->
 <!-- * [4/14 Frameworks Intro](06_react1) -->
-* 4/16 React
+* React
+<!-- * 4/16 React -->
 <!-- * [4/16 React](07_react2) -->
 <!-- * HUH 4/22 Project Intro -->
 <!-- * HUH [4/24 Projects](07_project_intro) -->
 <!-- * HUH [4/25 Projects Intro](../projects/) -->
-* 4/21 Asynch JS
+* Asynch JS
+<!-- * 4/21 Asynch JS -->
 <!-- * [4/21 Asynch JS](08_asynch_js) -->
-* 4/23 Routing and Project Intro
+* Routing and Project Intro
+<!-- * 4/23 Routing and Project Intro -->
 <!-- * [4/23 Routing and Project Intro](09_routing) -->
-* 4/28 Redux
+* Redux
+<!-- * 4/28 Redux -->
 <!-- * [4/28 Redux](10_redux) -->
-* 5/05 Teams
+* Teams
+<!-- * 5/05 Teams -->
 <!-- * [5/05 Teams](12_teams-intro) -->
-* 5/07 Databases
+* Databases
+<!-- * 5/07 Databases -->
 <!-- * [5/07 Databases](12_intro_to_databases) -->
 <!-- * 5/5 Pitches -->
 <!-- * [5/5 Pitches](11_pitches) -->
-* 5/12 Sessions & Auth
+* Sessions & Auth
+<!-- * 5/12 Sessions & Auth -->
 <!-- * [5/12 Sessions & Auth](13_sessions_auth) -->
 <!-- * [5/7 Teams](13_teams) -->
 <!-- * 5/14 Websockets, Image and File storage, ReactNative, TeamTime -->
 <!-- * [5/14 Websockets, Image and File storage, ReactNative, TeamTime](15_ec_shorts) -->
 <!-- * 5/14 In Class TeamWork Time -->
-* 5/19 In Class TeamWork Time
-* 5/21 Mockup Sharing
-* 5/26 In Class TeamWork Time
-* 5/28 In Class TeamWork Time
-* 6/02 Wrapup
+<!-- * 5/19 In Class TeamWork Time -->
+<!-- * 5/19 In Class TeamWork Time -->
+<!-- * 5/21 Mockup Sharing -->
+<!-- * 5/26 In Class TeamWork Time -->
+<!-- * 5/28 In Class TeamWork Time -->
+<!-- * 6/02 Wrapup -->
 <!-- * [6/02 Wrapup](16_wrapup) -->
-* 6/09 TBD Final Demo Session
+<!-- * 6/09 TBD Final Demo Session -->

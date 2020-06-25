@@ -37,7 +37,7 @@ Grading of some collaborative team based work will be done based on GitHub pull 
     * 2 x 24 hour extension (comment on canvas assignment to indicate activation)
     * -2% for submission fails (unshared links, empty repos, wrong urls)
 
-**COVID-19 update** the overall course will be Credit/No-Credit - however individual assignments will still be graded with feedback provided, you can expect <=60 to be a NC situation. 
+<!-- **COVID-19 update** the overall course will be Credit/No-Credit - however individual assignments will still be graded with feedback provided, you can expect <=60 to be a NC situation.  -->
 
 ## Software ##
 
