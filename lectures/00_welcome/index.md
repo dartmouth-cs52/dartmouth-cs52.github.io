@@ -6,4 +6,6 @@ comment_term: lecture-welcome
 ---
 
 
+[Video link](https://dartmouth.techsmithrelay.com/0Yeh), Dartmouth auth required.
+
 {% include slides-toggle.html %}
