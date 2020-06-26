@@ -19,41 +19,6 @@ name: base
 .title[{{name}}]
 
 ---
-name:  CS52 HTML
-
-<iframe width="700" height="400" src="https://www.youtube.com/embed/h1E-FlguwGw?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-
----
-name: TA Hours
-
-<!-- * Mon 4-6pm: Sudikoff 213
-* Mon 8-10pm: Carson 61
-* Weds 4:35-5:25: LSC 200
-* Thurs 7:30-9:30 pm: Carson 61
-* Sun 6-9 pm: Carson 61
- -->
-
-.large[![](img/tahours.jpg)]
-
----
-name: TA Hours HowTo
-
-.medium[![](img/tahowto.jpg)]
-
-* Use Slack with specific #sa #lab channels and
-* Tandem for video discussion style help
-
-???
-* For help over video to debug or ask conceptual questions use Tandem:
-* add your name on the sheet below + brief description of what you need help with 
-* try to describe the problem/question without code, but feel free to paste in short error messages.
-* Log into Tandem
-* Wait for a TA (don’t barge into a Tandem room! A TA will reach out when it’s your turn!)
-* In some cases a TA may group questions together and start a Tandem Room to address the question.  In that case we’ll comment as such.
-* For help over messaging any time of day/night use Slack and find the channel associated with the short or lab you are working on.
-* we'll see how this works or doesn't - might switch to zoom with waiting rooms
-
----
 name: HyperText Markup Language
 
 HTML != programming

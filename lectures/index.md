@@ -37,15 +37,15 @@ fetch(proxyUrl + targetUrl, {
 
 <!-- * 3/31 Welcome -->
 * [6/25 Welcome](00_welcome/)
-* Structure of the Internet
+<!-- * Structure of the Internet -->
 <!-- * 3/31 Structure of the Internet -->
-<!-- * [3/31 Structure of the Internet](01_interwebs/) -->
-* HTML
+* [Structure of the Internet](01_interwebs/)
+<!-- * HTML -->
 <!-- * 4/1 HTML -->
-<!-- * [4/1 HTML](02_html/) -->
-* CSS
+* [HTML](02_html/)
+<!-- * CSS -->
 <!-- * 4/2 CSS -->
-<!-- * [4/2 CSS ](03_css/) -->
+* [CSS](03_css/)
 * JS and DOM
 <!-- * 4/7 JS and DOM -->
 <!-- * [4/7 JS and DOM](04_js1) -->

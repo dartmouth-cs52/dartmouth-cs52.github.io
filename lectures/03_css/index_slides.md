@@ -39,16 +39,14 @@ name: CS52: CSS
 
 
 
----
-name: Github Pages??
+<!-- name: Github Pages??
 
 <iframe src="//giphy.com/embed/q0FBs96PQmjDi?hideSocial=true" width="480" height="269.76" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
-* how does github pages hosting work? that all seemed magical
+* how does github pages hosting work? that all seemed magical -->
 
 
----
-name: Github Pages??
+<!-- name: Github Pages??
 
 .small[![](img/ghpages.png)]
 
@@ -59,7 +57,7 @@ name: Github Pages??
 
 ???
 
-* https://githubengineering.com/rearchitecting-github-pages/
+* https://githubengineering.com/rearchitecting-github-pages/ -->
 
 
 
