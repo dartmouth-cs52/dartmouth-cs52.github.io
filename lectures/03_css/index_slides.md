@@ -99,8 +99,8 @@ name: CSS — Cascading Style Sheets
 * this image is what cssv1 supported - all the functionality in one test frame
 * we're a new era now boys and girls, finally things are evolving, new things being rolled out
 * long period of time when people had **all sorts of workarounds for things, like using tables** for everything
-* css is faster than js for animations
 * netscape used javascript at first for styling (super slow and still is not the best styling tool)
+* css is faster than js for animations
 * [full history](https://eager.io/blog/the-languages-which-almost-were-css/)
 
 
@@ -113,7 +113,9 @@ name: Semantics vs. Style
 * Now CSS for STYLE
 
 <br>
-<iframe src="//giphy.com/embed/Oo4hdMO4Nw8Za" width="480" height="270" frameBorder="0" class="giphy-embed" ></iframe>
+.fancy.small[![](img/tiger-king.jpg)]
+
+<!-- <iframe src="//giphy.com/embed/Oo4hdMO4Nw8Za" width="480" height="270" frameBorder="0" class="giphy-embed" ></iframe> -->
 
 
 ???
@@ -137,7 +139,7 @@ name: Enter CSS
 * CSS will be friend and foe this term.
 * Certain things will be easy, certain things will feel impossible - but together we will prevail.
 * css inside joke: Try to vertically center something
-* We will conquer this though, quite easily, anybody know?
+* We will learn the current best practices to conquer this though, quite easily, anybody know?
 
 
 
