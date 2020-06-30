@@ -118,7 +118,7 @@ Links to nowhere.
 In HTML only,  outline the main elements you envision for the page.  Here's some hints:
 
 * `<nav>` for the navbar (even though it is transparent).
-* `<ul>` unordered lists are often used for nav components, if you do it'll help to get rid of the bullets using `list-style-type: none;`
+* `<ul>` unordered lists are often used for nav components, if you do it'll help to get rid of the bullets using `list-style-type: none;` in your css later.
 * `<footer>` is a good tag to use for... footer things.
 * `<div>`, `<span>`, `<a>`, `<h1>`, `<p>` will all be useful.
 * `<input>`, and `<button>` for any form like elements.
