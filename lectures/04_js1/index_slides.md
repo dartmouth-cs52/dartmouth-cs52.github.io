@@ -43,10 +43,11 @@ name: CS52
 * Today:
   * basic javascript
   * the DOM
-* Next:
+  
+<!-- * Next:
   * [lab2-quizzical](http://cs52.me/assignments/lab/quizzical/) out now and due next week
   * next week we dive into react and 2 shorts
-  * workshop groups to start soon
+  * workshop groups to start soon -->
 
 ???
 * how are office hours - labs going?  any questions?
@@ -1651,13 +1652,13 @@ name: resources
 * https://www.w3schools.com/js/default.asp
 * http://www.learn-js.org/
 
----
-name: Lab2! 
 
+
+<!-- 
 * Workshops!
 * Lab1 due Thurs
 * Lab2 out and due Tuesday
-  * [http://cs52.me/assignments/lab/quizzical/](http://cs52.me/assignments/lab/quizzical/)
+  * [http://cs52.me/assignments/lab/quizzical/](http://cs52.me/assignments/lab/quizzical/) -->
 
 
 

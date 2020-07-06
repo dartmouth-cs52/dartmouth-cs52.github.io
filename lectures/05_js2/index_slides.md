@@ -23,12 +23,12 @@ name: base
 name: CS52
 
 * Today:
-  * lab1 show
+  <!-- * lab1 show -->
   * more javascript!
   * newer javascript!
   * tricky javascript!
-  * team workshop
-  * sections
+  <!-- * team workshop -->
+  <!-- * sections -->
   <!-- * our first quiz! -->
 
 
@@ -53,10 +53,7 @@ name: oh the css
 ???
 * 
 
-
----
-name: some labs1 to explore
-
+<!-- 
 * <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-chanchavac2022/" target="_blank">[content]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-Meriem-Fouad/" target="_blank">[chocolate]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-iankhou/" target="_blank">[css typewriter]</a>
@@ -72,7 +69,7 @@ name: some labs1 to explore
 * <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-grantrdumanian/" target="_blank">[climbing]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-georgina-davis/" target="_blank">[clean living]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab1-landingpage-nicBerg/" target="_blank">[?]</a>
-
+ -->
 
 
 
