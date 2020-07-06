@@ -46,18 +46,18 @@ fetch(proxyUrl + targetUrl, {
 <!-- * CSS -->
 <!-- * 4/2 CSS -->
 * [CSS](03_css/)
-* JS and DOM
+<!-- * JS and DOM -->
 <!-- * 4/7 JS and DOM -->
-<!-- * [4/7 JS and DOM](04_js1) -->
-* Some Design Things
+* [JS and DOM](04_js1)
 <!-- * 4/8 Some Design Things -->
 <!-- * [4/8 Some Design Things](03_design/) -->
-* Git
 <!-- * 4/8 Git -->
 <!-- * [4/8 Git](02_git/) -->
-* JS P2
+<!-- * JS P2 -->
 <!-- * 4/9 JS P2 -->
-<!-- * [4/9 JS P2](05_js2) -->
+* [JS P2](05_js2)
+* Some Design Things
+* Git
 * Frameworks Intro
 <!-- * 4/14 Frameworks Intro -->
 <!-- * [4/14 Frameworks Intro](06_react1) -->
