@@ -40,8 +40,8 @@ comment_term: assignments
 
 <!-- * Lab 1: Build a Landing Page -->
 * [Lab 1: Build a Landing Page](lab/landing-page)
-* Lab 2: Build a Buzzfeed Quiz
-<!-- * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical) -->
+<!-- * Lab 2: Build a Buzzfeed Quiz -->
+* [Lab 2: Build a Buzzfeed Quiz](lab/quizzical)
 * Lab 3: React Notes
 <!-- * [Lab 3: React Notes](lab/react-notes) -->
 * Lab 4: Redux Platform Frontend
