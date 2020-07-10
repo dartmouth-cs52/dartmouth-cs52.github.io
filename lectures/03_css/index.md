@@ -6,8 +6,6 @@ comment_term: lecture-css
 ---
 
 
-[Video link](https://dartmouth.techsmithrelay.com/dpD2), Dartmouth auth required.
-
 {% include slides-toggle.html %}
 
 

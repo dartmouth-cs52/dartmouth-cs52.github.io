@@ -23,7 +23,7 @@ name: CS52 Today's Menu
 
 
 * More React
-* Alum Panel
+<!-- * Alum Panel -->
 
 .medium[![](img/table-git.jpg)]
 
@@ -43,10 +43,8 @@ name: CS52 First TikTok
 </video>
 
 
----
-name: #sharingiscaring
 
-* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-georgina-davis/" target="_blank">[chocolate]</a>
+<!-- * <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-georgina-davis/" target="_blank">[chocolate]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-Emzyx/" target="_blank">[puppers paginated]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-michaelzhou01/" target="_blank">[personal]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-rohithm1/" target="_blank">[rapper]</a>
@@ -69,7 +67,7 @@ name: #sharingiscaring
 * <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-whb21/" target="_blank">[tree]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-hack-heart/" target="_blank">[game character]</a>
 * <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-bryanshin1997/" target="_blank">[survivor]</a>
-* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-akchikkula111/" target="_blank">[zoomer]</a>
+* <a href="https://dartmouth-cs52-20s.github.io/lab2-quizzical-akchikkula111/" target="_blank">[zoomer]</a> -->
 
 
 
@@ -91,20 +89,14 @@ name: #sharingiscaring
 
 
 
-???
-* just a reminder - i have 30 min in the morning to choose these, if yours hasn't made it but you really want to share it, post it in sharingiscaring on slack.
-
-
----
-name: workshops
+<!-- name workshops
 
 .medium[![](/assets/drawings/tq-workshop.jpg)]
 
-???
 * short attempts
 * a little bit of breadth
 * don't have to finish if there are issues unless you really want to
-* keep me posted on workload - people seem more overloaded at this point in term than in the past. talk to me. 
+* keep me posted on workload - people seem more overloaded at this point in term than in the past. talk to me.  -->
 
 
 ---

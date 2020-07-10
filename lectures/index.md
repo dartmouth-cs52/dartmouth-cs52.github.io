@@ -49,27 +49,27 @@ fetch(proxyUrl + targetUrl, {
 <!-- * JS and DOM -->
 <!-- * 4/7 JS and DOM -->
 * [JS and DOM](04_js1)
-<!-- * 4/8 Some Design Things -->
-<!-- * [4/8 Some Design Things](03_design/) -->
-<!-- * 4/8 Git -->
-<!-- * [4/8 Git](02_git/) -->
 <!-- * JS P2 -->
 <!-- * 4/9 JS P2 -->
 * [JS P2](05_js2)
-* Some Design Things
-* Git
-* Frameworks Intro
+<!-- * Some Design Things -->
+<!-- * 4/8 Some Design Things -->
+* [Some Design Things](03_design/)
+<!-- * Git -->
+<!-- * 4/8 Git -->
+* [Git](02_git/)
+<!-- * Frameworks Intro -->
 <!-- * 4/14 Frameworks Intro -->
-<!-- * [4/14 Frameworks Intro](06_react1) -->
-* React
+* [Frameworks Intro](06_react1)
+<!-- * React -->
 <!-- * 4/16 React -->
-<!-- * [4/16 React](07_react2) -->
+* [React](07_react2)
 <!-- * HUH 4/22 Project Intro -->
 <!-- * HUH [4/24 Projects](07_project_intro) -->
 <!-- * HUH [4/25 Projects Intro](../projects/) -->
-* Asynch JS
+<!-- * Asynch JS -->
 <!-- * 4/21 Asynch JS -->
-<!-- * [4/21 Asynch JS](08_asynch_js) -->
+* [Asynch JS](08_asynch_js)
 * Routing and Project Intro
 <!-- * 4/23 Routing and Project Intro -->
 <!-- * [4/23 Routing and Project Intro](09_routing) -->
