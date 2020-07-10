@@ -277,7 +277,7 @@ You should host this on github pages as you have in the past with the `gh-pages`
 
 ## To Turn In (canvas):
 
-* url to your hosted page (gh-pages is fine)
+* urls to your hosted page (gh-pages is fine) **and** your GitHub repository
 * your page should:
   * display as many elements from the original site as possible
   * use only pure CSS/HTML
