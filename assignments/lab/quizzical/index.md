@@ -312,7 +312,7 @@ You should host this on github pages as you have in the past.  Remember to have 
 
 ## To Turn In:
 
-* url to your hosted page (gh-pages enabled on your classroom repo is fine)
+* urls to your hosted page (gh-pages enabled on your classroom repo is fine) **and** your classroom repo
 * your page should have all the [MVP specs](#minimal-functional-specs) in addition to:
   * have clear document structure with proper semantic naming
   * functional calculations and error checking to get quiz results
