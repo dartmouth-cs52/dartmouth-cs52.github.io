@@ -760,7 +760,7 @@ For Windows:
 
 ```javascript
     "test": "eslint src/**.js",
-    "winbuild": "yarn clean & SET NODE_ENV=production& webpack --colors",
+    "winbuild": "yarn clean & SET NODE_ENV=production & webpack --colors",
     "clean": "rimraf dist",
     "windeploy": "yarn winbuild & surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh & yarn clean"
 ```
