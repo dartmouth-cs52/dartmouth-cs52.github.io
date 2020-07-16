@@ -15,8 +15,8 @@ comment_term: assignments
 * [Short Assignment 2: Git Map](sa/git-map)
 <!-- * Short Assignment 3: Webpack+Babel+Eslint starterpack -->
 * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack)
-* Short Assignment 4: React Intro
-<!-- * [Short Assignment 4: React Intro](sa/react-videos) -->
+<!-- * Short Assignment 4: React Intro -->
+* [Short Assignment 4: React Intro](sa/react-videos)
 * Short Assignment 5: Frontend Routing
 <!-- * [Short Assignment 5: Frontend Routing](sa/routing)  -->
 * Short Assignment 6: Redux
@@ -42,8 +42,8 @@ comment_term: assignments
 * [Lab 1: Build a Landing Page](lab/landing-page)
 <!-- * Lab 2: Build a Buzzfeed Quiz -->
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical)
-* Lab 3: React Notes
-<!-- * [Lab 3: React Notes](lab/react-notes) -->
+<!-- * Lab 3: React Notes -->
+* [Lab 3: React Notes](lab/react-notes)
 * Lab 4: Redux Platform Frontend
 <!-- * [Lab 4: Redux Platform Frontend](lab/redux-platform) -->
 * Lab 5 Part 1: Redux Platform + API
