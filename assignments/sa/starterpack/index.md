@@ -750,7 +750,7 @@ yarn add --dev surge #both command and in dependencies
 🚀 Add the following to your `package.json` `scripts` section:
 
 ```javascript
-    "test": "eslint src/**/*.js",
+    "test": "eslint src",
     "build": "yarn clean; NODE_ENV=production webpack --colors",
     "clean": "rimraf dist",
     "deploy": "yarn build; surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh; yarn clean"
@@ -759,7 +759,7 @@ yarn add --dev surge #both command and in dependencies
 For Windows:
 
 ```javascript
-    "test": "eslint src/**/*.js",
+    "test": "eslint src",
     "winbuild": "yarn clean & SET NODE_ENV=production & webpack --colors",
     "clean": "rimraf dist",
     "windeploy": "yarn winbuild & surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh & yarn clean"
