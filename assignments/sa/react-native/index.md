@@ -98,6 +98,8 @@ We can't live without this:
 
 🚀 Create a `.eslintrc` file from [this gist](https://gist.github.com/timofei7/c8df5cc69f44127afb48f5d1dffb6c84) and restart your code editor to pick up changes.
 
+After doing so, ESLint may throw an error in Expo's default generated App.js file for not setting the `style` prop of the StatusBar to an object. You can just go ahead and ignore or disable the warning since Expo's StatusBar component has a different style configuration than other components. 
+
 ## Basic Navigation
 One of the classic navigation components in iOS is the Tab Bar. We'll be using the [React Navigation](https://reactnavigation.org/docs/en/getting-started.html) plugin to help with this. You may encounter many conficting packages for doing this,  TabBarIOS, NavigatorIOS, etc, but React Navigation's Stack Navigator is currently the best option for this.  It navigates using string *Screen* identifiers. There is lots of documentation available.
 
@@ -106,8 +108,16 @@ One of the classic navigation components in iOS is the Tab Bar. We'll be using t
 🚀 Now let's install some of the React Navigation dependencies.
 
 ```
-💻 yarn add @react-navigation/native @react-navigation/bottom-tabs react-native-gesture-handler@~1.5.0 react-native-reanimated@~1.4.0 react-native-screens@2.0.0-alpha.12 react-native-safe-area-context@0.6.0 @react-native-community/masked-view@0.1.5
+💻 yarn add @react-navigation/native @react-navigation/bottom-tabs
 ```
+
+and
+
+```
+💻 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+The `expo install` command will ensure that we're installing dependencies that are compatible with the Expo SDK version that you're using. 
 
 ### Tabs
 
@@ -164,6 +174,8 @@ export default App;
 ```
 
 📱 Test it out.  Looks great, right?
+
+⚠️ Sometimes hot reloading doesn't always capture new modules being added to a project and you may encounter an error complaining about requiring an unknown module. If that happens, just quit the Expo packager and restart Expo.
 
 ## About
 
@@ -264,6 +276,8 @@ const MainTabBar = () => {
 };
 ```
 
+🚀 Delete the old AboutTab component while you're at it.
+
 📱 Check it out!
 
 ![](images/tabbar.jpg){: .small}
@@ -296,7 +310,6 @@ But we already have a TabNavigator?!  Turns out you can nest navigation stacks. 
 import React from 'react';
 import { Button } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Ionicons from 'react-native-vector-icons/FontAwesome';
 
 // import VideoList from '../components/video_list';
 // import VideoDetail from '../components/video_detail';
@@ -361,6 +374,7 @@ We want to do more.
 🚀 Let's create `components/video_list.js` and fill it in:
 
  ```js
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import Search from 'react-native-search-box';
 import {
@@ -452,6 +466,8 @@ class VideoList extends Component {
     );
   }
 }
+
+export default VideoList;
  ```
 
 
@@ -519,6 +535,18 @@ const styles = StyleSheet.create({
 />
 ```
 
+### Youtube API
+
+Ah darn, one other thing. We need to actually have a reference to the API, right? This next part should (hopefully) look super familiar.
+
+🚀 Create a new file at the top level of your project, `youtube-api.js`.
+
+Sound familiar?  We did this in short assignment 4, and we will be using the exact same api for this react-native app!  That's coooool.
+
+🚀 Go ahead and find that file and copy it here.  We need to do this because we need your individual api key, which you already made in sa4.  If you want more than 5 results at a time then add in `maxResults: 15` to the `params`.
+
+- Accidentally deleted your API key? No biggie. Just follow the [old instructions from sa4](http://cs52.me/assignments/sa/react-videos/#youtube-api).
+
 🚀 Take a look at the simulator: Loady-spinny!  This is the default `<ActivityIndicator />` component we're showing if the API call hasn't returned videos yet. Since we haven't made an API call yet, that definitely makes sense.
 
 ![](images/spinner.jpg){: .small}
@@ -541,23 +569,9 @@ fetchData() {
 
 Where should we call this from? It would be nice if we could get the data from YouTube as soon as we get to the page. Can you recall from your React mastery which life cycle component is the ideal place to call it? You guessed it.
 
-🚀 Create a function `componentDidMount` in `video_list.js`. Inside it, make a call to `this.fetchData`.
+🚀 Create a function `componentDidMount` in `video_list.js`. Inside it, make a call to `this.fetchData`. `componentDidMount` is a default lifecycle method that comes with React components that runs once upon initial render.
 
 :snowflake: Now when the page loads, we'll call `fetchData` to populate our list view.
-
-
-### Youtube API
-
-Ah darn, one other thing. We need to actually have a reference to the API, right? This next part should (hopefully) look super familiar.
-
-🚀 Create a new file at the top level of your project, `youtube-api.js`.
-
-Sound familiar?  We did this in short assignment 4, and we will be using the exact same api for this react-native app!  That's coooool.
-
-🚀 Go ahead and find that file and copy it here.  We need to do this because we need your individual api key, which you already made in sa4.  If you want more than 5 results at a time then add in `maxResults: 15` to the `params`.
-
-- Accidentally deleted your API key? No biggie. Just follow the [old instructions from sa4](http://cs52.me/assignments/sa/react-videos/#youtube-api).
-
 
 📱 At this point you should be showing a list of videos, coolbeans.
 
