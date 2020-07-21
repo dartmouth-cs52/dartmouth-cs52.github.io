@@ -17,20 +17,20 @@ comment_term: assignments
 * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack)
 <!-- * Short Assignment 4: React Intro -->
 * [Short Assignment 4: React Intro](sa/react-videos)
-* Short Assignment 5: Frontend Routing
-<!-- * [Short Assignment 5: Frontend Routing](sa/routing)  -->
+<!-- * Short Assignment 5: Frontend Routing -->
+* [Short Assignment 5: Frontend Routing](sa/routing) 
 * Short Assignment 6: Redux
 <!-- * [Short Assignment 6: Redux](sa/redux)  -->
 * Short Assignment 7: Express and Mongo
 <!-- * [Short Assignment 7: Express and Mongo](sa/server-side)  -->
-* ExtraCredit Short Assignment: Photo Uploading S3
-<!-- * [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload) -->
-* ExtraCredit Short Assignment: WebSockets
-<!-- * [ExtraCredit Short Assignment: WebSockets](sa/websockets) -->
+<!-- * ExtraCredit Short Assignment: Photo Uploading S3 -->
+* [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload)
+<!-- * ExtraCredit Short Assignment: WebSockets -->
+* [ExtraCredit Short Assignment: WebSockets](sa/websockets)
 <!-- * EC Short Assignment: ChatBot -->
 <!-- * [ExtraCredit Short Assignment: ChatBot](sa/slack-bot) -->
-* ExtraCredit Short Assignment: ReactNative
-<!-- * [ExtraCredit Short Assignment: ReactNative](sa/react-native) -->
+<!-- * ExtraCredit Short Assignment: ReactNative -->
+* [ExtraCredit Short Assignment: ReactNative](sa/react-native)
 
 
 
