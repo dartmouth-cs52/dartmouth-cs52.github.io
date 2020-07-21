@@ -750,7 +750,7 @@ yarn add --dev surge #both command and in dependencies
 🚀 Add the following to your `package.json` `scripts` section:
 
 ```javascript
-    "test": "eslint src/**.js",
+    "test": "eslint src",
     "build": "yarn clean; NODE_ENV=production webpack --colors",
     "clean": "rimraf dist",
     "deploy": "yarn build; surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh; yarn clean"
@@ -759,8 +759,8 @@ yarn add --dev surge #both command and in dependencies
 For Windows:
 
 ```javascript
-    "test": "eslint src/**.js",
-    "winbuild": "yarn clean & SET NODE_ENV=production& webpack --colors",
+    "test": "eslint src",
+    "winbuild": "yarn clean & SET NODE_ENV=production & webpack --colors",
     "clean": "rimraf dist",
     "windeploy": "yarn winbuild & surge -p dist -d MYCOOLSTARTERPACKNAME.surge.sh & yarn clean"
 ```
@@ -842,7 +842,7 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 
 ### Extra Credit
 
-* add in more robust image loading than just file-loader. (compress + optimize)
+* add in more robust image loading than just file-loader. (compress + optimize) - explore some more webpack loaders [here](https://webpack.js.org/loaders/)
 
 
 ## Resources:
