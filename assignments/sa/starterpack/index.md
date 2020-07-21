@@ -842,7 +842,7 @@ You now have a nicely set up starter pack that you can use for all your cool pro
 
 ### Extra Credit
 
-* add in more robust image loading than just file-loader. (compress + optimize)
+* add in more robust image loading than just file-loader. (compress + optimize) - explore some more webpack loaders [here](https://webpack.js.org/loaders/)
 
 
 ## Resources:
