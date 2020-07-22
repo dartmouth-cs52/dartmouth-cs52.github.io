@@ -63,7 +63,7 @@ comment_term: assignments
 ### 1 group presentation video: 10%
 *Once during the term (in teams of 3-5) will create a video of a web technology of choice to the class.*
 
-* More info and assignment [here](../eli5in5)
+* More info and assignment [here](../videoshare)
 
 <!-- ### Group Workshop Participation: 10%
 *Individual participation in each of the group presentation workshops. Will require forking a repo and following along with a tutorial in class.* -->

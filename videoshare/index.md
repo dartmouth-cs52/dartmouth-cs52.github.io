@@ -1,7 +1,7 @@
 ---
 layout: page
 title: ELI5in5
-permalink: /eli5in5/
+permalink: /videoshare/
 comment_term: eli5in5
 ---
 
