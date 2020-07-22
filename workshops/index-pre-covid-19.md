@@ -3,6 +3,7 @@ layout: page
 title: Workshops
 permalink: /workshops/
 comment_term: workshops
+published: false
 ---
 
 ## Listing

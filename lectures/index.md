@@ -70,8 +70,9 @@ fetch(proxyUrl + targetUrl, {
 <!-- * Asynch JS -->
 <!-- * 4/21 Asynch JS -->
 * [Asynch JS](08_asynch_js)
-* Routing and Project Intro
+<!-- * Routing and Project Intro -->
 <!-- * 4/23 Routing and Project Intro -->
+* [4/23 Routing](09_routing)
 <!-- * [4/23 Routing and Project Intro](09_routing) -->
 * Redux
 <!-- * 4/28 Redux -->
