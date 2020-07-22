@@ -50,7 +50,7 @@ See [assignments](/assignments).
 * We'll be using [Slack](https://cs52-dartmouth.slack.com) for course communication. Find us there!
 
 * Open Help Hours via Zoom/Remo: <br>
-  TBD, coming soon
+  Most 2A periods and Fridays 1-3pm. 
   <!-- Mon 4-6pm: Sudikoff 213<br>
   Mon 8-10pm: Carson 61<br> -->
   <!-- Weds 4:35-5:25 (when there is no official x-hour): LSC 200<br> -->
