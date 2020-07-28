@@ -1,13 +1,9 @@
 ---
 layout: page
-title: Lab5 +Auth
+title: authentication
 published: true
-comment_term: lab-redux-blog+auth
+comment_term: sa-authentication
 ---
-
-
-
-## Blog: Authentication
 
 
 For this assignment we are going to build an [express](https://expressjs.com/) and [mongodb](https://www.mongodb.com/) CRUD api server for our react+redux blog frontend. This will finally bring our stack all the way down to the database. In this part we're going to be adding in Authentication!
@@ -22,7 +18,6 @@ For this assignment we are going to build an [express](https://expressjs.com/) a
 
 ## Assignment At a Glance
 
-* Part 2:
   * Authentication: We'll extend both our frontend and our backend to support authentication and users!
 
 On the frontend we'll want to add a place for users to sign in.  We'll create a `/signin`, `/signup`, and `/signout` routes and add a way to restrict access to certain routes based on authentication.   We'll do this by designing our own higher order component, similarly to how the redux `connect` method works.
