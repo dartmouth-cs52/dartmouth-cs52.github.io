@@ -18,12 +18,8 @@ Our server will be a pure api server, returning only JSON format data to our Lab
 
 ## Assignment At a Glance
 
-* Part 1:
   * Intro to Express and Mongo. [SA7](http://cs52.me/assignments/sa/server-side/) got you started with Express.js and Mongo, we'll now use that knowledge to build up an API server.  The difference here is that we won't be returning HTML but rather JSON. Easier! We'll add in the `post` schema, get going with express routes, and get set up for adding in the other stuff.
   * Basic CRUD API: Building from the intro, we'll implement the full create, update, delete api for our blog.
-* Part 2:
-  * Authentication: We'll extend both our frontend and our backend to support authentication and users and more!
-
 
 ## Some Setup
 
@@ -63,7 +59,7 @@ And start up your react+redux blog app.  It'll be broken for now (should display
 
 [Express](https://expressjs.com/) is a web framework for Node.js.  What it does for us is provide a way to listen for and respond to incoming web requests.
 
-Each of the http API requests we were making in Part 1 will need to be provided in this assignment.
+Each of the http API requests we were making will need to be provided in this assignment.
 
 To recap the API has the following endpoints:
 
@@ -402,4 +398,4 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 * add commenting to posts (either an array or another model) / change both api and frontend to support this.
 * really at this point you can start modifying your blog to be whatever you want. Add in new fields to your posts.
 * add in search support. Here's an [article](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/) that might help you get started.
-* in part 2 we'll introduce User and Authentication so don't implement those here though.
+* later we'll introduce User and Authentication so don't implement those here though.
