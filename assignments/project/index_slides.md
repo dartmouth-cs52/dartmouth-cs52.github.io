@@ -46,17 +46,17 @@ name: Final Projects!
 
 * previous final projects:
   * LeftOnRead text analysis
-  * snapchat desktop clone
   * self-care app
   * meme sharing mobile app
   * group.me realtime event planner
   * pong game finder/planner
   * virtual tour guide (mobile, fb messenger, admin portal)
-  * lost and found app
+  * friend group flight finder
   * airbnb for parking spaces
   * hackathon communication and planning platform
+  * covid-19 risk assessment app
 
-* [19s](19s), [18s](18s), [17s](17s), [16x](16x) 
+* [20s](20s), [19s](19s), [18s](18s), [17s](17s), [16x](16x) 
 
 ???
 * a couple groups went all out and build both a react-native app and a web app
