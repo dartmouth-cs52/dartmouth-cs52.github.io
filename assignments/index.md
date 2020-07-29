@@ -21,8 +21,8 @@ comment_term: assignments
 * [Short Assignment 5: Frontend Routing](sa/routing) 
 <!-- * Short Assignment 6: Redux -->
 * [Short Assignment 6: Redux](sa/redux) 
-* Short Assignment 7: Express and Mongo
-<!-- * [Short Assignment 7: Express and Mongo](sa/server-side)  -->
+<!-- * Short Assignment 7: Express and Mongo -->
+* [Short Assignment 7: Express and Mongo](sa/server-side) 
 * Short Assignment 8: Frontend and Backend of Authentication 
 <!-- * [Short Assignment 8: Frontend and Backend of Authentication](sa/authentication) -->
 <!-- * ExtraCredit Short Assignment: Photo Uploading S3 -->

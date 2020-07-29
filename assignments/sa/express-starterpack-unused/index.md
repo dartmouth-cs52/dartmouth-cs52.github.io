@@ -572,11 +572,26 @@ In the above we make an ajax call to the server to update the fields, and then w
 Great! We have everything working now. We will need to host this new server component!
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
-2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
-3. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/cs52-blog.git`.   
-4. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the npm command that is listed in your `Procfile` to launch your app.  COOL!
+1. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/cs52-blog.git`.   
+1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the npm command that is listed in your `Procfile` to launch your app.  COOL!
 
 Note: Don't forget to push master to **both** heroku and origin.
+
+## MongoDB Atlas 
+
+Wait, but we don't have a database on our remote server!  The problem is that Heroku does not support easy storage, there is no "hard drive" to save a database file on for instance. Every Heroku process (what runs your code every time you push), is called a Dyno - and Dynos don't get their own filesystems. They get what Heroku calls an [ephemeral filesystem](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem), more of a temporary scratchpad. 
+
+To run a mongoDB process with remote access there are several options, but we'll choose the cloud mongo option offered by mongodb.com.  
+
+1. Create an account at [cloud.mongodb.co](https://www.mongodb.com/cloud/atlas/signup)
+1. Select the free *Shared Clusters*. 
+1. Pick most the defaults, in particular under *Cluster Tier* Select the M0 Sandbox (which is free). Don't turn on backups as that will add cost.
+1. Under cluster name put: "
+
+
+2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is free so it won't be charged.
+
+
 
 ## To Turn In
 

@@ -113,8 +113,8 @@ mongo
 show dbs
 // will show your current databases
 
-use blog
-// will make blog the current database
+use platform_db
+// will make platform_db the current database name, db in the below refers to this.
 
 db.posts.insert(
    {
@@ -141,6 +141,8 @@ Ok, so now you've played a little bit with mongo directly, let's build something
 ![](img/mongoose.jpg){: .small .fancy }
 
 Don't forget to install  Mongoose! Just repeat the Mongoose section from [SA7](../sa/server-side/#mongoose)
+
+Use `platform_db` instead of `polls` as your database name though!
 
 
 ## Model
@@ -379,6 +381,8 @@ Unlike the blog api we've been using, nothing in the above relies on the query p
 We will need to host this new server component so your blog can use it instead of the `platform.cs52.me` one.  
 
 🚀 [Same steps as for the short.](../../sa/server-side/#deploy-to-heroku)
+
+Create a new Heroku instance, but you should be able to use the same mongo connection string.  Make sure in your code you use a different database name though. 
 
 ## P1 Complete
 
