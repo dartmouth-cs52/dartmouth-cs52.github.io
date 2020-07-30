@@ -45,8 +45,8 @@ name: Final Projects!
 name: Final Projects!
 
 * previous final projects:
-  * LeftOnRead text analysis
-  * self-care app
+  * text analysis web platform
+  * react-native mobile apps
   * meme sharing mobile app
   * group.me realtime event planner
   * pong game finder/planner
