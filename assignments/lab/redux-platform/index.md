@@ -21,7 +21,7 @@ We'll build a React+Redux Conent Platform.  It can be a platform for any type of
 </video>
 
 
-### Part 1 Lab 4
+### Lab 4
 
 We'll build out a Create+Update+Delete (CRUD) style content app using React and Redux and React-Router.  We will use an API server hosted at: `https://platform.cs52.me/api`.   
 
@@ -31,7 +31,7 @@ Be creative and make this your own.
 
 🍰 Feel free to use any CSS or React Component Libraries that you want.
 
-### Part 2 Lab 5
+### Lab 5
 
 We will rip out `platform.cs52.me/api` and build our own Nodejs+Express+Mongo based API server.  Finally FULL-STACK!  You'll be able to modify the data model at this point and really make your platform do anything. We'll also add authentication and image uploading!
 
@@ -493,5 +493,5 @@ git push origin --tags
 * handle `axios` errors in a graceful REDUX way, showing users a nice message. (hint: new action and error state)
 * input validation — check that all fields have required values when creating new form for instance.
 * add a filter posts functionality, filter by tags initially.
-  * for now our api is limited so additional search will come in part 2
-* more EC available in part 2!
+  * for now our api is limited so additional search will come in lab5
+* more EC available in lab5!

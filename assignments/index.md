@@ -19,10 +19,12 @@ comment_term: assignments
 * [Short Assignment 4: React Intro](sa/react-videos)
 <!-- * Short Assignment 5: Frontend Routing -->
 * [Short Assignment 5: Frontend Routing](sa/routing) 
-* Short Assignment 6: Redux
-<!-- * [Short Assignment 6: Redux](sa/redux)  -->
-* Short Assignment 7: Express and Mongo
-<!-- * [Short Assignment 7: Express and Mongo](sa/server-side)  -->
+<!-- * Short Assignment 6: Redux -->
+* [Short Assignment 6: Redux](sa/redux) 
+<!-- * Short Assignment 7: Express and Mongo -->
+* [Short Assignment 7: Express and Mongo](sa/server-side) 
+<!-- * Short Assignment 8: Frontend and Backend of Authentication  -->
+* [Short Assignment 8: Frontend and Backend of Authentication](sa/authentication)
 <!-- * ExtraCredit Short Assignment: Photo Uploading S3 -->
 * [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload)
 <!-- * ExtraCredit Short Assignment: WebSockets -->
@@ -44,13 +46,10 @@ comment_term: assignments
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical)
 <!-- * Lab 3: React Notes -->
 * [Lab 3: React Notes](lab/react-notes)
-* Lab 4: Redux Platform Frontend
-<!-- * [Lab 4: Redux Platform Frontend](lab/redux-platform) -->
-* Lab 5 Part 1: Redux Platform + API
-<!-- * [Lab 5 Part 1: Redux Platform + API](lab/redux-platform+server) -->
-* Lab 5 Part 2: Redux Platform + Auth 
-<!-- * [Lab 5 Part 2: Redux Platform + Auth](lab/redux-platform+auth) -->
-
+<!-- * Lab 4: Redux Platform Frontend -->
+* [Lab 4: Redux Platform Frontend](lab/redux-platform)
+<!-- * Lab 5: Redux Platform + API -->
+* [Lab 5 Part: Redux Platform + API](lab/redux-platform+server)
 
 <!-- ### 4-ish Short in-class quizzes:  10%
 *Concepts and methods from lectures and labs.* -->

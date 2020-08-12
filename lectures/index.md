@@ -66,18 +66,18 @@ fetch(proxyUrl + targetUrl, {
 * [React](07_react2)
 <!-- * HUH 4/22 Project Intro -->
 <!-- * HUH [4/24 Projects](07_project_intro) -->
-<!-- * HUH [4/25 Projects Intro](../projects/) -->
 <!-- * Asynch JS -->
 <!-- * 4/21 Asynch JS -->
 * [Asynch JS](08_asynch_js)
 <!-- * Routing and Project Intro -->
 <!-- * 4/23 Routing and Project Intro -->
-* [4/23 Routing](09_routing)
+* [Routing](09_routing)
 <!-- * [4/23 Routing and Project Intro](09_routing) -->
-* Redux
+<!-- * Redux -->
 <!-- * 4/28 Redux -->
-<!-- * [4/28 Redux](10_redux) -->
-* Teams
+* [Projects Intro](../assignments/project/#1)
+* [Redux](10_redux)
+<!-- * Teams -->
 <!-- * 5/05 Teams -->
 <!-- * [5/05 Teams](12_teams-intro) -->
 * Databases

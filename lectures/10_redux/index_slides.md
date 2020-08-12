@@ -26,11 +26,7 @@ name: Redux
 
 
 
-
----
-name: React Notes
-
-
+<!-- 
 * <a href="https://chibuzo-cs52-notes.surge.sh/" target="_blank">[login,recycle, and more]</a>
 * <a href="https://samihadatta-reactnotes.surge.sh/" target="_blank">[friends support friends]</a>
 * <a href="https://cdnb.surge.sh" target="_blank">[some style]</a>
@@ -47,14 +43,9 @@ name: React Notes
 * <a href="https://josephnotis-cs52-reactnotes.surge.sh" target="_blank">[note colors]</a>
 * <a href="https://tvergho-cs52-reactnotes.surge.sh" target="_blank">[new boards, undo]</a>
 * <a href="https://leaflets.surge.sh/" target="_blank">[fall colors]</a>
+ -->
 
 
-
-???
-* some examples
-* i did pick ones that did EC in this case
-* if you struggled, don't worry you aren't alone, this was a tough one lot of new stuff
-* we're hard at work already going through and giving feedback so you'll learn by practicing - we'll keep pumping out more
 
 ---
 name: What do we know about React so far?

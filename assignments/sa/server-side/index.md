@@ -526,14 +526,49 @@ In the above we make an ajax call to the server to update the fields, and then w
 
 ## Deploy to Heroku
 
-Great! We have everything working now. We will need to host this new server component!
+Great! We have everything working now. We will need to host this new server component! While this serves up a webpage, since it is a computed page it needs a live running server process (unlike the static hosting which serves up pre-computed files). Heroku is a lovely service that can host your javascript/node server program (as well as python, and others). 
 
-1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
-2. Now you need to connect to a mongo database.  Go to *Resources* and search for "mLab" under *Add-Ons*. Provision the *Sandbox* version of mLab for your app. This will automatically set a `MONGODB_URI` config variable so once you push your code to Heroku it will connect to this new mongo database. You'll need to enter in a credit card but it is **free** so it won't be charged.
+1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, create a new app.
 3. Go to *Deploy* and select either "Github" or "Heroku Git" as your Deployment Method
     * if you choose GitHub, find and connect to the right repository, then turn on *Automatic Deploys* for the master branch. This will update Heroku whenever you `git push origin master` and restart your heroku server. This way is pretty automatic and you don't have to worry about remembering to push to heroku.
     * if you are doing "Heroku Git", select Download and install the Heroku CLI using `brew install heroku/brew/heroku`. Given that you're already working in a git repository, use `heroku git:remote -a YOUR_HEROKU_APP` to add a new git remote (use `git remote -v` to see). If you haven't done so already, add and commit your changes. Now when you want to deploy do: `git push heroku master`. *Note: Don't forget to push master to **both** heroku and origin.* This way is more manual if you want greater control.
 4. Either way, once Heroku gets your push then it will run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
+
+
+## MongoDB Atlas 
+
+Wait, but we don't have a database on our remote server!  The problem is that Heroku does not support easy storage, there is no "hard drive" to save a database file on for instance. Every Heroku process (what runs your code every time you push), is called a Dyno - and Dynos don't get their own filesystems. They get what Heroku calls an [ephemeral filesystem](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem), more of a temporary scratchpad. 
+
+To run a mongoDB process with remote access there are several options, but we'll choose the cloud mongo option offered by mongodb.com.  
+
+1. Create an account at [cloud.mongodb.co](https://www.mongodb.com/cloud/atlas/signup)
+1. Select the free *Shared Clusters*. 
+1. Pick most the defaults, in particular under *Cluster Tier* Select the `M0 Sandbox`(which is free). Don't turn on backups as that will add cost.
+1. This will create a "Project 0" with "Cluster 0". You are limited to 1 free cluster per project, so later on you may want to create more. For now it is probably fine to use the same database for all your projects.
+1. Create an access username and password. Save them. 
+    ![](img/newuser0.jpg){: .medium .fancy}
+    ![](img/newuser.jpg){: .medium .fancy}
+1. In *Network Access*, select *Allow Access From Anywhere*
+    ![](img/network.jpg){: .medium .fancy}
+1. Click *Clusters* -> *Connect* -> *Connect Your Application*
+1. Copy the connection string into a safe place and replace `<password>` with the password you saved earlier.
+
+
+## Connect Heroku to Mongo 
+
+1. Now you need to connect to a mongo database. Go to [dashboard.heroku.com](https://dashboard.heroku.com).
+1. Go to *Settings* -> *Reveal Config Vars*
+    This is where you can add environment variables — a great place for things like api keys and connection strings.
+1. Add a key `MONGODB_URI` and paste the connection string you saved above into it. Remember to replace `<password>` with the actual password. 
+
+## Test it out!  
+
+To test it out, click *Open App* at the top right. That is the url that your heroku server is hosted at.
+
+![](img/test.jpg){: .small .fancy}
+
+You can also view server logs and restart the server from there, where can be very useful in debuggin.
+
 
 ## To Turn In
 

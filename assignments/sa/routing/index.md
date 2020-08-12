@@ -212,13 +212,37 @@ mode: env,
 output: { publicPath: '/' },
 ```
 
+### If you are using SURGE.SH
+
 Now we're going to do something odd. We're going to make a copy of `index.html` to `200.html`.  What will happen is when you hit a route that *surge* doesn't know about, it will serve up the contents of the `200.html` file. Since this file is your app, it will load up, read the current route, and change the page appropriately. This is *surge* specific but will make our SPA setup pretty robust.
 
 🚀 Duplicate the `HtmlWebpackPlugin` entry in the `webpack.config.js` file so you have one with `filename: './200.html'` and one with `filename: './index.html'` both using the same template file `template: './src/index.html'`.
 
-## Test Deploy
 
-`yarn deploy`
+### If you are using NETLIFY.COM
+
+[Netlify.com](http://netlify.com) is a more powerful platform than surge (albeit a bit more complicated).  They support a config file `_redirects` that allows you to create any number url redirect rules. 
+
+For our purposes: 
+
+🚀 create a `_redirects` file in the root of your project with:
+
+```
+/*   /index.html   200
+```
+
+as contents. 
+
+Then edit your `package.json` file and change your `build` script to be:
+
+```
+    "build": "yarn clean; NODE_ENV=production webpack --colors; cp -f _redirects dist/",
+```
+
+The idea being that when you set up netlify with github - give it `yarn build` as the build command and `dist` as the output directory, and your build scripts needs to just add it to there. 
+
+
+## Test Your Deployed URL
 
 Check it out in your browser.  Try changing the url to `/badlink`,  it should load your test app and hit the fallback route!
 
@@ -238,7 +262,7 @@ git push origin --tags
 ## To Turn In (Canvas)
 
 * url to github repo (makes grading a whole lot easier and friendlier)
-* url to surge.sh
+* url to surge.sh/netlify site
 * your starter pack should now
     * have working test routes
     * be deployed to surge with working 200.html

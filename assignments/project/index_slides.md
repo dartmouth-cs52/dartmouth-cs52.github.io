@@ -45,18 +45,18 @@ name: Final Projects!
 name: Final Projects!
 
 * previous final projects:
-  * LeftOnRead text analysis
-  * snapchat desktop clone
-  * self-care app
+  * text analysis web platform
+  * react-native mobile apps
   * meme sharing mobile app
   * group.me realtime event planner
   * pong game finder/planner
   * virtual tour guide (mobile, fb messenger, admin portal)
-  * lost and found app
+  * friend group flight finder
   * airbnb for parking spaces
   * hackathon communication and planning platform
+  * covid-19 risk assessment app
 
-* [19s](19s), [18s](18s), [17s](17s), [16x](16x) 
+* [20s](20s), [19s](19s), [18s](18s), [17s](17s), [16x](16x) 
 
 ???
 * a couple groups went all out and build both a react-native app and a web app
@@ -98,8 +98,9 @@ name: YipYip
 ---
 name: full stack music
 
-<iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="http://prettymusicmaker.surge.sh" frameborder="0" allowfullscreen></iframe>
+![](img/projects/prettymusic.jpg)
 
+try it out: [http://prettymusicmaker.surge.sh](http://prettymusicmaker.surge.sh)
 
 
 ---
@@ -197,9 +198,9 @@ name: timeline
 .large[![](/assignments/project/img/projects_19s/timeline.gif)]
 
 ---
-name: off the green
+name: 20S
 
-<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="http://offthegreen.surge.sh/" frameborder="0" allowfullscreen></iframe>
+<iframe style="transform: scale(0.8) translateX(-150px) translateY(-125px) " width="1000" height="700" src="/assignments/project/20s" frameborder="0" allowfullscreen></iframe>
 
 
 ---
@@ -258,18 +259,18 @@ name: Some Broad Topics
 name: Process:
 
 * Pitches (starting next week)
-* Groups Formed (5/3)
-* Feature Spec + Mockups (5/12)
-* Scaffolding (5/14)
-* Dev Site Up (client+server) (5/19)
-* Pre-demo Bug Hug (5/26?)
-* Final Project Demos (6/8?)
-* Final Submission (6/9?)
+* Groups Formed
+* Feature Spec + Mockups
+* Scaffolding
+* Dev Site Up (client+server)
+* Pre-demo Bug Hug
+* Final Submission
+* Final Project Demos (last day of finals)
 
 
 ???
 * trying so that we have plenty of time for this
-* usually demos are last day of class - now that it is online thinking last day of finals - would ease up our timeline a little bit.  quick poll - who would not be available evening of say june 8th?
+* usually demos are last day of class - now that it is online thinking last day of finals - would ease up our timeline a little bit. 
 
 
 
@@ -369,18 +370,17 @@ name: Pre-Demo Bug Hunt
 ---
 name: Final Project Demos
 
- <!-- .fancy.medium[![](http://i.giphy.com/p9O75RBS946He.gif)] -->
- < image removed due to social distancing guidelines >
+ .fancy.small[![](img/remo_technigala.png)]
+ <!-- < image removed due to social distancing guidelines > -->
 <br>
 <br>
 
-* format is TBD - likely a hosted streaming+zoom rooms event
+* format is on Remo
 * open to public
 * motivate idea, show in action, discuss challenges
 * user testing
 
 ???
-* Final presentation of project. Open to public.
+* Final presentation of project. Open to public. in the spring we have 450 people attend!
 * Motivate the idea, show it in action, discuss challenges
-* will be in hanover inn ballroom!
 

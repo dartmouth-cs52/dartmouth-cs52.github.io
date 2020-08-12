@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lab5 p1
+title: Lab5
 published: true
 comment_term: lab-redux-blog+server
 ---
@@ -18,12 +18,8 @@ Our server will be a pure api server, returning only JSON format data to our Lab
 
 ## Assignment At a Glance
 
-* Part 1:
   * Intro to Express and Mongo. [SA7](http://cs52.me/assignments/sa/server-side/) got you started with Express.js and Mongo, we'll now use that knowledge to build up an API server.  The difference here is that we won't be returning HTML but rather JSON. Easier! We'll add in the `post` schema, get going with express routes, and get set up for adding in the other stuff.
   * Basic CRUD API: Building from the intro, we'll implement the full create, update, delete api for our blog.
-* Part 2:
-  * Authentication: We'll extend both our frontend and our backend to support authentication and users and more!
-
 
 ## Some Setup
 
@@ -63,7 +59,7 @@ And start up your react+redux blog app.  It'll be broken for now (should display
 
 [Express](https://expressjs.com/) is a web framework for Node.js.  What it does for us is provide a way to listen for and respond to incoming web requests.
 
-Each of the http API requests we were making in Part 1 will need to be provided in this assignment.
+Each of the http API requests we were making will need to be provided in this assignment.
 
 To recap the API has the following endpoints:
 
@@ -117,8 +113,8 @@ mongo
 show dbs
 // will show your current databases
 
-use blog
-// will make blog the current database
+use platform_db
+// will make platform_db the current database name, db in the below refers to this.
 
 db.posts.insert(
    {
@@ -145,6 +141,8 @@ Ok, so now you've played a little bit with mongo directly, let's build something
 ![](img/mongoose.jpg){: .small .fancy }
 
 Don't forget to install  Mongoose! Just repeat the Mongoose section from [SA7](../sa/server-side/#mongoose)
+
+Use `platform_db` instead of `polls` as your database name though!
 
 
 ## Model
@@ -384,6 +382,8 @@ We will need to host this new server component so your blog can use it instead o
 
 🚀 [Same steps as for the short.](../../sa/server-side/#deploy-to-heroku)
 
+Create a new Heroku instance, but you should be able to use the same mongo connection string.  Make sure in your code you use a different database name though. 
+
 ## P1 Complete
 
 Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!  IE. Change your Lab4 `ROOT_URL` to point to your Heroku hosted server instance.  Commit and push your very slightly altered Lab4.
@@ -402,4 +402,4 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 * add commenting to posts (either an array or another model) / change both api and frontend to support this.
 * really at this point you can start modifying your blog to be whatever you want. Add in new fields to your posts.
 * add in search support. Here's an [article](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/) that might help you get started.
-* in part 2 we'll introduce User and Authentication so don't implement those here though.
+* later we'll introduce User and Authentication so don't implement those here though.
