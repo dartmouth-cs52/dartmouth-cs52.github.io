@@ -50,7 +50,7 @@ comment_term: assignments
 <!-- * Lab 4: Redux Platform Frontend -->
 * [Lab 4: Redux Platform Frontend](lab/redux-platform)
 <!-- * Lab 5: Redux Platform + API -->
-* [Lab 5 Part: Redux Platform + API](lab/redux-platform+server)
+* [Lab 5: Redux Platform + API](lab/redux-platform+server)
 
 <!-- ### 4-ish Short in-class quizzes:  10%
 *Concepts and methods from lectures and labs.* -->
