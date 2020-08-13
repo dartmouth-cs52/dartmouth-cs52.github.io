@@ -37,10 +37,7 @@ name: Today
 * QUESTIONS?
 
 
-
----
-name: Platform
-
+<!-- 
 
 * <a href="https://catherineparnell-cs52-lab4.surge.sh/" target="_blank">[pet words]</a>
 * <a href="https://srishti-cs52-reduxplatform.surge.sh/" target="_blank">[ui pills]</a>
@@ -55,7 +52,7 @@ name: Platform
 * <a href="https://manzi-cs52-blog.surge.sh/" target="_blank">[debugging]</a>
 * <a href="https://juliettepouchol-cs52-blog.surge.sh/" target="_blank">[magic gradients]</a>
 * <a href="https://katherinetaylor-cs52-blog.surge.sh./" target="_blank">[wfh life]</a>
-
+ -->
 
 ---
 name: Data Persistence and Sessions

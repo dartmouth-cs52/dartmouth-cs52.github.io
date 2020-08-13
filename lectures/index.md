@@ -80,17 +80,17 @@ fetch(proxyUrl + targetUrl, {
 <!-- * Teams -->
 <!-- * 5/05 Teams -->
 <!-- * [5/05 Teams](12_teams-intro) -->
-* Databases
+<!-- * Databases -->
 <!-- * 5/07 Databases -->
-<!-- * [5/07 Databases](12_intro_to_databases) -->
+* [Databases](12_intro_to_databases)
 <!-- * 5/5 Pitches -->
 <!-- * [5/5 Pitches](11_pitches) -->
-* Sessions & Auth
+<!-- * Sessions & Auth -->
 <!-- * 5/12 Sessions & Auth -->
-<!-- * [5/12 Sessions & Auth](13_sessions_auth) -->
+* [Sessions & Auth](13_sessions_auth)
 <!-- * [5/7 Teams](13_teams) -->
 <!-- * 5/14 Websockets, Image and File storage, ReactNative, TeamTime -->
-<!-- * [5/14 Websockets, Image and File storage, ReactNative, TeamTime](15_ec_shorts) -->
+* [Websockets, Image and File storage, ReactNative](15_ec_shorts)
 <!-- * 5/14 In Class TeamWork Time -->
 <!-- * 5/19 In Class TeamWork Time -->
 <!-- * 5/19 In Class TeamWork Time -->
