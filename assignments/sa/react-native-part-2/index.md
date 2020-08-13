@@ -6,7 +6,6 @@ comment_term: sa-react-native-2
 ---
 
 {% raw %}
-<!-- raw mode to ignore liquid tags that have {{ }} -->
 
 # Advanced React Native
 
@@ -687,3 +686,6 @@ To submit, create a new GitHub repo and push your code up to it. On Canvas, subm
 * https://developers.google.com/youtube/v3/guides/using_resumable_upload_protocol
 * https://docs.expo.io/versions/latest/sdk/imagepicker
 * https://github.com/Vydia/react-native-background-upload
+
+
+{% endraw %}

@@ -33,6 +33,7 @@ comment_term: assignments
 <!-- * [ExtraCredit Short Assignment: ChatBot](sa/slack-bot) -->
 <!-- * ExtraCredit Short Assignment: ReactNative -->
 * [ExtraCredit Short Assignment: ReactNative](sa/react-native)
+* [ExtraCredit Short Assignment: More Advanced ReactNative](sa/react-native-part-2)
 
 
 
