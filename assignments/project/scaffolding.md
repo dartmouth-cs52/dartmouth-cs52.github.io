@@ -72,10 +72,10 @@ Make sure that your github username and email are set correctly so that we can t
 git log
 ```
 
-will show you recent commits and you should check to make sure your email is one that works and is listed as one of your emails in your github settings: https://help.github.com/articles/setting-your-email-in-git/
+will show you recent commits and you should check to make sure your email is one that works and is listed as one of your emails in your github settings: [https://help.github.com/articles/setting-your-email-in-git/](https://help.github.com/articles/setting-your-email-in-git/)
 so that your commits are recognized as belonging to you.  Make sure you have at least 2 commits connected to your github email on this.
 
-🚀 Make sure each team member has made a github pull request to contribute to this as we want to make sure that at this point everybody is comfortable running the starter code and contributing via git.  Remember the map workshop, here's a [reminder about how we used Pull Requests then](https://github.com/dartmouth-cs52-19s/git-map#proper-git-flow).
+🚀 Make sure each team member has made a github pull request to contribute to this as we want to make sure that at this point everybody is comfortable running the starter code and contributing via git.  Remember the map workshop, here's a [reminder about how we used Pull Requests then](https://github.com/dartmouth-cs52-20x/git-map#proper-git-flow).
 
 
 ## To Turn In:
