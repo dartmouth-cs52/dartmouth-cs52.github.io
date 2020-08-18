@@ -115,6 +115,6 @@ node_js:
     🚀 Go to your specific repository settings page: 
     https://travis-ci.com/github/(github-organization-name)/(repository-name)
 
-    ![auto-cancel](imgs/auto-cancel.jpg)
+    ![auto-cancel](img/auto-cancel.jpg)
 
     This will clear up the queue by not having older commits also tested.
