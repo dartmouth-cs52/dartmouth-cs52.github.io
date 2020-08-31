@@ -199,10 +199,13 @@ name: You've Earned It
 name: Scaling
 
 
-.fancy[![](img/datacenter.gif)]
+.medium_small[![](img/code-home.png)]
 
 <br>
-
+* have the tools to scale
+  * heroku, atlas cloud, etc
+* web architecture (client + api server)
+* state and data management (redux, mongo)
 
 ???
 * scaling technically and also in users
@@ -213,117 +216,7 @@ name: Scaling
 * travis, heroku, aws,etc
 * all these tools make it so much easier to do this Stuff
 * used to be you need to get a high speed connection to your house to run a website
-
-
-
-
----
-name: Datacenter Infrastructure
-
-* 1 datacenter:
-  * 15-40 megawatts power
-  * 50,000-200,000 servers
-  * 24/7 staff: 15
-  * $1B construction
-* in world:
-  * 7.2mil
-
-
-???
-* hardware failures alone...
-* power
-* backup
-* network
-* cooling
-* failures
-* some numbers thrown around for cost per search in terms of electricity ends up being between 1cent to 1$ depending on how much of the infrastructure you include. if only google then 1c if you include your computer, all the internet from your computer to google, all the routers used while google crawls pages and then the number goes up.s
-
-
-
----
-name:
-
-
-.medium.fancy[![](img/google211.jpg)]
-
-* 2016, global IP traffic was 1.2 ZB per year or 96 exabytes (one billion gigabytes) per month
-
-???
-
-
-
-
----
-name:
-
-
-.medium.fancy[![](img/stormtrooper.jpg)]
-
-* mining bitcoin between 2.55-7.7 gigawatts (0.5 of total energy market)
-
-
-???
-* between ireland and austria
-* but becoming more efficient 
-* regardless, is it ethical to convert energy directly into wealth?
-* and it just became harder with the recent bitcoin halving
-
-
-
-
----
-name:
-
-
-.fancy[![](img/google-datacenter-tech-05.jpg)]
-
-
-???
-* at google
-* need ear protection
-
-
-
-
----
-name:
-
-
-.fancy[![](img/Google-Datacenter-3.jpg)]
-
-???
-* power and cooling at google
-
-
-
-
----
-name:
-
-
-.medium_small.fancy[![](img/heroku-datacenter.jpg)]
-
-.medium.fancy[![](img/salesforce-datacenter.jpg)]
-
-
-???
-* heroku datacenters
-
-
-
-
-
-
----
-name:
-
-
-.fancy[![](img/inteldoesmat.jpg)]
-
-???
-* liquid dipped
-
-
+* 
 
 
 ---
@@ -568,40 +461,26 @@ class: black-background
 
 
 ???
-I wanted to say a few words about our where we find ourselves. Not sure there are any words to describe or deal with the strange times (regardless of your political affiliation) that we live in: **coronavirus, endemic racism and prejudice, economic and social inequality, environmental issues, extremist views, and the absence of rational and fact based discourse, among many other problems facing our generations.**
+I wanted to say a few words about our where we find ourselves. Not sure there are any words to describe or deal with the strange times (regardless of your political affiliation) that we live in: coronavirus, endemic racism and prejudice, economic and social inequality, environmental issues, extremist views, and the absence of rational and fact based discourse, among many other problems facing our generations.
 
-You may think, **what is my individual role, what is the meaning of spending time on cs52 when the world is going to shit**. as i try to figure these things myself have some thoughts.
+You may think, what is my individual role, what is the meaning of spending time on cs52 when the world is going to shit. as i try to figure these things myself have been having some thoughts.
 
-**Everything you do becomes part of you and helps you grow**, in this course/during these times maybe you learned some code frameworks, maybe how to work better on a team, or how to get along with family, or hate css,  or love react.
+Everything you do becomes part of you and helps you grow, in this course/during these times maybe you learned some code frameworks, maybe how to work better on a team, or how to get along with family, or hate css, or love react.
 
-**However small some of that might feel**, it still helps you along your path, and it doesn't matter what that path is - if you learned you hate styling, that helps you along your path to something else.  if you learned you love server side coding, may that be something you get to do more of.  In my past I wanted to be, an opera singer, a photographer, a graphic designer, a wood carver, a russian teacher, all of that is part of me. and aside from 52, crisis times build us up as well.
+However small some of that might feel, it still helps you along your path, and it doesn't matter what that path is - if you learned you hate styling, that helps you along your path to something else. if you learned you love server side coding, may that be something you get to do more of. In my past I wanted to be, an opera singer, a photographer, a graphic designer, a wood carver, a russian teacher, all of that is part of me. and aside from 52, crisis times build us up as well.
 
-The other thing is that **everything you do, no matter how small it seems has impact**.  every decision you make, creates the world in your image and likeness. it isn't often apparent that we are all part of an interconnected system, not just of human society but of the natural world as well.  what you eat, when you wake up, how you treat your friends and enemies, is all **part of the big data that forms existence** as we know it.   thus what you choose to work on,  the people you keep company with, are all important.  **you are inventing the future with every action**. they don't all have to feel dramatic.
+The other thing is that everything you do, no matter how small it seems has impact. every decision you make, creates the world in your image and likeness. it isn't often apparent that we are all part of an interconnected system, not just of human society but of the natural world as well. what you eat, when you wake up, how you treat your friends and enemies, is all part of the big data that forms existence as we know it. thus what you choose to work on, the people you keep company with, are all important. you are inventing the future with every action you take. and they don't all have to feel dramatic at all to still be meaningful.
 
-this is turning into some sappy graduation speech.  mostly I just want to say that as we **stumble through history, from the individual breaths we take, to our achievements in affordable space flight, to battling for justice and a better world,  your actions matter and you matter**. 
+this is turning into some sappy graduation speech. mostly I just want to say that as we stumble through history, from the individual breaths we take, to our achievements in affordable space flight, to battling for justice and a better world, your actions matter and you matter.  i haven't gotten to know you as well as would like to - so stay in touch - you'll always be in the slack team.
 
-one last thought,  i had an argument with a couple of friends about politics.  not specific politics but basically of letting ones politics be known as a teacher.  one side of the argument, from theater prof at middlebury was saying that politics is a huge part of theater and that he feels comfortable talking about his politics with his students. the other, his brother, was saying that all politics should stay out of academia, to let students come up with their own beliefs.   
+one last thought, last term i had an argument with a couple of friends about politics. not specific politics but basically of letting ones politics be known as a teacher. one side of the argument, from theater prof at middlebury was saying that politics is a huge part of theater and that he feels comfortable talking about his politics with his students. the other, his brother, was disagreeing saying that all politics should stay out of academia, to let students come up with their own beliefs.
 
-there's a lot to unpack there.  my thought is that we are all people, and that it is ok for students to get to know you as a person, complete with whatever beliefs you might have. regardless, i'm not about to start espousing politics now  
+there's a lot to unpack there. my thought is that we are all people, and that it is ok for students to get to know you as a person, complete with whatever beliefs you might have. regardless, i'm not about to start talking politics now
 
-however i think there is a deeper issue here, **politics in general is often a bad word**.  but all it should mean is **how our society is organized**, and we **shouldn't be afraid to talk about issues** of how we want our cities and countries to be organized.  just like everything you do has meaning, **everything is also a political act**.  from buying groceries and going to work, to paying taxes and registering your car. and back to class context: **the tech world is now the forefront of politics**, so you can't get away from it.   see dorseys fight with zuckerberg - it isn't really about trump at all, it is those two tech companies taking different ethical stances. **defining what freedom of speech means, what facts mean, and what civil society means.**  fascinating, and worth thinking about and engaging with. so as a political actor regardless of whether you want to or not, you choose the world when you peruse a social media platform just as much as when you engage in local politics to elect a sherrif. both are things to think about.
+however i think there is a deeper issue here, politics in general is often dismissed as something like a bad word. but all it should mean is how our society is organized, and we shouldn't be afraid to talk about issues of how we want our cities and countries to be organized. just like everything you do has meaning, everything is also a political act. from buying groceries and going to work, to paying taxes and registering your car. 
+and back to class context: the tech world is now the forefront of politics, so you can't get away from it. see dorseys fight with zuckerberg, or the tiktok ban- it isn't really about trump at all, it is those tech companies taking different ethical stances. defining what freedom of speech means, what facts mean, and what civil society means. fascinating, and worth thinking about and engaging with. so as a political actor regardless of whether you want to or not, you choose the world when you peruse a social media platform just as much as when you engage in local politics to elect a sheriff. both are things to think about.
 
-anyway, thats that.  **mostly just wanted to say,  we have challenges, and we may feel powerless, but have courage, ask questions, be engaged, and create the world you want to live in with every action and with your cs52 skills.** 
-
-
-
----
-name: Technigala
-
-.small.fancy[![](img/Technigala-20S.jpg)]
-<!-- .small.fancy[![](img/afterparty.png)] -->
-
-???
-* tuesday june 9th 6-8pm in Hanover BallRoom
-* 2 TA's per team will walk around and will want to see demos :-)
-* give them a quick 30 second pitch, then let them try out your stuff
-* i'll be there too, but have to see 98 projects as well, so i may not get to your demo - but don't worry i'll be trying out each and every project meticulously for the final submission
-* rest of today just works
+anyway, thats that. mostly just wanted to say, we have challenges, and we may feel powerless, but have courage, ask questions, be engaged, and create the world you want to live in with every action and with your cs52 skills.
 
 
 ---
