@@ -64,11 +64,11 @@ Each of the http API requests we were making will need to be provided in this as
 To recap the API has the following endpoints:
 
 * GET  `/api/posts/`
-  returns only title and tags for all posts
-  `[[{"id":"",title":"","tags":""},...]`
-* POST `/api/posts/` with post parameters `{'title', 'tags', 'content'}`
+  returns only title, tags, and coverUrl for all posts
+  `[[{"id":"",title":"","tags":"", "coverUrl": ""},...]`
+* POST `/api/posts/` with post parameters `{'title', 'tags', 'content', 'coverUrl'}`
   creates a new post
-* PUT `/api/posts/:postID` with parameters `{'title', 'tags', 'content'}`
+* PUT `/api/posts/:postID` with parameters `{'title', 'tags', 'content', 'coverUrl'}`
   will update an entry
 * GET `/api/posts/:postID`
   returns the post found at `postID`
