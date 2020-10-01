@@ -1,6 +1,6 @@
 # dartmouth-cs52.github.io
 
-Source for the website for Dartmouth CS52.  Updated periodically.  Now includes slides and notes. Contribute at your leisure.
+Source for the website for Dartmouth CS52.  Updated periodically.  Now includes slides and notes. Contribute in your leisure time.
 
 **NOTE:** assignments tend to change without notice, so if you are taking the class please refer to canvas / the published site at [cs52.me](http://cs52.me).
 
