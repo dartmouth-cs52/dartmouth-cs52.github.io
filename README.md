@@ -70,3 +70,8 @@ Resources:
 ### Comments Powered by [utteranc.es](https://utteranc.es/)
 
 See [github issues](https://github.com/dali-lab/build/issues) to moderate. All comments are stored in github as comments on issues. Issues are named by the page titles - so make sure they are unique.
+
+
+ ## developer details to contribute in this project
+  github username 
+  about yourself
