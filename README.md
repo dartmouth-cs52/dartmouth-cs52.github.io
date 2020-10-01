@@ -45,7 +45,7 @@ uses [remarkjs](https://github.com/gnab/remark) for building slides - if you use
 
 # Introduction
 
-this is an intro
+This is an intro.
 
 ---
 </div>
