@@ -1,4 +1,5 @@
 # dartmouth-cs52.github.io
+A Perfect website
 
 Source for the website for Dartmouth CS52.  Updated periodically.  Now includes slides and notes. Contribute at your leisure.
 
