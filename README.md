@@ -8,7 +8,7 @@ Source for the website for Dartmouth CS52.  Updated periodically.  Now includes 
 
 Built with: [Jekyll](https://jekyllrb.com/), [GitHub Pages](https://pages.github.com/), and [Remarkjs](https://github.com/gnab/remark)
 
-### Local installation
+### Local installation Giude
 
 `gem install bundle`
 
@@ -22,7 +22,7 @@ or
 
 
 
-### Slide Integration
+### Slide Integration Guide
 
 uses [remarkjs](https://github.com/gnab/remark) for building slides - if you use the
 
