@@ -31,25 +31,19 @@ uses [remarkjs](https://github.com/gnab/remark) for building slides - if you use
 ```
 <div class="slide" markdown="0">
 
-# Title
+<font size="4">Title</font>
 
----
+<br>
 
-# Agenda
-
-1. Introduction
-2. Deep-dive
-3. ...
-
----
-
-# Introduction
-
-this is an intro
-
----
+<font size="4">Agenda</font>
+<br>
+<br>
+<ol>
+<li>Introduction</li>
+<li>Deep-dive</li>
+<li>Introduction this is an intro</li>
+</ol>
 </div>
-```
 
 By default the slide content will also be shown in converted markdown on the page.  If you prefer to have slide only content add a `hidden` class.
 
