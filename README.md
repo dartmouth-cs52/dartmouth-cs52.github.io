@@ -8,17 +8,17 @@ Source for the website for Dartmouth CS52.  Updated periodically.  Now includes 
 
 Built with: [Jekyll](https://jekyllrb.com/), [GitHub Pages](https://pages.github.com/), and [Remarkjs](https://github.com/gnab/remark)
 
-### Local installation
+### Local Installation
 
-`gem install bundle`
+`Gem Install Bundle`
 
-`bundle install`
+`Bundle Install`
 
-`bundle exec jekyll serve`
+`Bundle Exec Jekyll Serve`
 
 or
 
-`bundle exec jekyll liveserve` for live reloading
+`Bundle Exec Jekyll Liveserve` for live reloading
 
 
 
