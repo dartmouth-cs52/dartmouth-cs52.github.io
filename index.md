@@ -26,6 +26,13 @@ Prerequisites: CS10 or permission of [instructor](mailto:tim@cs.dartmouth.edu)
 Here's a silly video of me introducing the class (wait for it):
 <iframe scrolling='no' frameborder='0' style='width: 800px; height: 525px; border:0;' src='https://dartmouth.techsmithrelay.com/connector/embed/index/tqVy' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
+
+## Waitlist:
+
+If you are interested in this course and are worried about getting in, there is a waitlist. This waitlist is 100% FIFO, 50% of the class gets in via Registrar course selection and up to an additional 50% through this waitlist afterwards. Getting on this waitlist does not guarantee a spot. This class is interactive and projects based so we are only able to scale it so far while retaining flexible projects and individualized attention. Regardless of waitlist status, please register for the course as you normally would during course selection, as the waitlist only kicks in after that.
+
+📋 [Join the Waitlist](waitlist/)
+
 ## Coursework:
 
 Will be challenging and rewarding.
@@ -36,11 +43,11 @@ See [assignments](/assignments).
 
 ### Class:
 
-<!-- * 2A Classes will meet Tuesday and Thursday (2:25-4:15pm).<br> -->
-* 2A Classes will meet via Zoom Tuesday and Thursday (2:25-4:15pm). Zoom recordings will be available for those with timezone differences.<br>
-* X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and some Workshops. Only class sessions will be recorded, see [logistics for recording consent information](http://localhost:4000/logistics/#video-recording). <br>
+* Class Time TBD.<br>
+<!-- * 2A Classes will meet via Zoom Tuesday and Thursday (2:25-4:15pm). Zoom recordings will be available for those with timezone differences.<br> -->
+<!-- * X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and some Workshops. Only class sessions will be recorded, see [logistics for recording consent information](http://localhost:4000/logistics/#video-recording). <br> -->
 <!-- * Location: LSC 200 -->
-* Location: ZOOM permalink on canvas.
+<!-- * Location: ZOOM permalink on canvas. -->
 
 
 ![](assets/imgs/zoom.gif){: .fancy .small}
@@ -49,8 +56,8 @@ See [assignments](/assignments).
 
 * We'll be using [Slack](https://cs52-dartmouth.slack.com) for course communication. Find us there!
 
-* Open Help Hours via Zoom/Remo: <br>
-  Most 2A periods and Fridays 1-3pm. 
+<!-- * Open Help Hours via Zoom/Remo: <br> -->
+  <!-- Most 2A periods and Fridays 1-3pm.  -->
   <!-- Mon 4-6pm: Sudikoff 213<br>
   Mon 8-10pm: Carson 61<br> -->
   <!-- Weds 4:35-5:25 (when there is no official x-hour): LSC 200<br> -->
@@ -58,7 +65,8 @@ See [assignments](/assignments).
   Sun 6-9 pm: Carson 61<br> -->
 
 * Instructor:<br>
-  Fri 2:30pm-4pm or by appointment, (zoom link on slack)
+  TBD and by appointment
+  <!-- Fri 2:30pm-4pm or by appointment, (zoom link on slack) -->
   <!-- Fri 11am-1pm; or by appointment in Sudikoff 219/007 -->
 
 <table>
@@ -75,7 +83,8 @@ See [assignments](/assignments).
   </tr>
 </table>
 
-* TAs, Graders, Webdev experts: <a href="https://www.notion.so/cs52/877dd17791a94bc38f930884a068ab73?v=f655aefd18424e0291ff0960fb724696" target="_blank">course staff roster.</a>
+<!-- TODO: LINK TAS! -->
+<!-- * TAs, Graders, Webdev experts: <a href="https://www.notion.so/cs52/877dd17791a94bc38f930884a068ab73?v=f655aefd18424e0291ff0960fb724696" target="_blank">course staff roster.</a> -->
 
 <br>
 
@@ -95,7 +104,7 @@ See [logistics](/logistics)
 
 ## The Archives 
 
-Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/), [19s](https://dartmouth-cs52-19s.github.io/), [20s](https://dartmouth-cs52-20s.github.io/)
+Prior archived versions of this course website are available: [16x](https://dartmouth-cs52-16x.github.io/), [17s](https://dartmouth-cs52-17s.github.io/), [18s](https://dartmouth-cs52-18s.github.io/), [19s](https://dartmouth-cs52-19s.github.io/), [20s](https://dartmouth-cs52-20s.github.io/), [20x](https://dartmouth-cs52-20x.github.io/)
 
 Also check out [previous projects](assignments/project).
 
