@@ -65,7 +65,7 @@ See [assignments](/assignments).
   Sun 6-9 pm: Carson 61<br> -->
 
 * Instructor:<br>
-  TBD and by appointment
+  TBD and by [appointment](https://woven.com/c/timofei16/meet-with-me)
   <!-- Fri 2:30pm-4pm or by appointment, (zoom link on slack) -->
   <!-- Fri 11am-1pm; or by appointment in Sudikoff 219/007 -->
 
