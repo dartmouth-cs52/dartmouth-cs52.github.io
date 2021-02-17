@@ -35,62 +35,48 @@ fetch(proxyUrl + targetUrl, {
  
 </script> -->
 
-<!-- * 3/31 Welcome -->
-* [6/25 Welcome](00_welcome/)
-<!-- * Structure of the Internet -->
-<!-- * 3/31 Structure of the Internet -->
-* [Structure of the Internet](01_interwebs/)
-<!-- * HTML -->
-<!-- * 4/1 HTML -->
-* [HTML](02_html/)
-<!-- * CSS -->
-<!-- * 4/2 CSS -->
-* [CSS](03_css/)
-<!-- * JS and DOM -->
-<!-- * 4/7 JS and DOM -->
-* [JS and DOM](04_js1)
-<!-- * JS P2 -->
-<!-- * 4/9 JS P2 -->
-* [JS P2](05_js2)
-<!-- * Some Design Things -->
-<!-- * 4/8 Some Design Things -->
-* [Some Design Things](03_design/)
-<!-- * Git -->
-<!-- * 4/8 Git -->
-* [Git](02_git/)
-<!-- * Frameworks Intro -->
-<!-- * 4/14 Frameworks Intro -->
-* [Frameworks Intro](06_react1)
-<!-- * React -->
-<!-- * 4/16 React -->
-* [React](07_react2)
+* Welcome
+<!-- * [6/25 Welcome](00_welcome/) -->
+* Structure of the Internet
+<!-- * [Structure of the Internet](01_interwebs/) -->
+* HTML
+<!-- * [HTML](02_html/) -->
+* CSS
+<!-- * [CSS](03_css/) -->
+* Intro JS and DOM
+<!-- * [JS and DOM](04_js1) -->
+* More JS
+<!-- * [JS P2](05_js2) -->
+* Some Design Things
+<!-- * [Some Design Things](03_design/) -->
+* Git
+<!-- * [Git](02_git/) -->
+* Frameworks Intro
+<!-- * [Frameworks Intro](06_react1) -->
+* React
+<!-- * [React](07_react2) -->
 <!-- * HUH 4/22 Project Intro -->
 <!-- * HUH [4/24 Projects](07_project_intro) -->
-<!-- * Asynch JS -->
-<!-- * 4/21 Asynch JS -->
-* [Asynch JS](08_asynch_js)
-<!-- * Routing and Project Intro -->
-<!-- * 4/23 Routing and Project Intro -->
-* [Routing](09_routing)
-<!-- * [4/23 Routing and Project Intro](09_routing) -->
-<!-- * Redux -->
-<!-- * 4/28 Redux -->
-* [Projects Intro](../assignments/project/#1)
-* [Redux](10_redux)
+* Asynch JS
+<!-- * [Asynch JS](08_asynch_js) -->
+* Routing
+<!-- * [Routing](09_routing) -->
+* Redux
+<!-- * [Redux](10_redux) -->
+* Project Intro
+<!-- * [Projects Intro](../assignments/project/#1) -->
 <!-- * Teams -->
 <!-- * 5/05 Teams -->
 <!-- * [5/05 Teams](12_teams-intro) -->
-<!-- * Databases -->
-<!-- * 5/07 Databases -->
-* [Databases](12_intro_to_databases)
+* Databases
+<!-- * [Databases](12_intro_to_databases) -->
 <!-- * 5/5 Pitches -->
 <!-- * [5/5 Pitches](11_pitches) -->
-<!-- * Sessions & Auth -->
-<!-- * 5/12 Sessions & Auth -->
-* [Sessions & Auth](13_sessions_auth)
+* Sessions & Auth
+<!-- * [Sessions & Auth](13_sessions_auth) -->
 <!-- * [5/7 Teams](13_teams) -->
-<!-- * 5/14 Websockets, Image and File storage, ReactNative, TeamTime -->
-* [Websockets, Image and File storage, ReactNative](15_ec_shorts)
+* Websockets, Image and File storage, ReactNative
+<!-- * [Websockets, Image and File storage, ReactNative](15_ec_shorts) -->
 <!-- * 5/14 In Class TeamWork Time -->
 <!-- * 5/19 In Class TeamWork Time -->
 <!-- * 5/19 In Class TeamWork Time -->
