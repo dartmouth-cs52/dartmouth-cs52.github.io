@@ -109,11 +109,14 @@ In the event that you are directly or indirectly impacted by COVID-19 in such a 
 
 From the Dean of the Faculty to students regarding recording of class sessions:
 
-### Consent to recording of course and group office hours 
-a) I affirm my understanding that this course and any associated group meetings involving students and the instructor, including but not limited to scheduled and ad hoc office hours and other consultations, may be recorded within any digital platform used to offer remote instruction for this course; 
-<br>b) I further affirm that the instructor owns the copyright to their instructional materials, of which these recordings constitute a part, and distribution of any of these recordings in whole or in part without prior written consent of the instructor may be subject to discipline by Dartmouth up to and including expulsion;
-<br>c) I authorize Dartmouth and anyone acting on behalf of Dartmouth to record my participation and appearance in any medium, and to use my name, likeness, and voice in connection with such recording; and 
-<br>d) I authorize Dartmouth and anyone acting on behalf of Dartmouth to use, reproduce, or distribute such recording without restrictions or limitation for any educational purpose deemed appropriate by Dartmouth and anyone acting on behalf of Dartmouth.
+### 1. Consent to recording of course and group office hours 
+By enrolling in this course,
+<br>a) I affirm my understanding that the instructor may record meetings of this course and any associated meetings open to multiple students and the instructor, including but not limited to scheduled and ad hoc office hours and other consultations, within any digital platform, including those used to offer remote instruction for this course.
+<br>b) I further affirm that the instructor owns the copyright to their instructional materials, of which these recordings constitute a part, and my distribution of any of these recordings in whole or in part to any person or entity other than other members of the class without prior written consent of the instructor may be subject to discipline by Dartmouth up to and including separation from Dartmouth.
+
+### 2. Requirement of consent to one-on-one recordings
+By enrolling in this course, I hereby affirm that I will not make a recording in any medium of any one-on-one meeting with the instructor or another member of the class or group of members of the class without obtaining the prior written consent of all those participating, and I understand that if I violate this prohibition, I will be subject to discipline by Dartmouth up to and including separation from Dartmouth, as well as any other civil or criminal penalties under applicable law. I understand that an exception to this consent applies to accommodations approved by SAS for a student’s disability, and that one or more students in a class may record class lectures, discussions, lab sessions, and review sessions and take pictures of essential information, and/or be provided class notes for personal study use only.<br>
+If you have questions, please contact the Office of the Dean of the Faculty of Arts and Sciences.
 
 ###  Requirement of consent to one-on-one recordings 
 By enrolling in this course, I hereby affirm that I will not under any circumstance make a recording in any medium of any one-on-one meeting with the instructor without obtaining the prior written consent of all those participating, and I understand that if I violate this prohibition, I will be subject to discipline by Dartmouth up to and including expulsion, as well as any other civil or criminal penalties under applicable law.
