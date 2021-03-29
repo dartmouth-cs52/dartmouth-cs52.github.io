@@ -96,7 +96,9 @@ and lets register you a domain!
 
 🚀 go to [github.com](http://github.com) if you don't have an account, set one up! Use your .edu account and get the [GitHub Student Developer Pack](https://education.github.com/pack)
 
-🚀 create a new repo for your domain, name it with *your* domain name.
+🚀 create a new repo for your domain, name it with *your* domain name. 
+
+*Note: Keep this in your own personal github — later we'll use repos under the course organization but for this one your own is fine.*
 
 ![](img//create_repo.png){: .fancy .small }
 
@@ -209,6 +211,8 @@ To git@github.com:dartmouth-cs52/cs52.me.git
 ### Default GitHub Pages Hosting
 
 By default GitHub Pages, when it sees a branch named `gh-pages`, will publish it at `http://<github username>.github.io/<repository name>`.
+
+*You can also go into settings and turn on github-pages for a differently named branch.*
 
 You can make sure of this by going to Settings for your repository.
 
