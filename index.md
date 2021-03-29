@@ -43,8 +43,9 @@ See [assignments](/assignments).
 
 ### Class:
 
-* Class Time TBD.<br>
+<!-- * Class Time TBD.<br> -->
 <!-- * 2A Classes will meet via Zoom Tuesday and Thursday (2:25-4:15pm). Zoom recordings will be available for those with timezone differences.<br> -->
+* Classes will meet via Zoom MWF 2:35-3:40. Zoom recordings will be available for those with timezone differences.<br>
 <!-- * X-hours are 4:35-5:25pm on Wednesday and will be used as TA/Lab hours and some Workshops. Only class sessions will be recorded, see [logistics for recording consent information](http://localhost:4000/logistics/#video-recording). <br> -->
 <!-- * Location: LSC 200 -->
 <!-- * Location: ZOOM permalink on canvas. -->
@@ -55,7 +56,7 @@ See [assignments](/assignments).
 ### Office Hours and Contact:
 
 * We'll be using [Slack](https://cs52-dartmouth.slack.com) for course communication. Find us there!
-
+* See [Notion](/notion) for office hours information. 
 <!-- * Open Help Hours via Zoom/Remo: <br> -->
   <!-- Most 2A periods and Fridays 1-3pm.  -->
   <!-- Mon 4-6pm: Sudikoff 213<br>
@@ -95,8 +96,6 @@ Half of each class will be hands-on demonstrations, code and project discussions
 Will be hands-on and interactive. See [lectures](/lectures).
 
 Unfortunately due to the projects based nature of the class, auditing the class will not be permitted. All class slides, notes, and assignments will be posted here online though!
-
-<!-- Additionally [DALI Lab Open Lab Nights](http://dali.dartmouth.edu/news-posts/dali-open-lab-hours) are a good time to get help with webdev from myself and DALI mentors. -->
 
 ## Logistics:
 
