@@ -6,7 +6,7 @@ comment_term: lectures
 ---
 
 
-*posted prior to class*{: .warning}
+*posted after class*{: .warning}
 
 <!-- 
 <iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="https://www.notion.so/brunchlabs/546f410dbf0e44f1a5d9f8d8870acc27?v=b8bc3ee253a6459386e758a316e29dd2" frameborder="0" allowfullscreen></iframe> 
