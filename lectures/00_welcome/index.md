@@ -5,6 +5,4 @@ published: true
 comment_term: lecture-welcome
 ---
 
-
-
-{% include slides-toggle.html %}
+<iframe src="https://brunchlabs.slides.com/timtregubov/cs52-welcome/embed?token=ckWbiJyU" width="1024" height="768" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
