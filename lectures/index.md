@@ -36,6 +36,8 @@ fetch(proxyUrl + targetUrl, {
 </script> -->
 
 * Welcome
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b5636c10-8712-4826-8a76-acfa016e4ff6)
+  * [notes](https://brunchlabs.slides.com/timtregubov/cs52-welcome/fullscreen?token=9DkmcSmV)
 <!-- * [6/25 Welcome](00_welcome/) -->
 * Structure of the Internet
 <!-- * [Structure of the Internet](01_interwebs/) -->
