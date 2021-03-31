@@ -15,20 +15,19 @@ A landing page you say?  Yes, you will be making a landing page based on an real
 
 * Become comfortable with [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
 * Be able to mimic structure and style of pages
-* Focus on refining html/css skills
-* Build a beautiful static landing page.
+* Focus on HTML/CSS foundations
+* Build a beautiful static landing page
 
 ## Getting Started
 
 
-🚀 Please use the github classroom link provided in the Canvas assignment to create the repo automatically.  This will create a github repository for you under the dartmouth-cs25-20s github organization and give us and ta's access to it.  Please use this repo for this assignment!
+🚀 Please use the github classroom link provided in the Canvas assignment to create the repo automatically.  This will create a github repository for you under the cs52 github organization and give course staff access to it.  Please use the generated repo for this assignment!
 
 ![accept the assignment](img/accept.jpg){: .small}
 
-
 🚀 We'll be choosing a landing page website to flatter. And by flatter I mean rip-off. But by rip-off, I mean reconstruct a clean version using our own content.  You'll be looking at some webpages, and then inspecting them and seeing how much of the look and feel you can copy onto your own page. 
 
-Here, I chose slack.com (it no longer looks like this and is now surprisingly even uglier, so don't choose that one). 
+Here, I chose slack.com (it no longer looks like this). 
 
 ![](img/slack-desktop0.jpg){: .fancy .medium_small}
 
@@ -45,27 +44,27 @@ You **should choose another landing page to base your page off of**, as long as 
 * a footer with links that are responsive (change from side by side to vertical in smaller sizes)
 
 Some examples (in approx order of difficulty, from easier to harder):
-* [flourbakery.com](https://flourbakery.com/)
-* [github.com](https://github.com/) *(incognito mode)*
-* [starbucks.com](https://www.starbucks.com/) *(add a fullwidth image)*
-* [otherland.com/](https://www.otherland.com/)
-* [stripe.com](https://stripe.com/)
-* [daily-harvest.com/](https://www.daily-harvest.com/)
-* [collegepulse](https://collegepulse.com/) *(words changing using css animations, EC)* [freckle.com/](https://www.freckle.com/)
-* [cooking.nytimes.com/]*(https://cooking.nytimes.com/)
-<!-- * [tesla.com](https://www.tesla.com) -->
+* [flourbakery.com](https://flourbakery.com)
+* [github.com](https://github.com) *(incognito mode)*
+* [starbucks.com](https://www.starbucks.com) *(add a fullwidth image)*
+* [otherland.com/](https://www.otherland.com)
+* [stripe.com](https://stripe.com)
+* [tempo.fit](https://tempo.fit)
+* [daily-harvest.com/](https://www.daily-harvest.com)
+* [collegepulse](https://collegepulse.com) *(words changing using css animations, EC)*
+* [freckle.com](https://www.freckle.com)
+* [cooking.nytimes.com](https://cooking.nytimes.com)
 * [figma.com](https://www.figma.com) *(moving pointers on media size css animations are pretty sweet, EC)*
 * [mixpanel.com](https://mixpanel.com)
 * [wistia.com](http://wistia.com)
-* [losangelesapparel.net/](https://losangelesapparel.net/)
-* [https://www.superdown.com/](https://www.superdown.com/)
-* [lujoliving.com/](https://www.lujoliving.com/)
-* [notion.so](https://www.notion.so/)
-* [simpleanalytics.io](https://simpleanalytics.io/) *(can you do the typewriter effect using css animations? EC)*
-* [monday.com/](https://monday.com/)
+* [losangelesapparel.net](https://losangelesapparel.net)
+* [www.superdown.com](https://www.superdown.com)
+* [lujoliving.com/](https://www.lujoliving.com)
+* [notion.so](https://www.notion.so)
+* [simpleanalytics.io](https://simpleanalytics.io) *(can you do the typewriter effect using css animations? EC)*
+* [monday.com](https://monday.com)
 * [patagonia.com](http://patagonia.com) *(with [carousel in pure css](https://codeburst.io/how-to-pure-css-carousel-ce1a8cb231c8) challenge)*
-* [patagonia.com](http://patagonia.com) *(with [carousel in pure css](https://codeburst.io/how-to-pure-css-carousel-ce1a8cb231c8) challenge)*
-* [strangeworks.com/](https://strangeworks.com/) *(some scrolling effects can't be done with css)*
+* [strangeworks.com/](https://strangeworks.com) *(some scrolling effects can't be done with css)*
 
 You can also browse for inspiration here: [landingfolio.com](https://www.landingfolio.com/).  You can also choose multiple pages to pick and choose things from. 
 
@@ -110,7 +109,7 @@ Links to nowhere.
 
 🚀Open up your code editor and create an `index.html` and a `style.css` file.  
 
-🚀Link your `style.css` file into the head of your html file.
+🚀Link your `style.css` file into the head of your html file. (but no CSS allowed for the first part)
 
 
 ### Outline
@@ -272,7 +271,7 @@ Here's what it could look like:
 
 ## And You Are Done!
 
-You should host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically, or in `Settings` you can choose to use the `master` branch for gh-pages (even easier). You do not need a custom domain for this! We'll just use the autogenerated ghpages one that shows up in your settings tab - something like: `https://dartmouth-cs52-18ss.github.io/lab1-yourusername.`  Please **do not overwrite** your domain from SA1. Another cool static page hosting platform is [surge.sh](http://surge.sh).  Easy to set up, and you are welcome to do that instead if you prefer.
+You can host this on github pages as you have in the past with the `gh-pages` branch.  Just make that the name of your main branch and it'll set it up automatically, or in `Settings` you can choose to use the `main` branch for gh-pages (even easier). You do not need a custom domain for this! We'll just use the autogenerated ghpages one that shows up in your settings tab - something like: `https://dartmouth-cs52-21s.github.io/lab1-yourusername.`  Please **do not overwrite** your domain from SA1. Another cool static page hosting platform is [netlify](http://netlify.com).  Easy to set up, and you are welcome to do that instead if you prefer, and we'll move to netlify later in the term anyway!
 
 
 ## To Turn In (canvas):
