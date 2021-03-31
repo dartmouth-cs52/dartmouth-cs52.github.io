@@ -42,6 +42,7 @@ fetch(proxyUrl + targetUrl, {
 * Structure of the Internet
 <!-- * [Structure of the Internet](01_interwebs/) -->
 * HTML
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=87374a71-d945-4c80-89a2-acfc01767237)
   * [notes](02_html/)
 * CSS
 <!-- * [CSS](03_css/) -->
