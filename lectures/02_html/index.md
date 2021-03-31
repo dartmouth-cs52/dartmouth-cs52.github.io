@@ -5,5 +5,4 @@ published: true
 comment_term: lecture-html
 ---
 
-
-{% include slides-toggle.html %}
+Coming Soon

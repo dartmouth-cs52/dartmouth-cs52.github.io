@@ -42,7 +42,7 @@ fetch(proxyUrl + targetUrl, {
 * Structure of the Internet
 <!-- * [Structure of the Internet](01_interwebs/) -->
 * HTML
-<!-- * [HTML](02_html/) -->
+  * [notes](02_html/)
 * CSS
 <!-- * [CSS](03_css/) -->
 * Intro JS and DOM
