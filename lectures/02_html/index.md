@@ -5,4 +5,7 @@ published: true
 comment_term: lecture-html
 ---
 
-Coming Soon
+
+
+
+<iframe src="https://brunchlabs.slides.com/timtregubov/cs52-html/embed?token=w8XLxNkX&style=light" width="1024" height="768" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
