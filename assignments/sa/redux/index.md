@@ -404,9 +404,9 @@ Navigate to your repository on the command line and pull in the updates you've j
 
 ``` bash
 cd sa4-YOUR_USERNAME
-git pull origin master #just in case
+git pull origin main #just in case
 git checkout -b redux-sa #create a new branch redux-sa
-git pull starter master  #pull in your updated starter code!
+git pull starter main  #pull in your updated starter code!
 ```
 Hopefully, you should only have major conflicts in your `src/index.js` file. Let's handle them now!
 
@@ -788,7 +788,7 @@ Play with the *slider* and note how you can export and import state. Imagine how
 
 ## Release it!
 
-Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into master! Deploy it somewhere on surge and include the deployed url in your submission.
+Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into main! Deploy it somewhere on surge and include the deployed url in your submission.
 
 # To Turn In (Canvas)
 
@@ -807,4 +807,4 @@ Commit and push your changes to your new redux branch of SA4 `git push origin re
 * [Learning resources](https://redux.js.org/introduction/learning-resources)
 * [css-tricks.com/learning-react-redux/](https://css-tricks.com/learning-react-redux/)
 * [Redux integration with React Router](https://reacttraining.com/react-router/web/guides/redux-integration)
-* [React Router Redux Docs](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux)
+<!-- * [React Router Redux Docs](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux) -->

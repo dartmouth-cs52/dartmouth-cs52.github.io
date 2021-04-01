@@ -136,7 +136,7 @@ Ok now your Bot knows how to say hi.  But let's make it do some useful stuff!
 
 The rest of this assignment is more hands-off. We'll provide some direction and resources but you'll be looking up API docs and adding more cool stuff to your bot.
 
-So far we've been using Botkit.  [Botkit](https://github.com/howdyai/botkit) has support for more complex [conversations](https://github.com/howdyai/botkit/blob/master/examples/convo_bot.js). This might come in handy.
+<!-- So far we've been using Botkit.  [Botkit](https://github.com/howdyai/botkit) has support for more complex [conversations](https://github.com/howdyai/botkit/blob/master/examples/convo_bot.js). This might come in handy. -->
 
 
 The Botkit library provides us with a convenient wrapper around Slack's API. Our bot connects to Slack's RTM API and opens a WebSocket connection with Slack. *If you set `debug=true` in the botkit initialization you can see how it polls the Slack servers.*
@@ -144,7 +144,7 @@ The Botkit library provides us with a convenient wrapper around Slack's API. Our
 ### Events
 The Slack server issues **events** that are then consumed by clients. These are things like [messages](https://api.slack.com/events/message) and [team join](https://api.slack.com/events/team_join) events. Botkit can hook up to any of Slack's events.  `.hears` is a fancier way of listening to message events.   
 
-🚀Botkit [slack event integration](https://github.com/howdyai/botkit/blob/master/docs/slack-events-api.md).
+<!-- 🚀Botkit [slack event integration](https://github.com/howdyai/botkit/blob/master/docs/slack-events-api.md). -->
 
 For instance:
 

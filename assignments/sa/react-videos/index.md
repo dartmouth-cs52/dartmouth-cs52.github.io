@@ -21,12 +21,12 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 ```bash
 #make sure you are in your project directory
 git remote add starter git@github.com:dartmouth-cs52-20s/starterpack-your-gitub-username.git
-git pull starter master
+git pull starter main
 ```
 
 What just happened?  You merged in the git tree from another repo (the remote we named starter) into your own! Hopefully you'll build on your starter repo and use it for lots of projects.
 
-⚠️ *If you get an error about unrelated histories, that is ok, do `git pull starter master --allow-unrelated-histories`. And if it complains about un-merged files but there aren't any conflicts you may need to:  `git add` those files and then `git commit`.*
+⚠️ *If you get an error about unrelated histories, that is ok, do `git pull starter main --allow-unrelated-histories`. And if it complains about un-merged files but there aren't any conflicts you may need to:  `git add` those files and then `git commit`.*
 
 ## Setup
 
@@ -150,7 +150,7 @@ At this point you will want to push these changes to your starter pack!  This wi
 🚀 Git `add`, `commit` and:
 
 ```bash
-git push starter master
+git push starter main
 ```
 
 Since we added your starterpack repo as a remote named `starter` you can push to it even though after this point we'll diverge.
