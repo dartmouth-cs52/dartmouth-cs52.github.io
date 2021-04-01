@@ -151,7 +151,7 @@ Note: to quit the python server type: ctrl+c
 
 ```bash
 💻 git status  #check and see what the story is
-On branch master
+On branch main
 
 Initial commit
 
@@ -163,7 +163,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 💻 git add index.html  #lets track index.html
 💻 git status  #check again -- I'm OCD with this
-On branch master
+On branch main
 
 Initial commit
 
@@ -173,7 +173,7 @@ Changes to be committed:
   new file:   index.html
 
 💻 git commit -am "its hideous"   #please make yours prettier 😃
-[master (root-commit) 93a5c69] its hideous
+[main (root-commit) 93a5c69] its hideous
  1 file changed, 10 insertions(+)
  create mode 100644 index.html
 ```
@@ -187,8 +187,8 @@ So lets rename our branch!
 
 ```bash
 💻 git branch
- * master
-💻 git branch -m master gh-pages
+ * main
+💻 git branch -m main gh-pages
 💻 git branch
  * gh-pages
 ```
