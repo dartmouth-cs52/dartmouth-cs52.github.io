@@ -46,7 +46,8 @@ fetch(proxyUrl + targetUrl, {
   * [notes](02_html/)
 * CSS
   <!-- * [video]() -->
-  <!-- * [notes](03_css/) -->
+  * rerecording and will post soon
+  * [notes](03_css/)
 * Intro JS and DOM
 <!-- * [JS and DOM](04_js1) -->
 * More JS
