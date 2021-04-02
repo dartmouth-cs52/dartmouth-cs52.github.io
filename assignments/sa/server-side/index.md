@@ -530,8 +530,8 @@ Great! We have everything working now. We will need to host this new server comp
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, create a new app.
 3. Go to *Deploy* and select either "Github" or "Heroku Git" as your Deployment Method
-    * if you choose GitHub, find and connect to the right repository, then turn on *Automatic Deploys* for the master branch. This will update Heroku whenever you `git push origin master` and restart your heroku server. This way is pretty automatic and you don't have to worry about remembering to push to heroku.
-    * if you are doing "Heroku Git", select Download and install the Heroku CLI using `brew install heroku/brew/heroku`. Given that you're already working in a git repository, use `heroku git:remote -a YOUR_HEROKU_APP` to add a new git remote (use `git remote -v` to see). If you haven't done so already, add and commit your changes. Now when you want to deploy do: `git push heroku master`. *Note: Don't forget to push master to **both** heroku and origin.* This way is more manual if you want greater control.
+    * if you choose GitHub, find and connect to the right repository, then turn on *Automatic Deploys* for the main branch. This will update Heroku whenever you `git push origin main` and restart your heroku server. This way is pretty automatic and you don't have to worry about remembering to push to heroku.
+    * if you are doing "Heroku Git", select Download and install the Heroku CLI using `brew install heroku/brew/heroku`. Given that you're already working in a git repository, use `heroku git:remote -a YOUR_HEROKU_APP` to add a new git remote (use `git remote -v` to see). If you haven't done so already, add and commit your changes. Now when you want to deploy do: `git push heroku main`. *Note: Don't forget to push main to **both** heroku and origin.* This way is more manual if you want greater control.
 4. Either way, once Heroku gets your push then it will run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
 
 

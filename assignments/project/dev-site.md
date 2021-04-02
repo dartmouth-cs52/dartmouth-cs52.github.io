@@ -53,7 +53,7 @@ You should set this up for *all* your repositories.  You already have working `.
 
 ![](img/Heroku_logo.png){:  .tiny}
 
-Set up your Heroku app to be connected to GitHub with [automatic deploys](https://devcenter.heroku.com/articles/github-integration#automatic-deploys).  Set this up so that whenever you merge a pull-request into your master branch for your server component, Heroku will pick up the change.  You will obviously still work locally on your own feature branches. Your master branch will be the branch that is tested and working.  You can set this up so that Heroku only updates if the Travis tests have completed successfully.
+Set up your Heroku app to be connected to GitHub with [automatic deploys](https://devcenter.heroku.com/articles/github-integration#automatic-deploys).  Set this up so that whenever you merge a pull-request into your main branch for your server component, Heroku will pick up the change.  You will obviously still work locally on your own feature branches. Your main branch will be the branch that is tested and working.  You can set this up so that Heroku only updates if the Travis tests have completed successfully.
 
 ### Continuous Integration Frontend
 
@@ -77,7 +77,7 @@ for instance if you have to customize what it runs on install and have a main de
 
 ## Such Dev Environment
 
-Now, you can work in your local environment on your feature branch and when you are ready, merge it into master which will deploy it automatically. Do not simply start using the master branch and the dev site directly as your primary method of testing.  You should always be working locally first! But this does allow you to merge in changes quickly and you can have a shared dev site where you can see the latest pushed version of everyone's code and ask others for feedback.
+Now, you can work in your local environment on your feature branch and when you are ready, merge it into main which will deploy it automatically. Do not simply start using the main branch and the dev site directly as your primary method of testing.  You should always be working locally first! But this does allow you to merge in changes quickly and you can have a shared dev site where you can see the latest pushed version of everyone's code and ask others for feedback.
 
 
 ## To Turn In:

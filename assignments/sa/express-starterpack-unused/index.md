@@ -573,9 +573,9 @@ Great! We have everything working now. We will need to host this new server comp
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, make a new app.
 1. Follow the steps under "Deploy Using Heroku Git".  But really all you need is to add a new git remote - find your heroku git URL by going to "Settings" and then do `git remote add heroku https://git.heroku.com/cs52-blog.git`.   
-1. To host on heroku all you need to do is `git push heroku master`, this will push your code and run the npm command that is listed in your `Procfile` to launch your app.  COOL!
+1. To host on heroku all you need to do is `git push heroku main`, this will push your code and run the npm command that is listed in your `Procfile` to launch your app.  COOL!
 
-Note: Don't forget to push master to **both** heroku and origin.
+Note: Don't forget to push main to **both** heroku and origin.
 
 ## MongoDB Atlas 
 

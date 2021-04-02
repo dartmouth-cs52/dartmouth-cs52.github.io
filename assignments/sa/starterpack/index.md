@@ -14,7 +14,7 @@ Today we'll be learning about a set of tools for making your code compact and pr
 💻 : run in Terminal<br>
 🚀 : a step to not forget
 
-🚀 To start grab the github classroom link in canvas to start a new repository. Work in the `master` branch for now, you'll see why later.
+🚀 To start grab the github classroom link in canvas to start a new repository. Work in the `main` branch for now, you'll see why later.
 
 ## Today's Stack
 
@@ -794,7 +794,7 @@ These are the compiled/built output files — the actual files that the browser 
 
 This will build your app into the `dist` directory and the deploy all the right stuff to surge.
 
-🚀 git `add`, `commit`, `push` all the code that is currently in your `master` branch to your `origin master` branch. You should now have:  `master` branch with `/src` and all your webpack and package files.
+🚀 git `add`, `commit`, `push` all the code that is currently in your `main` branch to your `origin main` branch. You should now have:  `main` branch with `/src` and all your webpack and package files.
 
 ## Release V1
 
