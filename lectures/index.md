@@ -38,15 +38,15 @@ fetch(proxyUrl + targetUrl, {
 * Welcome
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b5636c10-8712-4826-8a76-acfa016e4ff6)
   * [notes](00_welcome/)
-<!-- * [6/25 Welcome](00_welcome/) -->
 * Structure of the Internet
-<!-- * [Structure of the Internet](01_interwebs/) -->
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9354679d-b18c-419e-9c22-acfe000c7ff3)
+  * [notes](01_interwebs/)
 * HTML
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=87374a71-d945-4c80-89a2-acfc01767237)
   * [notes](02_html/)
 * CSS
-  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9354679d-b18c-419e-9c22-acfe000c7ff3)
-  * [notes](03_css/)
+  <!-- * [video]() -->
+  <!-- * [notes](03_css/) -->
 * Intro JS and DOM
 <!-- * [JS and DOM](04_js1) -->
 * More JS
