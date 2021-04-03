@@ -45,8 +45,7 @@ fetch(proxyUrl + targetUrl, {
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=87374a71-d945-4c80-89a2-acfc01767237)
   * [notes](02_html/)
 * CSS
-  <!-- * [video]() -->
-  * rerecording and will post soon
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6fdc0ae8-ac00-4d9a-8898-acff010033e8)
   * [notes](03_css/)
 * Intro JS and DOM
 <!-- * [JS and DOM](04_js1) -->
