@@ -33,7 +33,7 @@ First we should do some basic setup steps.
 ```bash
 #make sure you are in your project directory
 git remote add starter git@github.com:dartmouth-cs52/express-babel-starter.git
-git pull starter master
+git pull starter main
 ```
 
 During SA7 we inspected the starterpack, it isn't very complicated - just express+babel+eslint (no webpack since we are using node).
