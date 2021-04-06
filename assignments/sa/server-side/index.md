@@ -42,7 +42,7 @@ We're going to be building a poll site, where users can sign various polls. We w
 ```bash
 #make sure you are in your project directory
 git remote add starter git@github.com:dartmouth-cs52/express-babel-starter.git
-git pull starter master
+git pull starter main
 ```
 
 Then run these following commands to start our new node+express app in dev reloading mode.

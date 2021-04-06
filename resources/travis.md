@@ -40,11 +40,11 @@ node_js:
 
         git add .travis.yml
         git commit -m 'Travis CI Config'
-        git push origin master
+        git push origin main
 
 5. Turn on GitHub Protected Branch.
 
-    You want to set up protected branches for your GitHub repository to ensure that all required CI tests are passing before collaborators can make changes to a protected branch. This will prevent potentially buggy code from being merged into master. To do so simply visit `https://github.com/<team>/<repo>/settings/branches` and turn on protected branch for `master`.
+    You want to set up protected branches for your GitHub repository to ensure that all required CI tests are passing before collaborators can make changes to a protected branch. This will prevent potentially buggy code from being merged into master. To do so simply visit `https://github.com/<team>/<repo>/settings/branches` and turn on protected branch for `main`.
 
     ![protected-branch](/assets/imgs/travis/protected-branch.jpg)
 
