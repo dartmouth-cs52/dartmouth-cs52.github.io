@@ -47,9 +47,10 @@ fetch(proxyUrl + targetUrl, {
 * CSS
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6fdc0ae8-ac00-4d9a-8898-acff010033e8)
   * [notes](03_css/)
-* Intro JS and DOM
-<!-- * [JS and DOM](04_js1) -->
-* More JS
+* Intro JavaScript and the DOM
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=480d3114-eec6-4eaf-be65-ad02000323f3)
+  * [notes](04_js1)
+* Modern JavaScript
 <!-- * [JS P2](05_js2) -->
 * Some Design Things
 <!-- * [Some Design Things](03_design/) -->
@@ -61,7 +62,7 @@ fetch(proxyUrl + targetUrl, {
 <!-- * [React](07_react2) -->
 <!-- * HUH 4/22 Project Intro -->
 <!-- * HUH [4/24 Projects](07_project_intro) -->
-* Asynch JS
+* Asynchronous JavaScript
 <!-- * [Asynch JS](08_asynch_js) -->
 * Routing
 <!-- * [Routing](09_routing) -->
