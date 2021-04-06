@@ -5,35 +5,7 @@ permalink: /lectures/
 comment_term: lectures
 ---
 
-
 *posted after class*{: .warning}
-
-<!-- 
-<iframe style="transform: scale(0.5) translateX(-850px) translateY(-500px) " width="1600" height="1000" src="https://www.notion.so/brunchlabs/546f410dbf0e44f1a5d9f8d8870acc27?v=b8bc3ee253a6459386e758a316e29dd2" frameborder="0" allowfullscreen></iframe> 
--->
-
-
-<!-- <script>
-var proxyUrl = 'https://glacial-fjord-69804.herokuapp.com/',
-    targetUrl = 'https://www.notion.so/brunchlabs/546f410dbf0e44f1a5d9f8d8870acc27?v=b8bc3ee253a6459386e758a316e29dd2'
-
-// var data = {"collectionId":"3d23ca2c-401d-4d1b-998b-21287337caa4","collectionViewId":"f655aefd-1842-4e02-91ff-0960fb724696","query":{"aggregate":[{"id":"count","type":"title","view_type":"gallery","aggregation_type":"count"}],"filter":[],"sort":[],"filter_operator":"and"},"loader":{"type":"table","limit":70,"userTimeZone":"America/New_York","userLocale":"en","loadContentCover":true}}
-// ;
-
-fetch(proxyUrl + targetUrl, {
-  method: 'GET', 
-  // body: JSON.stringify(data), 
-  headers:{
-    'Content-Type': 'application/json'
-  }
-})
-.then(res => res.json())
-.then(response => {
-  console.log('Success:', JSON.stringify(response.recordMap.block));
-})
-.catch(error => console.error('Error:', error));
- 
-</script> -->
 
 * Welcome
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b5636c10-8712-4826-8a76-acfa016e4ff6)
