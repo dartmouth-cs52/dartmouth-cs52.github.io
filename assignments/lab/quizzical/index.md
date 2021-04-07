@@ -11,9 +11,9 @@ comment_term: lab-quizzical
 
 All the kids are doing it these days. This is where we'll learn a little bit about making interactive sites. We won't need to deal with any backend servers, just some nice clientside code (no server) to build up a fun quiz and show some calculated results.
 
-🚀 head over to buzzfeed and take [this quiz](https://www.buzzfeed.com/elainawahl/which-disney-animal-are-you). I'll wait.
+🚀 head over to buzzfeed and take [this quiz](https://www.buzzfeed.com/justkatiejoy/what-disney-animal-are-you-9bf0kqt6pd). I'll wait.
 
-[![](img/buzzfeed.png){: .fancy .medium}](https://www.buzzfeed.com/elainawahl/which-disney-animal-are-you)
+[![](img/buzzfeed.png){: .fancy .medium}](https://www.buzzfeed.com/justkatiejoy/what-disney-animal-are-you-9bf0kqt6pd)
 
 Doesn't that make you want to make your own quiz? Ok, you could use buzzfeed to do this, but you want to make one that doesn't have ugly ads. And looks classier too!
 
