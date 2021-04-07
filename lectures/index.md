@@ -19,9 +19,12 @@ comment_term: lectures
 * CSS
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6fdc0ae8-ac00-4d9a-8898-acff010033e8)
   * [notes](03_css/)
-* Intro JavaScript and the DOM
+* Intro JavaScript
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=480d3114-eec6-4eaf-be65-ad02000323f3)
   * [notes](04_js1)
+* Intro to Document Object Model
+  <!-- * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=480d3114-eec6-4eaf-be65-ad02000323f3) -->
+  <!-- * [notes](04_dom) -->
 * Modern JavaScript
 <!-- * [JS P2](05_js2) -->
 * Some Design Things
