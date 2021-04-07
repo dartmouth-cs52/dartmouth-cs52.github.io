@@ -312,13 +312,14 @@ You should host this on github pages as you have in the past.  Remember to have 
 
 ## To Turn In:
 
-* urls to your hosted page (gh-pages enabled on your classroom repo is fine) **and** your classroom repo
+* urls to your hosted page (gh-pages or netlify - separate hosting from other assignments) **and** a link to your classroom repo
 * your page should have all the [MVP specs](#minimal-functional-specs) in addition to:
   * have clear document structure with proper semantic naming
   * functional calculations and error checking to get quiz results
   * look reasonable, styling should be at least as classy as the mockups...
 * your repo should include a README.md file with:
   * a couple sentence description of what you did and what worked / didn't work.
+  * what focus you chose: javascript or style or both
   * screen caps with anything special you want to point out
 
 
