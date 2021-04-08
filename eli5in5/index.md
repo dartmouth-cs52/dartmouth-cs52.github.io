@@ -12,16 +12,16 @@ Have you ever wanted something explained to you in terms that you understood, in
 
 Here is a collection of videos produced by the CS52 class to help!
 
-  * [	ELI5in5: Gatsby Static Site Generator](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=67d40915-2e9b-4709-825d-acd7011fe8a2)
-  * [ELI5in5: Chart Js Graphics](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d2e4c2c7-1aaa-4783-8f46-acd7011fe8a2)
-  * [	ELI5in5: Emotion.sh CSS-in-JS Frontend Styling](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c5814631-936c-499a-9673-acd7011fe8a2)
-  * [	ELI5in5: Svelte Frontend Framework](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e1ea288d-97e7-445c-990d-acd7011fe8a2)
-  * [	ELI5in5: Django Server Side Framework](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c2b42b4f-fbf5-42b3-922c-acd7011fe8a2)
-  * [ELI5in5: Electron](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=005248c4-c8d2-4457-88ec-acd7011fe8a2)
-  * [	ELI5in5: ML API Presentation with Google Cloud Vision](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e77a9aa6-9c76-4d63-bd54-acd7011fe8a2)
-  * [ELI5in5: ML API - Google AutoML model training](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=74ab7cec-9bb3-4002-b109-acd7011fe8a2)
-  * [	ELI5in5: Messaging with Twilio](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18dc7d53-6b37-4b29-aba3-acd7011fe8a2)
-  * [ELI5in5: Web Architectures-AWS Lambda](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a4b23506-cedf-469b-9962-acd7011fe8a2)
+  * [Gatsby Static Site Generator](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=67d40915-2e9b-4709-825d-acd7011fe8a2)
+  * [Chart Js Graphics](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d2e4c2c7-1aaa-4783-8f46-acd7011fe8a2)
+  * [Emotion.sh CSS-in-JS Frontend Styling](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c5814631-936c-499a-9673-acd7011fe8a2)
+  * [Svelte Frontend Framework](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e1ea288d-97e7-445c-990d-acd7011fe8a2)
+  * [Django Server Side Framework](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c2b42b4f-fbf5-42b3-922c-acd7011fe8a2)
+  * [Electron](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=005248c4-c8d2-4457-88ec-acd7011fe8a2)
+  * [ML API Presentation with Google Cloud Vision](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e77a9aa6-9c76-4d63-bd54-acd7011fe8a2)
+  * [ML API - Google AutoML model training](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=74ab7cec-9bb3-4002-b109-acd7011fe8a2)
+  * [Messaging with Twilio](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=18dc7d53-6b37-4b29-aba3-acd7011fe8a2)
+  * [Web Architectures-AWS Lambda](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a4b23506-cedf-469b-9962-acd7011fe8a2)
 
 
 <!-- 
