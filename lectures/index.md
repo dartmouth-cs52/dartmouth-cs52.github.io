@@ -23,7 +23,7 @@ comment_term: lectures
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=480d3114-eec6-4eaf-be65-ad02000323f3)
   * [notes](04_js1)
 * Intro to Document Object Model
-  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=dafab8ed-0e5d-4a32-88fe-ad0400176d0d)
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9aeb2899-ac30-40cb-88b2-ad0400bab7ba)
   * [notes](04_dom)
 * Modern JavaScript
 <!-- * [JS P2](05_js2) -->
