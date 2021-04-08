@@ -102,6 +102,8 @@ and lets register you a domain!
 
 ![](img//create_repo.png){: .fancy .small }
 
+*Note: Do not select "Initialize this repository with a README".*
+
 Grab the URL for the repository (either SSH or HTTP depending on how you have git setup.  If SSH gives you trouble just try HTTP.)
 
 **Note:**  the following are transcripts of MY terminal session while setting up **cs52.me** with my github URL.  You should replace anything with cs52.me with your repo name and your github URL instead.
@@ -207,6 +209,8 @@ To git@github.com:dartmouth-cs52/cs52.me.git
  * [new branch]      gh-pages -> gh-pages
 ```
 {: .example}
+
+*Note: Ensure that on Github, there is only the "gh-pages" branch. If "main" exists, delete it.*
 
 ### Default GitHub Pages Hosting
 
