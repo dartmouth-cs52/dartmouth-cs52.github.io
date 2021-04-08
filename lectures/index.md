@@ -1,10 +1,9 @@
 ---
 layout: page
-title: Lectures
+title: Lecture Recordings & Slides/Notes
 permalink: /lectures/
 comment_term: lectures
 ---
-
 *posted after class*{: .warning}
 
 * Welcome
@@ -66,3 +65,10 @@ comment_term: lectures
 <!-- * 6/02 Wrapup -->
 <!-- * [6/02 Wrapup](16_wrapup) -->
 <!-- * 6/09 TBD Final Demo Session -->
+
+
+## ELI5in5
+
+These are short videos produced by previous classes that introduce various web technologies.
+
+Find them here:  [ELI5in5](../eli5in5)
