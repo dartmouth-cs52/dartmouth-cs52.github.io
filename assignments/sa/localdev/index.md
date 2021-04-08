@@ -102,7 +102,7 @@ and lets register you a domain!
 
 ![](img//create_repo.png){: .fancy .small }
 
-*Note: Do not select "Initialize this repository with a README".*
+*Note: Do not select "Initialize this repository with a README", we'll create one manually later.*
 
 Grab the URL for the repository (either SSH or HTTP depending on how you have git setup.  If SSH gives you trouble just try HTTP.)
 
@@ -210,7 +210,7 @@ To git@github.com:dartmouth-cs52/cs52.me.git
 ```
 {: .example}
 
-*Note: Ensure that on Github, there is only the "gh-pages" branch. If "main" exists, delete it.*
+*Note: On GitHub you might want to double check your branches. You could either change settings to use main branch, or use gh-pages branch, but make sure that you don't have both.*
 
 ### Default GitHub Pages Hosting
 
