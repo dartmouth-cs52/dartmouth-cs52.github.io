@@ -24,8 +24,9 @@ comment_term: lectures
 * Intro to Document Object Model
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9aeb2899-ac30-40cb-88b2-ad0400bab7ba)
   * [notes](04_dom)
-* Modern JavaScript
-<!-- * [JS P2](05_js2) -->
+* More JavaScript
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b8c8779a-5c7e-4e4b-86ea-ad0600d14e3f)
+  * [notes](05_js2)
 * Some Design Things
 <!-- * [Some Design Things](03_design/) -->
 * Git
