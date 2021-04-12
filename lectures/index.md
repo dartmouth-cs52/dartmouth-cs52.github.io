@@ -32,7 +32,8 @@ comment_term: lectures
 * Git
 <!-- * [Git](02_git/) -->
 * Frameworks Intro
-<!-- * [Frameworks Intro](06_react1) -->
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=977f426c-9145-40f4-8c0e-ad08017edc4a)
+  * [notes](06_react1)
 * React
 <!-- * [React](07_react2) -->
 <!-- * HUH 4/22 Project Intro -->
