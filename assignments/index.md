@@ -11,20 +11,20 @@ comment_term: assignments
 
 <!-- * Short Assignment 1: Local Dev Environment + Domain -->
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev)
-* Short Assignment 2: Git Map
-<!-- * [Short Assignment 2: Git Map](sa/git-map) -->
-* Short Assignment 3: Webpack+Babel+Eslint starterpack
-<!-- * [Short Assignment 3: Webpack+Babel+Eslint starterpack](sa/starterpack) -->
-* Short Assignment 4: React Intro
-<!-- * [Short Assignment 4: React Intro](sa/react-videos) -->
-* Short Assignment 5: Frontend Routing
-<!-- * [Short Assignment 5: Frontend Routing](sa/routing)  -->
-* Short Assignment 6: Redux
-<!-- * [Short Assignment 6: Redux](sa/redux)  -->
-* Short Assignment 7: Express and Mongo
-<!-- * [Short Assignment 7: Express and Mongo](sa/server-side)  -->
-* Short Assignment 8: Frontend and Backend of Authentication 
-<!-- * [Short Assignment 8: Frontend and Backend of Authentication](sa/authentication) -->
+<!-- * Short Assignment 2: Webpack+Babel+Eslint starterpack -->
+* [Short Assignment 2: Webpack+Babel+Eslint starterpack](sa/starterpack)
+* Short Assignment 3: React Intro
+<!-- * [Short Assignment 3: React Intro](sa/react-videos) -->
+* Short Assignment 4: Frontend Routing
+<!-- * [Short Assignment 4: Frontend Routing](sa/routing)  -->
+* Short Assignment 5: Redux
+<!-- * [Short Assignment 5: Redux](sa/redux)  -->
+* Short Assignment 6: Express and Mongo
+<!-- * [Short Assignment 6: Express and Mongo](sa/server-side)  -->
+* Short Assignment 7: Frontend and Backend of Authentication 
+<!-- * [Short Assignment 7: Frontend and Backend of Authentication](sa/authentication) -->
+* ExtraCredit Short Assignment: Git Map
+<!-- * [ExtraCredit Short Assignment: Git Map](sa/git-map) -->
 * ExtraCredit Short Assignment: Photo Uploading S3
 <!-- * [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload) -->
 * ExtraCredit Short Assignment: WebSockets
