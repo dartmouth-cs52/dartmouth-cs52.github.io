@@ -212,7 +212,10 @@ You are required to **choose 1 of the next 2 options** to complete.  Extra credi
 
 At this point you should tag your working base version first:
 
+Note: Make sure to stage all your part one files and commit them before tagging.
 ```bash
+git add .
+git commit -m "<message>"
 git tag v1
 git push origin --tags
 ```
