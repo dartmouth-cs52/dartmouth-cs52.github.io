@@ -179,7 +179,7 @@ Note: when you give `-D` as an argument it will add those modules to your `packa
 
 ### .gitignore
 
-⚠️ `node_modules` is **not** something you need to commit to git.  These are libraries that you can assume will be available and so as long as you have saved the dependencies to the `package.json` file anybody can later install all of the required packages by simply running `yarn install`. There will **always be points off** if your github repo contains `node_modules`. 
+⚠️ `node_modules` is **not** something you need to commit to git.  These are libraries that you can assume will be available and so as long as you have saved the dependencies to the `package.json` file anybody can later install all of the required packages by simply running `npm install`. There will **always be points off** if your github repo contains `node_modules`. 
 
 🚀 Let's make sure we don't do that now.  Create a file called `.gitignore` and add the following:
 
@@ -402,7 +402,7 @@ Babel needs to be configured for the particulars of what feature set of ECMAScri
 <!-- 🚀 and change your `entry` to be `entry: [ 'babel-polyfill', './src' ],`
 this loads in some nice extra babel functions before we get into our app so we can use them. In essence, if there are any javascript features that a particular browser might lack, this fills them in. -->
 
-🚀 `ctrl + c` out of your webpack server and run `yarn start` again to pick up the changes to the config files.
+🚀 `ctrl + c` out of your webpack server and run `npm start` again to pick up the changes to the config files.
 
 ###  use some new javascript syntax
 
