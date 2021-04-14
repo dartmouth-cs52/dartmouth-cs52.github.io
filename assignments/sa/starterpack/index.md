@@ -762,7 +762,7 @@ Let's test locally first though.
 
 ```js
 //merge into scripts section
-"build": "npm run clean; NODE_ENV=production webpack --colors",
+"build": "npm run clean; NODE_ENV=production webpack --color",
 "clean": "rimraf dist"
 ```
 

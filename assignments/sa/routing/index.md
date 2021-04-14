@@ -236,7 +236,7 @@ as contents.
 Then edit your `package.json` file and change your `build` script to be:
 
 ```
-    "build": "yarn clean; NODE_ENV=production webpack --colors; cp -f _redirects dist/",
+    "build": "npm run clean; NODE_ENV=production webpack --color; cp -f _redirects dist/",
 ```
 
 The idea being that when you set up netlify with github - give it `yarn build` as the build command and `dist` as the output directory, and your build scripts needs to just add it to there. 
