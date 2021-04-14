@@ -214,8 +214,12 @@ At this point you should tag your working base version first:
 
 Note: Make sure to stage all your part one files and commit them before tagging.
 ```bash
+# regular add/commit/push
 git add .
 git commit -m "<message>"
+git push
+
+# then tag current commit and push tags
 git tag v1
 git push origin --tags
 ```
