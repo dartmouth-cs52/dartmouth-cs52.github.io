@@ -13,8 +13,8 @@ comment_term: assignments
 * [Short Assignment 1: Local Dev Environment + Domain](sa/localdev)
 <!-- * Short Assignment 2: Webpack+Babel+Eslint starterpack -->
 * [Short Assignment 2: Webpack+Babel+Eslint starterpack](sa/starterpack)
-* Short Assignment 3: React Intro
-<!-- * [Short Assignment 3: React Intro](sa/react-videos) -->
+<!-- * Short Assignment 3: React Intro -->
+* [Short Assignment 3: React Intro](sa/react-videos)
 * Short Assignment 4: Frontend Routing
 <!-- * [Short Assignment 4: Frontend Routing](sa/routing)  -->
 * Short Assignment 5: Redux
