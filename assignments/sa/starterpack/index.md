@@ -763,8 +763,11 @@ Let's test locally first though.
 ```js
 //merge into scripts section
 "build": "npm run clean; NODE_ENV=production webpack --color",
+"winbuild": "npm run clean & SET NODE_ENV=production& webpack --color"
 "clean": "rimraf dist"
 ```
+
+*Note: on windows the syntax is slightly different so we add a separate build command there. You'll need the regular one for deployment but where you see `npm run build` if you are on a windows box run `npm run winbuild`. 
 
 This will first clean out anything old if there is a `dist` folder, and then generate all of the static compiled files for the site.  
 
