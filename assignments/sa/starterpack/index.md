@@ -790,6 +790,8 @@ These are the compiled/built output files — the actual files that the browser 
 
 🚀 Create a [New Site From GitHub](https://app.netlify.com/start) on Netlify
 
+![](img/netlify0.jpg){: .fancy .medium}
+
 ![](img/new-netlify.jpg){: .fancy .medium}
 
 Set it to deploy your `main` branch, use `npm run build` to build and `dist` as the build folder. 
