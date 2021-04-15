@@ -762,6 +762,7 @@ Let's test locally first though.
 
 ```js
 //merge into scripts section
+"test": "eslint src",
 "build": "npm run clean; NODE_ENV=production webpack --color",
 "winbuild": "npm run clean & SET NODE_ENV=production& webpack --color"
 "clean": "rimraf dist"
