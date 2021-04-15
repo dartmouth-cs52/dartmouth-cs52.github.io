@@ -523,7 +523,7 @@ const youtubeSearch = (term) => {
 export default youtubeSearch;
 ```
 
-In the above, [axios](https://github.com/mzabriskie/axios) is a module to simplify making http api requests (GET, POST, etc).  We are wrapping it in a Promise so that using our module is really easy from our `index.js`. 
+In the above, [axios](https://axios-http.com/) is a module to simplify making http api requests (GET, POST, etc).  We are wrapping it in a Promise so that using our module is really easy from our `index.js`. 
 
 *⚠️ However, there is a bit of a caveat here. `axios.get` is already returns a promise. The **only** reason we are wrapping it in another promise is to abstract out the response.data.items portion and to show how promises work.  You could easily instead do `return axios.get(API_URL), {params})` and then in your app remember to use videos.data.items. Please do not needlessly wrap promises in promises unless there is a reason to do so.* 
 
