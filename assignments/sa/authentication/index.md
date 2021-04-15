@@ -47,7 +47,7 @@ git push origin --tags
 
 Great, now you can always remember where you veered off course and made this terrible decision to add authentication to your lovely content platform.
 
-You will end up with 3 server urls at the end of this: A surge url for loading the frontend, a herokuapp url for the api server, and a mLabs mongo database url (which we won't need to actually know but *heroku* will automatically help connect to).  
+You will end up with 3 server urls at the end of this: A netlify url for loading the frontend, a herokuapp url for the api server, and a mLabs mongo database url (which we won't need to actually know but *heroku* will automatically help connect to).  
 
 We'll be working on both the api server and frontend app.
 
@@ -646,7 +646,7 @@ Commit, tag both your Lab5 and Lab4 repos with `v2`, and push your tags! Deploy 
 
 1. github url to your repo
 1. url to your heroku app instance for testing
-1. surge url for your content platform app that uses your new API server and has authentication!
+1. netlify url for your content platform app that uses your new API server and has authentication!
 1. your app should:
   * have users sign-in, sign-up, sign-out
   * not allow people to access /posts/new when not logged in

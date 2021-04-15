@@ -256,7 +256,7 @@ Things should be working now!
 #### To Turn In
 
 - github url to your repo
-- your deployed surge and heroku urls
+- your deployed netlify and heroku urls
 - brief what worked and what didn't
 
 ###### Additional Readings

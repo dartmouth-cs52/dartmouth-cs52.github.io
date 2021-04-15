@@ -203,7 +203,7 @@ Turns out we need to tell `webpack-dev-server` that if you load a frontend route
 
 ## Deployment
 
-There is one tricky bit with deployment now that we have frontend routes.  The problem is that say you go to your yoursitename.surge.sh/posts/id page. If you ask the server for this page the server will tell you it doesn't exist. Because in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-dev-server` happens to have a configuration option `historyApiFallback` which makes it serve up the base index.html file for every resource URL that it can't find, but hosting services don't do this by default. So we're going to alter our webpack a bit to be more robust.
+There is one tricky bit with deployment now that we have frontend routes.  The problem is that say you go to your yoursitename.netlify.app/posts/id page. If you ask the server for this page the server will tell you it doesn't exist. Because in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-dev-server` happens to have a configuration option `historyApiFallback` which makes it serve up the base index.html file for every resource URL that it can't find, but hosting services don't do this by default. So we're going to alter our webpack a bit to be more robust.
 
 🚀 Now we have to make sure that we are telling webpack to output our files to the root '/' rather than using relative links. Add the following to your `webpack.config.js` file:
 
@@ -212,7 +212,7 @@ mode: env,
 output: { publicPath: '/' },
 ```
 
-### If you are using SURGE.SH
+### If you are using SURGE.SH  //TODO CHANGE THIS TO NETLIFY
 
 Now we're going to do something odd. We're going to make a copy of `index.html` to `200.html`.  What will happen is when you hit a route that *surge* doesn't know about, it will serve up the contents of the `200.html` file. Since this file is your app, it will load up, read the current route, and change the page appropriately. This is *surge* specific but will make our SPA setup pretty robust.
 
@@ -262,10 +262,10 @@ git push origin --tags
 ## To Turn In (Canvas)
 
 * url to github repo (makes grading a whole lot easier and friendlier)
-* url to surge.sh/netlify site
+* url to netlify site
 * your starter pack should now
     * have working test routes
-    * be deployed to surge with working 200.html
+    * be deployed to netlify with working _redirects
     * lint correctly
     * have fallback webpack serving index.html for any route
 

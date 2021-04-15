@@ -393,7 +393,7 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 
 1. github url to your repo, readme.md with what worked and what didn't
 1. url to your new heroku app instance for testing
-1. working url for Lab4 on surge that points to your new API server. You should change it to post to the new heroku url that you get by clicking 'open app' on heroku.
+1. working url for Lab4 on netlify that points to your new API server. You should change it to post to the new heroku url that you get by clicking 'open app' on heroku.
 
 ## Extra Credit
 *always mention your extra credit in the README.md file*

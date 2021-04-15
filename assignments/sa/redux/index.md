@@ -788,14 +788,14 @@ Play with the *slider* and note how you can export and import state. Imagine how
 
 ## Release it!
 
-Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into main! Deploy it somewhere on surge and include the deployed url in your submission.
+Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into main! Deploy it somewhere on netlify and include the deployed url in your submission.
 
 # To Turn In (Canvas)
 
 * url to starterpack github repo (makes grading a whole lot easier and friendlier)
-* url to starterpack surge.sh
+* url to starterpack netlify
 * url to redux branch of SA4 github repo
-* url to redux videos surge.sh
+* url to redux videos netlify
 * remember that all your code should lint cleanly
 * your youtube searcher should have the same functionality as before, but now with redux!
 

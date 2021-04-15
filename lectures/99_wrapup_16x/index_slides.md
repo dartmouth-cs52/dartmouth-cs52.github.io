@@ -426,7 +426,7 @@ name: CDN
 
 * Content Distribution Network
   * read only cache of static files
-  * surge/ghpages automatically use CDN
+  * netlify/ghpages automatically use CDN
 
 
 ???

@@ -468,7 +468,7 @@ git push origin --tags
 ## To Turn In
 
 1. GitHub classroom repository URL
-1. a new deployed working domain name URL on surge.sh
+1. a new deployed working domain name URL on netlify
 1. App should have individual routes for:
   * new (unless you make this a modal)
   * list view (default view)

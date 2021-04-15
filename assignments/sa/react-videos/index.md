@@ -955,11 +955,11 @@ Now don't forget to git add, commit, and push. **But** remember that now we are 
 
 ## Deployment
 
-And don't forget to deploy. However!  First change your `package.json` and change your surge url to something new akin to `yourname-cs52-videos.surge.sh` so that you aren't deploying on top of your previous assignments.
+And don't forget to deploy. However!  First change your `package.json` and change your netlify url to something new so that you aren't deploying on top of your previous assignments.
 
 ## To Turn In
 
-1. Submit github url and your deployed surge url on canvas.
+1. Submit github url and your deployed netlify url on canvas.
 1. Your App should have the following working:
   * search, with new videos loading
   * clicking on a list item changes state and the main detail view
