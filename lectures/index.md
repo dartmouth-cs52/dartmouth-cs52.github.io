@@ -33,9 +33,10 @@ comment_term: lectures
 <!-- * [Git](02_git/) -->
 * Frameworks Intro
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=977f426c-9145-40f4-8c0e-ad08017edc4a)
-  * [notes](06_react1)
-* React
-<!-- * [React](07_react2) -->
+  * [notes](06_frameworks)
+* React Intro
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=785c6049-c90c-4c3b-a45f-ad0b0018597f)
+  * [notes](07_react-intro)
 <!-- * HUH 4/22 Project Intro -->
 <!-- * HUH [4/24 Projects](07_project_intro) -->
 * Asynchronous JavaScript

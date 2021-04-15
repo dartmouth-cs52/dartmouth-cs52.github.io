@@ -39,15 +39,17 @@ We're going to need to add a few things to our project to get it ready for React
 ```bash
 # just make sure you're in the root of your project
 
-yarn add --dev @babel/preset-react @babel/plugin-proposal-class-properties
-# installs a react babel preset and really helpful plugin
+npm install -D @babel/preset-react
+# installs a react babel preset
 ```
 
 🚀 Add a `["@babel/react"]` preset to your existing `.babelrc` file to look something like this:
 
 ```json
 {
-  "plugins": ["@babel/plugin-proposal-class-properties"],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
+  ],
   "presets": [
     ["@babel/react"],
     ["@babel/preset-env", {
@@ -58,7 +60,6 @@ yarn add --dev @babel/preset-react @babel/plugin-proposal-class-properties
 ```
 
 Note: we also added in [transform-class-properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) to plugins as well.  This gives us some more cool notation including using arrow functions when defining class methods.
-
 
 ### eslint
 
@@ -100,7 +101,7 @@ Let's modify your `.eslintrc.json` to add in some React support.
 
 
 ```bash
-yarn add lodash.debounce react react-dom react-router axios
+npm install lodash.debounce react react-dom react-router axios
 ```
 
 We'll learn what all these do soon!
@@ -109,17 +110,12 @@ We'll learn what all these do soon!
 🚀 Start up your webpack-dev-server:
 
 ```bash
-yarn start
+npm start
 ```
 
 If there are no errors we can move on!  Leave the server running as now we have everything necessary to just jump into the codes.
 
-One common cause of errors can be dependency version mismatches in the various npm packages.  This is because by default when you `yarn add` something it will attempt to install the most recent thing. One way to attempt to fix this is to update all the versions to the most recent, like so:
-
-```bash
-# IF you have weird version errors
-yarn upgrade-interactive --latest #this is new so your mileage may vary
-```
+*One common cause of errors can be dependency version mismatches in the various npm packages.  This is because by default when you `npm install` something it will attempt to install the most recent thing. One way to attempt to fix this is to update all the versions to the most recent using [npm-check-updates](https://www.npmjs.com/package/npm-check-updates).*
 
 
 ## Our First React View
@@ -157,16 +153,14 @@ Since we added your starterpack repo as a remote named `starter` you can push to
 
 ⚠️ **Careful!  Don't push anything else to starter for this assignment**, you want your starterpack to only contain starter configurations, not the rest of your actual project. We'll be adding more stuff to it over time so make sure your personal starterpack is in good shape. If you have questions come to office hours!
 
-## [JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
+## [JSX](https://reactjs.org/docs/introducing-jsx.html)
 
-Did you notice how there seems to be html like stuff in the above?  What is `<App />`?  It is a function that seems to return html?  In fact all the `<tags>` you see when working in react that are inside of javascript code are actually in [JSX](https://facebook.github.io/react/docs/introducing-jsx.html).  When we did `<div></div>` in the above what we are actually doing is `React.createElement("div", { className: "test" }, "All the React are belong to us!");`.  JSX happens to provide all the standard html elements for you so it feels like html while actually being cool react components, but there are some subtle differences: `class` is now `className` for instance because class is already a reserved keyword in javascript!
+Did you notice how there seems to be html like stuff in the above?  What is `<App />`?  It is a function that seems to return html?  In fact all the `<tags>` you see when working in react that are inside of javascript code are actually in [JSX](https://reactjs.org/docs/introducing-jsx.html). When we did `<div></div>` in the above what we are actually doing is `React.createElement("div", { className: "test" }, "All the React are belong to us!");`.  JSX happens to provide all the standard html elements for you so it feels like html while actually being cool react components, but there are some subtle differences: `class` is now `className` for instance because class is already a reserved keyword in javascript!
 
 
 ## Video Search App
 
 Let's build something a little more complicated with multiple components.
-
-<!-- based loosely on https://www.udemy.com/react-redux-tutorial -->
 
 Here's a mockup of our soon to be amazing app:
 
@@ -531,7 +525,7 @@ export default youtubeSearch;
 
 In the above, [axios](https://github.com/mzabriskie/axios) is a module to simplify making http api requests (GET, POST, etc).  We are wrapping it in a Promise so that using our module is really easy from our `index.js`. 
 
-*However, there is a bit of a caveat here. `axios.get` is already returns a promise. The only reason we are wrapping it in another promise is to abstract out the response.data.items portion and to show how promises work.  You could easily instead do `return axios.get(API_URL), {params})` and then in your app remember to use videos.data.items.* 
+*⚠️ However, there is a bit of a caveat here. `axios.get` is already returns a promise. The **only** reason we are wrapping it in another promise is to abstract out the response.data.items portion and to show how promises work.  You could easily instead do `return axios.get(API_URL), {params})` and then in your app remember to use videos.data.items. Please do not needlessly wrap promises in promises unless there is a reason to do so.* 
 
 🔥__WARNING__ 🔥
 In this example you are asked to push your YouTube API key to GitHub. While this is not a major concern in today's SA as this is a readonly key. Later, when we use private keys server side, you'll learn how to keep them out of your code. Since there is not much you can do to protect a key on the frontend once it is in memory on the webpage, the only secure way to deal with private keys is to proxy any requests through your own server. 
@@ -600,7 +594,7 @@ We identified a component *VideoList* originally, that seems like a reasonable p
 
 But how do we get our parent videos state into another component?
 
-React has a way to do this called [props](http://ricostacruz.com/cheatsheets/react.html#states--properties).  You can pass data from a parent to a child component as easily as defining a property on the JSX tag.
+React has a way to do this called [props](https://devhints.io/react#states--properties).  You can pass data from a parent to a child component as easily as defining a property on the JSX tag.
 
 
 In our case we want to pass `this.videos` to our *VideoList* component. That component doesn't exist yet but let's see how we would call it first:
@@ -978,3 +972,9 @@ And don't forget to deploy. However!  First change your `package.json` and chang
 
 * add in other video / media sources such as vimeo, giphy, etc
 * pull in the weather or other data sources
+
+
+
+
+
+<!-- based loosely on https://www.udemy.com/react-redux-tutorial -->
