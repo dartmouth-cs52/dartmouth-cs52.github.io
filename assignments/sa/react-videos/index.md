@@ -44,7 +44,7 @@ npm install -D @babel/preset-react
 # installs a react babel preset
 ```
 
-🚀 Add a `["@babel/react"]` preset to your existing `.babelrc` file to look something like this:
+🚀 Add a `["@babel/react"]` preset to your existing `babel.config.json` file to look something like this:
 
 ```json
 {
