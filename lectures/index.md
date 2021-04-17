@@ -40,6 +40,8 @@ comment_term: lectures
 <!-- * HUH 4/22 Project Intro -->
 <!-- * HUH [4/24 Projects](07_project_intro) -->
 * Asynchronous JavaScript
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4d23b271-571b-4b49-965f-ad0d00ea6a23)
+  * [notes](08_asynch_js)
 <!-- * [Asynch JS](08_asynch_js) -->
 * Routing
 <!-- * [Routing](09_routing) -->
