@@ -955,7 +955,7 @@ Now don't forget to git add, commit, and push. **But** remember that now we are 
 
 ## Deployment
 
-And don't forget to deploy. However!  First change your `package.json` and change your netlify url to something new so that you aren't deploying on top of your previous assignments.
+And don't forget to set up your netlify deployment!
 
 ## To Turn In
 

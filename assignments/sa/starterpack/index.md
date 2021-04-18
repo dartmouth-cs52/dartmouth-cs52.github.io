@@ -433,6 +433,8 @@ In VSCode install the [ESLint](https://marketplace.visualstudio.com/items?itemNa
 
 ![](img/vscode-eslint.jpg){: .small}
 
+*Note: always open your entire project in VSCode rather than just single files or other folders. This will prevent failure due to VSCode not picking up the project-wide config files.*
+
 We'll be using [Eslint](http://eslint.org/) in every assignment.
 
 🚀 Install `eslint`:
