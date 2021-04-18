@@ -37,13 +37,13 @@ In this version your notes will persist and will synchronize in real-time so mul
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-20s/starterpack-your-gitub-username.git
+git remote add starter your-starterpack-github-url
 git pull starter main  # you may need --allow-unrelated-histories
 ```
 
 ```bash
 # also don't forget to run:
-yarn #to fetch all your webpack dependencies
+npm install #to fetch all your webpack dependencies
 ```
 
 
@@ -133,7 +133,7 @@ Feel free to peruse the Immutable.js [docs](https://facebook.github.io/immutable
 🚀 Install Immutable.js
 
 ```javascript
-yarn add immutable
+npm install immutable
 
 // import { Map } from 'immutable';
 // remember ^ is deconstrution - importing 1 key from a dictionary
@@ -279,7 +279,7 @@ Is left as an exercise for the reader. 😡
 
 ### Dragging
 
-Dragging is a bit tricky, but you can simplify your life by using a component from the onlines.  I recommend [react-draggable](https://github.com/mzabriskie/react-draggable). *(remember we are using `yarn` for package dependencies)*
+Dragging is a bit tricky, but you can simplify your life by using a component from the onlines.  I recommend [react-draggable](https://github.com/mzabriskie/react-draggable). *(remember we are using `npm` for package dependencies)*
 
 The basic idea is that you would import this new component just like you have been with your own components and then it has some props that you pass into it for configuration.
 
@@ -333,6 +333,16 @@ Delete is fairly straightforward, you would have some clickable element assigned
 <i onClick={this.handleDeleteClick} className="fa fa-trash-o" />
 ```
 
+### Accessibility 
+
+If you tried the line above you may have found that you got a bunch of [a11y](https://www.a11yproject.com/) errors. These are errors related to accessibility, trying to help developers create code that is compatible with various accessibility technologies such as screen readers. The errors here in particular are:
+
+* [no static element interactions](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md) if you have an `onClick` you need to also specify the `role` for click. Is it a button? A link? Other? There is no way for accessibility tools to determine from the generic element type what the purpose of the click is.
+* [interactive supports focus](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/interactive-supports-focus.md) specifies that clickable elements must be able to be tab-able to. 
+* [control has associated label](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md)
+
+Please read these and fix the code based on what you find. You'll be guided through adding in several attributes to annotate interactive elements in such a way that screen readers can understand how to present them.
+
 ## Edit
 
 
@@ -368,18 +378,14 @@ render() {
 
 ### Markdown
 
-For markdown support in the main text portion of the note, you can use the [marked](https://github.com/chjj/marked) package.
-
-There's a tiny trick for this in React, so I'll just show it here:
+For markdown support in the main text portion of the note, you can use the [react-markdown](https://github.com/remarkjs/react-markdown) package.
 
 ```javascript
-// don't forget to import marked from 'marked'
+import ReactMarkdown from 'react-markdown'
 
-<div className="noteBody" dangerouslySetInnerHTML={% raw %}{{ __html: marked(this.props.note.text || '') }}{% endraw %} />
+// then just use something like this where you need it!
+  <ReactMarkdown>{this.props.note.text || ''}</ReactMarkdown>
 ```
-
-The idea being that React typically wants to protect you from just setting arbitrary html to the output of some function, but there is an override. Remember even though `div` it is a standard html element in React it is also a component.  The component has a prop `dangerouslySetInnerHTML`  which will set the contents to whatever you pass into it.
-
 Once you have this working you can test with some markdown syntax!
 
 ```javascript
@@ -474,7 +480,7 @@ Note: it is extra credit to add authentication for users to your app and not jus
 🚀 Let's add the firebase js library to your project:
 
 ```bash
-yarn add firebase
+npm install firebase
 ```
 
 🚀 Now go to your *Project Overview* page -> *Add Firebase To Your App*
@@ -499,7 +505,7 @@ const database = firebase.database();
 
 Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods - fact we'll just abstract it out into something we'll consider our datastore.
 
-🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `yarn` to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
+🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `npm` to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
 
 My recommendation is to put all your firebase functions in this file and export them.  We briefly talked about ES6 modules.  Easiest way to make this module is to simply export every public function:
 
@@ -512,7 +518,7 @@ export function fetchNotes(callback) {
 
 Hey, what's this `fetchNotes` function?!  Just something that might help!
 
-You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal.  However, our app is a frontend only app, we may be starting `webpack-dev-server` with `yarn start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!  Also, note that the key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data if you did that.
+You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal.  However, our app is a frontend only app, we may be starting `webpack-dev-server` with `npm start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!  Also, note that the key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data if you did that.
 
 Once you are ready to use these new functions you can just import it wherever you need it. In particular you would want to import these functions in your top level component where you have your note state related callbacks.
 
