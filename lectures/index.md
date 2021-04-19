@@ -43,6 +43,9 @@ comment_term: lectures
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=4d23b271-571b-4b49-965f-ad0d00ea6a23)
   * [notes](08_asynch_js)
 <!-- * [Asynch JS](08_asynch_js) -->
+* Immutability, Firebase, Optional Chaining, Nullish Coalescing, and other fun stuff
+  * [video]()
+  * [notes](08_immutability)
 * Routing
 <!-- * [Routing](09_routing) -->
 * Redux
