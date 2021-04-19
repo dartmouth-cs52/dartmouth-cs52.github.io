@@ -256,7 +256,7 @@ notes.entrySeq().map(([id, note]) => {
 });
 ```
 
-*Note: if we were mapping over a regular array as you may sometimes want, remember that `entrySeq` only pertains to Immutable.js map objects, not regular JS objects/arrays.*
+*Note: `entrySeq` only pertains to Immutable.js map objects, not regular JS objects/arrays, so it wouldn't work in some other cases where we might be using just a simple array for instance.*
 
 ## Note Component
 
@@ -279,7 +279,7 @@ Is left as an exercise for the reader. 😡
 
 ### Dragging
 
-Dragging is a bit tricky, but you can simplify your life by using a component from the onlines.  I recommend [react-draggable](https://github.com/mzabriskie/react-draggable). *(remember we are using `npm` for package dependencies)*
+Dragging is a bit tricky, but you can simplify your life by using a component from the onlines.  I recommend [react-draggable](https://github.com/react-grid-layout/react-draggable). *(remember we are using `npm` for package dependencies)*
 
 The basic idea is that you would import this new component just like you have been with your own components and then it has some props that you pass into it for configuration.
 
@@ -290,7 +290,7 @@ Here is an example:
     handle=".class-of-note-mover-element"
     grid={[25, 25]}
     defaultPosition={ {x: 20, y: 20} }
-    position={ {x: onYou_X, y: onYou_Y, width: onYou_width, height: onYou_height} } 
+    position={ {x: yourX, y: yourY, width: yourWidth, height: yourHeight} } 
     onStart={this.handleStartDrag}
     onDrag={this.handleDrag}
     onStop={this.handleStopDrag}
@@ -306,7 +306,7 @@ The way to use this component is to wrap whatever JSX you want in your *Note* re
 
 Note the 3 callbacks.  `handleStart`, `handleDrag`, `handleStop`.   You would use these to drive the position of the note.  You'll want the position to be part of the note object as eventually we will synchronize using a cloud component.  You may find that you only need to implement `handleDrag`.
 
-In particular, Draggable will call the function **you** provide to `onDrag` with two arguments, let's call them `(e, data)`.  Just to save you some digging, `data` will have x and y components so you can extract them and use them for your `note.position` state.
+In particular, Draggable will call the function **you** provide to `onDrag` with two arguments, let's call them `(e, data)`. ➠Just to save you some digging, `data` will have x and y components so you can extract them and use them for your `note.position` state.
 
 Here's a potential component hierarchy you could end up with:
 
@@ -344,7 +344,6 @@ If you tried the line above you may have found that you got a bunch of [a11y](ht
 Please read these and fix the code based on what you find. You'll be guided through adding in several attributes to annotate interactive elements in such a way that screen readers can understand how to present them.
 
 ## Edit
-
 
 There are several ways to implement this.  You could have a button that opens up a modal, or you could do in-place editing, switching out the display JSX for an editing box.
 
@@ -637,4 +636,7 @@ Test it out!  Open multiple browsers and see how adding and moving notes in one 
 * Add in authentication with Firebase Users. We haven't covered authentication but Firebase provides a [nice auth api](https://firebase.google.com/docs/auth/).
 * Allow users to sign-up and then create and manage multiple boards!  Can show list of boards as dropdown or as a meta-board of clickable notes!
 * Live editing -- showing which user is editing which note!
+* Locking a note for others when one person is editing. 
+* Column organization Kanban style. 
+* Filtering. 
 * Other!
