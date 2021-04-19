@@ -207,7 +207,7 @@ this.setState(prevState => ({
 
 *Note: in the above we are using function setState rather than object setState. We are passing in an arrow notation function which is called with previous state and it returns new state. This is [often preferred](https://medium.freecodecamp.org/functional-setstate-is-the-future-of-react-374f30401b6b) for clarity and consistency.*
 
-If we were to do this with a plain array we might do `find` or a loop, or best case a `filter` like so: `this.states.notes.filter( note => { note.id !== id })`, please use Immutable.js.
+If we were to do this with a plain array we might do `find` or a loop, or best case a `filter` like so: `this.states.notes.filter( note => { note.id !== id })`. For now we'll use Immutable.js though.
 
 
 **Additions**:
@@ -220,16 +220,16 @@ this.setState(prevState => ({
 }));
 ```
 
-If we were to do this with a plain array it wouldn't be too bad, something like `[...this.state.notes, newNote]`, but if we were to do this with a javascript object, we'd first need to clone the object, that gets tricky.
+If we were to do this with a plain array it wouldn't be too bad, something like `[...this.state.notes, newNote]`, but if we were to do this with a javascript object, we'd first need to clone the object, which can get tricky for nested objects.
 
 Here is how you could shallow clone an object:
 
 ```javascript
-// newNote = { key: value, key: value }
-const newNotes = {...this.state.notes, newNote};
+// newNote = { title: '', etc }
+const newNotes = {...this.state.notes, newNoteID: newNote};
 ```
 
-Confused?  This uses spread notation to copy out all the top level keys from the previous notes into the new `{}` object!  However it only does the top level properties, so each nested object is still a reference rather than clone.  Deep cloning is hard and slow if you are doing it manually.  Immutable.js makes it speedy and clean!
+Confused?  This uses spread notation to copy out all the top level keys from the previous notes into the new `{}` object!  However, it only does the top level properties, so each nested object is still a reference rather than clone.  Deep cloning is hard and slow if you are doing it manually.  Immutable.js makes it speedy and clean!
 
 Great, now that you know how to clone an object we'll do that for updating a note!
 
