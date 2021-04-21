@@ -12,7 +12,7 @@ Did you accept the invitation to the https://github.com/dartmouth-cs52-21S organ
 Start here:
 [21S-git-map](https://github.com/dartmouth-cs52-21S/git-map)
 
-If you need help, post in the #sa2-git-map Slack channel. 
+If you need help, post in the #ec-sa-git-map Slack channel. 
 
 ### To Turn In
 
