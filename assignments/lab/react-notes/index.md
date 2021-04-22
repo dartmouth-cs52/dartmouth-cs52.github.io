@@ -136,7 +136,7 @@ Feel free to peruse the Immutable.js [docs](https://facebook.github.io/immutable
 npm install immutable
 
 // import { Map } from 'immutable';
-// remember ^ is deconstrution - importing 1 key from a dictionary
+// remember ^ is deconstruction - importing 1 key from a dictionary
 ```
 
 Here is what I recommend you do for your *App* component state initialization:
