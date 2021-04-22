@@ -27,9 +27,9 @@ comment_term: lectures
 * More JavaScript
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b8c8779a-5c7e-4e4b-86ea-ad0600d14e3f)
   * [notes](05_js2)
-* Some Design Things
+<!-- * Some Design Things -->
 <!-- * [Some Design Things](03_design/) -->
-* Git
+<!-- * Git -->
 <!-- * [Git](02_git/) -->
 * Frameworks Intro
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=977f426c-9145-40f4-8c0e-ad08017edc4a)
@@ -46,6 +46,9 @@ comment_term: lectures
 * Immutability, Firebase, Optional Chaining, Nullish Coalescing, and other fun stuff
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cc5242ac-02b5-4817-b054-ad0f015e7d22)
   * [notes](08_immutability)
+* Design, Git, Accessibility, and Component Frameworks
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5e478033-279d-4d3a-8767-ad12016f0ade)
+  * [notes](09_design-and-git)
 * Routing
 <!-- * [Routing](09_routing) -->
 * Redux
