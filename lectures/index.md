@@ -50,7 +50,8 @@ comment_term: lectures
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5e478033-279d-4d3a-8767-ad12016f0ade)
   * [notes](09_design-and-git)
 * Routing
-<!-- * [Routing](09_routing) -->
+  * [video]()
+  * [notes](09_routing)
 * Redux
 <!-- * [Redux](10_redux) -->
 * Project Intro
