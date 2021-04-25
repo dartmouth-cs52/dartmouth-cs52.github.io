@@ -52,6 +52,8 @@ comment_term: lectures
 * Routing
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=d32b333c-f4ac-49f1-b133-ad13016bb273)
   * [notes](09_routing)
+* Project Intro
+<!-- * [Projects Intro](../assignments/project/#1) -->
 * Redux
 <!-- * [Redux](10_redux) -->
 * Project Intro

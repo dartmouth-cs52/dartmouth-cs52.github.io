@@ -9,6 +9,7 @@ The last 3 weeks of class will be dedicated to a group project.  This will be a 
 
 ## Past Projects
 
+* [**20x**](20x)
 * [**20s**](20s)
 * [**19s**](19s)
 * [**18s**](18s)
