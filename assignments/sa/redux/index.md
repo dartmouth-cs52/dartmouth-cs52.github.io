@@ -30,7 +30,7 @@ Now we're going to add in Redux to your personal starter repository so now you'l
 git tag
 ```
 
-You should have v1, v2, and v3. if you don't have v3 then [go back](../routing) and do that now.
+You should have several tags up through `withRouting`. If you don't have that one then [go back](../routing) and do that now.
 
 
 ## Redux
@@ -39,7 +39,7 @@ You should have v1, v2, and v3. if you don't have v3 then [go back](../routing) 
 🚀 Install redux
 
 ```bash
-yarn add redux react-redux redux-thunk
+npm install redux react-redux redux-thunk
 ```
 
 These are the packages we will be using. Redux is a general state management paradigm that does not necessarily need to be tied to React. But together they are an unstoppable force for clean webdevelopment — so we will use another module `react-redux` that connects the two.   We won't use `redux-thunk` today but will soon — it allows us to work better with asynchronous server calls.
@@ -380,7 +380,7 @@ Play with the *slider* and note how you can export and import state. Imagine how
 
 ```bash
 # commit and push as you normally would - but also
-git tag v4
+git tag withRedux
 git push origin --tags
 ```
 
@@ -410,7 +410,7 @@ git pull starter main  #pull in your updated starter code!
 ```
 Hopefully, you should only have major conflicts in your `src/index.js` file. Let's handle them now!
 
-⚠️ If you have conflicts in your `yarn.lock` do: `git checkout --theirs -- yarn.lock`. This will choose the entire file from your starterpack.  
+⚠️ If you have conflicts in your `package-lock.json` do: `git checkout --theirs -- package-lock.json`. This will choose the entire file from your starterpack.  
 
 ⚠️ If you have conflicts in your `package.json` or `webpack.config.js`, merge them in manually, you will most likely want the union of the two.
 
@@ -489,7 +489,7 @@ import YouTube from './youtube';
 
 🚀 Your linter should tell you that `youtube.js` has a lot of errors.  Notice that we moved that code into the component directory so a lot of the import paths are wrong. You'll want to fix the paths in those import statements. Remember `../` is up one directory and `./` is in the current directory. At this point you should be able to get it to a point where it will build and you can get the main page up and running.
 
-🚀 Don't forget to run `yarn install` to install any of the new dependencies that were merged into `package.json`.
+🚀 Don't forget to run `npm install` to install any of the new dependencies that were merged into `package.json`.
 
 🚀 Finish the Merge! Once you have finished handling the conflicts, go ahead and `git add` and `git commit` the changes to resolve the conflicts and finish the merge.
 
