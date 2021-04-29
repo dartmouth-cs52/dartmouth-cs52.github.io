@@ -398,13 +398,15 @@ Currently our React YouTube search app works great, but maybe we can learn some 
 
 ## Prepare the Repo
 
-🚀 To begin, we'll create a new branch `redux-sa` in your SA4 repo, the react-videos one.
+😱 The next part may be a bit scary - we're going to merge in your new startpack changes into this repo and it'll create a bit of confusion.  You can either do the merge and practice fixing merge conflicts, or you can manually try to copy over changes.  The merge conflict way suprisingly works pretty well, but is a bit scary at first as you'll have some broken code and you'll need to pay attention to linting errors and merge conflict markers to fix it.  If you need a refresher about git merge resolution see the [git-map ec short](../git-map).
+
+🚀 To begin, we'll create a new branch `redux-sa` in your react-videos short assignment repo.
 
 Navigate to your repository on the command line and pull in the updates you've just made to your starterpack:
 
 ``` bash
-cd sa4-YOUR_USERNAME
-git pull origin main #just in case
+cd react-videos-short-assignment-directory
+git pull origin main #just in case to make sure you have the latest
 git checkout -b redux-sa #create a new branch redux-sa
 git pull starter main  #pull in your updated starter code!
 ```
@@ -485,7 +487,7 @@ import YouTube from './youtube';
 <Route exact path="/youtube" component={YouTube} />
 ```
 
-⚠️ You may need to do a little bit of cleanup, for instance in `app.js` get rid of the counter and controls components, you won't need them.  This is a good exercise in going through your code.
+⚠️ You may need to do a little bit of cleanup, for instance in `app.js` get rid of the counter and controls components, you won't need them.  This is a good exercise in going through your code and doing some refactoring. Your linter will help you here, it will tell you things that are undefined or need importing etc.
 
 🚀 Your linter should tell you that `youtube.js` has a lot of errors.  Notice that we moved that code into the component directory so a lot of the import paths are wrong. You'll want to fix the paths in those import statements. Remember `../` is up one directory and `./` is in the current directory. At this point you should be able to get it to a point where it will build and you can get the main page up and running.
 
