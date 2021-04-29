@@ -236,6 +236,8 @@ Then edit your `package.json` file and change your `build` script to be:
 
 The idea being that when you set up netlify with github - give it `npm run build` as the build command and `dist` as the output directory, and your build scripts needs to just add it to there. 
 
+⚠️ *If you are Windows, do **not** change your `winbuild` script.  That one can stay the same.  But do have a separate `build` script which we will use on netlify as that runs linux bash and needs that shell syntax.*
+
 
 ## Test Your Deployed URL
 
