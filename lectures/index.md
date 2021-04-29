@@ -56,7 +56,9 @@ comment_term: lectures
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f8eaffc1-0665-4896-b695-ad16017ffc24)
   * [notes](12_projects_intro)
 * Redux
-<!-- * [Redux](10_redux) -->
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6a4f9458-c8a1-434a-916c-ad180189afa2)
+  * [notes](10_redux)
+  <!-- * [Redux](10_redux) -->
 <!-- * Project Intro -->
 <!-- * [Projects Intro](../assignments/project/#1) -->
 <!-- * Teams -->
