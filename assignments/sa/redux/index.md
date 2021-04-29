@@ -279,7 +279,7 @@ ReactDOM.render(
 
 Now we have the basics done, we should create some connected components.  A connected component is one that is literally connected to the Redux store.  The easiest way to do this is by wrapping a component in a higher-order function that returns a new component that has access to Redux: `connect(mapStateToProps, mapDispatchToProps)(YourComponent)`. We'll explain the syntax shortly.
 
-Let's some components that make use of our Redux setup!  These will be toy examples, and don't particularly need Redux.  But they'll demonstrate the various wirings needed for setting up a much more complicated app.
+Let's create some components that make use of our Redux setup! These will be toy examples, and don't particularly need Redux. But they'll demonstrate the various wirings needed for setting up a much more complicated app.
 
 
 ### Counter
@@ -790,14 +790,14 @@ Play with the *slider* and note how you can export and import state. Imagine how
 
 ## Release it!
 
-Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into main! Deploy it somewhere on netlify and include the deployed url in your submission.
+Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into main! Deploy it somewhere on Netlify and include the deployed url in your submission.
 
 # To Turn In (Canvas)
 
 * url to starterpack github repo (makes grading a whole lot easier and friendlier)
-* url to starterpack netlify
-* url to redux branch of videos sgithub repo
-* url to redux videos netlify
+* url to starterpack Netlify
+* url to redux branch of videos github repo
+* url to redux videos Netlify
 * remember that all your code should lint cleanly
 * your youtube searcher should have the same functionality as before, but now with redux!
 
