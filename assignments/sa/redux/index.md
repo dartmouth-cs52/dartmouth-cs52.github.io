@@ -398,7 +398,7 @@ Currently our React YouTube search app works great, but maybe we can learn some 
 
 ## Prepare the Repo
 
-😱 The next part may be a bit scary - we're going to merge in your new startpack changes into this repo and it'll create a bit of confusion.  You can either do the merge and practice fixing merge conflicts, or you can manually try to copy over changes.  The merge conflict way suprisingly works pretty well, but is a bit scary at first as you'll have some broken code and you'll need to pay attention to linting errors and merge conflict markers to fix it.  If you need a refresher about git merge resolution see the [git-map ec short](../git-map).
+😱 The next part may be a bit scary - we're going to merge in your new startpack changes into this repo and it'll create a bit of confusion.  You can either do the merge and practice fixing merge conflicts, or you can manually try to copy over changes.  The merge conflict way works surprisingly well, but can be a bit scary at first as you'll have some broken code and you'll need to pay attention to linting errors and merge conflict markers to fix it.  If you need a refresher about git merge resolution see the [git-map ec short](../git-map). You got this, breathe and read the codes.
 
 🚀 To begin, we'll create a new branch `redux-sa` in your react-videos short assignment repo.
 
