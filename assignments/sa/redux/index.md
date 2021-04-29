@@ -794,17 +794,16 @@ Commit and push your changes to your new redux branch of SA4 `git push origin re
 
 * url to starterpack github repo (makes grading a whole lot easier and friendlier)
 * url to starterpack netlify
-* url to redux branch of SA4 github repo
+* url to redux branch of videos sgithub repo
 * url to redux videos netlify
 * remember that all your code should lint cleanly
 * your youtube searcher should have the same functionality as before, but now with redux!
 
-
+# Extra Credit
+* We didn't use thunks, EC for figuring out how to use thunks to move the search api call into an action rather than in the component.
 
 ## Resources
 
 * [redux.js.org](http://redux.js.org/index.html)
 * [Learning resources](https://redux.js.org/introduction/learning-resources)
 * [css-tricks.com/learning-react-redux/](https://css-tricks.com/learning-react-redux/)
-* [Redux integration with React Router](https://reacttraining.com/react-router/web/guides/redux-integration)
-<!-- * [React Router Redux Docs](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux) -->

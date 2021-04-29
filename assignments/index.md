@@ -17,8 +17,8 @@ comment_term: assignments
 * [Short Assignment 3: React Intro](sa/react-videos)
 <!-- * Short Assignment 4: Frontend Routing -->
 * [Short Assignment 4: Frontend Routing](sa/routing) 
-* Short Assignment 5: Redux
-<!-- * [Short Assignment 5: Redux](sa/redux)  -->
+<!-- * Short Assignment 5: Redux -->
+* [Short Assignment 5: Redux](sa/redux) 
 * Short Assignment 6: Express and Mongo
 <!-- * [Short Assignment 6: Express and Mongo](sa/server-side)  -->
 * Short Assignment 7: Frontend and Backend of Authentication 
