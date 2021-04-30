@@ -132,7 +132,7 @@ But, we want to actually make a webpage right?
 
 Let's set up a simple `index.html` to act as our main html page.
 
-🚀 Create an `index.html` in the `src/` folder:
+🚀 Create an `index.html` in the `src/` folder.
 
 ```html
 <!DOCTYPE html>
@@ -328,10 +328,13 @@ Well... by default webpack understands javascript, but has no idea what to do wi
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      favicon: './src/favicon.png',
     }),
 ```
 
 This just tells webpack that we want it to know that we have a `src/index.html` file and we want it to be available as just `index.html` in our final product.
+
+_Note: Including the `favicon: './src/favicon.png'` key-value pair gets webpack to handle including a favicon (the little icon that shows up in the browser tab) for the site. Make sure the path points to an image that is a square png of between 200x200 and 500x500px resolution. Preferrably with a transparent background._
 
 🚀 ctrl-c out of your webpack server and rerun `npm start`.
 
