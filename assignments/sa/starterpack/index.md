@@ -132,7 +132,7 @@ But, we want to actually make a webpage right?
 
 Let's set up a simple `index.html` to act as our main html page.
 
-🚀 Create an `index.html` in the `src/` folder. You can add in a `favicon.png` if you like.
+🚀 Create an `index.html` in the `src/` folder.
 
 ```html
 <!DOCTYPE html>
@@ -141,8 +141,6 @@ Let's set up a simple `index.html` to act as our main html page.
     <title>starter pack</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<!-- Adding a favicon is optional, but will help your users differentiate browser tabs -->
-		<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
   </head>
   <body>
     <div class="logo"></div>
@@ -330,13 +328,13 @@ Well... by default webpack understands javascript, but has no idea what to do wi
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
-			favicon: "./src/favicon.png",
+      favicon: './src/favicon.png',
     }),
 ```
 
 This just tells webpack that we want it to know that we have a `src/index.html` file and we want it to be available as just `index.html` in our final product.
 
-_Note: Including the `favicon: "./src/favicon.png"` key-value pair will ensure that you're able to see the the favicon in your local dev environment (just as you would on your deployed site). Make sure the path matches that of the `<link rel="shortcut icon" ...>` meta tag referenced in your `index.html` file._
+_Note: Including the `favicon: './src/favicon.png'` key-value pair gets webpack to handle including a favicon (the little icon that shows up in the browser tab) for the site. Make sure the path points to an image that is a square png of between 200x200 and 500x500px resolution. Preferrably with a transparent background._
 
 🚀 ctrl-c out of your webpack server and rerun `npm start`.
 
