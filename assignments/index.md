@@ -48,8 +48,8 @@ comment_term: assignments
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical)
 <!-- * Lab 3: React Notes -->
 * [Lab 3: React Notes](lab/react-notes)
-* Lab 4: Redux Platform Frontend
-<!-- * [Lab 4: Redux Platform Frontend](lab/redux-platform) -->
+<!-- * Lab 4: Redux Platform Frontend -->
+* [Lab 4: Redux Platform Frontend](lab/redux-platform)
 * Lab 5: Redux Platform + API
 <!-- * [Lab 5: Redux Platform + API](lab/redux-platform+server) -->
 

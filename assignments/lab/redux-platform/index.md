@@ -10,7 +10,7 @@ comment_term: lab-redux-blog
 
 ![](img/redux.png)
 
-We'll build a React+Redux Conent Platform.  It can be a platform for any type of content you desire. As long as there are individual content items that have some content that need to be saved to a database! Aside from the core functionality of creating an item with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.  It will basically be a CRUD platform — create, read, update, delete, storing data on a server with best practices, user authentication, and security — those features encompass a world of possibilities.
+We'll build a React+Redux Content Platform.  It can be a platform for any type of content you desire. As long as there are individual content items that have some content that need to be saved to a database! Aside from the core functionality of creating an item with title and content, showing those, editing the fields, and deleting, you should feel free to be creative with it.  It will basically be a CRUD platform — create, read, update, delete, storing data on a server with best practices, user authentication, and security — those features encompass a world of possibilities.
 
 
 <video loop autoplay mute controls>
@@ -48,7 +48,7 @@ git pull starter main  # you may need --allow-unrelated-histories
 
 ```bash
 # also don't forget to run:
-yarn install #to fetch all your webpack dependencies
+npm install #to fetch all your webpack dependencies
 ```
 
 
@@ -59,7 +59,7 @@ We'll be using an API server running at https://platform.cs52.me/api
 The API has the following endpoints:
 
 * GET  `/api/posts/`
-  returns **only** title, tags, and id for all posts
+  returns **only** title, tags, and id for all posts, **not** content
   `[[{"id":"",title":"","tags":"", "coverUrl":""},...]`
 * POST `/api/posts/` with post parameters `{'title', 'tags', 'content', 'coverUrl'}`
   creates a new post
@@ -129,7 +129,7 @@ We're going to use some routes to set up our app with different "pages".
 </Switch>
 ```
 
-This is just the basics, feel free to expand on this. For reference it might help to look back on the [routes short assignment](../sa/routing).
+This is just the basics, feel free to expand on this. For reference it might help to look back on the [routes short assignment](../sa/routing).  Refresh your understanding of what the `:postID` part of the route means. 
 
 
 ### App
@@ -157,7 +157,7 @@ Min specs at a glance:
 * use post id to link to full view
 * show *coverUrl*, *title*, *tags* in some form - can be a list, can be tiles, whatever you want!
 
-Hint: As this is a connected component that relies on the list of posts, you'll want to run your `props.fetchPosts()` *ActionCreator* from `componentDidMount`.
+Hint: As this is a connected component that relies on the list of posts, you'll want to run your `props.fetchPosts()` *ActionCreator* from `componentDidMount` or with the equivalent empty dependency list `useEffect` hook.
 
 ### NewPost
 
@@ -235,7 +235,7 @@ The state within the `postsReducer` looks like this:
 
 ## Actions
 
-Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer currently. This is because we are just updating and reloading all notes after a delete say, rather than manually editing the list. If you had millions of posts you might want to not have to do a full fetch of all posts on a delete, but in our case it doesn't matter.  However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place. *Don't do any api calls from anywhere else in the app, only in ActionCreators.*
+Here are some actions you should consider implementing.  Note, only FETCH_POST and FETCH_POSTS need to be handled by the reducer currently. This is because we are just updating and reloading all notes after a delete say, rather than manually editing the list. If you had millions of posts you might want to not have to do a full fetch of all posts on a delete, but in our case it doesn't matter.  However, you should still package up all the asynchronous calls in ActionCreators to keep everything in the same place. **Do not do any api calls from anywhere else in the app, only in ActionCreators.** This is a bit different from the short assignment redux refactor, but is the way we'll do from now on!
 
 ```javascript
 export const ActionTypes = {
@@ -247,7 +247,7 @@ export const ActionTypes = {
 };
 ```
 
-Wait, what about UPDATE_POST, surely that has to exist... technically yes, you do want to update, but it is basically an exact duplicate of FETCH_POST.
+Wait, what about UPDATE_POST, surely that has to exist... technically yes, you do want to update, buuut in practice it does the same things as FETCH_POST...
 
 Now you might ask, how the heck do we fetch from an API using actions!?
 
@@ -260,8 +260,8 @@ First thing we'll need is to install the `redux-thunk` library. Not another libr
 
 ```javascript
 
-yarn add redux-thunk
-yarn add axios
+npm install redux-thunk
+npm install axios
 
 ```
 
@@ -280,7 +280,7 @@ axios.get(`${ROOT_URL}/posts${API_KEY}`).then(response => {
 });
 ```
 
-*Note: this is an promisified asych function! results are only available in the `.then`.*
+*Note: this is an promisified asych function! results are only available in the `.then`. You can also use axios with async/await if you prefer.*
 
 Axios supports *GET*, *POST*, *PUT*, *DELETE*, and other *HTTP* verbs.
 
@@ -291,6 +291,7 @@ const fields = {title: '', content:'', coverUrl: '', tags: ''}
 axios.post(`${ROOT_URL}/posts${API_KEY}`, fields)
 ```
 
+*Note: `fields` in the above is just an example. I called it fields here in reference to form fields, but the point is that you can send any old javascript object.*
 
 #### [Thunks](https://github.com/reduxjs/redux-thunk)
 
@@ -316,7 +317,7 @@ Redux middleware wraps the `dispatch` function, allowing our `redux-thunk` middl
 
 Remember how *ActionCreators* just return an *Action*?  Well, what if you want the *ActionCreator* to first do something, perhaps fetch something from the internet?  Thunks allow this functionality.  Instead of immediately returning an *Action* object and getting dispatched to the reducers, we return a function that gets executed and can go off and do some stuff before dispatching any Actions to the reducers.
 
-A redux thunk allows your *ActionCreators* to return functions that can then dispatch actions. This is done by simply returning a function that takes 1 argument, and that function will be automatically called and passed in a reference to the `dispatch` function so we can call it directly once we are done.
+A redux thunk allows your *ActionCreators* to **return functions that can then dispatch actions**. This is done by simply returning a function that takes 1 argument, and that function will be automatically called and passed in a reference to the `dispatch` function so we can call it directly once we are done.
 
 ```javascript
 export function anAction() {
@@ -357,11 +358,11 @@ export function fetchPost(id) {/* axios get */}
 export function deletePost(id, history) {/* axios delete */}
 ```
 
-Each of these methods will return a function that takes dispatch as its argument, runs some axios call, and then dispatches some action. In the above that ActionType actions are named the same as the functions, however it might help to think of them as FETCH_POSTS_SUCCEEDED for instance.  It is the action that is dispatched to the reducers with the payload results of the asynchronous call.
+Each of these methods will *return a function that takes dispatch as its argument*, runs some axios call, and then dispatches some action. In the above that ActionType actions are named the same as the functions, however it might help to think of them as FETCH_POSTS_SUCCEEDED for instance.  It is the action that is dispatched to the reducers with the payload results of the asynchronous call.
 
 In the `.then` success call on create and delete you may find it useful to simply navigate to another page.  For instance when you hit delete on a blog post *Post* page you would want to be taken back to the `Posts` page.  Simply add `history.push('/')` to navigate to another page from within your ActionCreator function. But where does history come from?  Unfortunately, only routed components have access to history (not our actions module), so we will have to pass that in to our *ActionCreators* when they are called.  Add a parameter to any actionCreator that needs to call history like so `this.props.createPost(post, this.props.history)`.
 
-⚠️ If you run into a problem where for some reason your *ActionCreator* seems to run but never dispatches an action, that might be because you are running the unconnected version that you imported rather than the connected version of the function that you get from `mapDispatchToProps`.  So always remember to run *ActionCreators* as their `this.props` version because that is what `connect()` does, it gives us a modified version of the function that is run inside of `dispatch`.
+⚠️ If you run into a problem where for some reason your *ActionCreator* seems to run but never dispatches an action, that might be because you are running the unconnected version that you imported rather than the connected version of the function that you get from `mapDispatchToProps`.  So always remember to run *ActionCreators* as their `props` version because that is what `connect()` does, it gives us a modified version of the function that is dispatched. You can think of it like this: props.yourActionCreator == dispatch(yourActionCreator). 
 
 <details markdown="block">
 <summary> 🤦‍Want an copy/paste example❓
@@ -451,16 +452,15 @@ Make it look pretty. Remember you are free to make this whatever you want. It do
 🍰You are allowed and encouraged to use various CSS/Styling/Component libraries for this assignment:
 * [React-bootstrap](https://react-bootstrap.github.io/) is an easy one. 
 * [Material-UI](https://material-ui.com/) has that google material look.
+* [Grommet](https://v2.grommet.io/) great look and simple to use components.
 * [Blueprint.JS](https://blueprintjs.com/) is popular.
 * [Semantic-UI](https://react.semantic-ui.com) is pretty full featured.
-* check the workshops for more about react component libraries!
-
 
 ## Release it!
 
 ```bash
 # commit and push as you normally would - but also
-git tag v1
+git tag frontend.v1
 git push origin --tags
 ```
 
@@ -494,4 +494,5 @@ git push origin --tags
 * input validation — check that all fields have required values when creating new form for instance.
 * add a filter posts functionality, filter by tags initially.
   * for now our api is limited so additional search will come in lab5
+* style it extra special with transitions and all that squishy animation goodness.
 * more EC available in lab5!
