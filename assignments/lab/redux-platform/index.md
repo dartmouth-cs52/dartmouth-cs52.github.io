@@ -42,7 +42,7 @@ We will rip out `platform.cs52.me/api` and build our own Nodejs+Express+Mongo ba
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-21s/starterpack-your-gitub-username.git
+git remote add starter URL_TO_YOUR_STARTERPACK
 git pull starter main  # you may need --allow-unrelated-histories
 ```
 
