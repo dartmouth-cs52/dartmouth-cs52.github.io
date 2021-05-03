@@ -64,8 +64,10 @@ comment_term: lectures
 <!-- * Teams -->
 <!-- * 5/05 Teams -->
 <!-- * [5/05 Teams](12_teams-intro) -->
-* Databases
-<!-- * [Databases](12_intro_to_databases) -->
+<!-- * REST & Data Persistence -->
+* [REST & Data Persistence](12_rest_data)
+  * [video]()
+  * [notes](12_rest_data)
 <!-- * 5/5 Pitches -->
 <!-- * [5/5 Pitches](11_pitches) -->
 * Sessions & Auth
