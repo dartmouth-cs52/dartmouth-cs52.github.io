@@ -66,7 +66,7 @@ comment_term: lectures
 <!-- * [5/05 Teams](12_teams-intro) -->
 <!-- * REST & Data Persistence -->
 * [REST & Data Persistence](12_rest_data)
-  * [video]()
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a71976a2-f57a-4f6e-845c-ad1d0163bf13)
   * [notes](12_rest_data)
 <!-- * 5/5 Pitches -->
 <!-- * [5/5 Pitches](11_pitches) -->

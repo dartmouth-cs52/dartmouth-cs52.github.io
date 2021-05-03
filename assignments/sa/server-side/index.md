@@ -35,7 +35,7 @@ brew install mongodb-community
 
 ### Pull Starter
 
-We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
+We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. This is a very simple starterpack we are providing. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
 
 🚀 Do what you did in [lab4](../../lab/redux-blog) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
 
@@ -48,8 +48,8 @@ git pull starter main
 Then run these following commands to start our new node+express app in dev reloading mode.
 
 ```bash
-yarn install
-yarn dev
+npm install
+npm start
 ```
 
 
@@ -121,7 +121,7 @@ Ok, so now you've played a little bit with mongo directly, let's build something
 
 To connect to mongo in our app, we will use a module called `mongoose`. [Mongoose](http://mongoosejs.com/) is a an object model for mongo. This allows us to treat data that we are storing in mongo as objects that have a nice API for querying, saving, validating, etc.  Mongo is in general considered a schema-less store.  We store JSON documents in a large object tree similarly to firebase. However, with Mongoose we are able to specify a schema for our objects.  This is purely in code and allows use to validate and assert our data before inserting it into the database.
 
-🚀 Install mongoose:  `yarn add mongoose`
+🚀 Install mongoose:  `npm install mongoose`
 
 🚀 And add just a little bit of code to get mongoose initialized with our database in `server.js`:
 
@@ -130,9 +130,13 @@ import mongoose from 'mongoose';
 
 // DB Setup
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/cs52poll';
-mongoose.connect(mongoURI);
-// set mongoose promises to es6 default
-mongoose.Promise = global.Promise;
+
+console.log('connecting to database...');
+mongoose.connect(mongoURI).then(() => {
+  console.log('connected to database:', mongoURI);
+}).catch((err) => {
+  console.log('error: could not connect to db:', err);
+});
 
 ```
 
