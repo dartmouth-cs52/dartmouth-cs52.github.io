@@ -44,7 +44,7 @@ Then, add the following line right after the function declaration:
 ```javascript
   const [searchterm, setSearchTerm] = useState('');
 ```
-This line declares a variable called `searchterm` in state, as well as a setter, `setSearchTerm`, to update it. That is, if we were to update the `searchterm` variable in state, we'd do so by calling `setSearchTerm(newSearchTerm)`.
+This line declares a variable called `searchterm` in state, as well as a setter, `setSearchTerm`, to update it. That is, if we were to update the `searchterm` variable in state, we'd do so by calling `setSearchTerm(newSearchTerm)`. The initial argument of an empty string sets our initial value for our `searchterm` state.
 
 Now, let's add the last piece of the puzzle. Declare the `onInputChange` function like an ordinary function, but keep it within the body of `SearchBar`.
 <summary>Stuck? Take a look below!</summary>
