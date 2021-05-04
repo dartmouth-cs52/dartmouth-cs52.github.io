@@ -5,7 +5,7 @@ published: true
 comment_term: sa-react-hooks
 ---
 
-![AWS S3](http://i.imgur.com/FBAnSyZ.png)
+![]()
 
 ## Overview
 
@@ -142,7 +142,7 @@ If you haven't by now, please do it here!
 
 Deploy from this branch using Netlify! You know the drill by now.
 
-# To Turn In (Canvas)
+## To Turn In (Canvas)
 
 * url to videos assignment hooks branch of github repo
 * url to video videos Netlify app
