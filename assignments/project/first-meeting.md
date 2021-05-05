@@ -157,5 +157,5 @@ If you want to collaborate together on markdown files in realtime — rather tha
 ## To Turn In:
 
   * github repository URL to wiki page you created
-  * make sure everyone on your team has clicked the github classroom link and is on the github team
+  * make sure **everyone** on your team has clicked the github classroom link and is on the github team
 
