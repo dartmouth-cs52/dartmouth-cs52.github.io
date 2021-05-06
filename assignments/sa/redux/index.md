@@ -792,6 +792,10 @@ Play with the *slider* and note how you can export and import state. Imagine how
 
 Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into main! Deploy it somewhere on Netlify and include the deployed url in your submission.
 
+You can create a new netlify app and then deploy a branch:
+
+![](img/)
+
 # To Turn In (Canvas)
 
 * url to starterpack github repo (makes grading a whole lot easier and friendlier)
