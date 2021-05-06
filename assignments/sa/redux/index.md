@@ -794,7 +794,7 @@ Commit and push your changes to your new redux branch of SA4 `git push origin re
 
 You can create a new netlify app and then deploy a branch:
 
-![](img/)
+![](../react-hooks/img/branch-deploy.png){: .small}
 
 # To Turn In (Canvas)
 
