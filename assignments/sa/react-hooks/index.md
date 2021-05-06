@@ -2,6 +2,7 @@
 layout: page
 title: React Hooks — Short Assignment
 published: true
+author: Samiha Datta
 comment_term: sa-react-hooks
 ---
 

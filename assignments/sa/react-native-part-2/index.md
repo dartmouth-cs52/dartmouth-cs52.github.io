@@ -2,6 +2,7 @@
 layout: page
 title: React Native — Part 2
 published: true
+author: Tyler Vergho
 comment_term: sa-react-native-2
 ---
 
