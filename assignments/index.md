@@ -29,6 +29,8 @@ comment_term: assignments
 <!-- * [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload) -->
 <!-- * ExtraCredit Short Assignment: WebSockets -->
 * [ExtraCredit Short Assignment: WebSockets](sa/websockets)
+<!-- * ExtraCredit Short Assignment: React and Redux with Hooks -->
+* [ExtraCredit Short Assignment: React and Redux with Hooks](sa/react-hooks)
 <!-- * EC Short Assignment: ChatBot -->
 <!-- * [ExtraCredit sShort Assignment: ChatBot](sa/slack-bot) -->
 <!-- * ExtraCredit Short Assignment: ReactNative -->
