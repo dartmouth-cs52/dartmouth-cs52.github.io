@@ -48,8 +48,10 @@ Then, add the following line right after the function declaration:
 :bulb: This line declares a variable called `searchterm` in state, as well as a setter, `setSearchTerm`, to update it. That is, if we were to update the `searchterm` variable in state, we'd do so by calling `setSearchTerm(newSearchTerm)`. The initial argument of an empty string sets our initial value for our `searchterm` state.
 
 :mag: Now, let's add the last piece of the puzzle. Declare the `onInputChange` function like an ordinary function, but keep it within the body of `SearchBar`.
+
+<details markdown="block">
 <summary>Stuck? Take a look below!</summary>
-<details>
+
 Add the following immediately before the `return` statement:
 
 ```javascript
@@ -123,10 +125,11 @@ useEffect(() => {
 💡 The `useEffect` hook tells React that there's something your component needs to do after it's rendered. It takes input of a function and a dependency array. Every time a value in the dependency array is updated, it triggers a function call. Here, since we have no dependencies, this function is called once when the component is mounted, similar to `componentDidMount` from our class-based alternatives.
 
 :bulb: There's one last thing we need to do: debounce our search function! Import `useCallback`, also from `react`, and put the following line after the search function and before our `return`:
+
 ```javascript
 const debouncedSearch = useCallback(debounce(search, 500), []);
 ```
-💡 The `useCallback` hook is structured similarly to `useEffect`. It returns a memoized version of the callback that it's passed—in this case, `debounce(search,500)`, which returns a debounced version of the search function that batches up calls every half-second (500 milliseconds)—and only changes the callback if one of the dependencies in the dependency array has changed. This hook, similar to `useEffect`, is useful for preventing unnecessary renders, but specifically for callback functions.
+💡 The `useCallback` hook is structured similarly to `useEffect`. It returns a memoized version of the callback that is passed—in, in this case `debounce(search,500)`. The debounce function returns a debounced version of the search function that batches up calls every half-second (500 milliseconds). This hook, similar to `useEffect`, is useful for preventing unnecessary renders, but specifically for callback functions.  Since a hooks based component is just an function, every const and function definition is recreated every render call - to prevent that, `useCallback` takes a function and returns a version of it that persists across renders.  
 
 To integrate `debounceSearch` instead of `search` itself, swap out `search` for `debouncedSearch` in the `onSearchChange` attribute of `SearchBar` in the `return` statement. This call of the component should now look like the following:
 ```javascript
@@ -143,6 +146,8 @@ If you haven't by now, please do it here!
 ## Deploy it!
 
 Deploy from this branch using Netlify! You know the drill by now.
+
+![](img/branch-deploy.png){: .small}
 
 ## To Turn In (Canvas)
 
