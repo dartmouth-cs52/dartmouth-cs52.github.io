@@ -37,7 +37,7 @@ brew install mongodb-community
 
 We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. This is a very simple starterpack we are providing. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
 
-🚀 Do what you did in [lab4](../../lab/redux-blog) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
+🚀 Do what you did in [lab4](../../lab/redux-platform) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
 
 ```bash
 #make sure you are in your project directory
