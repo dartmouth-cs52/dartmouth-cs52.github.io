@@ -68,13 +68,11 @@ comment_term: lectures
 * REST & Data Persistence
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a71976a2-f57a-4f6e-845c-ad1d0163bf13)
   * [notes](12_rest_data)
-<!-- * 5/5 Pitches -->
-<!-- * [5/5 Pitches](11_pitches) -->
+<!-- * Websockets, Image and File storage, ReactNative -->
+* [Websockets, Image and File storage, ReactNative](15_ec_shorts)
 * Sessions & Auth
 <!-- * [Sessions & Auth](13_sessions_auth) -->
 <!-- * [5/7 Teams](13_teams) -->
-* Websockets, Image and File storage, ReactNative
-<!-- * [Websockets, Image and File storage, ReactNative](15_ec_shorts) -->
 <!-- * 5/14 In Class TeamWork Time -->
 <!-- * 5/19 In Class TeamWork Time -->
 <!-- * 5/19 In Class TeamWork Time -->

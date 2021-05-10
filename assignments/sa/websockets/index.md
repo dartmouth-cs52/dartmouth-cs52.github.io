@@ -72,7 +72,7 @@ export default NoteModel;
 ```
 </details>
 
-🚀 `yarn add mongoose`.
+🚀 `npm install mongoose`.
 
 In your `server.js` set up your mongo connection:
 
@@ -142,7 +142,7 @@ We'll be using [socket.io](http://socket.io) serverside and clientside.  We coul
 🚀 Install socket.io in **SERVER**:
 
 ```bash
-yarn add socket.io http
+npm install socket.io http
 ```
 
 We'll need to change a few things in our `server.js` file:
@@ -217,7 +217,7 @@ In your Lab3 new branch, let's add some socket.io smarts.
 🚀 Install socket.io in CLIENT (Lab3)
 
 ```bash
-yarn add socket.io-client
+npm install socket.io-client
 ```
 
 

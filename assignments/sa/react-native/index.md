@@ -79,21 +79,21 @@ We're going to need a few dependencies from our trusty friend, the Node Package 
 
 ```bash
 # make sure you are cd'd into project dir
-💻 yarn add axios
+💻 npm install axios
 ```
 
 Next, we'll need some specific react-native components that some other open source developers have kindly provided to us. This is fairly common in the react-native community, and it's great to have these pre-styled components at our disposal so we don't have to go through all the trouble of making an input field look nice, for example.
 
 🚀 There's one additional component we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), a simple input field made to look like the classic iOS search bar.
 
-🚀 `💻 yarn add react-native-search-box`
+🚀 `💻 npm install react-native-search-box`
 
 ## Eslint
 
 We can't live without this:
 
 ```bash
-💻 yarn add --dev eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint
+💻 npm install -D eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint
 ```
 
 🚀 Create a `.eslintrc` file from [this gist](https://gist.github.com/timofei7/c8df5cc69f44127afb48f5d1dffb6c84) and restart your code editor to pick up changes.
@@ -108,7 +108,7 @@ One of the classic navigation components in iOS is the Tab Bar. We'll be using t
 🚀 Now let's install some of the React Navigation dependencies.
 
 ```
-💻 yarn add @react-navigation/native @react-navigation/bottom-tabs
+💻 npm install @react-navigation/native @react-navigation/bottom-tabs
 ```
 
 and
@@ -238,7 +238,7 @@ Let's load this new *About* component and make out TabBar better looking at the 
 
 🚀 Let's add a package for icons:
 ```
-💻 yarn add react-native-vector-icons
+💻 npm install react-native-vector-icons
 ```
 
 🚀 In your `navigation/main_tab_bar.js` file add some imports:
@@ -301,7 +301,7 @@ But we already have a TabNavigator?!  Turns out you can nest navigation stacks. 
 
 🚀 Let's import the stack navigation package:
 ```
-💻 yarn add @react-navigation/stack
+💻 npm install @react-navigation/stack
 ```
 
 🚀 Create `navigation/search_tab.js` and populate with:
@@ -603,7 +603,7 @@ export default VideoDetail;
 
 🚀 Oops, we forgot to install the Webview component:
 ```
-💻 yarn add react-native-webview
+💻 npm install react-native-webview
 ```
 
 :snowflake: The WebView component is a sort of hybrid component that's actually just rendering a webpage. The `source` prop holds a uri that's called as if in a browser and then displayed in our application. Notice how it looks just like watching youtube on a mobile device. Pretty cool that we can do this within our application alongside native components, huh?

@@ -32,7 +32,7 @@ However, some modules will require you to install custom native code (usually in
 
 ### Xcode
 
-🚀Next, let's check to make sure the app still compiles and builds properly. You can do this by running `yarn ios` (the equivalent of `expo start`) from the terminal to launch a simulator, but let's do this through Xcode the first time so we can easily catch any errors. 
+🚀Next, let's check to make sure the app still compiles and builds properly. You can do this by running `npm run ios` (the equivalent of `expo start`) from the terminal to launch a simulator, but let's do this through Xcode the first time so we can easily catch any errors. 
 
 🚀In your `ios` folder, open the `.xcworkspace` file (**not** `.xcodeproj`) in Xcode. 
 
@@ -211,7 +211,7 @@ Let's connect our app with Firebase to allow us to authenticate with Google.
 }
 ```
 
-🚀Finally, in your project directory, run `yarn add @react-native-firebase/app` to add the Firebase NPM package. Then run `cd ios` and `pod install` to install its native dependencies. 
+🚀Finally, in your project directory, run `npm install @react-native-firebase/app` to add the Firebase NPM package. Then run `cd ios` and `pod install` to install its native dependencies. 
 
 Your app is now configured to use Firebase! Rebuild your app to make sure it still runs. 
 
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
 export default Upload;
 ```
 
-🚀Install the Google login SDK – which Firebase will use to login with Google – using `yarn add @react-native-community/google-signin @react-native-firebase/auth`. 
+🚀Install the Google login SDK – which Firebase will use to login with Google – using `npm install @react-native-community/google-signin @react-native-firebase/auth`. 
 
 🚀Open your Podfile (in the `ios` directory) using any text editor, and at the bottom add `pod 'GoogleSignIn', '~> 5.0.2'`. Then, you know the drill – `cd ios` and `pod install` to get all the native dependencies. 
 
@@ -421,7 +421,7 @@ Now, you should be able to select your video from the Camera Roll and see the fi
 
 We *could* use Axios to upload the video, but for a large upload like this we want to allow the user to send the app to the background and conduct other tasks on the device without fear of terminating the download. Let's install another module to help us accomplish that. 
 
-🚀Run `yarn add react-native-background-upload` and then `cd ios` `pod install`.
+🚀Run `npm install react-native-background-upload` and then `cd ios` `pod install`.
 
 🚀Since we created a new Firebase project for this app and we're using that API key to authenticate the user, we'll need to re-enable access to the YouTube API. Go to your [Google Cloud console](https://console.cloud.google.com/) (not Firebase console) and follow the instructions from Short Assignment 4 to enable the YouTube Data API. Note that you don't have to generate a new API key, just enable the API.
 
@@ -457,7 +457,7 @@ We *could* use Axios to upload the video, but for a large upload like this we wa
     }
 ```
 
-🚀And, we'll need to install the `react-native-fs` module to get the video file size. Run `yarn add react-native-fs` and then manually add `pod 'RNFS', :path => '../node_modules/react-native-fs'` to your Podfile like before. Then, run `pod install` and add the following import statement:
+🚀And, we'll need to install the `react-native-fs` module to get the video file size. Run `npm install react-native-fs` and then manually add `pod 'RNFS', :path => '../node_modules/react-native-fs'` to your Podfile like before. Then, run `pod install` and add the following import statement:
 
 ```js
 import { stat } from 'react-native-fs';
@@ -598,7 +598,7 @@ Finally, let's add some animations to our upload screen to make it more interest
 
 ### Lottie
 
-🚀Run `yarn add lottie-react-native lottie-ios@3.1.8`, then `cd ios` and `pod install`. This adds [Lottie](https://github.com/react-native-community/lottie-react-native) to your project, a framework that parses Adobe After Effects animations and renders them natively on mobile.
+🚀Run `npm install lottie-react-native lottie-ios@3.1.8`, then `cd ios` and `pod install`. This adds [Lottie](https://github.com/react-native-community/lottie-react-native) to your project, a framework that parses Adobe After Effects animations and renders them natively on mobile.
 
 🚀We're going to add an animation from [LottieFiles](https://lottiefiles.com/), a free library of Lottie animations that you can download and use in your projects. We're going to be using [this](https://lottiefiles.com/196-material-wave-loading) loading indicator, which you can download [here](./196-material-wave-loading.json). Download it and put it in your `assets` folder. 
 
@@ -632,7 +632,7 @@ You should now have a nice complement to your progress bar.
 
 React Native Animatable is a library that makes it easy to animate `components` in React Native. Let's use it to spruce up our upload button.
 
-🚀Run `yarn add react-native-animatable`.
+🚀Run `npm install react-native-animatable`.
 
 🚀Import the module:
 
@@ -674,7 +674,7 @@ You successfully took off the Expo training wheels and built a full-fledged vide
 
 There's a lot going on in `upload.js` – think about how you'd divide up the code and organize a larger React or React Native project.
 
-We breezed through Firebase and the YouTube API, but there's a lot more functionality to them that's accessible with a simple `yarn add`. 
+We breezed through Firebase and the YouTube API, but there's a lot more functionality to them that's accessible with a simple `npm install`. 
 
 ## Submission
 

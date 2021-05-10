@@ -34,20 +34,20 @@ We're going to do a new thing with our git repos. We're going to `tag` a certain
 🚀 Go into your Lab5 directory and run:
 
 ```bash
-git tag v1
+git tag beforeAuth
 git push origin --tags
 ```
 
 🚀 Go into your Lab4 directory and run:
 
 ```bash
-git tag v1
+git tag beforeAuth
 git push origin --tags
 ```
 
 Great, now you can always remember where you veered off course and made this terrible decision to add authentication to your lovely content platform.
 
-You will end up with 3 server urls at the end of this: A netlify url for loading the frontend, a herokuapp url for the api server, and a mLabs mongo database url (which we won't need to actually know but *heroku* will automatically help connect to).  
+You will end up with 3 server urls at the end of this: A .netlify.app url for loading the frontend, a .herokuapp.com for the api server, and an Atlas Cloud Mongo database url.  
 
 We'll be working on both the api server and frontend app.
 
@@ -61,7 +61,7 @@ Use the [`dotenv`](https://www.npmjs.com/package/dotenv) module to import it int
 
 🚀 Add .env to your .gitignore file.
 
-Then in your code wherever you need the secret you can use:
+Then in your code in any file where you need the secret you can use:
 
 ```javascript
 import dotenv from 'dotenv';
@@ -102,7 +102,7 @@ Make sure you have the config object:
 }
 ```
 
-This provides a mapping to `id` from `_id`, since you might need that later if you want to link to users.
+These various settings provide a cleaner output object to JSON with `id` from `_id`, and also turns on using timestamps for each record.
 
 ####  Salt + Hash
 
@@ -112,7 +112,7 @@ Remember how we planned on saving our passwords?
 
 Now we get to implement that!
 
-🚀 We're going to use the [`bcryptjs`](https://github.com/dcodeIO/bcrypt.js) module for this. So you should `yarn add bcryptjs` now and import it.
+🚀 We're going to use the [`bcryptjs`](https://github.com/dcodeIO/bcrypt.js) module for this. So you should `npm install bcryptjs` now and import it.
 
 #### Saving Salt+Hash
 
@@ -187,7 +187,7 @@ Let's add an new User controller!
 
 🚀 Create a `controllers/user_controller.js`.
 
-To encode and decode our JWT's we're going to use the [`jwt-simple`](https://github.com/hokaccha/node-jwt-simple). Go ahead and yarn add it and import it: `import jwt from 'jwt-simple';`
+To encode and decode our JWT's we're going to use the [`jwt-simple`](https://github.com/hokaccha/node-jwt-simple). Go ahead and npm install it and import it: `import jwt from 'jwt-simple';`
 
 🚀 Also import our new User model and init `dotenv` same as you did before!
 
@@ -255,7 +255,7 @@ Ok, now we have our controller and model done.  We need one more module. A modul
 We're going to use more npm modules! Yay!
 
 ```bash
-yarn add passport passport-local passport-jwt
+npm install passport passport-local passport-jwt
 ```
 
 We'll be using [Passport.js](http://passportjs.org/) to provide authentication services.  Passport gives us multiple authentication "strategies".  We'll use `passport-local` for authenticating with username and password, and `passport-jwt` for using JWT's. 
