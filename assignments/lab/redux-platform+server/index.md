@@ -140,7 +140,7 @@ Ok, so now you've played a little bit with mongo directly, let's build something
 
 ![](img/mongoose.jpg){: .small .fancy }
 
-Don't forget to install  Mongoose! Just repeat the Mongoose section from [SA7](../sa/server-side/#mongoose)
+Don't forget to install  Mongoose! Just repeat the Mongoose section from [server-side](../sa/server-side/#mongoose)
 
 Use `platform_db` instead of `polls` as your database name though!
 
@@ -177,25 +177,29 @@ Well it should have methods that perform all the main functionality of our API. 
 ```javascript
 import Post from '../models/post_model';
 
-export const createPost = (req, res) => {
-  res.send('post should be created and returned');
+export const createPost = async (postFields) => {
+  //await creating a post
+  //return post
 };
-export const getPosts = (req, res) => {
-  res.send('posts should be returned');
+export const getPosts = async () => {
+  //await finding posts
+  //return posts
 };
-export const getPost = (req, res) => {
-  res.send('single post looked up');
+export const getPost = async (id) => {
+  //await finding one post
+  //return post
 };
-export const deletePost = (req, res) => {
-  res.send('delete a post here');
+export const deletePost = async (id) => {
+  //await deleting a post
+  //return confirmation
 };
-export const updatePost = (req, res) => {
-  res.send('update a post here');
+export const updatePost = async (id, postFields) => {
+  //await updating a post by id
+  //return *updated* post
 };
 ```
 
-Let's just have them empty for now and then deal with the details later.  ⚠️ Note now this is a bit different from what we did in SA7.  There we played with promises, but to simplify things here we'll just pass in `req, res` from our routes directly to the controller. Up to you how you prefer it, but this way is a bit terser.
-
+Let's just have them empty for now and then deal with the details later.  ⚠️ Note now this is a bit different from what we did in the server-side short.  There we played with promises, but here we'll play with async/await to make it a bit more readable. Up to you how you prefer it.
 
 ### Routing
 
@@ -229,18 +233,35 @@ The chaining method simplifies how our routes look. For instance here is how we 
 // example!
 // on routes ending in /someroute/:someID
 // ----------------------------------------------------
+
+const exampleHandleDelete = async (req,res) => {
+    try {
+      // use req.body etc to await some contoller function
+      const result = await Contoller.someFunction(req.params.someID);
+      // send back the result
+      res.json(result);
+    } catch (error) {
+      // or catch the error and send back an error
+      res.status(500).json({ error });
+    }
+}
+
 router.route('/someroute/:someID')
-  .post(/*someMethod*/)
-  .get(/*someMethod*/)
-  .delete(/*someMethod*/);
+  .post(async (req,res) => {
+    // use req.body etc to await some contoller function
+    // send back the result
+    // or catch the error and send back an error
+  })
+  .get(/*your choice of defining inline above or function by reference below*/)
+  .delete(exampleHandleDelete);
 ```
 {: .example}
 
-Note `/*someMethod*/` is just a comment, you would call a method there in a module that we will call the controller — more on that shortly!
+In short, you listen on a route and register various callback functions. Those could be defined inline, or separated out. In this example we are marking them as async functions and from each of these we will call the various controller methods we have defined.
 
 Ok, remember how we defined all our API endpoints?   Let's map them in our router.
 
-🚀 Use the syntax above to make routes to map the following:
+🚀 Use the syntax above to make routes and functions to handle the following:
 
 * POST `/posts`:  Posts.createPost
 * GET `/posts`:  Posts.getPosts
@@ -274,7 +295,9 @@ Note: the `app.use('api` line should go towards the bottom of the file, in parti
 
 ### First Pass Test
 
-Let's test what we have done so far! Test out each of the routes using these curl commands (just modified version with localhost from hw4):
+Let's test what we have done so far! Test out each of the routes using these curl commands (just modified version with localhost from hw4).
+
+🍸 Since you don't yet have the controller functions working, try making mock `res.json({'hi'})` test responses for each of the routes so you know that they are being called. 
 
 ```bash
 # all posts get:
@@ -308,7 +331,7 @@ Ok, but our controller `controllers/post_controller.js` is fairly useless.  We h
 
 Let's walk through making one of those endpoints not useless!
 
-The most important might be the `createPost` endpoint.  If you recall from Lab4 this gets called with the fields of our new post `{title: '', tags: '', contents: '', coverUrl: ''}`.  These end up in our `req` (request) object, specifically in `req.body`.
+The most important might be how to handle `createPost`.  If you recall from Lab4 this gets called with the fields of our new post `{title: '', tags: '', contents: '', coverUrl: ''}`.  These end up in our `req` (request) object, specifically in `req.body`.
 
 Let's fill out the contents of the `createPost` method:
 
@@ -316,23 +339,25 @@ Let's fill out the contents of the `createPost` method:
 
 ```javascript
 const post = new Post();
+post.title = postFields.title;
 ```
 
-🚀 All our fields are available in `req.body`, so let's set them on the new Post object. You know how to do this.
+🚀 All our fields are available in `req.body` and we should have passed them into our controller as `postFields` (or however you want to name the argument), so let's set them on the new Post object. You know how to do this.
 
-Now we just have to save the object (so far we've been working with a new instance purely in memory).  Most save and query methods in Mongoose can return promises — so let's stretch our promise muscles a little.
+Now we just have to save the object (so far we've been working with a new instance purely in memory).  Most save and query methods in Mongoose can return promises — which we know can also be used with async/await notation, so let's practice that a bit here.
 
 ```javascript
-post.save()
-.then(result => {
-  res.json({ message: 'Post created!' });
-})
-.catch(error => {
-  res.status(500).json({ error });
-});
+  try {
+    const savedpost = await post.save();
+    return savedpost;
+  } catch (error) {
+    throw new Error(`create post error: ${error}`);
+  }
 ```
 
-It is common practice to return the modified object in a API call as confirmation, but often API's will just return various success codes also to indicate success or failure. We're going to return JSON though for now, but for the error case we will set an error status code and also return the error.
+It is common practice to return the modified object in a API call as confirmation, but often API's will just return various success codes also to indicate success or failure.
+
+⚠️ Now double check your route handler, are you `await`ing the controller function `Posts.createPost(req.body)` and then `res.json` responding with the results? 
 
 
 🚀 Let's test that this worked:
@@ -382,18 +407,21 @@ We will need to host this new server component so your blog can use it instead o
 
 🚀 [Same steps as for the short.](../../sa/server-side/#deploy-to-heroku)
 
-Create a new Heroku instance, but you should be able to use the same mongo connection string.  Make sure in your code you use a different database name though. 
+Create a new Heroku instance, but you can use the same mongo connection string which will look something like the following. Just make sure to change the DATABASENAME section for your new project so you aren't using the same one as the server-side short. 
 
-## P1 Complete
+`mongodb+srv://USERNAME:PASSWORD@cluster.yourmongoclusterid.mongodb.net/DATABASENAME?retryWrites=true&w=majority`
 
-Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!  IE. Change your Lab4 `ROOT_URL` to point to your Heroku hosted server instance.  Commit and push your very slightly altered Lab4.
+
+## Basic API server Complete!
+
+Once you have all the api endpoints complete, test it out using your blog frontend, make sure all the parts still work!  IE. Change your Lab4 frontend `ROOT_URL` to point to your Heroku hosted server instance.  Commit and push your very slightly altered Lab4 so that it now uses your server instead of the provided CS52 one.
 
 
 ## To Turn In
 
 1. github url to your repo, readme.md with what worked and what didn't
 1. url to your new heroku app instance for testing
-1. working url for Lab4 on netlify that points to your new API server. You should change it to post to the new heroku url that you get by clicking 'open app' on heroku.
+1. working url for Lab4 on netlify that points to your new API server. You should change it to point to the new heroku url that you get by clicking 'open app' on heroku.
 
 ## Extra Credit
 *always mention your extra credit in the README.md file*
@@ -402,4 +430,4 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 * add commenting to posts (either an array or another model) / change both api and frontend to support this.
 * really at this point you can start modifying your blog to be whatever you want. Add in new fields to your posts.
 * add in search support. Here's an [article](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/) that might help you get started.
-* later we'll introduce User and Authentication so don't implement those here though.
+* later we'll introduce User and Authentication so **do not** implement those here though.
