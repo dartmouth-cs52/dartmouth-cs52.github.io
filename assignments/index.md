@@ -25,8 +25,8 @@ comment_term: assignments
 <!-- * [Short Assignment 7: Frontend and Backend of Authentication](sa/authentication) -->
 <!-- * ExtraCredit Short Assignment: Git Map -->
 * [ExtraCredit Short Assignment: Git Map](sa/git-map)
-* ExtraCredit Short Assignment: Photo Uploading S3
-<!-- * [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload) -->
+<!-- * ExtraCredit Short Assignment: Photo Uploading S3 -->
+* [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload)
 <!-- * ExtraCredit Short Assignment: WebSockets -->
 * [ExtraCredit Short Assignment: WebSockets](sa/websockets)
 <!-- * ExtraCredit Short Assignment: React and Redux with Hooks -->
