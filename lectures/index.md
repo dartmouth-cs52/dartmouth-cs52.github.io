@@ -70,7 +70,7 @@ comment_term: lectures
   * [notes](12_rest_data)
 <!-- * Websockets, Image and File storage, ReactNative -->
 * Websockets, Image and File storage, ReactNative
-  * [video]()
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=69a81303-c1d5-4cc1-ad8c-ad2500a21df0)
   * [notes](15_ec_shorts)
 * Sessions & Auth
 <!-- * [Sessions & Auth](13_sessions_auth) -->
