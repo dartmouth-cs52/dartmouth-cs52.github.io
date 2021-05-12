@@ -84,9 +84,9 @@ We're going to need a few dependencies from our trusty friend, the Node Package 
 
 Next, we'll need some specific react-native components that some other open source developers have kindly provided to us. This is fairly common in the react-native community, and it's great to have these pre-styled components at our disposal so we don't have to go through all the trouble of making an input field look nice, for example.
 
-🚀 There's one additional component we'll be using in the workshop: [react-native-search-box](https://github.com/crabstudio/react-native-search-box), a simple input field made to look like the classic iOS search bar.
+🚀 There's one additional component we'll be using in the workshop, a search bar from: [react-native-elements](https://reactnativeelements.com/docs/searchbar/), a simple input field made to look like the classic iOS search bar.
 
-🚀 `💻 npm install react-native-search-box`
+🚀 `💻 npm install react-native-elements`
 
 ## Eslint
 
@@ -376,7 +376,7 @@ We want to do more.
  ```js
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-import Search from 'react-native-search-box';
+import SearchBar from 'react-native-elements';
 import {
   ActivityIndicator,
   StyleSheet,
@@ -446,7 +446,7 @@ class VideoList extends Component {
     }
     return (
       <View>
-        <Search
+        <SearchBar
           backgroundColor="#c4302b"
           showsCancelButton={false}
           textFieldBackgroundColor="#c4302b"
