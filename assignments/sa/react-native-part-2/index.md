@@ -322,6 +322,12 @@ const Upload = (props) => {
   if (initializing) return null;
 ```
 
+🚀Don't forget to update your react import to include your new functions:
+
+```js
+import React, { useState, useEffect } from 'react';
+```
+
 🚀Add `onGoogleButtonPress` to the `onPress` prop of your sign in button.
 
 🚀Try signing in! It'll warn you about not being a verified app, which you can safely ignore, and then prompt you to grant access to your YouTube account. After the window closes, you should see your user data printed in the console. 
