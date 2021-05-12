@@ -73,6 +73,8 @@ comment_term: lectures
   * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=69a81303-c1d5-4cc1-ad8c-ad2500a21df0)
   * [notes](15_ec_shorts)
 * Sessions & Auth
+  * [video](https://dartmouth.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=67e06452-951a-456f-aae0-ad2601553eba)
+  * [notes](13_sessions_auth)
 <!-- * [Sessions & Auth](13_sessions_auth) -->
 <!-- * [5/7 Teams](13_teams) -->
 <!-- * 5/14 In Class TeamWork Time -->
