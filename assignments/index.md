@@ -15,26 +15,28 @@ comment_term: assignments
 * [Short Assignment 2: Webpack+Babel+Eslint starterpack](sa/starterpack)
 <!-- * Short Assignment 3: React Intro -->
 * [Short Assignment 3: React Intro](sa/react-videos)
-* Short Assignment 4: Frontend Routing
-<!-- * [Short Assignment 4: Frontend Routing](sa/routing)  -->
-* Short Assignment 5: Redux
-<!-- * [Short Assignment 5: Redux](sa/redux)  -->
-* Short Assignment 6: Express and Mongo
-<!-- * [Short Assignment 6: Express and Mongo](sa/server-side)  -->
-* Short Assignment 7: Frontend and Backend of Authentication 
-<!-- * [Short Assignment 7: Frontend and Backend of Authentication](sa/authentication) -->
-* ExtraCredit Short Assignment: Git Map
-<!-- * [ExtraCredit Short Assignment: Git Map](sa/git-map) -->
-* ExtraCredit Short Assignment: Photo Uploading S3
-<!-- * [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload) -->
-* ExtraCredit Short Assignment: WebSockets
-<!-- * [ExtraCredit Short Assignment: WebSockets](sa/websockets) -->
+<!-- * Short Assignment 4: Frontend Routing -->
+* [Short Assignment 4: Frontend Routing](sa/routing) 
+<!-- * Short Assignment 5: Redux -->
+* [Short Assignment 5: Redux](sa/redux) 
+<!-- * Short Assignment 6: Express and Mongo -->
+* [Short Assignment 6: Express and Mongo](sa/server-side) 
+<!-- * Short Assignment 7: Frontend and Backend of Authentication  -->
+* [Short Assignment 7: Frontend and Backend of Authentication](sa/authentication)
+<!-- * ExtraCredit Short Assignment: Git Map -->
+* [ExtraCredit Short Assignment: Git Map](sa/git-map)
+<!-- * ExtraCredit Short Assignment: Photo Uploading S3 -->
+* [ExtraCredit Short Assignment: Photo Uploading S3](sa/s3-upload)
+<!-- * ExtraCredit Short Assignment: WebSockets -->
+* [ExtraCredit Short Assignment: WebSockets](sa/websockets)
+<!-- * ExtraCredit Short Assignment: React and Redux with Hooks -->
+* [ExtraCredit Short Assignment: React and Redux with Hooks](sa/react-hooks)
 <!-- * EC Short Assignment: ChatBot -->
-<!-- * [ExtraCredit Short Assignment: ChatBot](sa/slack-bot) -->
-* ExtraCredit Short Assignment: ReactNative
-<!-- * [ExtraCredit Short Assignment: ReactNative](sa/react-native) -->
-* ExtraCredit Short Assignment: More Advanced ReactNative
-<!-- * [ExtraCredit Short Assignment: More Advanced ReactNative](sa/react-native-part-2) -->
+<!-- * [ExtraCredit sShort Assignment: ChatBot](sa/slack-bot) -->
+<!-- * ExtraCredit Short Assignment: ReactNative -->
+* [ExtraCredit Short Assignment: ReactNative](sa/react-native)
+<!-- * ExtraCredit Short Assignment: More Advanced ReactNative -->
+* [ExtraCredit Short Assignment: More Advanced ReactNative](sa/react-native-part-2)
 
 
 
@@ -46,12 +48,12 @@ comment_term: assignments
 * [Lab 1: Build a Landing Page](lab/landing-page)
 <!-- * Lab 2: Build a Buzzfeed Quiz -->
 * [Lab 2: Build a Buzzfeed Quiz](lab/quizzical)
-* Lab 3: React Notes
-<!-- * [Lab 3: React Notes](lab/react-notes) -->
-* Lab 4: Redux Platform Frontend
-<!-- * [Lab 4: Redux Platform Frontend](lab/redux-platform) -->
-* Lab 5: Redux Platform + API
-<!-- * [Lab 5: Redux Platform + API](lab/redux-platform+server) -->
+<!-- * Lab 3: React Notes -->
+* [Lab 3: React Notes](lab/react-notes)
+<!-- * Lab 4: Redux Platform Frontend -->
+* [Lab 4: Redux Platform Frontend](lab/redux-platform)
+<!-- * Lab 5: Redux Platform + API -->
+* [Lab 5: Redux Platform + API](lab/redux-platform+server)
 
 <!-- ### 4-ish Short in-class quizzes:  10%
 *Concepts and methods from lectures and labs.* -->

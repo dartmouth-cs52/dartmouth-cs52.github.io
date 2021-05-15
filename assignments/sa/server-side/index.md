@@ -35,9 +35,9 @@ brew install mongodb-community
 
 ### Pull Starter
 
-We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
+We're going to be building a poll site, where users can sign various polls. We will be using [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) to start — take a look through the `package.json` file. This is a very simple starterpack we are providing. Mostly this sets us up with an `express` node server with a tiny bit of boiler plate as well as linting and babel.  You could easily recreate this, but for now we'll save you some time by providing it for you.
 
-🚀 Do what you did in [lab4](../../lab/redux-blog) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
+🚀 Do what you did in [lab4](../../lab/redux-platform) when pulling from your own starterpack but in this case we'll pull from a different starter — create your repo with the usual github classroom link from canvas, add a starter remote to this premade starter pack, and pull from it.
 
 ```bash
 #make sure you are in your project directory
@@ -48,12 +48,12 @@ git pull starter main
 Then run these following commands to start our new node+express app in dev reloading mode.
 
 ```bash
-yarn install
-yarn dev
+npm install
+npm start
 ```
 
 
-Take a look around the project now.  There is a `src` folder similar to our react project.  There is a `package.json` and the usual `.eslintrc.json`, `.babelrc`. Poke around the `scripts` part of the `package.json` file.  Note that it is a little different from our react package file. EC: What is `yarn dev` doing here?
+Take a look around the project now.  There is a `src` folder similar to our react project.  There is a `package.json` and the usual `.eslintrc.json`, `.babelrc`. Poke around the `scripts` part of the `package.json` file.  Note that it is a little different from our react package file. EC: What is `npm start` doing here?
 
 
 ## Intro Express
@@ -121,7 +121,7 @@ Ok, so now you've played a little bit with mongo directly, let's build something
 
 To connect to mongo in our app, we will use a module called `mongoose`. [Mongoose](http://mongoosejs.com/) is a an object model for mongo. This allows us to treat data that we are storing in mongo as objects that have a nice API for querying, saving, validating, etc.  Mongo is in general considered a schema-less store.  We store JSON documents in a large object tree similarly to firebase. However, with Mongoose we are able to specify a schema for our objects.  This is purely in code and allows use to validate and assert our data before inserting it into the database.
 
-🚀 Install mongoose:  `yarn add mongoose`
+🚀 Install mongoose:  `npm install mongoose`
 
 🚀 And add just a little bit of code to get mongoose initialized with our database in `server.js`:
 
@@ -130,9 +130,12 @@ import mongoose from 'mongoose';
 
 // DB Setup
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/cs52poll';
-mongoose.connect(mongoURI);
-// set mongoose promises to es6 default
-mongoose.Promise = global.Promise;
+
+mongoose.connect(mongoURI).then(() => {
+  console.log('connected to database:', mongoURI);
+}).catch((err) => {
+  console.log('error: could not connect to db:', err);
+});
 
 ```
 
@@ -529,10 +532,10 @@ In the above we make an ajax call to the server to update the fields, and then w
 Great! We have everything working now. We will need to host this new server component! While this serves up a webpage, since it is a computed page it needs a live running server process (unlike the static hosting which serves up pre-computed files). Heroku is a lovely service that can host your javascript/node server program (as well as python, and others). 
 
 1. Head over to [Heroku](https://www.heroku.com/) and login/sign up. Then, create a new app.
-3. Go to *Deploy* and select either "Github" or "Heroku Git" as your Deployment Method
+3. Go to *Deploy* and select either "Github" (strongly preferred) or "Heroku Git" as your Deployment Method
     * if you choose GitHub, find and connect to the right repository, then turn on *Automatic Deploys* for the main branch. This will update Heroku whenever you `git push origin main` and restart your heroku server. This way is pretty automatic and you don't have to worry about remembering to push to heroku.
     * if you are doing "Heroku Git", select Download and install the Heroku CLI using `brew install heroku/brew/heroku`. Given that you're already working in a git repository, use `heroku git:remote -a YOUR_HEROKU_APP` to add a new git remote (use `git remote -v` to see). If you haven't done so already, add and commit your changes. Now when you want to deploy do: `git push heroku main`. *Note: Don't forget to push main to **both** heroku and origin.* This way is more manual if you want greater control.
-4. Either way, once Heroku gets your push then it will run the yarn command that is listed in your `Procfile` to launch your app.  COOL!
+4. Either way, once Heroku gets your push then it will run the npm command that is listed in your `Procfile` to launch your app.  COOL!
 
 
 ## MongoDB Atlas 

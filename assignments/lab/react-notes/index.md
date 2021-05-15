@@ -37,13 +37,13 @@ In this version your notes will persist and will synchronize in real-time so mul
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-20s/starterpack-your-gitub-username.git
+git remote add starter your-starterpack-github-url
 git pull starter main  # you may need --allow-unrelated-histories
 ```
 
 ```bash
 # also don't forget to run:
-yarn #to fetch all your webpack dependencies
+npm install #to fetch all your webpack dependencies
 ```
 
 
@@ -95,7 +95,7 @@ Here's a good article on [Thinking in React](https://facebook.github.io/react/do
 
 ## App Component
 
-The skeleton for this is already in the starter.  Does it need to be a smart component?   It depends on how you organize your components, but you could do something similar to SA4 where the *App* component holds most of the state.
+The skeleton for this is already in the starter.  Does it need to be a smart component?   It depends on how you organize your components, but you could do something similar to the react short assignment where the *App* component holds most of the state.
 
 Here is a test note that I used to start with with the minimal set of fields:
 
@@ -133,10 +133,13 @@ Feel free to peruse the Immutable.js [docs](https://facebook.github.io/immutable
 🚀 Install Immutable.js
 
 ```javascript
-yarn add immutable
+npm install immutable
 
 // import { Map } from 'immutable';
-// remember ^ is deconstrution - importing 1 key from a dictionary
+// remember that `{ key } from object` is deconstruction - importing 1 key from a dictionary
+// you could also try:
+// import { Map as iMap } from 'immutable';
+// if you run into linter errors that you don't like
 ```
 
 Here is what I recommend you do for your *App* component state initialization:
@@ -207,7 +210,7 @@ this.setState(prevState => ({
 
 *Note: in the above we are using function setState rather than object setState. We are passing in an arrow notation function which is called with previous state and it returns new state. This is [often preferred](https://medium.freecodecamp.org/functional-setstate-is-the-future-of-react-374f30401b6b) for clarity and consistency.*
 
-If we were to do this with a plain array we might do `find` or a loop, or best case a `filter` like so: `this.states.notes.filter( note => { note.id !== id })`, please use Immutable.js.
+If we were to do this with a plain array we might do `find` or a loop, or best case a `filter` like so: `this.states.notes.filter( note => { note.id !== id })`. For now we'll use Immutable.js though.
 
 
 **Additions**:
@@ -220,16 +223,16 @@ this.setState(prevState => ({
 }));
 ```
 
-If we were to do this with a plain array it wouldn't be too bad, something like `[...this.state.notes, newNote]`, but if we were to do this with a javascript object, we'd first need to clone the object, that gets tricky.
+If we were to do this with a plain array it wouldn't be too bad, something like `[...this.state.notes, newNote]`, but if we were to do this with a javascript object, we'd first need to clone the object, which can get tricky for nested objects.
 
 Here is how you could shallow clone an object:
 
 ```javascript
-// newNote = { key: value, key: value }
-const newNotes = Object.assign({}, this.state.notes, newNote);
+// newNote = { title: '', etc }
+const newNotes = {...this.state.notes, newNoteID: newNote};
 ```
 
-Confused?  This takes an empty object `{}` assigns each of the properties from `this.states.notes` to it, and also merges in the properties from `newNote`.  However it only does the top level properties, so each nested object is still a reference rather than clone.  Deep cloning is hard and slow if you are doing it manually.  Immutable.js makes it speedy and clean!
+Confused?  This uses spread notation to copy out all the top level keys from the previous notes into the new `{}` object!  However, it only does the top level properties, so each nested object is still a reference rather than clone.  Deep cloning is hard and slow if you are doing it manually.  Immutable.js makes it speedy and clean!
 
 Great, now that you know how to clone an object we'll do that for updating a note!
 
@@ -239,7 +242,7 @@ Immutable.js provides an [`update`](https://facebook.github.io/immutable-js/docs
 
 ```javascript
 this.setState(prevState => ({
-  notes: prevState.notes.update(id, (n) => { return Object.assign({}, n, fields); }),
+  notes: prevState.notes.update(id, (prevNote) => { return {...prevNote, ...newNoteProperties},
 }));
 ```
 
@@ -256,7 +259,7 @@ notes.entrySeq().map(([id, note]) => {
 });
 ```
 
-*Note: if we were mapping over a regular array as you may sometimes want, remember that `entrySeq` only pertains to Immutable.js map objects, not regular JS objects/arrays.*
+*Note: `entrySeq` only pertains to Immutable.js map objects, not regular JS objects/arrays, so it wouldn't work in some other cases where we might be using just a simple array for instance.*
 
 ## Note Component
 
@@ -279,7 +282,7 @@ Is left as an exercise for the reader. 😡
 
 ### Dragging
 
-Dragging is a bit tricky, but you can simplify your life by using a component from the onlines.  I recommend [react-draggable](https://github.com/mzabriskie/react-draggable). *(remember we are using `yarn` for package dependencies)*
+Dragging is a bit tricky, but you can simplify your life by using a component from the onlines.  I recommend [react-draggable](https://github.com/react-grid-layout/react-draggable). *(remember we are using `npm` for package dependencies)*
 
 The basic idea is that you would import this new component just like you have been with your own components and then it has some props that you pass into it for configuration.
 
@@ -290,7 +293,7 @@ Here is an example:
     handle=".class-of-note-mover-element"
     grid={[25, 25]}
     defaultPosition={ {x: 20, y: 20} }
-    position={ {x: onYou_X, y: onYou_Y, width: onYou_width, height: onYou_height} } 
+    position={ {x: yourX, y: yourY, width: yourWidth, height: yourHeight} } 
     onStart={this.handleStartDrag}
     onDrag={this.handleDrag}
     onStop={this.handleStopDrag}
@@ -306,7 +309,7 @@ The way to use this component is to wrap whatever JSX you want in your *Note* re
 
 Note the 3 callbacks.  `handleStart`, `handleDrag`, `handleStop`.   You would use these to drive the position of the note.  You'll want the position to be part of the note object as eventually we will synchronize using a cloud component.  You may find that you only need to implement `handleDrag`.
 
-In particular, Draggable will call the function **you** provide to `onDrag` with two arguments, let's call them `(e, data)`.  Just to save you some digging, `data` will have x and y components so you can extract them and use them for your `note.position` state.
+In particular, Draggable will call the function **you** provide to `onDrag` with two arguments, let's call them `(e, data)`. ➠Just to save you some digging, `data` will have x and y components so you can extract them and use them for your `note.position` state.
 
 Here's a potential component hierarchy you could end up with:
 
@@ -333,8 +336,17 @@ Delete is fairly straightforward, you would have some clickable element assigned
 <i onClick={this.handleDeleteClick} className="fa fa-trash-o" />
 ```
 
-## Edit
+### Accessibility 
 
+If you tried the line above you may have found that you got a bunch of [a11y](https://www.a11yproject.com/) errors. These are errors related to accessibility, trying to help developers create code that is compatible with various accessibility technologies such as screen readers. The errors here in particular are:
+
+* [no static element interactions](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md) if you have an `onClick` you need to also specify the `role` for click. Is it a button? A link? Other? There is no way for accessibility tools to determine from the generic element type what the purpose of the click is.
+* [interactive supports focus](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/interactive-supports-focus.md) specifies that clickable elements must be able to be tab-able to. 
+* [control has associated label](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md)
+
+Please read these and fix the code based on what you find. You'll be guided through adding in several attributes to annotate interactive elements in such a way that screen readers can understand how to present them.
+
+## Edit
 
 There are several ways to implement this.  You could have a button that opens up a modal, or you could do in-place editing, switching out the display JSX for an editing box.
 
@@ -368,18 +380,14 @@ render() {
 
 ### Markdown
 
-For markdown support in the main text portion of the note, you can use the [marked](https://github.com/chjj/marked) package.
-
-There's a tiny trick for this in React, so I'll just show it here:
+For markdown support in the main text portion of the note, you can use the [react-markdown](https://github.com/remarkjs/react-markdown) package.
 
 ```javascript
-// don't forget to import marked from 'marked'
+import ReactMarkdown from 'react-markdown'
 
-<div className="noteBody" dangerouslySetInnerHTML={% raw %}{{ __html: marked(this.props.note.text || '') }}{% endraw %} />
+// then just use something like this where you need it!
+  <ReactMarkdown>{this.props.note.text || ''}</ReactMarkdown>
 ```
-
-The idea being that React typically wants to protect you from just setting arbitrary html to the output of some function, but there is an override. Remember even though `div` it is a standard html element in React it is also a component.  The component has a prop `dangerouslySetInnerHTML`  which will set the contents to whatever you pass into it.
-
 Once you have this working you can test with some markdown syntax!
 
 ```javascript
@@ -474,7 +482,7 @@ Note: it is extra credit to add authentication for users to your app and not jus
 🚀 Let's add the firebase js library to your project:
 
 ```bash
-yarn add firebase
+npm install firebase
 ```
 
 🚀 Now go to your *Project Overview* page -> *Add Firebase To Your App*
@@ -499,7 +507,7 @@ const database = firebase.database();
 
 Now the question is where shall we put all the various firebase related stuff?  How about an es6 [module](https://www.sitepoint.com/understanding-es6-modules/) of its own!  The idea here is to create a wrapper module with several helpful functions that talk to firebase for us. Think of this as making your own little library of firebase related methods - fact we'll just abstract it out into something we'll consider our datastore.
 
-🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `yarn` to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
+🚀 Create a file,  `datastore.js` in a `src/services` directory. And since we're using `npm` to fetch the firebase SDK for us, just do `import firebase from 'firebase';` and you're all set to go!
 
 My recommendation is to put all your firebase functions in this file and export them.  We briefly talked about ES6 modules.  Easiest way to make this module is to simply export every public function:
 
@@ -512,7 +520,7 @@ export function fetchNotes(callback) {
 
 Hey, what's this `fetchNotes` function?!  Just something that might help!
 
-You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal.  However, our app is a frontend only app, we may be starting `webpack-dev-server` with `yarn start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!  Also, note that the key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data if you did that.
+You may also be wondering about the `apiKey` and putting that directly in your code.  That is indeed not ideal.  However, our app is a frontend only app, we may be starting `webpack-dev-server` with `npm start` but our app is just some javascript that runs in the browser.  Which means we can't use environment variables or anything like that!  Also, note that the key we have above is just an API key. This identifies our app to firebase but it doesn't necessary grant it any privileges.  We'll see shortly that Firebase actually wants users to be authenticated, and you will have control over what data is read/write access to your data if you did that.
 
 Once you are ready to use these new functions you can just import it wherever you need it. In particular you would want to import these functions in your top level component where you have your note state related callbacks.
 
@@ -631,4 +639,7 @@ Test it out!  Open multiple browsers and see how adding and moving notes in one 
 * Add in authentication with Firebase Users. We haven't covered authentication but Firebase provides a [nice auth api](https://firebase.google.com/docs/auth/).
 * Allow users to sign-up and then create and manage multiple boards!  Can show list of boards as dropdown or as a meta-board of clickable notes!
 * Live editing -- showing which user is editing which note!
+* Locking a note for others when one person is editing. 
+* Column organization Kanban style. 
+* Filtering. 
 * Other!

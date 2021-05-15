@@ -1,8 +1,8 @@
 ---
 layout: page_with_slides
-title: JS
+title: Frontend Routing
 published: true
 comment_term: lecture-routing
 ---
 
-{% include slides-toggle.html %}
+<iframe src="https://brunchlabs.slides.com/timtregubov/cs52-routing/embed?token=QEVLVsUM&style=light" width="1024" height="768" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

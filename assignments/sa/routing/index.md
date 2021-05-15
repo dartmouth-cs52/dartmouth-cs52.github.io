@@ -27,7 +27,7 @@ For this workshop we're just going to add React Router to your personal starter 
 🐙 Before we start let's tag the starterpack with v2!  This is with react but before we add routing.
 
 ```bash
-git tag v2
+git tag withReact
 git push origin --tags
 ```
 
@@ -36,8 +36,8 @@ git push origin --tags
 
 
 ```bash
-#make sure you are in your sa3 starterpack repo
-yarn add react-router-dom
+#make sure you are in your starterpack repo, not your react-videos or other
+npm install react-router-dom
 
 ```
 
@@ -201,27 +201,22 @@ Turns out we need to tell `webpack-dev-server` that if you load a frontend route
   },
 ```
 
-## Deployment
+## Root Path
 
-There is one tricky bit with deployment now that we have frontend routes.  The problem is that say you go to your yoursitename.surge.sh/posts/id page. If you ask the server for this page the server will tell you it doesn't exist. Because in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-dev-server` happens to have a configuration option `historyApiFallback` which makes it serve up the base index.html file for every resource URL that it can't find, but hosting services don't do this by default. So we're going to alter our webpack a bit to be more robust.
+There is one tricky bit with paths that we have to contend with.  The problem is that say you go to your `yoursite.com/posts/id` when in point of fact the resource `/posts/id/index.html` does not exist on the server.  `webpack-dev-server` happens to have a configuration option `historyApiFallback` which makes it serve up the base `/index.html` file for every resource URL that it can't find, BUT that means we are loading in our html at a path that it didn't expect.  For instance, say you link in `<script src=main.js />`.  That is a relative path but you are assuming that your app is always loaded at `yoursite.com/index.html`.  That assumption no longer holds as your app is loading in at `yoursite.com/posts/id` and `main.js` only exists at `yoursite.com/main.js` as our fallback is only for index.html. 
 
-🚀 Now we have to make sure that we are telling webpack to output our files to the root '/' rather than using relative links. Add the following to your `webpack.config.js` file:
+🚀 For simplicty we're going to tell webpack to output our files to the root '/'. Add the following to your `webpack.config.js` file:
 
 ```javascript
 mode: env,
 output: { publicPath: '/' },
 ```
 
-### If you are using SURGE.SH
+*Note: all of these changes that are making prevent the site from working correctly on gh-pages, from now on we'll have to host our application on a more robust platform, see Netlify below*. 
 
-Now we're going to do something odd. We're going to make a copy of `index.html` to `200.html`.  What will happen is when you hit a route that *surge* doesn't know about, it will serve up the contents of the `200.html` file. Since this file is your app, it will load up, read the current route, and change the page appropriately. This is *surge* specific but will make our SPA setup pretty robust.
+### NETLIFY.COM
 
-🚀 Duplicate the `HtmlWebpackPlugin` entry in the `webpack.config.js` file so you have one with `filename: './200.html'` and one with `filename: './index.html'` both using the same template file `template: './src/index.html'`.
-
-
-### If you are using NETLIFY.COM
-
-[Netlify.com](http://netlify.com) is a more powerful platform than surge (albeit a bit more complicated).  They support a config file `_redirects` that allows you to create any number url redirect rules. 
+[Netlify.com](http://netlify.com) is a powerful hosting platform.  They support a config file `_redirects` that allows you to create any number url redirect rules. 
 
 For our purposes: 
 
@@ -239,7 +234,9 @@ Then edit your `package.json` file and change your `build` script to be:
     "build": "npm run clean; NODE_ENV=production webpack --color; cp -f _redirects dist/",
 ```
 
-The idea being that when you set up netlify with github - give it `yarn build` as the build command and `dist` as the output directory, and your build scripts needs to just add it to there. 
+The idea being that when you set up netlify with github - give it `npm run build` as the build command and `dist` as the output directory, and your build scripts needs to just add it to there. 
+
+⚠️ *If you are Windows, do **not** change your `winbuild` script.  That one can stay the same.  But do have a separate `build` script which we will use on netlify as that runs linux bash and needs that shell syntax.*
 
 
 ## Test Your Deployed URL
@@ -254,7 +251,7 @@ Don't forget to commit and push your code so that your starterpack now has routi
 ## Release V3!
 
 ```bash
-git tag v3
+git tag withRouting
 git push origin --tags
 ```
 
@@ -262,10 +259,10 @@ git push origin --tags
 ## To Turn In (Canvas)
 
 * url to github repo (makes grading a whole lot easier and friendlier)
-* url to surge.sh/netlify site
+* url to netlify site
 * your starter pack should now
     * have working test routes
-    * be deployed to surge with working 200.html
+    * be deployed to netlify with working _redirects
     * lint correctly
     * have fallback webpack serving index.html for any route
 

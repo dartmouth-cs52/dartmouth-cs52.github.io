@@ -30,7 +30,7 @@ Now we're going to add in Redux to your personal starter repository so now you'l
 git tag
 ```
 
-You should have v1, v2, and v3. if you don't have v3 then [go back](../routing) and do that now.
+You should have several tags up through `withRouting`. If you don't have that one then [go back](../routing) and do that now.
 
 
 ## Redux
@@ -39,7 +39,7 @@ You should have v1, v2, and v3. if you don't have v3 then [go back](../routing) 
 🚀 Install redux
 
 ```bash
-yarn add redux react-redux redux-thunk
+npm install redux react-redux redux-thunk
 ```
 
 These are the packages we will be using. Redux is a general state management paradigm that does not necessarily need to be tied to React. But together they are an unstoppable force for clean webdevelopment — so we will use another module `react-redux` that connects the two.   We won't use `redux-thunk` today but will soon — it allows us to work better with asynchronous server calls.
@@ -279,7 +279,7 @@ ReactDOM.render(
 
 Now we have the basics done, we should create some connected components.  A connected component is one that is literally connected to the Redux store.  The easiest way to do this is by wrapping a component in a higher-order function that returns a new component that has access to Redux: `connect(mapStateToProps, mapDispatchToProps)(YourComponent)`. We'll explain the syntax shortly.
 
-Let's some components that make use of our Redux setup!  These will be toy examples, and don't particularly need Redux.  But they'll demonstrate the various wirings needed for setting up a much more complicated app.
+Let's create some components that make use of our Redux setup! These will be toy examples, and don't particularly need Redux. But they'll demonstrate the various wirings needed for setting up a much more complicated app.
 
 
 ### Counter
@@ -380,7 +380,7 @@ Play with the *slider* and note how you can export and import state. Imagine how
 
 ```bash
 # commit and push as you normally would - but also
-git tag v4
+git tag withRedux
 git push origin --tags
 ```
 
@@ -398,19 +398,21 @@ Currently our React YouTube search app works great, but maybe we can learn some 
 
 ## Prepare the Repo
 
-🚀 To begin, we'll create a new branch `redux-sa` in your SA4 repo, the react-videos one.
+😱 The next part may be a bit scary - we're going to merge in your new startpack changes into this repo and it'll create a bit of confusion.  You can either do the merge and practice fixing merge conflicts, or you can manually try to copy over changes.  The merge conflict way works surprisingly well, but can be a bit scary at first as you'll have some broken code and you'll need to pay attention to linting errors and merge conflict markers to fix it.  If you need a refresher about git merge resolution see the [git-map ec short](../git-map). You got this, breathe and read the codes.
+
+🚀 To begin, we'll create a new branch `redux-sa` in your react-videos short assignment repo.
 
 Navigate to your repository on the command line and pull in the updates you've just made to your starterpack:
 
 ``` bash
-cd sa4-YOUR_USERNAME
-git pull origin main #just in case
+cd react-videos-short-assignment-directory
+git pull origin main #just in case to make sure you have the latest
 git checkout -b redux-sa #create a new branch redux-sa
 git pull starter main  #pull in your updated starter code!
 ```
 Hopefully, you should only have major conflicts in your `src/index.js` file. Let's handle them now!
 
-⚠️ If you have conflicts in your `yarn.lock` do: `git checkout --theirs -- yarn.lock`. This will choose the entire file from your starterpack.  
+⚠️ If you have conflicts in your `package-lock.json` do: `git checkout --theirs -- package-lock.json`. This will choose the entire file from your starterpack.  
 
 ⚠️ If you have conflicts in your `package.json` or `webpack.config.js`, merge them in manually, you will most likely want the union of the two.
 
@@ -485,11 +487,11 @@ import YouTube from './youtube';
 <Route exact path="/youtube" component={YouTube} />
 ```
 
-⚠️ You may need to do a little bit of cleanup, for instance in `app.js` get rid of the counter and controls components, you won't need them.  This is a good exercise in going through your code.
+⚠️ You may need to do a little bit of cleanup, for instance in `app.js` get rid of the counter and controls components, you won't need them.  This is a good exercise in going through your code and doing some refactoring. Your linter will help you here, it will tell you things that are undefined or need importing etc.
 
 🚀 Your linter should tell you that `youtube.js` has a lot of errors.  Notice that we moved that code into the component directory so a lot of the import paths are wrong. You'll want to fix the paths in those import statements. Remember `../` is up one directory and `./` is in the current directory. At this point you should be able to get it to a point where it will build and you can get the main page up and running.
 
-🚀 Don't forget to run `yarn install` to install any of the new dependencies that were merged into `package.json`.
+🚀 Don't forget to run `npm install` to install any of the new dependencies that were merged into `package.json`.
 
 🚀 Finish the Merge! Once you have finished handling the conflicts, go ahead and `git add` and `git commit` the changes to resolve the conflicts and finish the merge.
 
@@ -788,23 +790,26 @@ Play with the *slider* and note how you can export and import state. Imagine how
 
 ## Release it!
 
-Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into main! Deploy it somewhere on surge and include the deployed url in your submission.
+Commit and push your changes to your new redux branch of SA4 `git push origin redux-sa`. No need to merge into main! Deploy it somewhere on Netlify and include the deployed url in your submission.
+
+You can create a new netlify app and then deploy a branch:
+
+![](../react-hooks/img/branch-deploy.png){: .small}
 
 # To Turn In (Canvas)
 
 * url to starterpack github repo (makes grading a whole lot easier and friendlier)
-* url to starterpack surge.sh
-* url to redux branch of SA4 github repo
-* url to redux videos surge.sh
+* url to starterpack Netlify
+* url to redux branch of videos github repo
+* url to redux videos Netlify
 * remember that all your code should lint cleanly
 * your youtube searcher should have the same functionality as before, but now with redux!
 
-
+# Extra Credit
+* We didn't use thunks, EC for figuring out how to use thunks to move the search api call into an action rather than in the component.
 
 ## Resources
 
 * [redux.js.org](http://redux.js.org/index.html)
 * [Learning resources](https://redux.js.org/introduction/learning-resources)
 * [css-tricks.com/learning-react-redux/](https://css-tricks.com/learning-react-redux/)
-* [Redux integration with React Router](https://reacttraining.com/react-router/web/guides/redux-integration)
-<!-- * [React Router Redux Docs](https://github.com/reacttraining/react-router/tree/master/packages/react-router-redux) -->

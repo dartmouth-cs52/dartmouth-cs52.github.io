@@ -20,7 +20,8 @@ Today we'll be learning about [React](https://facebook.github.io/react/)!  So fa
 
 ```bash
 #make sure you are in your project directory
-git remote add starter git@github.com:dartmouth-cs52-20s/starterpack-your-gitub-username.git
+git remote add starter git@github.com:dartmouth-cs52-CURRENT_TERM/starterpack-your-gitub-username.git
+# might be easiest to grab the git url from github directly :-) 
 git pull starter main
 ```
 
@@ -43,7 +44,7 @@ npm install -D @babel/preset-react
 # installs a react babel preset
 ```
 
-🚀 Add a `["@babel/react"]` preset to your existing `.babelrc` file to look something like this:
+🚀 Add a `["@babel/react"]` preset to your existing `babel.config.json` file to look something like this:
 
 ```json
 {
@@ -954,11 +955,11 @@ Now don't forget to git add, commit, and push. **But** remember that now we are 
 
 ## Deployment
 
-And don't forget to deploy. However!  First change your `package.json` and change your surge url to something new akin to `yourname-cs52-videos.surge.sh` so that you aren't deploying on top of your previous assignments.
+And don't forget to set up your netlify deployment!
 
 ## To Turn In
 
-1. Submit github url and your deployed surge url on canvas.
+1. Submit github url and your deployed netlify url on canvas.
 1. Your App should have the following working:
   * search, with new videos loading
   * clicking on a list item changes state and the main detail view

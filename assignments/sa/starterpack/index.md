@@ -132,7 +132,7 @@ But, we want to actually make a webpage right?
 
 Let's set up a simple `index.html` to act as our main html page.
 
-🚀 Create an `index.html` in the `src/` folder:
+🚀 Create an `index.html` in the `src/` folder.
 
 ```html
 <!DOCTYPE html>
@@ -328,10 +328,13 @@ Well... by default webpack understands javascript, but has no idea what to do wi
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html',
+      favicon: './src/favicon.png',
     }),
 ```
 
 This just tells webpack that we want it to know that we have a `src/index.html` file and we want it to be available as just `index.html` in our final product.
+
+_Note: Including the `favicon: './src/favicon.png'` key-value pair gets webpack to handle including a favicon (the little icon that shows up in the browser tab) for the site. Make sure the path points to an image that is a square png of between 200x200 and 500x500px resolution. Preferrably with a transparent background._
 
 🚀 ctrl-c out of your webpack server and rerun `npm start`.
 
@@ -432,6 +435,8 @@ Ok, how about we add in linting. Linters are code parsers that check your code f
 In VSCode install the [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension or in *Atom* install the `linter-eslint` plugin.
 
 ![](img/vscode-eslint.jpg){: .small}
+
+*Note: always open your entire project in VSCode rather than just single files or other folders. This will prevent failure due to VSCode not picking up the project-wide config files.*
 
 We'll be using [Eslint](http://eslint.org/) in every assignment.
 
@@ -762,9 +767,13 @@ Let's test locally first though.
 
 ```js
 //merge into scripts section
+"test": "eslint src",
 "build": "npm run clean; NODE_ENV=production webpack --color",
+"winbuild": "npm run clean & SET NODE_ENV=production& webpack --color"
 "clean": "rimraf dist"
 ```
+
+*Note: on windows the syntax is slightly different so we add a separate build command there. You'll need the regular one for deployment but where you see `npm run build` if you are on a windows box run `npm run winbuild`. 
 
 This will first clean out anything old if there is a `dist` folder, and then generate all of the static compiled files for the site.  
 
@@ -786,7 +795,9 @@ These are the compiled/built output files — the actual files that the browser 
 
 🚀 Create a [New Site From GitHub](https://app.netlify.com/start) on Netlify
 
-![](img/new-netlify.jpg){: .fancy .medium}
+![](img/netlify0.jpg){: .fancy .small}
+
+![](img/new-netlify.jpg){: .fancy .small}
 
 Set it to deploy your `main` branch, use `npm run build` to build and `dist` as the build folder. 
 

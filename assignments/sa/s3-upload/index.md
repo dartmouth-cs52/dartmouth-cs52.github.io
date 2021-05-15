@@ -177,7 +177,7 @@ if (this.state.file) {
 We need some new packages to communicate with s3. `aws-sdk` is used to communicate with s3  and `dotenv` is used to load environment variables from `.env` for your server.
 
 ```bash
-yarn add aws-sdk dotenv
+npm install aws-sdk dotenv
 ```
 
 🚀 To setup `dotenv`, we want to call `dotenv.config({ silent: true });` as early as possible in our `server.js`. Then we can access our environment variables by using `process.env.S3_BUCKET_NAME`.
@@ -256,7 +256,7 @@ Things should be working now!
 #### To Turn In
 
 - github url to your repo
-- your deployed surge and heroku urls
+- your deployed netlify and heroku urls
 - brief what worked and what didn't
 
 ###### Additional Readings

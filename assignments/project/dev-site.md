@@ -45,7 +45,7 @@ Milestones allow you to assign a due date to a set of issues.  These are useful 
 ![](img/TravisCI-Full-Color-7f5db09495c8b09c21cb678c4de18d21.png){:  .tiny}
 
 
-You will need to set up Travis CI for your project with automatic linting. You already have been using eslint, so now we'll just make sure that whenever you push to github it will automatically run eslint again just in case.  We'll also have Travis CI run other stuff for us, in particular it will push to surge automatically.  Here's a bit of a howto on [how to set up Travis](http://cs52.me/resources/travis).
+You will need to set up Travis CI for your project with automatic linting. You already have been using eslint, so now we'll just make sure that whenever you push to github it will automatically run eslint again just in case.  We'll also have Travis CI run other stuff for us, in particular it will push to netlify automatically.  Here's a bit of a howto on [how to set up Travis](http://cs52.me/resources/travis).
 
 You should set this up for *all* your repositories.  You already have working `.eslintrc` files so might as well be checking linting on before allowing merges.
 
