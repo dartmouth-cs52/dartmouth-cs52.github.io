@@ -32,6 +32,8 @@ You can think of the issues as individual tasks: "create login button",  "api en
 
 Break up large tasks into individual smaller ones, each one should be under a few hours of work. The smaller the tasks the faster you will actually work (not just the appearance of speed).  It is easier to take on a manageable scope issue and work through it than if the issue has multiple steps that quickly become overwhelming to think through.  Assign each other tasks, a little aggressiveness is good!
 
+🚀 Create at least 2 issues per team member.  Create a plan to have a deep wiring of your project so that major parts of your project work and record it as issues.
+
 
 ### Milestones
 
@@ -39,46 +41,37 @@ Break up large tasks into individual smaller ones, each one should be under a fe
 
 Milestones allow you to assign a due date to a set of issues.  These are useful for feature level goals and allow you to easily see progress and group together sets of issues.  Milestones should be less specific than "create login button" (this is an issue rather than a milestone). Examples include: "login and user profile flow",  "event review functionality", "fully integrate current flows with api".  These are generally how people initially think of breaking up tasks - as the more overwhelming goals such as 'integrate social into product'.  However if you create this as a milestone you should then split that into a whole bunch of small achievable tasks: 'add facebook sdk', 'add share button to posts',  'show profile image', etc.
 
+🚀 Group some issues together into milestones and split up any issues that seem too weighty into smaller tasks. 
 
-## Travis CI
+### GitHub Projects
 
-![](img/TravisCI-Full-Color-7f5db09495c8b09c21cb678c4de18d21.png){:  .tiny}
+![](img/gh-projects.jpg){: .fancy .medium}
 
+Project Boards are a great way to view your github issues and have a more organized workflow.  Think of this as an active and collaborative todo that is connected to your repos.  Github Projects can span multiple repositories which can help you see all your issues in one place.  
 
-You will need to set up Travis CI for your project with automatic linting. You already have been using eslint, so now we'll just make sure that whenever you push to github it will automatically run eslint again just in case.  We'll also have Travis CI run other stuff for us, in particular it will push to netlify automatically.  Here's a bit of a howto on [how to set up Travis](http://cs52.me/resources/travis).
+[Get started with GitHub Projects!](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)
 
-You should set this up for *all* your repositories.  You already have working `.eslintrc` files so might as well be checking linting on before allowing merges.
+It is not required that you do this, but highly recommended.
 
-### Deployment API
+🚀 Set up a github project to manage your issues for Extra Credit and because your project will go so much more smoothly. 
 
-![](img/Heroku_logo.png){:  .tiny}
+## Continuous Integration
 
-Set up your Heroku app to be connected to GitHub with [automatic deploys](https://devcenter.heroku.com/articles/github-integration#automatic-deploys).  Set this up so that whenever you merge a pull-request into your main branch for your server component, Heroku will pick up the change.  You will obviously still work locally on your own feature branches. Your main branch will be the branch that is tested and working.  You can set this up so that Heroku only updates if the Travis tests have completed successfully.
+Continuous integration is a software development practice where code changes are integrated into your product often and deployed as you go after code reviews.  We've already been doing this with the Netlify and Heroku automatic deploys on changes.  We have also been using [Github Actions](https://docs.github.com/en/actions/quickstart) to run our linting tests on every change to the main branch.  If you are curious how that was set up you can see the `.github/classroom/autograding.json` and `.github/workflows/classroom.yml`.  Your main branches should always contain code that works.  This way your deployed site and api are always showable and testable.
 
-### Continuous Integration Frontend
+No action items necessary at this point since this is already how we are set up!
 
-![](img/surge.png){:  .tiny}
+## What About ReactNative
 
-For the frontend, we can set up Surge with Travis so that it too will update automatically.  Here's how to set up [surge+travis](https://surge.sh/help/integrating-with-travis-ci).  You may need to add some customized parts to this.  In particular on your front end you will most likely have a separate `yarn build` step.  Travis has a bunch of [configuration steps that you can customize](https://docs.travis-ci.com/user/customizing-the-build).  
+If your project is a ReactNative project with Expo this is a bit tricker.  What you'll want to do is create a team Expo account - one where you can share the username and password - this will be helpful later when we will want to have a way to test out your project.
 
-Your file might end up looking like:
+You'll also want to start using expo publish to make your project available offline.  [See documentation here](https://docs.expo.io/workflow/publishing/).
 
-```
-language: node_js
-node_js:
-  - "13"
-install:
-  - yarn --ignore-engines
-script:
-  - yarn deploy
-```
-
-for instance if you have to customize what it runs on install and have a main deploy script set up in your `package.json` file.
+For continuous integration the easiest option is to try out [Expo publishing using github actions here](https://github.com/marketplace/actions/expo-github-action).
 
 ## Such Dev Environment
 
 Now, you can work in your local environment on your feature branch and when you are ready, merge it into main which will deploy it automatically. Do not simply start using the main branch and the dev site directly as your primary method of testing.  You should always be working locally first! But this does allow you to merge in changes quickly and you can have a shared dev site where you can see the latest pushed version of everyone's code and ask others for feedback.
-
 
 ## To Turn In:
 
@@ -88,5 +81,4 @@ Now, you can work in your local environment on your feature branch and when you 
   * url of frontend
   * url for api server
 * demonstrated fetching of data from frontend ↔️ api.
-* screenshots of Travis CI running on pull requests
 * short short comment on what worked and what didn't
