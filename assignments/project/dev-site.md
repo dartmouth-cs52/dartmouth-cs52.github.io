@@ -53,7 +53,7 @@ Project Boards are a great way to view your github issues and have a more organi
 
 It is not required that you do this, but highly recommended.
 
-🚀 Set up a github project to manage your issues for Extra Credit and because your project will go so much more smoothly. 
+⭐ Set up a github project to manage your issues for Extra Credit and because your project will go so much more smoothly. 
 
 ## Continuous Integration
 
@@ -68,6 +68,8 @@ If your project is a ReactNative project with Expo this is a bit tricker.  What 
 You'll also want to start using expo publish to make your project available offline.  [See documentation here](https://docs.expo.io/workflow/publishing/).
 
 For continuous integration the easiest option is to try out [Expo publishing using github actions here](https://github.com/marketplace/actions/expo-github-action).
+
+⭐ Set up continuous integration for your Expo project - this would be super helpful for you to test with, but is extra credit.
 
 ## Such Dev Environment
 
