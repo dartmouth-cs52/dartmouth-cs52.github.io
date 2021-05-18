@@ -376,7 +376,7 @@ We want to do more.
  ```js
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-import SearchBar from 'react-native-elements';
+import { SearchBar } from 'react-native-elements';
 import {
   ActivityIndicator,
   StyleSheet,
