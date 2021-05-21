@@ -8,6 +8,7 @@ comment_term: sa-s3-upload
 ![AWS S3](http://i.imgur.com/FBAnSyZ.png)
 
 ## Overview
+*Updated by Sudharsan*
 
 Today we'll be learning how to directly upload images to Amazon Web Services Simple Storage Service (S3) on our blog application from Lab 4 and 5. We will be implementing an image input for handling image uploads and then these images will directly be uploaded to S3.
 
@@ -51,35 +52,50 @@ Great, now you can add uploading but always know the version that came before.
 
 ### S3 Setup
 
-🚀 Setup S3 with Heroku by following this [guide](https://devcenter.heroku.com/articles/s3#s3-setup).
+First we need to enable our Heroku application to use S3, which requires that the app have access to the AWS credentials as well as the name of the bucket to store files. 
 
-You will now need to edit some of the permissions properties of the target S3 bucket so that the final request has sufficient privileges to write to the bucket. In a web-browser, sign in to the AWS console and select the S3 section. Select the appropriate bucket (or create a new one) and click the ‘Properties’ tab. Select the Permissions section and three options are provided (Add more permissions, Edit bucket policy and Edit CORS configuration).
+🚀 Create an AWS account [here](https://aws.amazon.com/) and navigate to the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page under Identity Access Management (IAM). You'll need to scroll down to Access Keys and create an access key.
+
+![](img/creating_key2.jpg)
+
+🚀 Copy down the Access Key ID and the Secret Access Key ID, you will be putting it into your Heroku App config vars later on.
+
+🚀 Next, navigate back to the AWS [home page](https://aws.amazon.com/) and then to the [S3 Console](https://console.aws.amazon.com/s3/home?#). Here, create a bucket; this is where all the files you upload from your client will live. Choose an [appropriate name](https://devcenter.heroku.com/articles/s3#naming-buckets) and take it down as well, we will also be adding it to heroku. For the region, make sure you create the bucket in the same region as the app that will use it. Uncheck the block public access box for now and keep the rest of the settings the default.
+
+![](img/creating_bucket2.jpg)
+
+
+🚀 You will now need to edit some of the permission properties of the target S3 bucket so that the final request has sufficient priveleges to write to the bucket. In a web-browser, sign in to the AWS console, select S3, and then select the bucket that you just created. Navigate to the permissions tab and scroll all the way down to the bottom to CORS policy.
 
 CORS (Cross-Origin Resource Sharing) will allow your application to access content in the S3 bucket. Each rule should specify a set of domains from which access to the bucket is granted and also the methods and headers permitted from those domains.
 
-![](img/cors.jpg)
-
-Locating the ‘Properties’ tab and CORS configuration editor
-For this to work in your application, click ‘Add CORS Configuration’ and enter the following XML:
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
- <CORSRule>
-      <AllowedOrigin>*</AllowedOrigin>
-      <AllowedMethod>GET</AllowedMethod>
-      <AllowedMethod>POST</AllowedMethod>
-      <AllowedMethod>PUT</AllowedMethod>
-      <AllowedHeader>*</AllowedHeader>
-  </CORSRule>
-</CORSConfiguration>
+Click edit and enter the following JSON:
+```JSON
+[
+    {
+        "AllowedOrigins": [
+            "*"
+        ], 
+        "AllowedMethods": [
+            "GET",
+            "POST",
+            "DELETE"
+        ],
+        "AllowedHeaders": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
 ```
 
-🚀 Click 'Save’ in the CORS window and then 'Save’ again in the bucket’s 'Properties’ tab.
+🚀 Click 'Save’ in the CORS window!
 
 This tells S3 to allow any domain access to the bucket and that requests can contain any headers, which is generally fine for testing. When deploying, you should change the 'AllowedOrigin’ to only accept requests from your domain.
 
+🚀 Finally, log the three fields you took down onto your API's configuration variables. When you are locally testing, add them to your `.env` file.
 
+![](img/config_vars.jpg)
 
 ## Direct Uploading Client
 
@@ -140,6 +156,11 @@ function uploadFileToS3(signedRequest, file, url) {
     });
   });
 }
+```
+Sometimes, broswer caching can cause some errors with S3 and prevent S3 response Access-Control-Allow-Origin header in response. A hacky way to fix this is to change to url with the date and time before you make the api call. Add the following line before the return statement in the code above if you are running into a CORS policy error; to handle the eslint error, disable either inline or in .eslintrc:
+
+```js
+url += `?${(new Date()).getTime()}`;
 ```
 
 We have two helper functions, `getSignedRequest` and `uploadFileToS3` that each return a promise. The reason why we have this pattern is that `uploadFileToS3` requires `getSignedRequest` to return a success call. These functions are used by `uploadImage` which also returns a promise.
