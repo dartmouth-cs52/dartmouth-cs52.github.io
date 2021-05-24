@@ -53,29 +53,34 @@ Great, now you can add uploading but always know the version that came before.
 
 🚀 Setup S3 with Heroku by following this [guide](https://devcenter.heroku.com/articles/s3#s3-setup).
 
-You will now need to edit some of the permissions properties of the target S3 bucket so that the final request has sufficient privileges to write to the bucket. In a web-browser, sign in to the AWS console and select the S3 section. Select the appropriate bucket (or create a new one) and click the ‘Properties’ tab. Select the Permissions section and three options are provided (Add more permissions, Edit bucket policy and Edit CORS configuration).
+You will now need to edit some of the permissions properties of the target S3 bucket so that the final request has sufficient privileges to write to the bucket. In a web-browser, sign in to the AWS console and select the S3 section. Select the appropriate bucket (or create a new one) and click the ‘Permissions’ tab. Scroll down to the very bottom, where you will see 'cross-origin resource sharing' (CORS). 
 
 CORS (Cross-Origin Resource Sharing) will allow your application to access content in the S3 bucket. Each rule should specify a set of domains from which access to the bucket is granted and also the methods and headers permitted from those domains.
 
 ![](img/cors.jpg)
 
-Locating the ‘Properties’ tab and CORS configuration editor
-For this to work in your application, click ‘Add CORS Configuration’ and enter the following XML:
+Then, click the Edit button at the right and enter the following JSON inside the configuration editor: 
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
- <CORSRule>
-      <AllowedOrigin>*</AllowedOrigin>
-      <AllowedMethod>GET</AllowedMethod>
-      <AllowedMethod>POST</AllowedMethod>
-      <AllowedMethod>PUT</AllowedMethod>
-      <AllowedHeader>*</AllowedHeader>
-  </CORSRule>
-</CORSConfiguration>
+```json
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "GET",
+            "POST",
+            "PUT"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
 ```
 
-🚀 Click 'Save’ in the CORS window and then 'Save’ again in the bucket’s 'Properties’ tab.
+🚀 Click 'Save’ in the CORS window. 
 
 This tells S3 to allow any domain access to the bucket and that requests can contain any headers, which is generally fine for testing. When deploying, you should change the 'AllowedOrigin’ to only accept requests from your domain.
 
