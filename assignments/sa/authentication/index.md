@@ -353,17 +353,17 @@ const localLogin = new LocalStrategy(localOptions, async (email, password, done)
 
   try {
     user = await User.findOne({ email });
+    if (!user) {
+      return done(null, false);
+    }
     isMatch = await user.comparePassword(password);
+    if (!isMatch) {
+      return done(null, false);
+    } else {
+      return done(null, user);
+    }
   } catch (error) {
     return done(error);
-  }
-
-  if (!user) {
-    return done(null, false);
-  } else if (!isMatch) {
-    return done(null, false);
-  } else {
-    return done(null, user);
   }
 });
 ```

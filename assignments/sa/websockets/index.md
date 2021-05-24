@@ -18,7 +18,7 @@ We're going to build a [websocket](https://en.wikipedia.org/wiki/WebSocket) base
 🚀 Clone your **Lab3 with firebase**.  Create a new branch with `git checkout -b websockets`. We'll need to refactor this very slightly to not use firebase but use our new backend instead, and using a branch seems reasonable for this.
 
 
-🚀 Clone or Fork [express-babel-starter](https://github.com/dartmouth-cs52-19s/express-babel-starter) for our new server component. You can create a new github repo in your own account if you want for this and add it as a remote. 
+🚀 Clone or Fork [express-babel-starter](https://github.com/dartmouth-cs52/express-babel-starter) for our new server component. You can create a new github repo in your own account if you want for this and add it as a remote. 
 
 In the following at times we'll do stuff to both client (Lab3) and server (the new notes-websocket-server). This will be highlighted with **SERVER** vs **CLIENT**.
 
@@ -81,7 +81,7 @@ import mongoose from 'mongoose';
 
 // DB Setup
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/notes';
-mongoose.connect(mongoURI);
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 // set mongoose promises to es6 default
 mongoose.Promise = global.Promise;
 ```
@@ -156,7 +156,12 @@ import http from 'http';
 // add server and io initialization after app
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server, {
+  cors: {
+    origin: '*', // allows requests all incoming connections
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  },
+});
 
 
 // change app.listen to server.listen
@@ -206,7 +211,7 @@ io.on('connection', (socket) => {
 ```
 
 
-Ok we have some basic functionality now. Let's work on the frontend for a little bit. We'll come back and add more listeners here. Don't forget to start up mongod and also `npm run dev` the server.
+Ok we have some basic functionality now. Let's work on the frontend for a little bit. We'll come back and add more listeners here. Don't forget to start up mongod and also `npm start` the server.
 
 
 
