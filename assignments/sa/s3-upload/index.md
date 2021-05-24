@@ -157,7 +157,7 @@ function uploadFileToS3(signedRequest, file, url) {
   });
 }
 ```
-Sometimes, broswer caching can cause some errors with S3 and prevent S3 response Access-Control-Allow-Origin header in response. A hacky way to fix this is to change to url with the date and time before you make the api call. Add the following line before the return statement in the code above if you are running into a CORS policy error; to handle the eslint error, disable either inline or in .eslintrc:
+It is a good idea to try to make the filenames unique - one way to do that is to append some random characters. We can just use the current time. Add the following line before the return statement in the code above. 
 
 ```js
 url += `?${(new Date()).getTime()}`;
