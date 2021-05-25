@@ -159,11 +159,6 @@ function uploadFileToS3(signedRequest, file, url) {
   });
 }
 ```
-It is a good idea to try to make the filenames unique - one way to do that is to append some random characters. We can just use the current time. Add the following line before the return statement in the code above. 
-
-```js
-url += `?${(new Date()).getTime()}`;
-```
 
 We have two helper functions, `getSignedRequest` and `uploadFileToS3` that each return a promise. The reason why we have this pattern is that `uploadFileToS3` requires `getSignedRequest` to return a success call. These functions are used by `uploadImage` which also returns a promise.
 
