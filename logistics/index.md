@@ -21,8 +21,6 @@ We will use [Slack](https://cs52-dartmouth.slack.com), an online collaborative t
 
 ## Grading ##
 
-Grading of some collaborative team based work will be done based on GitHub pull requests.  Proper git flow will be introduced early on in the term. Using version control will become second nature to you.
-
   - In-class short assignments: 10%
   - 5 week-long labs:  25%
   - Short In-class quizzes:  10%
@@ -36,6 +34,10 @@ Grading of some collaborative team based work will be done based on GitHub pull 
     * 2 allowed re-submits (capped at 80%, only available before the final projects start)
     * 2 x 24 hour extension (comment on canvas assignment to indicate activation)
     * -2% for submission fails (unshared links, empty repos, wrong urls)
+
+#### Group Final Project Grading
+
+Grading of some collaborative team based work (the final project) will be done based on GitHub pull requests, Github Issues, codes committed, and other things such as design contributions. Using version control will become second nature to you. Proper git flow will be introduced and will be required for all groups. Since projects are a team effort, you will earn a group grades along the way with a modifier for individual performance. In extreme cases, individual final project grades may differ substantially from the group grades. For instance, if you were the star performer on the team and committed the large majority of code but your teammates didn’t pull their weight so the project wasn’t quite up to standards: the team might receive an 80 for the project milestones but you might get a 100 scaled for contributions. Alternatively if you slacked and contributed only a few lines to some documentation to boost your git commit count, we will notice and you might get a 0 even if your teammates pulled off an impressive project without you and the team received a 98 overall.
 
 <!-- **COVID-19 update** the overall course will be Credit/No-Credit - however individual assignments will still be graded with feedback provided, you can expect <=60 to be a NC situation.  -->
 

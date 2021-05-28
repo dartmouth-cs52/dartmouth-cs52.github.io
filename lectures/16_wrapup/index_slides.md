@@ -355,6 +355,17 @@ name: Interact With The Community
 * admits to not knowing python, flexbox, algorithms, node, bash
 * honestly inspiring to read - you don't need to know everything to be a contributor
 
+---
+name: Love the Craft
+
+# Set up your editor the way you like it
+# Geek out about the tools of the trade
+# Enjoy the process
+# Get in the zone
+
+
+
+
 
 ---
 name: Keep Building Stuff
