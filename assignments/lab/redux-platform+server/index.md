@@ -380,7 +380,7 @@ db.posts.find()
 Your mission is to now implement the rest of the endpoints!  You have the wiring ready, all you need is to use the [mongoose docs](http://mongoosejs.com/docs/queries.html) to implement `getPost`, `getPosts`, `updatePost`, and `deletePost`.  You may find mongoose methods such as: `.find()`, `.findById()`, `.remove()` helpful.  You might want to look into sorting the results for `getPosts` by `createdAt`.
 
 <details markdown="block">
-<summary>Add this to your schema definitaion to make sure the DB has the necessary timestamps to sort by</summary>
+<summary>Add this to your schema definition to make sure the DB has the necessary timestamps to sort by</summary>
 
 
 ```js
@@ -429,5 +429,20 @@ Once you have all the api endpoints complete, test it out using your blog fronte
 * change your tags store to be an array rather than a string, can just split by whitespace
 * add commenting to posts (either an array or another model) / change both api and frontend to support this.
 * really at this point you can start modifying your blog to be whatever you want. Add in new fields to your posts.
-* add in search support. Here's an [article](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/) that might help you get started.
+* add in search support.
 * later we'll introduce User and Authentication so **do not** implement those here though.
+
+
+### EC Option: Implementing Search
+
+If you'd like to add Search, you'll need several things: a search bar, a UI for search results, a route in your API which can recieve a query. To make an object's fields searchable, add the following line immediately after you create your object's Schema:
+```
+ObjectSchema.index({ fieldToSearch1: 'text', fieldToSearch2: 'text', ... });
+```
+Indices allow Mongo to efficiently store and sort searchable information. By default, the ID of an object recieves an index. In this case, we're going to set Mongo's special ```$text``` index to match certain fields. Then, in your search-controller function, add:
+```
+const searchedObjects = await Object.find({ $text: { $search: my-query-string } })
+```
+where `my-query-string` is the string you're searching for. Notice that we use the same `Object.find()` function, except we pass in an object that acts as a filter.
+
+Need more help? The [Mongo docs](https://docs.mongodb.com/manual/text-search/) are your friend! Alternatively, here's an [article](https://www.compose.com/articles/full-text-search-with-mongodb-and-node-js/) with a more detailed approach.
