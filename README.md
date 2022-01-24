@@ -2,7 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/9e8ce8ec-6168-4fb4-8602-ebc628286219/deploy-status)](https://app.netlify.com/sites/cs52/deploys)
 
-Source for the website for Dartmouth CS52.  Updated periodically.  Now includes slides and notes. Contribute at your leisure.
+Source for the website for Dartmouth CS52.  Updated periodically.  
+Slides and notes NO longer updated here. Contribute at your leisure.
 
 **NOTE:** assignments tend to change without notice, so if you are taking the class please refer to canvas / the published site at [cs52.me](https://cs52.me).
 
