@@ -13,6 +13,9 @@ Built with: [Jekyll](https://jekyllrb.com/), [GitHub Pages](https://pages.github
 
 ### Local installation
 
+`export SDKROOT=$(xcrun --show-sdk-path)
+`
+
 `gem install bundle`
 
 `bundle install`
