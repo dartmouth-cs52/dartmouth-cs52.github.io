@@ -1,0 +1,52 @@
+{
+    "title": "quiz title",
+    "outcomes": {
+            "outcome1": {"img": "img/outcome1.jpeg", "text": "mochi!"},
+            "outcome2": {"img": "img/outcome2.jpeg", "text": "earl grey!"}
+    },
+    "questions": [
+        {
+            "questionName": "color",
+            "questionImageURL": "img/question1.png",
+            "answers": [
+                {
+                    "text": "",
+                    "img_url": "img/grey1.jpeg",
+                    "outcome": "outcome2"
+                },
+                {
+                    "text": "",
+                    "img_url": "img/purple.jpeg",
+                    "outcome": "outcome2"
+                },
+                {
+                    "text": "",
+                    "img_url": "img/taz2.jpeg",
+                    "outcome": "outcome1"
+                }
+
+            ]
+        },
+        {
+            "questionName": "personality",
+            "questionImageURL": "img/mood.png",
+            "answers": [
+                {
+                    "text": "",
+                    "img_url": "img/calm.jpg",
+                    "outcome": "outcome1"
+                },
+                {
+                    "text": "",
+                    "img_url": "img/crazy.jpg",
+                    "outcome": "outcome1"
+                },
+                {
+                    "text": "",
+                    "img_url": "img/old.jpg",
+                    "outcome": "outcome2"
+                }
+            ]
+        }
+    ]
+}
